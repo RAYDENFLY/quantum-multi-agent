@@ -9,6 +9,7 @@ import threading
 import time
 from typing import Any, Dict, List, Optional, Tuple
 import pandas as pd
+import psutil
 import pyarrow as pa
 import pyarrow.parquet as pq
 
@@ -69,11 +70,204 @@ def compute_file_sha256(file_path: Path) -> str:
     return hasher.hexdigest()
 
 
+class PartitionLock:
+    """Cross-process and cross-thread atomic filesystem lock for dataset partitions.
+
+    Protects Parquet partition writes from concurrent file corruption across separate OS
+    processes and worker threads. Uses atomic filesystem token (.write.lock), PID validation
+    with psutil, dead PID recovery, and stale timeout breaking.
+    """
+
+    _thread_locks: Dict[str, threading.RLock] = {}
+    _meta_lock = threading.Lock()
+
+    def __init__(
+        self,
+        partition_dir: Path,
+        timeout_s: float = 30.0,
+        stale_threshold_s: float = 30.0,
+        retry_interval_s: float = 0.05,
+    ) -> None:
+        self.partition_dir = Path(partition_dir).resolve()
+        self.lock_file = self.partition_dir / ".write.lock"
+        self.timeout_s = timeout_s
+        self.stale_threshold_s = stale_threshold_s
+        self.retry_interval_s = retry_interval_s
+        self._acquired = False
+        self._thread_lock = self._get_thread_lock(self.partition_dir)
+
+    @classmethod
+    def _get_thread_lock(cls, partition_dir: Path) -> threading.RLock:
+        with cls._meta_lock:
+            key = str(partition_dir.resolve())
+            if key not in cls._thread_locks:
+                cls._thread_locks[key] = threading.RLock()
+            return cls._thread_locks[key]
+
+    def acquire(self, timeout: Optional[float] = None) -> bool:
+        """Acquire in-memory thread lock and atomic cross-process filesystem lock."""
+        effective_timeout = timeout if timeout is not None else self.timeout_s
+        deadline = time.time() + effective_timeout
+        self.partition_dir.mkdir(parents=True, exist_ok=True)
+
+        acquired_thread = self._thread_lock.acquire(timeout=max(0.1, deadline - time.time()))
+        if not acquired_thread:
+            raise TimeoutError(f"Timed out acquiring thread lock for partition {self.partition_dir}")
+
+        try:
+            while time.time() <= deadline:
+                try:
+                    fd = os.open(str(self.lock_file), os.O_CREAT | os.O_EXCL | os.O_RDWR)
+                    try:
+                        my_pid = os.getpid()
+                        proc_create_time = None
+                        try:
+                            proc_create_time = psutil.Process(my_pid).create_time()
+                        except Exception:
+                            pass
+
+                        meta = {
+                            "pid": my_pid,
+                            "create_time": proc_create_time,
+                            "acquired_at": time.time(),
+                        }
+                        os.write(fd, json.dumps(meta).encode("utf-8"))
+                    finally:
+                        os.close(fd)
+
+                    self._acquired = True
+                    self._cleanup_orphaned_temp_files()
+                    return True
+                except FileExistsError:
+                    if self._check_and_break_stale_lock():
+                        continue
+                    time.sleep(self.retry_interval_s)
+                except OSError:
+                    time.sleep(self.retry_interval_s)
+
+            raise TimeoutError(
+                f"Timed out waiting for partition lock on {self.partition_dir} after {effective_timeout}s"
+            )
+        except Exception:
+            self._thread_lock.release()
+            raise
+
+    def release(self) -> None:
+        """Release atomic filesystem lock and in-memory thread lock."""
+        if self._acquired:
+            try:
+                if self.lock_file.exists():
+                    self.lock_file.unlink()
+            except OSError:
+                pass
+            finally:
+                self._acquired = False
+                self._thread_lock.release()
+
+    def __enter__(self) -> "PartitionLock":
+        self.acquire()
+        return self
+
+    def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any) -> None:
+        self.release()
+
+    def _check_and_break_stale_lock(self) -> bool:
+        """Check if lock file is orphaned, corrupted, dead PID, or timed out, and break it if so."""
+        if not self.lock_file.exists():
+            return True
+
+        try:
+            content = self.lock_file.read_text(encoding="utf-8").strip()
+            if not content:
+                mtime = self.lock_file.stat().st_mtime
+                if (time.time() - mtime) > min(5.0, self.stale_threshold_s):
+                    self._force_unlink()
+                    logger.warning("Broke empty unwritten stale lock file on %s", self.partition_dir)
+                    return True
+                return False
+
+            meta = json.loads(content)
+            lock_pid = meta.get("pid")
+            lock_create_time = meta.get("create_time")
+            lock_acquired_at = meta.get("acquired_at", 0)
+
+            # 1. Dead PID detection
+            if not isinstance(lock_pid, int) or not psutil.pid_exists(lock_pid):
+                self._force_unlink()
+                logger.warning("Broke stale partition lock from dead PID %s on %s", lock_pid, self.partition_dir)
+                return True
+
+            # 2. PID reuse safety check
+            if lock_create_time is not None:
+                try:
+                    p = psutil.Process(lock_pid)
+                    current_proc_create_time = p.create_time()
+                    if abs(current_proc_create_time - lock_create_time) > 1.0:
+                        self._force_unlink()
+                        logger.warning("Broke stale lock: PID %s was reused by another process", lock_pid)
+                        return True
+                except (psutil.NoSuchProcess, psutil.AccessDenied):
+                    self._force_unlink()
+                    logger.warning("Broke stale partition lock: PID %s no longer accessible", lock_pid)
+                    return True
+
+            # 3. Stale timeout breaking (e.g. process hung or unresponsive)
+            elapsed = time.time() - lock_acquired_at
+            if elapsed > self.stale_threshold_s:
+                self._force_unlink()
+                logger.warning(
+                    "Broke stale partition lock exceeding timeout (%.1fs > %.1fs) on %s",
+                    elapsed,
+                    self.stale_threshold_s,
+                    self.partition_dir,
+                )
+                return True
+
+            return False
+        except (json.JSONDecodeError, OSError):
+            try:
+                mtime = self.lock_file.stat().st_mtime
+                if (time.time() - mtime) > min(5.0, self.stale_threshold_s):
+                    self._force_unlink()
+                    logger.warning("Broke corrupted unreadable lock file on %s", self.partition_dir)
+                    return True
+            except OSError:
+                pass
+            return False
+
+    def _force_unlink(self) -> None:
+        try:
+            if self.lock_file.exists():
+                self.lock_file.unlink()
+        except OSError:
+            pass
+
+    def _cleanup_orphaned_temp_files(self) -> None:
+        """When lock is acquired, remove any abandoned .tmp.*.parquet files in this partition."""
+        try:
+            for tmp in self.partition_dir.glob("*.tmp.*.parquet"):
+                try:
+                    parts = tmp.name.split(".")
+                    should_unlink = False
+                    if len(parts) >= 5 and parts[1] == "tmp":
+                        pid_str = parts[2]
+                        if pid_str.isdigit():
+                            tmp_pid = int(pid_str)
+                            if not psutil.pid_exists(tmp_pid):
+                                should_unlink = True
+                    if not should_unlink and (time.time() - tmp.stat().st_mtime > self.stale_threshold_s):
+                        should_unlink = True
+                    if should_unlink and tmp.exists():
+                        tmp.unlink()
+                        logger.info("Cleaned orphaned temporary file: %s", tmp.name)
+                except OSError:
+                    pass
+        except Exception:
+            pass
+
+
 class ParquetStorageManager:
     """Manages chunked, partitioned Parquet datasets with schema validation and manifests."""
-
-    _partition_locks: Dict[str, threading.Lock] = {}
-    _meta_lock = threading.Lock()
 
     def __init__(self, base_dir: Path) -> None:
         self.base_dir = Path(base_dir).resolve()
@@ -87,20 +281,23 @@ class ParquetStorageManager:
         self._cleanup_stale_temp_files()
 
     @classmethod
-    def _get_partition_lock(cls, partition_dir: Path) -> threading.Lock:
-        with cls._meta_lock:
-            key = str(partition_dir.resolve())
-            if key not in cls._partition_locks:
-                cls._partition_locks[key] = threading.Lock()
-            return cls._partition_locks[key]
+    def _get_partition_lock(cls, partition_dir: Path) -> PartitionLock:
+        return PartitionLock(partition_dir)
 
     def _cleanup_stale_temp_files(self) -> None:
         """Clean up orphaned temporary files left by abruptly terminated processes."""
         try:
             for tmp in self.base_dir.rglob("*.tmp.*.parquet"):
                 try:
-                    # If older than 60 seconds, remove
-                    if time.time() - tmp.stat().st_mtime > 60:
+                    parts = tmp.name.split(".")
+                    should_unlink = False
+                    if len(parts) >= 5 and parts[1] == "tmp":
+                        pid_str = parts[2]
+                        if pid_str.isdigit() and not psutil.pid_exists(int(pid_str)):
+                            should_unlink = True
+                    if not should_unlink and (time.time() - tmp.stat().st_mtime > 30.0):
+                        should_unlink = True
+                    if should_unlink and tmp.exists():
                         tmp.unlink()
                 except OSError:
                     pass

@@ -13,7 +13,7 @@ from quantum.historical.models import (
     ValidationStatus,
 )
 from quantum.historical.service import HistoricalDataService
-from quantum.historical.storage import ParquetStorageManager
+from quantum.historical.storage import ParquetStorageManager, PartitionLock
 from quantum.historical.validator import DataQualityValidator
 
 __all__ = [
@@ -22,6 +22,7 @@ __all__ = [
     "PaginationManager",
     "HistoricalDataService",
     "ParquetStorageManager",
+    "PartitionLock",
     "DataQualityValidator",
     "RawHistoricalCandle",
     "CanonicalCandle",

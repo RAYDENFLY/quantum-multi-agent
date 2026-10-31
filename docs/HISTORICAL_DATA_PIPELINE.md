@@ -58,12 +58,12 @@ Preserves the exact payload representation returned by the exchange API for comp
   - `raw_trades`: string (nullable)
   - `raw_taker_buy_volume`: string (nullable)
   - `raw_taker_buy_turnover`: string (nullable)
-  - `raw_payload_json`: string (verbatim unaltered JSON array string directly from exchange REST response)
+  - `raw_payload_json`: string (serialized JSON representation of the exchange's parsed array element row for that candle, preserving uncast string precision for numeric fields without float distortion; null in fallback normalization)
   - `retrieval_timestamp_ms`: int64
   - `source_endpoint`: string
   - `collection_run_id`: string
 - Conflict Policy: Conflicting duplicate records (same timestamp, differing OHLCV) are never silently dropped; they are quarantined to `conflicts.parquet` with complete provenance. Exact duplicates (identical OHLCV) are safely deduplicated.
-- Concurrency Protection: Thread-safe partition directory locks and atomic temporary files prevent concurrent write collisions.
+- Concurrency & Crash Protection: Cross-process atomic PartitionLock (`.write.lock`) with dead PID detection (`psutil.pid_exists`), PID reuse safety, stale timeout breaking, and automatic orphaned temporary file cleanup prevents concurrent write collisions and recovers cleanly from unexpected process termination.
 
 ### 3.2 Canonical Normalized Layer (`data/canonical/`)
 Provides a shared, validated schema across all supported derivatives exchanges:
