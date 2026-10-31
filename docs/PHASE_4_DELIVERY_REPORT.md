@@ -38,7 +38,7 @@ flowchart TD
     end
 
     subgraph Features["4. Causal Feature Tier"]
-        CANON_PQ --> ENG["FeatureEngine<br/>(54 Vectorized Indicators)"]
+        CANON_PQ --> ENG["FeatureEngine<br/>(55 Vectorized Indicators)"]
         ENG --> FEAT_PQ[("Features Parquet Store<br/>data/features/...")]
         FEAT_PQ --> MTF["MultiTimeframeJoiner<br/>(Causal Backward As-Of Join)"]
         MTF --> UNIFIED[("Unified Causal Dataset<br/>(Zero Lookahead Guaranteed)")]
@@ -56,7 +56,7 @@ flowchart TD
 | **Quality Validator** | `src/quantum/historical/validator.py` | OHLC invariant checker, incomplete candle filter, gap detector, and quality report generator. |
 | **Perpetual Discovery**| `src/quantum/historical/discovery.py` | Dynamic perpetual qualification filter (USDT-settled, active trading, valid tick/lot steps). |
 | **Downloader & Pagination** | `src/quantum/historical/downloader.py` | Chunked historical downloader with rate limiting, retries, jitter, and checkpoint resume. |
-| **Feature Engine** | `src/quantum/features/engine.py` | Deterministic computation of 54 price, trend, momentum, volatility, volume, and structure features. |
+| **Feature Engine** | `src/quantum/features/engine.py` | Deterministic computation of 55 price, trend, momentum, volatility, volume, and structure features. |
 | **Indicator Library** | `src/quantum/features/indicators.py` | Vectorized NumPy/Pandas technical indicator functions (EMA, RSI, MACD, Stoch, ATR, BB, Donchian). |
 | **Multi-Timeframe Join** | `src/quantum/features/multitimeframe.py`| Leakage-safe backward as-of join enforcing $T_{\text{HTF.close}} \le T_{\text{LTF.open}}$. |
 | **Feature Schema** | `src/quantum/features/schema.py` | Feature column definitions, descriptions, and version metadata (`FEATURE_V1`). |
@@ -91,7 +91,7 @@ Four new relational tables were added via migration `003_historical_data.sql`:
 ### 4.3 Features Layer (`data/features/`)
 - Scale-invariant float32 and float64 features indexed by `open_time_ms` and `close_time_ms`.
 - Schema Version: `FEATURE_V1`.
-- Total Features: 54 primary features plus multi-timeframe joined columns.
+- Total Features: 55 primary features plus multi-timeframe joined columns (57 columns in feature matrix).
 
 ---
 
@@ -132,7 +132,7 @@ Four new relational tables were added via migration `003_historical_data.sql`:
 
 ## 7. Feature Definitions and Formulas
 
-The feature suite consists of 54 scale-invariant indicators:
+The feature suite consists of 55 scale-invariant indicators:
 
 1. **Price and Returns:**
    - `simple_return`: $(C_t - C_{t-1}) / C_{t-1}$
@@ -288,7 +288,7 @@ Measured on 1 full year of 5-minute candles (105,120 candles) using Python 3.13.
 | **Compressed Parquet Size (1 Year 5m)** | 7.67 MB (8,040,664 bytes) | Disk-efficient | Highly compact |
 | **Streaming Write Throughput** | 38,621.4 candles/s | > 5,000 candles/s | 7.7x target |
 | **Data Quality Audit Throughput** | 686,251.0 candles/s | > 50,000 candles/s | 13.7x target |
-| **Feature Extraction Throughput (54 Ind.)**| 50,730.5 candles/s | > 10,000 candles/s | 5.0x target |
+| **Feature Extraction Throughput (55 Ind.)**| 50,730.5 candles/s | > 10,000 candles/s | 5.0x target |
 | **Multi-Timeframe As-Of Join Throughput** | 2,257,256.8 rows/s | > 100,000 rows/s | 22.5x target |
 | **Feature Computation Runtime (105k bars)**| 2.07 seconds | < 10.0 seconds | Extremely fast |
 | **Multi-Timeframe Join Runtime (105k bars)**| 0.05 seconds | < 2.0 seconds | Instantaneous |

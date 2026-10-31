@@ -44,6 +44,7 @@ class DataQualityValidator:
         requested_end_ms: int,
         run_id: str,
         current_time_ms: Optional[int] = None,
+        listing_start_time_ms: Optional[int] = None,
     ) -> Tuple[List[CanonicalCandle], DataQualityReport]:
         """Audit candidate canonical candles, exclude incomplete bars, and produce quality report."""
         now_ms = current_time_ms or int(time.time() * 1000)
@@ -53,6 +54,7 @@ class DataQualityValidator:
         valid_candles: List[CanonicalCandle] = []
         invalid_ohlc_count = 0
         incomplete_candle_count = 0
+        misaligned_timestamp_count = 0
 
         # Duplicate tracking
         seen_timestamps: Dict[int, CanonicalCandle] = {}
@@ -65,6 +67,19 @@ class DataQualityValidator:
             if c.close_time_ms > now_ms or (c.open_time_ms + interval_ms) > now_ms:
                 incomplete_candle_count += 1
                 logger.debug("Excluded incomplete in-flight candle for %s %s at %d", symbol, timeframe.value, c.open_time_ms)
+                continue
+
+            # Timeframe boundary and span alignment check
+            candle_span = c.close_time_ms - c.open_time_ms + 1
+            is_span_valid = (candle_span == interval_ms)
+            is_boundary_valid = (c.open_time_ms % interval_ms == 0) if c.open_time_ms > 1_000_000_000_000 else True
+
+            if not (is_span_valid and is_boundary_valid):
+                misaligned_timestamp_count += 1
+                logger.warning(
+                    "Misaligned candle timestamp detected for %s %s: open=%d, span=%d, expected=%d",
+                    symbol, timeframe.value, c.open_time_ms, candle_span, interval_ms
+                )
                 continue
 
             # OHLC boundary check
@@ -106,14 +121,25 @@ class DataQualityValidator:
         actual_end_ms = valid_candles[-1].open_time_ms if observed_count > 0 else requested_end_ms
 
         if observed_count > 0:
-            effective_start = max(requested_start_ms, actual_start_ms)
+            effective_start = max(requested_start_ms, listing_start_time_ms) if listing_start_time_ms else max(requested_start_ms, actual_start_ms)
             effective_end = min(requested_end_ms, actual_end_ms)
             expected_count = max(1, int((effective_end - effective_start) // interval_ms) + 1)
         else:
-            expected_count = max(1, int((requested_end_ms - requested_start_ms) // interval_ms) + 1)
+            effective_start = max(requested_start_ms, listing_start_time_ms) if listing_start_time_ms else requested_start_ms
+            expected_count = max(1, int((requested_end_ms - effective_start) // interval_ms) + 1)
 
         missing_count = 0
         missing_intervals: List[Dict[str, int]] = []
+
+        if observed_count > 0 and listing_start_time_ms and actual_start_ms > effective_start:
+            lead_missed = int((actual_start_ms - effective_start) // interval_ms)
+            if lead_missed > 0:
+                missing_count += lead_missed
+                missing_intervals.append({
+                    "gap_start_ms": effective_start,
+                    "gap_end_ms": actual_start_ms - interval_ms,
+                    "missed_bars": lead_missed,
+                })
 
         if observed_count > 1:
             for i in range(1, observed_count):
@@ -134,7 +160,7 @@ class DataQualityValidator:
         # 3. Determine validation status
         if observed_count < 30:
             status = ValidationStatus.INSUFFICIENT_HISTORY
-        elif invalid_ohlc_count > 0 or conflicting_duplicate_count > 0:
+        elif invalid_ohlc_count > 0 or conflicting_duplicate_count > 0 or misaligned_timestamp_count > 0:
             status = ValidationStatus.FAIL
         elif coverage_pct < 80.0:
             status = ValidationStatus.FAIL
@@ -166,6 +192,7 @@ class DataQualityValidator:
             dataset_version=self.dataset_version,
             details={
                 "interval_ms": interval_ms,
+                "misaligned_timestamp_count": misaligned_timestamp_count,
                 "missing_intervals_count": len(missing_intervals),
                 "missing_intervals_sample": missing_intervals[:10],
                 "conflicts_sample": conflicts[:5],

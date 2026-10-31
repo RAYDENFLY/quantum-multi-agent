@@ -51,11 +51,24 @@ class MultiTimeframeJoiner:
             tf_str = htf.value if hasattr(htf, "value") else str(htf)
             prefix = f"htf_{tf_str}_"
 
-            htf_subset = htf_df[["close_time_ms"] + [c for c in cols_to_use if c in htf_df.columns]].copy()
-            htf_subset.sort_values(by="close_time_ms", inplace=True)
+            # Check for grouping columns (e.g. symbol, exchange)
+            by_cols = [col for col in ["symbol", "exchange"] if col in merged.columns and col in htf_df.columns]
 
-            rename_map = {c: f"{prefix}{c}" for c in cols_to_use if c in htf_df.columns}
+            req_cols = ["close_time_ms"] + by_cols + [c for c in cols_to_use if c in htf_df.columns and c not in by_cols]
+            htf_subset = htf_df[req_cols].copy()
+
+            # Handle unsorted and duplicate HTF timestamps deterministically
+            dup_keys = by_cols + ["close_time_ms"] if by_cols else ["close_time_ms"]
+            htf_subset.drop_duplicates(subset=dup_keys, keep="last", inplace=True)
+
+            rename_map = {c: f"{prefix}{c}" for c in cols_to_use if c in htf_df.columns and c not in by_cols}
+            htf_join_key = f"_htf_join_close_{tf_str}"
+            rename_map["close_time_ms"] = htf_join_key
             htf_subset.rename(columns=rename_map, inplace=True)
+
+            # Pandas merge_asof requires the 'on' column to be monotonically increasing
+            htf_subset.sort_values(by=htf_join_key, inplace=True)
+            merged.sort_values(by="open_time_ms", inplace=True)
 
             # Causal As-Of Join:
             # Matches each base row's open_time_ms to the latest HTF close_time_ms <= open_time_ms
@@ -63,13 +76,13 @@ class MultiTimeframeJoiner:
                 merged,
                 htf_subset,
                 left_on="open_time_ms",
-                right_on="close_time_ms",
+                right_on=htf_join_key,
+                by=by_cols if by_cols else None,
                 direction="backward",
-                suffixes=("", f"_{tf_str}_right"),
             )
 
-            # Drop temporary right join key if present
-            if f"close_time_ms_{tf_str}_right" in merged.columns:
-                merged.drop(columns=[f"close_time_ms_{tf_str}_right"], inplace=True)
+            # Drop temporary right join key
+            if htf_join_key in merged.columns:
+                merged.drop(columns=[htf_join_key], inplace=True)
 
         return merged

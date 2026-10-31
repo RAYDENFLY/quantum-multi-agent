@@ -13,7 +13,7 @@ flowchart TD
     DOWNLOADER --> CANON_STORE["Canonical Parquet Layer<br/>(Standardized Schema)"]
     CANON_STORE --> VALIDATOR["Data Quality Validator<br/>(Invariants, Gaps, Duplicates)"]
     VALIDATOR --> QUALITY_REP["Data Quality Reports<br/>(PASS / FAIL / WARNINGS)"]
-    CANON_STORE --> FEATURE_ENG["Causal Feature Engine<br/>(54 Vectorized Indicators)"]
+    CANON_STORE --> FEATURE_ENG["Causal Feature Engine<br/>(55 Vectorized Indicators)"]
     FEATURE_ENG --> FEAT_STORE["Features Parquet Layer<br/>(Scale-Invariant Float32)"]
     FEAT_STORE --> MTF_JOINER["Multi-Timeframe Joiner<br/>(Backward As-Of Join)"]
     MTF_JOINER --> ML_DATASET[("Unified Training Dataset<br/>(Zero Lookahead Guaranteed)")]
@@ -42,7 +42,7 @@ QUANTUM implements a two-tier storage architecture separating auditability from 
 
 ### 3.1 Raw Storage Layer (`data/raw/`)
 Preserves the exact payload representation returned by the exchange API for compliance, auditing, and reprocessing:
-- Partitioning: `raw/exchange={EXCHANGE}/symbol={SYMBOL}/timeframe={TIMEFRAME}/data.parquet`
+- Partitioning: `raw/exchange={EXCHANGE}/symbol={SYMBOL}/timeframe={TIMEFRAME}/data.parquet` (or `{YEAR}.parquet`)
 - Schema:
   - `exchange`: string
   - `symbol`: string
@@ -58,9 +58,12 @@ Preserves the exact payload representation returned by the exchange API for comp
   - `raw_trades`: string (nullable)
   - `raw_taker_buy_volume`: string (nullable)
   - `raw_taker_buy_turnover`: string (nullable)
+  - `raw_payload_json`: string (verbatim unaltered JSON array string directly from exchange REST response)
   - `retrieval_timestamp_ms`: int64
   - `source_endpoint`: string
   - `collection_run_id`: string
+- Conflict Policy: Conflicting duplicate records (same timestamp, differing OHLCV) are never silently dropped; they are quarantined to `conflicts.parquet` with complete provenance. Exact duplicates (identical OHLCV) are safely deduplicated.
+- Concurrency Protection: Thread-safe partition directory locks and atomic temporary files prevent concurrent write collisions.
 
 ### 3.2 Canonical Normalized Layer (`data/canonical/`)
 Provides a shared, validated schema across all supported derivatives exchanges:
@@ -147,9 +150,9 @@ Before writing a canonical dataset, the `DataQualityValidator` evaluates five di
 
 ---
 
-## 6. Feature Engineering Specification (54 Features)
+## 6. Feature Engineering Specification (55 Features)
 
-All indicators are calculated using causal, vectorized operations without future data access.
+All 55 primary technical indicators are calculated using causal, vectorized operations without future data access. The resulting feature matrix contains 57 total columns: `open_time_ms`, `close_time_ms`, and the 55 indicator columns.
 
 ### 6.1 Price & Returns
 1. `simple_return`: $(C_t - C_{t-1}) / C_{t-1}$

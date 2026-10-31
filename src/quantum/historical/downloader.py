@@ -89,7 +89,12 @@ class PaginationManager:
 
         if self.direction == "BACKWARD":
             # Advance cursor to before the earliest returned candle
-            self.cursor_ms = earliest_bar_ms - 1
+            new_cursor = earliest_bar_ms - 1
+            if new_cursor >= self.cursor_ms:
+                logger.warning("Pagination loop detected in BACKWARD direction for %s. Exhausting.", self.timeframe.value)
+                self.is_exhausted = True
+                return
+            self.cursor_ms = new_cursor
             if self.cursor_ms < self.requested_start_ms:
                 self.is_exhausted = True
             elif candle_count < limit:
@@ -97,11 +102,20 @@ class PaginationManager:
                 self.is_exhausted = True
         else:
             # Forward pagination
-            self.cursor_ms = latest_bar_ms + self.interval_ms
+            new_cursor = latest_bar_ms + self.interval_ms
+            if new_cursor <= self.cursor_ms:
+                logger.warning("Pagination loop detected in FORWARD direction for %s. Exhausting.", self.timeframe.value)
+                self.is_exhausted = True
+                return
+            self.cursor_ms = new_cursor
             if self.cursor_ms > self.requested_end_ms:
                 self.is_exhausted = True
             elif candle_count < limit:
                 self.is_exhausted = True
+
+        if self.total_pages_fetched >= 10000:
+            logger.warning("Pagination reached safety ceiling (10,000 pages). Exhausting.")
+            self.is_exhausted = True
 
 
 class HistoricalCandleDownloader:
@@ -187,8 +201,13 @@ class HistoricalCandleDownloader:
 
                     # Periodically flush chunks to Parquet and checkpoint (every 2,000 candles)
                     if len(canonical_buffer) >= 2000 or paginator.is_exhausted:
-                        self.storage.write_raw_candles(raw_buffer, job.exchange, job.symbol, job.timeframe)
-                        self.storage.write_canonical_candles(canonical_buffer, job.exchange, job.symbol, job.timeframe)
+                        try:
+                            self.storage.write_raw_candles(raw_buffer, job.exchange, job.symbol, job.timeframe)
+                            self.storage.write_canonical_candles(canonical_buffer, job.exchange, job.symbol, job.timeframe)
+                        except Exception as write_err:
+                            logger.error("Failed to persist Parquet chunk for job %s: %s", job.job_id, write_err)
+                            raise
+
                         raw_buffer.clear()
                         canonical_buffer.clear()
 
@@ -220,8 +239,12 @@ class HistoricalCandleDownloader:
 
             # Flush any remaining buffer
             if canonical_buffer:
-                self.storage.write_raw_candles(raw_buffer, job.exchange, job.symbol, job.timeframe)
-                self.storage.write_canonical_candles(canonical_buffer, job.exchange, job.symbol, job.timeframe)
+                try:
+                    self.storage.write_raw_candles(raw_buffer, job.exchange, job.symbol, job.timeframe)
+                    self.storage.write_canonical_candles(canonical_buffer, job.exchange, job.symbol, job.timeframe)
+                except Exception as flush_err:
+                    logger.error("Failed to flush final Parquet chunk: %s", flush_err)
+                    raise
                 raw_buffer.clear()
                 canonical_buffer.clear()
 
