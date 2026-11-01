@@ -1,14 +1,14 @@
 # QUANTUM PHASE 5.4: EXPERIMENT PROTOCOL & SPECIFICATION
 **Detailed Implementation Protocols, Mathematical Formulations & Execution Guide**
 
-**Document Version:** 5.4.0_PROTOCOL  
+**Document Version:** 5.4.1_PROTOCOL  
 **System:** QUANTUM 11-Specialist Cryptocurrency Perpetual Futures ML Trading Research System  
 **Governance Status:** `PROTOCOL_SPECIFICATION_AWAITING_EXPLICIT_AUTHORIZATION`  
 **Classification Standards:** `VERIFIED_FROM_SOURCE` | `VERIFIED_FROM_ARTIFACT` | `DOCUMENTATION_ONLY`
 
 ---
 
-## 1. Protocol 1: Chronological OOF Temporal Partitioning
+## 1. Protocol 1: Chronological OOF Temporal Partitioning & Purge Audit
 
 To ensure zero information leakage between model inference, calibrator fitting, decision policy tuning, and final evaluation, the existing 5-fold expanding walk-forward OOF observations are partitioned chronologically into three disjoint segments:
 
@@ -22,160 +22,100 @@ To ensure zero information leakage between model inference, calibrator fitting, 
 [--------------------------------------------------------------------------------------]
 ```
 
-### Justification of Partition Boundaries:
-1. **Segment 1 (Calibration Fit: Folds 1 & 2):**
-   - Timestamp Range: `2025-01-29 04:40 UTC` to `2025-07-30 11:10 UTC`.
-   - Sample Size: 52,290 bars per standard instrument ($N \approx 522,900$ fleet-wide).
-   - Function: Fits calibrator parameters ($A_k, B_k$ in Platt; $T$ in Temperature; step curves in Isotonic).
-   - Leakage Protection: Calibrators are fitted strictly on OOF predictions from models that were trained on data prior to `2025-01-29`.
-2. **Segment 2 (Policy Selection & Tuning: Folds 3 & 4):**
-   - Timestamp Range: `2025-07-30 12:15 UTC` to `2026-01-29 07:45 UTC`.
-   - Sample Size: 52,290 bars per standard instrument ($N \approx 522,900$ fleet-wide).
-   - Function: Selects optimal confidence thresholds $\tau$, minimum coverage targets, and cost-sensitive net expectancy cutoffs $\theta$.
-   - Leakage Protection: Calibrator parameters were fixed in Segment 1; policy thresholds are selected on Segment 2 data unseen by Segment 1.
-3. **Segment 3 (Final Out-of-Sample Policy Evaluation: Fold 5):**
-   - Timestamp Range: `2026-01-29 08:50 UTC` to `2026-04-30 21:55 UTC`.
-   - Sample Size: 26,148 bars per standard instrument ($N \approx 261,480$ fleet-wide).
-   - Function: Evaluates final frozen calibration quality, selective accuracy, risk-coverage curves, and net trade expectancy.
-   - Leakage Protection: Zero parameter fitting or threshold tuning is permitted on Segment 3.
+### Exact Timestamps and 13-Bar Purge Verification:
+Verification of [fold_manifest.json](file:///d:/quantum-multi-agent/artifacts/phase_5_3_2/ETHUSDT/fold_manifest.json) confirms the exact millisecond and UTC boundaries:
 
-### 1.1 Strict Holdout Isolation Boundary
+| Fold | Test Start (UTC) | Test Start (ms) | Test End (UTC) | Test End (ms) | Test Samples | Gap to Next Test Fold |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Fold 1** | `2025-01-29 04:40:00` | 1738125600000 | `2025-04-30 04:10:00` | 1745986200000 | 26,145 | **3,900,000 ms (13 bars)** |
+| **Fold 2** | `2025-04-30 05:15:00` | 1745990100000 | `2025-07-30 11:10:00` | 1753873800000 | 26,145 | **3,900,000 ms (13 bars)** |
+| **Fold 3** | `2025-07-30 12:15:00` | 1753877700000 | `2025-10-29 19:30:00` | 1761766200000 | 26,145 | **3,900,000 ms (13 bars)** |
+| **Fold 4** | `2025-10-29 20:35:00` | 1761770100000 | `2026-01-29 07:45:00` | 1769672700000 | 26,145 | **3,900,000 ms (13 bars)** |
+| **Fold 5** | `2026-01-29 08:50:00` | 1769676600000 | `2026-04-30 21:55:00` | 1777586100000 | 26,148 | N/A (End of OOF) |
+
+**Purge Integrity Proof:**
+Because `horizon_bars = 12`, the label for the final test candle of Fold 2 terminates at $1753873800000 + (12 \times 300,000) = 1753877400000$ (`2025-07-30 12:10:00 UTC`).
+Fold 3 test starts at $1753877700000$ (`2025-07-30 12:15:00 UTC`), exactly 1 bar (5 minutes) after the 12-bar label horizon of Fold 2 expires.
+Consequently, **zero label leakage exists between Segment 1 and Segment 2**, and **zero label leakage exists between Segment 2 and Segment 3**.
+
+### Strict Holdout Isolation:
 The prospective holdout partition (`2026-11-01 00:00:00 UTC` through `2027-04-30 23:59:59.999 UTC`) remains completely sealed and protected. Zero queries, feature lookups, or calibrator evaluations shall touch or reference this window. Furthermore, the historical period through `2026-10-31` was utilized during development and validation, and is not a fresh holdout.
 
 ---
 
-## 2. Protocol 2: Candidate Calibration Methodologies
+## 2. Protocol 2: Realized Barrier Outcome & Trade Return Reconstruction
 
-For each specialist instrument, four probability estimation models are benchmarked:
+To eliminate the flawed assumption that nominal barrier parameters represent executable returns, Phase 5.4 reconstructs realized trade outcomes from canonical 5m OHLC data:
 
-### 1. Uncalibrated Baseline (Raw Softmax)
-Direct probability output from LightGBM:
-$$p_{i,k} = \frac{\exp(z_{i,k})}{\sum_{j=1}^3 \exp(z_{i,j})}$$
+### 1. Position Entry Rules:
+- Entry occurs at the close of candle $i$: $P_{\text{entry}} = \text{closes}[i]$.
+- Volatility parameter: $\sigma_t = \text{volatility}[i]$ (rolling 20-candle std of returns).
+- Nominal Upper Barrier: $U_i = P_{\text{entry}} \times (1.0 + 1.5 \sigma_t)$.
+- Nominal Lower Barrier: $L_i = P_{\text{entry}} \times (1.0 - 1.5 \sigma_t)$.
 
-### 2. Temperature Scaling (Guo et al., 2017)
-A single scalar parameter $T > 0$ applied across logits:
-$$q_{i,k} = \frac{\exp(z_{i,k} / T)}{\sum_{j=1}^3 \exp(z_{i,j} / T)}$$
-- Fitted on Segment 1 by minimizing Cross-Entropy Loss (Log Loss):
-  $$\min_{T > 0} - \frac{1}{N_1} \sum_{i=1}^{N_1} \sum_{k=1}^3 y_{i,k} \ln(q_{i,k}(T))$$
-- Properties: Preserves classification ranking ($z_a > z_b \iff z_a/T > z_b/T$), perfectly monotonic, highly sample-efficient (1 parameter), prevents overconfidence.
+### 2. Forward Horizon Evaluation ($k = 1, \dots, 12$):
+For each candle $idx = i + k$ in the forward window:
+- Check for Intrabar Double-Touch: If $\text{high}[idx] \ge U_i$ and $\text{low}[idx] \le L_i$:
+  - Classified as `AMBIGUOUS` (Outcome -2). Excluded from clean evaluation in accordance with Phase 5.2/5.3 rules.
+- First Touch Resolution:
+  - If $\text{high}[idx] \ge U_i$: Upper barrier hit at step $k$. Position terminates immediately.
+  - If $\text{low}[idx] \le L_i$: Lower barrier hit at step $k$. Position terminates immediately.
+  - If neither hit: Proceed to $k+1$.
+  - If neither hit through $k=12$: Position terminates by Time Expiration at $idx = i + 12$.
 
-### 3. Vector Platt / Sigmoid Scaling (Platt, 1999)
-Multinomial logistic regression fit on uncalibrated log-odds:
-$$q_{i,k} = \frac{\exp(\mathbf{w}_k^T \mathbf{z}_i + b_k)}{\sum_{j=1}^3 \exp(\mathbf{w}_j^T \mathbf{z}_i + b_j)}$$
-- Parameters: 9 weights + 3 biases ($12$ parameters total).
-- L2-regularization enforced ($C=1.0$) to prevent parameter explosion.
+### 3. Exit Price & Gap Handling:
+- **Upper Barrier Exit ($P_{\text{exit}}$):**
+  - Normal touch: If $\text{open}[idx] < U_i \le \text{high}[idx]$, fill is modeled at limit price $U_i$.
+  - Gap Open: If $\text{open}[idx] \ge U_i$, execution occurs at market open: $P_{\text{exit}} = \text{open}[idx]$.
+- **Lower Barrier Exit ($P_{\text{exit}}$):**
+  - Normal touch: If $\text{open}[idx] > L_i \ge \text{low}[idx]$, fill is modeled at stop price $L_i - \text{slippage}$.
+  - Gap Open: If $\text{open}[idx] \le L_i$, gap execution occurs at market open: $P_{\text{exit}} = \text{open}[idx] - \text{slippage}$.
+- **Time Expiration Exit ($P_{\text{exit}}$):**
+  - Closed at market on candle close at $k=12$: $P_{\text{exit}} = \text{closes}[i + 12]$.
 
-### 4. Non-Parametric Isotonic Regression (Zadrozny & Elkan, 2002)
-One-vs-Rest piecewise constant isotonic regressions fit independently per class:
-$$\tilde{q}_{i,k} = g_k(p_{i,k})$$
-Followed by post-hoc normalization:
-$$q_{i,k} = \frac{\tilde{q}_{i,k}}{\sum_{j=1}^3 \tilde{q}_{i,j}}$$
-- Properties: Free-form non-parametric fitting; captures arbitrary monotonic distortions; requires large sample size ($N > 20,000$).
+### 4. Realized Trade Return Formulations:
+Gross percentage returns:
+$$R_{\text{gross, long}} = \frac{P_{\text{exit}} - P_{\text{entry}}}{P_{\text{entry}}}$$
+$$R_{\text{gross, short}} = \frac{P_{\text{entry}} - P_{\text{exit}}}{P_{\text{entry}}}$$
 
----
-
-## 3. Protocol 3: Calibration Evaluation Metrics & Reliability Diagrams
-
-Calibration quality is assessed using three formal mathematical metrics:
-
-### 1. Multiclass Brier Score
-$$\text{BS} = \frac{1}{N} \sum_{i=1}^N \sum_{k=1}^3 (q_{i,k} - y_{i,k})^2, \quad y_{i,k} \in \{0, 1\}$$
-- Minimum: 0.0 (perfect probabilistic forecast).
-- Reference: B0 Majority baseline produces $\text{BS}_{\text{B0}} \approx 0.6667$.
-
-### 2. Log Loss (Multiclass Cross-Entropy)
-$$\text{LL} = - \frac{1}{N} \sum_{i=1}^N \sum_{k=1}^3 y_{i,k} \ln(\max(\epsilon, \min(1-\epsilon, q_{i,k}))), \quad \epsilon = 10^{-15}$$
-
-### 3. Expected Calibration Error (ECE)
-Evaluated across $M = 15$ bins using both:
-- **Equal-Width Bins:** Bin boundaries at $[0, 1/15, 2/15, \dots, 1]$.
-- **Equal-Frequency Bins:** Quantile-based binning ensuring equal sample counts per bin.
-
-For class-wise ECE:
-$$\text{ECE}_k = \sum_{m=1}^M \frac{|B_{m,k}|}{N} \left| \text{acc}(B_{m,k}) - \text{conf}(B_{m,k}) \right|$$
-$$\text{ECE}_{\text{macro}} = \frac{1}{3} \sum_{k=1}^3 \text{ECE}_k$$
-
-**Binning Governance Rules:**
-- Bin count: $M = 15$.
-- Minimum observation threshold: $N_{\text{min}} = 100$ samples per bin.
-- Empty bin handling: Bins with $< 100$ samples contribute zero to the weighted sum and are flagged in the diagnostics.
+Net percentage returns incorporating friction:
+$$R_{\text{net, long}} = R_{\text{gross, long}} - C_{\text{friction}}$$
+$$R_{\text{net, short}} = R_{\text{gross, short}} - C_{\text{friction}}$$
 
 ---
 
-## 4. Protocol 4: Selective Classification & Confidence Abstention
+## 3. Protocol 3: Transaction Cost & Friction Sensitivity Model
 
-The decision engine outputs three discrete operational actions:
-$$\text{Action}_t \in \{\text{LONG}, \text{SHORT}, \text{NO\_TRADE}\}$$
+The 15 bps round-trip friction used in Phase 5.4.0 is recognized as a hypothetical scenario, not verified actual execution drag.
 
-### Abstention Mechanism:
-1. **Directional Conviction Filter:**
-   A trade candidate is considered only if predicted probability exceeds the empirical base rate plus an uncertainty margin $\delta$:
-   $$\text{LONG Candidate if } q_{t,+1} \ge \tau_{\text{long}}$$
-   $$\text{SHORT Candidate if } q_{t,-1} \ge \tau_{\text{short}}$$
-2. **Neutral Exclusion:**
-   If the expiration probability dominates ($q_{t,0} > \max(q_{t,+1}, q_{t,-1})$), the action defaults to $\text{NO\_TRADE}$.
-3. **Margin-Based Uncertainty Filter:**
-   Even if $q_{t,+1} > q_{t,-1}$, if $|q_{t,+1} - q_{t,-1}| < \Delta_{\text{margin}}$, conviction is deemed insufficient, resulting in $\text{NO\_TRADE}$.
+### Comprehensive Friction Sensitivity Grid:
+Friction is formally parameterized across four distinct sensitivity scenarios:
 
-### Evaluated Coverage Grid:
-Coverage is systematically scanned across eight discrete levels:
-$$\text{Coverage} \in \{20\%, 30\%, 40\%, 50\%, 60\%, 70\%, 80\%, 100\%\}$$
-Where:
-$$\text{Coverage} = \frac{N_{\text{LONG}} + N_{\text{SHORT}}}{N_{\text{total}}}$$
+| Friction Scenario | Exchange Fee Tier | Entry Order Type | Exit Order Type | Fee Drag (Round-Trip) | Bid-Ask Spread Drag | Execution Slippage | Total Round-Trip Drag ($C_{\text{friction}}$) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Scenario A (VIP / Maker-Taker)** | VIP 3+ / Institutional | Maker (Limit) | Taker (Market/SL) | $2.0 + 3.5 = 5.5$ bps | $0.5$ bps | $1.0$ bps | **$7.0$ bps ($0.00070$)** |
+| **Scenario B (Baseline Retail)** | VIP 0 (Binance standard) | Taker (Market) | Taker (Market/SL) | $5.0 + 5.0 = 10.0$ bps | $2.0$ bps | $3.0$ bps | **$15.0$ bps ($0.00150$)** |
+| **Scenario C (Conservative Adverse)** | VIP 0 Retail | Taker (Market) | Taker (Market/SL) | $5.0 + 5.0 = 10.0$ bps | $4.0$ bps | $6.0$ bps | **$20.0$ bps ($0.00200$)** |
+| **Scenario D (High-Vol / Stress)** | VIP 0 Retail | Taker (Market) | Taker (Stop-Market) | $5.0 + 5.0 = 10.0$ bps | $6.0$ bps | $14.0$ bps | **$30.0$ bps ($0.00300$)** |
 
-### Selective Classification Metrics:
-- **Selective Balanced Accuracy ($\text{BA}_{\text{sel}}$):** Macro-average of recall on covered non-abstained bars.
-- **Risk-Coverage Slope ($\beta_{\text{RC}}$):** Slope of linear regression of error rate against coverage. A valid selective classifier must exhibit $\beta_{\text{RC}} > 0$ (error decreases as coverage decreases).
+**Unresolved Prerequisite:** The specific production exchange and target fee tier remain uncommitted in the codebase. All Phase 5.4 evaluations must report sensitivity across all four scenarios.
 
 ---
 
-## 5. Protocol 5: Cost-Sensitive Decision Policy & Expected Net Payoff
+## 4. Protocol 4: Calibration Methodologies & Input Compatibility
 
-### Triple-Barrier to Return Mapping:
-The triple-barrier label does not directly define trade return. The actual gross percentage return depends on the dynamic volatility barrier:
-$$R_{\text{TP}, t} = + 1.5 \times \frac{\text{ATR}_{20, t}}{P_t}$$
-$$R_{\text{SL}, t} = - 1.5 \times \frac{\text{ATR}_{20, t}}{P_t}$$
-$$R_{\text{EXP}, t} = \frac{P_{t+12} - P_t}{P_t} \quad (\text{realized close-to-close return at bar 12})$$
+### 1. Temperature Scaling Input Formulation:
+Because `lgbm_model.joblib` natively outputs true unbounded margin logits $z \in \mathbb{R}^3$ via `predict(X, raw_score=True)`:
+$$q_k(T) = \frac{\exp(z_k / T)}{\sum_{j=1}^3 \exp(z_j / T)}$$
+- Fitted on Segment 1 by minimizing Cross-Entropy Loss over logits $z$.
+- Class ordering verified strictly as: Index 0 = `-1` (SL), Index 1 = `0` (EXP), Index 2 = `+1` (TP).
 
-### Execution Drag Matrix ($C_{\text{roundtrip}}$):
-All cryptocurrency perpetual futures execution involves mandatory frictional costs:
-1. **Exchange Trading Fees:**
-   - Maker (limit order): $2.0$ bps per side.
-   - Taker (market order): $5.0$ bps per side.
-   - Conservative Research Baseline: Taker entry + Taker exit = $10.0$ bps round-trip ($0.0010$).
-2. **Bid-Ask Spread Drag:**
-   - Majors (BTC, ETH): $1.0$ bps ($0.0001$).
-   - Mid-caps (SOL, BNB, DOGE, XRP): $2.0$ bps ($0.0002$).
-   - Lower-liquidity / High-vol (AVAX, LINK, LTC, ADA, XMR): $3.0$ to $5.0$ bps.
-3. **Slippage Drag:**
-   - Model entry execution slippage: $2.0$ bps.
-   - Stop-loss market order slippage: $3.0$ bps.
-4. **Funding Rate Cost:**
-   - 8-hour funding rate amortized across holding period (up to 1 hour): $\approx 0.5$ bps.
+### 2. Vector Platt Scaling:
+Multinomial logistic regression fit on raw logits $z$ (or clipped log-odds $\ln(p / (1-p))$ with $\epsilon = 10^{-15}$):
+$$q_k = \frac{\exp(\mathbf{w}_k^T \mathbf{z} + b_k)}{\sum_{j=1}^3 \exp(\mathbf{w}_j^T \mathbf{z} + b_j)}$$
 
-**Total Round-Trip Friction Baseline:**
-$$C_{\text{roundtrip}} = 10.0 \text{ bps (fees)} + 2.0 \text{ bps (spread)} + 3.0 \text{ bps (slippage)} = 15.0 \text{ bps } (0.00150)$$
-
-### Expected Net Return Formulation:
-For a candidate LONG position:
-$$\mathbb{E}[R_{\text{net, long}, t}] = q_{t,+1} \cdot R_{\text{TP}, t} + q_{t,-1} \cdot R_{\text{SL}, t} + q_{t,0} \cdot \bar{R}_{\text{EXP}} - C_{\text{roundtrip}}$$
-
-For a candidate SHORT position:
-$$\mathbb{E}[R_{\text{net, short}, t}] = q_{t,-1} \cdot R_{\text{TP}, t} + q_{t,+1} \cdot R_{\text{SL}, t} - q_{t,0} \cdot \bar{R}_{\text{EXP}} - C_{\text{roundtrip}}$$
-
-### Decision Rule:
-$$\text{Action}_t = \begin{cases} \text{LONG}, & \text{if } \mathbb{E}[R_{\text{net, long}, t}] > \theta_{\text{min}} \text{ and } q_{t,+1} > q_{t,-1} \\ \text{SHORT}, & \text{if } \mathbb{E}[R_{\text{net, short}, t}] > \theta_{\text{min}} \text{ and } q_{t,-1} > q_{t,+1} \\ \text{NO\_TRADE}, & \text{otherwise} \end{cases}$$
-Where $\theta_{\text{min}} \ge 0.0005$ ($5.0$ bps minimum positive expectancy hurdle).
-
----
-
-## 6. Protocol 6: Robustness, Regime & Data Sufficiency Standards
-
-1. **Independent Evaluation (No Fleet Pooling):** Calibrators and decision policies must be fitted and evaluated independently per instrument. Pooling across instruments into a single universal calibrator is prohibited without prior hypothesis authorization.
-2. **Market Regime Segmentation:** Segment 3 evaluation will report performance conditional on:
-   - Trend Regime: ADX(14) $> 25$ (Trending) vs $\le 25$ (Ranging).
-   - Volatility Regime: Realized 20-bar volatility above vs below 50th historical percentile.
-3. **XMRUSDT Special Handling:**
-   - XMRUSDT has only 30,703 Research-Ready candles and 15,252 OOF bars (approx. 3,050 bars per fold).
-   - Segment 1 sample size for XMR is only $\approx 6,100$ bars, which is insufficient for 15-bin Isotonic regression.
-   - XMR is restricted to Temperature Scaling and Vector Platt Scaling; Isotonic regression is prohibited for XMR due to data scarcity.
+### 3. Non-Parametric Isotonic Regression:
+One-vs-Rest isotonic step curves fit independently per class: $\tilde{q}_k = g_k(p_k)$.
+- Normalization: $q_k = \tilde{q}_k / \sum_{j=1}^3 \tilde{q}_j$.
+- Zero-Probability Handling: If $\sum_{j=1}^3 \tilde{q}_j = 0$, fallback to the empirical training class prior $[\pi_{-1}, \pi_0, \pi_{+1}]$ to avoid division by zero.
+- Data Scarcity Rule: Prohibited on XMRUSDT due to small sample size ($N_{\text{seg1}} \approx 6,100$).
