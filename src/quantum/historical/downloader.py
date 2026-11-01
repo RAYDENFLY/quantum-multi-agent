@@ -140,10 +140,12 @@ class HistoricalCandleDownloader:
         self,
         job: HistoricalCollectionJob,
         adapter: BaseExchangeAdapter,
-        page_limit: int = 1000,
+        page_limit: int = 1500,
         max_retries: int = 4,
         backoff_base_s: float = 0.5,
         progress_callback: Optional[Callable[[int, int], Coroutine[Any, Any, None]]] = None,
+        use_year_partitioning: bool = False,
+        listing_start_time_ms: Optional[int] = None,
     ) -> Tuple[List[CanonicalCandle], DataQualityReport]:
         """Download historical candles with rate limiting, retries, checkpointing, and validation."""
         self._cancel_requested = False
@@ -190,20 +192,24 @@ class HistoricalCandleDownloader:
                     run_id=job.job_id,
                 )
 
-                if can_records:
+                if raw_records:
                     raw_buffer.extend(raw_records)
                     canonical_buffer.extend(can_records)
                     total_downloaded += len(can_records)
 
-                    earliest_ms = min(c.open_time_ms for c in can_records)
-                    latest_ms = max(c.open_time_ms for c in can_records)
-                    paginator.record_page_results(len(can_records), earliest_ms, latest_ms, limit=page_limit)
+                    earliest_ms = min(r.exchange_candle_ts_ms for r in raw_records)
+                    latest_ms = max(r.exchange_candle_ts_ms for r in raw_records)
+                    paginator.record_page_results(len(raw_records), earliest_ms, latest_ms, limit=page_limit)
 
                     # Periodically flush chunks to Parquet and checkpoint (every 2,000 candles)
                     if len(canonical_buffer) >= 2000 or paginator.is_exhausted:
                         try:
-                            self.storage.write_raw_candles(raw_buffer, job.exchange, job.symbol, job.timeframe)
-                            self.storage.write_canonical_candles(canonical_buffer, job.exchange, job.symbol, job.timeframe)
+                            if use_year_partitioning:
+                                self.storage.write_raw_partitioned_by_year(raw_buffer, job.exchange, job.symbol, job.timeframe)
+                                self.storage.write_canonical_partitioned_by_year(canonical_buffer, job.exchange, job.symbol, job.timeframe)
+                            else:
+                                self.storage.write_raw_candles(raw_buffer, job.exchange, job.symbol, job.timeframe)
+                                self.storage.write_canonical_candles(canonical_buffer, job.exchange, job.symbol, job.timeframe)
                         except Exception as write_err:
                             logger.error("Failed to persist Parquet chunk for job %s: %s", job.job_id, write_err)
                             raise
@@ -240,8 +246,12 @@ class HistoricalCandleDownloader:
             # Flush any remaining buffer
             if canonical_buffer:
                 try:
-                    self.storage.write_raw_candles(raw_buffer, job.exchange, job.symbol, job.timeframe)
-                    self.storage.write_canonical_candles(canonical_buffer, job.exchange, job.symbol, job.timeframe)
+                    if use_year_partitioning:
+                        self.storage.write_raw_partitioned_by_year(raw_buffer, job.exchange, job.symbol, job.timeframe)
+                        self.storage.write_canonical_partitioned_by_year(canonical_buffer, job.exchange, job.symbol, job.timeframe)
+                    else:
+                        self.storage.write_raw_candles(raw_buffer, job.exchange, job.symbol, job.timeframe)
+                        self.storage.write_canonical_candles(canonical_buffer, job.exchange, job.symbol, job.timeframe)
                 except Exception as flush_err:
                     logger.error("Failed to flush final Parquet chunk: %s", flush_err)
                     raise
@@ -298,13 +308,20 @@ class HistoricalCandleDownloader:
                 requested_start_ms=job.requested_start_ms,
                 requested_end_ms=job.requested_end_ms,
                 run_id=job.job_id,
+                listing_start_time_ms=listing_start_time_ms,
             )
 
             # Write validated canonical candles
             if valid_candles:
-                canon_path = self.storage.write_canonical_candles(
-                    valid_candles, job.exchange, job.symbol, job.timeframe
-                )
+                if use_year_partitioning:
+                    canon_paths = self.storage.write_canonical_partitioned_by_year(
+                        valid_candles, job.exchange, job.symbol, job.timeframe
+                    )
+                    canon_path = canon_paths[-1] if canon_paths else self.storage.get_partition_path("canonical", job.exchange, job.symbol, job.timeframe)
+                else:
+                    canon_path = self.storage.write_canonical_candles(
+                        valid_candles, job.exchange, job.symbol, job.timeframe
+                    )
                 raw_path = self.storage.get_partition_path("raw", job.exchange, job.symbol, job.timeframe)
                 sha256_hash = compute_file_sha256(canon_path)
 
@@ -370,7 +387,7 @@ class HistoricalCandleDownloader:
                 if hasattr(adapter, "rest") and hasattr(adapter.rest, "_request"):
                     if adapter.exchange == Exchange.ASTER:
                         interval = TIMEFRAME_TO_ASTER.get(timeframe, "1m")
-                        params: Dict[str, Any] = {"symbol": symbol.upper(), "interval": interval, "limit": min(limit, 1000)}
+                        params: Dict[str, Any] = {"symbol": symbol.upper(), "interval": interval, "limit": min(limit, 1500)}
                         if before_ms:
                             params["endTime"] = before_ms
                         if after_ms:
@@ -454,27 +471,33 @@ class HistoricalCandleDownloader:
                 )
             )
 
-            canonical_candles.append(
-                CanonicalCandle(
-                    exchange=Exchange.ASTER,
-                    symbol=symbol.upper(),
-                    market_type="PERPETUAL",
-                    timeframe=timeframe,
-                    open_time_ms=open_ts,
-                    close_time_ms=close_ts,
-                    open=o,
-                    high=h,
-                    low=l,
-                    close=c,
-                    volume=vol,
-                    quote_volume=turnover,
-                    trade_count=trades,
-                    taker_buy_volume=taker_base,
-                    taker_buy_quote_volume=taker_quote,
-                    ingestion_time_ms=now_ms,
-                    source_run_id=run_id,
+            try:
+                canonical_candles.append(
+                    CanonicalCandle(
+                        exchange=Exchange.ASTER,
+                        symbol=symbol.upper(),
+                        market_type="PERPETUAL",
+                        timeframe=timeframe,
+                        open_time_ms=open_ts,
+                        close_time_ms=close_ts,
+                        open=o,
+                        high=h,
+                        low=l,
+                        close=c,
+                        volume=vol,
+                        quote_volume=turnover,
+                        trade_count=trades,
+                        taker_buy_volume=taker_base,
+                        taker_buy_quote_volume=taker_quote,
+                        ingestion_time_ms=now_ms,
+                        source_run_id=run_id,
+                    )
                 )
-            )
+            except ValueError as val_err:
+                logger.warning(
+                    "Excluded anomalous exchange candle at %d for %s %s: %s",
+                    open_ts, symbol, timeframe.value, val_err
+                )
 
         return raw_candles, canonical_candles
 

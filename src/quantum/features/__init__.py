@@ -10,8 +10,14 @@ from quantum.features.indicators import (
     compute_rsi,
     compute_stochastic,
 )
+from quantum.features.labeling import BarrierOutcome, TripleBarrierLabelGenerator
 from quantum.features.multitimeframe import MultiTimeframeJoiner
 from quantum.features.schema import BASE_FEATURE_COLUMNS, FEATURE_SCHEMA_VERSION
+from quantum.features.temporal_split import (
+    PARTITION_BOUNDARIES,
+    TemporalPartition,
+    TemporalPartitionManager,
+)
 
 __all__ = [
     "FeatureEngine",
@@ -25,4 +31,9 @@ __all__ = [
     "compute_atr",
     "compute_bollinger_bands",
     "compute_donchian_channels",
+    "BarrierOutcome",
+    "TripleBarrierLabelGenerator",
+    "TemporalPartition",
+    "TemporalPartitionManager",
+    "PARTITION_BOUNDARIES",
 ]

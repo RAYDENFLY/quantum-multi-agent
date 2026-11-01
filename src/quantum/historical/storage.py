@@ -274,8 +274,9 @@ class ParquetStorageManager:
         self.raw_dir = self.base_dir / "raw"
         self.canonical_dir = self.base_dir / "canonical"
         self.features_dir = self.base_dir / "features"
+        self.features_research_dir = self.base_dir / "features_research"
 
-        for directory in [self.raw_dir, self.canonical_dir, self.features_dir]:
+        for directory in [self.raw_dir, self.canonical_dir, self.features_dir, self.features_research_dir]:
             directory.mkdir(parents=True, exist_ok=True)
 
         self._cleanup_stale_temp_files()
@@ -495,6 +496,47 @@ class ParquetStorageManager:
             paths.append(p)
         return paths
 
+    def write_raw_partitioned_by_year(
+        self,
+        candles: List[RawHistoricalCandle],
+        exchange: Exchange,
+        symbol: str,
+        timeframe: Timeframe,
+    ) -> List[Path]:
+        """Partition raw candles by UTC year to bound per-file size and rewrite I/O."""
+        by_year: Dict[int, List[RawHistoricalCandle]] = {}
+        for c in candles:
+            yr = datetime.fromtimestamp(c.exchange_candle_ts_ms / 1000, tz=timezone.utc).year
+            by_year.setdefault(yr, []).append(c)
+
+        paths: List[Path] = []
+        for yr, yr_candles in sorted(by_year.items()):
+            p = self.write_raw_candles(yr_candles, exchange, symbol, timeframe, year=yr)
+            paths.append(p)
+        return paths
+
+    def write_features_partitioned_by_year(
+        self,
+        df_features: pd.DataFrame,
+        exchange: Exchange,
+        symbol: str,
+        timeframe: Timeframe,
+        layer: str = "features",
+    ) -> List[Path]:
+        """Partition feature DataFrame by UTC year to bound per-file size and rewrite I/O."""
+        if df_features.empty:
+            raise ValueError("Feature DataFrame is empty")
+
+        if "open_time_ms" not in df_features.columns:
+            raise ValueError("Feature DataFrame must contain open_time_ms as reference timestamp")
+
+        years = pd.to_datetime(df_features["open_time_ms"], unit="ms", utc=True).dt.year
+        paths: List[Path] = []
+        for yr, group in df_features.groupby(years):
+            p = self.write_features(group, exchange, symbol, timeframe, year=int(yr), layer=layer)
+            paths.append(p)
+        return paths
+
     def write_features(
         self,
         df_features: pd.DataFrame,
@@ -502,6 +544,7 @@ class ParquetStorageManager:
         symbol: str,
         timeframe: Timeframe,
         year: Optional[int] = None,
+        layer: str = "features",
     ) -> Path:
         """Write feature DataFrame to Parquet with atomic swap."""
         if df_features.empty:
@@ -510,11 +553,16 @@ class ParquetStorageManager:
         if "open_time_ms" not in df_features.columns:
             raise ValueError("Feature DataFrame must contain open_time_ms as reference timestamp")
 
-        target_path = self.get_partition_path("features", exchange, symbol, timeframe, year=year)
+        target_path = self.get_partition_path(layer, exchange, symbol, timeframe, year=year)
         lock = self._get_partition_lock(target_path.parent)
 
         with lock:
-            df_sorted = df_features.drop_duplicates(subset=["open_time_ms"], keep="last").sort_values(by="open_time_ms")
+            if target_path.exists():
+                df_existing = pd.read_parquet(target_path)
+                df_combined = pd.concat([df_existing, df_features], ignore_index=True)
+                df_sorted = df_combined.drop_duplicates(subset=["open_time_ms"], keep="last").sort_values(by="open_time_ms")
+            else:
+                df_sorted = df_features.drop_duplicates(subset=["open_time_ms"], keep="last").sort_values(by="open_time_ms")
             table = pa.Table.from_pandas(df_sorted, preserve_index=False)
             self._atomic_write_parquet(table, target_path)
             logger.info("Wrote %d feature rows to %s", len(table), target_path)
@@ -664,9 +712,10 @@ class ParquetStorageManager:
         timeframe: Timeframe,
         start_time_ms: Optional[int] = None,
         end_time_ms: Optional[int] = None,
+        layer: str = "features",
     ) -> pd.DataFrame:
         """Read engineered features as pandas DataFrame with optional time range filter."""
-        partition_dir = self.get_partition_dir("features", exchange, symbol, timeframe)
+        partition_dir = self.get_partition_dir(layer, exchange, symbol, timeframe)
         if not partition_dir.exists():
             return pd.DataFrame()
 

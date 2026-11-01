@@ -69,6 +69,55 @@ BASE_FEATURE_COLUMNS: List[str] = [
     "trend_state",
 ]
 
+# Approved stationary, scale-invariant research feature set (Phase 5.0 / 5.1 hygiene)
+RESEARCH_FEATURE_COLUMNS: List[str] = [
+    # Reference timestamps
+    "open_time_ms",
+    "close_time_ms",
+    # Price and Returns (scale-invariant, non-redundant)
+    "log_return",
+    "hl_range_pct",
+    "body_pct",
+    "upper_wick_pct",
+    "lower_wick_pct",
+    "clv",
+    # Trend distances and slopes (scale-invariant)
+    "price_dist_ema_9",
+    "price_dist_ema_21",
+    "price_dist_ema_50",
+    "price_dist_ema_100",
+    "price_dist_ema_200",
+    "ema_9_slope",
+    "ema_21_slope",
+    "ema_50_slope",
+    "ema_100_slope",
+    "ema_200_slope",
+    "crossover_9_21",
+    "crossover_21_50",
+    "crossover_50_200",
+    # Momentum (bounded oscillators)
+    "rsi_14",
+    "stoch_k",
+    "stoch_d",
+    "stoch_slow_d",
+    "roc_10",
+    # Volatility (scale-invariant)
+    "atr_14_pct",
+    "rolling_std_returns_20",
+    "bb_width_20",
+    "bb_pct_b_20",
+    "rolling_hl_range_20",
+    # Volume (relative ratios)
+    "rvol_20",
+    "vol_change",
+    "quote_rvol_20",
+    # Market Structure (normalized bounds and regime)
+    "donchian_breakout_dist",
+    "dist_from_high_20",
+    "dist_from_low_20",
+    "trend_state",
+]
+
 FEATURE_DESCRIPTIONS: Dict[str, str] = {
     "simple_return": "One-period simple return (close - prev_close) / prev_close",
     "log_return": "Natural logarithm of close ratio ln(close / prev_close)",

@@ -65,6 +65,8 @@ class HistoricalDataService:
         requested_end_ms: int,
         adapter: BaseExchangeAdapter,
         progress_callback: Optional[Callable[[int, int], Coroutine[Any, Any, None]]] = None,
+        use_year_partitioning: bool = False,
+        listing_start_time_ms: Optional[int] = None,
     ) -> HistoricalCollectionJob:
         """Create and execute an asynchronous historical download job."""
         job_id = f"JOB-{exchange.value}-{symbol.upper()}-{timeframe.value}-{int(time.time() * 1000)}"
@@ -98,7 +100,13 @@ class HistoricalDataService:
 
         # Execute download in background task on current loop
         task = asyncio.create_task(
-            self._execute_download_job(job, adapter, progress_callback)
+            self._execute_download_job(
+                job,
+                adapter,
+                progress_callback,
+                use_year_partitioning=use_year_partitioning,
+                listing_start_time_ms=listing_start_time_ms,
+            )
         )
         self._active_tasks[job_id] = task
         return job
@@ -112,6 +120,7 @@ class HistoricalDataService:
         max_lookback_days: int = 1095,
         current_time_ms: Optional[int] = None,
         progress_callback: Optional[Callable[[int, int], Coroutine[Any, Any, None]]] = None,
+        use_year_partitioning: bool = False,
     ) -> Optional[HistoricalCollectionJob]:
         """Perform REST historical backfill (up to 3 years) or incremental catch-up.
 
@@ -145,6 +154,7 @@ class HistoricalDataService:
                 requested_end_ms=now_ms,
                 adapter=adapter,
                 progress_callback=progress_callback,
+                use_year_partitioning=use_year_partitioning,
             )
         else:
             latest_open_time_ms = int(df_existing["open_time_ms"].max())
@@ -177,6 +187,7 @@ class HistoricalDataService:
                 requested_end_ms=now_ms,
                 adapter=adapter,
                 progress_callback=progress_callback,
+                use_year_partitioning=use_year_partitioning,
             )
 
     async def _execute_download_job(
@@ -184,6 +195,8 @@ class HistoricalDataService:
         job: HistoricalCollectionJob,
         adapter: BaseExchangeAdapter,
         progress_callback: Optional[Callable[[int, int], Coroutine[Any, Any, None]]] = None,
+        use_year_partitioning: bool = False,
+        listing_start_time_ms: Optional[int] = None,
     ) -> None:
         """Background runner for collection job."""
         try:
@@ -192,6 +205,8 @@ class HistoricalDataService:
                 job=job,
                 adapter=adapter,
                 progress_callback=progress_callback,
+                use_year_partitioning=use_year_partitioning,
+                listing_start_time_ms=listing_start_time_ms,
             )
             logger.info("Completed historical collection job %s", job.job_id)
         except asyncio.CancelledError:
@@ -222,6 +237,7 @@ class HistoricalDataService:
         exchange: Exchange,
         symbol: str,
         timeframe: Timeframe,
+        use_year_partitioning: bool = False,
     ) -> pd.DataFrame:
         """Compute single-timeframe features from canonical store and persist to Parquet."""
         df_canonical = self.storage.read_canonical(exchange, symbol, timeframe)
@@ -229,7 +245,31 @@ class HistoricalDataService:
             raise ValueError(f"No canonical data found for {exchange.value}:{symbol}:{timeframe.value}")
 
         df_features = self.feature_engine.compute_features(df_canonical)
-        self.storage.write_features(df_features, exchange, symbol, timeframe)
+        if use_year_partitioning:
+            self.storage.write_features_partitioned_by_year(df_features, exchange, symbol, timeframe, layer="features")
+        else:
+            self.storage.write_features(df_features, exchange, symbol, timeframe, layer="features")
+
+        # Materialize research-ready stationary feature set
+        try:
+            df_research = self.feature_engine.filter_research_features(df_features, warmup_bars=200)
+            if use_year_partitioning:
+                self.storage.write_features_partitioned_by_year(
+                    df_research, exchange, symbol, timeframe, layer="features_research"
+                )
+            else:
+                self.storage.write_features(
+                    df_research, exchange, symbol, timeframe, layer="features_research"
+                )
+        except Exception as e:
+            logger.warning(
+                "Could not filter research features for %s:%s:%s: %s",
+                exchange.value,
+                symbol,
+                timeframe.value,
+                e,
+            )
+
         return df_features
 
     async def build_multi_timeframe_dataset(

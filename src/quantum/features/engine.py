@@ -14,7 +14,7 @@ from quantum.features.indicators import (
     compute_rsi,
     compute_stochastic,
 )
-from quantum.features.schema import BASE_FEATURE_COLUMNS, FEATURE_SCHEMA_VERSION
+from quantum.features.schema import BASE_FEATURE_COLUMNS, FEATURE_SCHEMA_VERSION, RESEARCH_FEATURE_COLUMNS
 
 logger = get_logger("features.engine")
 
@@ -141,7 +141,10 @@ class FeatureEngine:
         vol_sma_20 = s_v.rolling(window=20, min_periods=20).mean().to_numpy()
         features["vol_sma_20"] = vol_sma_20
         features["rvol_20"] = v / (vol_sma_20 + eps)
-        features["vol_change"] = s_v.pct_change().to_numpy()
+        v_shift = s_v.shift(1)
+        raw_vol_change = np.where(v_shift > 0, (s_v - v_shift) / v_shift, 0.0).astype(float)
+        raw_vol_change[0] = np.nan
+        features["vol_change"] = raw_vol_change
 
         if qv is not None and not np.all(np.isnan(qv)):
             s_qv = pd.Series(qv)
@@ -181,3 +184,27 @@ class FeatureEngine:
 
         out_df = pd.DataFrame(features)
         return out_df
+
+    def filter_research_features(self, df_features: pd.DataFrame, warmup_bars: int = 200) -> pd.DataFrame:
+        """Apply Phase 5.0 feature hygiene: trim warm-up and retain stationary features."""
+        if df_features.empty:
+            return pd.DataFrame()
+
+        available_cols = [c for c in RESEARCH_FEATURE_COLUMNS if c in df_features.columns]
+        if len(df_features) <= warmup_bars:
+            raise ValueError(
+                f"Feature DataFrame has {len(df_features)} rows, insufficient to trim {warmup_bars} warm-up bars"
+            )
+
+        df_trimmed = df_features[available_cols].iloc[warmup_bars:].copy().reset_index(drop=True)
+
+        num_cols = df_trimmed.select_dtypes(include=[np.number]).columns
+        nan_count = int(df_trimmed[num_cols].isna().sum().sum())
+        if nan_count > 0:
+            raise ValueError(f"Research feature matrix contains {nan_count} unexpected NaNs after warm-up")
+
+        inf_count = int(np.isinf(df_trimmed[num_cols]).sum().sum())
+        if inf_count > 0:
+            raise ValueError(f"Research feature matrix contains {inf_count} infinite values")
+
+        return df_trimmed
