@@ -1,0 +1,1579 @@
+{
+  "title": "Paired B4 vs B0 Out-of-Fold Statistical Audit",
+  "phase": "5.3.3.5",
+  "description": "Paired difference metrics and empirical Moving Block Bootstrap results testing H0: BA_B4 - BA_B0 <= 0 across block lengths {12, 24, 48, 96}.",
+  "primary_block_length": 24,
+  "n_resamples": 10000,
+  "random_seed": 42,
+  "instruments": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "total_oof_samples": 130684,
+      "continuous_segments_count": 503,
+      "b4_pooled_ba": 0.433187,
+      "b0_pooled_ba": 0.332773,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.100414,
+      "relative_improvement_pct": 30.17,
+      "per_class_delta_recall": {
+        "SL": -0.173525,
+        "EXP": 0.383224,
+        "TP": 0.091543
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 125901,
+          "effective_blocks_per_resample": 10890,
+          "partial_block_remainder": 4,
+          "observed_b4_ba": 0.433187,
+          "observed_b0_ba": 0.332773,
+          "observed_paired_delta": 0.100414,
+          "bootstrap_mean_delta": 0.09966,
+          "bootstrap_std_error": 0.004275,
+          "ci_95_percentile": [
+            0.091395,
+            0.108182
+          ],
+          "null_distribution_mean": -0.0007539,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 121091,
+          "effective_blocks_per_resample": 5445,
+          "partial_block_remainder": 4,
+          "observed_b4_ba": 0.433187,
+          "observed_b0_ba": 0.332773,
+          "observed_paired_delta": 0.100414,
+          "bootstrap_mean_delta": 0.099731,
+          "bootstrap_std_error": 0.004521,
+          "ci_95_percentile": [
+            0.090766,
+            0.108663
+          ],
+          "null_distribution_mean": -0.00068273,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 112011,
+          "effective_blocks_per_resample": 2722,
+          "partial_block_remainder": 28,
+          "observed_b4_ba": 0.433187,
+          "observed_b0_ba": 0.332773,
+          "observed_paired_delta": 0.100414,
+          "bootstrap_mean_delta": 0.100409,
+          "bootstrap_std_error": 0.00467,
+          "ci_95_percentile": [
+            0.091263,
+            0.1095
+          ],
+          "null_distribution_mean": -4.91e-06,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 95822,
+          "effective_blocks_per_resample": 1361,
+          "partial_block_remainder": 28,
+          "observed_b4_ba": 0.433187,
+          "observed_b0_ba": 0.332773,
+          "observed_paired_delta": 0.100414,
+          "bootstrap_mean_delta": 0.101089,
+          "bootstrap_std_error": 0.004744,
+          "ci_95_percentile": [
+            0.091907,
+            0.11036
+          ],
+          "null_distribution_mean": 0.00067479,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 121091,
+        "effective_blocks_per_resample": 5445,
+        "partial_block_remainder": 4,
+        "observed_b4_ba": 0.433187,
+        "observed_b0_ba": 0.332773,
+        "observed_paired_delta": 0.100414,
+        "bootstrap_mean_delta": 0.099731,
+        "bootstrap_std_error": 0.004521,
+        "ci_95_percentile": [
+          0.090766,
+          0.108663
+        ],
+        "null_distribution_mean": -0.00068273,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "total_oof_samples": 130728,
+      "continuous_segments_count": 562,
+      "b4_pooled_ba": 0.45713,
+      "b0_pooled_ba": 0.330614,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.126517,
+      "relative_improvement_pct": 38.27,
+      "per_class_delta_recall": {
+        "SL": 0.062676,
+        "EXP": 0.464057,
+        "TP": -0.147182
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 125437,
+          "effective_blocks_per_resample": 10894,
+          "partial_block_remainder": 0,
+          "observed_b4_ba": 0.45713,
+          "observed_b0_ba": 0.330614,
+          "observed_paired_delta": 0.126517,
+          "bootstrap_mean_delta": 0.125126,
+          "bootstrap_std_error": 0.004188,
+          "ci_95_percentile": [
+            0.116872,
+            0.133317
+          ],
+          "null_distribution_mean": -0.00139044,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 120217,
+          "effective_blocks_per_resample": 5447,
+          "partial_block_remainder": 0,
+          "observed_b4_ba": 0.45713,
+          "observed_b0_ba": 0.330614,
+          "observed_paired_delta": 0.126517,
+          "bootstrap_mean_delta": 0.124895,
+          "bootstrap_std_error": 0.00438,
+          "ci_95_percentile": [
+            0.11626,
+            0.133468
+          ],
+          "null_distribution_mean": -0.00162146,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 110639,
+          "effective_blocks_per_resample": 2723,
+          "partial_block_remainder": 24,
+          "observed_b4_ba": 0.45713,
+          "observed_b0_ba": 0.330614,
+          "observed_paired_delta": 0.126517,
+          "bootstrap_mean_delta": 0.126034,
+          "bootstrap_std_error": 0.004448,
+          "ci_95_percentile": [
+            0.117319,
+            0.134887
+          ],
+          "null_distribution_mean": -0.00048298,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 94238,
+          "effective_blocks_per_resample": 1361,
+          "partial_block_remainder": 72,
+          "observed_b4_ba": 0.45713,
+          "observed_b0_ba": 0.330614,
+          "observed_paired_delta": 0.126517,
+          "bootstrap_mean_delta": 0.127581,
+          "bootstrap_std_error": 0.004509,
+          "ci_95_percentile": [
+            0.118663,
+            0.136415
+          ],
+          "null_distribution_mean": 0.00106409,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 120217,
+        "effective_blocks_per_resample": 5447,
+        "partial_block_remainder": 0,
+        "observed_b4_ba": 0.45713,
+        "observed_b0_ba": 0.330614,
+        "observed_paired_delta": 0.126517,
+        "bootstrap_mean_delta": 0.124895,
+        "bootstrap_std_error": 0.00438,
+        "ci_95_percentile": [
+          0.11626,
+          0.133468
+        ],
+        "null_distribution_mean": -0.00162146,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    },
+    "BNBUSDT": {
+      "symbol": "BNBUSDT",
+      "total_oof_samples": 130847,
+      "continuous_segments_count": 365,
+      "b4_pooled_ba": 0.466677,
+      "b0_pooled_ba": 0.333333,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.133344,
+      "relative_improvement_pct": 40.0,
+      "per_class_delta_recall": {
+        "SL": 0.55799,
+        "EXP": 0.477626,
+        "TP": -0.635585
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 127329,
+          "effective_blocks_per_resample": 10903,
+          "partial_block_remainder": 11,
+          "observed_b4_ba": 0.466677,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.133344,
+          "bootstrap_mean_delta": 0.133017,
+          "bootstrap_std_error": 0.003706,
+          "ci_95_percentile": [
+            0.125573,
+            0.140269
+          ],
+          "null_distribution_mean": -0.00032675,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 123738,
+          "effective_blocks_per_resample": 5451,
+          "partial_block_remainder": 23,
+          "observed_b4_ba": 0.466677,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.133344,
+          "bootstrap_mean_delta": 0.133923,
+          "bootstrap_std_error": 0.004199,
+          "ci_95_percentile": [
+            0.125669,
+            0.142136
+          ],
+          "null_distribution_mean": 0.0005794,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 117039,
+          "effective_blocks_per_resample": 2725,
+          "partial_block_remainder": 47,
+          "observed_b4_ba": 0.466677,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.133344,
+          "bootstrap_mean_delta": 0.136341,
+          "bootstrap_std_error": 0.004588,
+          "ci_95_percentile": [
+            0.127217,
+            0.145369
+          ],
+          "null_distribution_mean": 0.002997,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 104796,
+          "effective_blocks_per_resample": 1362,
+          "partial_block_remainder": 95,
+          "observed_b4_ba": 0.466677,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.133344,
+          "bootstrap_mean_delta": 0.139596,
+          "bootstrap_std_error": 0.005158,
+          "ci_95_percentile": [
+            0.129209,
+            0.149649
+          ],
+          "null_distribution_mean": 0.00625197,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 123738,
+        "effective_blocks_per_resample": 5451,
+        "partial_block_remainder": 23,
+        "observed_b4_ba": 0.466677,
+        "observed_b0_ba": 0.333333,
+        "observed_paired_delta": 0.133344,
+        "bootstrap_mean_delta": 0.133923,
+        "bootstrap_std_error": 0.004199,
+        "ci_95_percentile": [
+          0.125669,
+          0.142136
+        ],
+        "null_distribution_mean": 0.0005794,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    },
+    "XRPUSDT": {
+      "symbol": "XRPUSDT",
+      "total_oof_samples": 130600,
+      "continuous_segments_count": 445,
+      "b4_pooled_ba": 0.428589,
+      "b0_pooled_ba": 0.334817,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.093771,
+      "relative_improvement_pct": 28.01,
+      "per_class_delta_recall": {
+        "SL": 0.378407,
+        "EXP": 0.320346,
+        "TP": -0.417438
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 126441,
+          "effective_blocks_per_resample": 10883,
+          "partial_block_remainder": 4,
+          "observed_b4_ba": 0.428589,
+          "observed_b0_ba": 0.334817,
+          "observed_paired_delta": 0.093771,
+          "bootstrap_mean_delta": 0.09402,
+          "bootstrap_std_error": 0.003858,
+          "ci_95_percentile": [
+            0.086566,
+            0.101634
+          ],
+          "null_distribution_mean": 0.00024809,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 122345,
+          "effective_blocks_per_resample": 5441,
+          "partial_block_remainder": 16,
+          "observed_b4_ba": 0.428589,
+          "observed_b0_ba": 0.334817,
+          "observed_paired_delta": 0.093771,
+          "bootstrap_mean_delta": 0.094202,
+          "bootstrap_std_error": 0.004268,
+          "ci_95_percentile": [
+            0.086009,
+            0.10257
+          ],
+          "null_distribution_mean": 0.00043063,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 114719,
+          "effective_blocks_per_resample": 2720,
+          "partial_block_remainder": 40,
+          "observed_b4_ba": 0.428589,
+          "observed_b0_ba": 0.334817,
+          "observed_paired_delta": 0.093771,
+          "bootstrap_mean_delta": 0.095649,
+          "bootstrap_std_error": 0.00465,
+          "ci_95_percentile": [
+            0.086722,
+            0.104771
+          ],
+          "null_distribution_mean": 0.00187706,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 101623,
+          "effective_blocks_per_resample": 1360,
+          "partial_block_remainder": 40,
+          "observed_b4_ba": 0.428589,
+          "observed_b0_ba": 0.334817,
+          "observed_paired_delta": 0.093771,
+          "bootstrap_mean_delta": 0.097701,
+          "bootstrap_std_error": 0.005144,
+          "ci_95_percentile": [
+            0.087695,
+            0.107747
+          ],
+          "null_distribution_mean": 0.00392919,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 122345,
+        "effective_blocks_per_resample": 5441,
+        "partial_block_remainder": 16,
+        "observed_b4_ba": 0.428589,
+        "observed_b0_ba": 0.334817,
+        "observed_paired_delta": 0.093771,
+        "bootstrap_mean_delta": 0.094202,
+        "bootstrap_std_error": 0.004268,
+        "ci_95_percentile": [
+          0.086009,
+          0.10257
+        ],
+        "null_distribution_mean": 0.00043063,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    },
+    "ADAUSDT": {
+      "symbol": "ADAUSDT",
+      "total_oof_samples": 130483,
+      "continuous_segments_count": 372,
+      "b4_pooled_ba": 0.468513,
+      "b0_pooled_ba": 0.333333,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.13518,
+      "relative_improvement_pct": 40.55,
+      "per_class_delta_recall": {
+        "SL": 0.347001,
+        "EXP": 0.682992,
+        "TP": -0.624454
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 127118,
+          "effective_blocks_per_resample": 10873,
+          "partial_block_remainder": 7,
+          "observed_b4_ba": 0.468513,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.13518,
+          "bootstrap_mean_delta": 0.132831,
+          "bootstrap_std_error": 0.002717,
+          "ci_95_percentile": [
+            0.127482,
+            0.13814
+          ],
+          "null_distribution_mean": -0.00234873,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 123895,
+          "effective_blocks_per_resample": 5436,
+          "partial_block_remainder": 19,
+          "observed_b4_ba": 0.468513,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.13518,
+          "bootstrap_mean_delta": 0.13137,
+          "bootstrap_std_error": 0.00294,
+          "ci_95_percentile": [
+            0.125559,
+            0.137066
+          ],
+          "null_distribution_mean": -0.00380973,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 118140,
+          "effective_blocks_per_resample": 2718,
+          "partial_block_remainder": 19,
+          "observed_b4_ba": 0.468513,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.13518,
+          "bootstrap_mean_delta": 0.12947,
+          "bootstrap_std_error": 0.003139,
+          "ci_95_percentile": [
+            0.123268,
+            0.135529
+          ],
+          "null_distribution_mean": -0.0057099,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 108934,
+          "effective_blocks_per_resample": 1359,
+          "partial_block_remainder": 19,
+          "observed_b4_ba": 0.468513,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.13518,
+          "bootstrap_mean_delta": 0.128253,
+          "bootstrap_std_error": 0.003399,
+          "ci_95_percentile": [
+            0.121516,
+            0.13483
+          ],
+          "null_distribution_mean": -0.00692655,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 123895,
+        "effective_blocks_per_resample": 5436,
+        "partial_block_remainder": 19,
+        "observed_b4_ba": 0.468513,
+        "observed_b0_ba": 0.333333,
+        "observed_paired_delta": 0.13518,
+        "bootstrap_mean_delta": 0.13137,
+        "bootstrap_std_error": 0.00294,
+        "ci_95_percentile": [
+          0.125559,
+          0.137066
+        ],
+        "null_distribution_mean": -0.00380973,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    },
+    "SOLUSDT": {
+      "symbol": "SOLUSDT",
+      "total_oof_samples": 130808,
+      "continuous_segments_count": 516,
+      "b4_pooled_ba": 0.439965,
+      "b0_pooled_ba": 0.333333,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.106631,
+      "relative_improvement_pct": 31.99,
+      "per_class_delta_recall": {
+        "SL": -0.646186,
+        "EXP": 0.36781,
+        "TP": 0.59827
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 125925,
+          "effective_blocks_per_resample": 10900,
+          "partial_block_remainder": 8,
+          "observed_b4_ba": 0.439965,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.106631,
+          "bootstrap_mean_delta": 0.106696,
+          "bootstrap_std_error": 0.004194,
+          "ci_95_percentile": [
+            0.098426,
+            0.114685
+          ],
+          "null_distribution_mean": 6.484e-05,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 121073,
+          "effective_blocks_per_resample": 5450,
+          "partial_block_remainder": 8,
+          "observed_b4_ba": 0.439965,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.106631,
+          "bootstrap_mean_delta": 0.107528,
+          "bootstrap_std_error": 0.004639,
+          "ci_95_percentile": [
+            0.098474,
+            0.116582
+          ],
+          "null_distribution_mean": 0.00089653,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 112110,
+          "effective_blocks_per_resample": 2725,
+          "partial_block_remainder": 8,
+          "observed_b4_ba": 0.439965,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.106631,
+          "bootstrap_mean_delta": 0.111298,
+          "bootstrap_std_error": 0.005009,
+          "ci_95_percentile": [
+            0.10124,
+            0.121106
+          ],
+          "null_distribution_mean": 0.00466629,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 96246,
+          "effective_blocks_per_resample": 1362,
+          "partial_block_remainder": 56,
+          "observed_b4_ba": 0.439965,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.106631,
+          "bootstrap_mean_delta": 0.11694,
+          "bootstrap_std_error": 0.005299,
+          "ci_95_percentile": [
+            0.106285,
+            0.127147
+          ],
+          "null_distribution_mean": 0.0103091,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 121073,
+        "effective_blocks_per_resample": 5450,
+        "partial_block_remainder": 8,
+        "observed_b4_ba": 0.439965,
+        "observed_b0_ba": 0.333333,
+        "observed_paired_delta": 0.106631,
+        "bootstrap_mean_delta": 0.107528,
+        "bootstrap_std_error": 0.004639,
+        "ci_95_percentile": [
+          0.098474,
+          0.116582
+        ],
+        "null_distribution_mean": 0.00089653,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    },
+    "AVAXUSDT": {
+      "symbol": "AVAXUSDT",
+      "total_oof_samples": 130818,
+      "continuous_segments_count": 216,
+      "b4_pooled_ba": 0.452262,
+      "b0_pooled_ba": 0.333333,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.118928,
+      "relative_improvement_pct": 35.68,
+      "per_class_delta_recall": {
+        "SL": -0.575894,
+        "EXP": 0.581727,
+        "TP": 0.350951
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 128731,
+          "effective_blocks_per_resample": 10901,
+          "partial_block_remainder": 6,
+          "observed_b4_ba": 0.452262,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.118928,
+          "bootstrap_mean_delta": 0.117988,
+          "bootstrap_std_error": 0.002788,
+          "ci_95_percentile": [
+            0.112562,
+            0.123481
+          ],
+          "null_distribution_mean": -0.00094065,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 126653,
+          "effective_blocks_per_resample": 5450,
+          "partial_block_remainder": 18,
+          "observed_b4_ba": 0.452262,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.118928,
+          "bootstrap_mean_delta": 0.117629,
+          "bootstrap_std_error": 0.003117,
+          "ci_95_percentile": [
+            0.11151,
+            0.123708
+          ],
+          "null_distribution_mean": -0.00129945,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 122829,
+          "effective_blocks_per_resample": 2725,
+          "partial_block_remainder": 18,
+          "observed_b4_ba": 0.452262,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.118928,
+          "bootstrap_mean_delta": 0.117147,
+          "bootstrap_std_error": 0.003411,
+          "ci_95_percentile": [
+            0.110479,
+            0.123854
+          ],
+          "null_distribution_mean": -0.00178095,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 116173,
+          "effective_blocks_per_resample": 1362,
+          "partial_block_remainder": 66,
+          "observed_b4_ba": 0.452262,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.118928,
+          "bootstrap_mean_delta": 0.116032,
+          "bootstrap_std_error": 0.0037,
+          "ci_95_percentile": [
+            0.108844,
+            0.123149
+          ],
+          "null_distribution_mean": -0.00289656,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 126653,
+        "effective_blocks_per_resample": 5450,
+        "partial_block_remainder": 18,
+        "observed_b4_ba": 0.452262,
+        "observed_b0_ba": 0.333333,
+        "observed_paired_delta": 0.118928,
+        "bootstrap_mean_delta": 0.117629,
+        "bootstrap_std_error": 0.003117,
+        "ci_95_percentile": [
+          0.11151,
+          0.123708
+        ],
+        "null_distribution_mean": -0.00129945,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    },
+    "LINKUSDT": {
+      "symbol": "LINKUSDT",
+      "total_oof_samples": 130777,
+      "continuous_segments_count": 177,
+      "b4_pooled_ba": 0.498942,
+      "b0_pooled_ba": 0.333333,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.165608,
+      "relative_improvement_pct": 49.68,
+      "per_class_delta_recall": {
+        "SL": -0.623689,
+        "EXP": 0.712907,
+        "TP": 0.407607
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 129148,
+          "effective_blocks_per_resample": 10898,
+          "partial_block_remainder": 1,
+          "observed_b4_ba": 0.498942,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.165608,
+          "bootstrap_mean_delta": 0.165069,
+          "bootstrap_std_error": 0.002558,
+          "ci_95_percentile": [
+            0.160032,
+            0.170066
+          ],
+          "null_distribution_mean": -0.00053929,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 127533,
+          "effective_blocks_per_resample": 5449,
+          "partial_block_remainder": 1,
+          "observed_b4_ba": 0.498942,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.165608,
+          "bootstrap_mean_delta": 0.164617,
+          "bootstrap_std_error": 0.002867,
+          "ci_95_percentile": [
+            0.158918,
+            0.170243
+          ],
+          "null_distribution_mean": -0.00099108,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 124464,
+          "effective_blocks_per_resample": 2724,
+          "partial_block_remainder": 25,
+          "observed_b4_ba": 0.498942,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.165608,
+          "bootstrap_mean_delta": 0.164285,
+          "bootstrap_std_error": 0.003176,
+          "ci_95_percentile": [
+            0.157989,
+            0.170458
+          ],
+          "null_distribution_mean": -0.00132308,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 118706,
+          "effective_blocks_per_resample": 1362,
+          "partial_block_remainder": 25,
+          "observed_b4_ba": 0.498942,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.165608,
+          "bootstrap_mean_delta": 0.163684,
+          "bootstrap_std_error": 0.003682,
+          "ci_95_percentile": [
+            0.156475,
+            0.170838
+          ],
+          "null_distribution_mean": -0.00192435,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 127533,
+        "effective_blocks_per_resample": 5449,
+        "partial_block_remainder": 1,
+        "observed_b4_ba": 0.498942,
+        "observed_b0_ba": 0.333333,
+        "observed_paired_delta": 0.165608,
+        "bootstrap_mean_delta": 0.164617,
+        "bootstrap_std_error": 0.002867,
+        "ci_95_percentile": [
+          0.158918,
+          0.170243
+        ],
+        "null_distribution_mean": -0.00099108,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    },
+    "DOGEUSDT": {
+      "symbol": "DOGEUSDT",
+      "total_oof_samples": 130648,
+      "continuous_segments_count": 448,
+      "b4_pooled_ba": 0.489942,
+      "b0_pooled_ba": 0.335793,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.154149,
+      "relative_improvement_pct": 45.91,
+      "per_class_delta_recall": {
+        "SL": 0.276626,
+        "EXP": 0.566509,
+        "TP": -0.380686
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 126363,
+          "effective_blocks_per_resample": 10887,
+          "partial_block_remainder": 4,
+          "observed_b4_ba": 0.489942,
+          "observed_b0_ba": 0.335793,
+          "observed_paired_delta": 0.154149,
+          "bootstrap_mean_delta": 0.153456,
+          "bootstrap_std_error": 0.003542,
+          "ci_95_percentile": [
+            0.146528,
+            0.160246
+          ],
+          "null_distribution_mean": -0.00069381,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 122128,
+          "effective_blocks_per_resample": 5443,
+          "partial_block_remainder": 16,
+          "observed_b4_ba": 0.489942,
+          "observed_b0_ba": 0.335793,
+          "observed_paired_delta": 0.154149,
+          "bootstrap_mean_delta": 0.153578,
+          "bootstrap_std_error": 0.003864,
+          "ci_95_percentile": [
+            0.146002,
+            0.161182
+          ],
+          "null_distribution_mean": -0.00057103,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 114247,
+          "effective_blocks_per_resample": 2721,
+          "partial_block_remainder": 40,
+          "observed_b4_ba": 0.489942,
+          "observed_b0_ba": 0.335793,
+          "observed_paired_delta": 0.154149,
+          "bootstrap_mean_delta": 0.153906,
+          "bootstrap_std_error": 0.004096,
+          "ci_95_percentile": [
+            0.145954,
+            0.161883
+          ],
+          "null_distribution_mean": -0.00024311,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 100540,
+          "effective_blocks_per_resample": 1360,
+          "partial_block_remainder": 88,
+          "observed_b4_ba": 0.489942,
+          "observed_b0_ba": 0.335793,
+          "observed_paired_delta": 0.154149,
+          "bootstrap_mean_delta": 0.154172,
+          "bootstrap_std_error": 0.004079,
+          "ci_95_percentile": [
+            0.146218,
+            0.162096
+          ],
+          "null_distribution_mean": 2.265e-05,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 122128,
+        "effective_blocks_per_resample": 5443,
+        "partial_block_remainder": 16,
+        "observed_b4_ba": 0.489942,
+        "observed_b0_ba": 0.335793,
+        "observed_paired_delta": 0.154149,
+        "bootstrap_mean_delta": 0.153578,
+        "bootstrap_std_error": 0.003864,
+        "ci_95_percentile": [
+          0.146002,
+          0.161182
+        ],
+        "null_distribution_mean": -0.00057103,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    },
+    "LTCUSDT": {
+      "symbol": "LTCUSDT",
+      "total_oof_samples": 130463,
+      "continuous_segments_count": 299,
+      "b4_pooled_ba": 0.485102,
+      "b0_pooled_ba": 0.333333,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.151769,
+      "relative_improvement_pct": 45.53,
+      "per_class_delta_recall": {
+        "SL": 0.404121,
+        "EXP": 0.629461,
+        "TP": -0.578275
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 127641,
+          "effective_blocks_per_resample": 10871,
+          "partial_block_remainder": 11,
+          "observed_b4_ba": 0.485102,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.151769,
+          "bootstrap_mean_delta": 0.151017,
+          "bootstrap_std_error": 0.002804,
+          "ci_95_percentile": [
+            0.145511,
+            0.156501
+          ],
+          "null_distribution_mean": -0.00075225,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 124902,
+          "effective_blocks_per_resample": 5435,
+          "partial_block_remainder": 23,
+          "observed_b4_ba": 0.485102,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.151769,
+          "bootstrap_mean_delta": 0.150931,
+          "bootstrap_std_error": 0.003181,
+          "ci_95_percentile": [
+            0.144576,
+            0.157176
+          ],
+          "null_distribution_mean": -0.00083823,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 119884,
+          "effective_blocks_per_resample": 2717,
+          "partial_block_remainder": 47,
+          "observed_b4_ba": 0.485102,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.151769,
+          "bootstrap_mean_delta": 0.151327,
+          "bootstrap_std_error": 0.003548,
+          "ci_95_percentile": [
+            0.144315,
+            0.1582
+          ],
+          "null_distribution_mean": -0.00044147,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 111155,
+          "effective_blocks_per_resample": 1358,
+          "partial_block_remainder": 95,
+          "observed_b4_ba": 0.485102,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.151769,
+          "bootstrap_mean_delta": 0.151879,
+          "bootstrap_std_error": 0.004062,
+          "ci_95_percentile": [
+            0.14397,
+            0.15986
+          ],
+          "null_distribution_mean": 0.00011047,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 124902,
+        "effective_blocks_per_resample": 5435,
+        "partial_block_remainder": 23,
+        "observed_b4_ba": 0.485102,
+        "observed_b0_ba": 0.333333,
+        "observed_paired_delta": 0.151769,
+        "bootstrap_mean_delta": 0.150931,
+        "bootstrap_std_error": 0.003181,
+        "ci_95_percentile": [
+          0.144576,
+          0.157176
+        ],
+        "null_distribution_mean": -0.00083823,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    },
+    "XMRUSDT": {
+      "symbol": "XMRUSDT",
+      "total_oof_samples": 15252,
+      "continuous_segments_count": 18,
+      "b4_pooled_ba": 0.38676,
+      "b0_pooled_ba": 0.333333,
+      "theoretical_one_third_reference": 0.3333333333333333,
+      "absolute_paired_improvement": 0.053427,
+      "relative_improvement_pct": 16.03,
+      "per_class_delta_recall": {
+        "SL": 0.434796,
+        "EXP": 0.294275,
+        "TP": -0.568791
+      },
+      "bootstrap_results_by_block_length": {
+        "b_12": {
+          "block_length": 12,
+          "n_resamples": 10000,
+          "random_seed": 54,
+          "candidate_blocks": 15063,
+          "effective_blocks_per_resample": 1271,
+          "partial_block_remainder": 0,
+          "observed_b4_ba": 0.38676,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.053427,
+          "bootstrap_mean_delta": 0.053264,
+          "bootstrap_std_error": 0.008618,
+          "ci_95_percentile": [
+            0.036298,
+            0.069962
+          ],
+          "null_distribution_mean": -0.00016242,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_24": {
+          "block_length": 24,
+          "n_resamples": 10000,
+          "random_seed": 66,
+          "candidate_blocks": 14859,
+          "effective_blocks_per_resample": 635,
+          "partial_block_remainder": 12,
+          "observed_b4_ba": 0.38676,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.053427,
+          "bootstrap_mean_delta": 0.053385,
+          "bootstrap_std_error": 0.009111,
+          "ci_95_percentile": [
+            0.035825,
+            0.071202
+          ],
+          "null_distribution_mean": -4.15e-05,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_48": {
+          "block_length": 48,
+          "n_resamples": 10000,
+          "random_seed": 90,
+          "candidate_blocks": 14451,
+          "effective_blocks_per_resample": 317,
+          "partial_block_remainder": 36,
+          "observed_b4_ba": 0.38676,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.053427,
+          "bootstrap_mean_delta": 0.053563,
+          "bootstrap_std_error": 0.009688,
+          "ci_95_percentile": [
+            0.034789,
+            0.072469
+          ],
+          "null_distribution_mean": 0.00013654,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        },
+        "b_96": {
+          "block_length": 96,
+          "n_resamples": 10000,
+          "random_seed": 138,
+          "candidate_blocks": 13664,
+          "effective_blocks_per_resample": 158,
+          "partial_block_remainder": 84,
+          "observed_b4_ba": 0.38676,
+          "observed_b0_ba": 0.333333,
+          "observed_paired_delta": 0.053427,
+          "bootstrap_mean_delta": 0.054048,
+          "bootstrap_std_error": 0.01006,
+          "ci_95_percentile": [
+            0.03467,
+            0.073985
+          ],
+          "null_distribution_mean": 0.00062187,
+          "null_exceed_count": 0,
+          "raw_p_value_numeric": 0.0001,
+          "p_value_display": "p < 1/10001 (p < 0.000100)",
+          "is_upper_bound_reporting": true,
+          "is_statistically_significant_05": true
+        }
+      },
+      "primary_result_b24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 66,
+        "candidate_blocks": 14859,
+        "effective_blocks_per_resample": 635,
+        "partial_block_remainder": 12,
+        "observed_b4_ba": 0.38676,
+        "observed_b0_ba": 0.333333,
+        "observed_paired_delta": 0.053427,
+        "bootstrap_mean_delta": 0.053385,
+        "bootstrap_std_error": 0.009111,
+        "ci_95_percentile": [
+          0.035825,
+          0.071202
+        ],
+        "null_distribution_mean": -4.15e-05,
+        "null_exceed_count": 0,
+        "raw_p_value_numeric": 0.0001,
+        "p_value_display": "p < 1/10001 (p < 0.000100)",
+        "is_upper_bound_reporting": true,
+        "is_statistically_significant_05": true
+      }
+    }
+  },
+  "holm_bonferroni_family_b24": {
+    "family_size": 11,
+    "significance_level": 0.05,
+    "all_rejected": true,
+    "evaluations": [
+      {
+        "rank": 1,
+        "symbol": "LINKUSDT",
+        "observed_paired_delta": 0.165608,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.004545,
+        "holm_adjusted_p_value": 0.0011,
+        "h0_rejected_significant": true
+      },
+      {
+        "rank": 2,
+        "symbol": "DOGEUSDT",
+        "observed_paired_delta": 0.154149,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.005,
+        "holm_adjusted_p_value": 0.001,
+        "h0_rejected_significant": true
+      },
+      {
+        "rank": 3,
+        "symbol": "LTCUSDT",
+        "observed_paired_delta": 0.151769,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.005556,
+        "holm_adjusted_p_value": 0.0009,
+        "h0_rejected_significant": true
+      },
+      {
+        "rank": 4,
+        "symbol": "ADAUSDT",
+        "observed_paired_delta": 0.13518,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.00625,
+        "holm_adjusted_p_value": 0.0008,
+        "h0_rejected_significant": true
+      },
+      {
+        "rank": 5,
+        "symbol": "BNBUSDT",
+        "observed_paired_delta": 0.133344,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.007143,
+        "holm_adjusted_p_value": 0.0007,
+        "h0_rejected_significant": true
+      },
+      {
+        "rank": 6,
+        "symbol": "ETHUSDT",
+        "observed_paired_delta": 0.126517,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.008333,
+        "holm_adjusted_p_value": 0.0006,
+        "h0_rejected_significant": true
+      },
+      {
+        "rank": 7,
+        "symbol": "AVAXUSDT",
+        "observed_paired_delta": 0.118928,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.01,
+        "holm_adjusted_p_value": 0.0005,
+        "h0_rejected_significant": true
+      },
+      {
+        "rank": 8,
+        "symbol": "SOLUSDT",
+        "observed_paired_delta": 0.106631,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.0125,
+        "holm_adjusted_p_value": 0.0004,
+        "h0_rejected_significant": true
+      },
+      {
+        "rank": 9,
+        "symbol": "BTCUSDT",
+        "observed_paired_delta": 0.100414,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.016667,
+        "holm_adjusted_p_value": 0.0003,
+        "h0_rejected_significant": true
+      },
+      {
+        "rank": 10,
+        "symbol": "XRPUSDT",
+        "observed_paired_delta": 0.093771,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.025,
+        "holm_adjusted_p_value": 0.0002,
+        "h0_rejected_significant": true
+      },
+      {
+        "rank": 11,
+        "symbol": "XMRUSDT",
+        "observed_paired_delta": 0.053427,
+        "raw_p_value_bound": "p < 1/10001 (p < 0.000100)",
+        "raw_p_value_numeric": 0.0001,
+        "step_down_alpha_threshold": 0.05,
+        "holm_adjusted_p_value": 0.0001,
+        "h0_rejected_significant": true
+      }
+    ]
+  }
+}

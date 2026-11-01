@@ -1,0 +1,45 @@
+{
+  "phase": "5.3.3.6",
+  "title": "Final OOF Population & Bootstrap Implementation Verification Manifest",
+  "created_at_utc": "2026-11-01 22:48:00 UTC",
+  "fleet_total_oof_observations": 1322108,
+  "verdict": "PHASE_5_3_3_6_PASS",
+  "phase_5_4_gate_status": "HOLD",
+  "files": {
+    "oof_population_audit.json": {
+      "path": "artifacts/phase_5_3_3_6/oof_population_audit.json",
+      "sha256": "9ebc3fa04a7a218bc647390a40fc6f3b9722ac8545f11f419e0dc6d39ef1948c",
+      "bytes": 18918
+    },
+    "bootstrap_implementation_audit.json": {
+      "path": "artifacts/phase_5_3_3_6/bootstrap_implementation_audit.json",
+      "sha256": "8bed87dbbef2067df7f002c5ccb17296a07aa58609cb06c52e260b5cd6e5fff9",
+      "bytes": 67019
+    },
+    "PHASE_5_3_3_6_OOF_POPULATION_AUDIT.md": {
+      "path": "docs/PHASE_5_3_3_6_OOF_POPULATION_AUDIT.md",
+      "sha256": "b53b7df8c44301107d940256d1c33fb075abea782cf92899cc0f3746fd9e83ca",
+      "bytes": 22662
+    },
+    "PHASE_5_3_3_6_BOOTSTRAP_IMPLEMENTATION_AUDIT.md": {
+      "path": "docs/PHASE_5_3_3_6_BOOTSTRAP_IMPLEMENTATION_AUDIT.md",
+      "sha256": "5b56703391e45c53e5d5f9c2674351795c51bbff7853cb73b7cd65388655bf6a",
+      "bytes": 23104
+    },
+    "PHASE_5_3_3_6_FINAL_REPORT.md": {
+      "path": "docs/PHASE_5_3_3_6_FINAL_REPORT.md",
+      "sha256": "24a73652d0df239089f9ddb4f9ff38f392965ab28d1dc5559ceaf2c9f968afb5",
+      "bytes": 10532
+    },
+    "run_phase5_3_3_6_verification_audit.py": {
+      "path": "scripts/run_phase5_3_3_6_verification_audit.py",
+      "sha256": "9348011a5d9c446c1575dcb700aa2e8d4119b694fc75df365807ccb3ac602181",
+      "bytes": 23033
+    },
+    "test_phase5_3_3_6_verification.py": {
+      "path": "tests/unit/test_phase5_3_3_6_verification.py",
+      "sha256": "6d4991b124514263e222d7d53e759e41bc60180ae48a3a645da5dbfeac3c6f4a",
+      "bytes": 11168
+    }
+  }
+}

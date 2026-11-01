@@ -1,0 +1,2770 @@
+{
+  "manifest_version": "5.3.7.1_COMPLETE",
+  "title": "QUANTUM Phase 5.3 Complete Frozen Artifact Manifest",
+  "description": "Exhaustive cryptographic inventory of all model binaries, preprocessors, predictions, evaluations, and audit artifacts across Phase 5.3.",
+  "governance_verdict": "PHASE_5_3_FREEZE_COMPLETE",
+  "total_artifacts_cataloged": 304,
+  "category_summary": {
+    "model_binary": 55,
+    "evaluation_metrics": 55,
+    "preprocessor": 55,
+    "metadata_manifest": 12,
+    "integrity_manifest": 27,
+    "supporting_audit_artifact": 88,
+    "benchmark_catalog": 2,
+    "bootstrap_audit": 6,
+    "population_audit": 2,
+    "paired_audit": 2
+  },
+  "phase_summary": {
+    "Phase 5.3.1 Pilot": 31,
+    "Phase 5.3.2 Expanded Fleet": 228,
+    "Phase 5.3.3 Master Benchmark Audit": 8,
+    "Phase 5.3.3.1 Final Benchmark Correction": 8,
+    "Phase 5.3.3.2 Independent Statistical Verification": 6,
+    "Phase 5.3.3.3 Empirical OOF Resampling": 9,
+    "Phase 5.3.3.4 Metric Reconciliation": 8,
+    "Phase 5.3.3.5 Paired B4-B0 Audit": 3,
+    "Phase 5.3.3.6 Final Population & Bootstrap Audit": 3
+  },
+  "model_binaries_count": 55,
+  "preprocessors_count": 55,
+  "artifacts": [
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1070060,
+      "sha256": "14438c40eb5849000198775030fd26f32f6c2026f326f068bef7f5c3f6ea161f",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5160,
+      "sha256": "dc225c93e4f5b2e4e557fac69ff15508e52e2b748ff0b6a5b69df2a9aa7e08ab",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "6c18948f64d750cc36a90fdac46727a183c0e789a4161cc0577b461ec88a0831",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1072764,
+      "sha256": "4a8ebc9dfa20fbc35c3922904495325064acfaeec92beda25ca56fc5a366db29",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5152,
+      "sha256": "a426136991ad3c51cefa722275a4bf77a6ecd3a42c397bc86687d14a95e45741",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "5542d14c89e55c027daa793f784aa1984577f1b4e0713a821c0034e74a91f78a",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1074060,
+      "sha256": "1c41ed6ad7c8269bf83c9c58c50fb5ef419287efc8b5d6cc61ca67299b0290fc",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5157,
+      "sha256": "a9dac0c22637f3818d983078c02fadf06d42cb394e024b4a8d46e894c02932eb",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "0956ee8a1333153c6be8c7c8c91eccfafccbb1fe30c0e0634d972ef33f44796c",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1075596,
+      "sha256": "039f65016399dcccce67ce67c6c249b4be5260c45673f7644db0b28ff7ee5862",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5160,
+      "sha256": "f607744b2abdb26b0d3374263d7bf0e0a0cd7975b54aa4870569220107bb33aa",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "8a668f0fd3659076a66dc2ca8c74c235d20e32ded1810a594fbb226fefc735bd",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1077196,
+      "sha256": "83b758e0b4345840d1c5ab65351ccaf2e171612cbe502b7792373b2de5954f65",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5162,
+      "sha256": "175031ffb7eabc7db22840168fcd8bde8566c7146cc63cd7b7925821eef78bd6",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/BTCUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "4c1b3834317f93183224b5a7053ab2a5aa6ace36d3c4d3fd34047964830d229f",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/pilot_summary.json",
+      "file_size_bytes": 76780,
+      "sha256": "f38a33c6cbdbd30bc97be862da9faa966d962be0139f242d3beb147de365b20b",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1051676,
+      "sha256": "80f0d475f8091bfd75662c748c55dd6a28a38b665a9679c5624ff32a013ab10f",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5115,
+      "sha256": "3760330c6cb62101e7097acc5ebfda58f22f7c285880a83878366bf955df0f50",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "e8cf209d5a5ecfe94c33d0cd71499e3864f6328fa47c86437bfcb1447c2a6ef6",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1053228,
+      "sha256": "a60ecc79f99ab77f692de810c5160e20eef0ae707c0cde2af27df0dacba054da",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5111,
+      "sha256": "3f31f2a6a664939f291a2d6f27231b9619c413b8d53cae0bfc90eca410371910",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "4d7bf06f6c0df4491e000ccd6977277442f1791f983e5ccfb2bb3793b3eac50f",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1053388,
+      "sha256": "e32cbfc188630d35524206ea7865107ee7d55c22a5a2db9211d73e15ebf27a89",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5112,
+      "sha256": "c9900dda825e7da72dd3747863544a819d84ea1cba0fa6cfbe7ee93633ed184a",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "174a79c6177f8210d68da1cc5b8e45699549de86a3b3f23cb893e5125ae856f0",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1054348,
+      "sha256": "8a628cef5e05e9041944f8271f3585fa6c71ede495d670fe51da6f38647fc9ad",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5115,
+      "sha256": "974c724873fcec099295bf69c4e1389daf6479e90aea4c7087f30e4a3102851f",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "0492e8bfc9c5bddc61c3a4d9c2fd29d03329567458bdd2de47c65167ba1a1a9e",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1055020,
+      "sha256": "ac8c485af577a3e932193c6d3d4fedd896474e59d9a2c8997f95760092bd7fdf",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5110,
+      "sha256": "f695a523d1fe21606d619a78a67956fc4268f15309a7b6f4ec9e8f7f89d0c3b8",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_1/XMRUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "3f53f071d6caaff21ddc28632a4c7f70b1432cdd24bf318ef93525994036db63",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.1 Pilot",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/dataset_manifest.json",
+      "file_size_bytes": 445,
+      "sha256": "fb22d7be2075db7146a4f43ab3f6717ecf573b04a8076e96894ffcf27e85f2c1",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1068876,
+      "sha256": "4d4fe96c1a2d199ef6409fd8d17974465141b7e7898697bda0b24377526f0551",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5164,
+      "sha256": "8d5f1b68f55c772986982f50e5adbb9ba810cfaccfdbf279dbd1d65b6f1df8e1",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_1/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "8062b0d6f3586fef133bda054b2e1d06f7969eba5d7fad139fe335fc3369799a",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "3447fad97356c4a4642e49ffe7f8ddcadf032176d3841c7b3d613da8733c8d80",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1071500,
+      "sha256": "e5ba8d8bc0a5eaa9dc45ddc437c87679698bee08b7c3cca2f69a03fbeef79e0f",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5159,
+      "sha256": "95bac5309275e1ce76996fa7ed081d828eb48f99c6dff1b6647d80c28d4ab106",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_2/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "ea8f144978586a536ccd5598d5a338e6da27b6d3e420fa194aec2da8fbf8034a",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "3f4a9410d8e98b5f4920d5e47da7f44f607c388e274929808a8c3f7fa86a31f9",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1072316,
+      "sha256": "b61fce69d6c592bc50c294e167ca9f3f7050a5c86dd2cf2cabf9938fe8500c44",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5161,
+      "sha256": "bc1ea99a87b8c6e3bf59a61b322ee2f2515623c2b58a4319359e08cc0ff4ec36",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_3/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "e68893265e97db6a35124ad35f36dab46f83a35c14c813aa8fa996bd348a7dba",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "d2fdbe5e08baa4765c444f067ce31b89a2e96832315e4ca7fb6961fb3772df0f",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1073164,
+      "sha256": "cb0cdfe5f63152cc6dc847001cc4d805f2ca65c43da4f32f70f3d7d4eef2f1d6",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5158,
+      "sha256": "945e23fe026331ba015fc9f80a7f8278f5cfbf9d76508d3cfde54c664a6f387d",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_4/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "35a12c72a1a32c3c69b2fcaedca88847308dd39fbd1b9401bbf3827886ebe544",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "30cdb3aa9402ad1b8e07600c087606947a087af9628e93f3a305756372b1ab6e",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1074924,
+      "sha256": "d0a5898545d96f8e6ec8f66c90fd815e72d072427c2335963273148b040a1f1d",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5162,
+      "sha256": "42ee3569f22f66a4cc0a3191f1d31a57d281218e83f273820cd635ed2cedaca0",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_5/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "89f075e18846b48c99974a91f7fce00fa3b273ec12ed4fcba0c7c88a90706f6b",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "74001be55d5229ecd5a469952919172beb6c82a801f33ad9ee23899ada479bea",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/fold_manifest.json",
+      "file_size_bytes": 1588,
+      "sha256": "6dd3615c7403cd6dfb53c022ceba603b3746d2a2f66f42eefc898e3495428fd3",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/model_configs.json",
+      "file_size_bytes": 1360,
+      "sha256": "2d0c4c95f8a5fe2557e0ca15ef8fd27b1a4e27ae3ba69f98851ece72f1f142ae",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/resource_benchmark.json",
+      "file_size_bytes": 169,
+      "sha256": "9c0252d1d4b1a73d55429528824a705de070537cae59c8cc2405ccf31b648557",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ADAUSDT/summary.json",
+      "file_size_bytes": 35478,
+      "sha256": "a9f1dce3917a15df6ea7380a25c32aaef80d35dfdbf07b2545a7bfa9bde3a0f1",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/dataset_manifest.json",
+      "file_size_bytes": 443,
+      "sha256": "ebf91ce4a7bbb74afac5e09caf7c978875ac527b14acfec9dc7bbc681f3630e0",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1067196,
+      "sha256": "8433feca648b7046a1ac97c1eae1b672010f37a903cfdc7d26a5e6522987ab79",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5167,
+      "sha256": "77c51168ff19759eaa5adfc509b82e6426ee7fb722a4617659ac586653443de8",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_1/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "30e18c2a8cf19b7cb8cb95cb2317d5d63e239c2b78a0cc3cc02d39d56b5fbb9e",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "479ae0574ab7ea93fe8dfd50daa5295a13a1bb7c3c6988cf13e3ab7b4174b5b3",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1068540,
+      "sha256": "436449c0cb52d8c846f3b343f1923f818ba64cf250371c9d019e06280052df71",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5140,
+      "sha256": "0797fa340ec59ae01f5f975f48ae54f968525d8da32d65bded979aad4e29c713",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_2/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "d2f926465f654ab38cd175dcd02177bb43915d1357ffc57c60075a1129db60cf",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "7043058f856a6b39eb7a9fb788c1b0436c4ce1619a3f800f38fed7106aeb167b",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1070028,
+      "sha256": "4d16b557a878da6d7b3faeb931351fde7044fedc6e2fe72e6260ead7684c9b66",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5146,
+      "sha256": "638ce3d4eb44ca80459798f7c966982663a15cde1da0f7b227cfbf1c5f44cc08",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_3/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "cac5f1f7d66c5796fc42c5637039099dd50b1827cb1fa8fa0e237ceb34bd8792",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "24b3288136f3ee47a00f567f330198f60bd6402a5337aef92551f08273edf9f2",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1071356,
+      "sha256": "c2e464608937e8c609ae4323bd61faa62ef98d8ddf58c35075a4778d4375d0d3",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5168,
+      "sha256": "d574db4e703840b63acc59d551080336d076fdb8a31cbe250fc1f9ec3995c7ee",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_4/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "2416a88bc55c01bfbb1656514c8de27678a33f6668eb89cf70e89130e1d05e44",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "ecdda258e28bd69a6c2b8c402a5ba5e6833951e8f8555f10d96e949d43c67715",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1072684,
+      "sha256": "c0a866ebe8407c7bf35dacfd71bb3e9381a3d681b0fc7643a477fcdf3dcadb11",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5167,
+      "sha256": "9109b2f4dc1adda1c0d45963b900921c53d729ba06523875c3783084ef8053e0",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_5/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "8fab9c42f2360a5352f6da68e612ea0913fff6c72d3d3c9970ca3291689ca1c7",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "177c3acb21a6c463519e5c74112264b0e859beed7c7c712c8d6f6c4eefc1da94",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/fold_manifest.json",
+      "file_size_bytes": 1588,
+      "sha256": "4e06395795c737a39f5f7f4919cb3af225b589cc4391ec7cbabc9ad48e66533a",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/model_configs.json",
+      "file_size_bytes": 1361,
+      "sha256": "24fc2697e3ea161f19255fdfdad92a8a57f3d2d489850989b79df5088c2f47cb",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/resource_benchmark.json",
+      "file_size_bytes": 170,
+      "sha256": "56f02be1618ddb1a1252e24da50c7f276d8128863a356d5b7d268baa4b83fd3c",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/AVAXUSDT/summary.json",
+      "file_size_bytes": 35466,
+      "sha256": "a48fde8a557e83bbd7cc56d0e06a9fc0dac3e6a31510313fad7129706cfcecdf",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/dataset_manifest.json",
+      "file_size_bytes": 444,
+      "sha256": "ed4f3351e9eea8552f466efd2fbbbe34e802d3131cf34240940813614c3aab93",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1069244,
+      "sha256": "91f7c5e52b664c2475b3cb0bfd7efdcb7b61cedd2178bb4d016a335602cacd6b",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5154,
+      "sha256": "32f89237e9d61db211b06cd2209118463994689e94ccad6a8fb29fc833ac268b",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_1/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "140cf31b44caffe529f173d3c8c5648435c2d1473f7d75443a0fd3c3962b4b20",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "da373f4e5ee6eae4fac6c66a96ff1eda66c937a75a8882b750d6c3f72b405c27",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1071052,
+      "sha256": "3fdebfd5bc59f705edcc613bd5d314298b7d3e387e413fe5657cc0db055218c2",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5162,
+      "sha256": "d7b24491d685ce7c05288fef5c55f591a1aa1f5d4c22da43f7f45b4d08b42b2f",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_2/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "dba66cf8414a412011d78f4161993db844dc54066844efa82821d77a8774fbe9",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "e59d7425b2825c80786f3126d7d7524569b3802a9c0a22c28e1bb09ebe7147f0",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1072316,
+      "sha256": "8b63cdc166d476b456daf35dbb7fae54ac5db21ae41ea76428a5a849fbe61985",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5153,
+      "sha256": "2329c161068134d060fdff4d95fbc0d992b7027f09a8c1ac1be69a40bd9374e0",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_3/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "8d3f86b37f1fd7900a09e68e9cb755460923cf13fd2d9076efd997b79167eb96",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "a2557e325c41d9215b8378e94cf2e6bbcb1f1782a139f2bf111671125d252594",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1074236,
+      "sha256": "e2752afa7520ad09306b22eff456c6fab58c5dcba4d08ef501968fc266fe6718",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5139,
+      "sha256": "00c16341a586786f528d09893082c901a6ea22c1c71dc2c20fc0a2dd8dba7e91",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_4/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "63529da64c7ab6f4403c5f4f533dd3efdc99a8f90e08b6c7473b3bb63f9c8da8",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "306e5a03edcc93286d89b6aa6fa3c026b7ac28b236428135133eb8a67188ce95",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1074956,
+      "sha256": "b633517b38f5a7b88f9803e9651e74ec08bce052ed612ba6b8e5748160541ebc",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5138,
+      "sha256": "d10e2bf3549c902db1865103534dc9288440194b155e9b72168c61f07e636f9a",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_5/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "69f636d6c3829d069e7def0c19d50a8a376c855491e35ec362671ae94b4dc752",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "e4cea2a3073c7b35e0b6c5bbba6f4b8fe31e8ee477d5b33346bbd18c8e70129d",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/fold_manifest.json",
+      "file_size_bytes": 1588,
+      "sha256": "56f0f29a7629975af83e0360dbe0d680ee88f9c4bc882d8fba98953c338bceeb",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/model_configs.json",
+      "file_size_bytes": 1360,
+      "sha256": "b82f5845a442b78c90caac76f230d2deaf52c01b679a282dbba2457b35c98e0f",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/resource_benchmark.json",
+      "file_size_bytes": 169,
+      "sha256": "afdba1054e38309efa2660d80b95d7144aa2222dfce08e3943a5257369db21f7",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/BNBUSDT/summary.json",
+      "file_size_bytes": 35419,
+      "sha256": "e749091a1be6f2539f83e7d418f57baf4a112a6a2358efad033aba97e821194c",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/dataset_manifest.json",
+      "file_size_bytes": 446,
+      "sha256": "4134f4b013a31bf758dbe6a41cd554e7dc880531e9b5e88456f8fc7bcf401371",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1070812,
+      "sha256": "50797617a12bb36b0c797bcc6d8cd4ea1577085f779807158dea937107c8226f",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5164,
+      "sha256": "556e8b2e7642f4760cd24917b33bc7d796200e5892e71dbecc06a70caf6a0b17",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_1/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "033a42f97e5f1a5ea841028e8c1024a12bee8cfc2a71f28f2db31e321f87e9a5",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "effe002c0a17db5c86ce3d59002a233fa6481d268f8104ec60732bd1c15c531f",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1070252,
+      "sha256": "09144225d3551d5200de4b1d4e9b8688c958572a5e5032de87fc44e36025dd1a",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5160,
+      "sha256": "c4d74f43bd8d3e5a35199523ab3628feca6d6bb5f3f704a6903dc7da8a2a63b4",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_2/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "e2cc23f4eb8998f7c0f09111e96faec0c803c29a626a67e9154f4efbe2d2f75d",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "12bc8590bdea06febf5b8ea3c0866ed994c64f0ec1030278bd6d24bd7552b05d",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1072796,
+      "sha256": "93c1426f2884f869939d85068fcc1d803bd31d58f514b847017a653d953478a3",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5160,
+      "sha256": "d43a2b766e6ae6ecb1fd41a6ecb88ff89b1c5add9692c33a8f41d45ebc5849e7",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_3/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "c01d8508aae54c6eb94ba4e66962891ff15084b5e249372127953a421a89237c",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "92922e5a2a8e77eb263cd2dc4a9e1cea1146a53b91639ab2db919e354da5e7ed",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1074812,
+      "sha256": "f9951abda42225cdd88b8ee5ddfbc8a4273cc8d48586736bf96ad3bb31b6445a",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5143,
+      "sha256": "c601afc8aef0c5c461a1d0f0d7dfc1d14451139e19d3b9085dc94e2a76c5bbd8",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_4/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "a0d5f63bac48a1cd0518a151ea880cb4891937ba137ea33a2d852cf7c3634d01",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "c4e24fd0d61f633fe1d13e4d4eebc8f5a8a1e3e137461c47b4bb6e410624919b",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1075948,
+      "sha256": "d8ea38f657c423fa6ed34f6e874eeaa43bdba6fb5e814a7324b683d7a469283a",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5142,
+      "sha256": "b13749e3b1c10b1e4247356bc5efaee2a5d0cc454dc3daca047c55959a4f1ae5",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_5/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "9f897064fb40469cdb98c8480fa4c951405043015d1291c0aba64bf096105407",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "f2ba32ec81d64e102c0adc6d464cd20be29ad3fc17597f18b96c70d44697fb19",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/fold_manifest.json",
+      "file_size_bytes": 1588,
+      "sha256": "d974e46ef95a01850434916643e53fb09c452ef718fbc36ce5fad1f1fea67946",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/model_configs.json",
+      "file_size_bytes": 1365,
+      "sha256": "a613ae601eee1c1668c1153ff9b0e3708fb4505d6a2d4a60d6d303606be8a7d8",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/resource_benchmark.json",
+      "file_size_bytes": 170,
+      "sha256": "044e353528e3077b295441e7d50920f98091dd810785b9519799bf929d146c2a",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/DOGEUSDT/summary.json",
+      "file_size_bytes": 35446,
+      "sha256": "9bb605f7f23ecca4819bfcb81282bff589d68f28c4fb862066c80cba4878657c",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/dataset_manifest.json",
+      "file_size_bytes": 445,
+      "sha256": "d4f17c4b76cc8e7445a2dbe5d399e7f9fe8d0df263297ccf1fa7d7d05081161e",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1070780,
+      "sha256": "482bcf8cecad3ff3b0152c0bbf391f21b5b0852f37120d779630c5620b876168",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5168,
+      "sha256": "e3880899559bc3eaac99fdad3cc7fb8caa21bb5884149bab9166aa467c7687a4",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_1/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "c647fe40391098cdea21fef6e44518c65eecf60cfd2ecf0c9abcb16bb796442a",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "3ed08cad4abfa88543cb80e83116eb1ef31d9d51c7e5c9dce605eb0d94114b3d",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1072748,
+      "sha256": "ac74333fa0922d79f3a89000142b07e8df2be3885f1399569189c1d8b993c3c4",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5158,
+      "sha256": "ddf991464218b8b1ee0b3cf4b9af8fb25d0a99b33ce525fd817571cd16393a44",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_2/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "0eb1fd695e2b0e0b961ff59e0978152de999432f9c0e28b95461b63654adb3b5",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "3a2c4ac7a56c890f7ecdb4525d423e7f00a3a8c997642f559884569249827535",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1074732,
+      "sha256": "6e905adba33b8a4c624f850d199472ba35eb4339d7b109bdd9a1fe69d981ea87",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5155,
+      "sha256": "2b5648478b4f1f15c4987ad1134ac06e3a0c4cbab309a5bd051c92d7ec96c675",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_3/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "81df83a4a5114aa88b264939f9e932ba2ff1065a3e3ea77f34d8da79dc969548",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "556dc5402aacaa97a7f37822c33dbfc1b2229ffbce0f96be432e6213b812d833",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1076380,
+      "sha256": "26ca3248aa94766248582e246c4838256b613fc31e6b58c25be3cf2d6564bffb",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5152,
+      "sha256": "2a6ff9f4a1e0996797af8ce8a94703b246a2b4be35df1c0216121066e5e40ed8",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_4/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "b5d0cc4aceb17777a3e8b641c5bdeb9612fae62dee28c7614fd5ef7c50063f22",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "e1e23d5d8915be414523b3309334c264231878d6a7e06adab51a9a2e32b6a1bf",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1078140,
+      "sha256": "39994bd5f4e23ca9f0a52918c93cd2ad917e4c81c36255eae55570d5da8aef3b",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5156,
+      "sha256": "30251f3858772853d55d663f524133b8b60f3a4ad804b5239e6618739055fff1",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_5/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "9d28ecf3161c023951569bd95037623c1534408dc75e069549919e749cea9770",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "6f426e3c9d7e07981c9147a21cba8a314b8678e75d23d935266c65a21659def5",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/fold_manifest.json",
+      "file_size_bytes": 1588,
+      "sha256": "41a5782c0d6b56250d548252ec65b7d68f0d76726a2361f97607d5ea8e4b3f7e",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/model_configs.json",
+      "file_size_bytes": 1360,
+      "sha256": "082d839bc113fe01ded7236dab0b91096f423e73d5df057484fd446009e81ba8",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/resource_benchmark.json",
+      "file_size_bytes": 168,
+      "sha256": "5aa7f676bb0226d57c9b7b8a425eaea27ff8517c30728927724396f6129b7d0c",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/ETHUSDT/summary.json",
+      "file_size_bytes": 35464,
+      "sha256": "08e80b4f46fa7bdbf4b3a93ad65f873c136d0a665dec21e67614651a1ea48391",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/fleet_summary/fleet_catalog.json",
+      "file_size_bytes": 422781,
+      "sha256": "d406431c46fa012aa1987708375014eae5d535999bc3a5266ea66eb98695b267",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/fleet_summary/fleet_comparison.json",
+      "file_size_bytes": 6629,
+      "sha256": "5c34ecadeceeca3c781d0de2141174d561b3e602e60f4f667950089ff6da6818",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/fleet_summary/manifest_hashes.json",
+      "file_size_bytes": 23938,
+      "sha256": "dc53d4a3124b556050a7a27ea2037c9f872a625956b3f43a74b8443d22c358ec",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/dataset_manifest.json",
+      "file_size_bytes": 445,
+      "sha256": "fa75d4cad65a9b4e2ae01ae66608b95368414d2c42507d98a44843995542e11e",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1067708,
+      "sha256": "a757cf005ee11a79615d63effe3d34399970008b6c5e87bf2cbe15d7267dacf4",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5155,
+      "sha256": "1d44303a6c746bae3dcd8590bfdac58a4f7aea953b019bc1b9ac98c214c80847",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_1/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "2de16621725ee083e519cc8889eee961a5d2e9bf4daaf7147de7d1e5bcdb7e85",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "467f2227762e59f432e03366b821e2a52b066d1deb93d7e4fabfd932b8d12f4d",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1069916,
+      "sha256": "ac9edc68818fe254e6e745b5507bb4c9863c02847819be97e4b3ac6589550f71",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5157,
+      "sha256": "b9e66d05ad33ab93e76b482945ff2c4b5824edde424828ec2b254846dab03225",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_2/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "d853584c4d7eaf1cdfca2eb0ab47664b4e0eee9f60f666f52ceaf665d8d5d3a0",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "10c3a08e8e6c2d5ccb92ae28989ff129918ae4654d17fd868c737dd01674f423",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1070348,
+      "sha256": "2d671b6945e06ef567cc3a965345191089f7d99c5d9a496ed3df4f403314e6ea",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5165,
+      "sha256": "e6c54ae9a77aed39eb0f53084ec68b80c325067d63771dfa73b7b56d476ada2f",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_3/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "52d1bb42b47b7e832d86e00a472dfae2c18617d4992cf041fe4d4e0c92f8d669",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "2c7b25b070980393da086ca06d1d87e6d76dddfc5d163b779d9a7b9a78ada817",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1072796,
+      "sha256": "17681f387b04d2d2b2e0816721521ff9a77fe40b50bd4fa22931e06cfb944d0b",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5161,
+      "sha256": "2cb875d42df1befc56aec94e9a1890b9fba341bb8d01275defd1b6af035cf515",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_4/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "fa5dae472337afe1f340219ef6f85bdbc61973a8950f96508f823034d3fcfeda",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "822e0b6c9c947c35eec8d3a0165c8da4e09ed630a16d367cbfb779a8f1388050",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1073484,
+      "sha256": "accececaf2ef89edfed80ecdcf1d7900e1970f4acb34d298e99fd6c3b8dd9393",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5164,
+      "sha256": "6f4c512e587fd2b58469709dd659582e661c54fcbffb5b30b71bbb3626b41101",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_5/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "954de87faa38bef8e0e59600324d6951569b9017990cf704e2822179c37f3f21",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "2e472f5e9f311d6aa9212db578112c3cae9f89a4dde0432053cab27e37d2d2d0",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/fold_manifest.json",
+      "file_size_bytes": 1588,
+      "sha256": "b29b1f769cba44b30f34cfdd53860b4a6c77ee0fe3b5f3a53323c8a0a8142749",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/model_configs.json",
+      "file_size_bytes": 1361,
+      "sha256": "1e913e7edab09c53ce9f5da6d33b0e1f2eddd4ef650368aa3e4b50ee3eadb35f",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/resource_benchmark.json",
+      "file_size_bytes": 170,
+      "sha256": "5cd8a7f8968e7156dcfa80844f6a5112dc47fc5029b11b6841444f5f374fb937",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LINKUSDT/summary.json",
+      "file_size_bytes": 35477,
+      "sha256": "c3495328f71fe43bf41f5370a34b2f458d7b79ba1e9cc9d9b4f0de1a5e501662",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/dataset_manifest.json",
+      "file_size_bytes": 444,
+      "sha256": "281e350d506b475719c4a4c68419e002ef559dfa3691097ccc42827b6d5d636e",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1067532,
+      "sha256": "264794d8c241958a32b9da717fb8663f34b4f470aafa52439af4f047b83ab783",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5153,
+      "sha256": "8866d730e5974c6bf9fefdac3b671f416e1f5388a35e28a3135232d185dca8af",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_1/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "43d9b87b73d5a12e317864a706128dd904ecbe3c2ea44f77d8c6b261f973f22f",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "b55548482128fba583c3a2c82754c2d1291cddd5e909af302795881577a7ae6e",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1069436,
+      "sha256": "8c926c3b7f5320bad22895acf6e71332a0b55a6ab54470c48257ed23880a0e45",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5154,
+      "sha256": "fc2e5eb82d17053e731e5e9d4fafa5fe26c5732582f5b38a8969e80f1a20c8fd",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_2/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "d7d0a28a4f3250384f87fc952223eb7f8f1a0f31e27e8a510fc812e06529c2b7",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "5eccd178fe40f82bc3386df924cfc7a895f775d30b809e52ea356a21d0c2d55a",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1071164,
+      "sha256": "11f052260608403eb71f9575e4d085fdbbb5af7919273513dabdf9bdb5868538",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5150,
+      "sha256": "2e75de4755169088f0e8e2e118bb1f0a4d400f78ca7f7892adeaf2c6f7da0e4d",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_3/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "8200545b1da72d9845ba4e17ba7f24589b8c0466b988444561c188c8e280cbeb",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "927fa0c5d72b5ff0081dd18fc136f06cb89ff604c89b239b842cfe62a9d53060",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1073260,
+      "sha256": "03a585b6b4d8834274a0419735eb5911a9bfe7e0201b99ac016f842af76658b7",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5161,
+      "sha256": "9f04db887b7bda16a73b0f49b3594b75bb05839b030a7640792b4284c99030f9",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_4/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "a3d26eb1ce419e4e19738d13f7a485ea91d688148c2d9942b1bc6977f7b25cbe",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "5258074033002d541c5c095f87ed74fc8c2f69014bfe4826f8ed553a15c9156c",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1073868,
+      "sha256": "78ca6b3abfcfc892520afc59c7100f99635bba0ee512473acbe50add3a31c2c4",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5167,
+      "sha256": "80a8bf33ecccc6ee89f58da8bfee936e1bbaa0f9cd85b923fb3bb4e9ce4295aa",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_5/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "625ffbe3c4e996aad168db50d45e247756fed57015c5aab8f3b1f211fce34ee7",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "d94628b6ebdb2aae5c0fa417cf85fb5f6e074d620c857d576b72304aa19649e5",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/fold_manifest.json",
+      "file_size_bytes": 1588,
+      "sha256": "2f6619b03bd3dc3dec15d1b7925ed834dc419584e93c0a481761eab4d75e77c4",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/model_configs.json",
+      "file_size_bytes": 1364,
+      "sha256": "647beda0651b691b51d092ba1620e56ceec03fdaad0138255d49528fcf4155cd",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/resource_benchmark.json",
+      "file_size_bytes": 169,
+      "sha256": "6c5bfbde1cf0ffe0faf08c5619844e319083da879677416e6a291941f442dc21",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/LTCUSDT/summary.json",
+      "file_size_bytes": 35461,
+      "sha256": "f1a19e7270bbf78604e7d67c6914ef9bef554cdbe49840185f93b882f3f242df",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/dataset_manifest.json",
+      "file_size_bytes": 444,
+      "sha256": "03a3c690f9241d4c5b92079b17f218dc819ca6d737760caade3deb613581c69e",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1069788,
+      "sha256": "4376f902a251ed7ba5d056a2741f5fa833cdffce420d0211ed64ce81d26d812d",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5163,
+      "sha256": "e88c9b23baf9b7f7585ee62c8bf1a88eea4ea22d34f953dd53330f74593954ce",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_1/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "7837ed210e656e535b84bcc166dfc66734315737a0aa2f9d7c0357c974a9cb4f",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "d67c62213f8528d2c77385817d1d8a9634d5f8d99796c2622c38671c0885501d",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1071004,
+      "sha256": "ce0a1662d96646d6ff4c1dc0fc98e0977357aaa8e154700760d3b33c405cac30",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5140,
+      "sha256": "f0f58aa8c6d66cefd2ea38ec19cde1d76217c14bc3aec43025a3fab911d255c1",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_2/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "23ce962cacb959c565640e7a9d50814be126a68701d214496f8b45ce87bbbc21",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "5192e261b6e419441f161764ae6093f55fd62f6b7da14538a273c87c5fab44cb",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1073276,
+      "sha256": "e1be551d1ad5ee3ff0c2997ea9f7af8fa00e167e8af1f4d8a602213ba87cfd18",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5145,
+      "sha256": "d7c9267ea0c76380d8b785d2edefcb7111f2270c516d86e3ec9ea32a455f5214",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_3/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "f1b588cd2923437ad9cc16197f4440b94521f2cce2821a19a345539362748054",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "f0e0b3682579dfd758e13fa3c7a75ee3d24def37f626d067968e7e238f0e42d1",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1074956,
+      "sha256": "76afaf13529502404ad481342597c0779595559b3b05350198640ad5bee72ad5",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5143,
+      "sha256": "94ea391fe1496e52440a7ecab2e282e30d4248084c879266f6c3722528646ce4",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_4/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "1db4accd0855301ec20e1780c037a13ecbca558d317b64da5afd458c7f707d21",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "942a5cc689bf2ceec2c04aaa8d030a72138e7a915c6ce8c12a1f35204653781d",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1076012,
+      "sha256": "22b750c1ec8aebe4782726dc4f15ef7842357d2491a4c9d9e417096b276fdbd3",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5147,
+      "sha256": "f2250bdb94dfc8f8e810988b428e0cd8a0e48011245f4f46d5caee53d78ffdee",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_5/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "c094d3d460a806ca69596ba9c0e1d774e82a6e8acb583b89b6fc4c1bbd00eefe",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "5415db8fc5e497f9dc5eb2becc663b5c09032d8a58d8c10443ce53102ec46028",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/fold_manifest.json",
+      "file_size_bytes": 1588,
+      "sha256": "cf9021f8eef7ad5af30d974d48336df8aaa8035ae78166edbf986ce9aec012ca",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/model_configs.json",
+      "file_size_bytes": 1360,
+      "sha256": "918845dc92787f04ef43c7940ae0397dbd7abd13979d342c8c83479335926b77",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/resource_benchmark.json",
+      "file_size_bytes": 169,
+      "sha256": "202bac42b1e2f280538ce1692d4fb2d59e936e698ffadc72c699215f561131d9",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/SOLUSDT/summary.json",
+      "file_size_bytes": 35413,
+      "sha256": "ce6de2a4d4e7886872b321d262a83c2c02d69907ad68c29a1424589f3a977986",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/dataset_manifest.json",
+      "file_size_bytes": 445,
+      "sha256": "52dae05ea7c4e8a4965ccb90bbca77075be82c847cd29d1294007634b18556b0",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_1/lgbm_model.joblib",
+      "file_size_bytes": 1069628,
+      "sha256": "b1fe62344bc15bd68651441f5f833b516db9caa7b08b8c0d37ee2fb37071c6e5",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_1/metrics.json",
+      "file_size_bytes": 5168,
+      "sha256": "90649ceeb03daaa4f2993cbe4cbbaaee62df22ef8eab7e79e89daea87ea62277",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_1/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "e5132a0dc104270d9d1a1d94998462ce53ae351a916ec8796c02c85aa8a5ed54",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_1/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "b92156bc26b802f2041ac9aae1e4f14b04f81f9b17d587c4ba24c5ac4d4ced76",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_2/lgbm_model.joblib",
+      "file_size_bytes": 1072060,
+      "sha256": "1aca91ee10fd9edc30c58c4a6b98af918895bc91e0b87eba0ff109c99611bae7",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_2/metrics.json",
+      "file_size_bytes": 5154,
+      "sha256": "79a49c5d82219ac7e21c0bf7aeb8d910db8d6d85af2f9cfc98e3da6c044ae8c7",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_2/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "3ae7585b047663deb71d7c5a46a822571b52190291ab52295e80a1bc8db62ad1",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_2/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "23e65f8af4b3ddab3220b5b3374bb44fb27344cd1e2c28192b5a1e270ca6a3f0",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_3/lgbm_model.joblib",
+      "file_size_bytes": 1073116,
+      "sha256": "06ae0f8fa0bc41db771fa5dfc7b7ceeffef504bc45e56ed186e5fdc28c5e315a",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_3/metrics.json",
+      "file_size_bytes": 5153,
+      "sha256": "383c94c34d518dcf4914b237284470aa03ec04988c9e7619f323933cba3d21b6",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_3/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "6aa1e7cb31ee43b7cbd4491a9426f442c34eb4e6907701abf695e3a620ab11e6",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_3/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "e9f75f45e00ad7e850ce253a23dc678b997bf78b611d7a56753918e7212a98cb",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_4/lgbm_model.joblib",
+      "file_size_bytes": 1075228,
+      "sha256": "24a8473af24fc11682d3733d60da0b94796d7e04131b2ab126e5f362bcde043e",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_4/metrics.json",
+      "file_size_bytes": 5138,
+      "sha256": "072a52bee5e43841490bbd398dd985a59d2071e9000c531b0cfbf3ca89d53849",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_4/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "0d5b4e179dac3022fa856d8eb09208ccbf6311711041b49b7fa3836548629627",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_4/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "9e77547b43fed296bc08296ea2978474b2f0f1eaf13e198f484dd0f1852ef8b8",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_5/lgbm_model.joblib",
+      "file_size_bytes": 1076156,
+      "sha256": "4b840af60f4fc1cdcd714f20c4d2ece32e2188662a48eab482c9e893599d28be",
+      "artifact_category": "model_binary",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen B4 LightGBM Specialist Model Binary",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_5/metrics.json",
+      "file_size_bytes": 5142,
+      "sha256": "7cd64be2566a5111be4b15e434e3a0cc12ac5cf4dad236993ee03c77bc2cb4b7",
+      "artifact_category": "evaluation_metrics",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Fold-Level Model Evaluation Metrics",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_5/predictions.json",
+      "file_size_bytes": 1169,
+      "sha256": "deebaf1ae4fe9112f0a8d79de2aae3552436bd5b5289263ce0f9d2f612bfea4f",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_5/preprocessor.joblib",
+      "file_size_bytes": 1830,
+      "sha256": "dc51ccbbf414c257c71c32204fb5546429310a9c974afb245e19eac297bc3b83",
+      "artifact_category": "preprocessor",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Frozen Specialist Preprocessor Pipeline",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/fold_manifest.json",
+      "file_size_bytes": 1588,
+      "sha256": "2c30e64a3ef082ce6a5282f4d34c17b45f6a1dd9fe849bcd234f163f2ceafe63",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/model_configs.json",
+      "file_size_bytes": 1360,
+      "sha256": "4c966e141c93d0cf019dcf3a8508a4d99b15cf999475af93afe1baed70112abf",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/resource_benchmark.json",
+      "file_size_bytes": 169,
+      "sha256": "a88e79976d12d108356f6a19dd6539bdab5b6d5cc398a4195f5b73f8b69d8975",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_2/XRPUSDT/summary.json",
+      "file_size_bytes": 35430,
+      "sha256": "25ef77bfc461cd413c4f20af1c0914273b7808ab5b822fb7b1c2e5e7678eb70e",
+      "artifact_category": "metadata_manifest",
+      "producing_phase": "Phase 5.3.2 Expanded Fleet",
+      "description": "Summary and Provenance Metadata Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3/formula_audit.json",
+      "file_size_bytes": 4276,
+      "sha256": "7447ab9e92abf14578905d5d647ac86a4a786c6217721de1628db976fd45afe7",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3 Master Benchmark Audit",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3/master_benchmark_catalog.json",
+      "file_size_bytes": 40740,
+      "sha256": "199b243bc55936cc7fedd66e4549049494b8b4edb3811f2fc096b3e61acd423a",
+      "artifact_category": "benchmark_catalog",
+      "producing_phase": "Phase 5.3.3 Master Benchmark Audit",
+      "description": "Authoritative Benchmark Performance Catalog",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3/master_winner_catalog.json",
+      "file_size_bytes": 14134,
+      "sha256": "4605277974094156788f6d42879634677f5c37ce90761800cd56e2542ab483b3",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3 Master Benchmark Audit",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3/numerical_reconciliation.json",
+      "file_size_bytes": 302222,
+      "sha256": "c506a21943b489ee3eecf8d508186063ab31870068a83eca8b3011ff44f149a1",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3 Master Benchmark Audit",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3/resource_reproducibility_audit.json",
+      "file_size_bytes": 2872,
+      "sha256": "60d56da1f6d3677e5e480db0fd21621452b32e88f82211ff19e991b14b671d10",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3 Master Benchmark Audit",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3/source_of_truth_inventory.json",
+      "file_size_bytes": 107276,
+      "sha256": "1ccb9ebe40ee393a632994d89e3a9a6855917bc0fa69ea2b7e3cbe61b91a7653",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3 Master Benchmark Audit",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3/statistical_evidence.json",
+      "file_size_bytes": 17021,
+      "sha256": "1da3b3472946820691fe15897e3fd1da7682759be983ca754b63e1fc86f0e26e",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3 Master Benchmark Audit",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3/temporal_leakage_audit.json",
+      "file_size_bytes": 12588,
+      "sha256": "8560b75c2f7dbf45c14630ffe6271f1841a3385c47a0c5c83e4bf040df22b41f",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3 Master Benchmark Audit",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_1/bootstrap_sensitivity.json",
+      "file_size_bytes": 36832,
+      "sha256": "f095c159726cee1a545b349207a5526419c9abd043e8b70fb4777cf15e6bc40b",
+      "artifact_category": "bootstrap_audit",
+      "producing_phase": "Phase 5.3.3.1 Final Benchmark Correction",
+      "description": "Resampling Sensitivity and Bootstrap Inference Output",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_1/brier_reconciliation.json",
+      "file_size_bytes": 10900,
+      "sha256": "0388784727d3e3197c154f4cb9a88b09ae1416d5811ff3e96cd399d99f54ea6c",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.1 Final Benchmark Correction",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_1/embargo_governance_decision.json",
+      "file_size_bytes": 2475,
+      "sha256": "725157494be6677f102acb1ca9eca52c1e3d01d7b0bd3b461c272e52ff3e55d6",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.1 Final Benchmark Correction",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_1/final_benchmark_catalog.json",
+      "file_size_bytes": 37308,
+      "sha256": "94ca6ce51eb3035330095cdd78f645d0ed14c9f614b14fb664abcda084a19b64",
+      "artifact_category": "benchmark_catalog",
+      "producing_phase": "Phase 5.3.3.1 Final Benchmark Correction",
+      "description": "Authoritative Benchmark Performance Catalog",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_1/final_manifest_hashes.json",
+      "file_size_bytes": 718,
+      "sha256": "d436989f99512e1c99c0c04481019f00d7b0acf2322e9f5e58c185c60591a667",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.3.1 Final Benchmark Correction",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_1/final_winner_catalog.json",
+      "file_size_bytes": 4576,
+      "sha256": "cb58c586584c19dffdbe97bee9752831b7b684d716a8888c2f6b5e3010c4959c",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.1 Final Benchmark Correction",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_1/holm_adjusted_pvalues.json",
+      "file_size_bytes": 12500,
+      "sha256": "88026656cd059907bdd58fed4a575f6944ab8e891b6c97490033c40ebfce50de",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.1 Final Benchmark Correction",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_1/xmr_fold_reconciliation.json",
+      "file_size_bytes": 2078,
+      "sha256": "f9a8e8fc4ab0162ac9c54a17fd8de215d105ce3e60f2102953f8e00d6a0dddce",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.1 Final Benchmark Correction",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_2/bootstrap_independent_verification.json",
+      "file_size_bytes": 41608,
+      "sha256": "0c0aa3afb03e647f19b20b23d81ac8aa3f5d1fbf42732728f79f732a2f2ed211",
+      "artifact_category": "bootstrap_audit",
+      "producing_phase": "Phase 5.3.3.2 Independent Statistical Verification",
+      "description": "Resampling Sensitivity and Bootstrap Inference Output",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_2/final_audit_manifest.json",
+      "file_size_bytes": 545,
+      "sha256": "1e02fab041773f1f7f133cf5008b1d930d520b170e6003f5f00da0dab66d0459",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.3.2 Independent Statistical Verification",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_2/hash_verification.json",
+      "file_size_bytes": 2471,
+      "sha256": "c3f90dbcc42fdfb42119abc1995d4c168ae0807252e70e623caa0eec83f09c72",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.3.2 Independent Statistical Verification",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_2/holm_independent_verification.json",
+      "file_size_bytes": 13559,
+      "sha256": "932177b643acec1e4976a01ff796b489ce3079d75d957c311e9dbc97da7a59b7",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.2 Independent Statistical Verification",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_2/temporal_leakage_verification.json",
+      "file_size_bytes": 27615,
+      "sha256": "fd2541e0c58793f2433d2936f2762bcbe53e7eac17eab129d179e47b7cc57dc4",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.2 Independent Statistical Verification",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_2/xmr_fold_independent_verification.json",
+      "file_size_bytes": 5816,
+      "sha256": "5ca73d2dc8122aa66f9edab0432572fe7407a431be5a57c31e9cb89fd994489e",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.2 Independent Statistical Verification",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_3/bootstrap_sensitivity_matrix.json",
+      "file_size_bytes": 50255,
+      "sha256": "811aaa188cfb7a04dbfb64e9e82c9cb326ccfad927e4080a110b3eb4cc64f014",
+      "artifact_category": "bootstrap_audit",
+      "producing_phase": "Phase 5.3.3.3 Empirical OOF Resampling",
+      "description": "Resampling Sensitivity and Bootstrap Inference Output",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_3/empirical_holm_33_comparisons.json",
+      "file_size_bytes": 34479,
+      "sha256": "b34571d441271acab8f4674bc3d1e2d4b8d012addf7bc88d2f308327245bf695",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.3 Empirical OOF Resampling",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_3/empirical_mbb_results.json",
+      "file_size_bytes": 9255,
+      "sha256": "99a342c80d3b7ea225e87447fb4288a5f2cdb58bdfd5aacac842f268e4ac4d88",
+      "artifact_category": "bootstrap_audit",
+      "producing_phase": "Phase 5.3.3.3 Empirical OOF Resampling",
+      "description": "Resampling Sensitivity and Bootstrap Inference Output",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_3/final_audit_manifest.json",
+      "file_size_bytes": 1778,
+      "sha256": "608510620377cdd95faa97a8587e248c1a8f921759e49811aa36ec225560665c",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.3.3 Empirical OOF Resampling",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_3/oof_eligibility_registry.json",
+      "file_size_bytes": 8718,
+      "sha256": "c2d96469b81d791e0d754302deef726f2251ed62bac28a3b30c442c15391acee",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.3 Empirical OOF Resampling",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_3/oof_provenance_audit.json",
+      "file_size_bytes": 43807,
+      "sha256": "cb7d2aa88d14d440f6e56fae42d911d832b8853f0325f8b08adbfc0df13d5b17",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.3 Empirical OOF Resampling",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_3/parametric_vs_empirical_comparison.json",
+      "file_size_bytes": 16255,
+      "sha256": "422e4bbac19eb8629f1da262a0f7920ef349668311f000004a4f617f90b9dc78",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.3 Empirical OOF Resampling",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_3/resource_and_reproducibility_manifest.json",
+      "file_size_bytes": 4342,
+      "sha256": "6584a02bc4d0c5dfa08b9580fef9cbb911f672c21b17964a4d6927fc99a99d7b",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.3.3 Empirical OOF Resampling",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_3/robustness_reclassification.json",
+      "file_size_bytes": 8280,
+      "sha256": "c86cc03d882ecfcaa3b11139df193300cacbc61b50a50d84b399784dfac19712",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.3 Empirical OOF Resampling",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_4/b0_reconstruction_audit.json",
+      "file_size_bytes": 52984,
+      "sha256": "b589ba52701e21aed404b1812ad12f04ea067517724ead345eb9e387df03c77f",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.4 Metric Reconciliation",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_4/b4_confusion_matrix_audit.json",
+      "file_size_bytes": 65657,
+      "sha256": "4aea05d392bb1e8c0619a9f9245e9fb42d3d4aa206f4d1ca894a9ee38892a0cc",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.4 Metric Reconciliation",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_4/bootstrap_input_validity.json",
+      "file_size_bytes": 7295,
+      "sha256": "231bc691c2283a64a6995710f6f8c5d1d111f03d5c9ac8b5456fe406027783a5",
+      "artifact_category": "bootstrap_audit",
+      "producing_phase": "Phase 5.3.3.4 Metric Reconciliation",
+      "description": "Resampling Sensitivity and Bootstrap Inference Output",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_4/final_audit_manifest.json",
+      "file_size_bytes": 1862,
+      "sha256": "e223c985f71b6d6ece395b0b50a14c52a27173bc193b7ea4c6b06d57f6f793a6",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.3.4 Metric Reconciliation",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_4/final_benchmark_reconciliation.json",
+      "file_size_bytes": 24277,
+      "sha256": "8a2c0f1b26abd35ec622f5e1c9cf765d1ebc8ea1fac073d3272af907395e276c",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.4 Metric Reconciliation",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_4/historical_benchmark_reconciliation.json",
+      "file_size_bytes": 7541,
+      "sha256": "9e033a2879bc5b695bef45a55af4846b81258e85e9b9a18ffbb47c6a255fb4d1",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.4 Metric Reconciliation",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_4/oof_sample_accounting.json",
+      "file_size_bytes": 5412,
+      "sha256": "741fe3fd4d448abce14b825e4bad423795c2ca160149e50b3e2079d938a4fd83",
+      "artifact_category": "population_audit",
+      "producing_phase": "Phase 5.3.3.4 Metric Reconciliation",
+      "description": "OOF Sample Population Accounting and Audit Output",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_4/target_schema_audit.json",
+      "file_size_bytes": 6720,
+      "sha256": "a6b450f1fbbc575db0d12411502a57d8bca2b6b8dfdc857bad8f8ec41352dc19",
+      "artifact_category": "supporting_audit_artifact",
+      "producing_phase": "Phase 5.3.3.4 Metric Reconciliation",
+      "description": "Supporting Validation and Governance Artifact",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_5/final_audit_manifest.json",
+      "file_size_bytes": 1804,
+      "sha256": "5cb4ea397a002a5568ad192b439b72d9325e18e16e2f0af1ae637832fc816ddd",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.3.5 Paired B4-B0 Audit",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_5/fold_aggregation_audit.json",
+      "file_size_bytes": 93106,
+      "sha256": "edc4b0e88c9fe5b68d07f39ead514cb4b655445c11eead0f9f4dfd998d0d9999",
+      "artifact_category": "paired_audit",
+      "producing_phase": "Phase 5.3.3.5 Paired B4-B0 Audit",
+      "description": "Paired B4 vs B0 Statistical Audit Output",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_5/paired_b4_b0_results.json",
+      "file_size_bytes": 56013,
+      "sha256": "01c5f256ecbffd8bd34c83da1abe67eb34de537ebe4b1a29488d8f1690b25a1f",
+      "artifact_category": "paired_audit",
+      "producing_phase": "Phase 5.3.3.5 Paired B4-B0 Audit",
+      "description": "Paired B4 vs B0 Statistical Audit Output",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_6/bootstrap_implementation_audit.json",
+      "file_size_bytes": 67019,
+      "sha256": "8bed87dbbef2067df7f002c5ccb17296a07aa58609cb06c52e260b5cd6e5fff9",
+      "artifact_category": "bootstrap_audit",
+      "producing_phase": "Phase 5.3.3.6 Final Population & Bootstrap Audit",
+      "description": "Resampling Sensitivity and Bootstrap Inference Output",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_6/final_audit_manifest.json",
+      "file_size_bytes": 1879,
+      "sha256": "3d8b4108448b1039d79e18b6be5e9d4c839ed32e42012f9c5959717a9af910eb",
+      "artifact_category": "integrity_manifest",
+      "producing_phase": "Phase 5.3.3.6 Final Population & Bootstrap Audit",
+      "description": "Cryptographic Checksum and Hash Manifest",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    },
+    {
+      "relative_path": "artifacts/phase_5_3_3_6/oof_population_audit.json",
+      "file_size_bytes": 18918,
+      "sha256": "9ebc3fa04a7a218bc647390a40fc6f3b9722ac8545f11f419e0dc6d39ef1948c",
+      "artifact_category": "population_audit",
+      "producing_phase": "Phase 5.3.3.6 Final Population & Bootstrap Audit",
+      "description": "OOF Sample Population Accounting and Audit Output",
+      "freeze_status": "FROZEN_IMMUTABLE"
+    }
+  ]
+}

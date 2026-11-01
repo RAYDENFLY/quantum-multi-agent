@@ -1,0 +1,45 @@
+{
+  "phase": "5.3.3.5",
+  "title": "Final Cryptographic Audit Manifest",
+  "created_at_utc": "2026-11-01 22:00:00 UTC",
+  "fleet_total_oof_observations": 1322108,
+  "verdict": "PHASE_5_3_3_5_PASS",
+  "phase_5_4_gate_status": "HOLD",
+  "files": {
+    "fold_aggregation_audit.json": {
+      "path": "artifacts/phase_5_3_3_5/fold_aggregation_audit.json",
+      "sha256": "edc4b0e88c9fe5b68d07f39ead514cb4b655445c11eead0f9f4dfd998d0d9999",
+      "bytes": 93106
+    },
+    "paired_b4_b0_results.json": {
+      "path": "artifacts/phase_5_3_3_5/paired_b4_b0_results.json",
+      "sha256": "01c5f256ecbffd8bd34c83da1abe67eb34de537ebe4b1a29488d8f1690b25a1f",
+      "bytes": 56013
+    },
+    "PHASE_5_3_3_5_FOLD_AGGREGATION_AUDIT.md": {
+      "path": "docs/PHASE_5_3_3_5_FOLD_AGGREGATION_AUDIT.md",
+      "sha256": "cf1d1711718d4fcb796db2c1c5251be621063c7b6051480c6d18d8c7e3e1b24b",
+      "bytes": 47024
+    },
+    "PHASE_5_3_3_5_PAIRED_BOOTSTRAP_AUDIT.md": {
+      "path": "docs/PHASE_5_3_3_5_PAIRED_BOOTSTRAP_AUDIT.md",
+      "sha256": "4dda520ff44d711a1f8752cb39f4228b61d85ae9f982fad2e694821717ce5df7",
+      "bytes": 24376
+    },
+    "PHASE_5_3_3_5_FINAL_REPORT.md": {
+      "path": "docs/PHASE_5_3_3_5_FINAL_REPORT.md",
+      "sha256": "713762225507e6aedb1cf8852a08f5b5143bf4816172f5bd64c3b8baa7fda612",
+      "bytes": 22496
+    },
+    "run_phase5_3_3_5_paired_audit.py": {
+      "path": "scripts/run_phase5_3_3_5_paired_audit.py",
+      "sha256": "02d8e3760564250e5d657391e6386fa8a02fa09cadd4b8f80e6bb264be195b66",
+      "bytes": 25621
+    },
+    "test_phase5_3_3_5_paired_audit.py": {
+      "path": "tests/unit/test_phase5_3_3_5_paired_audit.py",
+      "sha256": "d01beab148c29d41878bed1d759c8b4672c23382406149a76f59ecd87b8563f7",
+      "bytes": 13574
+    }
+  }
+}
