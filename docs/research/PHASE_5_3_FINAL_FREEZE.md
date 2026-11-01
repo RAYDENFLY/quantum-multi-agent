@@ -1,7 +1,7 @@
 # QUANTUM PHASE 5.3: FINAL RESEARCH FREEZE & BENCHMARK CLOSURE
 **Official Research Closure, Cryptographic Artifact Inventory & Statistical Benchmark Reference**
 
-**Document Version:** 5.3.7.2_FINAL_FREEZE  
+**Document Version:** 5.3.7.3_FINAL_FREEZE  
 **Governance Status:** `PHASE_5_3_FINAL_FREEZE_COMPLETE`  
 **Producing System:** QUANTUM 11-Specialist Cryptocurrency Perpetual Futures ML Trading Research System  
 **Audit Scope:** Subphases 5.3.1 through 5.3.3.6, Phase 5.3.7, Phase 5.3.7.1, and Phase 5.3.7.2  
@@ -106,26 +106,52 @@ To eliminate mathematical ambiguity, Phase 5.3.7.2 formally defines:
 3. **True Population P-Value:**
    The true continuous population $p$-value $p = P_{H_0}(\Delta^* \le 0)$ is unobservable without infinite resamples ($B \to \infty$). The Monte Carlo estimate $\hat{p}_{\text{MC}} = 1/10001$ serves as a conservative upper-bound estimator for testing against family-wise error rate thresholds.
 
-### 3.2 Formal Holm-Bonferroni Family Table & Tie-Breaking Analysis (Task B)
-All 11 specialists exhibit zero null exceedances across 10,000 resamples, resulting in tied raw Monte Carlo estimates: $\hat{p}_{\text{MC}} = 1/10001 \approx 0.000100$.
-In [paired_b4_b0_results.json](file:///d:/quantum-multi-agent/artifacts/phase_5_3_3_5/paired_b4_b0_results.json), ties are resolved by sorting descending by observed effect size (paired delta $\Delta\text{BA}$), establishing the strictly monotonic evaluation sequence below ($M = 11, \alpha = 0.05$):
+### 3.2 Formal Holm-Bonferroni Procedure & Effect Size Ranking (Tasks 1 & 2)
 
-| Step Rank ($k$) | Specialist Instrument | Observed Paired Delta ($\Delta\text{BA}$) | Raw Monte Carlo Estimate ($\hat{p}_{\text{MC}}$) | Step-Down Alpha Threshold ($\alpha / (M - k + 1)$) | Holm-Adjusted $p$-Value ($p_{\text{adj}}$) | Statistical Decision |
+All 11 specialists exhibit zero null exceedances across 10,000 empirical block bootstrap resamples, yielding identical raw Monte Carlo estimates: $\hat{p}_{\text{MC}} = 1/10001 \approx 0.000100$.
+
+#### A. Mathematical Formulation of Holm (1979) Adjusted P-Values
+Under the step-down procedure of Holm (1979), raw $p$-values are sorted ascending: $p_{(1)} \le p_{(2)} \le \dots \le p_{(m)}$ for $m = 11$ hypotheses.
+The adjusted $p$-value for hypothesis $H_{(i)}$ is formally defined with the cumulative maximum operator:
+$$p_{\text{adj}(i)} = \min\left(1, \max_{j \le i} ((m - j + 1) \cdot p_{(j)})\right)$$
+
+The cumulative maximum $\max_{j \le i}$ is mathematically necessary to guarantee monotonicity:
+$$p_{\text{adj}(1)} \le p_{\text{adj}(2)} \le \dots \le p_{\text{adj}(m)}$$
+
+Because all 11 raw $p$-values are tied at $p_{(j)} = 1/10001$, the unadjusted products $(m - j + 1) \cdot p_{(j)}$ evaluate to:
+- For $j = 1$: $(11 - 1 + 1) \cdot (1/10001) = 11/10001 \approx 0.00109989$
+- For $j = 2$: $(11 - 2 + 1) \cdot (1/10001) = 10/10001 \approx 0.00099990$
+- For $j = 3$: $(11 - 3 + 1) \cdot (1/10001) = 9/10001 \approx 0.00089991$
+- ...
+- For $j = 11$: $(11 - 11 + 1) \cdot (1/10001) = 1/10001 \approx 0.00009999$
+
+Without the cumulative maximum operator, the values would improperly decrease as rank increases. Applying the cumulative maximum:
+$$\max_{j \le i} ((m - j + 1) \cdot p_{(j)}) = \frac{11}{10001} \quad \forall i \in \{1, 2, \dots, 11\}$$
+
+Therefore, every single hypothesis in the family has the exact same Holm adjusted $p$-value:
+$$p_{\text{adj}(i)} = \min\left(1, \frac{11}{10001}\right) = \frac{11}{10001} = 0.0010998900109989... \approx 0.00109989 \approx 0.001100$$
+
+#### B. Reconciled Statistical Table
+Because the raw $p$-values are identically tied, the primary Holm ranking by raw $p$-value is degenerate. The ordering below is established by sorting descending by observed empirical effect size (paired delta $\Delta\text{BA}$). Consequently, this ranking is explicitly designated as **Effect Size Ranking**:
+
+| Effect Size Rank | Specialist Instrument | Observed Paired Delta ($\Delta\text{BA}$) | Raw P-Value ($\hat{p}_{\text{MC}}$) | Holm Step-Down Threshold ($\alpha / (m - i + 1)$) | Holm Adjusted P-Value ($p_{\text{adj}}$) | Statistical Decision ($\alpha = 0.05$) |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| **1** | **LINKUSDT** | +0.165608 | 0.000100 (1/10001) | $0.05 / 11 = 0.004545$ | 0.0011 | **Reject $H_0$ (Significant)** |
-| **2** | **DOGEUSDT** | +0.154149 | 0.000100 (1/10001) | $0.05 / 10 = 0.005000$ | 0.0010 | **Reject $H_0$ (Significant)** |
-| **3** | **LTCUSDT** | +0.151769 | 0.000100 (1/10001) | $0.05 / 9 = 0.005556$ | 0.0009 | **Reject $H_0$ (Significant)** |
-| **4** | **ADAUSDT** | +0.135180 | 0.000100 (1/10001) | $0.05 / 8 = 0.006250$ | 0.0008 | **Reject $H_0$ (Significant)** |
-| **5** | **BNBUSDT** | +0.133344 | 0.000100 (1/10001) | $0.05 / 7 = 0.007143$ | 0.0007 | **Reject $H_0$ (Significant)** |
-| **6** | **ETHUSDT** | +0.126517 | 0.000100 (1/10001) | $0.05 / 6 = 0.008333$ | 0.0006 | **Reject $H_0$ (Significant)** |
-| **7** | **AVAXUSDT** | +0.118928 | 0.000100 (1/10001) | $0.05 / 5 = 0.010000$ | 0.0005 | **Reject $H_0$ (Significant)** |
-| **8** | **SOLUSDT** | +0.106631 | 0.000100 (1/10001) | $0.05 / 4 = 0.012500$ | 0.0004 | **Reject $H_0$ (Significant)** |
-| **9** | **BTCUSDT** | +0.100414 | 0.000100 (1/10001) | $0.05 / 3 = 0.016667$ | 0.0003 | **Reject $H_0$ (Significant)** |
-| **10** | **XRPUSDT** | +0.093771 | 0.000100 (1/10001) | $0.05 / 2 = 0.025000$ | 0.0002 | **Reject $H_0$ (Significant)** |
-| **11** | **XMRUSDT** | +0.053427 | 0.000100 (1/10001) | $0.05 / 1 = 0.050000$ | 0.0001 | **Reject $H_0$ (Significant)** |
+| **1** | **LINKUSDT** | +0.165608 | 1/10001 (0.000100) | $0.05 / 11 = 0.004545$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
+| **2** | **DOGEUSDT** | +0.154149 | 1/10001 (0.000100) | $0.05 / 10 = 0.005000$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
+| **3** | **LTCUSDT** | +0.151769 | 1/10001 (0.000100) | $0.05 / 9 = 0.005556$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
+| **4** | **ADAUSDT** | +0.135180 | 1/10001 (0.000100) | $0.05 / 8 = 0.006250$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
+| **5** | **BNBUSDT** | +0.133344 | 1/10001 (0.000100) | $0.05 / 7 = 0.007143$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
+| **6** | **ETHUSDT** | +0.126517 | 1/10001 (0.000100) | $0.05 / 6 = 0.008333$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
+| **7** | **AVAXUSDT** | +0.118928 | 1/10001 (0.000100) | $0.05 / 5 = 0.010000$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
+| **8** | **SOLUSDT** | +0.106631 | 1/10001 (0.000100) | $0.05 / 4 = 0.012500$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
+| **9** | **BTCUSDT** | +0.100414 | 1/10001 (0.000100) | $0.05 / 3 = 0.016667$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
+| **10** | **XRPUSDT** | +0.093771 | 1/10001 (0.000100) | $0.05 / 2 = 0.025000$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
+| **11** | **XMRUSDT** | +0.053427 | 1/10001 (0.000100) | $0.05 / 1 = 0.050000$ | **11/10001 (0.00109989)** | **Reject $H_0$ (Significant)** |
 
-*Tie-Breaking Invariance Analysis:*
-Because the raw Monte Carlo estimate $\hat{p}_{\text{MC}} = 0.000100$ is strictly smaller than the most conservative Bonferroni threshold ($0.05 / 11 = 0.004545$), every single hypothesis satisfies the rejection threshold at step $k=1$. Consequently, whether ties are resolved by effect size, evaluated simultaneously, or ordered by average rank, **all 11 null hypotheses are rejected with 100% statistical invariance**.
+#### C. Invariance of Rejection Decisions to Tie-Breaking
+Both decision frameworks produce identical, invariant conclusions:
+1. **Step-Down Framework:** At step $i = 1$, $\hat{p}_{\text{MC}} = 0.000100 \le 0.004545$. Because all 11 specialists satisfy the most conservative Bonferroni threshold at step 1, any arbitrary permutation of hypotheses results in 100% rejection.
+2. **Adjusted P-Value Framework:** For all 11 specialists, $p_{\text{adj}} = 11/10001 = 0.00109989 \le \alpha = 0.05$. Therefore, all 11 null hypotheses are rejected with complete statistical rigor.
 
 ### 3.3 Definitive Historical Benchmark Values for XRP and LINK (Task D)
 - **XRPUSDT Definitive Benchmark BA:** **0.3748**
@@ -168,7 +194,7 @@ To uphold strict scientific integrity, Phase 5.3.7.2 explicitly distinguishes:
 
 ## 5. Complete Frozen Artifact Inventory & Integrity Verification
 
-An exhaustive inventory of all 304 primary research artifacts is permanently registered in [frozen_artifact_manifest.json](file:///d:/quantum-multi-agent/artifacts/phase_5_3_freeze/frozen_artifact_manifest.json). Below is a summary of the key governance files and their verified SHA-256 digests:
+An exhaustive inventory of all 304 primary research artifacts is permanently registered in [frozen_artifact_manifest.json](file:///d:/quantum-multi-agent/artifacts/phase_5_3_freeze/frozen_artifact_manifest.json). Below is a complete inventory of the 19 key governance files and their verified SHA-256 digests (from the 304 total artifacts cataloged in [frozen_artifact_manifest.json](file:///d:/quantum-multi-agent/artifacts/phase_5_3_freeze/frozen_artifact_manifest.json)):
 
 | Artifact Category | Producing Phase | File Relative Path | Size (Bytes) | SHA-256 Checksum |
 | :--- | :--- | :--- | :---: | :--- |
