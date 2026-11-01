@@ -1,0 +1,99 @@
+{
+  "title": "Phase 5.5.0.2 Human Decision Registry",
+  "timestamp_utc": "2026-11-01 20:41:45 UTC",
+  "registry_objective": "Authoritative single-source-of-truth registry of all execution-blocking governance decisions.",
+  "total_registered_decisions": 6,
+  "total_unresolved_decisions": 6,
+  "total_blocking_decisions": 6,
+  "consistency_audit": "EXACT_RECONCILIATION_VERIFIED (Count = 6)",
+  "decisions": [
+    {
+      "decision_id": "DEC_01",
+      "decision_title": "Barrier Execution Architecture Selection",
+      "workstream": "WORKSTREAM_A",
+      "current_status": "PENDING_HUMAN_DECISION",
+      "blocks_execution": true,
+      "relevant_evidence": "Audit revealed that preserving original close[i] barriers (Alternative A) causes severe 1:5 risk-reward distortion on gapped opens. Alternative B re-anchors symmetric barriers to open[i+1]. Alternative C decouples directional signal from an independent trade exit policy.",
+      "available_options": [
+        "Alternative A: Preserve original label barriers (Not Recommended due to R:R collapse)",
+        "Alternative B: Re-anchor symmetric economic barriers to open[i+1] fill price (Recommended for pure barrier testing)",
+        "Alternative C: Decouple directional signal from an independent economic exit policy (Recommended for systematic strategy)"
+      ],
+      "recommendation": "Alternative B for direct triple-barrier validation, or Alternative C for professional algorithmic execution.",
+      "consequence_of_choice": "Alternative B preserves clean symmetric 1:1 volatility brackets. Alternative C requires validating a separate trade exit policy on Folds 3-4."
+    },
+    {
+      "decision_id": "DEC_02",
+      "decision_title": "Directional Trading Scope",
+      "workstream": "WORKSTREAM_A",
+      "current_status": "PENDING_HUMAN_DECISION",
+      "blocks_execution": true,
+      "relevant_evidence": "Frozen models were trained on labels where Class +1 represents upward excursions and Class -1 represents downward excursions. Directional short symmetry has not been independently proven.",
+      "available_options": [
+        "Long-only execution (strictly trade Class +1 signals)",
+        "Short-only execution (strictly trade Class -1 signals)",
+        "Bidirectional execution with mandatory separate PnL reporting for Long, Short, and Combined"
+      ],
+      "recommendation": "Bidirectional execution with mandatory separate reporting. If short trades fail to demonstrate positive net expectancy, restrict deployment to long-only.",
+      "consequence_of_choice": "Prevents masking short trade losses behind long trade profits during crypto bull regimes."
+    },
+    {
+      "decision_id": "DEC_03",
+      "decision_title": "Funding Rate Model Approval",
+      "workstream": "WORKSTREAM_B",
+      "current_status": "PENDING_HUMAN_DECISION",
+      "blocks_execution": true,
+      "relevant_evidence": "Canonical Parquet datasets lack empirical funding rates (FUNDING_DATA_UNAVAILABLE). 87.5% of trades do not cross a funding timestamp due to 60m maximum holding horizon.",
+      "available_options": [
+        "Approve parametric sensitivity sweep (Neutral, Moderate Bull, Severe Bull, Moderate Bear) for Phase 5.5",
+        "Require external backfill of audited Binance/Bybit historical funding rates before Phase 5.5 execution"
+      ],
+      "recommendation": "Approve parametric sensitivity sweep for Phase 5.5 with explicit disclosure of UNVERIFIED_ASSUMPTION status.",
+      "consequence_of_choice": "Enables economic backtesting without delay while maintaining strict transparency regarding data gaps."
+    },
+    {
+      "decision_id": "DEC_04",
+      "decision_title": "Primary Economic Cost Gate Tier",
+      "workstream": "WORKSTREAM_C",
+      "current_status": "PENDING_HUMAN_DECISION",
+      "blocks_execution": true,
+      "relevant_evidence": "Dimensional modeling confirms retail taker fees (10-12 bps) plus dynamic slippage/spread (6-8 bps) yield ~18.82 bps round-trip friction under typical conditions.",
+      "available_options": [
+        "Base Case Tier: 15 bps round-trip (Requires VIP exchange fee tiers)",
+        "Conservative Tier: 20 bps round-trip (Standard retail taker fees + volatility buffer)",
+        "Severe Stress Tier: 30 bps round-trip (Extreme volatility and spread widening)"
+      ],
+      "recommendation": "Confirm 20 bps Conservative Tier as the mandatory pass/fail break-even gate (Gate 2).",
+      "consequence_of_choice": "Guarantees strategy is not approved based on unrealistically low institutional fee assumptions."
+    },
+    {
+      "decision_id": "DEC_05",
+      "decision_title": "Portfolio Concurrency and Leverage Limits",
+      "workstream": "WORKSTREAM_D",
+      "current_status": "PENDING_HUMAN_DECISION",
+      "blocks_execution": true,
+      "relevant_evidence": "11 independent specialists share one account equity. Concurrent signals during market dislocations can cause capital exhaustion or correlated multi-position drawdowns.",
+      "available_options": [
+        "Max 2 concurrent positions, max 2.0x gross leverage",
+        "Max 3 concurrent positions, max 3.0x gross leverage (Recommended)",
+        "Max 5 concurrent positions, max 5.0x gross leverage"
+      ],
+      "recommendation": "Approve maximum 3 concurrent positions and maximum 3.0x gross leverage with priority queue based on calibrated confidence Delta P.",
+      "consequence_of_choice": "Enforces conservative capital protection while allowing multi-asset diversification."
+    },
+    {
+      "decision_id": "DEC_06",
+      "decision_title": "XMRUSDT Research and Portfolio Eligibility",
+      "workstream": "WORKSTREAM_E",
+      "current_status": "PENDING_HUMAN_DECISION",
+      "blocks_execution": true,
+      "relevant_evidence": "XMRUSDT possesses only 83,863 candles (2026 only, 291 days) and only 1 minority-class sample at 20% coverage in Fold 5. All 55 frozen model binaries must be preserved unchanged.",
+      "available_options": [
+        "Preserve XMR model artifacts, maintain specialist research eligibility, but EXCLUDE XMR from primary economic portfolio",
+        "Include XMR in primary portfolio despite data and class support deficit"
+      ],
+      "recommendation": "Preserve XMR model artifacts 100%, but exclude XMR from primary portfolio evaluation (report XMR in isolated appendix).",
+      "consequence_of_choice": "Prevents single-year data deficit from distorting multi-year portfolio backtesting statistics."
+    }
+  ]
+}

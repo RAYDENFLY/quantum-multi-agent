@@ -1,0 +1,52 @@
+{
+  "title": "Phase 5.5.0.2 Funding Scenario Registry",
+  "timestamp_utc": "2026-11-01 20:41:45 UTC",
+  "primary_unit": "funding_rate_bps_per_settlement (basis points per 8-hour window)",
+  "annualized_formula": "nominal_annualized_bps = bps_per_settlement * 3 * 365 = bps_per_settlement * 1095",
+  "settlement_frequency_hours": 8,
+  "settlements_per_year": 1095,
+  "empirical_data_status": "FUNDING_DATA_UNAVAILABLE",
+  "total_scenarios": 4,
+  "scenarios": [
+    {
+      "scenario_id": "SCENARIO_F_NEUTRAL",
+      "scenario_name": "Zero Funding Baseline",
+      "funding_rate_bps_per_settlement": 0.0,
+      "funding_rate_pct_per_8h": 0.0,
+      "nominal_annualized_bps": 0.0,
+      "nominal_annualized_pct": 0.0,
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "market_regime_description": "Hypothetical frictionless financing baseline where perp perfectly tracks spot."
+    },
+    {
+      "scenario_id": "SCENARIO_F_BULL_MODERATE",
+      "scenario_name": "Moderate Bull Premium (Standard Long Drag)",
+      "funding_rate_bps_per_settlement": 1.0,
+      "funding_rate_pct_per_8h": 0.01,
+      "nominal_annualized_bps": 1095.0,
+      "nominal_annualized_pct": 10.95,
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "market_regime_description": "Typical baseline crypto perpetual bull market rate (0.01% per 8h). Longs pay, shorts receive."
+    },
+    {
+      "scenario_id": "SCENARIO_F_BULL_SEVERE",
+      "scenario_name": "Severe Bull Euphoria (High Long Drag)",
+      "funding_rate_bps_per_settlement": 3.0,
+      "funding_rate_pct_per_8h": 0.03,
+      "nominal_annualized_bps": 3285.0,
+      "nominal_annualized_pct": 32.85,
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "market_regime_description": "Elevated speculative premium during strong market rallies (0.03% per 8h). Severe drag on long trades."
+    },
+    {
+      "scenario_id": "SCENARIO_F_BEAR_MODERATE",
+      "scenario_name": "Moderate Bear Discount (Standard Short Drag)",
+      "funding_rate_bps_per_settlement": -1.0,
+      "funding_rate_pct_per_8h": -0.01,
+      "nominal_annualized_bps": -1095.0,
+      "nominal_annualized_pct": -10.95,
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "market_regime_description": "Perpetual trading at discount to spot during prolonged corrections (-0.01% per 8h). Shorts pay, longs receive."
+    }
+  ]
+}
