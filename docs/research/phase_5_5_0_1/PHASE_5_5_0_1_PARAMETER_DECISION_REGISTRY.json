@@ -1,0 +1,131 @@
+{
+  "title": "Phase 5.5.0.1 Parameter Decision Registry",
+  "timestamp_utc": "2026-11-01 20:29:46 UTC",
+  "total_parameters": 13,
+  "status_breakdown": {
+    "verified_from_source": 3,
+    "verified_from_data_metadata": 1,
+    "unverified_assumption": 7,
+    "unavailable": 1,
+    "requires_human_decision": 1
+  },
+  "parameters": [
+    {
+      "parameter_name": "primary_economic_estimand",
+      "proposed_value": "NET_RETURN_PER_TRADE_AFTER_ALL_MODELED_COSTS",
+      "unit": "decimal fraction / bps",
+      "evidence_status": "VERIFIED_FROM_SOURCE",
+      "validation_requirement": "Net return after fees, slippage, and funding",
+      "sensitivity_impact": "CRITICAL",
+      "approval_status": "APPROVED_FOR_DESIGN"
+    },
+    {
+      "parameter_name": "calendar_history_duration",
+      "proposed_value": "3 years, 3 days (1,100 days)",
+      "unit": "calendar days",
+      "evidence_status": "VERIFIED_FROM_DATA_METADATA",
+      "validation_requirement": "Corrected from erroneous 4-year description",
+      "sensitivity_impact": "MEDIUM",
+      "approval_status": "APPROVED_FOR_DESIGN"
+    },
+    {
+      "parameter_name": "barrier_execution_architecture",
+      "proposed_value": "ALTERNATIVE_B_REANCHOR_TO_OPEN",
+      "unit": "architectural choice",
+      "evidence_status": "REQUIRES_HUMAN_DECISION",
+      "validation_requirement": "Human decision required between Alternative A, B, and C",
+      "sensitivity_impact": "CRITICAL",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "base_case_round_trip_cost",
+      "proposed_value": 15.0,
+      "unit": "bps",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Provisional retail fee schedule + spread buffer",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "conservative_case_round_trip_cost",
+      "proposed_value": 20.0,
+      "unit": "bps",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Mandatory economic break-even gate",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "severe_stress_case_round_trip_cost",
+      "proposed_value": 30.0,
+      "unit": "bps",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "High volatility stress test gate",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "comparability_scenario_cost",
+      "proposed_value": 7.0,
+      "unit": "bps",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Retained for backward comparability with Phase 5.4.2",
+      "sensitivity_impact": "MEDIUM",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "historical_funding_rate_data",
+      "proposed_value": "UNAVAILABLE",
+      "unit": "categorical status",
+      "evidence_status": "UNAVAILABLE",
+      "validation_requirement": "Parametric sweep active pending external data acquisition",
+      "sensitivity_impact": "MEDIUM",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "position_notional_definition",
+      "proposed_value": "QUOTE_CURRENCY_USDT_NOTIONAL",
+      "unit": "USDT notional",
+      "evidence_status": "VERIFIED_FROM_SOURCE",
+      "validation_requirement": "Clarified that N_i is notional value, never initial margin",
+      "sensitivity_impact": "CRITICAL",
+      "approval_status": "APPROVED_FOR_DESIGN"
+    },
+    {
+      "parameter_name": "fixed_fractional_risk_target",
+      "proposed_value": 0.01,
+      "unit": "fraction of equity (1.0%)",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Provisional design target, not guaranteed maximum loss",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "maximum_concurrent_positions",
+      "proposed_value": 3,
+      "unit": "integer (out of 11 specialists)",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Portfolio concurrency limit to prevent capital exhaustion",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "maximum_gross_portfolio_leverage",
+      "proposed_value": 3.0,
+      "unit": "leverage multiplier (x)",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Gross notional exposure limit across all active positions",
+      "sensitivity_impact": "CRITICAL",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "bootstrap_block_length_primary",
+      "proposed_value": 24,
+      "unit": "5m bars (2 hours)",
+      "evidence_status": "VERIFIED_FROM_SOURCE",
+      "validation_requirement": "Primary block length evaluated alongside 12, 48, 96 bars",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "APPROVED_FOR_DESIGN"
+    }
+  ]
+}

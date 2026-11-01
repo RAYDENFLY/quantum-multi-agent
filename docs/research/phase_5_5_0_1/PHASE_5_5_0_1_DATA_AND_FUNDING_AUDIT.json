@@ -1,0 +1,70 @@
+{
+  "title": "Phase 5.5.0.1 Historical Data Coverage and Funding Audit",
+  "timestamp_utc": "2026-11-01 20:29:46 UTC",
+  "calendar_duration_correction": {
+    "erroneous_prior_description": "Approximately 4 years of history",
+    "corrected_calendar_span": "Exactly 3 years and 3 days (1,100 calendar days)",
+    "calendar_start_utc": "2023-10-28 22:00:00 UTC",
+    "calendar_end_utc": "2026-10-31 20:55:00 UTC",
+    "explanation": "The 4 Parquet files correspond to calendar partition directory years: 2023 (2 months), 2024 (12 months), 2025 (12 months), and 2026 (10 months). Total duration is 3.01 years, not 4.0 years."
+  },
+  "instruments_audit": {
+    "ten_standard_instruments": {
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "BNBUSDT",
+        "XRPUSDT",
+        "ADAUSDT",
+        "SOLUSDT",
+        "AVAXUSDT",
+        "LINKUSDT",
+        "DOGEUSDT",
+        "LTCUSDT"
+      ],
+      "total_rows_per_symbol": 316500,
+      "expected_5m_candles_in_1100_days": 316800,
+      "data_completeness_percentage": 99.905,
+      "missing_candles_count": 300,
+      "status": "VERIFIED_FROM_DATA_METADATA"
+    },
+    "xmrusdt_specialist": {
+      "symbol": "XMRUSDT",
+      "total_rows": 83863,
+      "calendar_start_utc": "2026-01-13 16:45:00 UTC",
+      "calendar_end_utc": "2026-10-31 21:15:00 UTC",
+      "calendar_days": 291,
+      "status": "INSUFFICIENT_HISTORY_CONFIRMED",
+      "economic_recommendation": "EXCLUDED_FROM_ECONOMIC_PORTFOLIO"
+    }
+  },
+  "funding_rate_audit": {
+    "empirical_historical_data_status": "UNAVAILABLE",
+    "canonical_data_columns": [
+      "open_time_ms",
+      "close_time_ms",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "quote_volume",
+      "trade_count",
+      "taker_buy_volume",
+      "taker_buy_quote_volume"
+    ],
+    "settlement_frequency": "Every 8 hours (00:00, 08:00, 16:00 UTC)",
+    "cash_flow_conventions": {
+      "long_sign": "Long pays when rate > 0; Long receives when rate < 0",
+      "short_sign": "Short receives when rate > 0; Short pays when rate < 0",
+      "notional_basis": "Notional value at exact settlement timestamp",
+      "holding_overlap_probability": "12.5% of trades cross a funding timestamp (max 60m horizon / 480m interval)"
+    },
+    "governance_rule": "Absence of empirical funding data must NEVER be replaced with zero funding. Parametric funding scenarios must be classified as UNVERIFIED_ASSUMPTION."
+  },
+  "prospective_holdout_protection": {
+    "holdout_window_utc": "2026-11-01 00:00:00 UTC to 2027-04-30 23:59:59.999 UTC",
+    "isolation_status": "VERIFIED_STRICTLY_INACCESSIBLE",
+    "inspected_records": 0
+  }
+}

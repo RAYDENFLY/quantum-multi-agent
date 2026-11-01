@@ -1,0 +1,55 @@
+{
+  "title": "Phase 5.5.0.1 Unresolved Issues Register",
+  "timestamp_utc": "2026-11-01 20:29:46 UTC",
+  "total_unresolved_issues": 5,
+  "critical_issues": 1,
+  "high_issues": 1,
+  "medium_issues": 3,
+  "issues": [
+    {
+      "issue_id": "ISSUE_01_BARRIER_REANCHORING_DECISION",
+      "category": "EXECUTION_SEMANTICS",
+      "title": "Selection Between Barrier Execution Alternatives A, B, and C",
+      "description": "Choosing whether to preserve original close[i] barriers (Alternative A), re-anchor economic barriers to open[i+1] (Alternative B), or decouple directional signals from an independent trade exit policy (Alternative C).",
+      "evidence_status": "REQUIRES_HUMAN_DECISION",
+      "impact": "CRITICAL",
+      "recommended_resolution": "Alternative B for pure barrier strategy evaluation, or Alternative C for practical systematic execution."
+    },
+    {
+      "issue_id": "ISSUE_02_DIRECTIONAL_SHORT_SYMMETRY",
+      "category": "MODEL_VALIDITY",
+      "title": "Directional Short Exploitation Symmetry Proof",
+      "description": "Validating whether predicting Class -1 (downward barrier touch) generates profitable short returns after costs with equal efficacy as Class +1 long returns.",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "impact": "HIGH",
+      "recommended_resolution": "Mandate separate long-only, short-only, and combined PnL reporting in Phase 5.5."
+    },
+    {
+      "issue_id": "ISSUE_03_HISTORICAL_FUNDING_DATA_ACQUISITION",
+      "category": "DATA_AVAILABILITY",
+      "title": "Historical 8-Hour Funding Rate Dataset Acquisition",
+      "description": "Canonical repository datasets lack empirical funding rates, necessitating parametric sensitivity modeling until external historical records are backfilled.",
+      "evidence_status": "UNAVAILABLE",
+      "impact": "MEDIUM",
+      "recommended_resolution": "Authorize external backfill of Binance/Bybit historical funding rates or approve parametric sensitivity grid."
+    },
+    {
+      "issue_id": "ISSUE_04_SLIPPAGE_COEFFICIENT_EMPIRICAL_CALIBRATION",
+      "category": "TRANSACTION_COSTS",
+      "title": "Dynamic Slippage Scaling Coefficients Alpha and Beta",
+      "description": "Parameters alpha=0.05 and beta=0.0010 are derived from academic literature rather than empirical exchange fill logs.",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "impact": "MEDIUM",
+      "recommended_resolution": "Maintain 20 bps and 30 bps stress testing gates to ensure robustness against parameter miscalibration."
+    },
+    {
+      "issue_id": "ISSUE_05_PORTFOLIO_CONCURRENCY_ALLOCATION_RULES",
+      "category": "RISK_MANAGEMENT",
+      "title": "Multi-Asset Concurrency Queue Tie-Breaking Protocol",
+      "description": "Protocol when more than 3 specialists trigger simultaneous signals with equal calibrated confidence.",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "impact": "MEDIUM",
+      "recommended_resolution": "Enforce secondary tie-breaking by instrument liquidity (highest 24h quote volume wins)."
+    }
+  ]
+}
