@@ -1,0 +1,35 @@
+{
+  "title": "Phase 5.4.6 SHA-256 Hash Manifest",
+  "timestamp_utc": "2026-11-01 20:12:07 UTC",
+  "total_files": 7,
+  "artifacts": {
+    "PHASE_5_4_6_AURCC_INFERENCE_SEPARATION.json": {
+      "sha256": "b9bb6b2e261daba6c593d5f5893698d706eb51b56c4353ec64250670e3811169",
+      "size_bytes": 12628
+    },
+    "PHASE_5_4_6_MONTE_CARLO_RESOLUTION_GOVERNANCE.json": {
+      "sha256": "5b531a01877d17963e6ac09067e296da950f03689ad7aa7faf52ae0030f47f03",
+      "size_bytes": 44202
+    },
+    "PHASE_5_4_6_ECE_CROSS_PHASE_RECONCILIATION.json": {
+      "sha256": "4e3eb7c43628976f46b9ce2d15c77c048e370c706e68c932578cfa42b95f42b3",
+      "size_bytes": 9082
+    },
+    "PHASE_5_4_6_FLEET_FINAL_STATISTICAL_STATUS.json": {
+      "sha256": "5ca9de36c1afc45bb44b6232b8d4f803b7a0380f7f0d14e31bad07ca27e3db98",
+      "size_bytes": 8868
+    },
+    "PHASE_5_4_6_ARTIFACT_INTEGRITY_AUDIT.json": {
+      "sha256": "3978ea2543f30cb67d6dd43d1bf235dffeb0def42aa4c6ab4e07e2b95f9ae03f",
+      "size_bytes": 613
+    },
+    "PHASE_5_4_6_FINAL_CONSISTENCY_REPORT.md": {
+      "sha256": "258d8c4672671b6442f510976ad08302e861fc6d05e18f99720be004df735217",
+      "size_bytes": 23919
+    },
+    "PHASE_5_4_6_TEST_EXECUTION_REPORT.json": {
+      "sha256": "fb1e3ff19196fe22b25a3a2993c3ffddaeccc54cfa20d888d1b28bad6f117cca",
+      "size_bytes": 1647
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "title": "Workstream A: AU-RCC Inference Semantics Correction & Separation",
+  "timestamp_utc": "2026-11-01 20:09:55 UTC",
+  "objective": "Disentangle descriptive numerical AU-RCC effect from inferential tier-level Balanced Accuracy hypothesis tests, and officially retire the misleading label STATISTICALLY_SUPERIOR for AU-RCC.",
+  "mathematical_distinction": {
+    "integrated_aurcc_estimand": "AU-RCC = (1 / 0.8) * integral_{0.2}^{1.0} Risk(kappa) d_kappa. Computed deterministically via trapezoidal numerical quadrature. No direct inferential hypothesis test was conducted on this integral.",
+    "tier_level_ba_estimand": "Pointwise hypothesis test H0: BA_conf(kappa) <= BA_rand(kappa) evaluated at discrete coverage levels kappa in {0.2, 0.3, ..., 0.8}. Inferential statements apply strictly to the tested coverage tiers, not to the functional integral across all coverage.",
+    "discontinuation_notice": "The classification STATISTICALLY_SUPERIOR is permanently discontinued because it conflated pointwise coverage-tier Balanced Accuracy hypothesis tests with integrated AU-RCC performance."
+  },
+  "fleet_counts": {
+    "total_instruments": 11,
+    "lower_aurcc_observed": 7,
+    "higher_aurcc_observed": 4,
+    "tier_level_ba_superiority_evidence": 5,
+    "no_tier_level_significance": 6,
+    "insufficient_class_support": 1,
+    "sufficient_class_support": 10
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "instrument": "BTCUSDT",
+      "confidence_au_rcc": 0.663266,
+      "random_au_rcc": 0.667078,
+      "delta_au_rcc": -0.003811,
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "final_descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "Minority class support exceeds 50 observations at coverage kappa=0.20 across all folds.",
+      "discontinued_prior_label": null,
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    },
+    "ETHUSDT": {
+      "instrument": "ETHUSDT",
+      "confidence_au_rcc": 0.65376,
+      "random_au_rcc": 0.661099,
+      "delta_au_rcc": -0.007339,
+      "significant_coverage_tiers_count": 4,
+      "coverage_tiers_rejected_after_holm": [
+        0.2,
+        0.3,
+        0.4,
+        0.5
+      ],
+      "adjusted_p_values": {
+        "cov_20": 0.00175996,
+        "cov_30": 0.00175996,
+        "cov_40": 0.00175996,
+        "cov_50": 0.00175996
+      },
+      "final_descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "TIER_LEVEL_BA_SUPERIORITY_EVIDENCE",
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "Minority class support exceeds 50 observations at coverage kappa=0.20 across all folds.",
+      "discontinued_prior_label": "STATISTICALLY_SUPERIOR",
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [0.2, 0.3, 0.4, 0.5] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    },
+    "BNBUSDT": {
+      "instrument": "BNBUSDT",
+      "confidence_au_rcc": 0.659471,
+      "random_au_rcc": 0.658988,
+      "delta_au_rcc": 0.000483,
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "final_descriptive_aurcc_category": "HIGHER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "Minority class support exceeds 50 observations at coverage kappa=0.20 across all folds.",
+      "discontinued_prior_label": null,
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    },
+    "XRPUSDT": {
+      "instrument": "XRPUSDT",
+      "confidence_au_rcc": 0.66349,
+      "random_au_rcc": 0.658602,
+      "delta_au_rcc": 0.004888,
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "final_descriptive_aurcc_category": "HIGHER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "Minority class support exceeds 50 observations at coverage kappa=0.20 across all folds.",
+      "discontinued_prior_label": null,
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    },
+    "ADAUSDT": {
+      "instrument": "ADAUSDT",
+      "confidence_au_rcc": 0.635514,
+      "random_au_rcc": 0.633906,
+      "delta_au_rcc": 0.001608,
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "final_descriptive_aurcc_category": "HIGHER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "Minority class support exceeds 50 observations at coverage kappa=0.20 across all folds.",
+      "discontinued_prior_label": null,
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    },
+    "SOLUSDT": {
+      "instrument": "SOLUSDT",
+      "confidence_au_rcc": 0.658411,
+      "random_au_rcc": 0.660004,
+      "delta_au_rcc": -0.001593,
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "final_descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "Minority class support exceeds 50 observations at coverage kappa=0.20 across all folds.",
+      "discontinued_prior_label": null,
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    },
+    "AVAXUSDT": {
+      "instrument": "AVAXUSDT",
+      "confidence_au_rcc": 0.642459,
+      "random_au_rcc": 0.634633,
+      "delta_au_rcc": 0.007825,
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "final_descriptive_aurcc_category": "HIGHER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "Minority class support exceeds 50 observations at coverage kappa=0.20 across all folds.",
+      "discontinued_prior_label": null,
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    },
+    "LINKUSDT": {
+      "instrument": "LINKUSDT",
+      "confidence_au_rcc": 0.620325,
+      "random_au_rcc": 0.626217,
+      "delta_au_rcc": -0.005892,
+      "significant_coverage_tiers_count": 2,
+      "coverage_tiers_rejected_after_holm": [
+        0.2,
+        0.3
+      ],
+      "adjusted_p_values": {
+        "cov_20": 0.00175996,
+        "cov_30": 0.00175996
+      },
+      "final_descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "TIER_LEVEL_BA_SUPERIORITY_EVIDENCE",
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "Minority class support exceeds 50 observations at coverage kappa=0.20 across all folds.",
+      "discontinued_prior_label": "STATISTICALLY_SUPERIOR",
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [0.2, 0.3] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    },
+    "DOGEUSDT": {
+      "instrument": "DOGEUSDT",
+      "confidence_au_rcc": 0.631467,
+      "random_au_rcc": 0.640584,
+      "delta_au_rcc": -0.009118,
+      "significant_coverage_tiers_count": 3,
+      "coverage_tiers_rejected_after_holm": [
+        0.2,
+        0.3,
+        0.4
+      ],
+      "adjusted_p_values": {
+        "cov_20": 0.00175996,
+        "cov_30": 0.00175996,
+        "cov_40": 0.00631987
+      },
+      "final_descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "TIER_LEVEL_BA_SUPERIORITY_EVIDENCE",
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "Minority class support exceeds 50 observations at coverage kappa=0.20 across all folds.",
+      "discontinued_prior_label": "STATISTICALLY_SUPERIOR",
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [0.2, 0.3, 0.4] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    },
+    "LTCUSDT": {
+      "instrument": "LTCUSDT",
+      "confidence_au_rcc": 0.61441,
+      "random_au_rcc": 0.619592,
+      "delta_au_rcc": -0.005182,
+      "significant_coverage_tiers_count": 2,
+      "coverage_tiers_rejected_after_holm": [
+        0.2,
+        0.3
+      ],
+      "adjusted_p_values": {
+        "cov_20": 0.00175996,
+        "cov_30": 0.00935981
+      },
+      "final_descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "TIER_LEVEL_BA_SUPERIORITY_EVIDENCE",
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "Minority class support exceeds 50 observations at coverage kappa=0.20 across all folds.",
+      "discontinued_prior_label": "STATISTICALLY_SUPERIOR",
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [0.2, 0.3] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    },
+    "XMRUSDT": {
+      "instrument": "XMRUSDT",
+      "confidence_au_rcc": 0.659997,
+      "random_au_rcc": 0.672363,
+      "delta_au_rcc": -0.012366,
+      "significant_coverage_tiers_count": 1,
+      "coverage_tiers_rejected_after_holm": [
+        0.4
+      ],
+      "adjusted_p_values": {
+        "cov_40": 0.01847963
+      },
+      "final_descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "final_inferential_ba_category": "TIER_LEVEL_BA_SUPERIORITY_EVIDENCE",
+      "class_support_status": "INSUFFICIENT_CLASS_SUPPORT",
+      "class_support_rationale": "XMRUSDT Fold 5 sample size is only 3,052 observations. At coverage kappa=0.20, minority class support contains only 1 observation, rendering balanced accuracy unstable and unrepresentative.",
+      "discontinued_prior_label": null,
+      "semantic_governance_rule": "AU-RCC was calculated via deterministic numerical integration. Rejecting H0: BA_conf(kappa) <= BA_rand(kappa) at coverage tiers [0.4] provides tier-level BA evidence only and does NOT establish statistical superiority of the integrated AU-RCC metric."
+    }
+  }
+}

@@ -1,0 +1,878 @@
+{
+  "title": "Workstream D: Retrospective Temporal Policy Robustness Analysis",
+  "timestamp_utc": "2026-11-01 19:47:39 UTC",
+  "analysis_classification": "RETROSPECTIVE_TEMPORAL_ROBUSTNESS_ANALYSIS",
+  "governance_caveat_and_scope": "Segment 3 (Fold 5) is NOT a fresh untouched out-of-sample holdout. It was previously examined in Phase 5.4.2, 5.4.3, and 5.4.4. This evaluation provides historical temporal robustness evidence only. Claims of '100% independent OOS generalization' are strictly rejected and replaced with retrospective consistency evidence. Evaluating multiple policies on Segment 2 introduces post-hoc selection uncertainty, which is transparently documented across all 4 policies.",
+  "selection_uncertainty_disclosure": "Selecting the best among four candidate policies on Segment 2 introduces model selection uncertainty. While the policy with the lowest AU-RCC on Segment 2 maintained its top ranking on Segment 3 for all 11 instruments, this agreement reflects historical temporal continuity across folds, not prospective out-of-sample verification.",
+  "instruments": {
+    "BTCUSDT": {
+      "instrument": "BTCUSDT",
+      "policy_selected_on_segment_2": "Policy_C_Directional_Margin",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_A_Global_Max",
+      "selected_policy_retained_rank_on_segment_3": false,
+      "selected_policy_outperformed_policy_a_on_segment_3": false,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": 0.003406,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.660371,
+            "full_coverage_ba": 0.340386,
+            "cov20_ba": 0.340663,
+            "delta_ba_span": 0.000277,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.663266,
+            "full_coverage_ba": 0.332928,
+            "cov20_ba": 0.335988,
+            "delta_ba_span": 0.003059,
+            "is_retrospective_best": true
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.660371,
+            "full_coverage_ba": 0.340386,
+            "cov20_ba": 0.340663,
+            "delta_ba_span": 0.000277,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.663266,
+            "full_coverage_ba": 0.332928,
+            "cov20_ba": 0.335988,
+            "delta_ba_span": 0.003059,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.655895,
+            "full_coverage_ba": 0.340386,
+            "cov20_ba": 0.346712,
+            "delta_ba_span": 0.006326,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.666672,
+            "full_coverage_ba": 0.332928,
+            "cov20_ba": 0.336967,
+            "delta_ba_span": 0.004039,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.661024,
+            "full_coverage_ba": 0.340386,
+            "cov20_ba": 0.340115,
+            "delta_ba_span": -0.000271,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.66388,
+            "full_coverage_ba": 0.332928,
+            "cov20_ba": 0.335966,
+            "delta_ba_span": 0.003038,
+            "is_retrospective_best": false
+          }
+        }
+      ]
+    },
+    "ETHUSDT": {
+      "instrument": "ETHUSDT",
+      "policy_selected_on_segment_2": "Policy_C_Directional_Margin",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_A_Global_Max",
+      "selected_policy_retained_rank_on_segment_3": false,
+      "selected_policy_outperformed_policy_a_on_segment_3": false,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": 0.00709,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.664777,
+            "full_coverage_ba": 0.341087,
+            "cov20_ba": 0.333523,
+            "delta_ba_span": -0.007564,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.65376,
+            "full_coverage_ba": 0.33889,
+            "cov20_ba": 0.364396,
+            "delta_ba_span": 0.025505,
+            "is_retrospective_best": true
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.664777,
+            "full_coverage_ba": 0.341087,
+            "cov20_ba": 0.333523,
+            "delta_ba_span": -0.007564,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.66581,
+            "full_coverage_ba": 0.33889,
+            "cov20_ba": 0.332348,
+            "delta_ba_span": -0.006542,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.657987,
+            "full_coverage_ba": 0.341087,
+            "cov20_ba": 0.343877,
+            "delta_ba_span": 0.00279,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.66085,
+            "full_coverage_ba": 0.33889,
+            "cov20_ba": 0.341155,
+            "delta_ba_span": 0.002264,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.664672,
+            "full_coverage_ba": 0.341087,
+            "cov20_ba": 0.332646,
+            "delta_ba_span": -0.008441,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.665278,
+            "full_coverage_ba": 0.33889,
+            "cov20_ba": 0.335167,
+            "delta_ba_span": -0.003724,
+            "is_retrospective_best": false
+          }
+        }
+      ]
+    },
+    "BNBUSDT": {
+      "instrument": "BNBUSDT",
+      "policy_selected_on_segment_2": "Policy_C_Directional_Margin",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_C_Directional_Margin",
+      "selected_policy_retained_rank_on_segment_3": true,
+      "selected_policy_outperformed_policy_a_on_segment_3": true,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": -0.001685,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.663986,
+            "full_coverage_ba": 0.340219,
+            "cov20_ba": 0.334175,
+            "delta_ba_span": -0.006044,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.659471,
+            "full_coverage_ba": 0.341004,
+            "cov20_ba": 0.337569,
+            "delta_ba_span": -0.003435,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.663986,
+            "full_coverage_ba": 0.340219,
+            "cov20_ba": 0.334175,
+            "delta_ba_span": -0.006044,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.659752,
+            "full_coverage_ba": 0.341004,
+            "cov20_ba": 0.337569,
+            "delta_ba_span": -0.003435,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.659292,
+            "full_coverage_ba": 0.340219,
+            "cov20_ba": 0.340983,
+            "delta_ba_span": 0.000764,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.657786,
+            "full_coverage_ba": 0.341004,
+            "cov20_ba": 0.339116,
+            "delta_ba_span": -0.001888,
+            "is_retrospective_best": true
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.663974,
+            "full_coverage_ba": 0.340219,
+            "cov20_ba": 0.333985,
+            "delta_ba_span": -0.006233,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.660805,
+            "full_coverage_ba": 0.341004,
+            "cov20_ba": 0.337648,
+            "delta_ba_span": -0.003356,
+            "is_retrospective_best": false
+          }
+        }
+      ]
+    },
+    "XRPUSDT": {
+      "instrument": "XRPUSDT",
+      "policy_selected_on_segment_2": "Policy_C_Directional_Margin",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_C_Directional_Margin",
+      "selected_policy_retained_rank_on_segment_3": true,
+      "selected_policy_outperformed_policy_a_on_segment_3": true,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": -0.010769,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.659835,
+            "full_coverage_ba": 0.344364,
+            "cov20_ba": 0.350801,
+            "delta_ba_span": 0.006437,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.66349,
+            "full_coverage_ba": 0.341372,
+            "cov20_ba": 0.333551,
+            "delta_ba_span": -0.007821,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.66449,
+            "full_coverage_ba": 0.344364,
+            "cov20_ba": 0.337606,
+            "delta_ba_span": -0.006758,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.663474,
+            "full_coverage_ba": 0.341372,
+            "cov20_ba": 0.333551,
+            "delta_ba_span": -0.007821,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.654888,
+            "full_coverage_ba": 0.344364,
+            "cov20_ba": 0.350258,
+            "delta_ba_span": 0.005894,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.652721,
+            "full_coverage_ba": 0.341372,
+            "cov20_ba": 0.361505,
+            "delta_ba_span": 0.020133,
+            "is_retrospective_best": true
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.66464,
+            "full_coverage_ba": 0.344364,
+            "cov20_ba": 0.336332,
+            "delta_ba_span": -0.008032,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.664453,
+            "full_coverage_ba": 0.341372,
+            "cov20_ba": 0.334123,
+            "delta_ba_span": -0.007249,
+            "is_retrospective_best": false
+          }
+        }
+      ]
+    },
+    "ADAUSDT": {
+      "instrument": "ADAUSDT",
+      "policy_selected_on_segment_2": "Policy_A_Global_Max",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_C_Directional_Margin",
+      "selected_policy_retained_rank_on_segment_3": false,
+      "selected_policy_outperformed_policy_a_on_segment_3": true,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": 0.0,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.593787,
+            "full_coverage_ba": 0.393755,
+            "cov20_ba": 0.448411,
+            "delta_ba_span": 0.054657,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.635514,
+            "full_coverage_ba": 0.36606,
+            "cov20_ba": 0.380531,
+            "delta_ba_span": 0.014471,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.63924,
+            "full_coverage_ba": 0.393755,
+            "cov20_ba": 0.363237,
+            "delta_ba_span": -0.030517,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.640955,
+            "full_coverage_ba": 0.36606,
+            "cov20_ba": 0.3684,
+            "delta_ba_span": 0.00234,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.603897,
+            "full_coverage_ba": 0.393755,
+            "cov20_ba": 0.394897,
+            "delta_ba_span": 0.001142,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.624823,
+            "full_coverage_ba": 0.36606,
+            "cov20_ba": 0.38693,
+            "delta_ba_span": 0.02087,
+            "is_retrospective_best": true
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.642563,
+            "full_coverage_ba": 0.393755,
+            "cov20_ba": 0.351231,
+            "delta_ba_span": -0.042524,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.64738,
+            "full_coverage_ba": 0.36606,
+            "cov20_ba": 0.343921,
+            "delta_ba_span": -0.02214,
+            "is_retrospective_best": false
+          }
+        }
+      ]
+    },
+    "SOLUSDT": {
+      "instrument": "SOLUSDT",
+      "policy_selected_on_segment_2": "Policy_C_Directional_Margin",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_D_Directional_Mass",
+      "selected_policy_retained_rank_on_segment_3": false,
+      "selected_policy_outperformed_policy_a_on_segment_3": false,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": 0.004199,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.660579,
+            "full_coverage_ba": 0.342376,
+            "cov20_ba": 0.341163,
+            "delta_ba_span": -0.001213,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.658411,
+            "full_coverage_ba": 0.340003,
+            "cov20_ba": 0.338258,
+            "delta_ba_span": -0.001745,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.660579,
+            "full_coverage_ba": 0.342376,
+            "cov20_ba": 0.341163,
+            "delta_ba_span": -0.001213,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.658411,
+            "full_coverage_ba": 0.340003,
+            "cov20_ba": 0.338258,
+            "delta_ba_span": -0.001745,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.654576,
+            "full_coverage_ba": 0.342376,
+            "cov20_ba": 0.346717,
+            "delta_ba_span": 0.00434,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.66261,
+            "full_coverage_ba": 0.340003,
+            "cov20_ba": 0.337017,
+            "delta_ba_span": -0.002985,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.662872,
+            "full_coverage_ba": 0.342376,
+            "cov20_ba": 0.332849,
+            "delta_ba_span": -0.009527,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.656453,
+            "full_coverage_ba": 0.340003,
+            "cov20_ba": 0.343089,
+            "delta_ba_span": 0.003086,
+            "is_retrospective_best": true
+          }
+        }
+      ]
+    },
+    "AVAXUSDT": {
+      "instrument": "AVAXUSDT",
+      "policy_selected_on_segment_2": "Policy_A_Global_Max",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_C_Directional_Margin",
+      "selected_policy_retained_rank_on_segment_3": false,
+      "selected_policy_outperformed_policy_a_on_segment_3": true,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": 0.0,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.524088,
+            "full_coverage_ba": 0.436305,
+            "cov20_ba": 0.546862,
+            "delta_ba_span": 0.110556,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.642459,
+            "full_coverage_ba": 0.365342,
+            "cov20_ba": 0.360986,
+            "delta_ba_span": -0.004357,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.640005,
+            "full_coverage_ba": 0.436305,
+            "cov20_ba": 0.347205,
+            "delta_ba_span": -0.089101,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.653016,
+            "full_coverage_ba": 0.365342,
+            "cov20_ba": 0.339424,
+            "delta_ba_span": -0.025918,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.561241,
+            "full_coverage_ba": 0.436305,
+            "cov20_ba": 0.442182,
+            "delta_ba_span": 0.005877,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.632436,
+            "full_coverage_ba": 0.365342,
+            "cov20_ba": 0.37499,
+            "delta_ba_span": 0.009648,
+            "is_retrospective_best": true
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.640005,
+            "full_coverage_ba": 0.436305,
+            "cov20_ba": 0.348655,
+            "delta_ba_span": -0.08765,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.654277,
+            "full_coverage_ba": 0.365342,
+            "cov20_ba": 0.335132,
+            "delta_ba_span": -0.03021,
+            "is_retrospective_best": false
+          }
+        }
+      ]
+    },
+    "LINKUSDT": {
+      "instrument": "LINKUSDT",
+      "policy_selected_on_segment_2": "Policy_A_Global_Max",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_A_Global_Max",
+      "selected_policy_retained_rank_on_segment_3": true,
+      "selected_policy_outperformed_policy_a_on_segment_3": true,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": 0.0,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.457333,
+            "full_coverage_ba": 0.468369,
+            "cov20_ba": 0.592602,
+            "delta_ba_span": 0.124233,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.620325,
+            "full_coverage_ba": 0.373759,
+            "cov20_ba": 0.411793,
+            "delta_ba_span": 0.038034,
+            "is_retrospective_best": true
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.634897,
+            "full_coverage_ba": 0.468369,
+            "cov20_ba": 0.353271,
+            "delta_ba_span": -0.115098,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.645809,
+            "full_coverage_ba": 0.373759,
+            "cov20_ba": 0.350992,
+            "delta_ba_span": -0.022767,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.522912,
+            "full_coverage_ba": 0.468369,
+            "cov20_ba": 0.488097,
+            "delta_ba_span": 0.019728,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.632007,
+            "full_coverage_ba": 0.373759,
+            "cov20_ba": 0.362038,
+            "delta_ba_span": -0.011721,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.635887,
+            "full_coverage_ba": 0.468369,
+            "cov20_ba": 0.346989,
+            "delta_ba_span": -0.121379,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.646699,
+            "full_coverage_ba": 0.373759,
+            "cov20_ba": 0.347288,
+            "delta_ba_span": -0.026471,
+            "is_retrospective_best": false
+          }
+        }
+      ]
+    },
+    "DOGEUSDT": {
+      "instrument": "DOGEUSDT",
+      "policy_selected_on_segment_2": "Policy_A_Global_Max",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_A_Global_Max",
+      "selected_policy_retained_rank_on_segment_3": true,
+      "selected_policy_outperformed_policy_a_on_segment_3": true,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": 0.0,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.584417,
+            "full_coverage_ba": 0.39622,
+            "cov20_ba": 0.488492,
+            "delta_ba_span": 0.092272,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.631467,
+            "full_coverage_ba": 0.359389,
+            "cov20_ba": 0.409348,
+            "delta_ba_span": 0.049959,
+            "is_retrospective_best": true
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.650905,
+            "full_coverage_ba": 0.39622,
+            "cov20_ba": 0.343097,
+            "delta_ba_span": -0.053122,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.652767,
+            "full_coverage_ba": 0.359389,
+            "cov20_ba": 0.352084,
+            "delta_ba_span": -0.007305,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.594631,
+            "full_coverage_ba": 0.39622,
+            "cov20_ba": 0.414679,
+            "delta_ba_span": 0.018459,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.635681,
+            "full_coverage_ba": 0.359389,
+            "cov20_ba": 0.377077,
+            "delta_ba_span": 0.017687,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.65103,
+            "full_coverage_ba": 0.39622,
+            "cov20_ba": 0.34485,
+            "delta_ba_span": -0.051369,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.654665,
+            "full_coverage_ba": 0.359389,
+            "cov20_ba": 0.343269,
+            "delta_ba_span": -0.01612,
+            "is_retrospective_best": false
+          }
+        }
+      ]
+    },
+    "LTCUSDT": {
+      "instrument": "LTCUSDT",
+      "policy_selected_on_segment_2": "Policy_A_Global_Max",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_A_Global_Max",
+      "selected_policy_retained_rank_on_segment_3": true,
+      "selected_policy_outperformed_policy_a_on_segment_3": true,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": 0.0,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.439914,
+            "full_coverage_ba": 0.508491,
+            "cov20_ba": 0.538931,
+            "delta_ba_span": 0.03044,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.61441,
+            "full_coverage_ba": 0.380421,
+            "cov20_ba": 0.405404,
+            "delta_ba_span": 0.024982,
+            "is_retrospective_best": true
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.635124,
+            "full_coverage_ba": 0.508491,
+            "cov20_ba": 0.339676,
+            "delta_ba_span": -0.168815,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.646101,
+            "full_coverage_ba": 0.380421,
+            "cov20_ba": 0.343419,
+            "delta_ba_span": -0.037002,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.489121,
+            "full_coverage_ba": 0.508491,
+            "cov20_ba": 0.526564,
+            "delta_ba_span": 0.018073,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.629756,
+            "full_coverage_ba": 0.380421,
+            "cov20_ba": 0.355269,
+            "delta_ba_span": -0.025153,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.636283,
+            "full_coverage_ba": 0.508491,
+            "cov20_ba": 0.340148,
+            "delta_ba_span": -0.168343,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.645954,
+            "full_coverage_ba": 0.380421,
+            "cov20_ba": 0.344699,
+            "delta_ba_span": -0.035723,
+            "is_retrospective_best": false
+          }
+        }
+      ]
+    },
+    "XMRUSDT": {
+      "instrument": "XMRUSDT",
+      "policy_selected_on_segment_2": "Policy_C_Directional_Margin",
+      "selection_criterion": "Minimum AU-RCC Balanced Accuracy on Segment 2 (Folds 3-4)",
+      "retrospective_best_on_segment_3": "Policy_A_Global_Max",
+      "selected_policy_retained_rank_on_segment_3": false,
+      "selected_policy_outperformed_policy_a_on_segment_3": false,
+      "delta_aurcc_best_vs_policy_a_on_segment_3": 0.015804,
+      "all_policies_evaluation": [
+        {
+          "policy_name": "Policy_A_Global_Max",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.661119,
+            "full_coverage_ba": 0.3353,
+            "cov20_ba": 0.345067,
+            "delta_ba_span": 0.009767,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.659997,
+            "full_coverage_ba": 0.327579,
+            "cov20_ba": 0.342344,
+            "delta_ba_span": 0.014765,
+            "is_retrospective_best": true
+          }
+        },
+        {
+          "policy_name": "Policy_B_Directional_Confidence",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.661119,
+            "full_coverage_ba": 0.3353,
+            "cov20_ba": 0.345067,
+            "delta_ba_span": 0.009767,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.659997,
+            "full_coverage_ba": 0.327579,
+            "cov20_ba": 0.342344,
+            "delta_ba_span": 0.014765,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_C_Directional_Margin",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.660244,
+            "full_coverage_ba": 0.3353,
+            "cov20_ba": 0.343919,
+            "delta_ba_span": 0.008619,
+            "is_selected_best": true
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.675801,
+            "full_coverage_ba": 0.327579,
+            "cov20_ba": 0.340419,
+            "delta_ba_span": 0.012841,
+            "is_retrospective_best": false
+          }
+        },
+        {
+          "policy_name": "Policy_D_Directional_Mass",
+          "segment_2_selection": {
+            "au_rcc_ba": 0.663297,
+            "full_coverage_ba": 0.3353,
+            "cov20_ba": 0.333702,
+            "delta_ba_span": -0.001598,
+            "is_selected_best": false
+          },
+          "segment_3_retrospective": {
+            "au_rcc_ba": 0.66339,
+            "full_coverage_ba": 0.327579,
+            "cov20_ba": 0.342829,
+            "delta_ba_span": 0.015251,
+            "is_retrospective_best": false
+          }
+        }
+      ]
+    }
+  }
+}

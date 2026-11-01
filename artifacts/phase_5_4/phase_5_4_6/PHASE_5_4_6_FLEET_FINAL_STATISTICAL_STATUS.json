@@ -1,0 +1,217 @@
+{
+  "title": "Phase 5.4.6 Fleet Final Statistical Status",
+  "timestamp_utc": "2026-11-01 20:09:55 UTC",
+  "phase_status": "PHASE_5_4_FROZEN_WITH_LIMITATIONS",
+  "instruments": {
+    "BTCUSDT": {
+      "instrument": "BTCUSDT",
+      "descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.663266,
+      "random_au_rcc": 0.667078,
+      "delta_au_rcc": -0.003811,
+      "inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.036591, -0.017028] (Strictly Negative, Significant)",
+      "ece_significance_b24": true,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "NO_TIER_LEVEL_SIGNIFICANCE"
+    },
+    "ETHUSDT": {
+      "instrument": "ETHUSDT",
+      "descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.65376,
+      "random_au_rcc": 0.661099,
+      "delta_au_rcc": -0.007339,
+      "inferential_ba_category": "TIER_LEVEL_BA_SUPERIORITY_EVIDENCE",
+      "significant_coverage_tiers_count": 4,
+      "coverage_tiers_rejected_after_holm": [
+        0.2,
+        0.3,
+        0.4,
+        0.5
+      ],
+      "adjusted_p_values": {
+        "cov_20": 0.00175996,
+        "cov_30": 0.00175996,
+        "cov_40": 0.00175996,
+        "cov_50": 0.00175996
+      },
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.021025, +0.007128] (Crosses Zero, Not Significant)",
+      "ece_significance_b24": false,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "DESCRIPTIVE_ADVANTAGE_WITH_PARTIAL_TIER_SIGNIFICANCE"
+    },
+    "BNBUSDT": {
+      "instrument": "BNBUSDT",
+      "descriptive_aurcc_category": "HIGHER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.659471,
+      "random_au_rcc": 0.658988,
+      "delta_au_rcc": 0.000483,
+      "inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.018083, +0.000253] (Crosses Zero, Not Significant)",
+      "ece_significance_b24": false,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "NO_TIER_LEVEL_SIGNIFICANCE"
+    },
+    "XRPUSDT": {
+      "instrument": "XRPUSDT",
+      "descriptive_aurcc_category": "HIGHER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.66349,
+      "random_au_rcc": 0.658602,
+      "delta_au_rcc": 0.004888,
+      "inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.016649, +0.006676] (Crosses Zero, Not Significant)",
+      "ece_significance_b24": false,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "NO_TIER_LEVEL_SIGNIFICANCE"
+    },
+    "ADAUSDT": {
+      "instrument": "ADAUSDT",
+      "descriptive_aurcc_category": "HIGHER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.635514,
+      "random_au_rcc": 0.633906,
+      "delta_au_rcc": 0.001608,
+      "inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.018390, +0.002837] (Crosses Zero, Not Significant)",
+      "ece_significance_b24": false,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "NO_TIER_LEVEL_SIGNIFICANCE"
+    },
+    "SOLUSDT": {
+      "instrument": "SOLUSDT",
+      "descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.658411,
+      "random_au_rcc": 0.660004,
+      "delta_au_rcc": -0.001593,
+      "inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.026032, -0.009306] (Strictly Negative, Significant)",
+      "ece_significance_b24": true,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "NO_TIER_LEVEL_SIGNIFICANCE"
+    },
+    "AVAXUSDT": {
+      "instrument": "AVAXUSDT",
+      "descriptive_aurcc_category": "HIGHER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.642459,
+      "random_au_rcc": 0.634633,
+      "delta_au_rcc": 0.007825,
+      "inferential_ba_category": "NO_TIER_LEVEL_SIGNIFICANCE",
+      "significant_coverage_tiers_count": 0,
+      "coverage_tiers_rejected_after_holm": [],
+      "adjusted_p_values": {},
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.008935, +0.007678] (Crosses Zero, Not Significant)",
+      "ece_significance_b24": false,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "NO_TIER_LEVEL_SIGNIFICANCE"
+    },
+    "LINKUSDT": {
+      "instrument": "LINKUSDT",
+      "descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.620325,
+      "random_au_rcc": 0.626217,
+      "delta_au_rcc": -0.005892,
+      "inferential_ba_category": "TIER_LEVEL_BA_SUPERIORITY_EVIDENCE",
+      "significant_coverage_tiers_count": 2,
+      "coverage_tiers_rejected_after_holm": [
+        0.2,
+        0.3
+      ],
+      "adjusted_p_values": {
+        "cov_20": 0.00175996,
+        "cov_30": 0.00175996
+      },
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.011682, +0.006222] (Crosses Zero, Not Significant)",
+      "ece_significance_b24": false,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "DESCRIPTIVE_ADVANTAGE_WITH_PARTIAL_TIER_SIGNIFICANCE"
+    },
+    "DOGEUSDT": {
+      "instrument": "DOGEUSDT",
+      "descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.631467,
+      "random_au_rcc": 0.640584,
+      "delta_au_rcc": -0.009118,
+      "inferential_ba_category": "TIER_LEVEL_BA_SUPERIORITY_EVIDENCE",
+      "significant_coverage_tiers_count": 3,
+      "coverage_tiers_rejected_after_holm": [
+        0.2,
+        0.3,
+        0.4
+      ],
+      "adjusted_p_values": {
+        "cov_20": 0.00175996,
+        "cov_30": 0.00175996,
+        "cov_40": 0.00631987
+      },
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.014376, -0.002516] (Strictly Negative, Significant)",
+      "ece_significance_b24": true,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "DESCRIPTIVE_ADVANTAGE_WITH_PARTIAL_TIER_SIGNIFICANCE"
+    },
+    "LTCUSDT": {
+      "instrument": "LTCUSDT",
+      "descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.61441,
+      "random_au_rcc": 0.619592,
+      "delta_au_rcc": -0.005182,
+      "inferential_ba_category": "TIER_LEVEL_BA_SUPERIORITY_EVIDENCE",
+      "significant_coverage_tiers_count": 2,
+      "coverage_tiers_rejected_after_holm": [
+        0.2,
+        0.3
+      ],
+      "adjusted_p_values": {
+        "cov_20": 0.00175996,
+        "cov_30": 0.00935981
+      },
+      "class_support_status": "SUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.016800, +0.005353] (Crosses Zero, Not Significant)",
+      "ece_significance_b24": false,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "DESCRIPTIVE_ADVANTAGE_WITH_PARTIAL_TIER_SIGNIFICANCE"
+    },
+    "XMRUSDT": {
+      "instrument": "XMRUSDT",
+      "descriptive_aurcc_category": "LOWER_AURCC_OBSERVED",
+      "confidence_au_rcc": 0.659997,
+      "random_au_rcc": 0.672363,
+      "delta_au_rcc": -0.012366,
+      "inferential_ba_category": "TIER_LEVEL_BA_SUPERIORITY_EVIDENCE",
+      "significant_coverage_tiers_count": 1,
+      "coverage_tiers_rejected_after_holm": [
+        0.4
+      ],
+      "adjusted_p_values": {
+        "cov_40": 0.01847963
+      },
+      "class_support_status": "INSUFFICIENT_CLASS_SUPPORT",
+      "top_label_ece_b24_ci": "[-0.108677, -0.018858] (Strictly Negative, Significant)",
+      "ece_significance_b24": true,
+      "brier_and_log_loss_robustness": true,
+      "final_selective_policy_assessment": "NOT_RECOMMENDED"
+    }
+  }
+}

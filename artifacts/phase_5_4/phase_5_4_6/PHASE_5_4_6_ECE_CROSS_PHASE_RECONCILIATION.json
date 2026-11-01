@@ -1,0 +1,242 @@
+{
+  "title": "Workstream C: ECE Cross-Phase Reconciliation & Forensic Root Cause Audit",
+  "timestamp_utc": "2026-11-01 20:09:55 UTC",
+  "block_length_bars": 24,
+  "block_length_hours": 2.0,
+  "bootstrap_resamples_ece": 1000,
+  "random_seed": 42,
+  "evaluation_segment": "Segment 3 (Fold 5 retrospective evaluation)",
+  "underlying_data_parity": "100_PERCENT_BIT_FOR_BIT_IDENTICAL",
+  "fleet_counts": {
+    "total_instruments": 11,
+    "strictly_negative_significant": 4,
+    "crosses_zero_not_significant": 7
+  },
+  "instruments_crossing_zero": [
+    "ETHUSDT",
+    "BNBUSDT",
+    "XRPUSDT",
+    "ADAUSDT",
+    "AVAXUSDT",
+    "LINKUSDT",
+    "LTCUSDT"
+  ],
+  "instruments_strictly_negative": [
+    "BTCUSDT",
+    "SOLUSDT",
+    "DOGEUSDT",
+    "XMRUSDT"
+  ],
+  "root_cause_analysis": {
+    "1_underlying_oof_populations": {
+      "status": "IDENTICAL",
+      "evidence": "Both phases evaluated Segment 3 (Fold 5) retrospective OOF data (total N=264,584 records)."
+    },
+    "2_calibration_probability_artifacts": {
+      "status": "IDENTICAL",
+      "evidence": "Both phases consumed identical Phase 5.4.2 frozen calibrated probability files."
+    },
+    "3_ece_definitions": {
+      "status": "IDENTICAL",
+      "evidence": "Both phases used Top-label Expected Calibration Error (L1 calibration error)."
+    },
+    "4_binning_methods": {
+      "status": "IDENTICAL",
+      "evidence": "Both phases used 10 equal-width bins on [0.0, 1.0]."
+    },
+    "5_bootstrap_sampling": {
+      "status": "IDENTICAL",
+      "evidence": "Both phases used the Kunsch-Liu circular Moving Block Bootstrap (MBB)."
+    },
+    "6_random_seeds": {
+      "status": "IDENTICAL",
+      "evidence": "Both phases used random seed 42."
+    },
+    "7_interval_calculation": {
+      "status": "IDENTICAL",
+      "evidence": "Both phases calculated pointwise 95% percentile confidence intervals from B=1,000 resamples."
+    },
+    "8_reporting_or_implementation_bug": {
+      "status": "ROOT_CAUSE_IDENTIFIED",
+      "evidence": "The underlying JSON artifacts in BOTH Phase 5.4.4 and Phase 5.4.5 are bit-for-bit identical! The discrepancy was entirely a narrative transcription and misattribution bug in the report text. Specifically, the Phase 5.4.5 narrative prompt asserted that BTC and DOGE crossed zero, which was repeated in text blocks of the Phase 5.4.5 report. However, the empirical JSON data confirms that BTC and DOGE are strictly negative ([-0.036591, -0.017028] and [-0.014376, -0.002516]), while the 7 instruments that actually cross zero are ETH, BNB, XRP, ADA, AVAX, LINK, and LTC."
+    }
+  },
+  "reconciliation_table": [
+    {
+      "instrument": "BTCUSDT",
+      "phase_5_4_4_ci": [
+        -0.036591,
+        -0.017028
+      ],
+      "phase_5_4_5_ci": [
+        -0.036591,
+        -0.017028
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": false,
+      "status": "STRICTLY_NEGATIVE_SIGNIFICANT",
+      "explanation": "Empirical MBB artifact shows strictly negative 95% CI (upper bound < 0). Prior textual claims that this instrument crossed zero originated from a narrative transcription misattribution, not from the underlying empirical data.",
+      "accepted_result": "[-0.036591, -0.017028] (Strictly Negative, Significant)"
+    },
+    {
+      "instrument": "ETHUSDT",
+      "phase_5_4_4_ci": [
+        -0.021025,
+        0.007128
+      ],
+      "phase_5_4_5_ci": [
+        -0.021025,
+        0.007128
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": true,
+      "status": "CROSSES_ZERO_NOT_SIGNIFICANT",
+      "explanation": "Empirical 95% confidence interval crosses zero at block length b=24 bars. Calibration ECE reduction is not statistically significant at alpha=0.05.",
+      "accepted_result": "[-0.021025, +0.007128] (Crosses Zero, Not Significant)"
+    },
+    {
+      "instrument": "BNBUSDT",
+      "phase_5_4_4_ci": [
+        -0.018083,
+        0.000253
+      ],
+      "phase_5_4_5_ci": [
+        -0.018083,
+        0.000253
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": true,
+      "status": "CROSSES_ZERO_NOT_SIGNIFICANT",
+      "explanation": "Empirical 95% confidence interval crosses zero at block length b=24 bars. Calibration ECE reduction is not statistically significant at alpha=0.05.",
+      "accepted_result": "[-0.018083, +0.000253] (Crosses Zero, Not Significant)"
+    },
+    {
+      "instrument": "XRPUSDT",
+      "phase_5_4_4_ci": [
+        -0.016649,
+        0.006676
+      ],
+      "phase_5_4_5_ci": [
+        -0.016649,
+        0.006676
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": true,
+      "status": "CROSSES_ZERO_NOT_SIGNIFICANT",
+      "explanation": "Empirical 95% confidence interval crosses zero at block length b=24 bars. Calibration ECE reduction is not statistically significant at alpha=0.05.",
+      "accepted_result": "[-0.016649, +0.006676] (Crosses Zero, Not Significant)"
+    },
+    {
+      "instrument": "ADAUSDT",
+      "phase_5_4_4_ci": [
+        -0.01839,
+        0.002837
+      ],
+      "phase_5_4_5_ci": [
+        -0.01839,
+        0.002837
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": true,
+      "status": "CROSSES_ZERO_NOT_SIGNIFICANT",
+      "explanation": "Empirical 95% confidence interval crosses zero at block length b=24 bars. Calibration ECE reduction is not statistically significant at alpha=0.05.",
+      "accepted_result": "[-0.018390, +0.002837] (Crosses Zero, Not Significant)"
+    },
+    {
+      "instrument": "SOLUSDT",
+      "phase_5_4_4_ci": [
+        -0.026032,
+        -0.009306
+      ],
+      "phase_5_4_5_ci": [
+        -0.026032,
+        -0.009306
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": false,
+      "status": "STRICTLY_NEGATIVE_SIGNIFICANT",
+      "explanation": "Empirical MBB artifact shows strictly negative 95% CI (upper bound < 0). Calibration ECE reduction is statistically significant at alpha=0.05.",
+      "accepted_result": "[-0.026032, -0.009306] (Strictly Negative, Significant)"
+    },
+    {
+      "instrument": "AVAXUSDT",
+      "phase_5_4_4_ci": [
+        -0.008935,
+        0.007678
+      ],
+      "phase_5_4_5_ci": [
+        -0.008935,
+        0.007678
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": true,
+      "status": "CROSSES_ZERO_NOT_SIGNIFICANT",
+      "explanation": "Empirical 95% confidence interval crosses zero at block length b=24 bars. Calibration ECE reduction is not statistically significant at alpha=0.05.",
+      "accepted_result": "[-0.008935, +0.007678] (Crosses Zero, Not Significant)"
+    },
+    {
+      "instrument": "LINKUSDT",
+      "phase_5_4_4_ci": [
+        -0.011682,
+        0.006222
+      ],
+      "phase_5_4_5_ci": [
+        -0.011682,
+        0.006222
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": true,
+      "status": "CROSSES_ZERO_NOT_SIGNIFICANT",
+      "explanation": "Empirical 95% confidence interval crosses zero at block length b=24 bars. Calibration ECE reduction is not statistically significant at alpha=0.05.",
+      "accepted_result": "[-0.011682, +0.006222] (Crosses Zero, Not Significant)"
+    },
+    {
+      "instrument": "DOGEUSDT",
+      "phase_5_4_4_ci": [
+        -0.014376,
+        -0.002516
+      ],
+      "phase_5_4_5_ci": [
+        -0.014376,
+        -0.002516
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": false,
+      "status": "STRICTLY_NEGATIVE_SIGNIFICANT",
+      "explanation": "Empirical MBB artifact shows strictly negative 95% CI (upper bound < 0). Prior textual claims that this instrument crossed zero originated from a narrative transcription misattribution, not from the underlying empirical data.",
+      "accepted_result": "[-0.014376, -0.002516] (Strictly Negative, Significant)"
+    },
+    {
+      "instrument": "LTCUSDT",
+      "phase_5_4_4_ci": [
+        -0.0168,
+        0.005353
+      ],
+      "phase_5_4_5_ci": [
+        -0.0168,
+        0.005353
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": true,
+      "status": "CROSSES_ZERO_NOT_SIGNIFICANT",
+      "explanation": "Empirical 95% confidence interval crosses zero at block length b=24 bars. Calibration ECE reduction is not statistically significant at alpha=0.05.",
+      "accepted_result": "[-0.016800, +0.005353] (Crosses Zero, Not Significant)"
+    },
+    {
+      "instrument": "XMRUSDT",
+      "phase_5_4_4_ci": [
+        -0.108677,
+        -0.018858
+      ],
+      "phase_5_4_5_ci": [
+        -0.108677,
+        -0.018858
+      ],
+      "same_methodology": true,
+      "ci_crosses_zero": false,
+      "status": "STRICTLY_NEGATIVE_SIGNIFICANT",
+      "explanation": "Empirical MBB artifact shows strictly negative 95% CI (upper bound < 0). Calibration ECE reduction is statistically significant at alpha=0.05.",
+      "accepted_result": "[-0.108677, -0.018858] (Strictly Negative, Significant)"
+    }
+  ]
+}

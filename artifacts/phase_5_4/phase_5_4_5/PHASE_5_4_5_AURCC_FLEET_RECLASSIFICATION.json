@@ -1,0 +1,163 @@
+{
+  "title": "Workstream C: AU-RCC Fleet Classification Reconciliation",
+  "timestamp_utc": "2026-11-01 19:47:39 UTC",
+  "classification_schema_definitions": {
+    "STATISTICALLY_SUPERIOR": "Confidence AU-RCC is lower than random baseline (Delta AU-RCC < 0) AND at least one coverage tier rejects H0 under Holm-Bonferroni correction at alpha = 0.05 with adequate sample support.",
+    "LOWER_AURCC_OBSERVED": "Confidence AU-RCC is numerically lower than random baseline (Delta AU-RCC < 0), but zero coverage tiers achieve statistical significance under Holm-Bonferroni correction.",
+    "RANDOM_BASELINE_SUPERIOR": "Random baseline AU-RCC is lower than confidence AU-RCC (Delta AU-RCC > 0), confirming selection pathology under unweighted Policy A.",
+    "NO_SIGNIFICANT_DIFFERENCE": "Delta AU-RCC is approximately 0.0 and no coverage tiers reject the null hypothesis in either direction.",
+    "INSUFFICIENT_CLASS_SUPPORT": "Population size or minority class count is inadequate to support statistically reliable inference (e.g. truncated history in XMR)."
+  },
+  "fleet_summary_counts": {
+    "STATISTICALLY_SUPERIOR": 4,
+    "LOWER_AURCC_OBSERVED": 2,
+    "RANDOM_BASELINE_SUPERIOR": 4,
+    "NO_SIGNIFICANT_DIFFERENCE": 0,
+    "INSUFFICIENT_CLASS_SUPPORT": 1
+  },
+  "category_members": {
+    "STATISTICALLY_SUPERIOR": [
+      "ETHUSDT",
+      "LINKUSDT",
+      "DOGEUSDT",
+      "LTCUSDT"
+    ],
+    "LOWER_AURCC_OBSERVED": [
+      "BTCUSDT",
+      "SOLUSDT"
+    ],
+    "RANDOM_BASELINE_SUPERIOR": [
+      "BNBUSDT",
+      "XRPUSDT",
+      "ADAUSDT",
+      "AVAXUSDT"
+    ],
+    "NO_SIGNIFICANT_DIFFERENCE": [],
+    "INSUFFICIENT_CLASS_SUPPORT": [
+      "XMRUSDT"
+    ]
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "instrument": "BTCUSDT",
+      "reconciled_category": "LOWER_AURCC_OBSERVED",
+      "delta_au_rcc_balanced_accuracy": -0.003811,
+      "confidence_au_rcc": 0.663266,
+      "random_au_rcc": 0.667078,
+      "holm_rejected_subcoverages_count": 0,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 34,
+      "reconciliation_rationale": "Confidence AU-RCC (0.6633) is numerically lower than random baseline (0.6671) with Delta AU-RCC = -0.0038, but 0/7 sub-coverage tiers rejected the null hypothesis after Holm-Bonferroni correction. Numerical effect is observed, but statistical superiority is not established at alpha = 0.05."
+    },
+    "ETHUSDT": {
+      "instrument": "ETHUSDT",
+      "reconciled_category": "STATISTICALLY_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": -0.007339,
+      "confidence_au_rcc": 0.65376,
+      "random_au_rcc": 0.661099,
+      "holm_rejected_subcoverages_count": 4,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 52,
+      "reconciliation_rationale": "Confidence AU-RCC (0.6538) is lower than random baseline (0.6611) with Delta AU-RCC = -0.0073, and 4/7 sub-coverage tiers achieved statistically significant superiority after Holm-Bonferroni correction (p_adj <= 0.05)."
+    },
+    "BNBUSDT": {
+      "instrument": "BNBUSDT",
+      "reconciled_category": "RANDOM_BASELINE_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": 0.000483,
+      "confidence_au_rcc": 0.659471,
+      "random_au_rcc": 0.658988,
+      "holm_rejected_subcoverages_count": 0,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 67,
+      "reconciliation_rationale": "Random baseline AU-RCC (0.6590) is lower than confidence AU-RCC (0.6595) with Delta AU-RCC = +0.0005. Under unweighted Policy A, confidence selection exhibits majority-class selection bias, causing higher risk than random abstention."
+    },
+    "XRPUSDT": {
+      "instrument": "XRPUSDT",
+      "reconciled_category": "RANDOM_BASELINE_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": 0.004888,
+      "confidence_au_rcc": 0.66349,
+      "random_au_rcc": 0.658602,
+      "holm_rejected_subcoverages_count": 0,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 61,
+      "reconciliation_rationale": "Random baseline AU-RCC (0.6586) is lower than confidence AU-RCC (0.6635) with Delta AU-RCC = +0.0049. Under unweighted Policy A, confidence selection exhibits majority-class selection bias, causing higher risk than random abstention."
+    },
+    "ADAUSDT": {
+      "instrument": "ADAUSDT",
+      "reconciled_category": "RANDOM_BASELINE_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": 0.001608,
+      "confidence_au_rcc": 0.635514,
+      "random_au_rcc": 0.633906,
+      "holm_rejected_subcoverages_count": 0,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 265,
+      "reconciliation_rationale": "Random baseline AU-RCC (0.6339) is lower than confidence AU-RCC (0.6355) with Delta AU-RCC = +0.0016. Under unweighted Policy A, confidence selection exhibits majority-class selection bias, causing higher risk than random abstention."
+    },
+    "SOLUSDT": {
+      "instrument": "SOLUSDT",
+      "reconciled_category": "LOWER_AURCC_OBSERVED",
+      "delta_au_rcc_balanced_accuracy": -0.001593,
+      "confidence_au_rcc": 0.658411,
+      "random_au_rcc": 0.660004,
+      "holm_rejected_subcoverages_count": 0,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 34,
+      "reconciliation_rationale": "Confidence AU-RCC (0.6584) is numerically lower than random baseline (0.6600) with Delta AU-RCC = -0.0016, but 0/7 sub-coverage tiers rejected the null hypothesis after Holm-Bonferroni correction. Numerical effect is observed, but statistical superiority is not established at alpha = 0.05."
+    },
+    "AVAXUSDT": {
+      "instrument": "AVAXUSDT",
+      "reconciled_category": "RANDOM_BASELINE_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": 0.007825,
+      "confidence_au_rcc": 0.642459,
+      "random_au_rcc": 0.634633,
+      "holm_rejected_subcoverages_count": 0,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 373,
+      "reconciliation_rationale": "Random baseline AU-RCC (0.6346) is lower than confidence AU-RCC (0.6425) with Delta AU-RCC = +0.0078. Under unweighted Policy A, confidence selection exhibits majority-class selection bias, causing higher risk than random abstention."
+    },
+    "LINKUSDT": {
+      "instrument": "LINKUSDT",
+      "reconciled_category": "STATISTICALLY_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": -0.005892,
+      "confidence_au_rcc": 0.620325,
+      "random_au_rcc": 0.626217,
+      "holm_rejected_subcoverages_count": 2,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 321,
+      "reconciliation_rationale": "Confidence AU-RCC (0.6203) is lower than random baseline (0.6262) with Delta AU-RCC = -0.0059, and 2/7 sub-coverage tiers achieved statistically significant superiority after Holm-Bonferroni correction (p_adj <= 0.05)."
+    },
+    "DOGEUSDT": {
+      "instrument": "DOGEUSDT",
+      "reconciled_category": "STATISTICALLY_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": -0.009118,
+      "confidence_au_rcc": 0.631467,
+      "random_au_rcc": 0.640584,
+      "holm_rejected_subcoverages_count": 3,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 69,
+      "reconciliation_rationale": "Confidence AU-RCC (0.6315) is lower than random baseline (0.6406) with Delta AU-RCC = -0.0091, and 3/7 sub-coverage tiers achieved statistically significant superiority after Holm-Bonferroni correction (p_adj <= 0.05)."
+    },
+    "LTCUSDT": {
+      "instrument": "LTCUSDT",
+      "reconciled_category": "STATISTICALLY_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": -0.005182,
+      "confidence_au_rcc": 0.61441,
+      "random_au_rcc": 0.619592,
+      "holm_rejected_subcoverages_count": 2,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 423,
+      "reconciliation_rationale": "Confidence AU-RCC (0.6144) is lower than random baseline (0.6196) with Delta AU-RCC = -0.0052, and 2/7 sub-coverage tiers achieved statistically significant superiority after Holm-Bonferroni correction (p_adj <= 0.05)."
+    },
+    "XMRUSDT": {
+      "instrument": "XMRUSDT",
+      "reconciled_category": "INSUFFICIENT_CLASS_SUPPORT",
+      "delta_au_rcc_balanced_accuracy": -0.012366,
+      "confidence_au_rcc": 0.659997,
+      "random_au_rcc": 0.672363,
+      "holm_rejected_subcoverages_count": 1,
+      "total_subcoverages_tested": 7,
+      "min_support_at_20_coverage": 87,
+      "reconciliation_rationale": "Truncated historical observation count (15,252 total records across all 5 folds) results in insufficient observation support at tight coverages. Minority class count at 20% coverage is below 100 samples."
+    }
+  }
+}

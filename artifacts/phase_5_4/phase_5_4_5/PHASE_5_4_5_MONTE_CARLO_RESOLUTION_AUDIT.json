@@ -1,0 +1,20 @@
+{
+  "title": "Workstream B: Monte Carlo Resolution & Sensitivity Audit",
+  "timestamp_utc": "2026-11-01 19:44:28 UTC",
+  "original_sampling_parameters": {
+    "repetitions_B": 2500,
+    "finite_sample_formula": "p = (b + 1) / (B + 1)",
+    "finite_sample_resolution_floor": 0.00039984
+  },
+  "raw_p_value_distribution_summary": {
+    "total_hypotheses": 88,
+    "hypotheses_at_resolution_floor_count": 12,
+    "hypotheses_rejected_count": 12,
+    "min_raw_p": 0.0004,
+    "p25_raw_p": 0.005298,
+    "median_raw_p": 0.4110355,
+    "p75_raw_p": 0.997001,
+    "max_raw_p": 1.0
+  },
+  "resolution_limitation_statement": "With B = 2,500 repetitions, the minimum achievable non-zero p-value is 1 / 2501 \u2248 0.00039984. All 12 rejected hypotheses had zero exceedances in 2,500 draws and were bounded at p = 1/2501, resulting in an identical Holm adjusted p-value of 0.035186. This boundary p-value reflects the finite resolution ceiling of B = 2,500, not a precise estimate of true probability."
+}

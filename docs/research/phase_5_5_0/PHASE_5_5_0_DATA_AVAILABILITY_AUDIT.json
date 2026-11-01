@@ -1,0 +1,157 @@
+{
+  "title": "Phase 5.5.0 Data Availability & Feasibility Audit",
+  "timestamp_utc": "2026-11-01 20:23:18 UTC",
+  "audit_objective": "Verify repository market data availability against economic validation requirements.",
+  "historical_market_data": {
+    "timeframe": "5m",
+    "format": "Parquet partitioned by exchange, symbol, timeframe, year",
+    "columns_present": [
+      "open_time_ms",
+      "close_time_ms",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "quote_volume",
+      "trade_count",
+      "taker_buy_volume",
+      "taker_buy_quote_volume",
+      "ingestion_time_ms",
+      "source_run_id"
+    ],
+    "instruments_coverage": {
+      "BTCUSDT": {
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "total_rows": 316499,
+        "status": "VERIFIED"
+      },
+      "ETHUSDT": {
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "total_rows": 316500,
+        "status": "VERIFIED"
+      },
+      "BNBUSDT": {
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "total_rows": 316500,
+        "status": "VERIFIED"
+      },
+      "XRPUSDT": {
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "total_rows": 316500,
+        "status": "VERIFIED"
+      },
+      "ADAUSDT": {
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "total_rows": 316500,
+        "status": "VERIFIED"
+      },
+      "SOLUSDT": {
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "total_rows": 316500,
+        "status": "VERIFIED"
+      },
+      "AVAXUSDT": {
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "total_rows": 316500,
+        "status": "VERIFIED"
+      },
+      "LINKUSDT": {
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "total_rows": 316500,
+        "status": "VERIFIED"
+      },
+      "DOGEUSDT": {
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "total_rows": 316500,
+        "status": "VERIFIED"
+      },
+      "LTCUSDT": {
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "total_rows": 316500,
+        "status": "VERIFIED"
+      },
+      "XMRUSDT": {
+        "years": [
+          2026
+        ],
+        "total_rows": 83863,
+        "status": "VERIFIED_LIMITED_HISTORY"
+      }
+    },
+    "temporal_span": {
+      "canonical_start_utc": "2023-10-28 22:00:00 UTC",
+      "canonical_end_utc": "2026-10-31 20:55:00 UTC",
+      "prospective_holdout_window": "2026-11-01 00:00:00 UTC to 2027-04-30 23:59:59.999 UTC",
+      "prospective_holdout_isolation": "VERIFIED_STRICTLY_INACCESSIBLE"
+    }
+  },
+  "critical_data_gaps": {
+    "historical_funding_rates": {
+      "status": "UNAVAILABLE",
+      "impact": "Historical funding cash flows cannot be computed directly from canonical data. Requires parametric sensitivity modeling or external historical funding rate dataset acquisition.",
+      "mitigation": "Design parametric funding rate sensitivity grid [-10 bps, 0 bps, +10 bps, +30 bps annual equivalent] and document FUNDING_DATA_UNAVAILABLE."
+    },
+    "orderbook_l2_depth_and_spreads": {
+      "status": "UNAVAILABLE",
+      "impact": "Tick-level bid-ask spreads and orderbook depth are not present in repository historical records.",
+      "mitigation": "Specify volatility-adjusted and liquidity-adjusted proxy slippage models derived from 5m OHLCV and taker buy volume fractions."
+    },
+    "trade_level_tick_data": {
+      "status": "UNAVAILABLE",
+      "impact": "Exact intrabar fill sequencing within 5m candles cannot be observed directly.",
+      "mitigation": "Enforce conservative adverse execution assumptions for intrabar double-barrier touches (SL hit before TP)."
+    }
+  },
+  "execution_model_readiness": "READY_WITH_DOCUMENTED_LIMITATIONS"
+}

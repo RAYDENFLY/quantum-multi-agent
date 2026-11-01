@@ -1,0 +1,58 @@
+{
+  "title": "Phase 5.5.0 Risk & Limitations Register",
+  "timestamp_utc": "2026-11-01 20:23:18 UTC",
+  "total_risks_identified": 6,
+  "critical_risks": 2,
+  "high_risks": 4,
+  "medium_risks": 0,
+  "risks": [
+    {
+      "risk_id": "RISK_01_DIRECTIONAL_SYMMETRY_ASSUMPTION",
+      "risk_title": "Triple-Barrier Directional Symmetry Assumption",
+      "severity": "CRITICAL",
+      "description": "The frozen B4 models were trained on labels where Class +1 represents an upward price excursion (TP = +1.5 sigma_t) and Class -1 represents a downward price excursion (SL = -1.5 sigma_t). Executing SHORT positions when Class -1 is predicted assumes that a downward barrier excursion constitutes an exploitable short trading opportunity with identical barrier dynamics as a long. This directional symmetry has not been independently validated.",
+      "mitigation_protocol": "Workstream B mandates reporting separate long-only, short-only, and combined directional PnL. If short performance does not independently demonstrate positive net expectancy, the system must restrict execution to long-only or report SHORT_DIRECTION_UNSUPPORTED.",
+      "residual_risk": "MEDIUM"
+    },
+    {
+      "risk_id": "RISK_02_OHLCV_SLIPPAGE_PROXY_LIMITATION",
+      "risk_title": "OHLCV-Only Slippage and Spread Proxy Limitation",
+      "severity": "HIGH",
+      "description": "Historical orderbook depth (L2) and bid-ask tick quotes do not exist in the repository. Dynamic slippage must be modeled parametrically from 5m candle ranges (ATR) and taker buy volume. This proxy may underestimate slippage during market dislocations, liquidity vacuums, or high volatility.",
+      "mitigation_protocol": "Workstream C and E define three cost tiers (Base 15 bps, Conservative 20 bps, Severe Stress 30 bps). The strategy must pass the Conservative 20 bps threshold to be economically viable.",
+      "residual_risk": "MEDIUM"
+    },
+    {
+      "risk_id": "RISK_03_FUNDING_RATE_DATA_ABSENCE",
+      "risk_title": "Historical Funding Rate Data Absence",
+      "severity": "HIGH",
+      "description": "Canonical parquet files contain only OHLCV data. Perpetual futures funding rates (settled every 8 hours) are unavailable in the historical dataset. For positions held across 00:00, 08:00, or 16:00 UTC, funding cash flows cannot be calculated directly from empirical records.",
+      "mitigation_protocol": "Workstream D designates funding as FUNDING_DATA_UNAVAILABLE in canonical data, models average holding period (< 60 minutes, meaning < 12.5% of positions cross a funding timestamp), and executes a parametric funding rate sensitivity sweep across [-10 bps, 0 bps, +10 bps, +30 bps annual equivalent].",
+      "residual_risk": "MEDIUM"
+    },
+    {
+      "risk_id": "RISK_04_RETROSPECTIVE_EVALUATION_BIAS",
+      "risk_title": "Retrospective Historical Evaluation on Fold 5",
+      "severity": "CRITICAL",
+      "description": "Segment 3 (Fold 5) has already been examined in Phase 5.3 and Phase 5.4 research. Evaluating economic performance on Fold 5 constitutes retrospective historical analysis, NOT a fresh prospective out-of-sample test.",
+      "mitigation_protocol": "Workstream H strictly classifies Fold 5 as retrospective evidence, enforces zero parameter tuning on Fold 5, and maintains strict isolation of the untouched prospective holdout (2026-11-01 to 2027-04-30).",
+      "residual_risk": "LOW"
+    },
+    {
+      "risk_id": "RISK_05_PORTFOLIO_CONCURRENCY_ESTIMATION",
+      "risk_title": "Cross-Instrument Portfolio Concurrency and Margin Interaction",
+      "severity": "HIGH",
+      "description": "Because specialists operate independently, multiple instruments may generate simultaneous entry signals. Under shared account equity, simultaneous margin allocation can lead to portfolio over-leverage or capital exhaustion.",
+      "mitigation_protocol": "Workstream F establishes an explicit concurrency queue: maximum 3 concurrent positions, ranked by model confidence, with excess signals rejected as REJECTED_CAPITAL_EXHAUSTION.",
+      "residual_risk": "MEDIUM"
+    },
+    {
+      "risk_id": "RISK_06_XMR_DATA_DEFICIT",
+      "risk_title": "XMRUSDT Extreme Data and Class Support Deficit",
+      "severity": "HIGH",
+      "description": "XMRUSDT possesses only 83,863 candles (2026 only) and has only 1 minority-class sample at 20% coverage in Fold 5. Economic evaluation on XMR cannot yield statistically defensible conclusions.",
+      "mitigation_protocol": "Workstream J and K explicitly exclude XMRUSDT from the approved economic portfolio (status: NOT_RECOMMENDED) until sufficient multi-year historical data is backfilled.",
+      "residual_risk": "LOW"
+    }
+  ]
+}

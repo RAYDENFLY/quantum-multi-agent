@@ -1,0 +1,153 @@
+{
+  "title": "Phase 5.5.0 Parameter & Assumption Registry",
+  "timestamp_utc": "2026-11-01 20:23:18 UTC",
+  "total_parameters": 14,
+  "status_counts": {
+    "verified": 6,
+    "unverified_assumption": 7,
+    "unavailable": 1,
+    "requires_human_approval": 8
+  },
+  "parameters": [
+    {
+      "parameter_name": "primary_economic_estimand",
+      "proposed_value_or_range": "NET_RETURN_PER_TRADE_AFTER_ALL_MODELED_COSTS",
+      "unit": "decimal fraction / bps",
+      "source": "Research Design Specification Section 4",
+      "evidence_status": "VERIFIED",
+      "validation_requirement": "Calculated after fees, slippage, spread, and adverse execution rules",
+      "sensitivity_impact": "CRITICAL",
+      "approval_status": "APPROVED_FOR_DESIGN"
+    },
+    {
+      "parameter_name": "base_case_round_trip_cost",
+      "proposed_value_or_range": 15.0,
+      "unit": "bps (basis points)",
+      "source": "Bybit/AsterDEX standard VIP0 perpetual taker fee (5 bps entry + 5 bps exit) + 5 bps base slippage",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Requires exchange fee tier and fill slip audit",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "conservative_case_round_trip_cost",
+      "proposed_value_or_range": 20.0,
+      "unit": "bps (basis points)",
+      "source": "Standard retail taker fee (6 bps entry + 6 bps exit) + 8 bps volatility-adjusted slippage",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Sensitivity benchmark against historical crypto perps",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "severe_stress_case_round_trip_cost",
+      "proposed_value_or_range": 30.0,
+      "unit": "bps (basis points)",
+      "source": "Adverse market condition stress test (8 bps entry + 8 bps exit + 14 bps slippage/spread)",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Stress gate requirement for economic robustness",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "maker_rebate_tight_scenario",
+      "proposed_value_or_range": 7.0,
+      "unit": "bps (basis points)",
+      "source": "Historical Phase 5.4.2 benchmark comparability scenario",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Retained strictly for backward comparability with Phase 5.4.2",
+      "sensitivity_impact": "MEDIUM",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "intrabar_ambiguous_touch_policy",
+      "proposed_value_or_range": "ADVERSE_STOP_LOSS_FIRST",
+      "unit": "discrete policy",
+      "source": "Phase 5.4.1 Methodology Correction & labeling.py",
+      "evidence_status": "VERIFIED",
+      "validation_requirement": "When both barriers hit in same candle: LONG hits SL (lower), SHORT hits SL (upper)",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "APPROVED_FOR_DESIGN"
+    },
+    {
+      "parameter_name": "entry_timing_semantics",
+      "proposed_value_or_range": "open[i+1]",
+      "unit": "price reference",
+      "source": "Phase 5.4.2 execution implementation",
+      "evidence_status": "VERIFIED",
+      "validation_requirement": "Signal computed at close[i], filled at open[i+1]. Look-ahead bias strictly prohibited.",
+      "sensitivity_impact": "CRITICAL",
+      "approval_status": "APPROVED_FOR_DESIGN"
+    },
+    {
+      "parameter_name": "maximum_signal_latency",
+      "proposed_value_or_range": 300,
+      "unit": "seconds",
+      "source": "5m candle duration",
+      "evidence_status": "VERIFIED",
+      "validation_requirement": "Inference and order submission must complete before next candle bar closes",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "APPROVED_FOR_DESIGN"
+    },
+    {
+      "parameter_name": "funding_rate_status",
+      "proposed_value_or_range": "FUNDING_DATA_UNAVAILABLE",
+      "unit": "categorical status",
+      "source": "Data availability audit of data/historical/canonical/",
+      "evidence_status": "UNAVAILABLE",
+      "validation_requirement": "Requires parametric sensitivity grid and formal limitation reporting",
+      "sensitivity_impact": "MEDIUM",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "fixed_risk_per_trade_fraction",
+      "proposed_value_or_range": 0.01,
+      "unit": "decimal fraction of equity (1.0%)",
+      "source": "Quantitative Risk Management standard practice",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Must not be optimized on evaluation folds",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "maximum_concurrent_positions",
+      "proposed_value_or_range": 3,
+      "unit": "integer (out of 11 specialists)",
+      "source": "Portfolio Risk Control Architecture",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Limits portfolio margin concentration and simultaneous drawdown",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "maximum_portfolio_gross_leverage",
+      "proposed_value_or_range": 3.0,
+      "unit": "leverage multiplier (x)",
+      "source": "Conservative crypto perpetual futures bounds",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "validation_requirement": "Protects against exchange liquidation and tail volatility",
+      "sensitivity_impact": "CRITICAL",
+      "approval_status": "REQUIRES_HUMAN_APPROVAL"
+    },
+    {
+      "parameter_name": "purge_and_embargo_interval",
+      "proposed_value_or_range": 12,
+      "unit": "5m bars (60 minutes)",
+      "source": "Triple-barrier horizon definition",
+      "evidence_status": "VERIFIED",
+      "validation_requirement": "Prevents temporal overlap and information leakage across trade evaluations",
+      "sensitivity_impact": "CRITICAL",
+      "approval_status": "APPROVED_FOR_DESIGN"
+    },
+    {
+      "parameter_name": "bootstrap_block_length_bars",
+      "proposed_value_or_range": 24,
+      "unit": "5m bars (2 hours)",
+      "source": "Phase 5.4.4 & 5.4.6 Moving Block Bootstrap specification",
+      "evidence_status": "VERIFIED",
+      "validation_requirement": "Preserves serial correlation in PnL loss sequences",
+      "sensitivity_impact": "HIGH",
+      "approval_status": "APPROVED_FOR_DESIGN"
+    }
+  ]
+}

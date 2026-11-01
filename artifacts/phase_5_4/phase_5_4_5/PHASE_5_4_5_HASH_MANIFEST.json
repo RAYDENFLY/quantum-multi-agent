@@ -1,0 +1,47 @@
+{
+  "title": "Phase 5.4.5 Deliverables SHA-256 Hash Manifest",
+  "timestamp_utc": "2026-11-01 19:49:26 UTC",
+  "total_files": 10,
+  "artifacts": {
+    "PHASE_5_4_5_ARTIFACT_INTEGRITY_AUDIT.json": {
+      "sha256": "f66b791c6bbf38be5da3abb7d5a5f69ba9f7758c83c0cc255bc38529f3b4b4bb",
+      "size_bytes": 498
+    },
+    "PHASE_5_4_5_AURCC_FLEET_RECLASSIFICATION.json": {
+      "sha256": "3d2a639bc4e9acec19ccf070d369e0c2a498418e4b68e1d757f6ce4cd7394b50",
+      "size_bytes": 8762
+    },
+    "PHASE_5_4_5_CALIBRATION_BOOTSTRAP_RECONCILIATION.json": {
+      "sha256": "a979babea11d4543b72146cbc57b29011c34544d78d7233fdf79a06a0752f810",
+      "size_bytes": 10746
+    },
+    "PHASE_5_4_5_EXTENDED_MONTE_CARLO_RESULTS.json": {
+      "sha256": "5255b938ef59311c5647d1621e805c222705238329dfb047de74df62c60fb106",
+      "size_bytes": 44396
+    },
+    "PHASE_5_4_5_FINAL_GOVERNANCE_REPORT.md": {
+      "sha256": "71635465cc9a96566ec54d579c16a5261d4e2a597f8ca3796c70a46f66aed458",
+      "size_bytes": 17066
+    },
+    "PHASE_5_4_5_MONTE_CARLO_RESOLUTION_AUDIT.json": {
+      "sha256": "d34f9cbe186d27224a2d288fb6d6f8ef9b20d9c9bd52ae52973c285ffb95da21",
+      "size_bytes": 1012
+    },
+    "PHASE_5_4_5_MULTIPLE_TESTING_FAMILY_REGISTRY.json": {
+      "sha256": "488c05907a544002cfb4221f9f47d13590fbd4584f2c746dc46e284fe00ba847",
+      "size_bytes": 56343
+    },
+    "PHASE_5_4_5_RETROSPECTIVE_POLICY_ROBUSTNESS.json": {
+      "sha256": "6abaceb6f41b00c4fde7fadf43d52cc020c8bbd6c018c944413b2b46552b09f8",
+      "size_bytes": 31940
+    },
+    "PHASE_5_4_5_SELECTION_BIAS_RECONCILIATION.json": {
+      "sha256": "524792a694e143ad2df6329da4670873ff2b7514958c6fcd5317ca0ecf156810",
+      "size_bytes": 15827
+    },
+    "PHASE_5_4_5_TEST_EXECUTION_REPORT.json": {
+      "sha256": "54673e8828176e7d6c9b4b2a1b8c67d9794c80b506e75dbb0cbdb3a201b8f249",
+      "size_bytes": 2871
+    }
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "title": "Workstream E: Majority-Class Selection Bias Mechanism Diagnosis",
+  "timestamp_utc": "2026-11-01 19:47:39 UTC",
+  "analysis_classification": "SELECTION_BIAS_MECHANISM_DIAGNOSIS",
+  "governance_boundaries": {
+    "no_causal_mechanism_solved_claim": true,
+    "no_production_ready_policy_claim": true,
+    "no_proven_directional_alpha_claim": true,
+    "policy_b_and_d_status": "Research diagnostic candidates only."
+  },
+  "four_evidence_pillars_separation": {
+    "1_diagnostic_evidence": "Class retention ratios R_c(kappa) and recall disparities document that Policy A hoards majority classes at low coverage tiers.",
+    "2_statistical_evidence": "Holm-Bonferroni hypothesis tests verify that unweighted Policy A achieves statistically significant gains on only 4 of 11 instruments.",
+    "3_policy_selection_evidence": "Directional ranking policies (Policy B and D) mitigate majority-class hoarding on retrospective evaluation data.",
+    "4_economic_performance_evidence": "NONE. No executable trading strategy, alpha generation, or transaction profitability is asserted in Phase 5.4."
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "instrument": "BTCUSDT",
+      "full_population_counts": {
+        "SL": 12716,
+        "EXP": 1009,
+        "TP": 12415
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.2113,
+        "EXP": 0.0337,
+        "TP": 0.2019
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.9669,
+        "EXP": 0.0,
+        "TP": 0.0411
+      },
+      "disparity_ratio_at_20_cov": 6.27,
+      "bias_pathology_detected_in_policy_a": true,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 6.27x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    },
+    "ETHUSDT": {
+      "instrument": "ETHUSDT",
+      "full_population_counts": {
+        "SL": 12680,
+        "EXP": 1134,
+        "TP": 12334
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.1964,
+        "EXP": 0.0459,
+        "TP": 0.2179
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.0052,
+        "EXP": 0.0962,
+        "TP": 0.9918
+      },
+      "disparity_ratio_at_20_cov": 4.75,
+      "bias_pathology_detected_in_policy_a": true,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 4.75x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    },
+    "BNBUSDT": {
+      "instrument": "BNBUSDT",
+      "full_population_counts": {
+        "SL": 12635,
+        "EXP": 998,
+        "TP": 12538
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.2108,
+        "EXP": 0.0671,
+        "TP": 0.1996
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.8397,
+        "EXP": 0.0,
+        "TP": 0.173
+      },
+      "disparity_ratio_at_20_cov": 3.14,
+      "bias_pathology_detected_in_policy_a": true,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 3.14x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    },
+    "XRPUSDT": {
+      "instrument": "XRPUSDT",
+      "full_population_counts": {
+        "SL": 13057,
+        "EXP": 728,
+        "TP": 12335
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.2021,
+        "EXP": 0.0838,
+        "TP": 0.2046
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.0117,
+        "EXP": 0.0,
+        "TP": 0.9889
+      },
+      "disparity_ratio_at_20_cov": 2.44,
+      "bias_pathology_detected_in_policy_a": true,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 2.44x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    },
+    "ADAUSDT": {
+      "instrument": "ADAUSDT",
+      "full_population_counts": {
+        "SL": 12215,
+        "EXP": 2744,
+        "TP": 11140
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.2125,
+        "EXP": 0.0966,
+        "TP": 0.2117
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.5508,
+        "EXP": 0.0377,
+        "TP": 0.553
+      },
+      "disparity_ratio_at_20_cov": 2.2,
+      "bias_pathology_detected_in_policy_a": true,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 2.20x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    },
+    "SOLUSDT": {
+      "instrument": "SOLUSDT",
+      "full_population_counts": {
+        "SL": 12756,
+        "EXP": 884,
+        "TP": 12524
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.2066,
+        "EXP": 0.0385,
+        "TP": 0.2046
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.2993,
+        "EXP": 0.0,
+        "TP": 0.7155
+      },
+      "disparity_ratio_at_20_cov": 5.37,
+      "bias_pathology_detected_in_policy_a": true,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 5.37x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    },
+    "AVAXUSDT": {
+      "instrument": "AVAXUSDT",
+      "full_population_counts": {
+        "SL": 11394,
+        "EXP": 4033,
+        "TP": 10739
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.2192,
+        "EXP": 0.0925,
+        "TP": 0.2199
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.8507,
+        "EXP": 0.0858,
+        "TP": 0.1465
+      },
+      "disparity_ratio_at_20_cov": 2.38,
+      "bias_pathology_detected_in_policy_a": true,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 2.38x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    },
+    "LINKUSDT": {
+      "instrument": "LINKUSDT",
+      "full_population_counts": {
+        "SL": 11631,
+        "EXP": 3374,
+        "TP": 11152
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.2113,
+        "EXP": 0.0951,
+        "TP": 0.2199
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.3934,
+        "EXP": 0.2025,
+        "TP": 0.6395
+      },
+      "disparity_ratio_at_20_cov": 2.31,
+      "bias_pathology_detected_in_policy_a": true,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 2.31x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    },
+    "DOGEUSDT": {
+      "instrument": "DOGEUSDT",
+      "full_population_counts": {
+        "SL": 13032,
+        "EXP": 974,
+        "TP": 12126
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.1996,
+        "EXP": 0.0708,
+        "TP": 0.2108
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.3476,
+        "EXP": 0.1739,
+        "TP": 0.7066
+      },
+      "disparity_ratio_at_20_cov": 2.98,
+      "bias_pathology_detected_in_policy_a": true,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 2.98x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    },
+    "LTCUSDT": {
+      "instrument": "LTCUSDT",
+      "full_population_counts": {
+        "SL": 11307,
+        "EXP": 3965,
+        "TP": 10823
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.2073,
+        "EXP": 0.1067,
+        "TP": 0.2266
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.1024,
+        "EXP": 0.2199,
+        "TP": 0.894
+      },
+      "disparity_ratio_at_20_cov": 2.12,
+      "bias_pathology_detected_in_policy_a": true,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 2.12x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    },
+    "XMRUSDT": {
+      "instrument": "XMRUSDT",
+      "full_population_counts": {
+        "SL": 1180,
+        "EXP": 465,
+        "TP": 1407
+      },
+      "policy_a_retention_ratios_at_20_cov": {
+        "SL": 0.1839,
+        "EXP": 0.1871,
+        "TP": 0.2175
+      },
+      "policy_a_recalls_at_20_cov": {
+        "SL": 0.3963,
+        "EXP": 0.0,
+        "TP": 0.6307
+      },
+      "disparity_ratio_at_20_cov": 1.18,
+      "bias_pathology_detected_in_policy_a": false,
+      "mechanism_description": "Under Policy A (Global Max Probability), class retention disparity reached 1.18x at 20% coverage. In instruments where expiration or a dominant class has higher baseline probability, Policy A preferentially retains that majority class while discarding minority directional classes, causing directional recall and Balanced Accuracy to collapse.",
+      "diagnostic_alternative_mitigation": {
+        "policy_b_directional_confidence": "Filters directly on max(P_SL, P_TP), isolating directional conviction from expiration probability mass.",
+        "policy_d_directional_mass": "Filters on (P_SL + P_TP) = 1 - P_EXP, explicitly penalizing expiration uncertainty.",
+        "research_candidate_status": "RESEARCH_CANDIDATE_ONLY (No production deployment or live trading authorized)."
+      }
+    }
+  }
+}
