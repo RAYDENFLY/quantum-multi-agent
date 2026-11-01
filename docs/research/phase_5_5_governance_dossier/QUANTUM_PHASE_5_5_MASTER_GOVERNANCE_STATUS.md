@@ -1,0 +1,33 @@
+# QUANTUM PHASE 5.5: MASTER GOVERNANCE STATUS (REVISION 1)
+
+**Document Status:** `APPROVED_FOR_HUMAN_REVIEW`  
+**Revision:** `Revision 1 (Decision Consistency & Risk-Claim Correction)`  
+**Publication Timestamp:** `2026-11-01 22:55:00 UTC`  
+**Operational Mode:** `READ_ONLY_EVIDENCE_RECONCILIATION_AND_GOVERNANCE_DOCUMENTATION`  
+**Associated Deliverable:** Master Governance Status Table (Task A)  
+
+---
+
+## 1. EXECUTIVE OVERVIEW
+
+Revision 1 performs a focused evidence reconciliation of the QUANTUM Phase 5.5 Governance Decision Dossier. It corrects overstated risk guarantees, aligns statistical methodology statuses, qualifies funding scenario interpretations, decouples directional reporting from execution authorization, and reconciles the dependency between the primary asset universe (DEC_06) and the confirmatory hypothesis family size (DEC_04).
+
+### Strict Governance Invariants
+- **All six decisions remain strictly:** `PENDING_HUMAN_DECISION`.
+- No decision has been approved, rejected, or conditionally executed by AI.
+- Phase 5.5 economic backtesting remains **NOT STARTED**.
+- Phase 5.6 remains **NOT AUTHORIZED**.
+- Prospective holdout (`2026-11-01` to `2027-04-30`) remains **STRICTLY SEALED**.
+
+---
+
+## 2. CONSOLIDATED MASTER GOVERNANCE STATUS TABLE
+
+| Decision ID | Original Question | Current Status | Latest Recommendation | Supporting Evidence | Known Limitations | Dependencies | Consequence of Approval | Consequence of Rejection | Clarification Required? |
+|---|---|---|---|---|---|---|---|---|---|
+| **DEC_01** | Should Phase 5.5 evaluate the frozen classifier under re-anchored barrier execution (Track 2 / Alternative B) or explore independent strategy development (Track 3 / Alternative C)? | `PENDING_HUMAN_DECISION` | Sequential Tracks: Execute Alternative B (Track 2) as mandatory baseline; authorize Alternative C (Track 3) secondarily. | Re-anchoring barriers to entry fill ($P_{\text{entry}} = \text{open}[i+1]$) avoids look-ahead latency violations and requires zero parameter tuning. | Re-anchoring shifts nominal barrier levels relative to close[i] labels; does not directly validate close-anchored label payoff. | Governs the primary scientific estimand; foundation for DEC_02 through DEC_06. | Phase 5.5 tests classifier utility under re-anchored brackets. | Model cannot be evaluated without defining an alternative execution policy. | Requires supervisor sign-off on sequential track architecture. |
+| **DEC_02** | Should the strategy execute Long-only, Short-only, or Bidirectional positions? | `PENDING_HUMAN_DECISION` | Mandatory disaggregated reporting across Long-Only, Short-Only, and Combined; human supervisor selects execution permission. | BTC bull bias is `DATA_SUPPORTED`; broad altcoin bias is `PARTIALLY_SUPPORTED`; short fee drag is lower on wins ($14.89$ vs $15.11$ bps). | Funding rates persistently positive and short liquidation slippage are theoretical assumptions in repo. | Depends on DEC_01; directly affects DEC_05 gross exposure and DEC_04 hypothesis family. | Authorizes full disaggregated evaluation; exposes directional asymmetry. | Strategy is artificially restricted to one direction before empirical evaluation. | Requires supervisor selection of authorized execution scope. |
+| **DEC_03** | What funding rate model should be adopted in the absence of canonical exchange funding series? | `PENDING_HUMAN_DECISION` | Parametric sensitivity sweep across four scenarios (-1, 0, +1, +3 bps per settlement) with 1095x nominal annualization. | Canonical formula $CF_t = -d \times N_{\text{settle}, t} \times f_t$ verified dimensionally with dynamic mark notional. | Historical funding rates are absent from local canonical datasets (`FUNDING_DATA_UNAVAILABLE`); scenarios are assumed sensitivities, not empirical distributions. | Directly impacts DEC_04 net break-even return hurdle. | Establishes funding sensitivity bounds across -10.95% to +32.85% nominal annualized. | Economic net return cannot be computed for perpetual futures. | Requires supervisor sign-off on parametric scenario bounds. |
+| **DEC_04** | What transaction cost ceiling and acceptance hurdle should govern Phase 5.5? | `PENDING_HUMAN_DECISION` | Adopt `REFERENCE_PRICE_ACCOUNTING`; evaluate 15, 20, 30 bps tiers; candidate Gate 2 hurdle: $E[R_{\text{net}}] > 0$ at 20 bps with $p < 0.05$. | Reference-price accounting eliminates double-counting; normalized fee is $15.11$ bps on a $+1.50\%$ win. | Overlapping trades (up to 288 bars) make 24-bar MBB inadequate; 288-bar calendar MBB is a candidate, not validated optimal; K depends on DEC_06 ($K=10$ vs $K=11$). | Depends on DEC_01 estimand, DEC_06 fleet size, and DEC_03 funding cash flows. | Sets unambiguous statistical and cost thresholds for economic validation. | No quantitative standard exists to determine whether models have tradeable alpha. | Requires supervisor approval of 20 bps hurdle, K value, and bootstrap design. |
+| **DEC_05** | What portfolio concurrency and gross leverage limits should be enforced? | `PENDING_HUMAN_DECISION` | Evaluate three structured options (Fixed gross cap, Risk-budget sizing, Combined cap/budget); remove all claims of guaranteed loss caps or zero liquidation risk. | Nominal stop loss $L_{\text{stop, nominal}} = \sum |N_i| D_i$ decouples from gross notional under ideal stop assumptions. | Realized loss includes slippage, gaps, fees, funding, and execution failure; $\rho > 0.70$ is `UNSUPPORTED_IN_REPO`; gross limit denominator is ambiguous. | Depends on DEC_02 directional concurrency and DEC_06 fleet size. | Constrains portfolio gross exposure and defines clear margin boundaries. | Portfolio risk remains unconstrained or arbitrarily restricted. | Requires supervisor selection of risk option and exposure denominator definition. |
+| **DEC_06** | How should XMRUSDT be handled given its shorter historical coverage (83,863 vs 316,500 candles)? | `PENDING_HUMAN_DECISION` | Three-tier policy: preserve artifacts 100%, report standalone metrics in appendix, exclude from primary portfolio acceptance (K=10). | XMR data starts January 13, 2026; including it in primary portfolio creates a ragged covariance matrix and distorts multi-year Sharpe. | Standalone XMR performance cannot be cross-sectionally compared to 3-year asset records. | Governs instrument fleet size in DEC_04 ($K=10$ vs $K=11$) and DEC_05. | Prevents statistical distortion of 3-year fleet metrics while preserving all research work. | Multi-asset portfolio metrics are distorted by ragged missing data in Folds 1-4. | Requires supervisor approval of primary universe definition ($K=10$ vs $K=11$). |
