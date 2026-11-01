@@ -1,0 +1,140 @@
+{
+  "title": "Out-of-Fold Sample Population Accounting",
+  "description": "Exhaustive accounting of canonical candles, Dev+Val feature candles, exclusions, and test OOF observations reconciling the 1,322,108 fleet total.",
+  "fleet_total_oof_observations": 1322108,
+  "fleet_total_canonical_observations": 3248862,
+  "instruments": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "total_canonical_observations": 316499,
+      "total_dev_val_feature_observations": 262655,
+      "eligible_clean_observations": 261488,
+      "oof_test_observations": 130684,
+      "training_observations_total": 915140,
+      "ambiguous_label_exclusions": 1131,
+      "boundary_gap_exclusions": 36,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "total_canonical_observations": 316500,
+      "total_dev_val_feature_observations": 262656,
+      "eligible_clean_observations": 261576,
+      "oof_test_observations": 130728,
+      "training_observations_total": 915450,
+      "ambiguous_label_exclusions": 1056,
+      "boundary_gap_exclusions": 24,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    },
+    "BNBUSDT": {
+      "symbol": "BNBUSDT",
+      "total_canonical_observations": 316500,
+      "total_dev_val_feature_observations": 262656,
+      "eligible_clean_observations": 261814,
+      "oof_test_observations": 130847,
+      "training_observations_total": 916285,
+      "ambiguous_label_exclusions": 818,
+      "boundary_gap_exclusions": 24,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    },
+    "XRPUSDT": {
+      "symbol": "XRPUSDT",
+      "total_canonical_observations": 316500,
+      "total_dev_val_feature_observations": 262656,
+      "eligible_clean_observations": 261319,
+      "oof_test_observations": 130600,
+      "training_observations_total": 914555,
+      "ambiguous_label_exclusions": 1313,
+      "boundary_gap_exclusions": 24,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    },
+    "ADAUSDT": {
+      "symbol": "ADAUSDT",
+      "total_canonical_observations": 316500,
+      "total_dev_val_feature_observations": 262656,
+      "eligible_clean_observations": 261085,
+      "oof_test_observations": 130483,
+      "training_observations_total": 913730,
+      "ambiguous_label_exclusions": 1547,
+      "boundary_gap_exclusions": 24,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    },
+    "SOLUSDT": {
+      "symbol": "SOLUSDT",
+      "total_canonical_observations": 316500,
+      "total_dev_val_feature_observations": 262656,
+      "eligible_clean_observations": 261735,
+      "oof_test_observations": 130808,
+      "training_observations_total": 916005,
+      "ambiguous_label_exclusions": 897,
+      "boundary_gap_exclusions": 24,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    },
+    "AVAXUSDT": {
+      "symbol": "AVAXUSDT",
+      "total_canonical_observations": 316500,
+      "total_dev_val_feature_observations": 262656,
+      "eligible_clean_observations": 261756,
+      "oof_test_observations": 130818,
+      "training_observations_total": 916080,
+      "ambiguous_label_exclusions": 876,
+      "boundary_gap_exclusions": 24,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    },
+    "LINKUSDT": {
+      "symbol": "LINKUSDT",
+      "total_canonical_observations": 316500,
+      "total_dev_val_feature_observations": 262656,
+      "eligible_clean_observations": 261673,
+      "oof_test_observations": 130777,
+      "training_observations_total": 915790,
+      "ambiguous_label_exclusions": 959,
+      "boundary_gap_exclusions": 24,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    },
+    "DOGEUSDT": {
+      "symbol": "DOGEUSDT",
+      "total_canonical_observations": 316500,
+      "total_dev_val_feature_observations": 262656,
+      "eligible_clean_observations": 261416,
+      "oof_test_observations": 130648,
+      "training_observations_total": 914890,
+      "ambiguous_label_exclusions": 1216,
+      "boundary_gap_exclusions": 24,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    },
+    "LTCUSDT": {
+      "symbol": "LTCUSDT",
+      "total_canonical_observations": 316500,
+      "total_dev_val_feature_observations": 262656,
+      "eligible_clean_observations": 261046,
+      "oof_test_observations": 130463,
+      "training_observations_total": 913595,
+      "ambiguous_label_exclusions": 1586,
+      "boundary_gap_exclusions": 24,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    },
+    "XMRUSDT": {
+      "symbol": "XMRUSDT",
+      "total_canonical_observations": 83863,
+      "total_dev_val_feature_observations": 30703,
+      "eligible_clean_observations": 30623,
+      "oof_test_observations": 15252,
+      "training_observations_total": 107115,
+      "ambiguous_label_exclusions": 68,
+      "boundary_gap_exclusions": 12,
+      "prospective_holdout_samples": 0,
+      "sample_reconciliation_status": "EXACT_MATCH"
+    }
+  }
+}

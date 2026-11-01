@@ -1,0 +1,45 @@
+{
+  "phase": "5.3.3.4",
+  "title": "Final Cryptographic Audit Manifest",
+  "created_at_utc": "2026-11-01 14:41:05 UTC",
+  "fleet_total_oof_observations": 1322108,
+  "verdict": "PHASE_5_3_3_4_PASS",
+  "phase_5_4_gate_status": "HOLD",
+  "files": {
+    "target_schema_audit.json": {
+      "path": "artifacts/phase_5_3_3_4/target_schema_audit.json",
+      "sha256": "a6b450f1fbbc575db0d12411502a57d8bca2b6b8dfdc857bad8f8ec41352dc19",
+      "bytes": 6720
+    },
+    "b0_reconstruction_audit.json": {
+      "path": "artifacts/phase_5_3_3_4/b0_reconstruction_audit.json",
+      "sha256": "b589ba52701e21aed404b1812ad12f04ea067517724ead345eb9e387df03c77f",
+      "bytes": 52984
+    },
+    "b4_confusion_matrix_audit.json": {
+      "path": "artifacts/phase_5_3_3_4/b4_confusion_matrix_audit.json",
+      "sha256": "4aea05d392bb1e8c0619a9f9245e9fb42d3d4aa206f4d1ca894a9ee38892a0cc",
+      "bytes": 65657
+    },
+    "historical_benchmark_reconciliation.json": {
+      "path": "artifacts/phase_5_3_3_4/historical_benchmark_reconciliation.json",
+      "sha256": "9e033a2879bc5b695bef45a55af4846b81258e85e9b9a18ffbb47c6a255fb4d1",
+      "bytes": 7541
+    },
+    "oof_sample_accounting.json": {
+      "path": "artifacts/phase_5_3_3_4/oof_sample_accounting.json",
+      "sha256": "741fe3fd4d448abce14b825e4bad423795c2ca160149e50b3e2079d938a4fd83",
+      "bytes": 5412
+    },
+    "bootstrap_input_validity.json": {
+      "path": "artifacts/phase_5_3_3_4/bootstrap_input_validity.json",
+      "sha256": "231bc691c2283a64a6995710f6f8c5d1d111f03d5c9ac8b5456fe406027783a5",
+      "bytes": 7295
+    },
+    "final_benchmark_reconciliation.json": {
+      "path": "artifacts/phase_5_3_3_4/final_benchmark_reconciliation.json",
+      "sha256": "8a2c0f1b26abd35ec622f5e1c9cf765d1ebc8ea1fac073d3272af907395e276c",
+      "bytes": 24277
+    }
+  }
+}

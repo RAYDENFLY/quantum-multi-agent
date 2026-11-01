@@ -1,0 +1,955 @@
+{
+  "title": "Authoritative Master Baseline Benchmark Catalog (Phase 5.3.3.4)",
+  "version": "1.0.0-canonical-three-class",
+  "description": "Definitive multi-metric performance catalog distinguishing historical fold-level benchmarks, reconstructed pooled OOF metrics, and empirical bootstrap estimates.",
+  "target_schema": "Three-Class Triple Barrier (SL=-1, EXP=0, TP=1)",
+  "governance_status": "BENCHMARK_RECONCILED",
+  "instruments": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 120922,
+        "EXP": 20692,
+        "TP": 119874
+      },
+      "sample_count": 130684,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.332773,
+        "pooled_confusion_matrix": [
+          [
+            37799,
+            0,
+            24267
+          ],
+          [
+            3368,
+            0,
+            4262
+          ],
+          [
+            37245,
+            0,
+            23743
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.4099,
+        "reconstructed_fold_mean_balanced_accuracy": 0.4099,
+        "reconstructed_pooled_balanced_accuracy": 0.433187,
+        "pooled_accuracy": 0.453606,
+        "pooled_macro_f1": 0.400869,
+        "per_class": {
+          "SL": {
+            "precision": 0.492708,
+            "recall": 0.435488,
+            "f1": 0.462335,
+            "support": 62066
+          },
+          "EXP": {
+            "precision": 0.195572,
+            "recall": 0.383224,
+            "f1": 0.258979,
+            "support": 7630
+          },
+          "TP": {
+            "precision": 0.481741,
+            "recall": 0.480849,
+            "f1": 0.481295,
+            "support": 60988
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            27029,
+            5991,
+            29046
+          ],
+          [
+            2203,
+            2924,
+            2503
+          ],
+          [
+            25626,
+            6036,
+            29326
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.099854,
+        "mbb_mean_lift": 0.099867,
+        "ci_95_percentile": [
+          0.091693,
+          0.107831
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 118880,
+        "EXP": 24004,
+        "TP": 118692
+      },
+      "sample_count": 130728,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.330614,
+        "pooled_confusion_matrix": [
+          [
+            23424,
+            0,
+            37780
+          ],
+          [
+            4866,
+            0,
+            3258
+          ],
+          [
+            24000,
+            0,
+            37400
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.4177,
+        "reconstructed_fold_mean_balanced_accuracy": 0.4177,
+        "reconstructed_pooled_balanced_accuracy": 0.45713,
+        "pooled_accuracy": 0.454325,
+        "pooled_macro_f1": 0.414386,
+        "per_class": {
+          "SL": {
+            "precision": 0.488084,
+            "recall": 0.445396,
+            "f1": 0.465764,
+            "support": 61204
+          },
+          "EXP": {
+            "precision": 0.224552,
+            "recall": 0.464057,
+            "f1": 0.302653,
+            "support": 8124
+          },
+          "TP": {
+            "precision": 0.488276,
+            "recall": 0.461938,
+            "f1": 0.474742,
+            "support": 61400
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            27260,
+            6586,
+            27358
+          ],
+          [
+            1987,
+            3770,
+            2367
+          ],
+          [
+            26604,
+            6433,
+            28363
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.123797,
+        "mbb_mean_lift": 0.122929,
+        "ci_95_percentile": [
+          0.114995,
+          0.130601
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    },
+    "BNBUSDT": {
+      "symbol": "BNBUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 111478,
+        "EXP": 36976,
+        "TP": 113360
+      },
+      "sample_count": 130847,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.333333,
+        "pooled_confusion_matrix": [
+          [
+            0,
+            0,
+            59200
+          ],
+          [
+            0,
+            0,
+            12470
+          ],
+          [
+            0,
+            0,
+            59177
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.3699,
+        "reconstructed_fold_mean_balanced_accuracy": 0.3699,
+        "reconstructed_pooled_balanced_accuracy": 0.466677,
+        "pooled_accuracy": 0.462785,
+        "pooled_macro_f1": 0.444985,
+        "per_class": {
+          "SL": {
+            "precision": 0.480564,
+            "recall": 0.55799,
+            "f1": 0.516391,
+            "support": 59200
+          },
+          "EXP": {
+            "precision": 0.352009,
+            "recall": 0.477626,
+            "f1": 0.405308,
+            "support": 12470
+          },
+          "TP": {
+            "precision": 0.477218,
+            "recall": 0.364415,
+            "f1": 0.413257,
+            "support": 59177
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            33033,
+            5553,
+            20614
+          ],
+          [
+            3504,
+            5956,
+            3010
+          ],
+          [
+            32201,
+            5411,
+            21565
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.133344,
+        "mbb_mean_lift": 0.133877,
+        "ci_95_percentile": [
+          0.125591,
+          0.142043
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    },
+    "XRPUSDT": {
+      "symbol": "XRPUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 112072,
+        "EXP": 38499,
+        "TP": 110748
+      },
+      "sample_count": 130600,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.334817,
+        "pooled_confusion_matrix": [
+          [
+            13057,
+            0,
+            48406
+          ],
+          [
+            728,
+            0,
+            9102
+          ],
+          [
+            12335,
+            0,
+            46972
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.3747,
+        "reconstructed_fold_mean_balanced_accuracy": 0.3747,
+        "reconstructed_pooled_balanced_accuracy": 0.428589,
+        "pooled_accuracy": 0.472274,
+        "pooled_macro_f1": 0.42295,
+        "per_class": {
+          "SL": {
+            "precision": 0.493337,
+            "recall": 0.590843,
+            "f1": 0.537705,
+            "support": 61463
+          },
+          "EXP": {
+            "precision": 0.30346,
+            "recall": 0.320346,
+            "f1": 0.311674,
+            "support": 9830
+          },
+          "TP": {
+            "precision": 0.476594,
+            "recall": 0.374576,
+            "f1": 0.419471,
+            "support": 59307
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            36315,
+            3852,
+            21296
+          ],
+          [
+            3580,
+            3149,
+            3101
+          ],
+          [
+            33716,
+            3376,
+            22215
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.095255,
+        "mbb_mean_lift": 0.095507,
+        "ci_95_percentile": [
+          0.087323,
+          0.103544
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    },
+    "ADAUSDT": {
+      "symbol": "ADAUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 113960,
+        "EXP": 33170,
+        "TP": 113955
+      },
+      "sample_count": 130483,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.333333,
+        "pooled_confusion_matrix": [
+          [
+            0,
+            0,
+            56948
+          ],
+          [
+            0,
+            0,
+            19009
+          ],
+          [
+            0,
+            0,
+            54526
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.449,
+        "reconstructed_fold_mean_balanced_accuracy": 0.449,
+        "reconstructed_pooled_balanced_accuracy": 0.468513,
+        "pooled_accuracy": 0.407877,
+        "pooled_macro_f1": 0.404774,
+        "per_class": {
+          "SL": {
+            "precision": 0.509803,
+            "recall": 0.347001,
+            "f1": 0.412935,
+            "support": 56948
+          },
+          "EXP": {
+            "precision": 0.257599,
+            "recall": 0.682992,
+            "f1": 0.374101,
+            "support": 19009
+          },
+          "TP": {
+            "precision": 0.495559,
+            "recall": 0.375546,
+            "f1": 0.427285,
+            "support": 54526
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            19761,
+            19274,
+            17913
+          ],
+          [
+            3095,
+            12983,
+            2931
+          ],
+          [
+            15906,
+            18143,
+            20477
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.13518,
+        "mbb_mean_lift": 0.131387,
+        "ci_95_percentile": [
+          0.125548,
+          0.137206
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    },
+    "SOLUSDT": {
+      "symbol": "SOLUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 119739,
+        "EXP": 22844,
+        "TP": 119152
+      },
+      "sample_count": 130808,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.333333,
+        "pooled_confusion_matrix": [
+          [
+            61945,
+            0,
+            0
+          ],
+          [
+            7232,
+            0,
+            0
+          ],
+          [
+            61631,
+            0,
+            0
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.3878,
+        "reconstructed_fold_mean_balanced_accuracy": 0.3878,
+        "reconstructed_pooled_balanced_accuracy": 0.439965,
+        "pooled_accuracy": 0.469765,
+        "pooled_macro_f1": 0.415384,
+        "per_class": {
+          "SL": {
+            "precision": 0.490873,
+            "recall": 0.353814,
+            "f1": 0.411224,
+            "support": 61945
+          },
+          "EXP": {
+            "precision": 0.249204,
+            "recall": 0.36781,
+            "f1": 0.297107,
+            "support": 7232
+          },
+          "TP": {
+            "precision": 0.488468,
+            "recall": 0.59827,
+            "f1": 0.537822,
+            "support": 61631
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            21917,
+            3956,
+            36072
+          ],
+          [
+            2031,
+            2660,
+            2541
+          ],
+          [
+            20701,
+            4058,
+            36872
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.106631,
+        "mbb_mean_lift": 0.107652,
+        "ci_95_percentile": [
+          0.098696,
+          0.116836
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    },
+    "AVAXUSDT": {
+      "symbol": "AVAXUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 98994,
+        "EXP": 65140,
+        "TP": 97622
+      },
+      "sample_count": 130818,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.333333,
+        "pooled_confusion_matrix": [
+          [
+            51506,
+            0,
+            0
+          ],
+          [
+            28852,
+            0,
+            0
+          ],
+          [
+            50460,
+            0,
+            0
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.4145,
+        "reconstructed_fold_mean_balanced_accuracy": 0.4145,
+        "reconstructed_pooled_balanced_accuracy": 0.452262,
+        "pooled_accuracy": 0.430652,
+        "pooled_macro_f1": 0.431935,
+        "per_class": {
+          "SL": {
+            "precision": 0.460446,
+            "recall": 0.424106,
+            "f1": 0.441529,
+            "support": 51506
+          },
+          "EXP": {
+            "precision": 0.378069,
+            "recall": 0.581727,
+            "f1": 0.458291,
+            "support": 28852
+          },
+          "TP": {
+            "precision": 0.454275,
+            "recall": 0.350951,
+            "f1": 0.395984,
+            "support": 50460
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            21844,
+            13687,
+            15975
+          ],
+          [
+            6769,
+            16784,
+            5299
+          ],
+          [
+            18828,
+            13923,
+            17709
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.118928,
+        "mbb_mean_lift": 0.117568,
+        "ci_95_percentile": [
+          0.111614,
+          0.123693
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    },
+    "LINKUSDT": {
+      "symbol": "LINKUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 102028,
+        "EXP": 58839,
+        "TP": 100806
+      },
+      "sample_count": 130777,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.333333,
+        "pooled_confusion_matrix": [
+          [
+            47862,
+            0,
+            0
+          ],
+          [
+            35222,
+            0,
+            0
+          ],
+          [
+            47693,
+            0,
+            0
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.4067,
+        "reconstructed_fold_mean_balanced_accuracy": 0.4067,
+        "reconstructed_pooled_balanced_accuracy": 0.498942,
+        "pooled_accuracy": 0.478379,
+        "pooled_macro_f1": 0.479589,
+        "per_class": {
+          "SL": {
+            "precision": 0.465052,
+            "recall": 0.376311,
+            "f1": 0.416002,
+            "support": 47862
+          },
+          "EXP": {
+            "precision": 0.503317,
+            "recall": 0.712907,
+            "f1": 0.590053,
+            "support": 35222
+          },
+          "TP": {
+            "precision": 0.461112,
+            "recall": 0.407607,
+            "f1": 0.432712,
+            "support": 47693
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            18011,
+            12372,
+            17479
+          ],
+          [
+            4872,
+            25110,
+            5240
+          ],
+          [
+            15846,
+            12407,
+            19440
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.165608,
+        "mbb_mean_lift": 0.164606,
+        "ci_95_percentile": [
+          0.158965,
+          0.170119
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    },
+    "DOGEUSDT": {
+      "symbol": "DOGEUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 112806,
+        "EXP": 36898,
+        "TP": 111712
+      },
+      "sample_count": 130648,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.335793,
+        "pooled_confusion_matrix": [
+          [
+            13032,
+            0,
+            45379
+          ],
+          [
+            974,
+            0,
+            15054
+          ],
+          [
+            12126,
+            0,
+            44083
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.396,
+        "reconstructed_fold_mean_balanced_accuracy": 0.396,
+        "reconstructed_pooled_balanced_accuracy": 0.489942,
+        "pooled_accuracy": 0.466559,
+        "pooled_macro_f1": 0.46616,
+        "per_class": {
+          "SL": {
+            "precision": 0.486638,
+            "recall": 0.499735,
+            "f1": 0.493099,
+            "support": 58411
+          },
+          "EXP": {
+            "precision": 0.402108,
+            "recall": 0.566509,
+            "f1": 0.470357,
+            "support": 16028
+          },
+          "TP": {
+            "precision": 0.471779,
+            "recall": 0.403583,
+            "f1": 0.435024,
+            "support": 56209
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            29190,
+            6927,
+            22294
+          ],
+          [
+            3843,
+            9080,
+            3105
+          ],
+          [
+            26950,
+            6574,
+            22685
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.156609,
+        "mbb_mean_lift": 0.156237,
+        "ci_95_percentile": [
+          0.148974,
+          0.163137
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    },
+    "LTCUSDT": {
+      "symbol": "LTCUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 99246,
+        "EXP": 59020,
+        "TP": 102780
+      },
+      "sample_count": 130463,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.333333,
+        "pooled_confusion_matrix": [
+          [
+            0,
+            0,
+            48342
+          ],
+          [
+            0,
+            0,
+            33006
+          ],
+          [
+            0,
+            0,
+            49115
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.4355,
+        "reconstructed_fold_mean_balanced_accuracy": 0.4355,
+        "reconstructed_pooled_balanced_accuracy": 0.485102,
+        "pooled_accuracy": 0.467757,
+        "pooled_macro_f1": 0.471511,
+        "per_class": {
+          "SL": {
+            "precision": 0.463323,
+            "recall": 0.404121,
+            "f1": 0.431701,
+            "support": 48342
+          },
+          "EXP": {
+            "precision": 0.471068,
+            "recall": 0.629461,
+            "f1": 0.538867,
+            "support": 33006
+          },
+          "TP": {
+            "precision": 0.468684,
+            "recall": 0.421725,
+            "f1": 0.443966,
+            "support": 49115
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            19536,
+            11591,
+            17215
+          ],
+          [
+            5964,
+            20776,
+            6266
+          ],
+          [
+            16665,
+            11737,
+            20713
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.151769,
+        "mbb_mean_lift": 0.150968,
+        "ci_95_percentile": [
+          0.144794,
+          0.157174
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    },
+    "XMRUSDT": {
+      "symbol": "XMRUSDT",
+      "target_schema": "THREE_CLASS_CANONICAL",
+      "class_distribution": {
+        "SL": 13396,
+        "EXP": 3198,
+        "TP": 14029
+      },
+      "sample_count": 15252,
+      "b0_majority": {
+        "fold_mean_balanced_accuracy": 0.3333,
+        "pooled_balanced_accuracy": 0.333333,
+        "pooled_confusion_matrix": [
+          [
+            0,
+            0,
+            6449
+          ],
+          [
+            0,
+            0,
+            1869
+          ],
+          [
+            0,
+            0,
+            6934
+          ]
+        ]
+      },
+      "b4_lightgbm": {
+        "historical_fold_mean_balanced_accuracy": 0.3816,
+        "reconstructed_fold_mean_balanced_accuracy": 0.3816,
+        "reconstructed_pooled_balanced_accuracy": 0.38676,
+        "pooled_accuracy": 0.415945,
+        "pooled_macro_f1": 0.378682,
+        "per_class": {
+          "SL": {
+            "precision": 0.444304,
+            "recall": 0.434796,
+            "f1": 0.439498,
+            "support": 6449
+          },
+          "EXP": {
+            "precision": 0.211295,
+            "recall": 0.294275,
+            "f1": 0.245975,
+            "support": 1869
+          },
+          "TP": {
+            "precision": 0.471758,
+            "recall": 0.431209,
+            "f1": 0.450573,
+            "support": 6934
+          }
+        },
+        "pooled_confusion_matrix": [
+          [
+            2804,
+            1016,
+            2629
+          ],
+          [
+            600,
+            550,
+            719
+          ],
+          [
+            2907,
+            1037,
+            2990
+          ]
+        ]
+      },
+      "empirical_mbb_lift_at_b24": {
+        "observed_lift_vs_one_third": 0.053427,
+        "mbb_mean_lift": 0.053227,
+        "ci_95_percentile": [
+          0.035879,
+          0.071274
+        ],
+        "finite_sample_p_bound": "p < 0.000100 (0 / 10,000 exceedances)",
+        "statistical_significance": true
+      },
+      "metrics_reconciliation_verdict": "EXACT_RECONCILIATION"
+    }
+  }
+}

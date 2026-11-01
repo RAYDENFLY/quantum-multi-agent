@@ -1,0 +1,18 @@
+{
+  "phase": "Phase 5.3.3.3",
+  "title": "QUANTUM Phase 5.3.3.3 Empirical OOF Resampling & Statistical Validation Correction",
+  "verdict": "PHASE_5_3_3_3_PASS_WITH_LIMITATIONS",
+  "summary": "Empirical Moving Block Bootstrap executed across all 11 instruments with B=10,000 resamples and block lengths {12, 24, 48, 96}. All 11 B4 LightGBM models confirmed OOF_ELIGIBLE with bit-exact parity to historical artifacts. 22 baseline comparisons (B2 and B3) classified OOF_INCOMPLETE because original candle-level prediction vectors and model binaries were not serialized to disk and retraining is strictly prohibited. B4 LightGBM demonstrates robust statistical significance across all four tested block lengths for all 11 instruments.",
+  "total_valid_oof_observations": 1322108,
+  "artifact_hashes": {
+    "oof_provenance_audit.json": "cb7d2aa88d14d440f6e56fae42d911d832b8853f0325f8b08adbfc0df13d5b17",
+    "oof_eligibility_registry.json": "c2d96469b81d791e0d754302deef726f2251ed62bac28a3b30c442c15391acee",
+    "empirical_mbb_results.json": "99a342c80d3b7ea225e87447fb4288a5f2cdb58bdfd5aacac842f268e4ac4d88",
+    "bootstrap_sensitivity_matrix.json": "811aaa188cfb7a04dbfb64e9e82c9cb326ccfad927e4080a110b3eb4cc64f014",
+    "empirical_holm_33_comparisons.json": "b34571d441271acab8f4674bc3d1e2d4b8d012addf7bc88d2f308327245bf695",
+    "parametric_vs_empirical_comparison.json": "422e4bbac19eb8629f1da262a0f7920ef349668311f000004a4f617f90b9dc78",
+    "robustness_reclassification.json": "c86cc03d882ecfcaa3b11139df193300cacbc61b50a50d84b399784dfac19712",
+    "resource_and_reproducibility_manifest.json": "6584a02bc4d0c5dfa08b9580fef9cbb911f672c21b17964a4d6927fc99a99d7b"
+  },
+  "manifest_sha256": "4fe0012bb36bde021ea6016660f24aebf40be13072391cf2af78865da9af7395"
+}

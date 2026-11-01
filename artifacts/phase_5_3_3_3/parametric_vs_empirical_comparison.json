@@ -1,0 +1,542 @@
+{
+  "title": "Phase 5.3.3.2 Parametric vs Phase 5.3.3.3 Empirical Comparison",
+  "primary_block_length": 24,
+  "total_comparisons": 33,
+  "status_counts": {
+    "CONFIRMED": 3,
+    "PARTIALLY_CONFIRMED": 8,
+    "NOT_CONFIRMED": 0,
+    "REVERSED": 0,
+    "UNVERIFIABLE": 22
+  },
+  "records": [
+    {
+      "symbol": "BTCUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0586,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0324,
+        0.0875
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.000999,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.0793,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0475,
+        0.1116
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.000999,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "BTCUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.0766,
+      "empirical_lift": 0.099854,
+      "previous_ci": [
+        0.0448,
+        0.1079
+      ],
+      "empirical_ci": [
+        0.091693,
+        0.107831
+      ],
+      "previous_p_value": 0.000999,
+      "empirical_p_value": 0.0001,
+      "final_status": "CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0542,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0324,
+        0.0783
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.000999,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.0862,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0658,
+        0.1065
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.000999,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.0844,
+      "empirical_lift": 0.123797,
+      "previous_ci": [
+        0.0695,
+        0.0996
+      ],
+      "empirical_ci": [
+        0.114995,
+        0.130601
+      ],
+      "previous_p_value": 0.000999,
+      "empirical_p_value": 0.0001,
+      "final_status": "PARTIALLY_CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0228,
+      "empirical_lift": null,
+      "previous_ci": [
+        -0.0005,
+        0.0445
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.026973,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.0309,
+      "empirical_lift": null,
+      "previous_ci": [
+        -0.0005,
+        0.062
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.02997,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.0366,
+      "empirical_lift": 0.133344,
+      "previous_ci": [
+        0.0053,
+        0.0678
+      ],
+      "empirical_ci": [
+        0.125591,
+        0.142043
+      ],
+      "previous_p_value": 0.010989,
+      "empirical_p_value": 0.0001,
+      "final_status": "PARTIALLY_CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0376,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0069,
+        0.0656
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.006993,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.0326,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0059,
+        0.0601
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.008991,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.0415,
+      "empirical_lift": 0.095255,
+      "previous_ci": [
+        0.0068,
+        0.0788
+      ],
+      "empirical_ci": [
+        0.087323,
+        0.103544
+      ],
+      "previous_p_value": 0.014985,
+      "empirical_p_value": 0.0001,
+      "final_status": "PARTIALLY_CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    },
+    {
+      "symbol": "ADAUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0901,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0557,
+        0.1272
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.000999,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "ADAUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.0945,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0347,
+        0.1552
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.002997,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "ADAUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.1157,
+      "empirical_lift": 0.13518,
+      "previous_ci": [
+        0.0702,
+        0.1647
+      ],
+      "empirical_ci": [
+        0.125548,
+        0.137206
+      ],
+      "previous_p_value": 0.000999,
+      "empirical_p_value": 0.0001,
+      "final_status": "CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0402,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0061,
+        0.0768
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.010989,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.0475,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0092,
+        0.0844
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.004995,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.0545,
+      "empirical_lift": 0.106631,
+      "previous_ci": [
+        0.0138,
+        0.0976
+      ],
+      "empirical_ci": [
+        0.098696,
+        0.116836
+      ],
+      "previous_p_value": 0.005994,
+      "empirical_p_value": 0.0001,
+      "final_status": "PARTIALLY_CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0751,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0221,
+        0.1304
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.002997,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.0771,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0207,
+        0.1408
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.003996,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.0812,
+      "empirical_lift": 0.118928,
+      "previous_ci": [
+        0.029,
+        0.1337
+      ],
+      "empirical_ci": [
+        0.111614,
+        0.123693
+      ],
+      "previous_p_value": 0.004995,
+      "empirical_p_value": 0.0001,
+      "final_status": "PARTIALLY_CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    },
+    {
+      "symbol": "LINKUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0651,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0128,
+        0.1167
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.00999,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "LINKUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.0689,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0122,
+        0.1252
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.008991,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "LINKUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.0735,
+      "empirical_lift": 0.165608,
+      "previous_ci": [
+        0.0131,
+        0.1301
+      ],
+      "empirical_ci": [
+        0.158965,
+        0.170119
+      ],
+      "previous_p_value": 0.007992,
+      "empirical_p_value": 0.0001,
+      "final_status": "PARTIALLY_CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0505,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.002,
+        0.0987
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.022977,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.0537,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0178,
+        0.088
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.002997,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.0627,
+      "empirical_lift": 0.156609,
+      "previous_ci": [
+        0.0204,
+        0.1064
+      ],
+      "empirical_ci": [
+        0.148974,
+        0.163137
+      ],
+      "previous_p_value": 0.002997,
+      "empirical_p_value": 0.0001,
+      "final_status": "PARTIALLY_CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    },
+    {
+      "symbol": "LTCUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0875,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0242,
+        0.1482
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.002997,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "LTCUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.1068,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0292,
+        0.188
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.002997,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "LTCUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.1022,
+      "empirical_lift": 0.151769,
+      "previous_ci": [
+        0.0356,
+        0.1645
+      ],
+      "empirical_ci": [
+        0.144794,
+        0.157174
+      ],
+      "previous_p_value": 0.000999,
+      "empirical_p_value": 0.0001,
+      "final_status": "PARTIALLY_CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    },
+    {
+      "symbol": "XMRUSDT",
+      "model": "B2_LogisticRegression",
+      "previous_parametric_lift": 0.0844,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0607,
+        0.1089
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.000999,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "XMRUSDT",
+      "model": "B3_RandomForest",
+      "previous_parametric_lift": 0.0569,
+      "empirical_lift": null,
+      "previous_ci": [
+        0.0225,
+        0.0904
+      ],
+      "empirical_ci": null,
+      "previous_p_value": 0.000999,
+      "empirical_p_value": null,
+      "final_status": "UNVERIFIABLE",
+      "explanation": "OOF candle-level model predictions not serialized on disk; prohibited from retraining."
+    },
+    {
+      "symbol": "XMRUSDT",
+      "model": "B4_LightGBM",
+      "previous_parametric_lift": 0.0483,
+      "empirical_lift": 0.053427,
+      "previous_ci": [
+        0.0267,
+        0.0712
+      ],
+      "empirical_ci": [
+        0.035879,
+        0.071274
+      ],
+      "previous_p_value": 0.000999,
+      "empirical_p_value": 0.0001,
+      "final_status": "CONFIRMED",
+      "explanation": "Empirical Moving Block Bootstrap confirms positive lift and significance."
+    }
+  ]
+}

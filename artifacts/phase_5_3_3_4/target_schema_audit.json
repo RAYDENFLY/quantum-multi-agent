@@ -1,0 +1,203 @@
+{
+  "title": "Target and Label Schema Audit",
+  "description": "Forensic audit of triple-barrier target classes, encoding, and distributions across all 11 instruments.",
+  "target_definition": {
+    "classes": [
+      -1,
+      0,
+      1
+    ],
+    "mapping": {
+      "-1": "Stop Loss (SL)",
+      "0": "Time Expiration (EXP)",
+      "1": "Take Profit (TP)"
+    },
+    "horizon_bars": 12,
+    "barrier_multiplier": 1.5,
+    "volatility_lookback": 20,
+    "timeframe_ms": 300000
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "class_minus_1_sl_count": 120922,
+      "class_0_exp_count": 20692,
+      "class_1_tp_count": 119874,
+      "class_0_pct": 46.24,
+      "class_1_pct": 7.91,
+      "class_2_pct": 45.84,
+      "total_eligible_observations": 261488,
+      "ambiguous_label_exclusions": 1131,
+      "boundary_gap_exclusions": 36,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "class_minus_1_sl_count": 118880,
+      "class_0_exp_count": 24004,
+      "class_1_tp_count": 118692,
+      "class_0_pct": 45.45,
+      "class_1_pct": 9.18,
+      "class_2_pct": 45.38,
+      "total_eligible_observations": 261576,
+      "ambiguous_label_exclusions": 1056,
+      "boundary_gap_exclusions": 24,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    },
+    "BNBUSDT": {
+      "symbol": "BNBUSDT",
+      "class_minus_1_sl_count": 111478,
+      "class_0_exp_count": 36976,
+      "class_1_tp_count": 113360,
+      "class_0_pct": 42.58,
+      "class_1_pct": 14.12,
+      "class_2_pct": 43.3,
+      "total_eligible_observations": 261814,
+      "ambiguous_label_exclusions": 818,
+      "boundary_gap_exclusions": 24,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    },
+    "XRPUSDT": {
+      "symbol": "XRPUSDT",
+      "class_minus_1_sl_count": 112072,
+      "class_0_exp_count": 38499,
+      "class_1_tp_count": 110748,
+      "class_0_pct": 42.89,
+      "class_1_pct": 14.73,
+      "class_2_pct": 42.38,
+      "total_eligible_observations": 261319,
+      "ambiguous_label_exclusions": 1313,
+      "boundary_gap_exclusions": 24,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    },
+    "ADAUSDT": {
+      "symbol": "ADAUSDT",
+      "class_minus_1_sl_count": 113960,
+      "class_0_exp_count": 33170,
+      "class_1_tp_count": 113955,
+      "class_0_pct": 43.65,
+      "class_1_pct": 12.7,
+      "class_2_pct": 43.65,
+      "total_eligible_observations": 261085,
+      "ambiguous_label_exclusions": 1547,
+      "boundary_gap_exclusions": 24,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    },
+    "SOLUSDT": {
+      "symbol": "SOLUSDT",
+      "class_minus_1_sl_count": 119739,
+      "class_0_exp_count": 22844,
+      "class_1_tp_count": 119152,
+      "class_0_pct": 45.75,
+      "class_1_pct": 8.73,
+      "class_2_pct": 45.52,
+      "total_eligible_observations": 261735,
+      "ambiguous_label_exclusions": 897,
+      "boundary_gap_exclusions": 24,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    },
+    "AVAXUSDT": {
+      "symbol": "AVAXUSDT",
+      "class_minus_1_sl_count": 98994,
+      "class_0_exp_count": 65140,
+      "class_1_tp_count": 97622,
+      "class_0_pct": 37.82,
+      "class_1_pct": 24.89,
+      "class_2_pct": 37.3,
+      "total_eligible_observations": 261756,
+      "ambiguous_label_exclusions": 876,
+      "boundary_gap_exclusions": 24,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    },
+    "LINKUSDT": {
+      "symbol": "LINKUSDT",
+      "class_minus_1_sl_count": 102028,
+      "class_0_exp_count": 58839,
+      "class_1_tp_count": 100806,
+      "class_0_pct": 38.99,
+      "class_1_pct": 22.49,
+      "class_2_pct": 38.52,
+      "total_eligible_observations": 261673,
+      "ambiguous_label_exclusions": 959,
+      "boundary_gap_exclusions": 24,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    },
+    "DOGEUSDT": {
+      "symbol": "DOGEUSDT",
+      "class_minus_1_sl_count": 112806,
+      "class_0_exp_count": 36898,
+      "class_1_tp_count": 111712,
+      "class_0_pct": 43.15,
+      "class_1_pct": 14.11,
+      "class_2_pct": 42.73,
+      "total_eligible_observations": 261416,
+      "ambiguous_label_exclusions": 1216,
+      "boundary_gap_exclusions": 24,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    },
+    "LTCUSDT": {
+      "symbol": "LTCUSDT",
+      "class_minus_1_sl_count": 99246,
+      "class_0_exp_count": 59020,
+      "class_1_tp_count": 102780,
+      "class_0_pct": 38.02,
+      "class_1_pct": 22.61,
+      "class_2_pct": 39.37,
+      "total_eligible_observations": 261046,
+      "ambiguous_label_exclusions": 1586,
+      "boundary_gap_exclusions": 24,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    },
+    "XMRUSDT": {
+      "symbol": "XMRUSDT",
+      "class_minus_1_sl_count": 13396,
+      "class_0_exp_count": 3198,
+      "class_1_tp_count": 14029,
+      "class_0_pct": 43.74,
+      "class_1_pct": 10.44,
+      "class_2_pct": 45.81,
+      "total_eligible_observations": 30623,
+      "ambiguous_label_exclusions": 68,
+      "boundary_gap_exclusions": 12,
+      "target_schema_status": "THREE_CLASS_CANONICAL_CONFIRMED",
+      "is_multiclass_three_class": true,
+      "has_binary_conversion": false
+    }
+  },
+  "fleet_totals": {
+    "fleet_total_canonical_observations": 3248862,
+    "fleet_total_eligible_observations": 2645531,
+    "fleet_class_counts": {
+      "SL": 1123521,
+      "EXP": 399280,
+      "TP": 1122730
+    },
+    "fleet_class_proportions": {
+      "SL_pct": 42.47,
+      "EXP_pct": 15.09,
+      "TP_pct": 42.44
+    },
+    "fleet_ambiguous_exclusions": 11467,
+    "fleet_boundary_gap_exclusions": 264
+  }
+}

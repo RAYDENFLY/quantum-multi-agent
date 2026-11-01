@@ -1,0 +1,138 @@
+{
+  "title": "Historical Benchmark Reconciliation",
+  "description": "Cross-phase comparison of B4 Balanced Accuracy between Phase 5.3.1/5.3.2 historical benchmarks and Phase 5.3.3.3 / Phase 5.3.3.4 reconstructed metrics.",
+  "comparisons": [
+    {
+      "symbol": "BTCUSDT",
+      "historical_b4_fold_mean_ba": 0.4099,
+      "reconstructed_b4_fold_mean_ba": 0.4099,
+      "reconstructed_b4_pooled_oof_ba": 0.433187,
+      "historical_samples": 130684,
+      "new_oof_samples": 130684,
+      "difference_vs_historical_fold_mean": 0.0,
+      "difference_vs_historical_pooled": 0.023287,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    },
+    {
+      "symbol": "ETHUSDT",
+      "historical_b4_fold_mean_ba": 0.4177,
+      "reconstructed_b4_fold_mean_ba": 0.4177,
+      "reconstructed_b4_pooled_oof_ba": 0.45713,
+      "historical_samples": 130728,
+      "new_oof_samples": 130728,
+      "difference_vs_historical_fold_mean": -2e-05,
+      "difference_vs_historical_pooled": 0.03943,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    },
+    {
+      "symbol": "BNBUSDT",
+      "historical_b4_fold_mean_ba": 0.3699,
+      "reconstructed_b4_fold_mean_ba": 0.3699,
+      "reconstructed_b4_pooled_oof_ba": 0.466677,
+      "historical_samples": 130847,
+      "new_oof_samples": 130847,
+      "difference_vs_historical_fold_mean": 4e-05,
+      "difference_vs_historical_pooled": 0.096777,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    },
+    {
+      "symbol": "XRPUSDT",
+      "historical_b4_fold_mean_ba": 0.3747,
+      "reconstructed_b4_fold_mean_ba": 0.3747,
+      "reconstructed_b4_pooled_oof_ba": 0.428589,
+      "historical_samples": 130600,
+      "new_oof_samples": 130600,
+      "difference_vs_historical_fold_mean": 4e-05,
+      "difference_vs_historical_pooled": 0.053889,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    },
+    {
+      "symbol": "ADAUSDT",
+      "historical_b4_fold_mean_ba": 0.449,
+      "reconstructed_b4_fold_mean_ba": 0.449,
+      "reconstructed_b4_pooled_oof_ba": 0.468513,
+      "historical_samples": 130483,
+      "new_oof_samples": 130483,
+      "difference_vs_historical_fold_mean": -4e-05,
+      "difference_vs_historical_pooled": 0.019513,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    },
+    {
+      "symbol": "SOLUSDT",
+      "historical_b4_fold_mean_ba": 0.3878,
+      "reconstructed_b4_fold_mean_ba": 0.3878,
+      "reconstructed_b4_pooled_oof_ba": 0.439965,
+      "historical_samples": 130808,
+      "new_oof_samples": 130808,
+      "difference_vs_historical_fold_mean": 4e-05,
+      "difference_vs_historical_pooled": 0.052165,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "historical_b4_fold_mean_ba": 0.4145,
+      "reconstructed_b4_fold_mean_ba": 0.4145,
+      "reconstructed_b4_pooled_oof_ba": 0.452262,
+      "historical_samples": 130818,
+      "new_oof_samples": 130818,
+      "difference_vs_historical_fold_mean": -2e-05,
+      "difference_vs_historical_pooled": 0.037762,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    },
+    {
+      "symbol": "LINKUSDT",
+      "historical_b4_fold_mean_ba": 0.4067,
+      "reconstructed_b4_fold_mean_ba": 0.4067,
+      "reconstructed_b4_pooled_oof_ba": 0.498942,
+      "historical_samples": 130777,
+      "new_oof_samples": 130777,
+      "difference_vs_historical_fold_mean": 4e-05,
+      "difference_vs_historical_pooled": 0.092242,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "historical_b4_fold_mean_ba": 0.396,
+      "reconstructed_b4_fold_mean_ba": 0.396,
+      "reconstructed_b4_pooled_oof_ba": 0.489942,
+      "historical_samples": 130648,
+      "new_oof_samples": 130648,
+      "difference_vs_historical_fold_mean": -4e-05,
+      "difference_vs_historical_pooled": 0.093942,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    },
+    {
+      "symbol": "LTCUSDT",
+      "historical_b4_fold_mean_ba": 0.4355,
+      "reconstructed_b4_fold_mean_ba": 0.4355,
+      "reconstructed_b4_pooled_oof_ba": 0.485102,
+      "historical_samples": 130463,
+      "new_oof_samples": 130463,
+      "difference_vs_historical_fold_mean": 2e-05,
+      "difference_vs_historical_pooled": 0.049602,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    },
+    {
+      "symbol": "XMRUSDT",
+      "historical_b4_fold_mean_ba": 0.3816,
+      "reconstructed_b4_fold_mean_ba": 0.3816,
+      "reconstructed_b4_pooled_oof_ba": 0.38676,
+      "historical_samples": 15252,
+      "new_oof_samples": 15252,
+      "difference_vs_historical_fold_mean": -4e-05,
+      "difference_vs_historical_pooled": 0.00516,
+      "reconciliation_status": "EXACT_RECONCILIATION",
+      "explanation": "Fold mean BA matches historical reported benchmark to 4 decimal places. The pooled OOF BA differs from fold mean because macro recall averaging across folds with different class support is non-linear (Simpson's paradox)."
+    }
+  ]
+}

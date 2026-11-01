@@ -1,0 +1,288 @@
+{
+  "BTCUSDT": {
+    "symbol": "BTCUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.099854,
+        "b24_ci_95": [
+          0.091693,
+          0.107831
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  },
+  "ETHUSDT": {
+    "symbol": "ETHUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.123797,
+        "b24_ci_95": [
+          0.114995,
+          0.130601
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  },
+  "BNBUSDT": {
+    "symbol": "BNBUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.133344,
+        "b24_ci_95": [
+          0.125591,
+          0.142043
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  },
+  "XRPUSDT": {
+    "symbol": "XRPUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.095255,
+        "b24_ci_95": [
+          0.087323,
+          0.103544
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  },
+  "ADAUSDT": {
+    "symbol": "ADAUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.13518,
+        "b24_ci_95": [
+          0.125548,
+          0.137206
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  },
+  "SOLUSDT": {
+    "symbol": "SOLUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.106631,
+        "b24_ci_95": [
+          0.098696,
+          0.116836
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  },
+  "AVAXUSDT": {
+    "symbol": "AVAXUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.118928,
+        "b24_ci_95": [
+          0.111614,
+          0.123693
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  },
+  "LINKUSDT": {
+    "symbol": "LINKUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.165608,
+        "b24_ci_95": [
+          0.158965,
+          0.170119
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  },
+  "DOGEUSDT": {
+    "symbol": "DOGEUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.156609,
+        "b24_ci_95": [
+          0.148974,
+          0.163137
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  },
+  "LTCUSDT": {
+    "symbol": "LTCUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.151769,
+        "b24_ci_95": [
+          0.144794,
+          0.157174
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  },
+  "XMRUSDT": {
+    "symbol": "XMRUSDT",
+    "models": {
+      "B4_LightGBM": {
+        "classification": "ROBUST_ACROSS_TESTED_BLOCK_LENGTHS",
+        "b12_sig": true,
+        "b24_sig": true,
+        "b48_sig": true,
+        "b96_sig": true,
+        "observed_lift": 0.053427,
+        "b24_ci_95": [
+          0.035879,
+          0.071274
+        ],
+        "b24_p_value": 0.0001
+      },
+      "B2_LogisticRegression": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      },
+      "B3_RandomForest": {
+        "classification": "UNVERIFIABLE",
+        "reason": "OOF candle-level observations missing; retraining prohibited."
+      }
+    }
+  }
+}

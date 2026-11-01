@@ -1,0 +1,1454 @@
+{
+  "BTCUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 130684,
+        "candidate_block_count": 125901,
+        "effective_block_count": 10890,
+        "partial_block_remainder": 4,
+        "candidate_partial_block_count": 129275,
+        "observed_balanced_accuracy": 0.433187,
+        "observed_lift": 0.099854,
+        "bootstrap_mean_lift": 0.099442,
+        "bootstrap_std_error": 0.003863,
+        "ci_95_lower": 0.091836,
+        "ci_95_upper": 0.106981,
+        "null_distribution_mean": -0.000411,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 130684,
+        "candidate_block_count": 121091,
+        "effective_block_count": 5445,
+        "partial_block_remainder": 4,
+        "candidate_partial_block_count": 129275,
+        "observed_balanced_accuracy": 0.433187,
+        "observed_lift": 0.099854,
+        "bootstrap_mean_lift": 0.099867,
+        "bootstrap_std_error": 0.004134,
+        "ci_95_lower": 0.091693,
+        "ci_95_upper": 0.107831,
+        "null_distribution_mean": 1.3e-05,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 130684,
+        "candidate_block_count": 112011,
+        "effective_block_count": 2722,
+        "partial_block_remainder": 28,
+        "candidate_partial_block_count": 119524,
+        "observed_balanced_accuracy": 0.433187,
+        "observed_lift": 0.099854,
+        "bootstrap_mean_lift": 0.101094,
+        "bootstrap_std_error": 0.004279,
+        "ci_95_lower": 0.092644,
+        "ci_95_upper": 0.109552,
+        "null_distribution_mean": 0.001241,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 130684,
+        "candidate_block_count": 95822,
+        "effective_block_count": 1361,
+        "partial_block_remainder": 28,
+        "candidate_partial_block_count": 119524,
+        "observed_balanced_accuracy": 0.433187,
+        "observed_lift": 0.099854,
+        "bootstrap_mean_lift": 0.102887,
+        "bootstrap_std_error": 0.004333,
+        "ci_95_lower": 0.094529,
+        "ci_95_upper": 0.111326,
+        "null_distribution_mean": 0.003033,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  },
+  "ETHUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 130728,
+        "candidate_block_count": 125437,
+        "effective_block_count": 10894,
+        "partial_block_remainder": 0,
+        "candidate_partial_block_count": 0,
+        "observed_balanced_accuracy": 0.45713,
+        "observed_lift": 0.123797,
+        "bootstrap_mean_lift": 0.122885,
+        "bootstrap_std_error": 0.003752,
+        "ci_95_lower": 0.115428,
+        "ci_95_upper": 0.130179,
+        "null_distribution_mean": -0.000912,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 130728,
+        "candidate_block_count": 120217,
+        "effective_block_count": 5447,
+        "partial_block_remainder": 0,
+        "candidate_partial_block_count": 0,
+        "observed_balanced_accuracy": 0.45713,
+        "observed_lift": 0.123797,
+        "bootstrap_mean_lift": 0.122929,
+        "bootstrap_std_error": 0.003955,
+        "ci_95_lower": 0.114995,
+        "ci_95_upper": 0.130601,
+        "null_distribution_mean": -0.000868,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 130728,
+        "candidate_block_count": 110639,
+        "effective_block_count": 2723,
+        "partial_block_remainder": 24,
+        "candidate_partial_block_count": 120217,
+        "observed_balanced_accuracy": 0.45713,
+        "observed_lift": 0.123797,
+        "bootstrap_mean_lift": 0.125097,
+        "bootstrap_std_error": 0.003984,
+        "ci_95_lower": 0.117302,
+        "ci_95_upper": 0.132929,
+        "null_distribution_mean": 0.0013,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 130728,
+        "candidate_block_count": 94238,
+        "effective_block_count": 1361,
+        "partial_block_remainder": 72,
+        "candidate_partial_block_count": 101982,
+        "observed_balanced_accuracy": 0.45713,
+        "observed_lift": 0.123797,
+        "bootstrap_mean_lift": 0.128042,
+        "bootstrap_std_error": 0.004042,
+        "ci_95_lower": 0.120043,
+        "ci_95_upper": 0.135867,
+        "null_distribution_mean": 0.004245,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  },
+  "BNBUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 130847,
+        "candidate_block_count": 127329,
+        "effective_block_count": 10903,
+        "partial_block_remainder": 11,
+        "candidate_partial_block_count": 127634,
+        "observed_balanced_accuracy": 0.466677,
+        "observed_lift": 0.133344,
+        "bootstrap_mean_lift": 0.132976,
+        "bootstrap_std_error": 0.003655,
+        "ci_95_lower": 0.125663,
+        "ci_95_upper": 0.140175,
+        "null_distribution_mean": -0.000368,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 130847,
+        "candidate_block_count": 123738,
+        "effective_block_count": 5451,
+        "partial_block_remainder": 23,
+        "candidate_partial_block_count": 124032,
+        "observed_balanced_accuracy": 0.466677,
+        "observed_lift": 0.133344,
+        "bootstrap_mean_lift": 0.133877,
+        "bootstrap_std_error": 0.00421,
+        "ci_95_lower": 0.125591,
+        "ci_95_upper": 0.142043,
+        "null_distribution_mean": 0.000533,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 130847,
+        "candidate_block_count": 117039,
+        "effective_block_count": 2725,
+        "partial_block_remainder": 47,
+        "candidate_partial_block_count": 117311,
+        "observed_balanced_accuracy": 0.466677,
+        "observed_lift": 0.133344,
+        "bootstrap_mean_lift": 0.136371,
+        "bootstrap_std_error": 0.004638,
+        "ci_95_lower": 0.127058,
+        "ci_95_upper": 0.145304,
+        "null_distribution_mean": 0.003027,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 130847,
+        "candidate_block_count": 104796,
+        "effective_block_count": 1362,
+        "partial_block_remainder": 95,
+        "candidate_partial_block_count": 105030,
+        "observed_balanced_accuracy": 0.466677,
+        "observed_lift": 0.133344,
+        "bootstrap_mean_lift": 0.139602,
+        "bootstrap_std_error": 0.00515,
+        "ci_95_lower": 0.129225,
+        "ci_95_upper": 0.149507,
+        "null_distribution_mean": 0.006259,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  },
+  "XRPUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 130600,
+        "candidate_block_count": 126441,
+        "effective_block_count": 10883,
+        "partial_block_remainder": 4,
+        "candidate_partial_block_count": 129361,
+        "observed_balanced_accuracy": 0.428589,
+        "observed_lift": 0.095255,
+        "bootstrap_mean_lift": 0.095501,
+        "bootstrap_std_error": 0.003732,
+        "ci_95_lower": 0.088239,
+        "ci_95_upper": 0.10281,
+        "null_distribution_mean": 0.000246,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 130600,
+        "candidate_block_count": 122345,
+        "effective_block_count": 5441,
+        "partial_block_remainder": 16,
+        "candidate_partial_block_count": 125047,
+        "observed_balanced_accuracy": 0.428589,
+        "observed_lift": 0.095255,
+        "bootstrap_mean_lift": 0.095507,
+        "bootstrap_std_error": 0.004152,
+        "ci_95_lower": 0.087323,
+        "ci_95_upper": 0.103544,
+        "null_distribution_mean": 0.000252,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 130600,
+        "candidate_block_count": 114719,
+        "effective_block_count": 2720,
+        "partial_block_remainder": 40,
+        "candidate_partial_block_count": 117186,
+        "observed_balanced_accuracy": 0.428589,
+        "observed_lift": 0.095255,
+        "bootstrap_mean_lift": 0.096203,
+        "bootstrap_std_error": 0.004461,
+        "ci_95_lower": 0.087403,
+        "ci_95_upper": 0.104876,
+        "null_distribution_mean": 0.000947,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 130600,
+        "candidate_block_count": 101623,
+        "effective_block_count": 1360,
+        "partial_block_remainder": 40,
+        "candidate_partial_block_count": 117186,
+        "observed_balanced_accuracy": 0.428589,
+        "observed_lift": 0.095255,
+        "bootstrap_mean_lift": 0.09757,
+        "bootstrap_std_error": 0.005004,
+        "ci_95_lower": 0.087482,
+        "ci_95_upper": 0.107151,
+        "null_distribution_mean": 0.002315,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  },
+  "ADAUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 130483,
+        "candidate_block_count": 127118,
+        "effective_block_count": 10873,
+        "partial_block_remainder": 7,
+        "candidate_partial_block_count": 128552,
+        "observed_balanced_accuracy": 0.468513,
+        "observed_lift": 0.13518,
+        "bootstrap_mean_lift": 0.132863,
+        "bootstrap_std_error": 0.002684,
+        "ci_95_lower": 0.127533,
+        "ci_95_upper": 0.138043,
+        "null_distribution_mean": -0.002316,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 130483,
+        "candidate_block_count": 123895,
+        "effective_block_count": 5436,
+        "partial_block_remainder": 19,
+        "candidate_partial_block_count": 125206,
+        "observed_balanced_accuracy": 0.468513,
+        "observed_lift": 0.13518,
+        "bootstrap_mean_lift": 0.131387,
+        "bootstrap_std_error": 0.00297,
+        "ci_95_lower": 0.125548,
+        "ci_95_upper": 0.137206,
+        "null_distribution_mean": -0.003792,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 130483,
+        "candidate_block_count": 118140,
+        "effective_block_count": 2718,
+        "partial_block_remainder": 19,
+        "candidate_partial_block_count": 125206,
+        "observed_balanced_accuracy": 0.468513,
+        "observed_lift": 0.13518,
+        "bootstrap_mean_lift": 0.12943,
+        "bootstrap_std_error": 0.00315,
+        "ci_95_lower": 0.123301,
+        "ci_95_upper": 0.135499,
+        "null_distribution_mean": -0.005749,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 130483,
+        "candidate_block_count": 108934,
+        "effective_block_count": 1359,
+        "partial_block_remainder": 19,
+        "candidate_partial_block_count": 125206,
+        "observed_balanced_accuracy": 0.468513,
+        "observed_lift": 0.13518,
+        "bootstrap_mean_lift": 0.128235,
+        "bootstrap_std_error": 0.003424,
+        "ci_95_lower": 0.12156,
+        "ci_95_upper": 0.134917,
+        "null_distribution_mean": -0.006944,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  },
+  "SOLUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 130808,
+        "candidate_block_count": 125925,
+        "effective_block_count": 10900,
+        "partial_block_remainder": 8,
+        "candidate_partial_block_count": 127608,
+        "observed_balanced_accuracy": 0.439965,
+        "observed_lift": 0.106631,
+        "bootstrap_mean_lift": 0.106702,
+        "bootstrap_std_error": 0.004165,
+        "ci_95_lower": 0.098435,
+        "ci_95_upper": 0.114845,
+        "null_distribution_mean": 7.1e-05,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 130808,
+        "candidate_block_count": 121073,
+        "effective_block_count": 5450,
+        "partial_block_remainder": 8,
+        "candidate_partial_block_count": 127608,
+        "observed_balanced_accuracy": 0.439965,
+        "observed_lift": 0.106631,
+        "bootstrap_mean_lift": 0.107652,
+        "bootstrap_std_error": 0.004595,
+        "ci_95_lower": 0.098696,
+        "ci_95_upper": 0.116836,
+        "null_distribution_mean": 0.00102,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 130808,
+        "candidate_block_count": 112110,
+        "effective_block_count": 2725,
+        "partial_block_remainder": 8,
+        "candidate_partial_block_count": 127608,
+        "observed_balanced_accuracy": 0.439965,
+        "observed_lift": 0.106631,
+        "bootstrap_mean_lift": 0.111181,
+        "bootstrap_std_error": 0.005034,
+        "ci_95_lower": 0.101359,
+        "ci_95_upper": 0.120918,
+        "null_distribution_mean": 0.00455,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 130808,
+        "candidate_block_count": 96246,
+        "effective_block_count": 1362,
+        "partial_block_remainder": 56,
+        "candidate_partial_block_count": 109283,
+        "observed_balanced_accuracy": 0.439965,
+        "observed_lift": 0.106631,
+        "bootstrap_mean_lift": 0.11694,
+        "bootstrap_std_error": 0.005323,
+        "ci_95_lower": 0.106231,
+        "ci_95_upper": 0.127165,
+        "null_distribution_mean": 0.010308,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  },
+  "AVAXUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 130818,
+        "candidate_block_count": 128731,
+        "effective_block_count": 10901,
+        "partial_block_remainder": 6,
+        "candidate_partial_block_count": 129809,
+        "observed_balanced_accuracy": 0.452262,
+        "observed_lift": 0.118928,
+        "bootstrap_mean_lift": 0.11799,
+        "bootstrap_std_error": 0.002829,
+        "ci_95_lower": 0.112478,
+        "ci_95_upper": 0.123494,
+        "null_distribution_mean": -0.000938,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 130818,
+        "candidate_block_count": 126653,
+        "effective_block_count": 5450,
+        "partial_block_remainder": 18,
+        "candidate_partial_block_count": 127688,
+        "observed_balanced_accuracy": 0.452262,
+        "observed_lift": 0.118928,
+        "bootstrap_mean_lift": 0.117568,
+        "bootstrap_std_error": 0.003071,
+        "ci_95_lower": 0.111614,
+        "ci_95_upper": 0.123693,
+        "null_distribution_mean": -0.00136,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 130818,
+        "candidate_block_count": 122829,
+        "effective_block_count": 2725,
+        "partial_block_remainder": 18,
+        "candidate_partial_block_count": 127688,
+        "observed_balanced_accuracy": 0.452262,
+        "observed_lift": 0.118928,
+        "bootstrap_mean_lift": 0.117132,
+        "bootstrap_std_error": 0.003422,
+        "ci_95_lower": 0.110382,
+        "ci_95_upper": 0.12377,
+        "null_distribution_mean": -0.001796,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 130818,
+        "candidate_block_count": 116173,
+        "effective_block_count": 1362,
+        "partial_block_remainder": 66,
+        "candidate_partial_block_count": 120237,
+        "observed_balanced_accuracy": 0.452262,
+        "observed_lift": 0.118928,
+        "bootstrap_mean_lift": 0.116063,
+        "bootstrap_std_error": 0.003724,
+        "ci_95_lower": 0.108707,
+        "ci_95_upper": 0.123397,
+        "null_distribution_mean": -0.002865,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  },
+  "LINKUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 130777,
+        "candidate_block_count": 129148,
+        "effective_block_count": 10898,
+        "partial_block_remainder": 1,
+        "candidate_partial_block_count": 130777,
+        "observed_balanced_accuracy": 0.498942,
+        "observed_lift": 0.165608,
+        "bootstrap_mean_lift": 0.165065,
+        "bootstrap_std_error": 0.00256,
+        "ci_95_lower": 0.160071,
+        "ci_95_upper": 0.170007,
+        "null_distribution_mean": -0.000543,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 130777,
+        "candidate_block_count": 127533,
+        "effective_block_count": 5449,
+        "partial_block_remainder": 1,
+        "candidate_partial_block_count": 130777,
+        "observed_balanced_accuracy": 0.498942,
+        "observed_lift": 0.165608,
+        "bootstrap_mean_lift": 0.164606,
+        "bootstrap_std_error": 0.002846,
+        "ci_95_lower": 0.158965,
+        "ci_95_upper": 0.170119,
+        "null_distribution_mean": -0.001002,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 130777,
+        "candidate_block_count": 124464,
+        "effective_block_count": 2724,
+        "partial_block_remainder": 25,
+        "candidate_partial_block_count": 127400,
+        "observed_balanced_accuracy": 0.498942,
+        "observed_lift": 0.165608,
+        "bootstrap_mean_lift": 0.164258,
+        "bootstrap_std_error": 0.003207,
+        "ci_95_lower": 0.157866,
+        "ci_95_upper": 0.170415,
+        "null_distribution_mean": -0.00135,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 130777,
+        "candidate_block_count": 118706,
+        "effective_block_count": 1362,
+        "partial_block_remainder": 25,
+        "candidate_partial_block_count": 127400,
+        "observed_balanced_accuracy": 0.498942,
+        "observed_lift": 0.165608,
+        "bootstrap_mean_lift": 0.163687,
+        "bootstrap_std_error": 0.003611,
+        "ci_95_lower": 0.156642,
+        "ci_95_upper": 0.170668,
+        "null_distribution_mean": -0.001921,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  },
+  "DOGEUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 130648,
+        "candidate_block_count": 126363,
+        "effective_block_count": 10887,
+        "partial_block_remainder": 4,
+        "candidate_partial_block_count": 129382,
+        "observed_balanced_accuracy": 0.489942,
+        "observed_lift": 0.156609,
+        "bootstrap_mean_lift": 0.156128,
+        "bootstrap_std_error": 0.003261,
+        "ci_95_lower": 0.149741,
+        "ci_95_upper": 0.162409,
+        "null_distribution_mean": -0.000481,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 130648,
+        "candidate_block_count": 122128,
+        "effective_block_count": 5443,
+        "partial_block_remainder": 16,
+        "candidate_partial_block_count": 124919,
+        "observed_balanced_accuracy": 0.489942,
+        "observed_lift": 0.156609,
+        "bootstrap_mean_lift": 0.156237,
+        "bootstrap_std_error": 0.003613,
+        "ci_95_lower": 0.148974,
+        "ci_95_upper": 0.163137,
+        "null_distribution_mean": -0.000372,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 130648,
+        "candidate_block_count": 114247,
+        "effective_block_count": 2721,
+        "partial_block_remainder": 40,
+        "candidate_partial_block_count": 116793,
+        "observed_balanced_accuracy": 0.489942,
+        "observed_lift": 0.156609,
+        "bootstrap_mean_lift": 0.156955,
+        "bootstrap_std_error": 0.003721,
+        "ci_95_lower": 0.149674,
+        "ci_95_upper": 0.164126,
+        "null_distribution_mean": 0.000346,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 130648,
+        "candidate_block_count": 100540,
+        "effective_block_count": 1360,
+        "partial_block_remainder": 88,
+        "candidate_partial_block_count": 102632,
+        "observed_balanced_accuracy": 0.489942,
+        "observed_lift": 0.156609,
+        "bootstrap_mean_lift": 0.157755,
+        "bootstrap_std_error": 0.003796,
+        "ci_95_lower": 0.150344,
+        "ci_95_upper": 0.165109,
+        "null_distribution_mean": 0.001147,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  },
+  "LTCUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 130463,
+        "candidate_block_count": 127641,
+        "effective_block_count": 10871,
+        "partial_block_remainder": 11,
+        "candidate_partial_block_count": 127875,
+        "observed_balanced_accuracy": 0.485102,
+        "observed_lift": 0.151769,
+        "bootstrap_mean_lift": 0.151041,
+        "bootstrap_std_error": 0.002836,
+        "ci_95_lower": 0.145425,
+        "ci_95_upper": 0.15658,
+        "null_distribution_mean": -0.000728,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 130463,
+        "candidate_block_count": 124902,
+        "effective_block_count": 5435,
+        "partial_block_remainder": 23,
+        "candidate_partial_block_count": 125124,
+        "observed_balanced_accuracy": 0.485102,
+        "observed_lift": 0.151769,
+        "bootstrap_mean_lift": 0.150968,
+        "bootstrap_std_error": 0.003173,
+        "ci_95_lower": 0.144794,
+        "ci_95_upper": 0.157174,
+        "null_distribution_mean": -0.000801,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 130463,
+        "candidate_block_count": 119884,
+        "effective_block_count": 2717,
+        "partial_block_remainder": 47,
+        "candidate_partial_block_count": 120080,
+        "observed_balanced_accuracy": 0.485102,
+        "observed_lift": 0.151769,
+        "bootstrap_mean_lift": 0.151349,
+        "bootstrap_std_error": 0.00358,
+        "ci_95_lower": 0.14425,
+        "ci_95_upper": 0.158199,
+        "null_distribution_mean": -0.00042,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 130463,
+        "candidate_block_count": 111155,
+        "effective_block_count": 1358,
+        "partial_block_remainder": 95,
+        "candidate_partial_block_count": 111323,
+        "observed_balanced_accuracy": 0.485102,
+        "observed_lift": 0.151769,
+        "bootstrap_mean_lift": 0.151844,
+        "bootstrap_std_error": 0.004028,
+        "ci_95_lower": 0.143844,
+        "ci_95_upper": 0.159659,
+        "null_distribution_mean": 7.5e-05,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  },
+  "XMRUSDT": {
+    "B4_LightGBM": {
+      "b_12": {
+        "block_length": 12,
+        "n_resamples": 10000,
+        "random_seed": 42,
+        "eligible_samples": 15252,
+        "candidate_block_count": 15063,
+        "effective_block_count": 1271,
+        "partial_block_remainder": 0,
+        "candidate_partial_block_count": 0,
+        "observed_balanced_accuracy": 0.38676,
+        "observed_lift": 0.053427,
+        "bootstrap_mean_lift": 0.053324,
+        "bootstrap_std_error": 0.008635,
+        "ci_95_lower": 0.036899,
+        "ci_95_upper": 0.070325,
+        "null_distribution_mean": -0.000102,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_24": {
+        "block_length": 24,
+        "n_resamples": 10000,
+        "random_seed": 142,
+        "eligible_samples": 15252,
+        "candidate_block_count": 14859,
+        "effective_block_count": 635,
+        "partial_block_remainder": 12,
+        "candidate_partial_block_count": 15063,
+        "observed_balanced_accuracy": 0.38676,
+        "observed_lift": 0.053427,
+        "bootstrap_mean_lift": 0.053227,
+        "bootstrap_std_error": 0.009154,
+        "ci_95_lower": 0.035879,
+        "ci_95_upper": 0.071274,
+        "null_distribution_mean": -0.0002,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_48": {
+        "block_length": 48,
+        "n_resamples": 10000,
+        "random_seed": 242,
+        "eligible_samples": 15252,
+        "candidate_block_count": 14451,
+        "effective_block_count": 317,
+        "partial_block_remainder": 36,
+        "candidate_partial_block_count": 14655,
+        "observed_balanced_accuracy": 0.38676,
+        "observed_lift": 0.053427,
+        "bootstrap_mean_lift": 0.053486,
+        "bootstrap_std_error": 0.009873,
+        "ci_95_lower": 0.034458,
+        "ci_95_upper": 0.072911,
+        "null_distribution_mean": 5.9e-05,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      },
+      "b_96": {
+        "block_length": 96,
+        "n_resamples": 10000,
+        "random_seed": 342,
+        "eligible_samples": 15252,
+        "candidate_block_count": 13664,
+        "effective_block_count": 158,
+        "partial_block_remainder": 84,
+        "candidate_partial_block_count": 13856,
+        "observed_balanced_accuracy": 0.38676,
+        "observed_lift": 0.053427,
+        "bootstrap_mean_lift": 0.053929,
+        "bootstrap_std_error": 0.010087,
+        "ci_95_lower": 0.03433,
+        "ci_95_upper": 0.073717,
+        "null_distribution_mean": 0.000502,
+        "null_exceed_count": 0,
+        "raw_p_value": 0.0001,
+        "invalid_or_rejected_resamples": 0,
+        "is_significant_at_05": true
+      }
+    },
+    "B2_LogisticRegression": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    },
+    "B3_RandomForest": {
+      "b_12": {
+        "block_length": 12,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_24": {
+        "block_length": 24,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_48": {
+        "block_length": 48,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      },
+      "b_96": {
+        "block_length": 96,
+        "status": "OOF_INCOMPLETE",
+        "reason": "Model binary not serialized on disk; prohibited from retraining."
+      }
+    }
+  }
+}

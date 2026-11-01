@@ -1,0 +1,156 @@
+{
+  "BTCUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  },
+  "ETHUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  },
+  "BNBUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  },
+  "XRPUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  },
+  "ADAUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  },
+  "SOLUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  },
+  "AVAXUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  },
+  "LINKUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  },
+  "DOGEUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  },
+  "LTCUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  },
+  "XMRUSDT": {
+    "B0_Majority": "OOF_ELIGIBLE",
+    "B1_Prior": "OOF_ELIGIBLE",
+    "B2_LogisticRegression": "OOF_INCOMPLETE",
+    "B3_RandomForest": "OOF_INCOMPLETE",
+    "B4_LightGBM": "OOF_ELIGIBLE",
+    "reasons": {
+      "B4_LightGBM": "Full model binary and preprocessor preserved on disk; bit-exact reproduction confirmed.",
+      "B0_Majority": "Deterministic class majority of y_train; bit-exact reproduction confirmed.",
+      "B1_Prior": "Deterministic class support of y_train; bit-exact reproduction confirmed.",
+      "B2_LogisticRegression": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2.",
+      "B3_RandomForest": "Model binary not saved on disk in Phase 5.3.1/5.3.2; retraining prohibited by Section 2."
+    }
+  }
+}

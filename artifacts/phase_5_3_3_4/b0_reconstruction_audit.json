@@ -1,0 +1,2439 @@
+{
+  "title": "B0 Majority Class Baseline Reconstruction Audit",
+  "description": "Verification of B0 training-set majority prediction and per-fold / pooled confusion matrices.",
+  "theoretical_expected_balanced_accuracy": 0.3333333333333333,
+  "discrepancy_explanation": "A deterministic majority-class predictor for 3 classes achieves recall=1.0 on exactly one class and recall=0.0 on the other two classes, yielding an unweighted mean recall of exactly (1.0 + 0.0 + 0.0)/3 = 0.3333. The 0.5000 figure was an erroneous conversational text hallucination in the previous phase's markdown chat response, conflicting with the underlying code and JSON artifacts.",
+  "instruments": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "total_oof_observations": 130684,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 58832,
+            "0": 13044,
+            "1": 58856
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 11618,
+            "0": 2972,
+            "1": 11546
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              11618
+            ],
+            [
+              0,
+              0,
+              2972
+            ],
+            [
+              0,
+              0,
+              11546
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 70453,
+            "0": 16022,
+            "1": 70405
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 12372,
+            "0": 1303,
+            "1": 12461
+          },
+          "confusion_matrix": [
+            [
+              12372,
+              0,
+              0
+            ],
+            [
+              1303,
+              0,
+              0
+            ],
+            [
+              12461,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 82829,
+            "0": 17325,
+            "1": 82874
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12649,
+            "0": 1290,
+            "1": 12197
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12649
+            ],
+            [
+              0,
+              0,
+              1290
+            ],
+            [
+              0,
+              0,
+              12197
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 95478,
+            "0": 18625,
+            "1": 95073
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 12711,
+            "0": 1056,
+            "1": 12369
+          },
+          "confusion_matrix": [
+            [
+              12711,
+              0,
+              0
+            ],
+            [
+              1056,
+              0,
+              0
+            ],
+            [
+              12369,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 108189,
+            "0": 19683,
+            "1": 107452
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 12716,
+            "0": 1009,
+            "1": 12415
+          },
+          "confusion_matrix": [
+            [
+              12716,
+              0,
+              0
+            ],
+            [
+              1009,
+              0,
+              0
+            ],
+            [
+              12415,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          37799,
+          0,
+          24267
+        ],
+        [
+          3368,
+          0,
+          4262
+        ],
+        [
+          37245,
+          0,
+          23743
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 0.609013,
+        "EXP": 0.0,
+        "TP": 0.389306
+      },
+      "pooled_balanced_accuracy": 0.332773,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "total_oof_observations": 130728,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 57646,
+            "0": 15866,
+            "1": 57264
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 11173,
+            "0": 3789,
+            "1": 11183
+          },
+          "confusion_matrix": [
+            [
+              11173,
+              0,
+              0
+            ],
+            [
+              3789,
+              0,
+              0
+            ],
+            [
+              11183,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 68824,
+            "0": 19659,
+            "1": 68450
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 12251,
+            "0": 1077,
+            "1": 12817
+          },
+          "confusion_matrix": [
+            [
+              12251,
+              0,
+              0
+            ],
+            [
+              1077,
+              0,
+              0
+            ],
+            [
+              12817,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 81080,
+            "0": 20736,
+            "1": 81274
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12537,
+            "0": 1098,
+            "1": 12510
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12537
+            ],
+            [
+              0,
+              0,
+              1098
+            ],
+            [
+              0,
+              0,
+              12510
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 93621,
+            "0": 21834,
+            "1": 93792
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12563,
+            "0": 1026,
+            "1": 12556
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12563
+            ],
+            [
+              0,
+              0,
+              1026
+            ],
+            [
+              0,
+              0,
+              12556
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 106184,
+            "0": 22869,
+            "1": 106351
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12680,
+            "0": 1134,
+            "1": 12334
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12680
+            ],
+            [
+              0,
+              0,
+              1134
+            ],
+            [
+              0,
+              0,
+              12334
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          23424,
+          0,
+          37780
+        ],
+        [
+          4866,
+          0,
+          3258
+        ],
+        [
+          24000,
+          0,
+          37400
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 0.38272,
+        "EXP": 0.0,
+        "TP": 0.609121
+      },
+      "pooled_balanced_accuracy": 0.330614,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    },
+    "BNBUSDT": {
+      "symbol": "BNBUSDT",
+      "total_oof_observations": 130847,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 52240,
+            "0": 24503,
+            "1": 54152
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 9385,
+            "0": 7477,
+            "1": 9307
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              9385
+            ],
+            [
+              0,
+              0,
+              7477
+            ],
+            [
+              0,
+              0,
+              9307
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 61632,
+            "0": 31980,
+            "1": 63464
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12210,
+            "0": 1950,
+            "1": 12009
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12210
+            ],
+            [
+              0,
+              0,
+              1950
+            ],
+            [
+              0,
+              0,
+              12009
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 73848,
+            "0": 33930,
+            "1": 75479
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12234,
+            "0": 1152,
+            "1": 12783
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12234
+            ],
+            [
+              0,
+              0,
+              1152
+            ],
+            [
+              0,
+              0,
+              12783
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 86085,
+            "0": 35083,
+            "1": 88270
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12736,
+            "0": 893,
+            "1": 12540
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12736
+            ],
+            [
+              0,
+              0,
+              893
+            ],
+            [
+              0,
+              0,
+              12540
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 98827,
+            "0": 35978,
+            "1": 100814
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12635,
+            "0": 998,
+            "1": 12538
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12635
+            ],
+            [
+              0,
+              0,
+              998
+            ],
+            [
+              0,
+              0,
+              12538
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          0,
+          0,
+          59200
+        ],
+        [
+          0,
+          0,
+          12470
+        ],
+        [
+          0,
+          0,
+          59177
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 0.0,
+        "EXP": 0.0,
+        "TP": 1.0
+      },
+      "pooled_balanced_accuracy": 0.333333,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    },
+    "XRPUSDT": {
+      "symbol": "XRPUSDT",
+      "total_oof_observations": 130600,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 50574,
+            "0": 28667,
+            "1": 51406
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 10465,
+            "0": 5438,
+            "1": 10217
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              10465
+            ],
+            [
+              0,
+              0,
+              5438
+            ],
+            [
+              0,
+              0,
+              10217
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 61045,
+            "0": 34105,
+            "1": 61629
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12240,
+            "0": 1462,
+            "1": 12418
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12240
+            ],
+            [
+              0,
+              0,
+              1462
+            ],
+            [
+              0,
+              0,
+              12418
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 73289,
+            "0": 35567,
+            "1": 74055
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12595,
+            "0": 1365,
+            "1": 12160
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12595
+            ],
+            [
+              0,
+              0,
+              1365
+            ],
+            [
+              0,
+              0,
+              12160
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 85885,
+            "0": 36933,
+            "1": 86225
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 13106,
+            "0": 837,
+            "1": 12177
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              13106
+            ],
+            [
+              0,
+              0,
+              837
+            ],
+            [
+              0,
+              0,
+              12177
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 99001,
+            "0": 37770,
+            "1": 98404
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 13057,
+            "0": 728,
+            "1": 12335
+          },
+          "confusion_matrix": [
+            [
+              13057,
+              0,
+              0
+            ],
+            [
+              728,
+              0,
+              0
+            ],
+            [
+              12335,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          13057,
+          0,
+          48406
+        ],
+        [
+          728,
+          0,
+          9102
+        ],
+        [
+          12335,
+          0,
+          46972
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 0.212437,
+        "EXP": 0.0,
+        "TP": 0.792014
+      },
+      "pooled_balanced_accuracy": 0.334817,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    },
+    "ADAUSDT": {
+      "symbol": "ADAUSDT",
+      "total_oof_observations": 130483,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 56995,
+            "0": 14141,
+            "1": 59394
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 10385,
+            "0": 5405,
+            "1": 10306
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              10385
+            ],
+            [
+              0,
+              0,
+              5405
+            ],
+            [
+              0,
+              0,
+              10306
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 67383,
+            "0": 19546,
+            "1": 69709
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 11097,
+            "0": 4037,
+            "1": 10962
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              11097
+            ],
+            [
+              0,
+              0,
+              4037
+            ],
+            [
+              0,
+              0,
+              10962
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 78480,
+            "0": 23595,
+            "1": 80671
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 10934,
+            "0": 4590,
+            "1": 10572
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              10934
+            ],
+            [
+              0,
+              0,
+              4590
+            ],
+            [
+              0,
+              0,
+              10572
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 89415,
+            "0": 28192,
+            "1": 91247
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12317,
+            "0": 2233,
+            "1": 11546
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12317
+            ],
+            [
+              0,
+              0,
+              2233
+            ],
+            [
+              0,
+              0,
+              11546
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 101732,
+            "0": 30425,
+            "1": 102805
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12215,
+            "0": 2744,
+            "1": 11140
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12215
+            ],
+            [
+              0,
+              0,
+              2744
+            ],
+            [
+              0,
+              0,
+              11140
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          0,
+          0,
+          56948
+        ],
+        [
+          0,
+          0,
+          19009
+        ],
+        [
+          0,
+          0,
+          54526
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 0.0,
+        "EXP": 0.0,
+        "TP": 1.0
+      },
+      "pooled_balanced_accuracy": 0.333333,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    },
+    "SOLUSDT": {
+      "symbol": "SOLUSDT",
+      "total_oof_observations": 130808,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 57769,
+            "0": 15607,
+            "1": 57479
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 11397,
+            "0": 3577,
+            "1": 11187
+          },
+          "confusion_matrix": [
+            [
+              11397,
+              0,
+              0
+            ],
+            [
+              3577,
+              0,
+              0
+            ],
+            [
+              11187,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 69170,
+            "0": 19187,
+            "1": 68671
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 12501,
+            "0": 988,
+            "1": 12672
+          },
+          "confusion_matrix": [
+            [
+              12501,
+              0,
+              0
+            ],
+            [
+              988,
+              0,
+              0
+            ],
+            [
+              12672,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 81675,
+            "0": 20175,
+            "1": 81351
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 12451,
+            "0": 956,
+            "1": 12754
+          },
+          "confusion_matrix": [
+            [
+              12451,
+              0,
+              0
+            ],
+            [
+              956,
+              0,
+              0
+            ],
+            [
+              12754,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 94130,
+            "0": 21131,
+            "1": 94113
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 12840,
+            "0": 827,
+            "1": 12494
+          },
+          "confusion_matrix": [
+            [
+              12840,
+              0,
+              0
+            ],
+            [
+              827,
+              0,
+              0
+            ],
+            [
+              12494,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 106971,
+            "0": 21959,
+            "1": 106617
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 12756,
+            "0": 884,
+            "1": 12524
+          },
+          "confusion_matrix": [
+            [
+              12756,
+              0,
+              0
+            ],
+            [
+              884,
+              0,
+              0
+            ],
+            [
+              12524,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          61945,
+          0,
+          0
+        ],
+        [
+          7232,
+          0,
+          0
+        ],
+        [
+          61631,
+          0,
+          0
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 1.0,
+        "EXP": 0.0,
+        "TP": 0.0
+      },
+      "pooled_balanced_accuracy": 0.333333,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    },
+    "AVAXUSDT": {
+      "symbol": "AVAXUSDT",
+      "total_oof_observations": 130818,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 47445,
+            "0": 36268,
+            "1": 47153
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 10381,
+            "0": 5634,
+            "1": 10148
+          },
+          "confusion_matrix": [
+            [
+              10381,
+              0,
+              0
+            ],
+            [
+              5634,
+              0,
+              0
+            ],
+            [
+              10148,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 57828,
+            "0": 41910,
+            "1": 57303
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 8478,
+            "0": 9174,
+            "1": 8511
+          },
+          "confusion_matrix": [
+            [
+              8478,
+              0,
+              0
+            ],
+            [
+              9174,
+              0,
+              0
+            ],
+            [
+              8511,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 66308,
+            "0": 51094,
+            "1": 65814
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 9603,
+            "0": 6855,
+            "1": 9705
+          },
+          "confusion_matrix": [
+            [
+              9603,
+              0,
+              0
+            ],
+            [
+              6855,
+              0,
+              0
+            ],
+            [
+              9705,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 75923,
+            "0": 57949,
+            "1": 75519
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 11650,
+            "0": 3156,
+            "1": 11357
+          },
+          "confusion_matrix": [
+            [
+              11650,
+              0,
+              0
+            ],
+            [
+              3156,
+              0,
+              0
+            ],
+            [
+              11357,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 87582,
+            "0": 61105,
+            "1": 86879
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 11394,
+            "0": 4033,
+            "1": 10739
+          },
+          "confusion_matrix": [
+            [
+              11394,
+              0,
+              0
+            ],
+            [
+              4033,
+              0,
+              0
+            ],
+            [
+              10739,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          51506,
+          0,
+          0
+        ],
+        [
+          28852,
+          0,
+          0
+        ],
+        [
+          50460,
+          0,
+          0
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 1.0,
+        "EXP": 0.0,
+        "TP": 0.0
+      },
+      "pooled_balanced_accuracy": 0.333333,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    },
+    "LINKUSDT": {
+      "symbol": "LINKUSDT",
+      "total_oof_observations": 130777,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 54135,
+            "0": 23592,
+            "1": 53097
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 7432,
+            "0": 11226,
+            "1": 7497
+          },
+          "confusion_matrix": [
+            [
+              7432,
+              0,
+              0
+            ],
+            [
+              11226,
+              0,
+              0
+            ],
+            [
+              7497,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 61567,
+            "0": 34830,
+            "1": 60594
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 6376,
+            "0": 13309,
+            "1": 6470
+          },
+          "confusion_matrix": [
+            [
+              6376,
+              0,
+              0
+            ],
+            [
+              13309,
+              0,
+              0
+            ],
+            [
+              6470,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 67943,
+            "0": 48151,
+            "1": 67064
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 10382,
+            "0": 5230,
+            "1": 10543
+          },
+          "confusion_matrix": [
+            [
+              10382,
+              0,
+              0
+            ],
+            [
+              5230,
+              0,
+              0
+            ],
+            [
+              10543,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 78337,
+            "0": 53381,
+            "1": 77607
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 12041,
+            "0": 2083,
+            "1": 12031
+          },
+          "confusion_matrix": [
+            [
+              12041,
+              0,
+              0
+            ],
+            [
+              2083,
+              0,
+              0
+            ],
+            [
+              12031,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 90387,
+            "0": 55464,
+            "1": 89641
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 11631,
+            "0": 3374,
+            "1": 11152
+          },
+          "confusion_matrix": [
+            [
+              11631,
+              0,
+              0
+            ],
+            [
+              3374,
+              0,
+              0
+            ],
+            [
+              11152,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          47862,
+          0,
+          0
+        ],
+        [
+          35222,
+          0,
+          0
+        ],
+        [
+          47693,
+          0,
+          0
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 1.0,
+        "EXP": 0.0,
+        "TP": 0.0
+      },
+      "pooled_balanced_accuracy": 0.333333,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    },
+    "DOGEUSDT": {
+      "symbol": "DOGEUSDT",
+      "total_oof_observations": 130648,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 54360,
+            "0": 20859,
+            "1": 55477
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 8107,
+            "0": 10088,
+            "1": 7934
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              8107
+            ],
+            [
+              0,
+              0,
+              10088
+            ],
+            [
+              0,
+              0,
+              7934
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 62470,
+            "0": 30947,
+            "1": 63420
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12070,
+            "0": 2025,
+            "1": 12034
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12070
+            ],
+            [
+              0,
+              0,
+              2025
+            ],
+            [
+              0,
+              0,
+              12034
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 74548,
+            "0": 32973,
+            "1": 75457
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12264,
+            "0": 1886,
+            "1": 11979
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12264
+            ],
+            [
+              0,
+              0,
+              1886
+            ],
+            [
+              0,
+              0,
+              11979
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 86815,
+            "0": 34868,
+            "1": 87436
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 12938,
+            "0": 1055,
+            "1": 12136
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              12938
+            ],
+            [
+              0,
+              0,
+              1055
+            ],
+            [
+              0,
+              0,
+              12136
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 99762,
+            "0": 35923,
+            "1": 99575
+          },
+          "majority_class": -1,
+          "predicted_class": -1,
+          "test_class_counts": {
+            "-1": 13032,
+            "0": 974,
+            "1": 12126
+          },
+          "confusion_matrix": [
+            [
+              13032,
+              0,
+              0
+            ],
+            [
+              974,
+              0,
+              0
+            ],
+            [
+              12126,
+              0,
+              0
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 1.0,
+            "EXP": 0.0,
+            "TP": 0.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          13032,
+          0,
+          45379
+        ],
+        [
+          974,
+          0,
+          15054
+        ],
+        [
+          12126,
+          0,
+          44083
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 0.223109,
+        "EXP": 0.0,
+        "TP": 0.784269
+      },
+      "pooled_balanced_accuracy": 0.335793,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    },
+    "LTCUSDT": {
+      "symbol": "LTCUSDT",
+      "total_oof_observations": 130463,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 50885,
+            "0": 25983,
+            "1": 53643
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 8895,
+            "0": 8002,
+            "1": 9195
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              8895
+            ],
+            [
+              0,
+              0,
+              8002
+            ],
+            [
+              0,
+              0,
+              9195
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 59780,
+            "0": 33990,
+            "1": 62845
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 8120,
+            "0": 9346,
+            "1": 8626
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              8120
+            ],
+            [
+              0,
+              0,
+              9346
+            ],
+            [
+              0,
+              0,
+              8626
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 67902,
+            "0": 43346,
+            "1": 71471
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 8098,
+            "0": 9276,
+            "1": 8718
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              8098
+            ],
+            [
+              0,
+              0,
+              9276
+            ],
+            [
+              0,
+              0,
+              8718
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 76000,
+            "0": 52634,
+            "1": 80189
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 11922,
+            "0": 2417,
+            "1": 11753
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              11922
+            ],
+            [
+              0,
+              0,
+              2417
+            ],
+            [
+              0,
+              0,
+              11753
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 87927,
+            "0": 55052,
+            "1": 91948
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 11307,
+            "0": 3965,
+            "1": 10823
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              11307
+            ],
+            [
+              0,
+              0,
+              3965
+            ],
+            [
+              0,
+              0,
+              10823
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          0,
+          0,
+          48342
+        ],
+        [
+          0,
+          0,
+          33006
+        ],
+        [
+          0,
+          0,
+          49115
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 0.0,
+        "EXP": 0.0,
+        "TP": 1.0
+      },
+      "pooled_balanced_accuracy": 0.333333,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    },
+    "XMRUSDT": {
+      "symbol": "XMRUSDT",
+      "total_oof_observations": 15252,
+      "folds": [
+        {
+          "fold": 1,
+          "train_class_counts": {
+            "-1": 6921,
+            "0": 1323,
+            "1": 7055
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 1323,
+            "0": 282,
+            "1": 1445
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              1323
+            ],
+            [
+              0,
+              0,
+              282
+            ],
+            [
+              0,
+              0,
+              1445
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 2,
+          "train_class_counts": {
+            "-1": 8249,
+            "0": 1605,
+            "1": 8507
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 1359,
+            "0": 284,
+            "1": 1407
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              1359
+            ],
+            [
+              0,
+              0,
+              284
+            ],
+            [
+              0,
+              0,
+              1407
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 3,
+          "train_class_counts": {
+            "-1": 9617,
+            "0": 1889,
+            "1": 9917
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 1313,
+            "0": 362,
+            "1": 1375
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              1313
+            ],
+            [
+              0,
+              0,
+              362
+            ],
+            [
+              0,
+              0,
+              1375
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 4,
+          "train_class_counts": {
+            "-1": 10936,
+            "0": 2251,
+            "1": 11298
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 1274,
+            "0": 476,
+            "1": 1300
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              1274
+            ],
+            [
+              0,
+              0,
+              476
+            ],
+            [
+              0,
+              0,
+              1300
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        },
+        {
+          "fold": 5,
+          "train_class_counts": {
+            "-1": 12216,
+            "0": 2727,
+            "1": 12604
+          },
+          "majority_class": 1,
+          "predicted_class": 1,
+          "test_class_counts": {
+            "-1": 1180,
+            "0": 465,
+            "1": 1407
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              1180
+            ],
+            [
+              0,
+              0,
+              465
+            ],
+            [
+              0,
+              0,
+              1407
+            ]
+          ],
+          "per_class_recall": {
+            "SL": 0.0,
+            "EXP": 0.0,
+            "TP": 1.0
+          },
+          "balanced_accuracy": 0.3333
+        }
+      ],
+      "pooled_confusion_matrix": [
+        [
+          0,
+          0,
+          6449
+        ],
+        [
+          0,
+          0,
+          1869
+        ],
+        [
+          0,
+          0,
+          6934
+        ]
+      ],
+      "pooled_per_class_recall": {
+        "SL": 0.0,
+        "EXP": 0.0,
+        "TP": 1.0
+      },
+      "pooled_balanced_accuracy": 0.333333,
+      "unweighted_fold_mean_balanced_accuracy": 0.3333,
+      "expected_theoretical_score": 0.3333333333333333
+    }
+  }
+}
