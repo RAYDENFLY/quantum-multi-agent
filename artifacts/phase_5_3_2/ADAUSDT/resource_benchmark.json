@@ -1,0 +1,8 @@
+{
+  "symbol": "ADAUSDT",
+  "mem_before_mb": 182.8,
+  "peak_rss_mb": 558.2,
+  "mem_after_gc_mb": 345.4,
+  "total_duration_s": 352.51,
+  "within_1gb_budget": true
+}

@@ -1,0 +1,8 @@
+{
+  "symbol": "BNBUSDT",
+  "mem_before_mb": 328.8,
+  "peak_rss_mb": 672.4,
+  "mem_after_gc_mb": 532.2,
+  "total_duration_s": 310.75,
+  "within_1gb_budget": true
+}

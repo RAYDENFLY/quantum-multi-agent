@@ -1,0 +1,8 @@
+{
+  "symbol": "AVAXUSDT",
+  "mem_before_mb": 540.3,
+  "peak_rss_mb": 749.9,
+  "mem_after_gc_mb": 610.1,
+  "total_duration_s": 276.27,
+  "within_1gb_budget": true
+}

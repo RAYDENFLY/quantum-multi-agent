@@ -1,0 +1,26 @@
+{
+  "fold": 1,
+  "y_true_hash": "9108ea26749d90a0e18723832472626648f29ad9e79b6a2a1823d2214933983b",
+  "predictions": {
+    "B0_Majority": {
+      "pred_hash": "dc776e18bc47e7c987eccc83ad689600b07104c0ad5e3687d47455dc46bb942e",
+      "proba_hash": "d9c768301c53c1fe88f6ab9ed8cf3d102bcecb4c33f0785082e7cbca6a636a73"
+    },
+    "B1_Prior": {
+      "pred_hash": "dc776e18bc47e7c987eccc83ad689600b07104c0ad5e3687d47455dc46bb942e",
+      "proba_hash": "b7e9aca6a5a14ae872bf2afbdf1425d3c7ab9bbbfa1dc9c40c55204f9b08abc6"
+    },
+    "B2_LogisticRegression": {
+      "pred_hash": "fcc052f3f89aa3a85f9a935bf9e3794797a6db13361f72d324eaccbd5629f02c",
+      "proba_hash": "3bc8c38b4d41b676721a5ae5a339cbbe2a796029bc46943c8ba630cb62609588"
+    },
+    "B3_RandomForest": {
+      "pred_hash": "3f71b3dcf29f52ae1afb4fa22861cf32f66bf7e18802a5a3c867e602ec90070c",
+      "proba_hash": "79734c95238d4b099f9179e5988131590844aab02ca5997bac4eb25fa357880f"
+    },
+    "B4_LightGBM": {
+      "pred_hash": "ee30312d9b48da653cc92aecb5c1f9e9aa06a7a175a49a55d5a7aaa2909f52a5",
+      "proba_hash": "0a8933dd5ad3e1564cbbc2e939fa5dcd71847a96c8dca4e4b5fcd798aa70abec"
+    }
+  }
+}

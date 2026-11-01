@@ -1,0 +1,16 @@
+{
+  "symbol": "ADAUSDT",
+  "exchange": "ASTER",
+  "timeframe": "5m",
+  "dev_start_ms": 1698796800000,
+  "val_end_ms": 1777593599999,
+  "total_canonical": 316500,
+  "total_dev_val_features": 262656,
+  "eligible_samples": 261085,
+  "tp_count": 113955,
+  "sl_count": 113960,
+  "exp_count": 33170,
+  "ambiguous_count": 1547,
+  "excluded_count": 24,
+  "schema_hash": "cc779ea9e3b1862394b7115375c54c4f4cf3d6496bfabf7de457b578762aaf92"
+}

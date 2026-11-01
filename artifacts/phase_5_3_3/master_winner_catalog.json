@@ -1,0 +1,578 @@
+{
+  "per_instrument_winners": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "origin": "Phase 5.3.1 Pilot",
+      "best_balanced_accuracy": {
+        "model": "B3_RandomForest",
+        "value": 0.4126
+      },
+      "best_macro_f1": {
+        "model": "B4_LightGBM",
+        "value": 0.3893
+      },
+      "best_roc_auc": {
+        "model": "B4_LightGBM",
+        "value": 0.605
+      },
+      "lowest_brier_score": {
+        "model": "B1_Prior",
+        "value": 0.5549
+      },
+      "most_stable_model": {
+        "model": "B2_LogisticRegression",
+        "std_value": 0.0222
+      }
+    },
+    "XMRUSDT": {
+      "symbol": "XMRUSDT",
+      "origin": "Phase 5.3.1 Pilot",
+      "best_balanced_accuracy": {
+        "model": "B2_LogisticRegression",
+        "value": 0.4177
+      },
+      "best_macro_f1": {
+        "model": "B2_LogisticRegression",
+        "value": 0.3796
+      },
+      "best_roc_auc": {
+        "model": "B2_LogisticRegression",
+        "value": 0.5863
+      },
+      "lowest_brier_score": {
+        "model": "B1_Prior",
+        "value": 0.601
+      },
+      "most_stable_model": {
+        "model": "B2_LogisticRegression",
+        "std_value": 0.0187
+      }
+    },
+    "ADAUSDT": {
+      "symbol": "ADAUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "best_balanced_accuracy": {
+        "model": "B4_LightGBM",
+        "value": 0.449
+      },
+      "best_macro_f1": {
+        "model": "B4_LightGBM",
+        "value": 0.3915
+      },
+      "best_roc_auc": {
+        "model": "B4_LightGBM",
+        "value": 0.6209
+      },
+      "lowest_brier_score": {
+        "model": "B1_Prior",
+        "value": 0.6158
+      },
+      "most_stable_model": {
+        "model": "B2_LogisticRegression",
+        "std_value": 0.03
+      }
+    },
+    "XRPUSDT": {
+      "symbol": "XRPUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "best_balanced_accuracy": {
+        "model": "B4_LightGBM",
+        "value": 0.3748
+      },
+      "best_macro_f1": {
+        "model": "B4_LightGBM",
+        "value": 0.3714
+      },
+      "best_roc_auc": {
+        "model": "B4_LightGBM",
+        "value": 0.6035
+      },
+      "lowest_brier_score": {
+        "model": "B4_LightGBM",
+        "value": 0.5635
+      },
+      "most_stable_model": {
+        "model": "B3_RandomForest",
+        "std_value": 0.0221
+      }
+    },
+    "BNBUSDT": {
+      "symbol": "BNBUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "best_balanced_accuracy": {
+        "model": "B4_LightGBM",
+        "value": 0.3699
+      },
+      "best_macro_f1": {
+        "model": "B4_LightGBM",
+        "value": 0.3623
+      },
+      "best_roc_auc": {
+        "model": "B4_LightGBM",
+        "value": 0.5975
+      },
+      "lowest_brier_score": {
+        "model": "B4_LightGBM",
+        "value": 0.5716
+      },
+      "most_stable_model": {
+        "model": "B2_LogisticRegression",
+        "std_value": 0.0176
+      }
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "best_balanced_accuracy": {
+        "model": "B3_RandomForest",
+        "value": 0.4195
+      },
+      "best_macro_f1": {
+        "model": "B4_LightGBM",
+        "value": 0.3975
+      },
+      "best_roc_auc": {
+        "model": "B4_LightGBM",
+        "value": 0.6144
+      },
+      "lowest_brier_score": {
+        "model": "B1_Prior",
+        "value": 0.5598
+      },
+      "most_stable_model": {
+        "model": "B4_LightGBM",
+        "std_value": 0.012
+      }
+    },
+    "SOLUSDT": {
+      "symbol": "SOLUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "best_balanced_accuracy": {
+        "model": "B4_LightGBM",
+        "value": 0.3878
+      },
+      "best_macro_f1": {
+        "model": "B4_LightGBM",
+        "value": 0.3797
+      },
+      "best_roc_auc": {
+        "model": "B4_LightGBM",
+        "value": 0.6108
+      },
+      "lowest_brier_score": {
+        "model": "B1_Prior",
+        "value": 0.5546
+      },
+      "most_stable_model": {
+        "model": "B2_LogisticRegression",
+        "std_value": 0.0298
+      }
+    },
+    "AVAXUSDT": {
+      "symbol": "AVAXUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "best_balanced_accuracy": {
+        "model": "B4_LightGBM",
+        "value": 0.4145
+      },
+      "best_macro_f1": {
+        "model": "B4_LightGBM",
+        "value": 0.3966
+      },
+      "best_roc_auc": {
+        "model": "B4_LightGBM",
+        "value": 0.6057
+      },
+      "lowest_brier_score": {
+        "model": "B4_LightGBM",
+        "value": 0.6246
+      },
+      "most_stable_model": {
+        "model": "B4_LightGBM",
+        "std_value": 0.0431
+      }
+    },
+    "LINKUSDT": {
+      "symbol": "LINKUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "best_balanced_accuracy": {
+        "model": "B4_LightGBM",
+        "value": 0.4068
+      },
+      "best_macro_f1": {
+        "model": "B4_LightGBM",
+        "value": 0.3905
+      },
+      "best_roc_auc": {
+        "model": "B4_LightGBM",
+        "value": 0.6238
+      },
+      "lowest_brier_score": {
+        "model": "B4_LightGBM",
+        "value": 0.5957
+      },
+      "most_stable_model": {
+        "model": "B2_LogisticRegression",
+        "std_value": 0.0429
+      }
+    },
+    "DOGEUSDT": {
+      "symbol": "DOGEUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "best_balanced_accuracy": {
+        "model": "B4_LightGBM",
+        "value": 0.396
+      },
+      "best_macro_f1": {
+        "model": "B4_LightGBM",
+        "value": 0.3904
+      },
+      "best_roc_auc": {
+        "model": "B4_LightGBM",
+        "value": 0.6099
+      },
+      "lowest_brier_score": {
+        "model": "B4_LightGBM",
+        "value": 0.5749
+      },
+      "most_stable_model": {
+        "model": "B3_RandomForest",
+        "std_value": 0.0287
+      }
+    },
+    "LTCUSDT": {
+      "symbol": "LTCUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "best_balanced_accuracy": {
+        "model": "B3_RandomForest",
+        "value": 0.4401
+      },
+      "best_macro_f1": {
+        "model": "B3_RandomForest",
+        "value": 0.4264
+      },
+      "best_roc_auc": {
+        "model": "B4_LightGBM",
+        "value": 0.6399
+      },
+      "lowest_brier_score": {
+        "model": "B3_RandomForest",
+        "value": 0.6083
+      },
+      "most_stable_model": {
+        "model": "B2_LogisticRegression",
+        "std_value": 0.0486
+      }
+    }
+  },
+  "summary_tables": {
+    "balanced_accuracy_winners": [
+      {
+        "symbol": "BTCUSDT",
+        "winner": "B3_RandomForest",
+        "value": 0.4126,
+        "lift_over_B0": 0.0793
+      },
+      {
+        "symbol": "XMRUSDT",
+        "winner": "B2_LogisticRegression",
+        "value": 0.4177,
+        "lift_over_B0": 0.0844
+      },
+      {
+        "symbol": "ADAUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.449,
+        "lift_over_B0": 0.1157
+      },
+      {
+        "symbol": "XRPUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3748,
+        "lift_over_B0": 0.0415
+      },
+      {
+        "symbol": "BNBUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3699,
+        "lift_over_B0": 0.0366
+      },
+      {
+        "symbol": "ETHUSDT",
+        "winner": "B3_RandomForest",
+        "value": 0.4195,
+        "lift_over_B0": 0.0862
+      },
+      {
+        "symbol": "SOLUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3878,
+        "lift_over_B0": 0.0545
+      },
+      {
+        "symbol": "AVAXUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.4145,
+        "lift_over_B0": 0.0812
+      },
+      {
+        "symbol": "LINKUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.4068,
+        "lift_over_B0": 0.0735
+      },
+      {
+        "symbol": "DOGEUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.396,
+        "lift_over_B0": 0.0627
+      },
+      {
+        "symbol": "LTCUSDT",
+        "winner": "B3_RandomForest",
+        "value": 0.4401,
+        "lift_over_B0": 0.1068
+      }
+    ],
+    "macro_f1_winners": [
+      {
+        "symbol": "BTCUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3893,
+        "lift_over_B0": 0.1759
+      },
+      {
+        "symbol": "XMRUSDT",
+        "winner": "B2_LogisticRegression",
+        "value": 0.3796,
+        "lift_over_B0": 0.1713
+      },
+      {
+        "symbol": "ADAUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3915,
+        "lift_over_B0": 0.1951
+      },
+      {
+        "symbol": "XRPUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3714,
+        "lift_over_B0": 0.1618
+      },
+      {
+        "symbol": "BNBUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3623,
+        "lift_over_B0": 0.1552
+      },
+      {
+        "symbol": "ETHUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3975,
+        "lift_over_B0": 0.1859
+      },
+      {
+        "symbol": "SOLUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3797,
+        "lift_over_B0": 0.1655
+      },
+      {
+        "symbol": "AVAXUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3966,
+        "lift_over_B0": 0.2088
+      },
+      {
+        "symbol": "LINKUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3905,
+        "lift_over_B0": 0.2139
+      },
+      {
+        "symbol": "DOGEUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.3904,
+        "lift_over_B0": 0.1887
+      },
+      {
+        "symbol": "LTCUSDT",
+        "winner": "B3_RandomForest",
+        "value": 0.4264,
+        "lift_over_B0": 0.2446
+      }
+    ],
+    "roc_auc_winners": [
+      {
+        "symbol": "BTCUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.605
+      },
+      {
+        "symbol": "XMRUSDT",
+        "winner": "B2_LogisticRegression",
+        "value": 0.5863
+      },
+      {
+        "symbol": "ADAUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.6209
+      },
+      {
+        "symbol": "XRPUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.6035
+      },
+      {
+        "symbol": "BNBUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.5975
+      },
+      {
+        "symbol": "ETHUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.6144
+      },
+      {
+        "symbol": "SOLUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.6108
+      },
+      {
+        "symbol": "AVAXUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.6057
+      },
+      {
+        "symbol": "LINKUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.6238
+      },
+      {
+        "symbol": "DOGEUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.6099
+      },
+      {
+        "symbol": "LTCUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.6399
+      }
+    ],
+    "brier_score_winners": [
+      {
+        "symbol": "BTCUSDT",
+        "winner": "B1_Prior",
+        "value": 0.5549
+      },
+      {
+        "symbol": "XMRUSDT",
+        "winner": "B1_Prior",
+        "value": 0.601
+      },
+      {
+        "symbol": "ADAUSDT",
+        "winner": "B1_Prior",
+        "value": 0.6158
+      },
+      {
+        "symbol": "XRPUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.5635
+      },
+      {
+        "symbol": "BNBUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.5716
+      },
+      {
+        "symbol": "ETHUSDT",
+        "winner": "B1_Prior",
+        "value": 0.5598
+      },
+      {
+        "symbol": "SOLUSDT",
+        "winner": "B1_Prior",
+        "value": 0.5546
+      },
+      {
+        "symbol": "AVAXUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.6246
+      },
+      {
+        "symbol": "LINKUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.5957
+      },
+      {
+        "symbol": "DOGEUSDT",
+        "winner": "B4_LightGBM",
+        "value": 0.5749
+      },
+      {
+        "symbol": "LTCUSDT",
+        "winner": "B3_RandomForest",
+        "value": 0.6083
+      }
+    ],
+    "stability_winners": [
+      {
+        "symbol": "BTCUSDT",
+        "most_stable_ml_model": "B2_LogisticRegression",
+        "std_balanced_accuracy": 0.0222
+      },
+      {
+        "symbol": "XMRUSDT",
+        "most_stable_ml_model": "B2_LogisticRegression",
+        "std_balanced_accuracy": 0.0187
+      },
+      {
+        "symbol": "ADAUSDT",
+        "most_stable_ml_model": "B2_LogisticRegression",
+        "std_balanced_accuracy": 0.03
+      },
+      {
+        "symbol": "XRPUSDT",
+        "most_stable_ml_model": "B3_RandomForest",
+        "std_balanced_accuracy": 0.0221
+      },
+      {
+        "symbol": "BNBUSDT",
+        "most_stable_ml_model": "B2_LogisticRegression",
+        "std_balanced_accuracy": 0.0176
+      },
+      {
+        "symbol": "ETHUSDT",
+        "most_stable_ml_model": "B4_LightGBM",
+        "std_balanced_accuracy": 0.012
+      },
+      {
+        "symbol": "SOLUSDT",
+        "most_stable_ml_model": "B2_LogisticRegression",
+        "std_balanced_accuracy": 0.0298
+      },
+      {
+        "symbol": "AVAXUSDT",
+        "most_stable_ml_model": "B4_LightGBM",
+        "std_balanced_accuracy": 0.0431
+      },
+      {
+        "symbol": "LINKUSDT",
+        "most_stable_ml_model": "B2_LogisticRegression",
+        "std_balanced_accuracy": 0.0429
+      },
+      {
+        "symbol": "DOGEUSDT",
+        "most_stable_ml_model": "B3_RandomForest",
+        "std_balanced_accuracy": 0.0287
+      },
+      {
+        "symbol": "LTCUSDT",
+        "most_stable_ml_model": "B2_LogisticRegression",
+        "std_balanced_accuracy": 0.0486
+      }
+    ]
+  },
+  "tie_handling_policy": "If two models tie within 1e-4, priority follows model simplicity (B2_LogisticRegression > B4_LightGBM > B3_RandomForest). No universal fleet winner is designated; winner selection is strictly instrument- and metric-specific."
+}

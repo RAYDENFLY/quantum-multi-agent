@@ -1,0 +1,8 @@
+{
+  "symbol": "SOLUSDT",
+  "mem_before_mb": 537.5,
+  "peak_rss_mb": 743.9,
+  "mem_after_gc_mb": 553.3,
+  "total_duration_s": 335.66,
+  "within_1gb_budget": true
+}

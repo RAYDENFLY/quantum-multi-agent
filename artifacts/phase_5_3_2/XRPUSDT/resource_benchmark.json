@@ -1,0 +1,8 @@
+{
+  "symbol": "XRPUSDT",
+  "mem_before_mb": 182.3,
+  "peak_rss_mb": 550.2,
+  "mem_after_gc_mb": 342.4,
+  "total_duration_s": 316.44,
+  "within_1gb_budget": true
+}

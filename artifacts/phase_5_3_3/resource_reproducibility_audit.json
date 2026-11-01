@@ -1,0 +1,102 @@
+{
+  "resource_verification": {
+    "reported_peak_rss_mb": 815.4,
+    "audited_peak_rss_mb": 815.4,
+    "peak_rss_match": true,
+    "memory_budget_mb": 1024.0,
+    "within_budget": true,
+    "reported_storage_mb": 57.34,
+    "audited_storage_mb": 57.42,
+    "storage_match": true,
+    "reported_fleet_time_min": 52.6,
+    "audited_fleet_time_min": 52.6,
+    "max_cpu_threads": 2,
+    "benchmarks_per_symbol": [
+      {
+        "symbol": "BTCUSDT",
+        "origin": "Phase 5.3.1 Pilot",
+        "peak_rss_mb": 689.0,
+        "duration_s": 316.73,
+        "within_1gb_budget": true
+      },
+      {
+        "symbol": "XMRUSDT",
+        "origin": "Phase 5.3.1 Pilot",
+        "peak_rss_mb": 504.0,
+        "duration_s": 34.42,
+        "within_1gb_budget": true
+      },
+      {
+        "symbol": "ADAUSDT",
+        "origin": "Phase 5.3.2 Fleet",
+        "peak_rss_mb": 558.2,
+        "duration_s": 352.51,
+        "within_1gb_budget": true
+      },
+      {
+        "symbol": "XRPUSDT",
+        "origin": "Phase 5.3.2 Fleet",
+        "peak_rss_mb": 550.2,
+        "duration_s": 316.44,
+        "within_1gb_budget": true
+      },
+      {
+        "symbol": "BNBUSDT",
+        "origin": "Phase 5.3.2 Fleet",
+        "peak_rss_mb": 672.4,
+        "duration_s": 310.75,
+        "within_1gb_budget": true
+      },
+      {
+        "symbol": "ETHUSDT",
+        "origin": "Phase 5.3.2 Fleet",
+        "peak_rss_mb": 738.0,
+        "duration_s": 321.0,
+        "within_1gb_budget": true
+      },
+      {
+        "symbol": "SOLUSDT",
+        "origin": "Phase 5.3.2 Fleet",
+        "peak_rss_mb": 743.9,
+        "duration_s": 335.66,
+        "within_1gb_budget": true
+      },
+      {
+        "symbol": "AVAXUSDT",
+        "origin": "Phase 5.3.2 Fleet",
+        "peak_rss_mb": 749.9,
+        "duration_s": 276.27,
+        "within_1gb_budget": true
+      },
+      {
+        "symbol": "LINKUSDT",
+        "origin": "Phase 5.3.2 Fleet",
+        "peak_rss_mb": 804.6,
+        "duration_s": 291.32,
+        "within_1gb_budget": true
+      },
+      {
+        "symbol": "DOGEUSDT",
+        "origin": "Phase 5.3.2 Fleet",
+        "peak_rss_mb": 812.8,
+        "duration_s": 312.02,
+        "within_1gb_budget": true
+      },
+      {
+        "symbol": "LTCUSDT",
+        "origin": "Phase 5.3.2 Fleet",
+        "peak_rss_mb": 815.4,
+        "duration_s": 286.64,
+        "within_1gb_budget": true
+      }
+    ]
+  },
+  "reproducibility_verification": {
+    "deterministic_seed_registry_verified": true,
+    "feature_schema_hash_verified": "cc779ea9e3b1862394b7115375c54c4f4cf3d6496bfabf7de457b578762aaf92",
+    "ethusdt_fold1_replay_status": "BIT_EXACT_REPRODUCIBILITY_CONFIRMED",
+    "predictions_exact_match": true,
+    "probabilities_exact_match": true,
+    "evaluation_exact_match": true
+  }
+}

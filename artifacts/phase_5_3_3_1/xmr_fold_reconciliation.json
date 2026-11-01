@@ -1,0 +1,74 @@
+{
+  "physical_fold_directories": [
+    "fold_1",
+    "fold_2",
+    "fold_3",
+    "fold_4",
+    "fold_5"
+  ],
+  "num_physical_folds": 5,
+  "pilot_metadata_fold_count": 5,
+  "pilot_evaluations_fold_count": 5,
+  "fold_level_details": [
+    {
+      "fold": 1,
+      "train_samples": 15299,
+      "test_samples": 3050,
+      "B2_bal_acc": 0.4407,
+      "B3_bal_acc": 0.4295,
+      "B4_bal_acc": 0.4121
+    },
+    {
+      "fold": 2,
+      "train_samples": 18361,
+      "test_samples": 3050,
+      "B2_bal_acc": 0.3873,
+      "B3_bal_acc": 0.3443,
+      "B4_bal_acc": 0.3547
+    },
+    {
+      "fold": 3,
+      "train_samples": 21423,
+      "test_samples": 3050,
+      "B2_bal_acc": 0.4188,
+      "B3_bal_acc": 0.3923,
+      "B4_bal_acc": 0.3822
+    },
+    {
+      "fold": 4,
+      "train_samples": 24485,
+      "test_samples": 3050,
+      "B2_bal_acc": 0.4091,
+      "B3_bal_acc": 0.3985,
+      "B4_bal_acc": 0.3872
+    },
+    {
+      "fold": 5,
+      "train_samples": 27547,
+      "test_samples": 3052,
+      "B2_bal_acc": 0.4326,
+      "B3_bal_acc": 0.3865,
+      "B4_bal_acc": 0.3716
+    }
+  ],
+  "mathematical_reconciliation": {
+    "5_fold_arithmetic_means": {
+      "B2_LogisticRegression": 0.4177,
+      "B3_RandomForest": 0.3902,
+      "B4_LightGBM": 0.3816
+    },
+    "3_fold_arithmetic_means": {
+      "B2_LogisticRegression": 0.4156,
+      "B3_RandomForest": 0.3887,
+      "B4_LightGBM": 0.383
+    },
+    "reported_master_catalog_values": {
+      "B2_LogisticRegression": 0.4177,
+      "B3_RandomForest": 0.3902,
+      "B4_LightGBM": 0.3816
+    },
+    "conclusion": "The reported master catalog values (B2=0.4177, B3=0.3902, B4=0.3816) match the arithmetic mean of ALL FIVE FOLDS exactly. The mention of '3 folds' in Phase 5.3.2 documentation was an unexecuted historical proposal text artifact from earlier feasibility drafting. All 5 folds exist physically on disk, are fully populated, and are cryptographically verified."
+  },
+  "definitive_fold_count": 5,
+  "status": "RECONCILED_AND_VERIFIED"
+}

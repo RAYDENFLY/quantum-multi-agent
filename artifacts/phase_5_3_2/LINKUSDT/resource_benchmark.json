@@ -1,0 +1,8 @@
+{
+  "symbol": "LINKUSDT",
+  "mem_before_mb": 597.1,
+  "peak_rss_mb": 804.6,
+  "mem_after_gc_mb": 572.5,
+  "total_duration_s": 291.32,
+  "within_1gb_budget": true
+}

@@ -1,0 +1,8 @@
+{
+  "symbol": "LTCUSDT",
+  "mem_before_mb": 610.9,
+  "peak_rss_mb": 815.4,
+  "mem_after_gc_mb": 631.2,
+  "total_duration_s": 286.64,
+  "within_1gb_budget": true
+}

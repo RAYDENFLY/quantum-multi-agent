@@ -1,0 +1,1143 @@
+{
+  "metadata": {
+    "catalog_version": "5.3.3.1_FINAL",
+    "total_instruments": 11,
+    "governance_verdict": "PHASE_5_3_3_1_PASS_WITH_LIMITATIONS",
+    "aggregation_method": "Unweighted arithmetic mean across expanding walk-forward folds"
+  },
+  "catalog": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "origin_phase": "Phase 5.3.1 Pilot",
+      "clean_sample_count": 261085,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SUFFICIENT",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2134,
+          "macro_f1_std": 0.0051,
+          "brier_score": 1.0582,
+          "brier_score_std": 0.0329,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2134,
+          "macro_f1_std": 0.0051,
+          "brier_score": 0.5549,
+          "brier_score_std": 0.0203,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.3919,
+          "balanced_accuracy_std": 0.0222,
+          "macro_f1": 0.3843,
+          "macro_f1_std": 0.0281,
+          "brier_score": 0.59,
+          "brier_score_std": 0.0505,
+          "roc_auc_ovr": 0.5978,
+          "roc_auc_ovr_std": 0.0113
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.4126,
+          "balanced_accuracy_std": 0.0251,
+          "macro_f1": 0.3714,
+          "macro_f1_std": 0.0178,
+          "brier_score": 0.5975,
+          "brier_score_std": 0.0259,
+          "roc_auc_ovr": 0.5842,
+          "roc_auc_ovr_std": 0.0104
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.4099,
+          "balanced_accuracy_std": 0.027,
+          "macro_f1": 0.3893,
+          "macro_f1_std": 0.0199,
+          "brier_score": 0.5795,
+          "brier_score_std": 0.0398,
+          "roc_auc_ovr": 0.605,
+          "roc_auc_ovr_std": 0.0098
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B3_RandomForest",
+          "value": 0.4126,
+          "lift_over_B0": 0.0793
+        },
+        "macro_f1_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3893
+        },
+        "roc_auc_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.605
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B1_Prior",
+          "brier_score": 0.5549,
+          "is_naive_baseline": true
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.5795
+        },
+        "most_stable_ml_model": {
+          "model": "B2_LogisticRegression",
+          "inter_fold_std": 0.0222
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.0793,
+        "robustness_across_block_lengths": "ROBUST",
+        "status": "SIGNIFICANT_AFTER_CORRECTION"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 689.0,
+        "duration_seconds": 316.73,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Full history (~261k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    },
+    "XMRUSDT": {
+      "symbol": "XMRUSDT",
+      "origin_phase": "Phase 5.3.1 Pilot",
+      "clean_sample_count": 30623,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SAMPLE_CONSTRAINED",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2083,
+          "macro_f1_std": 0.0051,
+          "brier_score": 1.0908,
+          "brier_score_std": 0.0319,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2083,
+          "macro_f1_std": 0.0051,
+          "brier_score": 0.601,
+          "brier_score_std": 0.0196,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.4177,
+          "balanced_accuracy_std": 0.0187,
+          "macro_f1": 0.3796,
+          "macro_f1_std": 0.0086,
+          "brier_score": 0.6399,
+          "brier_score_std": 0.0152,
+          "roc_auc_ovr": 0.5863,
+          "roc_auc_ovr_std": 0.0121
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.3902,
+          "balanced_accuracy_std": 0.0273,
+          "macro_f1": 0.3681,
+          "macro_f1_std": 0.0182,
+          "brier_score": 0.6382,
+          "brier_score_std": 0.0098,
+          "roc_auc_ovr": 0.5628,
+          "roc_auc_ovr_std": 0.0129
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.3816,
+          "balanced_accuracy_std": 0.0189,
+          "macro_f1": 0.3729,
+          "macro_f1_std": 0.0172,
+          "brier_score": 0.6362,
+          "brier_score_std": 0.0194,
+          "roc_auc_ovr": 0.5546,
+          "roc_auc_ovr_std": 0.0096
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B2_LogisticRegression",
+          "value": 0.4177,
+          "lift_over_B0": 0.0844
+        },
+        "macro_f1_winner": {
+          "model": "B2_LogisticRegression",
+          "value": 0.3796
+        },
+        "roc_auc_winner": {
+          "model": "B2_LogisticRegression",
+          "value": 0.5863
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B1_Prior",
+          "brier_score": 0.601,
+          "is_naive_baseline": true
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.6362
+        },
+        "most_stable_ml_model": {
+          "model": "B2_LogisticRegression",
+          "inter_fold_std": 0.0187
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.0844,
+        "robustness_across_block_lengths": "ROBUST",
+        "status": "SIGNIFICANT_AFTER_CORRECTION"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 504.0,
+        "duration_seconds": 34.42,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Sample constrained (30k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    },
+    "ADAUSDT": {
+      "symbol": "ADAUSDT",
+      "origin_phase": "Phase 5.3.2 Fleet",
+      "clean_sample_count": 261085,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SUFFICIENT",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.1964,
+          "macro_f1_std": 0.0055,
+          "brier_score": 1.1642,
+          "brier_score_std": 0.0332,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.1964,
+          "macro_f1_std": 0.0055,
+          "brier_score": 0.6158,
+          "brier_score_std": 0.0288,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.4234,
+          "balanced_accuracy_std": 0.03,
+          "macro_f1": 0.3586,
+          "macro_f1_std": 0.0515,
+          "brier_score": 0.6669,
+          "brier_score_std": 0.031,
+          "roc_auc_ovr": 0.5964,
+          "roc_auc_ovr_std": 0.0304
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.4278,
+          "balanced_accuracy_std": 0.0481,
+          "macro_f1": 0.3738,
+          "macro_f1_std": 0.0484,
+          "brier_score": 0.6461,
+          "brier_score_std": 0.0264,
+          "roc_auc_ovr": 0.6036,
+          "roc_auc_ovr_std": 0.043
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.449,
+          "balanced_accuracy_std": 0.0376,
+          "macro_f1": 0.3915,
+          "macro_f1_std": 0.0468,
+          "brier_score": 0.6454,
+          "brier_score_std": 0.0352,
+          "roc_auc_ovr": 0.6209,
+          "roc_auc_ovr_std": 0.0335
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.449,
+          "lift_over_B0": 0.1157
+        },
+        "macro_f1_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3915
+        },
+        "roc_auc_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.6209
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B1_Prior",
+          "brier_score": 0.6158,
+          "is_naive_baseline": true
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.6454
+        },
+        "most_stable_ml_model": {
+          "model": "B2_LogisticRegression",
+          "inter_fold_std": 0.03
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.1157,
+        "robustness_across_block_lengths": "ROBUST",
+        "status": "SIGNIFICANT_AFTER_CORRECTION"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 558.2,
+        "duration_seconds": 352.51,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Full history (~261k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    },
+    "XRPUSDT": {
+      "symbol": "XRPUSDT",
+      "origin_phase": "Phase 5.3.2 Fleet",
+      "clean_sample_count": 261085,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SUFFICIENT",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2096,
+          "macro_f1_std": 0.0117,
+          "brier_score": 1.0807,
+          "brier_score_std": 0.0729,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2096,
+          "macro_f1_std": 0.0117,
+          "brier_score": 0.5855,
+          "brier_score_std": 0.0317,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.3709,
+          "balanced_accuracy_std": 0.0257,
+          "macro_f1": 0.3583,
+          "macro_f1_std": 0.0136,
+          "brier_score": 0.5802,
+          "brier_score_std": 0.0499,
+          "roc_auc_ovr": 0.5657,
+          "roc_auc_ovr_std": 0.0136
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.3659,
+          "balanced_accuracy_std": 0.0221,
+          "macro_f1": 0.3522,
+          "macro_f1_std": 0.0265,
+          "brier_score": 0.5723,
+          "brier_score_std": 0.0406,
+          "roc_auc_ovr": 0.5853,
+          "roc_auc_ovr_std": 0.0076
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.3748,
+          "balanced_accuracy_std": 0.029,
+          "macro_f1": 0.3714,
+          "macro_f1_std": 0.0259,
+          "brier_score": 0.5635,
+          "brier_score_std": 0.0418,
+          "roc_auc_ovr": 0.6035,
+          "roc_auc_ovr_std": 0.0066
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3748,
+          "lift_over_B0": 0.0415
+        },
+        "macro_f1_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3714
+        },
+        "roc_auc_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.6035
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.5635,
+          "is_naive_baseline": false
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.5635
+        },
+        "most_stable_ml_model": {
+          "model": "B3_RandomForest",
+          "inter_fold_std": 0.0221
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.0415,
+        "robustness_across_block_lengths": "SENSITIVE_TO_BLOCK_LENGTH",
+        "status": "SENSITIVE_OR_INCONCLUSIVE"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 550.2,
+        "duration_seconds": 316.44,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Full history (~261k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    },
+    "BNBUSDT": {
+      "symbol": "BNBUSDT",
+      "origin_phase": "Phase 5.3.2 Fleet",
+      "clean_sample_count": 261085,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SUFFICIENT",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2071,
+          "macro_f1_std": 0.0164,
+          "brier_score": 1.0955,
+          "brier_score_std": 0.0985,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2071,
+          "macro_f1_std": 0.0164,
+          "brier_score": 0.591,
+          "brier_score_std": 0.0452,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.3561,
+          "balanced_accuracy_std": 0.0176,
+          "macro_f1": 0.3377,
+          "macro_f1_std": 0.0091,
+          "brier_score": 0.5836,
+          "brier_score_std": 0.05,
+          "roc_auc_ovr": 0.5571,
+          "roc_auc_ovr_std": 0.0128
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.3642,
+          "balanced_accuracy_std": 0.0245,
+          "macro_f1": 0.3511,
+          "macro_f1_std": 0.0118,
+          "brier_score": 0.5785,
+          "brier_score_std": 0.0418,
+          "roc_auc_ovr": 0.5783,
+          "roc_auc_ovr_std": 0.0187
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.3699,
+          "balanced_accuracy_std": 0.0247,
+          "macro_f1": 0.3623,
+          "macro_f1_std": 0.0157,
+          "brier_score": 0.5716,
+          "brier_score_std": 0.0467,
+          "roc_auc_ovr": 0.5975,
+          "roc_auc_ovr_std": 0.0189
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3699,
+          "lift_over_B0": 0.0366
+        },
+        "macro_f1_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3623
+        },
+        "roc_auc_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.5975
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.5716,
+          "is_naive_baseline": false
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.5716
+        },
+        "most_stable_ml_model": {
+          "model": "B2_LogisticRegression",
+          "inter_fold_std": 0.0176
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.0366,
+        "robustness_across_block_lengths": "SENSITIVE_TO_BLOCK_LENGTH",
+        "status": "SENSITIVE_OR_INCONCLUSIVE"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 672.4,
+        "duration_seconds": 310.75,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Full history (~261k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "origin_phase": "Phase 5.3.2 Fleet",
+      "clean_sample_count": 261085,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SUFFICIENT",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2116,
+          "macro_f1_std": 0.0061,
+          "brier_score": 1.0694,
+          "brier_score_std": 0.0389,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2116,
+          "macro_f1_std": 0.0061,
+          "brier_score": 0.5598,
+          "brier_score_std": 0.0273,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.3875,
+          "balanced_accuracy_std": 0.0191,
+          "macro_f1": 0.3798,
+          "macro_f1_std": 0.0245,
+          "brier_score": 0.5838,
+          "brier_score_std": 0.0613,
+          "roc_auc_ovr": 0.5971,
+          "roc_auc_ovr_std": 0.009
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.4195,
+          "balanced_accuracy_std": 0.0165,
+          "macro_f1": 0.3796,
+          "macro_f1_std": 0.0176,
+          "brier_score": 0.5883,
+          "brier_score_std": 0.0365,
+          "roc_auc_ovr": 0.5968,
+          "roc_auc_ovr_std": 0.0079
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.4177,
+          "balanced_accuracy_std": 0.012,
+          "macro_f1": 0.3975,
+          "macro_f1_std": 0.0202,
+          "brier_score": 0.575,
+          "brier_score_std": 0.0483,
+          "roc_auc_ovr": 0.6144,
+          "roc_auc_ovr_std": 0.0065
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B3_RandomForest",
+          "value": 0.4195,
+          "lift_over_B0": 0.0862
+        },
+        "macro_f1_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3975
+        },
+        "roc_auc_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.6144
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B1_Prior",
+          "brier_score": 0.5598,
+          "is_naive_baseline": true
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.575
+        },
+        "most_stable_ml_model": {
+          "model": "B4_LightGBM",
+          "inter_fold_std": 0.012
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.0862,
+        "robustness_across_block_lengths": "ROBUST",
+        "status": "SIGNIFICANT_AFTER_CORRECTION"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 738.0,
+        "duration_seconds": 321.0,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Full history (~261k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    },
+    "SOLUSDT": {
+      "symbol": "SOLUSDT",
+      "origin_phase": "Phase 5.3.2 Fleet",
+      "clean_sample_count": 261085,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SUFFICIENT",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2142,
+          "macro_f1_std": 0.0062,
+          "brier_score": 1.0529,
+          "brier_score_std": 0.0395,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2142,
+          "macro_f1_std": 0.0062,
+          "brier_score": 0.5546,
+          "brier_score_std": 0.0275,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.3735,
+          "balanced_accuracy_std": 0.0298,
+          "macro_f1": 0.3658,
+          "macro_f1_std": 0.0157,
+          "brier_score": 0.5741,
+          "brier_score_std": 0.0503,
+          "roc_auc_ovr": 0.5813,
+          "roc_auc_ovr_std": 0.016
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.3808,
+          "balanced_accuracy_std": 0.031,
+          "macro_f1": 0.3671,
+          "macro_f1_std": 0.0173,
+          "brier_score": 0.5687,
+          "brier_score_std": 0.037,
+          "roc_auc_ovr": 0.5942,
+          "roc_auc_ovr_std": 0.0096
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.3878,
+          "balanced_accuracy_std": 0.0333,
+          "macro_f1": 0.3797,
+          "macro_f1_std": 0.0216,
+          "brier_score": 0.5594,
+          "brier_score_std": 0.0417,
+          "roc_auc_ovr": 0.6108,
+          "roc_auc_ovr_std": 0.009
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3878,
+          "lift_over_B0": 0.0545
+        },
+        "macro_f1_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3797
+        },
+        "roc_auc_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.6108
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B1_Prior",
+          "brier_score": 0.5546,
+          "is_naive_baseline": true
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.5594
+        },
+        "most_stable_ml_model": {
+          "model": "B2_LogisticRegression",
+          "inter_fold_std": 0.0298
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.0545,
+        "robustness_across_block_lengths": "SENSITIVE_TO_BLOCK_LENGTH",
+        "status": "SENSITIVE_OR_INCONCLUSIVE"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 743.9,
+        "duration_seconds": 335.66,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Full history (~261k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    },
+    "AVAXUSDT": {
+      "symbol": "AVAXUSDT",
+      "origin_phase": "Phase 5.3.2 Fleet",
+      "clean_sample_count": 261085,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SUFFICIENT",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.1878,
+          "macro_f1_std": 0.0155,
+          "brier_score": 1.2125,
+          "brier_score_std": 0.0893,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.1878,
+          "macro_f1_std": 0.0155,
+          "brier_score": 0.6516,
+          "brier_score_std": 0.0157,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.4084,
+          "balanced_accuracy_std": 0.0451,
+          "macro_f1": 0.3693,
+          "macro_f1_std": 0.0528,
+          "brier_score": 0.6413,
+          "brier_score_std": 0.0199,
+          "roc_auc_ovr": 0.5821,
+          "roc_auc_ovr_std": 0.0422
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.4104,
+          "balanced_accuracy_std": 0.0481,
+          "macro_f1": 0.3876,
+          "macro_f1_std": 0.0466,
+          "brier_score": 0.6291,
+          "brier_score_std": 0.0181,
+          "roc_auc_ovr": 0.5967,
+          "roc_auc_ovr_std": 0.0411
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.4145,
+          "balanced_accuracy_std": 0.0431,
+          "macro_f1": 0.3966,
+          "macro_f1_std": 0.0417,
+          "brier_score": 0.6246,
+          "brier_score_std": 0.0213,
+          "roc_auc_ovr": 0.6057,
+          "roc_auc_ovr_std": 0.0379
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.4145,
+          "lift_over_B0": 0.0812
+        },
+        "macro_f1_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3966
+        },
+        "roc_auc_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.6057
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.6246,
+          "is_naive_baseline": false
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.6246
+        },
+        "most_stable_ml_model": {
+          "model": "B4_LightGBM",
+          "inter_fold_std": 0.0431
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.0812,
+        "robustness_across_block_lengths": "SENSITIVE_TO_BLOCK_LENGTH",
+        "status": "SENSITIVE_OR_INCONCLUSIVE"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 749.9,
+        "duration_seconds": 276.27,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Full history (~261k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    },
+    "LINKUSDT": {
+      "symbol": "LINKUSDT",
+      "origin_phase": "Phase 5.3.2 Fleet",
+      "clean_sample_count": 261085,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SUFFICIENT",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.1766,
+          "macro_f1_std": 0.0318,
+          "brier_score": 1.268,
+          "brier_score_std": 0.1736,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.1766,
+          "macro_f1_std": 0.0318,
+          "brier_score": 0.6746,
+          "brier_score_std": 0.0583,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.3984,
+          "balanced_accuracy_std": 0.0429,
+          "macro_f1": 0.3714,
+          "macro_f1_std": 0.032,
+          "brier_score": 0.6239,
+          "brier_score_std": 0.0204,
+          "roc_auc_ovr": 0.5708,
+          "roc_auc_ovr_std": 0.0391
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.4022,
+          "balanced_accuracy_std": 0.0453,
+          "macro_f1": 0.3829,
+          "macro_f1_std": 0.0387,
+          "brier_score": 0.6005,
+          "brier_score_std": 0.0194,
+          "roc_auc_ovr": 0.6071,
+          "roc_auc_ovr_std": 0.0496
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.4068,
+          "balanced_accuracy_std": 0.0468,
+          "macro_f1": 0.3905,
+          "macro_f1_std": 0.0406,
+          "brier_score": 0.5957,
+          "brier_score_std": 0.024,
+          "roc_auc_ovr": 0.6238,
+          "roc_auc_ovr_std": 0.0363
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.4068,
+          "lift_over_B0": 0.0735
+        },
+        "macro_f1_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3905
+        },
+        "roc_auc_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.6238
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.5957,
+          "is_naive_baseline": false
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.5957
+        },
+        "most_stable_ml_model": {
+          "model": "B2_LogisticRegression",
+          "inter_fold_std": 0.0429
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.0735,
+        "robustness_across_block_lengths": "SENSITIVE_TO_BLOCK_LENGTH",
+        "status": "SENSITIVE_OR_INCONCLUSIVE"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 804.6,
+        "duration_seconds": 291.32,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Full history (~261k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    },
+    "DOGEUSDT": {
+      "symbol": "DOGEUSDT",
+      "origin_phase": "Phase 5.3.2 Fleet",
+      "clean_sample_count": 261085,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SUFFICIENT",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2017,
+          "macro_f1_std": 0.0236,
+          "brier_score": 1.1257,
+          "brier_score_std": 0.1367,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.2017,
+          "macro_f1_std": 0.0236,
+          "brier_score": 0.6057,
+          "brier_score_std": 0.0681,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.3838,
+          "balanced_accuracy_std": 0.0402,
+          "macro_f1": 0.3723,
+          "macro_f1_std": 0.033,
+          "brier_score": 0.5887,
+          "brier_score_std": 0.0511,
+          "roc_auc_ovr": 0.5752,
+          "roc_auc_ovr_std": 0.0247
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.387,
+          "balanced_accuracy_std": 0.0287,
+          "macro_f1": 0.3761,
+          "macro_f1_std": 0.0271,
+          "brier_score": 0.5775,
+          "brier_score_std": 0.0404,
+          "roc_auc_ovr": 0.5996,
+          "roc_auc_ovr_std": 0.0165
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.396,
+          "balanced_accuracy_std": 0.0345,
+          "macro_f1": 0.3904,
+          "macro_f1_std": 0.0317,
+          "brier_score": 0.5749,
+          "brier_score_std": 0.0474,
+          "roc_auc_ovr": 0.6099,
+          "roc_auc_ovr_std": 0.0197
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.396,
+          "lift_over_B0": 0.0627
+        },
+        "macro_f1_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.3904
+        },
+        "roc_auc_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.6099
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.5749,
+          "is_naive_baseline": false
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B4_LightGBM",
+          "brier_score": 0.5749
+        },
+        "most_stable_ml_model": {
+          "model": "B3_RandomForest",
+          "inter_fold_std": 0.0287
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.0627,
+        "robustness_across_block_lengths": "SENSITIVE_TO_BLOCK_LENGTH",
+        "status": "SENSITIVE_OR_INCONCLUSIVE"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 812.8,
+        "duration_seconds": 312.02,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Full history (~261k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    },
+    "LTCUSDT": {
+      "symbol": "LTCUSDT",
+      "origin_phase": "Phase 5.3.2 Fleet",
+      "clean_sample_count": 261085,
+      "num_valid_folds": 5,
+      "data_sufficiency_status": "SUFFICIENT",
+      "baseline_metrics": {
+        "B0_Majority": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.1818,
+          "macro_f1_std": 0.0166,
+          "brier_score": 1.2471,
+          "brier_score_std": 0.0956,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B1_Prior": {
+          "balanced_accuracy": 0.3333,
+          "balanced_accuracy_std": 0.0,
+          "macro_f1": 0.1818,
+          "macro_f1_std": 0.0166,
+          "brier_score": 0.6622,
+          "brier_score_std": 0.0323,
+          "roc_auc_ovr": 0.5,
+          "roc_auc_ovr_std": 0.0
+        },
+        "B2_LogisticRegression": {
+          "balanced_accuracy": 0.4208,
+          "balanced_accuracy_std": 0.0486,
+          "macro_f1": 0.4001,
+          "macro_f1_std": 0.0594,
+          "brier_score": 0.6292,
+          "brier_score_std": 0.0223,
+          "roc_auc_ovr": 0.6075,
+          "roc_auc_ovr_std": 0.0511
+        },
+        "B3_RandomForest": {
+          "balanced_accuracy": 0.4401,
+          "balanced_accuracy_std": 0.0674,
+          "macro_f1": 0.4264,
+          "macro_f1_std": 0.0639,
+          "brier_score": 0.6083,
+          "brier_score_std": 0.0272,
+          "roc_auc_ovr": 0.6375,
+          "roc_auc_ovr_std": 0.0673
+        },
+        "B4_LightGBM": {
+          "balanced_accuracy": 0.4355,
+          "balanced_accuracy_std": 0.0513,
+          "macro_f1": 0.4253,
+          "macro_f1_std": 0.0515,
+          "brier_score": 0.6088,
+          "brier_score_std": 0.0299,
+          "roc_auc_ovr": 0.6399,
+          "roc_auc_ovr_std": 0.0475
+        }
+      },
+      "metric_winners": {
+        "balanced_accuracy_winner": {
+          "model": "B3_RandomForest",
+          "value": 0.4401,
+          "lift_over_B0": 0.1068
+        },
+        "macro_f1_winner": {
+          "model": "B3_RandomForest",
+          "value": 0.4264
+        },
+        "roc_auc_winner": {
+          "model": "B4_LightGBM",
+          "value": 0.6399
+        },
+        "LOWEST_BRIER_ALL_BASELINES": {
+          "model": "B3_RandomForest",
+          "brier_score": 0.6083,
+          "is_naive_baseline": false
+        },
+        "LOWEST_BRIER_ML_MODELS": {
+          "model": "B3_RandomForest",
+          "brier_score": 0.6083
+        },
+        "most_stable_ml_model": {
+          "model": "B2_LogisticRegression",
+          "inter_fold_std": 0.0486
+        }
+      },
+      "statistical_evidence": {
+        "best_model_lift": 0.1068,
+        "robustness_across_block_lengths": "SENSITIVE_TO_BLOCK_LENGTH",
+        "status": "SENSITIVE_OR_INCONCLUSIVE"
+      },
+      "resource_usage": {
+        "peak_rss_mb": 815.4,
+        "duration_seconds": 286.64,
+        "within_1gb_budget": true
+      },
+      "temporal_validation_status": "VERIFIED_ZERO_FORWARD_LEAKAGE",
+      "known_limitations": [
+        "Full history (~261k bars, 5 folds)",
+        "Validation Observed reclassified as historical research data, not pristine holdout",
+        "24-bar embargo parameter formally deprecated for expanding walk-forward design"
+      ]
+    }
+  }
+}

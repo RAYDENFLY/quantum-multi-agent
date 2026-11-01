@@ -1,0 +1,204 @@
+{
+  "temporal_governance": {
+    "development_period": "2023-11-01 to 2025-10-31",
+    "validation_period": "2025-11-01 to 2026-04-30",
+    "validation_observed_period": "2026-05-01 to 2026-10-31 (Strictly excluded from training)",
+    "prospective_holdout_period": "2026-11-01 to 2027-04-30 (Strictly untouched and unread)"
+  },
+  "mechanisms_audited": {
+    "training_purge": "12 bars (prevents overlapping labels between training end and test start)",
+    "test_label_horizon_protection": "12 bars (prevents test labels from peeking past test_end)",
+    "post_test_embargo": "24 bars (defined in class init, recorded in metadata, but inactive in expanding-window split())",
+    "preprocessor_isolation": "Causal fit exclusively on training samples (medians/IQRs), zero test statistics leaked",
+    "instrument_isolation": "Single-instrument training; zero cross-asset pooling"
+  },
+  "symbols": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "origin": "Phase 5.3.1 Pilot",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": false,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    },
+    "XMRUSDT": {
+      "symbol": "XMRUSDT",
+      "origin": "Phase 5.3.1 Pilot",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": false,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    },
+    "ADAUSDT": {
+      "symbol": "ADAUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": true,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    },
+    "XRPUSDT": {
+      "symbol": "XRPUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": true,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    },
+    "BNBUSDT": {
+      "symbol": "BNBUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": true,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": true,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    },
+    "SOLUSDT": {
+      "symbol": "SOLUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": true,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    },
+    "AVAXUSDT": {
+      "symbol": "AVAXUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": true,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    },
+    "LINKUSDT": {
+      "symbol": "LINKUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": true,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    },
+    "DOGEUSDT": {
+      "symbol": "DOGEUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": true,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    },
+    "LTCUSDT": {
+      "symbol": "LTCUSDT",
+      "origin": "Phase 5.3.2 Fleet",
+      "num_folds": 5,
+      "training_purge_bars": 12,
+      "test_label_horizon_bars": 12,
+      "configured_embargo_bars": 24,
+      "has_disk_fold_manifest": true,
+      "prospective_holdout_untouched": true,
+      "validation_observed_status": "EXCLUDED_FROM_TRAINING",
+      "leakage_findings": [
+        "Training purge (12 bars) verified: train_end = test_start - 12",
+        "Test-label horizon protection (12 bars) verified: effective_test_end = test_end - 12",
+        "Embargo parameter distinction: self.embargo_bars=24 is recorded in metadata but is inactive in expanding-window split() logic. In expanding walk-forward, since fold k test precedes fold k+1 test, training on past data does not cause forward lookahead leakage, but the 24-bar embargo parameter is not actively creating a post-test gap.",
+        "Prospective holdout (2026-11-01 to 2027-04-30) verified completely untouched: all folds terminate prior to 2026-05-01."
+      ]
+    }
+  }
+}

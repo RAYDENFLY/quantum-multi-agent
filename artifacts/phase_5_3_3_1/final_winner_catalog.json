@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "catalog_version": "5.3.3.1_FINAL",
+    "total_instruments": 11,
+    "tie_handling_policy": "Occam's razor priority: B2 > B4 > B3"
+  },
+  "winners": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "balanced_accuracy_winner": "B3_RandomForest (0.4126)",
+      "macro_f1_winner": "B4_LightGBM (0.3893)",
+      "roc_auc_winner": "B4_LightGBM (0.6050)",
+      "LOWEST_BRIER_ALL_BASELINES": "B1_Prior (0.5549)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5795)",
+      "most_stable_ml_model": "B2_LogisticRegression (std 0.0222)"
+    },
+    "XMRUSDT": {
+      "symbol": "XMRUSDT",
+      "balanced_accuracy_winner": "B2_LogisticRegression (0.4177)",
+      "macro_f1_winner": "B2_LogisticRegression (0.3796)",
+      "roc_auc_winner": "B2_LogisticRegression (0.5863)",
+      "LOWEST_BRIER_ALL_BASELINES": "B1_Prior (0.6010)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.6362)",
+      "most_stable_ml_model": "B2_LogisticRegression (std 0.0187)"
+    },
+    "ADAUSDT": {
+      "symbol": "ADAUSDT",
+      "balanced_accuracy_winner": "B4_LightGBM (0.4490)",
+      "macro_f1_winner": "B4_LightGBM (0.3915)",
+      "roc_auc_winner": "B4_LightGBM (0.6209)",
+      "LOWEST_BRIER_ALL_BASELINES": "B1_Prior (0.6158)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.6454)",
+      "most_stable_ml_model": "B2_LogisticRegression (std 0.0300)"
+    },
+    "XRPUSDT": {
+      "symbol": "XRPUSDT",
+      "balanced_accuracy_winner": "B4_LightGBM (0.3748)",
+      "macro_f1_winner": "B4_LightGBM (0.3714)",
+      "roc_auc_winner": "B4_LightGBM (0.6035)",
+      "LOWEST_BRIER_ALL_BASELINES": "B4_LightGBM (0.5635)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5635)",
+      "most_stable_ml_model": "B3_RandomForest (std 0.0221)"
+    },
+    "BNBUSDT": {
+      "symbol": "BNBUSDT",
+      "balanced_accuracy_winner": "B4_LightGBM (0.3699)",
+      "macro_f1_winner": "B4_LightGBM (0.3623)",
+      "roc_auc_winner": "B4_LightGBM (0.5975)",
+      "LOWEST_BRIER_ALL_BASELINES": "B4_LightGBM (0.5716)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5716)",
+      "most_stable_ml_model": "B2_LogisticRegression (std 0.0176)"
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "balanced_accuracy_winner": "B3_RandomForest (0.4195)",
+      "macro_f1_winner": "B4_LightGBM (0.3975)",
+      "roc_auc_winner": "B4_LightGBM (0.6144)",
+      "LOWEST_BRIER_ALL_BASELINES": "B1_Prior (0.5598)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5750)",
+      "most_stable_ml_model": "B4_LightGBM (std 0.0120)"
+    },
+    "SOLUSDT": {
+      "symbol": "SOLUSDT",
+      "balanced_accuracy_winner": "B4_LightGBM (0.3878)",
+      "macro_f1_winner": "B4_LightGBM (0.3797)",
+      "roc_auc_winner": "B4_LightGBM (0.6108)",
+      "LOWEST_BRIER_ALL_BASELINES": "B1_Prior (0.5546)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5594)",
+      "most_stable_ml_model": "B2_LogisticRegression (std 0.0298)"
+    },
+    "AVAXUSDT": {
+      "symbol": "AVAXUSDT",
+      "balanced_accuracy_winner": "B4_LightGBM (0.4145)",
+      "macro_f1_winner": "B4_LightGBM (0.3966)",
+      "roc_auc_winner": "B4_LightGBM (0.6057)",
+      "LOWEST_BRIER_ALL_BASELINES": "B4_LightGBM (0.6246)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.6246)",
+      "most_stable_ml_model": "B4_LightGBM (std 0.0431)"
+    },
+    "LINKUSDT": {
+      "symbol": "LINKUSDT",
+      "balanced_accuracy_winner": "B4_LightGBM (0.4068)",
+      "macro_f1_winner": "B4_LightGBM (0.3905)",
+      "roc_auc_winner": "B4_LightGBM (0.6238)",
+      "LOWEST_BRIER_ALL_BASELINES": "B4_LightGBM (0.5957)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5957)",
+      "most_stable_ml_model": "B2_LogisticRegression (std 0.0429)"
+    },
+    "DOGEUSDT": {
+      "symbol": "DOGEUSDT",
+      "balanced_accuracy_winner": "B4_LightGBM (0.3960)",
+      "macro_f1_winner": "B4_LightGBM (0.3904)",
+      "roc_auc_winner": "B4_LightGBM (0.6099)",
+      "LOWEST_BRIER_ALL_BASELINES": "B4_LightGBM (0.5749)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5749)",
+      "most_stable_ml_model": "B3_RandomForest (std 0.0287)"
+    },
+    "LTCUSDT": {
+      "symbol": "LTCUSDT",
+      "balanced_accuracy_winner": "B3_RandomForest (0.4401)",
+      "macro_f1_winner": "B3_RandomForest (0.4264)",
+      "roc_auc_winner": "B4_LightGBM (0.6399)",
+      "LOWEST_BRIER_ALL_BASELINES": "B3_RandomForest (0.6083)",
+      "LOWEST_BRIER_ML_MODELS": "B3_RandomForest (0.6083)",
+      "most_stable_ml_model": "B2_LogisticRegression (std 0.0486)"
+    }
+  }
+}

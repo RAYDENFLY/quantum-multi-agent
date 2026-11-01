@@ -1,0 +1,26 @@
+{
+  "issue": "Configured 24-bar embargo parameter recorded in metadata but inactive in expanding-window split()",
+  "governance_decision": "OPTION_B_FORMAL_DEPRECATION",
+  "mathematical_and_architectural_rationale": "1. In expanding-window walk-forward validation, training data strictly precedes test data in chronological time. Fold 1 trains on [0, T1_train] and tests on [T1_test, T2_test]. Fold 2 trains on [0, T2_train] and tests on [T2_test, T3_test]. 2. In this sequential design, training observations are strictly in the historical past relative to the current test fold. A post-test embargo (Lopez de Prado, AFML Ch. 7) is mathematically required for K-fold cross-validation where training data occurs chronologically AFTER test data. In expanding walk-forward, post-test training never occurs for the current fold. 3. The 12-bar forward purge between training end and test start (train_end = test_start - 12) strictly prevents training labels from overlapping into the test window. 4. The 12-bar test horizon protection (effective_test_end = test_end - 12) strictly prevents test labels from peeking past the fold boundary. 5. Therefore, inserting an artificial 24-bar embargo hole in historical expanding-window training data is mathematically redundant and creates unnecessary data loss. 6. Formally deprecating the embargo parameter for expanding walk-forward validation maintains 100% integrity without modifying historical fold indices or recalculating existing benchmark metrics.",
+  "mechanism_distinction": {
+    "training_purge": {
+      "bars": 12,
+      "status": "ACTIVE_AND_ENFORCED",
+      "formula": "train_end = test_start - horizon_bars",
+      "purpose": "Prevents training labels from overlapping forward into the test window"
+    },
+    "test_label_horizon_protection": {
+      "bars": 12,
+      "status": "ACTIVE_AND_ENFORCED",
+      "formula": "effective_test_end = test_end - horizon_bars",
+      "purpose": "Prevents test labels from peeking into future data beyond the test window"
+    },
+    "post_test_embargo": {
+      "bars": 24,
+      "status": "FORMALLY_DEPRECATED_FOR_EXPANDING_WALK_FORWARD",
+      "historical_manifest_action": "Preserve historical records with explanatory governance documentation",
+      "code_action": "Update validation documentation and contracts to clarify that expanding walk-forward validation does not require post-test embargoing"
+    }
+  },
+  "governance_sign_off": "APPROVED"
+}

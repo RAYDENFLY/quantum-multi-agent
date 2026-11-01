@@ -1,0 +1,346 @@
+{
+  "terminology_policy": {
+    "LOWEST_BRIER_ALL_BASELINES": "Winner across all 5 models (B0, B1, B2, B3, B4). Prior (B1) wins on 5/11 assets due to unconditional smoothness.",
+    "LOWEST_BRIER_ML_MODELS": "Winner strictly across predictive ML models (B2, B3, B4). LightGBM wins on 10/11 assets, Random Forest wins on LTCUSDT."
+  },
+  "ltc_reconciliation": {
+    "B3_RandomForest_Brier": 0.6083,
+    "B4_LightGBM_Brier": 0.6088,
+    "winner": "B3_RandomForest (0.6083 vs B4 0.6088)",
+    "verified": true
+  },
+  "symbols": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.0582,
+        "B1_Prior": 0.5549,
+        "B2_LogisticRegression": 0.59,
+        "B3_RandomForest": 0.5975,
+        "B4_LightGBM": 0.5795
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B1_Prior",
+        "brier_score": 0.5549,
+        "is_naive_baseline": true
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.5795
+      },
+      "reconciliation_notes": "For BTCUSDT, B1_Prior achieves lower quadratic error (0.5549) than LightGBM (0.5795) because unconditional class priors produce smooth low-variance probability estimates. "
+    },
+    "XMRUSDT": {
+      "symbol": "XMRUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.0908,
+        "B1_Prior": 0.601,
+        "B2_LogisticRegression": 0.6399,
+        "B3_RandomForest": 0.6382,
+        "B4_LightGBM": 0.6362
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B1_Prior",
+        "brier_score": 0.601,
+        "is_naive_baseline": true
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.6362
+      },
+      "reconciliation_notes": "For XMRUSDT, B1_Prior achieves lower quadratic error (0.6010) than LightGBM (0.6362) because unconditional class priors produce smooth low-variance probability estimates. "
+    },
+    "ADAUSDT": {
+      "symbol": "ADAUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.1642,
+        "B1_Prior": 0.6158,
+        "B2_LogisticRegression": 0.6669,
+        "B3_RandomForest": 0.6461,
+        "B4_LightGBM": 0.6454
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B1_Prior",
+        "brier_score": 0.6158,
+        "is_naive_baseline": true
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.6454
+      },
+      "reconciliation_notes": "For ADAUSDT, B1_Prior achieves lower quadratic error (0.6158) than LightGBM (0.6454) because unconditional class priors produce smooth low-variance probability estimates. "
+    },
+    "XRPUSDT": {
+      "symbol": "XRPUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.0807,
+        "B1_Prior": 0.5855,
+        "B2_LogisticRegression": 0.5802,
+        "B3_RandomForest": 0.5723,
+        "B4_LightGBM": 0.5635
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.5635,
+        "is_naive_baseline": false
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.5635
+      },
+      "reconciliation_notes": "For XRPUSDT, B4_LightGBM achieves the lowest Brier score (0.5635) across all models."
+    },
+    "BNBUSDT": {
+      "symbol": "BNBUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.0955,
+        "B1_Prior": 0.591,
+        "B2_LogisticRegression": 0.5836,
+        "B3_RandomForest": 0.5785,
+        "B4_LightGBM": 0.5716
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.5716,
+        "is_naive_baseline": false
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.5716
+      },
+      "reconciliation_notes": "For BNBUSDT, B4_LightGBM achieves the lowest Brier score (0.5716) across all models."
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.0694,
+        "B1_Prior": 0.5598,
+        "B2_LogisticRegression": 0.5838,
+        "B3_RandomForest": 0.5883,
+        "B4_LightGBM": 0.575
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B1_Prior",
+        "brier_score": 0.5598,
+        "is_naive_baseline": true
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.575
+      },
+      "reconciliation_notes": "For ETHUSDT, B1_Prior achieves lower quadratic error (0.5598) than LightGBM (0.5750) because unconditional class priors produce smooth low-variance probability estimates. "
+    },
+    "SOLUSDT": {
+      "symbol": "SOLUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.0529,
+        "B1_Prior": 0.5546,
+        "B2_LogisticRegression": 0.5741,
+        "B3_RandomForest": 0.5687,
+        "B4_LightGBM": 0.5594
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B1_Prior",
+        "brier_score": 0.5546,
+        "is_naive_baseline": true
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.5594
+      },
+      "reconciliation_notes": "For SOLUSDT, B1_Prior achieves lower quadratic error (0.5546) than LightGBM (0.5594) because unconditional class priors produce smooth low-variance probability estimates. "
+    },
+    "AVAXUSDT": {
+      "symbol": "AVAXUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.2125,
+        "B1_Prior": 0.6516,
+        "B2_LogisticRegression": 0.6413,
+        "B3_RandomForest": 0.6291,
+        "B4_LightGBM": 0.6246
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.6246,
+        "is_naive_baseline": false
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.6246
+      },
+      "reconciliation_notes": "For AVAXUSDT, B4_LightGBM achieves the lowest Brier score (0.6246) across all models."
+    },
+    "LINKUSDT": {
+      "symbol": "LINKUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.268,
+        "B1_Prior": 0.6746,
+        "B2_LogisticRegression": 0.6239,
+        "B3_RandomForest": 0.6005,
+        "B4_LightGBM": 0.5957
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.5957,
+        "is_naive_baseline": false
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.5957
+      },
+      "reconciliation_notes": "For LINKUSDT, B4_LightGBM achieves the lowest Brier score (0.5957) across all models."
+    },
+    "DOGEUSDT": {
+      "symbol": "DOGEUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.1257,
+        "B1_Prior": 0.6057,
+        "B2_LogisticRegression": 0.5887,
+        "B3_RandomForest": 0.5775,
+        "B4_LightGBM": 0.5749
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.5749,
+        "is_naive_baseline": false
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B4_LightGBM",
+        "brier_score": 0.5749
+      },
+      "reconciliation_notes": "For DOGEUSDT, B4_LightGBM achieves the lowest Brier score (0.5749) across all models."
+    },
+    "LTCUSDT": {
+      "symbol": "LTCUSDT",
+      "brier_scores": {
+        "B0_Majority": 1.2471,
+        "B1_Prior": 0.6622,
+        "B2_LogisticRegression": 0.6292,
+        "B3_RandomForest": 0.6083,
+        "B4_LightGBM": 0.6088
+      },
+      "LOWEST_BRIER_ALL_BASELINES": {
+        "model": "B3_RandomForest",
+        "brier_score": 0.6083,
+        "is_naive_baseline": false
+      },
+      "LOWEST_BRIER_ML_MODELS": {
+        "model": "B3_RandomForest",
+        "brier_score": 0.6083
+      },
+      "reconciliation_notes": "For LTCUSDT, B3_RandomForest achieves the lowest Brier score (0.6083) across all models."
+    }
+  },
+  "summary_table": [
+    {
+      "symbol": "BTCUSDT",
+      "B0": 1.0582,
+      "B1": 0.5549,
+      "B2": 0.59,
+      "B3": 0.5975,
+      "B4": 0.5795,
+      "LOWEST_BRIER_ALL_BASELINES": "B1_Prior (0.5549)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5795)"
+    },
+    {
+      "symbol": "XMRUSDT",
+      "B0": 1.0908,
+      "B1": 0.601,
+      "B2": 0.6399,
+      "B3": 0.6382,
+      "B4": 0.6362,
+      "LOWEST_BRIER_ALL_BASELINES": "B1_Prior (0.6010)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.6362)"
+    },
+    {
+      "symbol": "ADAUSDT",
+      "B0": 1.1642,
+      "B1": 0.6158,
+      "B2": 0.6669,
+      "B3": 0.6461,
+      "B4": 0.6454,
+      "LOWEST_BRIER_ALL_BASELINES": "B1_Prior (0.6158)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.6454)"
+    },
+    {
+      "symbol": "XRPUSDT",
+      "B0": 1.0807,
+      "B1": 0.5855,
+      "B2": 0.5802,
+      "B3": 0.5723,
+      "B4": 0.5635,
+      "LOWEST_BRIER_ALL_BASELINES": "B4_LightGBM (0.5635)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5635)"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "B0": 1.0955,
+      "B1": 0.591,
+      "B2": 0.5836,
+      "B3": 0.5785,
+      "B4": 0.5716,
+      "LOWEST_BRIER_ALL_BASELINES": "B4_LightGBM (0.5716)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5716)"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "B0": 1.0694,
+      "B1": 0.5598,
+      "B2": 0.5838,
+      "B3": 0.5883,
+      "B4": 0.575,
+      "LOWEST_BRIER_ALL_BASELINES": "B1_Prior (0.5598)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5750)"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "B0": 1.0529,
+      "B1": 0.5546,
+      "B2": 0.5741,
+      "B3": 0.5687,
+      "B4": 0.5594,
+      "LOWEST_BRIER_ALL_BASELINES": "B1_Prior (0.5546)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5594)"
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "B0": 1.2125,
+      "B1": 0.6516,
+      "B2": 0.6413,
+      "B3": 0.6291,
+      "B4": 0.6246,
+      "LOWEST_BRIER_ALL_BASELINES": "B4_LightGBM (0.6246)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.6246)"
+    },
+    {
+      "symbol": "LINKUSDT",
+      "B0": 1.268,
+      "B1": 0.6746,
+      "B2": 0.6239,
+      "B3": 0.6005,
+      "B4": 0.5957,
+      "LOWEST_BRIER_ALL_BASELINES": "B4_LightGBM (0.5957)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5957)"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "B0": 1.1257,
+      "B1": 0.6057,
+      "B2": 0.5887,
+      "B3": 0.5775,
+      "B4": 0.5749,
+      "LOWEST_BRIER_ALL_BASELINES": "B4_LightGBM (0.5749)",
+      "LOWEST_BRIER_ML_MODELS": "B4_LightGBM (0.5749)"
+    },
+    {
+      "symbol": "LTCUSDT",
+      "B0": 1.2471,
+      "B1": 0.6622,
+      "B2": 0.6292,
+      "B3": 0.6083,
+      "B4": 0.6088,
+      "LOWEST_BRIER_ALL_BASELINES": "B3_RandomForest (0.6083)",
+      "LOWEST_BRIER_ML_MODELS": "B3_RandomForest (0.6083)"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "symbol": "ETHUSDT",
+  "seed": 542,
+  "models": {
+    "B0_Majority": {
+      "type": "MajorityClassBaseline"
+    },
+    "B1_Prior": {
+      "type": "PriorProbabilityBaseline"
+    },
+    "B2_LogisticRegression": {
+      "model_type": "LogisticRegression",
+      "hyperparameters": {
+        "C": 1.0,
+        "penalty": "l2",
+        "solver": "lbfgs",
+        "max_iter": 500,
+        "class_weight": "balanced",
+        "random_state": 542
+      },
+      "memory_budget_mb": 150.0,
+      "cpu_threads": 2
+    },
+    "B3_RandomForest": {
+      "model_type": "RandomForestClassifier",
+      "hyperparameters": {
+        "n_estimators": 100,
+        "max_depth": 8,
+        "min_samples_leaf": 50,
+        "class_weight": "balanced",
+        "max_features": "sqrt",
+        "n_jobs": 2,
+        "random_state": 542
+      },
+      "memory_budget_mb": 400.0,
+      "cpu_threads": 2
+    },
+    "B4_LightGBM": {
+      "model_type": "LGBMClassifier",
+      "hyperparameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.05,
+        "num_leaves": 31,
+        "class_weight": "balanced",
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "n_jobs": 2,
+        "random_state": 542,
+        "verbosity": -1
+      },
+      "memory_budget_mb": 250.0,
+      "cpu_threads": 2
+    }
+  }
+}

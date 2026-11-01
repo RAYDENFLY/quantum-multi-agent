@@ -1,0 +1,8 @@
+{
+  "symbol": "ETHUSDT",
+  "mem_before_mb": 519.0,
+  "peak_rss_mb": 738.0,
+  "mem_after_gc_mb": 554.6,
+  "total_duration_s": 321.0,
+  "within_1gb_budget": true
+}

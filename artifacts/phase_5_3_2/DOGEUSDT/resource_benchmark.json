@@ -1,0 +1,8 @@
+{
+  "symbol": "DOGEUSDT",
+  "mem_before_mb": 559.5,
+  "peak_rss_mb": 812.8,
+  "mem_after_gc_mb": 623.9,
+  "total_duration_s": 312.02,
+  "within_1gb_budget": true
+}
