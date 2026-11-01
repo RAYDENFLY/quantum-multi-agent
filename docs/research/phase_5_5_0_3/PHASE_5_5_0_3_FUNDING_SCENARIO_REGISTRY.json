@@ -1,0 +1,61 @@
+{
+  "title": "Phase 5.5.0.3 Authoritative Funding Scenario Registry",
+  "timestamp_utc": "2026-11-01 20:48:53 UTC",
+  "primary_unit": "funding_rate_bps_per_settlement (basis points per 8-hour window)",
+  "annualized_formula": "nominal_annualized_bps = bps_per_settlement * 3 * 365 = bps_per_settlement * 1095",
+  "settlement_frequency_hours": 8,
+  "settlements_per_year": 1095,
+  "empirical_data_status": "FUNDING_DATA_UNAVAILABLE",
+  "human_decision_id": "DEC_03",
+  "total_scenarios": 4,
+  "scenarios": [
+    {
+      "scenario_id": "SCENARIO_F_NEUTRAL",
+      "scenario_name": "Zero Funding Baseline",
+      "funding_rate_bps_per_settlement": 0.0,
+      "decimal_rate_per_settlement": 0.0,
+      "funding_rate_pct_per_8h": 0.0,
+      "nominal_annualized_bps": 0.0,
+      "nominal_annualized_pct": 0.0,
+      "directional_cash_flow_interpretation": "Frictionless benchmark; zero cash flow for both Long and Short.",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "human_approval_status": "PENDING_HUMAN_DECISION"
+    },
+    {
+      "scenario_id": "SCENARIO_F_BULL_MODERATE",
+      "scenario_name": "Moderate Bull Premium",
+      "funding_rate_bps_per_settlement": 1.0,
+      "decimal_rate_per_settlement": 0.0001,
+      "funding_rate_pct_per_8h": 0.01,
+      "nominal_annualized_bps": 1095.0,
+      "nominal_annualized_pct": 10.95,
+      "directional_cash_flow_interpretation": "Longs pay 1.0 bps notional per settlement event crossed; Shorts receive 1.0 bps notional.",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "human_approval_status": "PENDING_HUMAN_DECISION"
+    },
+    {
+      "scenario_id": "SCENARIO_F_BULL_SEVERE",
+      "scenario_name": "Severe Bull Euphoria",
+      "funding_rate_bps_per_settlement": 3.0,
+      "decimal_rate_per_settlement": 0.0003,
+      "funding_rate_pct_per_8h": 0.03,
+      "nominal_annualized_bps": 3285.0,
+      "nominal_annualized_pct": 32.85,
+      "directional_cash_flow_interpretation": "Longs pay 3.0 bps notional per settlement event crossed; Shorts receive 3.0 bps notional.",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "human_approval_status": "PENDING_HUMAN_DECISION"
+    },
+    {
+      "scenario_id": "SCENARIO_F_BEAR_MODERATE",
+      "scenario_name": "Moderate Bear Discount",
+      "funding_rate_bps_per_settlement": -1.0,
+      "decimal_rate_per_settlement": -0.0001,
+      "funding_rate_pct_per_8h": -0.01,
+      "nominal_annualized_bps": -1095.0,
+      "nominal_annualized_pct": -10.95,
+      "directional_cash_flow_interpretation": "Shorts pay 1.0 bps notional per settlement event crossed; Longs receive 1.0 bps notional.",
+      "evidence_status": "UNVERIFIED_ASSUMPTION",
+      "human_approval_status": "PENDING_HUMAN_DECISION"
+    }
+  ]
+}

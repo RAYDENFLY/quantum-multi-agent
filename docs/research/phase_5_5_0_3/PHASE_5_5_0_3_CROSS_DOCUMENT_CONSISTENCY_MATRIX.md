@@ -1,0 +1,27 @@
+# QUANTUM PHASE 5.5.0.3: CROSS-DOCUMENT CONSISTENCY MATRIX
+
+**Document Status:** `APPROVED_FOR_DESIGN`  
+**Publication Timestamp:** `2026-11-01 20:48:53 UTC`  
+**Associated Deliverable:** Workstream E (Cross-Document Mathematical Consistency)  
+
+---
+
+## 1. AUTHORITATIVE PARAMETER SPECIFICATION MATRIX
+
+| Parameter Name | Authoritative Definition | Unit | Evidence Status | Referencing Documents |
+|---|---|---|---|---|
+| **Label Volatility** | Rolling 20-candle sample standard deviation of 5m simple percentage returns (`ddof=1`) | Dimensionless decimal fraction | `VERIFIED_FROM_SOURCE` | [`src/quantum/features/labeling.py`](file:///d:/quantum-multi-agent/src/quantum/features/labeling.py), [`PHASE_5_5_0_3_SIGMA_ATR_SOURCE_VERIFICATION.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_3/PHASE_5_5_0_3_SIGMA_ATR_SOURCE_VERIFICATION.md) |
+| **Label Barrier Multiplier** | Multiplicative factor $m = 1.5$ applied to $\sigma_t$: $u_t = P_{\text{ref}}(1 + 1.5\sigma_t)$, $l_t = P_{\text{ref}}(1 - 1.5\sigma_t)$ | Dimensionless multiplier | `VERIFIED_FROM_SOURCE` | [`src/quantum/features/labeling.py`](file:///d:/quantum-multi-agent/src/quantum/features/labeling.py), Phase 5.3 Freeze Manifest |
+| **Label Horizon** | Fixed forward prediction window of 12 candles ($60$ minutes) | Integer bars / ms | `VERIFIED_FROM_SOURCE` | [`src/quantum/features/labeling.py`](file:///d:/quantum-multi-agent/src/quantum/features/labeling.py) |
+| **Economic Entry Price** | Execution fill at opening of candle $i+1$ adjusted by slippage: $P_{\text{entry}} = \text{open}[i+1] \times (1 \pm C_{\text{exec}})$ | Quote currency (USDT) | `MATHEMATICALLY_DERIVED` | [`PHASE_5_5_0_3_SLIPPAGE_COMPONENT_AUDIT.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_3/PHASE_5_5_0_3_SLIPPAGE_COMPONENT_AUDIT.md) |
+| **Economic Exit Rules** | Alternative B (re-anchored barriers to $P_{\text{entry}}$) or Alternative C (independent exit policy) | Algorithmic logic | `PENDING_HUMAN_DECISION` | [`PHASE_5_5_0_2_LABEL_EXECUTION_ARCHITECTURE.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_2/PHASE_5_5_0_2_LABEL_EXECUTION_ARCHITECTURE.md) (DEC_01) |
+| **Funding Settlement Rate** | Standardized to `funding_rate_bps_per_settlement` across 4 sensitivity scenarios (0.0, 1.0, 3.0, -1.0 bps/8h) | Basis points per 8-hour window | `UNVERIFIED_ASSUMPTION` | [`PHASE_5_5_0_3_FUNDING_SCENARIO_REGISTRY.json`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_3/PHASE_5_5_0_3_FUNDING_SCENARIO_REGISTRY.json) (DEC_03) |
+| **Funding Annualization** | Nominal annualized formula: $F_{\text{annual}} = F_{\text{settlement}} \times 1095$ | Basis points annual | `MATHEMATICALLY_DERIVED` | [`PHASE_5_5_0_3_FUNDING_MATHEMATICAL_AUDIT.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_3/PHASE_5_5_0_3_FUNDING_MATHEMATICAL_AUDIT.md) |
+| **Funding Exposure Rate** | 87.5% theoretical non-crossing incidence under uniform entry and fixed 60m duration | Percentage (%) | `THEORETICAL_UNDER_UNIFORM_ENTRY_AND_FIXED_HOLDING_ASSUMPTIONS` | [`PHASE_5_5_0_3_FUNDING_EXPOSURE_ASSUMPTIONS.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_3/PHASE_5_5_0_3_FUNDING_EXPOSURE_ASSUMPTIONS.md) |
+| **Slippage Components** | $C_{\text{exec}} = C_{\text{spread}} + C_{\text{volatility}} + C_{\text{impact}}$ where all terms are dimensionless return fractions | Dimensionless return fraction / bps | `MATHEMATICALLY_DERIVED` / `UNVERIFIED_ASSUMPTION` | [`PHASE_5_5_0_3_SLIPPAGE_COMPONENT_AUDIT.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_3/PHASE_5_5_0_3_SLIPPAGE_COMPONENT_AUDIT.md) |
+| **Fee Schedule** | Taker commission fees: 5.0 bps base case, 6.0 bps conservative tier per leg | Basis points per leg ($10^{-4}$) | `UNVERIFIED_ASSUMPTION` | [`PHASE_5_5_0_3_SLIPPAGE_COMPONENT_AUDIT.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_3/PHASE_5_5_0_3_SLIPPAGE_COMPONENT_AUDIT.md) |
+| **Cost Sensitivity Tiers** | Base Tier: 15 bps; Conservative Gate: 20 bps; Severe Stress Tier: 30 bps round-trip | Basis points round-trip | `PENDING_HUMAN_DECISION` | [`PHASE_5_5_0_2_FINAL_APPROVAL_CHECKLIST.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_2/PHASE_5_5_0_2_FINAL_APPROVAL_CHECKLIST.md) (DEC_04) |
+| **Position Sizing & Risk** | Fixed fractional risk budgeting allocating 1.0% equity risk per trade | Percentage of equity (%) | `APPROVED_FOR_DESIGN` | [`PHASE_5_5_0_1_POSITION_SIZING_RISK_CORRECTION.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_1/PHASE_5_5_0_1_POSITION_SIZING_RISK_CORRECTION.md) |
+| **Leverage & Concurrency** | Maximum 3 concurrent positions, maximum 3.0x gross portfolio leverage | Positions / Multiple | `PENDING_HUMAN_DECISION` | [`PHASE_5_5_0_2_FINAL_APPROVAL_CHECKLIST.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_2/PHASE_5_5_0_2_FINAL_APPROVAL_CHECKLIST.md) (DEC_05) |
+| **Bootstrap Block Length** | Synchronized Multi-Asset Moving Block Bootstrap with block length $b = 24$ bars (2 hours) | Integer bars | `APPROVED_FOR_DESIGN` | [`PHASE_5_5_0_1_PORTFOLIO_STATISTICAL_INFERENCE.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_1/PHASE_5_5_0_1_PORTFOLIO_STATISTICAL_INFERENCE.md) |
+| **XMR Asset Eligibility** | Preserved in model catalog; excluded from primary 10-asset portfolio evaluation | Categorical policy | `PENDING_HUMAN_DECISION` | [`PHASE_5_5_0_2_XMR_ELIGIBILITY_POLICY.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_2/PHASE_5_5_0_2_XMR_ELIGIBILITY_POLICY.md) (DEC_06) |
