@@ -1,0 +1,1428 @@
+{
+  "title": "Phase 5.4.2 Probability Calibration Evaluation",
+  "timestamp_utc": "2026-11-01 18:55:19 UTC",
+  "n_bins": 15,
+  "bin_strategies": [
+    "uniform",
+    "quantile"
+  ],
+  "segments": {
+    "segment_1": "Folds 1-2 (Calibration Fit)",
+    "segment_2": "Folds 3-4 (Policy Selection)",
+    "segment_3": "Fold 5 (Final Temporal Evaluation)"
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "fitted_parameters": {
+        "temperature": 0.821121,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "FITTED",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.201,
+          "vector_platt_scaling": 0.333,
+          "isotonic_regression": 0.0406
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 52272,
+            "brier_score": 0.609352,
+            "log_loss": 0.98184,
+            "top_label_ece_uniform": 0.036011,
+            "top_label_ece_quantile": 0.037881,
+            "classwise_ece_uniform": 0.100545,
+            "classwise_ece_quantile": 0.100055
+          },
+          "seg2": {
+            "sample_count": 52272,
+            "brier_score": 0.559197,
+            "log_loss": 0.889475,
+            "top_label_ece_uniform": 0.031111,
+            "top_label_ece_quantile": 0.032003,
+            "classwise_ece_uniform": 0.072019,
+            "classwise_ece_quantile": 0.072373
+          },
+          "seg3": {
+            "sample_count": 26140,
+            "brier_score": 0.560452,
+            "log_loss": 0.8901,
+            "top_label_ece_uniform": 0.035569,
+            "top_label_ece_quantile": 0.034453,
+            "classwise_ece_uniform": 0.083231,
+            "classwise_ece_quantile": 0.083138
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 52272,
+            "brier_score": 0.612297,
+            "log_loss": 0.978962,
+            "top_label_ece_uniform": 0.053382,
+            "top_label_ece_quantile": 0.05525,
+            "classwise_ece_uniform": 0.095748,
+            "classwise_ece_quantile": 0.096317
+          },
+          "seg2": {
+            "sample_count": 52272,
+            "brier_score": 0.554815,
+            "log_loss": 0.87241,
+            "top_label_ece_uniform": 0.01973,
+            "top_label_ece_quantile": 0.022335,
+            "classwise_ece_uniform": 0.060284,
+            "classwise_ece_quantile": 0.060207
+          },
+          "seg3": {
+            "sample_count": 26140,
+            "brier_score": 0.556314,
+            "log_loss": 0.873086,
+            "top_label_ece_uniform": 0.023494,
+            "top_label_ece_quantile": 0.025553,
+            "classwise_ece_uniform": 0.070771,
+            "classwise_ece_quantile": 0.070721
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 52272,
+            "brier_score": 0.564284,
+            "log_loss": 0.889984,
+            "top_label_ece_uniform": 0.006466,
+            "top_label_ece_quantile": 0.009519,
+            "classwise_ece_uniform": 0.003855,
+            "classwise_ece_quantile": 0.009211
+          },
+          "seg2": {
+            "sample_count": 52272,
+            "brier_score": 0.538261,
+            "log_loss": 0.82573,
+            "top_label_ece_uniform": 0.004671,
+            "top_label_ece_quantile": 0.008045,
+            "classwise_ece_uniform": 0.006884,
+            "classwise_ece_quantile": 0.009629
+          },
+          "seg3": {
+            "sample_count": 26140,
+            "brier_score": 0.532339,
+            "log_loss": 0.807742,
+            "top_label_ece_uniform": 0.005982,
+            "top_label_ece_quantile": 0.012143,
+            "classwise_ece_uniform": 0.013699,
+            "classwise_ece_quantile": 0.017055
+          }
+        },
+        "IsotonicRegression": {
+          "seg1": {
+            "sample_count": 52272,
+            "brier_score": 0.563441,
+            "log_loss": 0.888197,
+            "top_label_ece_uniform": 0.003581,
+            "top_label_ece_quantile": 0.006183,
+            "classwise_ece_uniform": 0.001531,
+            "classwise_ece_quantile": 0.004601
+          },
+          "seg2": {
+            "sample_count": 52272,
+            "brier_score": 0.538321,
+            "log_loss": 0.832088,
+            "top_label_ece_uniform": 0.002345,
+            "top_label_ece_quantile": 0.005959,
+            "classwise_ece_uniform": 0.006858,
+            "classwise_ece_quantile": 0.008721
+          },
+          "seg3": {
+            "sample_count": 26140,
+            "brier_score": 0.532578,
+            "log_loss": 0.808758,
+            "top_label_ece_uniform": 0.007762,
+            "top_label_ece_quantile": 0.010451,
+            "classwise_ece_uniform": 0.010683,
+            "classwise_ece_quantile": 0.016099
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    },
+    "ETHUSDT": {
+      "fitted_parameters": {
+        "temperature": 0.907784,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "FITTED",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.1848,
+          "vector_platt_scaling": 0.2434,
+          "isotonic_regression": 0.0355
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 52290,
+            "brier_score": 0.612562,
+            "log_loss": 0.983949,
+            "top_label_ece_uniform": 0.040541,
+            "top_label_ece_quantile": 0.04414,
+            "classwise_ece_uniform": 0.102381,
+            "classwise_ece_quantile": 0.102187
+          },
+          "seg2": {
+            "sample_count": 52290,
+            "brier_score": 0.548551,
+            "log_loss": 0.859868,
+            "top_label_ece_uniform": 0.018365,
+            "top_label_ece_quantile": 0.018523,
+            "classwise_ece_uniform": 0.056697,
+            "classwise_ece_quantile": 0.056303
+          },
+          "seg3": {
+            "sample_count": 26148,
+            "brier_score": 0.552956,
+            "log_loss": 0.865217,
+            "top_label_ece_uniform": 0.021216,
+            "top_label_ece_quantile": 0.024087,
+            "classwise_ece_uniform": 0.05911,
+            "classwise_ece_quantile": 0.059371
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 52290,
+            "brier_score": 0.614439,
+            "log_loss": 0.98323,
+            "top_label_ece_uniform": 0.047442,
+            "top_label_ece_quantile": 0.050583,
+            "classwise_ece_uniform": 0.100562,
+            "classwise_ece_quantile": 0.100902
+          },
+          "seg2": {
+            "sample_count": 52290,
+            "brier_score": 0.546892,
+            "log_loss": 0.851936,
+            "top_label_ece_uniform": 0.012407,
+            "top_label_ece_quantile": 0.015914,
+            "classwise_ece_uniform": 0.050227,
+            "classwise_ece_quantile": 0.049923
+          },
+          "seg3": {
+            "sample_count": 26148,
+            "brier_score": 0.551792,
+            "log_loss": 0.858015,
+            "top_label_ece_uniform": 0.015644,
+            "top_label_ece_quantile": 0.021013,
+            "classwise_ece_uniform": 0.052806,
+            "classwise_ece_quantile": 0.053484
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 52290,
+            "brier_score": 0.56709,
+            "log_loss": 0.891561,
+            "top_label_ece_uniform": 0.003248,
+            "top_label_ece_quantile": 0.007708,
+            "classwise_ece_uniform": 0.005504,
+            "classwise_ece_quantile": 0.009033
+          },
+          "seg2": {
+            "sample_count": 52290,
+            "brier_score": 0.534389,
+            "log_loss": 0.813191,
+            "top_label_ece_uniform": 0.011153,
+            "top_label_ece_quantile": 0.011646,
+            "classwise_ece_uniform": 0.009165,
+            "classwise_ece_quantile": 0.010606
+          },
+          "seg3": {
+            "sample_count": 26148,
+            "brier_score": 0.536281,
+            "log_loss": 0.814186,
+            "top_label_ece_uniform": 0.014285,
+            "top_label_ece_quantile": 0.014886,
+            "classwise_ece_uniform": 0.011956,
+            "classwise_ece_quantile": 0.013032
+          }
+        },
+        "IsotonicRegression": {
+          "seg1": {
+            "sample_count": 52290,
+            "brier_score": 0.565915,
+            "log_loss": 0.889158,
+            "top_label_ece_uniform": 0.003197,
+            "top_label_ece_quantile": 0.00914,
+            "classwise_ece_uniform": 0.001482,
+            "classwise_ece_quantile": 0.004952
+          },
+          "seg2": {
+            "sample_count": 52290,
+            "brier_score": 0.534379,
+            "log_loss": 0.827789,
+            "top_label_ece_uniform": 0.006938,
+            "top_label_ece_quantile": 0.00975,
+            "classwise_ece_uniform": 0.00908,
+            "classwise_ece_quantile": 0.0095
+          },
+          "seg3": {
+            "sample_count": 26148,
+            "brier_score": 0.536454,
+            "log_loss": 0.825209,
+            "top_label_ece_uniform": 0.011916,
+            "top_label_ece_quantile": 0.014615,
+            "classwise_ece_uniform": 0.01115,
+            "classwise_ece_quantile": 0.012184
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    },
+    "BNBUSDT": {
+      "fitted_parameters": {
+        "temperature": 0.958254,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "FITTED",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.1939,
+          "vector_platt_scaling": 0.3454,
+          "isotonic_regression": 0.037
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 52338,
+            "brier_score": 0.619594,
+            "log_loss": 1.008917,
+            "top_label_ece_uniform": 0.026704,
+            "top_label_ece_quantile": 0.027826,
+            "classwise_ece_uniform": 0.062582,
+            "classwise_ece_quantile": 0.062319
+          },
+          "seg2": {
+            "sample_count": 52338,
+            "brier_score": 0.541655,
+            "log_loss": 0.847627,
+            "top_label_ece_uniform": 0.015915,
+            "top_label_ece_quantile": 0.018354,
+            "classwise_ece_uniform": 0.044041,
+            "classwise_ece_quantile": 0.044623
+          },
+          "seg3": {
+            "sample_count": 26171,
+            "brier_score": 0.535734,
+            "log_loss": 0.830349,
+            "top_label_ece_uniform": 0.016344,
+            "top_label_ece_quantile": 0.016286,
+            "classwise_ece_uniform": 0.035271,
+            "classwise_ece_quantile": 0.035296
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 52338,
+            "brier_score": 0.620025,
+            "log_loss": 1.008796,
+            "top_label_ece_uniform": 0.031217,
+            "top_label_ece_quantile": 0.031802,
+            "classwise_ece_uniform": 0.062104,
+            "classwise_ece_quantile": 0.061947
+          },
+          "seg2": {
+            "sample_count": 52338,
+            "brier_score": 0.540801,
+            "log_loss": 0.843806,
+            "top_label_ece_uniform": 0.013168,
+            "top_label_ece_quantile": 0.015706,
+            "classwise_ece_uniform": 0.040836,
+            "classwise_ece_quantile": 0.041588
+          },
+          "seg3": {
+            "sample_count": 26171,
+            "brier_score": 0.535027,
+            "log_loss": 0.826754,
+            "top_label_ece_uniform": 0.012946,
+            "top_label_ece_quantile": 0.013009,
+            "classwise_ece_uniform": 0.032023,
+            "classwise_ece_quantile": 0.032405
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 52338,
+            "brier_score": 0.603966,
+            "log_loss": 0.978884,
+            "top_label_ece_uniform": 0.003363,
+            "top_label_ece_quantile": 0.008519,
+            "classwise_ece_uniform": 0.006584,
+            "classwise_ece_quantile": 0.009764
+          },
+          "seg2": {
+            "sample_count": 52338,
+            "brier_score": 0.53455,
+            "log_loss": 0.818512,
+            "top_label_ece_uniform": 0.00445,
+            "top_label_ece_quantile": 0.007234,
+            "classwise_ece_uniform": 0.011524,
+            "classwise_ece_quantile": 0.013373
+          },
+          "seg3": {
+            "sample_count": 26171,
+            "brier_score": 0.531778,
+            "log_loss": 0.808164,
+            "top_label_ece_uniform": 0.004964,
+            "top_label_ece_quantile": 0.012574,
+            "classwise_ece_uniform": 0.01101,
+            "classwise_ece_quantile": 0.014345
+          }
+        },
+        "IsotonicRegression": {
+          "seg1": {
+            "sample_count": 52338,
+            "brier_score": 0.602765,
+            "log_loss": 0.976331,
+            "top_label_ece_uniform": 0.004269,
+            "top_label_ece_quantile": 0.006065,
+            "classwise_ece_uniform": 0.002732,
+            "classwise_ece_quantile": 0.004734
+          },
+          "seg2": {
+            "sample_count": 52338,
+            "brier_score": 0.534577,
+            "log_loss": 0.846129,
+            "top_label_ece_uniform": 0.002205,
+            "top_label_ece_quantile": 0.009234,
+            "classwise_ece_uniform": 0.008844,
+            "classwise_ece_quantile": 0.011871
+          },
+          "seg3": {
+            "sample_count": 26171,
+            "brier_score": 0.531563,
+            "log_loss": 0.868198,
+            "top_label_ece_uniform": 0.004382,
+            "top_label_ece_quantile": 0.013719,
+            "classwise_ece_uniform": 0.006949,
+            "classwise_ece_quantile": 0.011292
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    },
+    "XRPUSDT": {
+      "fitted_parameters": {
+        "temperature": 0.809342,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "FITTED",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.1965,
+          "vector_platt_scaling": 0.4005,
+          "isotonic_regression": 0.0359
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 52240,
+            "brier_score": 0.602206,
+            "log_loss": 0.9736,
+            "top_label_ece_uniform": 0.016476,
+            "top_label_ece_quantile": 0.019781,
+            "classwise_ece_uniform": 0.063504,
+            "classwise_ece_quantile": 0.063554
+          },
+          "seg2": {
+            "sample_count": 52240,
+            "brier_score": 0.542479,
+            "log_loss": 0.840968,
+            "top_label_ece_uniform": 0.005029,
+            "top_label_ece_quantile": 0.010196,
+            "classwise_ece_uniform": 0.034145,
+            "classwise_ece_quantile": 0.03584
+          },
+          "seg3": {
+            "sample_count": 26120,
+            "brier_score": 0.528215,
+            "log_loss": 0.808362,
+            "top_label_ece_uniform": 0.015869,
+            "top_label_ece_quantile": 0.01692,
+            "classwise_ece_uniform": 0.032458,
+            "classwise_ece_quantile": 0.034455
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 52240,
+            "brier_score": 0.604008,
+            "log_loss": 0.970207,
+            "top_label_ece_uniform": 0.03892,
+            "top_label_ece_quantile": 0.039233,
+            "classwise_ece_uniform": 0.061231,
+            "classwise_ece_quantile": 0.062209
+          },
+          "seg2": {
+            "sample_count": 52240,
+            "brier_score": 0.541356,
+            "log_loss": 0.830376,
+            "top_label_ece_uniform": 0.014253,
+            "top_label_ece_quantile": 0.016257,
+            "classwise_ece_uniform": 0.02626,
+            "classwise_ece_quantile": 0.028729
+          },
+          "seg3": {
+            "sample_count": 26120,
+            "brier_score": 0.526053,
+            "log_loss": 0.794232,
+            "top_label_ece_uniform": 0.004494,
+            "top_label_ece_quantile": 0.009791,
+            "classwise_ece_uniform": 0.020283,
+            "classwise_ece_quantile": 0.023535
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 52240,
+            "brier_score": 0.585866,
+            "log_loss": 0.93761,
+            "top_label_ece_uniform": 0.008355,
+            "top_label_ece_quantile": 0.009551,
+            "classwise_ece_uniform": 0.009396,
+            "classwise_ece_quantile": 0.01036
+          },
+          "seg2": {
+            "sample_count": 52240,
+            "brier_score": 0.537405,
+            "log_loss": 0.82089,
+            "top_label_ece_uniform": 0.022159,
+            "top_label_ece_quantile": 0.024748,
+            "classwise_ece_uniform": 0.016883,
+            "classwise_ece_quantile": 0.018252
+          },
+          "seg3": {
+            "sample_count": 26120,
+            "brier_score": 0.524807,
+            "log_loss": 0.785907,
+            "top_label_ece_uniform": 0.010748,
+            "top_label_ece_quantile": 0.019647,
+            "classwise_ece_uniform": 0.018117,
+            "classwise_ece_quantile": 0.018003
+          }
+        },
+        "IsotonicRegression": {
+          "seg1": {
+            "sample_count": 52240,
+            "brier_score": 0.584237,
+            "log_loss": 0.933964,
+            "top_label_ece_uniform": 0.003938,
+            "top_label_ece_quantile": 0.007604,
+            "classwise_ece_uniform": 0.003565,
+            "classwise_ece_quantile": 0.006939
+          },
+          "seg2": {
+            "sample_count": 52240,
+            "brier_score": 0.53706,
+            "log_loss": 0.887436,
+            "top_label_ece_uniform": 0.014283,
+            "top_label_ece_quantile": 0.017179,
+            "classwise_ece_uniform": 0.014748,
+            "classwise_ece_quantile": 0.016394
+          },
+          "seg3": {
+            "sample_count": 26120,
+            "brier_score": 0.524389,
+            "log_loss": 0.875972,
+            "top_label_ece_uniform": 0.005155,
+            "top_label_ece_quantile": 0.016716,
+            "classwise_ece_uniform": 0.010437,
+            "classwise_ece_quantile": 0.013962
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    },
+    "ADAUSDT": {
+      "fitted_parameters": {
+        "temperature": 1.8964,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "FITTED",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.2111,
+          "vector_platt_scaling": 0.3252,
+          "isotonic_regression": 0.0377
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 52192,
+            "brier_score": 0.667592,
+            "log_loss": 1.090916,
+            "top_label_ece_uniform": 0.096531,
+            "top_label_ece_quantile": 0.096531,
+            "classwise_ece_uniform": 0.134547,
+            "classwise_ece_quantile": 0.134547
+          },
+          "seg2": {
+            "sample_count": 52192,
+            "brier_score": 0.632797,
+            "log_loss": 1.030218,
+            "top_label_ece_uniform": 0.041583,
+            "top_label_ece_quantile": 0.04314,
+            "classwise_ece_uniform": 0.109335,
+            "classwise_ece_quantile": 0.109521
+          },
+          "seg3": {
+            "sample_count": 26099,
+            "brier_score": 0.626053,
+            "log_loss": 1.022845,
+            "top_label_ece_uniform": 0.018765,
+            "top_label_ece_quantile": 0.02453,
+            "classwise_ece_uniform": 0.109778,
+            "classwise_ece_quantile": 0.109745
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 52192,
+            "brier_score": 0.650801,
+            "log_loss": 1.071335,
+            "top_label_ece_uniform": 0.025682,
+            "top_label_ece_quantile": 0.025588,
+            "classwise_ece_uniform": 0.117239,
+            "classwise_ece_quantile": 0.116962
+          },
+          "seg2": {
+            "sample_count": 52192,
+            "brier_score": 0.63323,
+            "log_loss": 1.041458,
+            "top_label_ece_uniform": 0.03601,
+            "top_label_ece_quantile": 0.036744,
+            "classwise_ece_uniform": 0.116679,
+            "classwise_ece_quantile": 0.116679
+          },
+          "seg3": {
+            "sample_count": 26099,
+            "brier_score": 0.634555,
+            "log_loss": 1.045143,
+            "top_label_ece_uniform": 0.033062,
+            "top_label_ece_quantile": 0.033299,
+            "classwise_ece_uniform": 0.126357,
+            "classwise_ece_quantile": 0.126031
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 52192,
+            "brier_score": 0.600812,
+            "log_loss": 0.977782,
+            "top_label_ece_uniform": 0.008963,
+            "top_label_ece_quantile": 0.012373,
+            "classwise_ece_uniform": 0.009889,
+            "classwise_ece_quantile": 0.012129
+          },
+          "seg2": {
+            "sample_count": 52192,
+            "brier_score": 0.586653,
+            "log_loss": 0.942728,
+            "top_label_ece_uniform": 0.011543,
+            "top_label_ece_quantile": 0.011842,
+            "classwise_ece_uniform": 0.011013,
+            "classwise_ece_quantile": 0.012105
+          },
+          "seg3": {
+            "sample_count": 26099,
+            "brier_score": 0.57971,
+            "log_loss": 0.935507,
+            "top_label_ece_uniform": 0.013002,
+            "top_label_ece_quantile": 0.013863,
+            "classwise_ece_uniform": 0.019393,
+            "classwise_ece_quantile": 0.018902
+          }
+        },
+        "IsotonicRegression": {
+          "seg1": {
+            "sample_count": 52192,
+            "brier_score": 0.599688,
+            "log_loss": 0.976096,
+            "top_label_ece_uniform": 0.012082,
+            "top_label_ece_quantile": 0.011495,
+            "classwise_ece_uniform": 0.006668,
+            "classwise_ece_quantile": 0.00837
+          },
+          "seg2": {
+            "sample_count": 52192,
+            "brier_score": 0.587673,
+            "log_loss": 0.959561,
+            "top_label_ece_uniform": 0.010847,
+            "top_label_ece_quantile": 0.01465,
+            "classwise_ece_uniform": 0.010687,
+            "classwise_ece_quantile": 0.011835
+          },
+          "seg3": {
+            "sample_count": 26099,
+            "brier_score": 0.579801,
+            "log_loss": 0.935208,
+            "top_label_ece_uniform": 0.010752,
+            "top_label_ece_quantile": 0.015442,
+            "classwise_ece_uniform": 0.015511,
+            "classwise_ece_quantile": 0.016293
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    },
+    "SOLUSDT": {
+      "fitted_parameters": {
+        "temperature": 0.744054,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "FITTED",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.19,
+          "vector_platt_scaling": 0.3685,
+          "isotonic_regression": 0.0377
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 52322,
+            "brier_score": 0.592476,
+            "log_loss": 0.948276,
+            "top_label_ece_uniform": 0.023793,
+            "top_label_ece_quantile": 0.026934,
+            "classwise_ece_uniform": 0.082037,
+            "classwise_ece_quantile": 0.081967
+          },
+          "seg2": {
+            "sample_count": 52322,
+            "brier_score": 0.537574,
+            "log_loss": 0.834606,
+            "top_label_ece_uniform": 0.025969,
+            "top_label_ece_quantile": 0.027109,
+            "classwise_ece_uniform": 0.04563,
+            "classwise_ece_quantile": 0.04591
+          },
+          "seg3": {
+            "sample_count": 26164,
+            "brier_score": 0.537116,
+            "log_loss": 0.831272,
+            "top_label_ece_uniform": 0.025125,
+            "top_label_ece_quantile": 0.023519,
+            "classwise_ece_uniform": 0.044344,
+            "classwise_ece_quantile": 0.045069
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 52322,
+            "brier_score": 0.595776,
+            "log_loss": 0.941185,
+            "top_label_ece_uniform": 0.049004,
+            "top_label_ece_quantile": 0.049223,
+            "classwise_ece_uniform": 0.073408,
+            "classwise_ece_quantile": 0.075142
+          },
+          "seg2": {
+            "sample_count": 52322,
+            "brier_score": 0.533329,
+            "log_loss": 0.813528,
+            "top_label_ece_uniform": 0.01021,
+            "top_label_ece_quantile": 0.019778,
+            "classwise_ece_uniform": 0.027334,
+            "classwise_ece_quantile": 0.030331
+          },
+          "seg3": {
+            "sample_count": 26164,
+            "brier_score": 0.533354,
+            "log_loss": 0.810643,
+            "top_label_ece_uniform": 0.006865,
+            "top_label_ece_quantile": 0.017383,
+            "classwise_ece_uniform": 0.025847,
+            "classwise_ece_quantile": 0.030337
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 52322,
+            "brier_score": 0.562341,
+            "log_loss": 0.880663,
+            "top_label_ece_uniform": 0.008101,
+            "top_label_ece_quantile": 0.008897,
+            "classwise_ece_uniform": 0.004258,
+            "classwise_ece_quantile": 0.007541
+          },
+          "seg2": {
+            "sample_count": 52322,
+            "brier_score": 0.529214,
+            "log_loss": 0.799488,
+            "top_label_ece_uniform": 0.002796,
+            "top_label_ece_quantile": 0.009177,
+            "classwise_ece_uniform": 0.00315,
+            "classwise_ece_quantile": 0.005988
+          },
+          "seg3": {
+            "sample_count": 26164,
+            "brier_score": 0.528614,
+            "log_loss": 0.795249,
+            "top_label_ece_uniform": 0.005479,
+            "top_label_ece_quantile": 0.012309,
+            "classwise_ece_uniform": 0.004489,
+            "classwise_ece_quantile": 0.01076
+          }
+        },
+        "IsotonicRegression": {
+          "seg1": {
+            "sample_count": 52322,
+            "brier_score": 0.562114,
+            "log_loss": 0.879535,
+            "top_label_ece_uniform": 0.005546,
+            "top_label_ece_quantile": 0.008112,
+            "classwise_ece_uniform": 0.00208,
+            "classwise_ece_quantile": 0.004821
+          },
+          "seg2": {
+            "sample_count": 52322,
+            "brier_score": 0.529057,
+            "log_loss": 0.87841,
+            "top_label_ece_uniform": 0.002895,
+            "top_label_ece_quantile": 0.006726,
+            "classwise_ece_uniform": 0.004986,
+            "classwise_ece_quantile": 0.00666
+          },
+          "seg3": {
+            "sample_count": 26164,
+            "brier_score": 0.528715,
+            "log_loss": 0.861123,
+            "top_label_ece_uniform": 0.001306,
+            "top_label_ece_quantile": 0.012128,
+            "classwise_ece_uniform": 0.007541,
+            "classwise_ece_quantile": 0.012182
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    },
+    "AVAXUSDT": {
+      "fitted_parameters": {
+        "temperature": 1.285717,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "FITTED",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.1981,
+          "vector_platt_scaling": 0.2411,
+          "isotonic_regression": 0.0404
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 52326,
+            "brier_score": 0.647011,
+            "log_loss": 1.063732,
+            "top_label_ece_uniform": 0.029732,
+            "top_label_ece_quantile": 0.029666,
+            "classwise_ece_uniform": 0.04427,
+            "classwise_ece_quantile": 0.044181
+          },
+          "seg2": {
+            "sample_count": 52326,
+            "brier_score": 0.603944,
+            "log_loss": 0.980826,
+            "top_label_ece_uniform": 0.005919,
+            "top_label_ece_quantile": 0.009011,
+            "classwise_ece_uniform": 0.02904,
+            "classwise_ece_quantile": 0.028799
+          },
+          "seg3": {
+            "sample_count": 26166,
+            "brier_score": 0.621145,
+            "log_loss": 1.014933,
+            "top_label_ece_uniform": 0.017902,
+            "top_label_ece_quantile": 0.020778,
+            "classwise_ece_uniform": 0.047911,
+            "classwise_ece_quantile": 0.04847
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 52326,
+            "brier_score": 0.644508,
+            "log_loss": 1.061107,
+            "top_label_ece_uniform": 0.009814,
+            "top_label_ece_quantile": 0.012229,
+            "classwise_ece_uniform": 0.039976,
+            "classwise_ece_quantile": 0.039889
+          },
+          "seg2": {
+            "sample_count": 52326,
+            "brier_score": 0.605963,
+            "log_loss": 0.988196,
+            "top_label_ece_uniform": 0.016425,
+            "top_label_ece_quantile": 0.018731,
+            "classwise_ece_uniform": 0.037524,
+            "classwise_ece_quantile": 0.037138
+          },
+          "seg3": {
+            "sample_count": 26166,
+            "brier_score": 0.62332,
+            "log_loss": 1.021588,
+            "top_label_ece_uniform": 0.026244,
+            "top_label_ece_quantile": 0.027475,
+            "classwise_ece_uniform": 0.058443,
+            "classwise_ece_quantile": 0.058556
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 52326,
+            "brier_score": 0.638858,
+            "log_loss": 1.050956,
+            "top_label_ece_uniform": 0.008745,
+            "top_label_ece_quantile": 0.014321,
+            "classwise_ece_uniform": 0.011287,
+            "classwise_ece_quantile": 0.015592
+          },
+          "seg2": {
+            "sample_count": 52326,
+            "brier_score": 0.60122,
+            "log_loss": 0.974713,
+            "top_label_ece_uniform": 0.010788,
+            "top_label_ece_quantile": 0.012676,
+            "classwise_ece_uniform": 0.012194,
+            "classwise_ece_quantile": 0.014385
+          },
+          "seg3": {
+            "sample_count": 26166,
+            "brier_score": 0.612579,
+            "log_loss": 0.999983,
+            "top_label_ece_uniform": 0.016511,
+            "top_label_ece_quantile": 0.018771,
+            "classwise_ece_uniform": 0.019906,
+            "classwise_ece_quantile": 0.02099
+          }
+        },
+        "IsotonicRegression": {
+          "seg1": {
+            "sample_count": 52326,
+            "brier_score": 0.636458,
+            "log_loss": 1.047267,
+            "top_label_ece_uniform": 0.007712,
+            "top_label_ece_quantile": 0.011354,
+            "classwise_ece_uniform": 0.004254,
+            "classwise_ece_quantile": 0.007408
+          },
+          "seg2": {
+            "sample_count": 52326,
+            "brier_score": 0.603477,
+            "log_loss": 0.977447,
+            "top_label_ece_uniform": 0.016524,
+            "top_label_ece_quantile": 0.021748,
+            "classwise_ece_uniform": 0.016475,
+            "classwise_ece_quantile": 0.019284
+          },
+          "seg3": {
+            "sample_count": 26166,
+            "brier_score": 0.614503,
+            "log_loss": 1.002437,
+            "top_label_ece_uniform": 0.016856,
+            "top_label_ece_quantile": 0.017334,
+            "classwise_ece_uniform": 0.023963,
+            "classwise_ece_quantile": 0.024865
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    },
+    "LINKUSDT": {
+      "fitted_parameters": {
+        "temperature": 1.269465,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "FITTED",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.1915,
+          "vector_platt_scaling": 0.2664,
+          "isotonic_regression": 0.0342
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 52310,
+            "brier_score": 0.602645,
+            "log_loss": 1.008485,
+            "top_label_ece_uniform": 0.036534,
+            "top_label_ece_quantile": 0.037985,
+            "classwise_ece_uniform": 0.028869,
+            "classwise_ece_quantile": 0.030382
+          },
+          "seg2": {
+            "sample_count": 52310,
+            "brier_score": 0.584363,
+            "log_loss": 0.94337,
+            "top_label_ece_uniform": 0.015661,
+            "top_label_ece_quantile": 0.019926,
+            "classwise_ece_uniform": 0.039319,
+            "classwise_ece_quantile": 0.039264
+          },
+          "seg3": {
+            "sample_count": 26157,
+            "brier_score": 0.604544,
+            "log_loss": 0.986024,
+            "top_label_ece_uniform": 0.023953,
+            "top_label_ece_quantile": 0.023579,
+            "classwise_ece_uniform": 0.043303,
+            "classwise_ece_quantile": 0.043596
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 52310,
+            "brier_score": 0.599683,
+            "log_loss": 1.002849,
+            "top_label_ece_uniform": 0.011107,
+            "top_label_ece_quantile": 0.011092,
+            "classwise_ece_uniform": 0.01281,
+            "classwise_ece_quantile": 0.013853
+          },
+          "seg2": {
+            "sample_count": 52310,
+            "brier_score": 0.587108,
+            "log_loss": 0.954017,
+            "top_label_ece_uniform": 0.028412,
+            "top_label_ece_quantile": 0.027533,
+            "classwise_ece_uniform": 0.051173,
+            "classwise_ece_quantile": 0.050609
+          },
+          "seg3": {
+            "sample_count": 26157,
+            "brier_score": 0.608727,
+            "log_loss": 0.996565,
+            "top_label_ece_uniform": 0.041011,
+            "top_label_ece_quantile": 0.040747,
+            "classwise_ece_uniform": 0.057907,
+            "classwise_ece_quantile": 0.057898
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 52310,
+            "brier_score": 0.594136,
+            "log_loss": 0.995105,
+            "top_label_ece_uniform": 0.014682,
+            "top_label_ece_quantile": 0.014205,
+            "classwise_ece_uniform": 0.00825,
+            "classwise_ece_quantile": 0.009965
+          },
+          "seg2": {
+            "sample_count": 52310,
+            "brier_score": 0.581083,
+            "log_loss": 0.933193,
+            "top_label_ece_uniform": 0.017114,
+            "top_label_ece_quantile": 0.019423,
+            "classwise_ece_uniform": 0.023339,
+            "classwise_ece_quantile": 0.025681
+          },
+          "seg3": {
+            "sample_count": 26157,
+            "brier_score": 0.602175,
+            "log_loss": 0.979209,
+            "top_label_ece_uniform": 0.021456,
+            "top_label_ece_quantile": 0.020841,
+            "classwise_ece_uniform": 0.030939,
+            "classwise_ece_quantile": 0.030873
+          }
+        },
+        "IsotonicRegression": {
+          "seg1": {
+            "sample_count": 52310,
+            "brier_score": 0.596053,
+            "log_loss": 0.996057,
+            "top_label_ece_uniform": 0.010238,
+            "top_label_ece_quantile": 0.00873,
+            "classwise_ece_uniform": 0.007727,
+            "classwise_ece_quantile": 0.010394
+          },
+          "seg2": {
+            "sample_count": 52310,
+            "brier_score": 0.585537,
+            "log_loss": 0.982174,
+            "top_label_ece_uniform": 0.018677,
+            "top_label_ece_quantile": 0.018358,
+            "classwise_ece_uniform": 0.035699,
+            "classwise_ece_quantile": 0.035256
+          },
+          "seg3": {
+            "sample_count": 26157,
+            "brier_score": 0.605164,
+            "log_loss": 0.994534,
+            "top_label_ece_uniform": 0.015136,
+            "top_label_ece_quantile": 0.022358,
+            "classwise_ece_uniform": 0.03986,
+            "classwise_ece_quantile": 0.03975
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    },
+    "DOGEUSDT": {
+      "fitted_parameters": {
+        "temperature": 1.027661,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "FITTED",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.1646,
+          "vector_platt_scaling": 0.2453,
+          "isotonic_regression": 0.038
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 52258,
+            "brier_score": 0.620351,
+            "log_loss": 1.009461,
+            "top_label_ece_uniform": 0.038903,
+            "top_label_ece_quantile": 0.039425,
+            "classwise_ece_uniform": 0.054008,
+            "classwise_ece_quantile": 0.053892
+          },
+          "seg2": {
+            "sample_count": 52258,
+            "brier_score": 0.550161,
+            "log_loss": 0.858759,
+            "top_label_ece_uniform": 0.011882,
+            "top_label_ece_quantile": 0.016239,
+            "classwise_ece_uniform": 0.038838,
+            "classwise_ece_quantile": 0.040241
+          },
+          "seg3": {
+            "sample_count": 26132,
+            "brier_score": 0.533394,
+            "log_loss": 0.823128,
+            "top_label_ece_uniform": 0.016916,
+            "top_label_ece_quantile": 0.017922,
+            "classwise_ece_uniform": 0.032334,
+            "classwise_ece_quantile": 0.032153
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 52258,
+            "brier_score": 0.619914,
+            "log_loss": 1.009406,
+            "top_label_ece_uniform": 0.035682,
+            "top_label_ece_quantile": 0.036221,
+            "classwise_ece_uniform": 0.05344,
+            "classwise_ece_quantile": 0.053255
+          },
+          "seg2": {
+            "sample_count": 52258,
+            "brier_score": 0.550437,
+            "log_loss": 0.860587,
+            "top_label_ece_uniform": 0.013299,
+            "top_label_ece_quantile": 0.017171,
+            "classwise_ece_uniform": 0.04047,
+            "classwise_ece_quantile": 0.041775
+          },
+          "seg3": {
+            "sample_count": 26132,
+            "brier_score": 0.533837,
+            "log_loss": 0.825363,
+            "top_label_ece_uniform": 0.018715,
+            "top_label_ece_quantile": 0.01838,
+            "classwise_ece_uniform": 0.034266,
+            "classwise_ece_quantile": 0.033915
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 52258,
+            "brier_score": 0.606592,
+            "log_loss": 0.979953,
+            "top_label_ece_uniform": 0.012499,
+            "top_label_ece_quantile": 0.016483,
+            "classwise_ece_uniform": 0.016003,
+            "classwise_ece_quantile": 0.017479
+          },
+          "seg2": {
+            "sample_count": 52258,
+            "brier_score": 0.543505,
+            "log_loss": 0.835522,
+            "top_label_ece_uniform": 0.002103,
+            "top_label_ece_quantile": 0.006964,
+            "classwise_ece_uniform": 0.010467,
+            "classwise_ece_quantile": 0.012298
+          },
+          "seg3": {
+            "sample_count": 26132,
+            "brier_score": 0.530119,
+            "log_loss": 0.801823,
+            "top_label_ece_uniform": 0.006676,
+            "top_label_ece_quantile": 0.009931,
+            "classwise_ece_uniform": 0.013699,
+            "classwise_ece_quantile": 0.014857
+          }
+        },
+        "IsotonicRegression": {
+          "seg1": {
+            "sample_count": 52258,
+            "brier_score": 0.606555,
+            "log_loss": 0.978239,
+            "top_label_ece_uniform": 0.014745,
+            "top_label_ece_quantile": 0.015585,
+            "classwise_ece_uniform": 0.008886,
+            "classwise_ece_quantile": 0.010419
+          },
+          "seg2": {
+            "sample_count": 52258,
+            "brier_score": 0.544069,
+            "log_loss": 1.006407,
+            "top_label_ece_uniform": 0.00775,
+            "top_label_ece_quantile": 0.013144,
+            "classwise_ece_uniform": 0.014602,
+            "classwise_ece_quantile": 0.016002
+          },
+          "seg3": {
+            "sample_count": 26132,
+            "brier_score": 0.53017,
+            "log_loss": 1.000957,
+            "top_label_ece_uniform": 0.003978,
+            "top_label_ece_quantile": 0.010805,
+            "classwise_ece_uniform": 0.013536,
+            "classwise_ece_quantile": 0.015718
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    },
+    "LTCUSDT": {
+      "fitted_parameters": {
+        "temperature": 1.332266,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "FITTED",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.203,
+          "vector_platt_scaling": 0.1606,
+          "isotonic_regression": 0.036
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 52184,
+            "brier_score": 0.635793,
+            "log_loss": 1.048121,
+            "top_label_ece_uniform": 0.038077,
+            "top_label_ece_quantile": 0.03959,
+            "classwise_ece_uniform": 0.049292,
+            "classwise_ece_quantile": 0.047696
+          },
+          "seg2": {
+            "sample_count": 52184,
+            "brier_score": 0.573934,
+            "log_loss": 0.942052,
+            "top_label_ece_uniform": 0.028375,
+            "top_label_ece_quantile": 0.025994,
+            "classwise_ece_uniform": 0.044359,
+            "classwise_ece_quantile": 0.042997
+          },
+          "seg3": {
+            "sample_count": 26095,
+            "brier_score": 0.624397,
+            "log_loss": 1.023738,
+            "top_label_ece_uniform": 0.020813,
+            "top_label_ece_quantile": 0.021469,
+            "classwise_ece_uniform": 0.067394,
+            "classwise_ece_quantile": 0.067177
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 52184,
+            "brier_score": 0.631515,
+            "log_loss": 1.042787,
+            "top_label_ece_uniform": 0.025334,
+            "top_label_ece_quantile": 0.026828,
+            "classwise_ece_uniform": 0.039261,
+            "classwise_ece_quantile": 0.034714
+          },
+          "seg2": {
+            "sample_count": 52184,
+            "brier_score": 0.580983,
+            "log_loss": 0.958513,
+            "top_label_ece_uniform": 0.054247,
+            "top_label_ece_quantile": 0.05414,
+            "classwise_ece_uniform": 0.061477,
+            "classwise_ece_quantile": 0.060662
+          },
+          "seg3": {
+            "sample_count": 26095,
+            "brier_score": 0.628223,
+            "log_loss": 1.033085,
+            "top_label_ece_uniform": 0.038018,
+            "top_label_ece_quantile": 0.034743,
+            "classwise_ece_uniform": 0.078231,
+            "classwise_ece_quantile": 0.077738
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 52184,
+            "brier_score": 0.617467,
+            "log_loss": 1.021612,
+            "top_label_ece_uniform": 0.030538,
+            "top_label_ece_quantile": 0.031018,
+            "classwise_ece_uniform": 0.01507,
+            "classwise_ece_quantile": 0.017025
+          },
+          "seg2": {
+            "sample_count": 52184,
+            "brier_score": 0.568646,
+            "log_loss": 0.924699,
+            "top_label_ece_uniform": 0.018713,
+            "top_label_ece_quantile": 0.020853,
+            "classwise_ece_uniform": 0.025866,
+            "classwise_ece_quantile": 0.026357
+          },
+          "seg3": {
+            "sample_count": 26095,
+            "brier_score": 0.612785,
+            "log_loss": 0.999934,
+            "top_label_ece_uniform": 0.013045,
+            "top_label_ece_quantile": 0.012879,
+            "classwise_ece_uniform": 0.028627,
+            "classwise_ece_quantile": 0.030286
+          }
+        },
+        "IsotonicRegression": {
+          "seg1": {
+            "sample_count": 52184,
+            "brier_score": 0.624079,
+            "log_loss": 1.028583,
+            "top_label_ece_uniform": 0.019196,
+            "top_label_ece_quantile": 0.022816,
+            "classwise_ece_uniform": 0.014737,
+            "classwise_ece_quantile": 0.013462
+          },
+          "seg2": {
+            "sample_count": 52184,
+            "brier_score": 0.571882,
+            "log_loss": 0.954448,
+            "top_label_ece_uniform": 0.025173,
+            "top_label_ece_quantile": 0.025953,
+            "classwise_ece_uniform": 0.031832,
+            "classwise_ece_quantile": 0.034257
+          },
+          "seg3": {
+            "sample_count": 26095,
+            "brier_score": 0.613371,
+            "log_loss": 1.003767,
+            "top_label_ece_uniform": 0.023151,
+            "top_label_ece_quantile": 0.023737,
+            "classwise_ece_uniform": 0.036773,
+            "classwise_ece_quantile": 0.038872
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    },
+    "XMRUSDT": {
+      "fitted_parameters": {
+        "temperature": 1.047831,
+        "vector_platt_c": 1.0,
+        "isotonic_status": "PROHIBITED_SAMPLE_SUPPORT_LIMITATION",
+        "fitting_durations_s": {
+          "temperature_scaling": 0.0208,
+          "vector_platt_scaling": 0.0462,
+          "isotonic_regression": 0.0
+        }
+      },
+      "evaluations": {
+        "Uncalibrated": {
+          "seg1": {
+            "sample_count": 6100,
+            "brier_score": 0.6184,
+            "log_loss": 1.00445,
+            "top_label_ece_uniform": 0.041218,
+            "top_label_ece_quantile": 0.045337,
+            "classwise_ece_uniform": 0.096066,
+            "classwise_ece_quantile": 0.098911
+          },
+          "seg2": {
+            "sample_count": 6100,
+            "brier_score": 0.63758,
+            "log_loss": 1.040217,
+            "top_label_ece_uniform": 0.053761,
+            "top_label_ece_quantile": 0.056958,
+            "classwise_ece_uniform": 0.092037,
+            "classwise_ece_quantile": 0.091169
+          },
+          "seg3": {
+            "sample_count": 3052,
+            "brier_score": 0.668869,
+            "log_loss": 1.088858,
+            "top_label_ece_uniform": 0.098922,
+            "top_label_ece_quantile": 0.099505,
+            "classwise_ece_uniform": 0.118898,
+            "classwise_ece_quantile": 0.121413
+          }
+        },
+        "TemperatureScaling": {
+          "seg1": {
+            "sample_count": 6100,
+            "brier_score": 0.617648,
+            "log_loss": 1.004285,
+            "top_label_ece_uniform": 0.035823,
+            "top_label_ece_quantile": 0.040729,
+            "classwise_ece_uniform": 0.095253,
+            "classwise_ece_quantile": 0.09847
+          },
+          "seg2": {
+            "sample_count": 6100,
+            "brier_score": 0.636649,
+            "log_loss": 1.039285,
+            "top_label_ece_uniform": 0.049864,
+            "top_label_ece_quantile": 0.053787,
+            "classwise_ece_uniform": 0.09055,
+            "classwise_ece_quantile": 0.090317
+          },
+          "seg3": {
+            "sample_count": 3052,
+            "brier_score": 0.666716,
+            "log_loss": 1.086279,
+            "top_label_ece_uniform": 0.093351,
+            "top_label_ece_quantile": 0.094231,
+            "classwise_ece_uniform": 0.116329,
+            "classwise_ece_quantile": 0.120071
+          }
+        },
+        "VectorPlattScaling": {
+          "seg1": {
+            "sample_count": 6100,
+            "brier_score": 0.576243,
+            "log_loss": 0.929105,
+            "top_label_ece_uniform": 0.015082,
+            "top_label_ece_quantile": 0.022448,
+            "classwise_ece_uniform": 0.018079,
+            "classwise_ece_quantile": 0.023956
+          },
+          "seg2": {
+            "sample_count": 6100,
+            "brier_score": 0.608488,
+            "log_loss": 0.996014,
+            "top_label_ece_uniform": 0.030847,
+            "top_label_ece_quantile": 0.035953,
+            "classwise_ece_uniform": 0.024668,
+            "classwise_ece_quantile": 0.034195
+          },
+          "seg3": {
+            "sample_count": 3052,
+            "brier_score": 0.614863,
+            "log_loss": 1.009397,
+            "top_label_ece_uniform": 0.027187,
+            "top_label_ece_quantile": 0.048277,
+            "classwise_ece_uniform": 0.027609,
+            "classwise_ece_quantile": 0.04249
+          }
+        }
+      },
+      "selected_best_method": "VectorPlattScaling"
+    }
+  }
+}

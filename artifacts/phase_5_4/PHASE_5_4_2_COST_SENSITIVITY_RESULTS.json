@@ -1,0 +1,816 @@
+{
+  "title": "Phase 5.4.2 Transaction Friction Sensitivity Grid",
+  "timestamp_utc": "2026-11-01 18:55:19 UTC",
+  "scenarios_bps": [
+    7,
+    15,
+    20,
+    30
+  ],
+  "funding_status": "UNAVAILABLE_ON_CANONICAL_OHLC_MARKED_HYPOTHETICAL",
+  "instruments": {
+    "BTCUSDT": {
+      "optimal_threshold": 0.4,
+      "total_trades_eval": 25818,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 36,
+      "gap_trades_pct": 0.14,
+      "mean_gross_return": -1.2e-05,
+      "long_mean_gross_return": -4.8e-05,
+      "short_mean_gross_return": 9e-06,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.000712,
+            "win_rate": 0.468665,
+            "profit_factor": 0.4839
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25818,
+            "mean_net_return": -0.000712,
+            "win_rate": 0.468665,
+            "profit_factor": 0.4839
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.001512,
+            "win_rate": 0.3044,
+            "profit_factor": 0.1887
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25818,
+            "mean_net_return": -0.001512,
+            "win_rate": 0.3044,
+            "profit_factor": 0.1887
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.002012,
+            "win_rate": 0.193547,
+            "profit_factor": 0.1021
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25818,
+            "mean_net_return": -0.002012,
+            "win_rate": 0.193547,
+            "profit_factor": 0.1021
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.003012,
+            "win_rate": 0.08374,
+            "profit_factor": 0.0319
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25818,
+            "mean_net_return": -0.003012,
+            "win_rate": 0.08374,
+            "profit_factor": 0.0319
+          }
+        }
+      }
+    },
+    "ETHUSDT": {
+      "optimal_threshold": 0.35,
+      "total_trades_eval": 26008,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 42,
+      "gap_trades_pct": 0.16,
+      "mean_gross_return": -4e-06,
+      "long_mean_gross_return": -3.3e-05,
+      "short_mean_gross_return": 0.000192,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.000704,
+            "win_rate": 0.47793,
+            "profit_factor": 0.5822
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26008,
+            "mean_net_return": -0.000704,
+            "win_rate": 0.47793,
+            "profit_factor": 0.5822
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.001504,
+            "win_rate": 0.378384,
+            "profit_factor": 0.2962
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26008,
+            "mean_net_return": -0.001504,
+            "win_rate": 0.378384,
+            "profit_factor": 0.2962
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.002004,
+            "win_rate": 0.288988,
+            "profit_factor": 0.1886
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26008,
+            "mean_net_return": -0.002004,
+            "win_rate": 0.288988,
+            "profit_factor": 0.1886
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.003004,
+            "win_rate": 0.151799,
+            "profit_factor": 0.0776
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26008,
+            "mean_net_return": -0.003004,
+            "win_rate": 0.151799,
+            "profit_factor": 0.0776
+          }
+        }
+      }
+    },
+    "BNBUSDT": {
+      "optimal_threshold": 0.34,
+      "total_trades_eval": 26135,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 149,
+      "gap_trades_pct": 0.57,
+      "mean_gross_return": -0.0,
+      "long_mean_gross_return": -2.8e-05,
+      "short_mean_gross_return": 2e-05,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.0007,
+            "win_rate": 0.468491,
+            "profit_factor": 0.4634
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26135,
+            "mean_net_return": -0.0007,
+            "win_rate": 0.468491,
+            "profit_factor": 0.4634
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.0015,
+            "win_rate": 0.269868,
+            "profit_factor": 0.169
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26135,
+            "mean_net_return": -0.0015,
+            "win_rate": 0.269868,
+            "profit_factor": 0.169
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.002,
+            "win_rate": 0.163689,
+            "profit_factor": 0.0905
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26135,
+            "mean_net_return": -0.002,
+            "win_rate": 0.163689,
+            "profit_factor": 0.0905
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.003,
+            "win_rate": 0.068682,
+            "profit_factor": 0.0295
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26135,
+            "mean_net_return": -0.003,
+            "win_rate": 0.068682,
+            "profit_factor": 0.0295
+          }
+        }
+      }
+    },
+    "XRPUSDT": {
+      "optimal_threshold": 0.34,
+      "total_trades_eval": 26103,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 200,
+      "gap_trades_pct": 0.77,
+      "mean_gross_return": 2.6e-05,
+      "long_mean_gross_return": -3.2e-05,
+      "short_mean_gross_return": 0.000193,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.000674,
+            "win_rate": 0.488488,
+            "profit_factor": 0.5889
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26103,
+            "mean_net_return": -0.000674,
+            "win_rate": 0.488488,
+            "profit_factor": 0.5889
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.001474,
+            "win_rate": 0.378079,
+            "profit_factor": 0.294
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26103,
+            "mean_net_return": -0.001474,
+            "win_rate": 0.378079,
+            "profit_factor": 0.294
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.001974,
+            "win_rate": 0.28127,
+            "profit_factor": 0.1855
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26103,
+            "mean_net_return": -0.001974,
+            "win_rate": 0.28127,
+            "profit_factor": 0.1855
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.002974,
+            "win_rate": 0.137264,
+            "profit_factor": 0.0771
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26103,
+            "mean_net_return": -0.002974,
+            "win_rate": 0.137264,
+            "profit_factor": 0.0771
+          }
+        }
+      }
+    },
+    "ADAUSDT": {
+      "optimal_threshold": 0.36,
+      "total_trades_eval": 25695,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 13111,
+      "gap_trades_pct": 51.03,
+      "mean_gross_return": 0.000256,
+      "long_mean_gross_return": 0.000115,
+      "short_mean_gross_return": 0.000399,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.000444,
+            "win_rate": 0.452267,
+            "profit_factor": 0.7501
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25695,
+            "mean_net_return": -0.000444,
+            "win_rate": 0.452267,
+            "profit_factor": 0.7501
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.001244,
+            "win_rate": 0.397782,
+            "profit_factor": 0.4439
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25695,
+            "mean_net_return": -0.001244,
+            "win_rate": 0.397782,
+            "profit_factor": 0.4439
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.001744,
+            "win_rate": 0.346137,
+            "profit_factor": 0.3166
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25695,
+            "mean_net_return": -0.001744,
+            "win_rate": 0.346137,
+            "profit_factor": 0.3166
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.002744,
+            "win_rate": 0.243394,
+            "profit_factor": 0.158
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25695,
+            "mean_net_return": -0.002744,
+            "win_rate": 0.243394,
+            "profit_factor": 0.158
+          }
+        }
+      }
+    },
+    "SOLUSDT": {
+      "optimal_threshold": 0.42,
+      "total_trades_eval": 25801,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 95,
+      "gap_trades_pct": 0.37,
+      "mean_gross_return": 3.6e-05,
+      "long_mean_gross_return": -1.2e-05,
+      "short_mean_gross_return": 7.3e-05,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.000664,
+            "win_rate": 0.502112,
+            "profit_factor": 0.6202
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25801,
+            "mean_net_return": -0.000664,
+            "win_rate": 0.502112,
+            "profit_factor": 0.6202
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.001464,
+            "win_rate": 0.414441,
+            "profit_factor": 0.3269
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25801,
+            "mean_net_return": -0.001464,
+            "win_rate": 0.414441,
+            "profit_factor": 0.3269
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.001964,
+            "win_rate": 0.326499,
+            "profit_factor": 0.2111
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25801,
+            "mean_net_return": -0.001964,
+            "win_rate": 0.326499,
+            "profit_factor": 0.2111
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.002964,
+            "win_rate": 0.172474,
+            "profit_factor": 0.0868
+          },
+          "excluding_ambiguous": {
+            "trade_count": 25801,
+            "mean_net_return": -0.002964,
+            "win_rate": 0.172474,
+            "profit_factor": 0.0868
+          }
+        }
+      }
+    },
+    "AVAXUSDT": {
+      "optimal_threshold": 0.34,
+      "total_trades_eval": 24956,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 13953,
+      "gap_trades_pct": 55.91,
+      "mean_gross_return": 0.000186,
+      "long_mean_gross_return": 0.000183,
+      "short_mean_gross_return": 0.000187,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.000514,
+            "win_rate": 0.43765,
+            "profit_factor": 0.7229
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24956,
+            "mean_net_return": -0.000514,
+            "win_rate": 0.43765,
+            "profit_factor": 0.7229
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.001314,
+            "win_rate": 0.378867,
+            "profit_factor": 0.4356
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24956,
+            "mean_net_return": -0.001314,
+            "win_rate": 0.378867,
+            "profit_factor": 0.4356
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.001814,
+            "win_rate": 0.354304,
+            "profit_factor": 0.3139
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24956,
+            "mean_net_return": -0.001814,
+            "win_rate": 0.354304,
+            "profit_factor": 0.3139
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.002814,
+            "win_rate": 0.259937,
+            "profit_factor": 0.1597
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24956,
+            "mean_net_return": -0.002814,
+            "win_rate": 0.259937,
+            "profit_factor": 0.1597
+          }
+        }
+      }
+    },
+    "LINKUSDT": {
+      "optimal_threshold": 0.34,
+      "total_trades_eval": 24486,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 13397,
+      "gap_trades_pct": 54.71,
+      "mean_gross_return": 0.000146,
+      "long_mean_gross_return": 5.7e-05,
+      "short_mean_gross_return": 0.000425,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.000554,
+            "win_rate": 0.433431,
+            "profit_factor": 0.6886
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24486,
+            "mean_net_return": -0.000554,
+            "win_rate": 0.433431,
+            "profit_factor": 0.6886
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.001354,
+            "win_rate": 0.37936,
+            "profit_factor": 0.3986
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24486,
+            "mean_net_return": -0.001354,
+            "win_rate": 0.37936,
+            "profit_factor": 0.3986
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.001854,
+            "win_rate": 0.333415,
+            "profit_factor": 0.2793
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24486,
+            "mean_net_return": -0.001854,
+            "win_rate": 0.333415,
+            "profit_factor": 0.2793
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.002854,
+            "win_rate": 0.225353,
+            "profit_factor": 0.1337
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24486,
+            "mean_net_return": -0.002854,
+            "win_rate": 0.225353,
+            "profit_factor": 0.1337
+          }
+        }
+      }
+    },
+    "DOGEUSDT": {
+      "optimal_threshold": 0.34,
+      "total_trades_eval": 26024,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 224,
+      "gap_trades_pct": 0.86,
+      "mean_gross_return": 7.9e-05,
+      "long_mean_gross_return": -4.7e-05,
+      "short_mean_gross_return": 0.000198,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.000621,
+            "win_rate": 0.504919,
+            "profit_factor": 0.6378
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26024,
+            "mean_net_return": -0.000621,
+            "win_rate": 0.504919,
+            "profit_factor": 0.6378
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.001421,
+            "win_rate": 0.421227,
+            "profit_factor": 0.335
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26024,
+            "mean_net_return": -0.001421,
+            "win_rate": 0.421227,
+            "profit_factor": 0.335
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.001921,
+            "win_rate": 0.32616,
+            "profit_factor": 0.2157
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26024,
+            "mean_net_return": -0.001921,
+            "win_rate": 0.32616,
+            "profit_factor": 0.2157
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.002921,
+            "win_rate": 0.167768,
+            "profit_factor": 0.09
+          },
+          "excluding_ambiguous": {
+            "trade_count": 26024,
+            "mean_net_return": -0.002921,
+            "win_rate": 0.167768,
+            "profit_factor": 0.09
+          }
+        }
+      }
+    },
+    "LTCUSDT": {
+      "optimal_threshold": 0.34,
+      "total_trades_eval": 24151,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 13585,
+      "gap_trades_pct": 56.25,
+      "mean_gross_return": 0.000189,
+      "long_mean_gross_return": 0.000105,
+      "short_mean_gross_return": 0.000552,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.000511,
+            "win_rate": 0.423047,
+            "profit_factor": 0.6624
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24151,
+            "mean_net_return": -0.000511,
+            "win_rate": 0.423047,
+            "profit_factor": 0.6624
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.001311,
+            "win_rate": 0.351166,
+            "profit_factor": 0.3451
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24151,
+            "mean_net_return": -0.001311,
+            "win_rate": 0.351166,
+            "profit_factor": 0.3451
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.001811,
+            "win_rate": 0.299574,
+            "profit_factor": 0.2255
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24151,
+            "mean_net_return": -0.001811,
+            "win_rate": 0.299574,
+            "profit_factor": 0.2255
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.002811,
+            "win_rate": 0.185458,
+            "profit_factor": 0.0927
+          },
+          "excluding_ambiguous": {
+            "trade_count": 24151,
+            "mean_net_return": -0.002811,
+            "win_rate": 0.185458,
+            "profit_factor": 0.0927
+          }
+        }
+      }
+    },
+    "XMRUSDT": {
+      "optimal_threshold": 0.45,
+      "total_trades_eval": 2116,
+      "ambiguous_trades_count": 0,
+      "ambiguous_trades_pct": 0.0,
+      "gap_trades_count": 1403,
+      "gap_trades_pct": 66.3,
+      "mean_gross_return": 0.000266,
+      "long_mean_gross_return": 0.000539,
+      "short_mean_gross_return": -0.000525,
+      "cost_scenarios": {
+        "7_bps": {
+          "fee_bps": 7,
+          "fee_fraction": 0.0007,
+          "conservative_adverse": {
+            "mean_net_return": -0.000434,
+            "win_rate": 0.431474,
+            "profit_factor": 0.7521
+          },
+          "excluding_ambiguous": {
+            "trade_count": 2116,
+            "mean_net_return": -0.000434,
+            "win_rate": 0.431474,
+            "profit_factor": 0.7521
+          }
+        },
+        "15_bps": {
+          "fee_bps": 15,
+          "fee_fraction": 0.0015,
+          "conservative_adverse": {
+            "mean_net_return": -0.001234,
+            "win_rate": 0.388469,
+            "profit_factor": 0.445
+          },
+          "excluding_ambiguous": {
+            "trade_count": 2116,
+            "mean_net_return": -0.001234,
+            "win_rate": 0.388469,
+            "profit_factor": 0.445
+          }
+        },
+        "20_bps": {
+          "fee_bps": 20,
+          "fee_fraction": 0.002,
+          "conservative_adverse": {
+            "mean_net_return": -0.001734,
+            "win_rate": 0.351607,
+            "profit_factor": 0.3166
+          },
+          "excluding_ambiguous": {
+            "trade_count": 2116,
+            "mean_net_return": -0.001734,
+            "win_rate": 0.351607,
+            "profit_factor": 0.3166
+          }
+        },
+        "30_bps": {
+          "fee_bps": 30,
+          "fee_fraction": 0.003,
+          "conservative_adverse": {
+            "mean_net_return": -0.002734,
+            "win_rate": 0.278828,
+            "profit_factor": 0.1505
+          },
+          "excluding_ambiguous": {
+            "trade_count": 2116,
+            "mean_net_return": -0.002734,
+            "win_rate": 0.278828,
+            "profit_factor": 0.1505
+          }
+        }
+      }
+    }
+  }
+}

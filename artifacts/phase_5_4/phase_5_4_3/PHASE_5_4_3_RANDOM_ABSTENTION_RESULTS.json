@@ -1,0 +1,3530 @@
+{
+  "title": "Workstream D: Selective Classification vs Random Abstention Baseline Audit",
+  "timestamp_utc": "2026-11-01 19:10:06 UTC",
+  "description": "Comparative audit of confidence-based abstention versus 1,000-repetition uniform random abstention baseline.",
+  "coverage_grid": [
+    1.0,
+    0.8,
+    0.7,
+    0.6,
+    0.5,
+    0.4,
+    0.3,
+    0.2
+  ],
+  "n_repetitions": 1000,
+  "random_seed": 42,
+  "min_class_support_guardrail": 100,
+  "instruments": {
+    "BTCUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 26140,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 26140,
+          "min_confidence": 0.3406463142387229,
+          "confidence_based": {
+            "balanced_accuracy": 0.332928,
+            "macro_f1": 0.322579,
+            "accuracy": 0.48026,
+            "risk": 0.667072,
+            "class_support": {
+              "SL": 12716,
+              "EXP": 1009,
+              "TP": 12415
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.332928,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.332928,
+              0.332928
+            ],
+            "macro_f1_mean": 0.322579,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.322579,
+              0.322579
+            ],
+            "risk_mean": 0.667072
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0,
+            "delta_macro_f1": -0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 20912,
+          "min_confidence": 0.46699695811051906,
+          "confidence_based": {
+            "balanced_accuracy": 0.335147,
+            "macro_f1": 0.316784,
+            "accuracy": 0.493975,
+            "risk": 0.664853,
+            "class_support": {
+              "SL": 10301,
+              "EXP": 403,
+              "TP": 10208
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.332984,
+            "balanced_accuracy_se": 0.001068,
+            "balanced_accuracy_95_ci": [
+              0.330906,
+              0.335119
+            ],
+            "macro_f1_mean": 0.322636,
+            "macro_f1_se": 0.001176,
+            "macro_f1_95_ci": [
+              0.320289,
+              0.324984
+            ],
+            "risk_mean": 0.667016
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.002163,
+            "delta_macro_f1": -0.005852,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.023
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 18298,
+          "min_confidence": 0.4756910874381283,
+          "confidence_based": {
+            "balanced_accuracy": 0.336267,
+            "macro_f1": 0.309648,
+            "accuracy": 0.497923,
+            "risk": 0.663733,
+            "class_support": {
+              "SL": 9048,
+              "EXP": 271,
+              "TP": 8979
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.33291,
+            "balanced_accuracy_se": 0.001346,
+            "balanced_accuracy_95_ci": [
+              0.330369,
+              0.335439
+            ],
+            "macro_f1_mean": 0.322567,
+            "macro_f1_se": 0.001505,
+            "macro_f1_95_ci": [
+              0.319709,
+              0.32541
+            ],
+            "risk_mean": 0.66709
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.003357,
+            "delta_macro_f1": -0.012918,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.007
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 15684,
+          "min_confidence": 0.4825465008541994,
+          "confidence_based": {
+            "balanced_accuracy": 0.337105,
+            "macro_f1": 0.299687,
+            "accuracy": 0.498534,
+            "risk": 0.662895,
+            "class_support": {
+              "SL": 7719,
+              "EXP": 181,
+              "TP": 7784
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.332824,
+            "balanced_accuracy_se": 0.001729,
+            "balanced_accuracy_95_ci": [
+              0.329454,
+              0.336251
+            ],
+            "macro_f1_mean": 0.322454,
+            "macro_f1_se": 0.001963,
+            "macro_f1_95_ci": [
+              0.318657,
+              0.326388
+            ],
+            "risk_mean": 0.667176
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.00428,
+            "delta_macro_f1": -0.022767,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.009
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 13070,
+          "min_confidence": 0.48772182943190656,
+          "confidence_based": {
+            "balanced_accuracy": 0.338424,
+            "macro_f1": 0.29174,
+            "accuracy": 0.502525,
+            "risk": 0.661576,
+            "class_support": {
+              "SL": 6467,
+              "EXP": 122,
+              "TP": 6481
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.332924,
+            "balanced_accuracy_se": 0.002046,
+            "balanced_accuracy_95_ci": [
+              0.328974,
+              0.337011
+            ],
+            "macro_f1_mean": 0.322535,
+            "macro_f1_se": 0.002281,
+            "macro_f1_95_ci": [
+              0.318246,
+              0.326997
+            ],
+            "risk_mean": 0.667076
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0055,
+            "delta_macro_f1": -0.030795,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.005
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 10456,
+          "min_confidence": 0.4922441507271935,
+          "confidence_based": {
+            "balanced_accuracy": 0.33987,
+            "macro_f1": 0.282413,
+            "accuracy": 0.508512,
+            "risk": 0.66013,
+            "class_support": {
+              "SL": 5223,
+              "EXP": 78,
+              "TP": 5155
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.332843,
+            "balanced_accuracy_se": 0.002619,
+            "balanced_accuracy_95_ci": [
+              0.327751,
+              0.337683
+            ],
+            "macro_f1_mean": 0.322457,
+            "macro_f1_se": 0.002907,
+            "macro_f1_95_ci": [
+              0.316762,
+              0.328202
+            ],
+            "risk_mean": 0.667157
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.007027,
+            "delta_macro_f1": -0.040043,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.006
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 7842,
+          "min_confidence": 0.49655159056671505,
+          "confidence_based": {
+            "balanced_accuracy": 0.33856,
+            "macro_f1": 0.265439,
+            "accuracy": 0.513007,
+            "risk": 0.66144,
+            "class_support": {
+              "SL": 3973,
+              "EXP": 56,
+              "TP": 3813
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.332827,
+            "balanced_accuracy_se": 0.00311,
+            "balanced_accuracy_95_ci": [
+              0.326888,
+              0.339027
+            ],
+            "macro_f1_mean": 0.322447,
+            "macro_f1_se": 0.00345,
+            "macro_f1_95_ci": [
+              0.31581,
+              0.329194
+            ],
+            "risk_mean": 0.667173
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.005733,
+            "delta_macro_f1": -0.057008,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.034
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 5228,
+          "min_confidence": 0.501202588682152,
+          "confidence_based": {
+            "balanced_accuracy": 0.335988,
+            "macro_f1": 0.249746,
+            "accuracy": 0.516641,
+            "risk": 0.664012,
+            "class_support": {
+              "SL": 2687,
+              "EXP": 34,
+              "TP": 2507
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.332553,
+            "balanced_accuracy_se": 0.004098,
+            "balanced_accuracy_95_ci": [
+              0.324259,
+              0.340175
+            ],
+            "macro_f1_mean": 0.322152,
+            "macro_f1_se": 0.004586,
+            "macro_f1_95_ci": [
+              0.313106,
+              0.331095
+            ],
+            "risk_mean": 0.667447
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.003434,
+            "delta_macro_f1": -0.072406,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.194
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        }
+      ],
+      "overall_selective_advantage_verified": true
+    },
+    "ETHUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 26148,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 26148,
+          "min_confidence": 0.3338174341209892,
+          "confidence_based": {
+            "balanced_accuracy": 0.33889,
+            "macro_f1": 0.280937,
+            "accuracy": 0.476365,
+            "risk": 0.66111,
+            "class_support": {
+              "SL": 12680,
+              "EXP": 1134,
+              "TP": 12334
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.33889,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.33889,
+              0.33889
+            ],
+            "macro_f1_mean": 0.280937,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.280937,
+              0.280937
+            ],
+            "risk_mean": 0.66111
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0,
+            "delta_macro_f1": -0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 20918,
+          "min_confidence": 0.48174130917381536,
+          "confidence_based": {
+            "balanced_accuracy": 0.337648,
+            "macro_f1": 0.272081,
+            "accuracy": 0.488861,
+            "risk": 0.662352,
+            "class_support": {
+              "SL": 10260,
+              "EXP": 431,
+              "TP": 10227
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.338885,
+            "balanced_accuracy_se": 0.000865,
+            "balanced_accuracy_95_ci": [
+              0.337111,
+              0.340592
+            ],
+            "macro_f1_mean": 0.280925,
+            "macro_f1_se": 0.001337,
+            "macro_f1_95_ci": [
+              0.278247,
+              0.283578
+            ],
+            "risk_mean": 0.661115
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.001237,
+            "delta_macro_f1": -0.008845,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.928
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 18303,
+          "min_confidence": 0.4904449170381417,
+          "confidence_based": {
+            "balanced_accuracy": 0.339258,
+            "macro_f1": 0.266415,
+            "accuracy": 0.491941,
+            "risk": 0.660742,
+            "class_support": {
+              "SL": 8986,
+              "EXP": 290,
+              "TP": 9027
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.33886,
+            "balanced_accuracy_se": 0.001103,
+            "balanced_accuracy_95_ci": [
+              0.336635,
+              0.340853
+            ],
+            "macro_f1_mean": 0.280885,
+            "macro_f1_se": 0.001725,
+            "macro_f1_95_ci": [
+              0.277378,
+              0.284059
+            ],
+            "risk_mean": 0.66114
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.000397,
+            "delta_macro_f1": -0.01447,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.37
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 15688,
+          "min_confidence": 0.4950109058833775,
+          "confidence_based": {
+            "balanced_accuracy": 0.343667,
+            "macro_f1": 0.263955,
+            "accuracy": 0.497514,
+            "risk": 0.656333,
+            "class_support": {
+              "SL": 7694,
+              "EXP": 212,
+              "TP": 7782
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.338861,
+            "balanced_accuracy_se": 0.001384,
+            "balanced_accuracy_95_ci": [
+              0.336039,
+              0.341366
+            ],
+            "macro_f1_mean": 0.280886,
+            "macro_f1_se": 0.002185,
+            "macro_f1_95_ci": [
+              0.27671,
+              0.285046
+            ],
+            "risk_mean": 0.661139
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.004806,
+            "delta_macro_f1": -0.016931,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 13074,
+          "min_confidence": 0.498093023391335,
+          "confidence_based": {
+            "balanced_accuracy": 0.347344,
+            "macro_f1": 0.261742,
+            "accuracy": 0.5013,
+            "risk": 0.652656,
+            "class_support": {
+              "SL": 6393,
+              "EXP": 162,
+              "TP": 6519
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.338821,
+            "balanced_accuracy_se": 0.00177,
+            "balanced_accuracy_95_ci": [
+              0.335358,
+              0.342201
+            ],
+            "macro_f1_mean": 0.280755,
+            "macro_f1_se": 0.002681,
+            "macro_f1_95_ci": [
+              0.275347,
+              0.285944
+            ],
+            "risk_mean": 0.661179
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.008523,
+            "delta_macro_f1": -0.019013,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 10459,
+          "min_confidence": 0.5007900930346592,
+          "confidence_based": {
+            "balanced_accuracy": 0.352705,
+            "macro_f1": 0.267513,
+            "accuracy": 0.504542,
+            "risk": 0.647295,
+            "class_support": {
+              "SL": 5087,
+              "EXP": 106,
+              "TP": 5266
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.33883,
+            "balanced_accuracy_se": 0.002246,
+            "balanced_accuracy_95_ci": [
+              0.334183,
+              0.343097
+            ],
+            "macro_f1_mean": 0.280856,
+            "macro_f1_se": 0.00346,
+            "macro_f1_95_ci": [
+              0.274287,
+              0.287668
+            ],
+            "risk_mean": 0.66117
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.013875,
+            "delta_macro_f1": -0.013343,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 7844,
+          "min_confidence": 0.5032722095675694,
+          "confidence_based": {
+            "balanced_accuracy": 0.359383,
+            "macro_f1": 0.276476,
+            "accuracy": 0.507522,
+            "risk": 0.640617,
+            "class_support": {
+              "SL": 3788,
+              "EXP": 76,
+              "TP": 3980
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.33866,
+            "balanced_accuracy_se": 0.002613,
+            "balanced_accuracy_95_ci": [
+              0.333873,
+              0.343918
+            ],
+            "macro_f1_mean": 0.280567,
+            "macro_f1_se": 0.00409,
+            "macro_f1_95_ci": [
+              0.273168,
+              0.289175
+            ],
+            "risk_mean": 0.66134
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.020723,
+            "delta_macro_f1": -0.004091,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 5229,
+          "min_confidence": 0.5060147638406703,
+          "confidence_based": {
+            "balanced_accuracy": 0.364396,
+            "macro_f1": 0.283799,
+            "accuracy": 0.5131,
+            "risk": 0.635604,
+            "class_support": {
+              "SL": 2490,
+              "EXP": 52,
+              "TP": 2687
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.338905,
+            "balanced_accuracy_se": 0.003531,
+            "balanced_accuracy_95_ci": [
+              0.332486,
+              0.34583
+            ],
+            "macro_f1_mean": 0.280823,
+            "macro_f1_se": 0.005483,
+            "macro_f1_95_ci": [
+              0.270673,
+              0.29177
+            ],
+            "risk_mean": 0.661095
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.025491,
+            "delta_macro_f1": 0.002976,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        }
+      ],
+      "overall_selective_advantage_verified": true
+    },
+    "BNBUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 26171,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 26171,
+          "min_confidence": 0.33412637693021896,
+          "confidence_based": {
+            "balanced_accuracy": 0.341004,
+            "macro_f1": 0.336715,
+            "accuracy": 0.486111,
+            "risk": 0.658996,
+            "class_support": {
+              "SL": 12635,
+              "EXP": 998,
+              "TP": 12538
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341004,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.341004,
+              0.341004
+            ],
+            "macro_f1_mean": 0.336715,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.336715,
+              0.336715
+            ],
+            "risk_mean": 0.658996
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0,
+            "delta_macro_f1": 0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 20936,
+          "min_confidence": 0.4786011491282897,
+          "confidence_based": {
+            "balanced_accuracy": 0.339256,
+            "macro_f1": 0.33125,
+            "accuracy": 0.497182,
+            "risk": 0.660744,
+            "class_support": {
+              "SL": 10218,
+              "EXP": 413,
+              "TP": 10305
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341086,
+            "balanced_accuracy_se": 0.001256,
+            "balanced_accuracy_95_ci": [
+              0.338604,
+              0.343438
+            ],
+            "macro_f1_mean": 0.336809,
+            "macro_f1_se": 0.001658,
+            "macro_f1_95_ci": [
+              0.33352,
+              0.339916
+            ],
+            "risk_mean": 0.658914
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.001829,
+            "delta_macro_f1": -0.005559,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.926
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 18319,
+          "min_confidence": 0.484208619586233,
+          "confidence_based": {
+            "balanced_accuracy": 0.340216,
+            "macro_f1": 0.331654,
+            "accuracy": 0.499918,
+            "risk": 0.659784,
+            "class_support": {
+              "SL": 8991,
+              "EXP": 312,
+              "TP": 9016
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.340927,
+            "balanced_accuracy_se": 0.00154,
+            "balanced_accuracy_95_ci": [
+              0.337986,
+              0.343925
+            ],
+            "macro_f1_mean": 0.336639,
+            "macro_f1_se": 0.002031,
+            "macro_f1_95_ci": [
+              0.332708,
+              0.340665
+            ],
+            "risk_mean": 0.659073
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.000711,
+            "delta_macro_f1": -0.004985,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.681
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 15702,
+          "min_confidence": 0.4874590171197931,
+          "confidence_based": {
+            "balanced_accuracy": 0.342318,
+            "macro_f1": 0.330581,
+            "accuracy": 0.505541,
+            "risk": 0.657682,
+            "class_support": {
+              "SL": 7730,
+              "EXP": 243,
+              "TP": 7729
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.340961,
+            "balanced_accuracy_se": 0.001948,
+            "balanced_accuracy_95_ci": [
+              0.337097,
+              0.344707
+            ],
+            "macro_f1_mean": 0.336664,
+            "macro_f1_se": 0.002539,
+            "macro_f1_95_ci": [
+              0.331637,
+              0.3416
+            ],
+            "risk_mean": 0.659039
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.001356,
+            "delta_macro_f1": -0.006083,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.242
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 13085,
+          "min_confidence": 0.48972987432949094,
+          "confidence_based": {
+            "balanced_accuracy": 0.34197,
+            "macro_f1": 0.325865,
+            "accuracy": 0.505999,
+            "risk": 0.65803,
+            "class_support": {
+              "SL": 6468,
+              "EXP": 196,
+              "TP": 6421
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341022,
+            "balanced_accuracy_se": 0.002449,
+            "balanced_accuracy_95_ci": [
+              0.336381,
+              0.345804
+            ],
+            "macro_f1_mean": 0.336734,
+            "macro_f1_se": 0.003195,
+            "macro_f1_95_ci": [
+              0.33055,
+              0.342782
+            ],
+            "risk_mean": 0.658978
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.000949,
+            "delta_macro_f1": -0.010869,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.334
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 10468,
+          "min_confidence": 0.49183575201534696,
+          "confidence_based": {
+            "balanced_accuracy": 0.340719,
+            "macro_f1": 0.318674,
+            "accuracy": 0.506114,
+            "risk": 0.659281,
+            "class_support": {
+              "SL": 5207,
+              "EXP": 145,
+              "TP": 5116
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.340958,
+            "balanced_accuracy_se": 0.003002,
+            "balanced_accuracy_95_ci": [
+              0.335229,
+              0.346914
+            ],
+            "macro_f1_mean": 0.336619,
+            "macro_f1_se": 0.003942,
+            "macro_f1_95_ci": [
+              0.329163,
+              0.344367
+            ],
+            "risk_mean": 0.659042
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.000239,
+            "delta_macro_f1": -0.017945,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.533
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 7851,
+          "min_confidence": 0.49455127692799306,
+          "confidence_based": {
+            "balanced_accuracy": 0.340334,
+            "macro_f1": 0.311759,
+            "accuracy": 0.507961,
+            "risk": 0.659666,
+            "class_support": {
+              "SL": 3933,
+              "EXP": 105,
+              "TP": 3813
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.340971,
+            "balanced_accuracy_se": 0.003783,
+            "balanced_accuracy_95_ci": [
+              0.333378,
+              0.348902
+            ],
+            "macro_f1_mean": 0.336626,
+            "macro_f1_se": 0.005028,
+            "macro_f1_95_ci": [
+              0.326787,
+              0.347064
+            ],
+            "risk_mean": 0.659029
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.000637,
+            "delta_macro_f1": -0.024867,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.571
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 5234,
+          "min_confidence": 0.49812833263937467,
+          "confidence_based": {
+            "balanced_accuracy": 0.337569,
+            "macro_f1": 0.29779,
+            "accuracy": 0.510126,
+            "risk": 0.662431,
+            "class_support": {
+              "SL": 2664,
+              "EXP": 67,
+              "TP": 2503
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341285,
+            "balanced_accuracy_se": 0.004742,
+            "balanced_accuracy_95_ci": [
+              0.331976,
+              0.350651
+            ],
+            "macro_f1_mean": 0.336994,
+            "macro_f1_se": 0.006238,
+            "macro_f1_95_ci": [
+              0.324931,
+              0.349979
+            ],
+            "risk_mean": 0.658715
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.003716,
+            "delta_macro_f1": -0.039204,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.798
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        }
+      ],
+      "overall_selective_advantage_verified": false
+    },
+    "XRPUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 26120,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 26120,
+          "min_confidence": 0.34822477003022767,
+          "confidence_based": {
+            "balanced_accuracy": 0.341372,
+            "macro_f1": 0.315121,
+            "accuracy": 0.48706,
+            "risk": 0.658628,
+            "class_support": {
+              "SL": 13057,
+              "EXP": 728,
+              "TP": 12335
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341372,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.341372,
+              0.341372
+            ],
+            "macro_f1_mean": 0.315121,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.315121,
+              0.315121
+            ],
+            "risk_mean": 0.658628
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0,
+            "delta_macro_f1": 0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 20896,
+          "min_confidence": 0.4865278942030563,
+          "confidence_based": {
+            "balanced_accuracy": 0.33825,
+            "macro_f1": 0.291438,
+            "accuracy": 0.492008,
+            "risk": 0.66175,
+            "class_support": {
+              "SL": 10549,
+              "EXP": 300,
+              "TP": 10047
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.34142,
+            "balanced_accuracy_se": 0.001006,
+            "balanced_accuracy_95_ci": [
+              0.339359,
+              0.343539
+            ],
+            "macro_f1_mean": 0.315225,
+            "macro_f1_se": 0.001381,
+            "macro_f1_95_ci": [
+              0.312438,
+              0.317919
+            ],
+            "risk_mean": 0.65858
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.00317,
+            "delta_macro_f1": -0.023787,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.999
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 18284,
+          "min_confidence": 0.4922101549772771,
+          "confidence_based": {
+            "balanced_accuracy": 0.338572,
+            "macro_f1": 0.276194,
+            "accuracy": 0.49114,
+            "risk": 0.661428,
+            "class_support": {
+              "SL": 9263,
+              "EXP": 238,
+              "TP": 8783
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341371,
+            "balanced_accuracy_se": 0.001364,
+            "balanced_accuracy_95_ci": [
+              0.338608,
+              0.343962
+            ],
+            "macro_f1_mean": 0.315082,
+            "macro_f1_se": 0.001948,
+            "macro_f1_95_ci": [
+              0.311283,
+              0.318843
+            ],
+            "risk_mean": 0.658629
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.0028,
+            "delta_macro_f1": -0.038888,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.976
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 15672,
+          "min_confidence": 0.4962143502893614,
+          "confidence_based": {
+            "balanced_accuracy": 0.337022,
+            "macro_f1": 0.257926,
+            "accuracy": 0.487685,
+            "risk": 0.662978,
+            "class_support": {
+              "SL": 7944,
+              "EXP": 201,
+              "TP": 7527
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341336,
+            "balanced_accuracy_se": 0.001706,
+            "balanced_accuracy_95_ci": [
+              0.337917,
+              0.344518
+            ],
+            "macro_f1_mean": 0.315041,
+            "macro_f1_se": 0.002413,
+            "macro_f1_95_ci": [
+              0.310085,
+              0.31968
+            ],
+            "risk_mean": 0.658664
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.004314,
+            "delta_macro_f1": -0.057115,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.996
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 13060,
+          "min_confidence": 0.5003592701483688,
+          "confidence_based": {
+            "balanced_accuracy": 0.335237,
+            "macro_f1": 0.242798,
+            "accuracy": 0.486753,
+            "risk": 0.664763,
+            "class_support": {
+              "SL": 6591,
+              "EXP": 161,
+              "TP": 6308
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341334,
+            "balanced_accuracy_se": 0.00208,
+            "balanced_accuracy_95_ci": [
+              0.337359,
+              0.345439
+            ],
+            "macro_f1_mean": 0.315017,
+            "macro_f1_se": 0.002939,
+            "macro_f1_95_ci": [
+              0.309238,
+              0.320717
+            ],
+            "risk_mean": 0.658666
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.006097,
+            "delta_macro_f1": -0.072218,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.997
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 10448,
+          "min_confidence": 0.5045335990485867,
+          "confidence_based": {
+            "balanced_accuracy": 0.33274,
+            "macro_f1": 0.231643,
+            "accuracy": 0.487079,
+            "risk": 0.66726,
+            "class_support": {
+              "SL": 5224,
+              "EXP": 129,
+              "TP": 5095
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341164,
+            "balanced_accuracy_se": 0.002559,
+            "balanced_accuracy_95_ci": [
+              0.336144,
+              0.346113
+            ],
+            "macro_f1_mean": 0.314813,
+            "macro_f1_se": 0.003561,
+            "macro_f1_95_ci": [
+              0.307874,
+              0.321732
+            ],
+            "risk_mean": 0.658836
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.008424,
+            "delta_macro_f1": -0.08317,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.999
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 7836,
+          "min_confidence": 0.5087935165100219,
+          "confidence_based": {
+            "balanced_accuracy": 0.332983,
+            "macro_f1": 0.226755,
+            "accuracy": 0.485707,
+            "risk": 0.667017,
+            "class_support": {
+              "SL": 3937,
+              "EXP": 91,
+              "TP": 3808
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341217,
+            "balanced_accuracy_se": 0.003159,
+            "balanced_accuracy_95_ci": [
+              0.335141,
+              0.347627
+            ],
+            "macro_f1_mean": 0.314961,
+            "macro_f1_se": 0.004495,
+            "macro_f1_95_ci": [
+              0.305967,
+              0.323745
+            ],
+            "risk_mean": 0.658783
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.008234,
+            "delta_macro_f1": -0.088206,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.998
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 5224,
+          "min_confidence": 0.5130241718821578,
+          "confidence_based": {
+            "balanced_accuracy": 0.333551,
+            "macro_f1": 0.224098,
+            "accuracy": 0.483729,
+            "risk": 0.666449,
+            "class_support": {
+              "SL": 2639,
+              "EXP": 61,
+              "TP": 2524
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.341496,
+            "balanced_accuracy_se": 0.00433,
+            "balanced_accuracy_95_ci": [
+              0.333198,
+              0.350446
+            ],
+            "macro_f1_mean": 0.315248,
+            "macro_f1_se": 0.006057,
+            "macro_f1_95_ci": [
+              0.304288,
+              0.327938
+            ],
+            "risk_mean": 0.658504
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.007945,
+            "delta_macro_f1": -0.091149,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.965
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        }
+      ],
+      "overall_selective_advantage_verified": false
+    },
+    "ADAUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 26099,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 26099,
+          "min_confidence": 0.3349105529379676,
+          "confidence_based": {
+            "balanced_accuracy": 0.36606,
+            "macro_f1": 0.356781,
+            "accuracy": 0.480018,
+            "risk": 0.63394,
+            "class_support": {
+              "SL": 12215,
+              "EXP": 2744,
+              "TP": 11140
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.36606,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.36606,
+              0.36606
+            ],
+            "macro_f1_mean": 0.356781,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.356781,
+              0.356781
+            ],
+            "risk_mean": 0.63394
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0,
+            "delta_macro_f1": 0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 20879,
+          "min_confidence": 0.44547776560952035,
+          "confidence_based": {
+            "balanced_accuracy": 0.361013,
+            "macro_f1": 0.35045,
+            "accuracy": 0.49011,
+            "risk": 0.638987,
+            "class_support": {
+              "SL": 10024,
+              "EXP": 1733,
+              "TP": 9122
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.365979,
+            "balanced_accuracy_se": 0.00122,
+            "balanced_accuracy_95_ci": [
+              0.36365,
+              0.368373
+            ],
+            "macro_f1_mean": 0.356698,
+            "macro_f1_se": 0.001483,
+            "macro_f1_95_ci": [
+              0.353771,
+              0.359658
+            ],
+            "risk_mean": 0.634021
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.004966,
+            "delta_macro_f1": -0.006249,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 18269,
+          "min_confidence": 0.46225757982408633,
+          "confidence_based": {
+            "balanced_accuracy": 0.360972,
+            "macro_f1": 0.351546,
+            "accuracy": 0.493787,
+            "risk": 0.639028,
+            "class_support": {
+              "SL": 8812,
+              "EXP": 1389,
+              "TP": 8068
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.366029,
+            "balanced_accuracy_se": 0.001598,
+            "balanced_accuracy_95_ci": [
+              0.362985,
+              0.369025
+            ],
+            "macro_f1_mean": 0.356739,
+            "macro_f1_se": 0.001914,
+            "macro_f1_95_ci": [
+              0.353115,
+              0.360683
+            ],
+            "risk_mean": 0.633971
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.005056,
+            "delta_macro_f1": -0.005192,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.999
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 15659,
+          "min_confidence": 0.4742329878363031,
+          "confidence_based": {
+            "balanced_accuracy": 0.360889,
+            "macro_f1": 0.352722,
+            "accuracy": 0.496583,
+            "risk": 0.639111,
+            "class_support": {
+              "SL": 7523,
+              "EXP": 1105,
+              "TP": 7031
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.366086,
+            "balanced_accuracy_se": 0.001957,
+            "balanced_accuracy_95_ci": [
+              0.362236,
+              0.370057
+            ],
+            "macro_f1_mean": 0.356776,
+            "macro_f1_se": 0.002387,
+            "macro_f1_95_ci": [
+              0.35217,
+              0.36144
+            ],
+            "risk_mean": 0.633914
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.005197,
+            "delta_macro_f1": -0.004054,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.998
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 13049,
+          "min_confidence": 0.48334182367306094,
+          "confidence_based": {
+            "balanced_accuracy": 0.362823,
+            "macro_f1": 0.356155,
+            "accuracy": 0.501954,
+            "risk": 0.637177,
+            "class_support": {
+              "SL": 6284,
+              "EXP": 845,
+              "TP": 5920
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.365978,
+            "balanced_accuracy_se": 0.002539,
+            "balanced_accuracy_95_ci": [
+              0.360937,
+              0.370788
+            ],
+            "macro_f1_mean": 0.356678,
+            "macro_f1_se": 0.003,
+            "macro_f1_95_ci": [
+              0.350824,
+              0.362497
+            ],
+            "risk_mean": 0.634022
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.003155,
+            "delta_macro_f1": -0.000523,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.902
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 10439,
+          "min_confidence": 0.4916077685375755,
+          "confidence_based": {
+            "balanced_accuracy": 0.364296,
+            "macro_f1": 0.359336,
+            "accuracy": 0.504167,
+            "risk": 0.635704,
+            "class_support": {
+              "SL": 5059,
+              "EXP": 645,
+              "TP": 4735
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.365928,
+            "balanced_accuracy_se": 0.003009,
+            "balanced_accuracy_95_ci": [
+              0.359974,
+              0.371397
+            ],
+            "macro_f1_mean": 0.356609,
+            "macro_f1_se": 0.003609,
+            "macro_f1_95_ci": [
+              0.349383,
+              0.363608
+            ],
+            "risk_mean": 0.634072
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.001633,
+            "delta_macro_f1": 0.002727,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.703
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 7829,
+          "min_confidence": 0.500105761682345,
+          "confidence_based": {
+            "balanced_accuracy": 0.369063,
+            "macro_f1": 0.366073,
+            "accuracy": 0.511304,
+            "risk": 0.630937,
+            "class_support": {
+              "SL": 3809,
+              "EXP": 452,
+              "TP": 3568
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.366165,
+            "balanced_accuracy_se": 0.003846,
+            "balanced_accuracy_95_ci": [
+              0.358529,
+              0.373588
+            ],
+            "macro_f1_mean": 0.356842,
+            "macro_f1_se": 0.004593,
+            "macro_f1_95_ci": [
+              0.347286,
+              0.365456
+            ],
+            "risk_mean": 0.633835
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.002899,
+            "delta_macro_f1": 0.009231,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.223
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 5219,
+          "min_confidence": 0.5105040501200755,
+          "confidence_based": {
+            "balanced_accuracy": 0.380531,
+            "macro_f1": 0.382583,
+            "accuracy": 0.525771,
+            "risk": 0.619469,
+            "class_support": {
+              "SL": 2596,
+              "EXP": 265,
+              "TP": 2358
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.366182,
+            "balanced_accuracy_se": 0.004949,
+            "balanced_accuracy_95_ci": [
+              0.356526,
+              0.376005
+            ],
+            "macro_f1_mean": 0.356891,
+            "macro_f1_se": 0.005943,
+            "macro_f1_95_ci": [
+              0.345489,
+              0.368405
+            ],
+            "risk_mean": 0.633818
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.01435,
+            "delta_macro_f1": 0.025692,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.002
+          },
+          "status": "PASS"
+        }
+      ],
+      "overall_selective_advantage_verified": false
+    },
+    "SOLUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 26164,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 26164,
+          "min_confidence": 0.33757469919508554,
+          "confidence_based": {
+            "balanced_accuracy": 0.340003,
+            "macro_f1": 0.333669,
+            "accuracy": 0.492776,
+            "risk": 0.659997,
+            "class_support": {
+              "SL": 12756,
+              "EXP": 884,
+              "TP": 12524
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.340003,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.340003,
+              0.340003
+            ],
+            "macro_f1_mean": 0.333669,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.333669,
+              0.333669
+            ],
+            "risk_mean": 0.659997
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0,
+            "delta_macro_f1": 0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 20931,
+          "min_confidence": 0.48490446098717294,
+          "confidence_based": {
+            "balanced_accuracy": 0.341664,
+            "macro_f1": 0.338903,
+            "accuracy": 0.504563,
+            "risk": 0.658336,
+            "class_support": {
+              "SL": 10317,
+              "EXP": 325,
+              "TP": 10289
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.339995,
+            "balanced_accuracy_se": 0.001033,
+            "balanced_accuracy_95_ci": [
+              0.338133,
+              0.342013
+            ],
+            "macro_f1_mean": 0.333657,
+            "macro_f1_se": 0.001075,
+            "macro_f1_95_ci": [
+              0.33155,
+              0.33571
+            ],
+            "risk_mean": 0.660005
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.001669,
+            "delta_macro_f1": 0.005246,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.044
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 18314,
+          "min_confidence": 0.4921049918222248,
+          "confidence_based": {
+            "balanced_accuracy": 0.343442,
+            "macro_f1": 0.341117,
+            "accuracy": 0.508518,
+            "risk": 0.656558,
+            "class_support": {
+              "SL": 9089,
+              "EXP": 233,
+              "TP": 8992
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.340043,
+            "balanced_accuracy_se": 0.001404,
+            "balanced_accuracy_95_ci": [
+              0.337285,
+              0.342781
+            ],
+            "macro_f1_mean": 0.333704,
+            "macro_f1_se": 0.001458,
+            "macro_f1_95_ci": [
+              0.330848,
+              0.336569
+            ],
+            "risk_mean": 0.659957
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.003399,
+            "delta_macro_f1": 0.007413,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.007
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 15698,
+          "min_confidence": 0.49543555319176497,
+          "confidence_based": {
+            "balanced_accuracy": 0.343529,
+            "macro_f1": 0.340551,
+            "accuracy": 0.509301,
+            "risk": 0.656471,
+            "class_support": {
+              "SL": 7818,
+              "EXP": 171,
+              "TP": 7709
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.340043,
+            "balanced_accuracy_se": 0.00172,
+            "balanced_accuracy_95_ci": [
+              0.336554,
+              0.343421
+            ],
+            "macro_f1_mean": 0.333682,
+            "macro_f1_se": 0.001812,
+            "macro_f1_95_ci": [
+              0.330063,
+              0.337254
+            ],
+            "risk_mean": 0.659957
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.003486,
+            "delta_macro_f1": 0.006869,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.022
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 13082,
+          "min_confidence": 0.49747736254261693,
+          "confidence_based": {
+            "balanced_accuracy": 0.342226,
+            "macro_f1": 0.337446,
+            "accuracy": 0.507415,
+            "risk": 0.657774,
+            "class_support": {
+              "SL": 6544,
+              "EXP": 127,
+              "TP": 6411
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.340086,
+            "balanced_accuracy_se": 0.002152,
+            "balanced_accuracy_95_ci": [
+              0.335854,
+              0.344209
+            ],
+            "macro_f1_mean": 0.333743,
+            "macro_f1_se": 0.002236,
+            "macro_f1_95_ci": [
+              0.329373,
+              0.337967
+            ],
+            "risk_mean": 0.659914
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.00214,
+            "delta_macro_f1": 0.003703,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.176
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 10465,
+          "min_confidence": 0.499191119766295,
+          "confidence_based": {
+            "balanced_accuracy": 0.341766,
+            "macro_f1": 0.33386,
+            "accuracy": 0.506641,
+            "risk": 0.658234,
+            "class_support": {
+              "SL": 5238,
+              "EXP": 95,
+              "TP": 5132
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.340029,
+            "balanced_accuracy_se": 0.002579,
+            "balanced_accuracy_95_ci": [
+              0.33504,
+              0.344771
+            ],
+            "macro_f1_mean": 0.333687,
+            "macro_f1_se": 0.002704,
+            "macro_f1_95_ci": [
+              0.328439,
+              0.338506
+            ],
+            "risk_mean": 0.659971
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.001737,
+            "delta_macro_f1": 0.000173,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.251
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 7849,
+          "min_confidence": 0.5012315387068746,
+          "confidence_based": {
+            "balanced_accuracy": 0.340118,
+            "macro_f1": 0.328395,
+            "accuracy": 0.503631,
+            "risk": 0.659882,
+            "class_support": {
+              "SL": 3944,
+              "EXP": 66,
+              "TP": 3839
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.339839,
+            "balanced_accuracy_se": 0.00321,
+            "balanced_accuracy_95_ci": [
+              0.333655,
+              0.346152
+            ],
+            "macro_f1_mean": 0.333465,
+            "macro_f1_se": 0.003356,
+            "macro_f1_95_ci": [
+              0.327299,
+              0.340259
+            ],
+            "risk_mean": 0.660161
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.000279,
+            "delta_macro_f1": -0.00507,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.464
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 5232,
+          "min_confidence": 0.5037887925657324,
+          "confidence_based": {
+            "balanced_accuracy": 0.338258,
+            "macro_f1": 0.321346,
+            "accuracy": 0.501147,
+            "risk": 0.661742,
+            "class_support": {
+              "SL": 2636,
+              "EXP": 34,
+              "TP": 2562
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.340031,
+            "balanced_accuracy_se": 0.004297,
+            "balanced_accuracy_95_ci": [
+              0.33148,
+              0.348569
+            ],
+            "macro_f1_mean": 0.333688,
+            "macro_f1_se": 0.004459,
+            "macro_f1_95_ci": [
+              0.324862,
+              0.342556
+            ],
+            "risk_mean": 0.659969
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.001773,
+            "delta_macro_f1": -0.012342,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.656
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        }
+      ],
+      "overall_selective_advantage_verified": true
+    },
+    "AVAXUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 26166,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 26166,
+          "min_confidence": 0.33342335666404527,
+          "confidence_based": {
+            "balanced_accuracy": 0.365342,
+            "macro_f1": 0.354922,
+            "accuracy": 0.442177,
+            "risk": 0.634658,
+            "class_support": {
+              "SL": 11394,
+              "EXP": 4033,
+              "TP": 10739
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.365342,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.365342,
+              0.365342
+            ],
+            "macro_f1_mean": 0.354922,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.354922,
+              0.354922
+            ],
+            "risk_mean": 0.634658
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0,
+            "delta_macro_f1": 0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 20932,
+          "min_confidence": 0.38854164307246913,
+          "confidence_based": {
+            "balanced_accuracy": 0.358301,
+            "macro_f1": 0.341138,
+            "accuracy": 0.454949,
+            "risk": 0.641699,
+            "class_support": {
+              "SL": 9373,
+              "EXP": 2748,
+              "TP": 8811
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.36536,
+            "balanced_accuracy_se": 0.001325,
+            "balanced_accuracy_95_ci": [
+              0.362767,
+              0.367866
+            ],
+            "macro_f1_mean": 0.354932,
+            "macro_f1_se": 0.001599,
+            "macro_f1_95_ci": [
+              0.351642,
+              0.357989
+            ],
+            "risk_mean": 0.63464
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.007058,
+            "delta_macro_f1": -0.013794,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 18316,
+          "min_confidence": 0.4057144856743835,
+          "confidence_based": {
+            "balanced_accuracy": 0.358065,
+            "macro_f1": 0.340705,
+            "accuracy": 0.461072,
+            "risk": 0.641935,
+            "class_support": {
+              "SL": 8318,
+              "EXP": 2196,
+              "TP": 7802
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.365358,
+            "balanced_accuracy_se": 0.001683,
+            "balanced_accuracy_95_ci": [
+              0.362163,
+              0.368675
+            ],
+            "macro_f1_mean": 0.354915,
+            "macro_f1_se": 0.002022,
+            "macro_f1_95_ci": [
+              0.351022,
+              0.358997
+            ],
+            "risk_mean": 0.634642
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.007293,
+            "delta_macro_f1": -0.01421,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 15699,
+          "min_confidence": 0.4206172561454488,
+          "confidence_based": {
+            "balanced_accuracy": 0.356263,
+            "macro_f1": 0.3377,
+            "accuracy": 0.467291,
+            "risk": 0.643737,
+            "class_support": {
+              "SL": 7272,
+              "EXP": 1722,
+              "TP": 6705
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.365184,
+            "balanced_accuracy_se": 0.002133,
+            "balanced_accuracy_95_ci": [
+              0.360868,
+              0.369096
+            ],
+            "macro_f1_mean": 0.354766,
+            "macro_f1_se": 0.002589,
+            "macro_f1_95_ci": [
+              0.349423,
+              0.359841
+            ],
+            "risk_mean": 0.634816
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.008921,
+            "delta_macro_f1": -0.017066,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 13083,
+          "min_confidence": 0.43290255664947996,
+          "confidence_based": {
+            "balanced_accuracy": 0.354487,
+            "macro_f1": 0.333123,
+            "accuracy": 0.471299,
+            "risk": 0.645513,
+            "class_support": {
+              "SL": 6122,
+              "EXP": 1310,
+              "TP": 5651
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.36533,
+            "balanced_accuracy_se": 0.002638,
+            "balanced_accuracy_95_ci": [
+              0.360172,
+              0.370392
+            ],
+            "macro_f1_mean": 0.354913,
+            "macro_f1_se": 0.003183,
+            "macro_f1_95_ci": [
+              0.348782,
+              0.36079
+            ],
+            "risk_mean": 0.63467
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.010844,
+            "delta_macro_f1": -0.021789,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 10466,
+          "min_confidence": 0.444472824925932,
+          "confidence_based": {
+            "balanced_accuracy": 0.353342,
+            "macro_f1": 0.329273,
+            "accuracy": 0.475158,
+            "risk": 0.646658,
+            "class_support": {
+              "SL": 4961,
+              "EXP": 956,
+              "TP": 4549
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.365431,
+            "balanced_accuracy_se": 0.003153,
+            "balanced_accuracy_95_ci": [
+              0.359806,
+              0.372084
+            ],
+            "macro_f1_mean": 0.355022,
+            "macro_f1_se": 0.003802,
+            "macro_f1_95_ci": [
+              0.347996,
+              0.362709
+            ],
+            "risk_mean": 0.634569
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.012089,
+            "delta_macro_f1": -0.025749,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 7849,
+          "min_confidence": 0.456632451219098,
+          "confidence_based": {
+            "balanced_accuracy": 0.354885,
+            "macro_f1": 0.328121,
+            "accuracy": 0.477258,
+            "risk": 0.645115,
+            "class_support": {
+              "SL": 3758,
+              "EXP": 647,
+              "TP": 3444
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.365207,
+            "balanced_accuracy_se": 0.004111,
+            "balanced_accuracy_95_ci": [
+              0.357481,
+              0.373228
+            ],
+            "macro_f1_mean": 0.354786,
+            "macro_f1_se": 0.004918,
+            "macro_f1_95_ci": [
+              0.345579,
+              0.364384
+            ],
+            "risk_mean": 0.634793
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.010322,
+            "delta_macro_f1": -0.026665,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.997
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 5233,
+          "min_confidence": 0.4699373451023418,
+          "confidence_based": {
+            "balanced_accuracy": 0.360986,
+            "macro_f1": 0.324186,
+            "accuracy": 0.478311,
+            "risk": 0.639014,
+            "class_support": {
+              "SL": 2498,
+              "EXP": 373,
+              "TP": 2362
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.365122,
+            "balanced_accuracy_se": 0.005282,
+            "balanced_accuracy_95_ci": [
+              0.355223,
+              0.37533
+            ],
+            "macro_f1_mean": 0.354635,
+            "macro_f1_se": 0.006426,
+            "macro_f1_95_ci": [
+              0.342225,
+              0.367317
+            ],
+            "risk_mean": 0.634878
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.004136,
+            "delta_macro_f1": -0.030449,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.769
+          },
+          "status": "PASS"
+        }
+      ],
+      "overall_selective_advantage_verified": false
+    },
+    "LINKUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 26157,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 26157,
+          "min_confidence": 0.3336583594526005,
+          "confidence_based": {
+            "balanced_accuracy": 0.373759,
+            "macro_f1": 0.355143,
+            "accuracy": 0.446993,
+            "risk": 0.626241,
+            "class_support": {
+              "SL": 11631,
+              "EXP": 3374,
+              "TP": 11152
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.373759,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.373759,
+              0.373759
+            ],
+            "macro_f1_mean": 0.355143,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.355143,
+              0.355143
+            ],
+            "risk_mean": 0.626241
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.0,
+            "delta_macro_f1": 0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 20925,
+          "min_confidence": 0.3897600706880434,
+          "confidence_based": {
+            "balanced_accuracy": 0.369944,
+            "macro_f1": 0.351679,
+            "accuracy": 0.461792,
+            "risk": 0.630056,
+            "class_support": {
+              "SL": 9474,
+              "EXP": 2329,
+              "TP": 9122
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.373753,
+            "balanced_accuracy_se": 0.001321,
+            "balanced_accuracy_95_ci": [
+              0.371182,
+              0.376285
+            ],
+            "macro_f1_mean": 0.355137,
+            "macro_f1_se": 0.001626,
+            "macro_f1_95_ci": [
+              0.3518,
+              0.358292
+            ],
+            "risk_mean": 0.626247
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.003809,
+            "delta_macro_f1": -0.003458,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.999
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 18309,
+          "min_confidence": 0.40748257300340773,
+          "confidence_based": {
+            "balanced_accuracy": 0.371648,
+            "macro_f1": 0.355734,
+            "accuracy": 0.468677,
+            "risk": 0.628352,
+            "class_support": {
+              "SL": 8381,
+              "EXP": 1873,
+              "TP": 8055
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.373749,
+            "balanced_accuracy_se": 0.001772,
+            "balanced_accuracy_95_ci": [
+              0.370402,
+              0.377073
+            ],
+            "macro_f1_mean": 0.355118,
+            "macro_f1_se": 0.002125,
+            "macro_f1_95_ci": [
+              0.351025,
+              0.359016
+            ],
+            "risk_mean": 0.626251
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.002101,
+            "delta_macro_f1": 0.000616,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.876
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 15694,
+          "min_confidence": 0.42111483616721046,
+          "confidence_based": {
+            "balanced_accuracy": 0.374182,
+            "macro_f1": 0.361878,
+            "accuracy": 0.473748,
+            "risk": 0.625818,
+            "class_support": {
+              "SL": 7202,
+              "EXP": 1502,
+              "TP": 6990
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.373713,
+            "balanced_accuracy_se": 0.002236,
+            "balanced_accuracy_95_ci": [
+              0.369408,
+              0.377898
+            ],
+            "macro_f1_mean": 0.355045,
+            "macro_f1_se": 0.002773,
+            "macro_f1_95_ci": [
+              0.349519,
+              0.360209
+            ],
+            "risk_mean": 0.626287
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.000468,
+            "delta_macro_f1": 0.006833,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.427
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 13078,
+          "min_confidence": 0.4320326230262242,
+          "confidence_based": {
+            "balanced_accuracy": 0.376482,
+            "macro_f1": 0.367802,
+            "accuracy": 0.477214,
+            "risk": 0.623518,
+            "class_support": {
+              "SL": 6024,
+              "EXP": 1172,
+              "TP": 5882
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.373849,
+            "balanced_accuracy_se": 0.002694,
+            "balanced_accuracy_95_ci": [
+              0.368469,
+              0.378886
+            ],
+            "macro_f1_mean": 0.355236,
+            "macro_f1_se": 0.003319,
+            "macro_f1_95_ci": [
+              0.348521,
+              0.361472
+            ],
+            "risk_mean": 0.626151
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.002633,
+            "delta_macro_f1": 0.012566,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.169
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 10462,
+          "min_confidence": 0.441716400285311,
+          "confidence_based": {
+            "balanced_accuracy": 0.385008,
+            "macro_f1": 0.383272,
+            "accuracy": 0.485184,
+            "risk": 0.614992,
+            "class_support": {
+              "SL": 4857,
+              "EXP": 841,
+              "TP": 4764
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.373685,
+            "balanced_accuracy_se": 0.003324,
+            "balanced_accuracy_95_ci": [
+              0.367081,
+              0.380101
+            ],
+            "macro_f1_mean": 0.355058,
+            "macro_f1_se": 0.004083,
+            "macro_f1_95_ci": [
+              0.346944,
+              0.362947
+            ],
+            "risk_mean": 0.626315
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.011323,
+            "delta_macro_f1": 0.028214,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.002
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 7847,
+          "min_confidence": 0.45130450419498325,
+          "confidence_based": {
+            "balanced_accuracy": 0.395507,
+            "macro_f1": 0.401273,
+            "accuracy": 0.491653,
+            "risk": 0.604493,
+            "class_support": {
+              "SL": 3653,
+              "EXP": 582,
+              "TP": 3612
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.373925,
+            "balanced_accuracy_se": 0.004161,
+            "balanced_accuracy_95_ci": [
+              0.366065,
+              0.382586
+            ],
+            "macro_f1_mean": 0.355244,
+            "macro_f1_se": 0.005119,
+            "macro_f1_95_ci": [
+              0.345052,
+              0.365339
+            ],
+            "risk_mean": 0.626075
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.021582,
+            "delta_macro_f1": 0.046029,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 5231,
+          "min_confidence": 0.46138655442755044,
+          "confidence_based": {
+            "balanced_accuracy": 0.411793,
+            "macro_f1": 0.424726,
+            "accuracy": 0.497037,
+            "risk": 0.588207,
+            "class_support": {
+              "SL": 2458,
+              "EXP": 321,
+              "TP": 2452
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.373584,
+            "balanced_accuracy_se": 0.005411,
+            "balanced_accuracy_95_ci": [
+              0.363153,
+              0.383823
+            ],
+            "macro_f1_mean": 0.354848,
+            "macro_f1_se": 0.006549,
+            "macro_f1_95_ci": [
+              0.341591,
+              0.366861
+            ],
+            "risk_mean": 0.626416
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.038209,
+            "delta_macro_f1": 0.069878,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "PASS"
+        }
+      ],
+      "overall_selective_advantage_verified": true
+    },
+    "DOGEUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 26132,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 26132,
+          "min_confidence": 0.3341862370989599,
+          "confidence_based": {
+            "balanced_accuracy": 0.359389,
+            "macro_f1": 0.36817,
+            "accuracy": 0.495255,
+            "risk": 0.640611,
+            "class_support": {
+              "SL": 13032,
+              "EXP": 974,
+              "TP": 12126
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.359389,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.359389,
+              0.359389
+            ],
+            "macro_f1_mean": 0.36817,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.36817,
+              0.36817
+            ],
+            "risk_mean": 0.640611
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0,
+            "delta_macro_f1": -0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 20905,
+          "min_confidence": 0.4806057545226505,
+          "confidence_based": {
+            "balanced_accuracy": 0.355578,
+            "macro_f1": 0.363835,
+            "accuracy": 0.505047,
+            "risk": 0.644422,
+            "class_support": {
+              "SL": 10499,
+              "EXP": 390,
+              "TP": 10016
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.359395,
+            "balanced_accuracy_se": 0.001632,
+            "balanced_accuracy_95_ci": [
+              0.356203,
+              0.362567
+            ],
+            "macro_f1_mean": 0.368146,
+            "macro_f1_se": 0.002366,
+            "macro_f1_95_ci": [
+              0.363366,
+              0.37263
+            ],
+            "risk_mean": 0.640605
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.003817,
+            "delta_macro_f1": -0.004311,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.992
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 18292,
+          "min_confidence": 0.4887750561339011,
+          "confidence_based": {
+            "balanced_accuracy": 0.358937,
+            "macro_f1": 0.36944,
+            "accuracy": 0.506888,
+            "risk": 0.641063,
+            "class_support": {
+              "SL": 9223,
+              "EXP": 302,
+              "TP": 8767
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.359341,
+            "balanced_accuracy_se": 0.002184,
+            "balanced_accuracy_95_ci": [
+              0.355182,
+              0.363781
+            ],
+            "macro_f1_mean": 0.368079,
+            "macro_f1_se": 0.003194,
+            "macro_f1_95_ci": [
+              0.361568,
+              0.374416
+            ],
+            "risk_mean": 0.640659
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.000404,
+            "delta_macro_f1": 0.001361,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.563
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 15679,
+          "min_confidence": 0.49307552198664906,
+          "confidence_based": {
+            "balanced_accuracy": 0.3622,
+            "macro_f1": 0.373985,
+            "accuracy": 0.509918,
+            "risk": 0.6378,
+            "class_support": {
+              "SL": 7896,
+              "EXP": 234,
+              "TP": 7549
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.359432,
+            "balanced_accuracy_se": 0.002638,
+            "balanced_accuracy_95_ci": [
+              0.354241,
+              0.3645
+            ],
+            "macro_f1_mean": 0.368295,
+            "macro_f1_se": 0.003848,
+            "macro_f1_95_ci": [
+              0.360492,
+              0.37507
+            ],
+            "risk_mean": 0.640568
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.002768,
+            "delta_macro_f1": 0.00569,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.144
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 13066,
+          "min_confidence": 0.4955697146158558,
+          "confidence_based": {
+            "balanced_accuracy": 0.366915,
+            "macro_f1": 0.38265,
+            "accuracy": 0.508955,
+            "risk": 0.633085,
+            "class_support": {
+              "SL": 6599,
+              "EXP": 175,
+              "TP": 6292
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.359298,
+            "balanced_accuracy_se": 0.00316,
+            "balanced_accuracy_95_ci": [
+              0.352934,
+              0.36513
+            ],
+            "macro_f1_mean": 0.368069,
+            "macro_f1_se": 0.004677,
+            "macro_f1_95_ci": [
+              0.358296,
+              0.376999
+            ],
+            "risk_mean": 0.640702
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.007616,
+            "delta_macro_f1": 0.014581,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.006
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 10452,
+          "min_confidence": 0.49776711542828184,
+          "confidence_based": {
+            "balanced_accuracy": 0.374454,
+            "macro_f1": 0.392636,
+            "accuracy": 0.511768,
+            "risk": 0.625546,
+            "class_support": {
+              "SL": 5261,
+              "EXP": 141,
+              "TP": 5050
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.359557,
+            "balanced_accuracy_se": 0.003965,
+            "balanced_accuracy_95_ci": [
+              0.35185,
+              0.367227
+            ],
+            "macro_f1_mean": 0.368349,
+            "macro_f1_se": 0.005826,
+            "macro_f1_95_ci": [
+              0.357139,
+              0.379958
+            ],
+            "risk_mean": 0.640443
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.014897,
+            "delta_macro_f1": 0.024287,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 7839,
+          "min_confidence": 0.5000659164654514,
+          "confidence_based": {
+            "balanced_accuracy": 0.388329,
+            "macro_f1": 0.410369,
+            "accuracy": 0.517285,
+            "risk": 0.611671,
+            "class_support": {
+              "SL": 3906,
+              "EXP": 102,
+              "TP": 3831
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.359605,
+            "balanced_accuracy_se": 0.004954,
+            "balanced_accuracy_95_ci": [
+              0.350086,
+              0.369399
+            ],
+            "macro_f1_mean": 0.368349,
+            "macro_f1_se": 0.007235,
+            "macro_f1_95_ci": [
+              0.354497,
+              0.38255
+            ],
+            "risk_mean": 0.640395
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.028724,
+            "delta_macro_f1": 0.04202,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 5226,
+          "min_confidence": 0.5026178819377008,
+          "confidence_based": {
+            "balanced_accuracy": 0.409348,
+            "macro_f1": 0.432732,
+            "accuracy": 0.520857,
+            "risk": 0.590652,
+            "class_support": {
+              "SL": 2601,
+              "EXP": 69,
+              "TP": 2556
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.359183,
+            "balanced_accuracy_se": 0.006553,
+            "balanced_accuracy_95_ci": [
+              0.34659,
+              0.372434
+            ],
+            "macro_f1_mean": 0.367737,
+            "macro_f1_se": 0.009548,
+            "macro_f1_95_ci": [
+              0.349105,
+              0.38715
+            ],
+            "risk_mean": 0.640817
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.050166,
+            "delta_macro_f1": 0.064995,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        }
+      ],
+      "overall_selective_advantage_verified": true
+    },
+    "LTCUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 26095,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 26095,
+          "min_confidence": 0.33353775807062597,
+          "confidence_based": {
+            "balanced_accuracy": 0.380421,
+            "macro_f1": 0.349207,
+            "accuracy": 0.438935,
+            "risk": 0.619579,
+            "class_support": {
+              "SL": 11307,
+              "EXP": 3965,
+              "TP": 10823
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.380421,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.380421,
+              0.380421
+            ],
+            "macro_f1_mean": 0.349207,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.349207,
+              0.349207
+            ],
+            "risk_mean": 0.619579
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0,
+            "delta_macro_f1": 0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 20876,
+          "min_confidence": 0.38972195486185623,
+          "confidence_based": {
+            "balanced_accuracy": 0.381087,
+            "macro_f1": 0.349088,
+            "accuracy": 0.455499,
+            "risk": 0.618913,
+            "class_support": {
+              "SL": 9165,
+              "EXP": 2787,
+              "TP": 8924
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.380479,
+            "balanced_accuracy_se": 0.001361,
+            "balanced_accuracy_95_ci": [
+              0.377668,
+              0.383058
+            ],
+            "macro_f1_mean": 0.349279,
+            "macro_f1_se": 0.00167,
+            "macro_f1_95_ci": [
+              0.346035,
+              0.352478
+            ],
+            "risk_mean": 0.619521
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.000607,
+            "delta_macro_f1": -0.000191,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.345
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 18266,
+          "min_confidence": 0.40588783916060067,
+          "confidence_based": {
+            "balanced_accuracy": 0.379943,
+            "macro_f1": 0.348271,
+            "accuracy": 0.460418,
+            "risk": 0.620057,
+            "class_support": {
+              "SL": 8068,
+              "EXP": 2261,
+              "TP": 7937
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.380393,
+            "balanced_accuracy_se": 0.001755,
+            "balanced_accuracy_95_ci": [
+              0.377117,
+              0.383899
+            ],
+            "macro_f1_mean": 0.349202,
+            "macro_f1_se": 0.002155,
+            "macro_f1_95_ci": [
+              0.344851,
+              0.353357
+            ],
+            "risk_mean": 0.619607
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": -0.00045,
+            "delta_macro_f1": -0.000931,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.621
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 15657,
+          "min_confidence": 0.4197595105215205,
+          "confidence_based": {
+            "balanced_accuracy": 0.381308,
+            "macro_f1": 0.350304,
+            "accuracy": 0.466628,
+            "risk": 0.618692,
+            "class_support": {
+              "SL": 6951,
+              "EXP": 1780,
+              "TP": 6926
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.380437,
+            "balanced_accuracy_se": 0.002217,
+            "balanced_accuracy_95_ci": [
+              0.375932,
+              0.384657
+            ],
+            "macro_f1_mean": 0.349218,
+            "macro_f1_se": 0.002772,
+            "macro_f1_95_ci": [
+              0.343662,
+              0.354535
+            ],
+            "risk_mean": 0.619563
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.000871,
+            "delta_macro_f1": 0.001086,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.35
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 13047,
+          "min_confidence": 0.43306760334296585,
+          "confidence_based": {
+            "balanced_accuracy": 0.384879,
+            "macro_f1": 0.352446,
+            "accuracy": 0.469303,
+            "risk": 0.615121,
+            "class_support": {
+              "SL": 5853,
+              "EXP": 1389,
+              "TP": 5805
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.38037,
+            "balanced_accuracy_se": 0.002655,
+            "balanced_accuracy_95_ci": [
+              0.375197,
+              0.385307
+            ],
+            "macro_f1_mean": 0.349154,
+            "macro_f1_se": 0.003238,
+            "macro_f1_95_ci": [
+              0.342824,
+              0.355422
+            ],
+            "risk_mean": 0.61963
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.004509,
+            "delta_macro_f1": 0.003292,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.044
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 10438,
+          "min_confidence": 0.4462322685179808,
+          "confidence_based": {
+            "balanced_accuracy": 0.38928,
+            "macro_f1": 0.354225,
+            "accuracy": 0.474899,
+            "risk": 0.61072,
+            "class_support": {
+              "SL": 4745,
+              "EXP": 1002,
+              "TP": 4691
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.380236,
+            "balanced_accuracy_se": 0.00332,
+            "balanced_accuracy_95_ci": [
+              0.373737,
+              0.386485
+            ],
+            "macro_f1_mean": 0.348986,
+            "macro_f1_se": 0.004105,
+            "macro_f1_95_ci": [
+              0.341236,
+              0.35672
+            ],
+            "risk_mean": 0.619764
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.009044,
+            "delta_macro_f1": 0.005239,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.001
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 7828,
+          "min_confidence": 0.459885843165829,
+          "confidence_based": {
+            "balanced_accuracy": 0.394558,
+            "macro_f1": 0.354553,
+            "accuracy": 0.474195,
+            "risk": 0.605442,
+            "class_support": {
+              "SL": 3590,
+              "EXP": 676,
+              "TP": 3562
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.380251,
+            "balanced_accuracy_se": 0.004001,
+            "balanced_accuracy_95_ci": [
+              0.372439,
+              0.388195
+            ],
+            "macro_f1_mean": 0.348982,
+            "macro_f1_se": 0.004999,
+            "macro_f1_95_ci": [
+              0.339385,
+              0.358778
+            ],
+            "risk_mean": 0.619749
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.014307,
+            "delta_macro_f1": 0.005571,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 5219,
+          "min_confidence": 0.4731353488154585,
+          "confidence_based": {
+            "balanced_accuracy": 0.405404,
+            "macro_f1": 0.35635,
+            "accuracy": 0.483809,
+            "risk": 0.594596,
+            "class_support": {
+              "SL": 2344,
+              "EXP": 423,
+              "TP": 2452
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.380346,
+            "balanced_accuracy_se": 0.005404,
+            "balanced_accuracy_95_ci": [
+              0.370013,
+              0.390832
+            ],
+            "macro_f1_mean": 0.349166,
+            "macro_f1_se": 0.006724,
+            "macro_f1_95_ci": [
+              0.336493,
+              0.362504
+            ],
+            "risk_mean": 0.619654
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.025058,
+            "delta_macro_f1": 0.007183,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "PASS"
+        }
+      ],
+      "overall_selective_advantage_verified": true
+    },
+    "XMRUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "total_eval_samples": 3052,
+      "coverage_evaluations": [
+        {
+          "target_coverage": 1.0,
+          "sample_count": 3052,
+          "min_confidence": 0.3850424925544058,
+          "confidence_based": {
+            "balanced_accuracy": 0.327579,
+            "macro_f1": 0.284457,
+            "accuracy": 0.43578,
+            "risk": 0.672421,
+            "class_support": {
+              "SL": 1180,
+              "EXP": 465,
+              "TP": 1407
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.327579,
+            "balanced_accuracy_se": 0.0,
+            "balanced_accuracy_95_ci": [
+              0.327579,
+              0.327579
+            ],
+            "macro_f1_mean": 0.284457,
+            "macro_f1_se": 0.0,
+            "macro_f1_95_ci": [
+              0.284457,
+              0.284457
+            ],
+            "risk_mean": 0.672421
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.0,
+            "delta_macro_f1": 0.0,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 1.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.8,
+          "sample_count": 2441,
+          "min_confidence": 0.443335528074698,
+          "confidence_based": {
+            "balanced_accuracy": 0.332131,
+            "macro_f1": 0.296226,
+            "accuracy": 0.455551,
+            "risk": 0.667869,
+            "class_support": {
+              "SL": 899,
+              "EXP": 351,
+              "TP": 1191
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.327661,
+            "balanced_accuracy_se": 0.002809,
+            "balanced_accuracy_95_ci": [
+              0.322354,
+              0.332934
+            ],
+            "macro_f1_mean": 0.284499,
+            "macro_f1_se": 0.003067,
+            "macro_f1_95_ci": [
+              0.278643,
+              0.290588
+            ],
+            "risk_mean": 0.672339
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.00447,
+            "delta_macro_f1": 0.011727,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.055
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.7,
+          "sample_count": 2136,
+          "min_confidence": 0.4495510956630044,
+          "confidence_based": {
+            "balanced_accuracy": 0.337487,
+            "macro_f1": 0.305707,
+            "accuracy": 0.470037,
+            "risk": 0.662513,
+            "class_support": {
+              "SL": 767,
+              "EXP": 293,
+              "TP": 1076
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.327326,
+            "balanced_accuracy_se": 0.00382,
+            "balanced_accuracy_95_ci": [
+              0.319471,
+              0.334334
+            ],
+            "macro_f1_mean": 0.284189,
+            "macro_f1_se": 0.004101,
+            "macro_f1_95_ci": [
+              0.275949,
+              0.29164
+            ],
+            "risk_mean": 0.672674
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.010161,
+            "delta_macro_f1": 0.021518,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.004
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.6,
+          "sample_count": 1831,
+          "min_confidence": 0.4549584386210023,
+          "confidence_based": {
+            "balanced_accuracy": 0.340847,
+            "macro_f1": 0.311283,
+            "accuracy": 0.474058,
+            "risk": 0.659153,
+            "class_support": {
+              "SL": 663,
+              "EXP": 243,
+              "TP": 925
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.327428,
+            "balanced_accuracy_se": 0.004782,
+            "balanced_accuracy_95_ci": [
+              0.317674,
+              0.336762
+            ],
+            "macro_f1_mean": 0.284175,
+            "macro_f1_se": 0.005335,
+            "macro_f1_95_ci": [
+              0.273439,
+              0.294824
+            ],
+            "risk_mean": 0.672572
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.013418,
+            "delta_macro_f1": 0.027108,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.001
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.5,
+          "sample_count": 1526,
+          "min_confidence": 0.46066873147952314,
+          "confidence_based": {
+            "balanced_accuracy": 0.345299,
+            "macro_f1": 0.319597,
+            "accuracy": 0.482962,
+            "risk": 0.654701,
+            "class_support": {
+              "SL": 554,
+              "EXP": 188,
+              "TP": 784
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.327557,
+            "balanced_accuracy_se": 0.005707,
+            "balanced_accuracy_95_ci": [
+              0.316261,
+              0.338051
+            ],
+            "macro_f1_mean": 0.284319,
+            "macro_f1_se": 0.006307,
+            "macro_f1_95_ci": [
+              0.271461,
+              0.296711
+            ],
+            "risk_mean": 0.672443
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.017742,
+            "delta_macro_f1": 0.035278,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.002
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.4,
+          "sample_count": 1220,
+          "min_confidence": 0.4666676144108936,
+          "confidence_based": {
+            "balanced_accuracy": 0.351519,
+            "macro_f1": 0.326183,
+            "accuracy": 0.481148,
+            "risk": 0.648481,
+            "class_support": {
+              "SL": 450,
+              "EXP": 156,
+              "TP": 614
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.327671,
+            "balanced_accuracy_se": 0.006523,
+            "balanced_accuracy_95_ci": [
+              0.314805,
+              0.34023
+            ],
+            "macro_f1_mean": 0.284441,
+            "macro_f1_se": 0.007121,
+            "macro_f1_95_ci": [
+              0.270356,
+              0.298586
+            ],
+            "risk_mean": 0.672329
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.023848,
+            "delta_macro_f1": 0.041742,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.0
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.3,
+          "sample_count": 915,
+          "min_confidence": 0.47280719298428575,
+          "confidence_based": {
+            "balanced_accuracy": 0.347923,
+            "macro_f1": 0.324597,
+            "accuracy": 0.477596,
+            "risk": 0.652077,
+            "class_support": {
+              "SL": 327,
+              "EXP": 115,
+              "TP": 473
+            },
+            "sufficient_support": true
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.327932,
+            "balanced_accuracy_se": 0.008565,
+            "balanced_accuracy_95_ci": [
+              0.310861,
+              0.344619
+            ],
+            "macro_f1_mean": 0.284752,
+            "macro_f1_se": 0.00933,
+            "macro_f1_95_ci": [
+              0.26584,
+              0.302899
+            ],
+            "risk_mean": 0.672068
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.019992,
+            "delta_macro_f1": 0.039845,
+            "confidence_beats_random_95_ci": true,
+            "empirical_p_value": 0.011
+          },
+          "status": "PASS"
+        },
+        {
+          "target_coverage": 0.2,
+          "sample_count": 610,
+          "min_confidence": 0.481095635835603,
+          "confidence_based": {
+            "balanced_accuracy": 0.342344,
+            "macro_f1": 0.31631,
+            "accuracy": 0.457377,
+            "risk": 0.657656,
+            "class_support": {
+              "SL": 217,
+              "EXP": 87,
+              "TP": 306
+            },
+            "sufficient_support": false
+          },
+          "random_abstention_baseline": {
+            "balanced_accuracy_mean": 0.327283,
+            "balanced_accuracy_se": 0.011265,
+            "balanced_accuracy_95_ci": [
+              0.306033,
+              0.350375
+            ],
+            "macro_f1_mean": 0.283823,
+            "macro_f1_se": 0.01257,
+            "macro_f1_95_ci": [
+              0.259399,
+              0.309452
+            ],
+            "risk_mean": 0.672717
+          },
+          "delta_comparison": {
+            "delta_balanced_accuracy": 0.015061,
+            "delta_macro_f1": 0.032487,
+            "confidence_beats_random_95_ci": false,
+            "empirical_p_value": 0.101
+          },
+          "status": "INSUFFICIENT_EVIDENCE_SAMPLE_SUPPORT"
+        }
+      ],
+      "overall_selective_advantage_verified": true
+    }
+  },
+  "workstream_status": "PASS_WITH_LIMITATIONS"
+}

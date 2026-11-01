@@ -1,0 +1,26 @@
+{
+  "title": "Phase 5.4.2 Artifact Cryptographic Hash Manifest",
+  "timestamp_utc": "2026-11-01 18:58:24 UTC",
+  "artifacts": {
+    "PHASE_5_4_2_OOF_PROBABILITY_MANIFEST.json": "2e63a63cbe4cd6ed7e207a38ee01e267ad877257dd0aaa86b3d996b8fbf61d88",
+    "PHASE_5_4_2_CALIBRATION_RESULTS.json": "4ea0ff03782369d58836e1c79fef3b6a3165cc80e6de9e8e7fdd3caaf3bd7740",
+    "PHASE_5_4_2_SELECTIVE_CLASSIFICATION_RESULTS.json": "8e78b988f7fddae62540fc190c426d09a77cae8ccc1cd9dcc4da767bf02db63b",
+    "PHASE_5_4_2_DECISION_POLICY_RESULTS.json": "a9f60355563faf315e509e93584bdb86ad023ea3d41f6c06b81da1836f840749",
+    "PHASE_5_4_2_COST_SENSITIVITY_RESULTS.json": "ea9de116b907f8ff9ff69602d00b65d12365c414835e46d10ac5a9f316a10a1f"
+  },
+  "materialized_parquet_files": {
+    "BTCUSDT_oof.parquet": "db08ed17d5fe5b1bce8a9812d1f031ca901be486a6e4a2b874ed8a6f718f67a6",
+    "ETHUSDT_oof.parquet": "04cc0e3e6c67e458894833098beb2586078c417b163f19e10555e9799784ca66",
+    "BNBUSDT_oof.parquet": "a6f87b75635367174b243c1336d034e0bc8ab66d522305a20e54a016e6ec6a49",
+    "XRPUSDT_oof.parquet": "634769ed4b90ed8ce3a110cbd37c7a16090c0e4b6e4ba00d6ce7d46cd79c3652",
+    "ADAUSDT_oof.parquet": "6038a64115b53c34155cc910aa3d6d45b55735e4be3a58b243b9218cf5311a3f",
+    "SOLUSDT_oof.parquet": "48eee56668233d019b33446522167de9c489050c2f6dbac05444a27d292611e0",
+    "AVAXUSDT_oof.parquet": "cf41b0e73d03456cf9d70cb0a1e3468b665cfa6a82c71a1a961763e88ecff3b0",
+    "LINKUSDT_oof.parquet": "0ef874aa69d2cdb643e635b612f2df9df5ee6ca40c48d67b375900e1ed0e74ff",
+    "DOGEUSDT_oof.parquet": "faee6f5de67236bf06374f8076dff2ae909abab59616f430533341d6344e1e67",
+    "LTCUSDT_oof.parquet": "8885494a1cbf83acc1f64004e1cce2293a2408d0298dfeebeee95c07e3d4e317",
+    "XMRUSDT_oof.parquet": "83df25ce704ef664eb235e1706386dc854467aaf2bb59d38ca95fd430bd03a8f"
+  },
+  "frozen_model_binaries_verified_count": 55,
+  "governance_status": "FROZEN_REPRODUCIBILITY_VERIFIED"
+}

@@ -1,0 +1,2399 @@
+{
+  "title": "Workstream D: Majority-Class Selection Bias Investigation",
+  "timestamp_utc": "2026-11-01 19:23:50 UTC",
+  "metric_definitions": {
+    "class_retention_ratio": "R_c(kappa) = N_c(kappa) / N_c(1.0)",
+    "class_recall": "Recall_c(kappa) = TP_c(kappa) / N_c(kappa)",
+    "class_proportion": "pi_c(kappa) = N_c(kappa) / k",
+    "disparity_ratio": "max_c(R_c) / min_c(R_c)"
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "full_population_distribution": {
+        "SL": 12716,
+        "EXP": 1009,
+        "TP": 12415
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 26140,
+          "class_counts": {
+            "SL": 12716,
+            "EXP": 1009,
+            "TP": 12415
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.4865,
+            "EXP": 0.0386,
+            "TP": 0.4749
+          },
+          "class_recalls": {
+            "SL": 0.6246,
+            "EXP": 0.003,
+            "TP": 0.3712
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 20912,
+          "class_counts": {
+            "SL": 10301,
+            "EXP": 403,
+            "TP": 10208
+          },
+          "class_retention_ratios": {
+            "SL": 0.8101,
+            "EXP": 0.3994,
+            "TP": 0.8222
+          },
+          "class_proportions": {
+            "SL": 0.4926,
+            "EXP": 0.0193,
+            "TP": 0.4881
+          },
+          "class_recalls": {
+            "SL": 0.7146,
+            "EXP": 0.0,
+            "TP": 0.2909
+          },
+          "disparity_ratio": 2.06,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 18298,
+          "class_counts": {
+            "SL": 9048,
+            "EXP": 271,
+            "TP": 8979
+          },
+          "class_retention_ratios": {
+            "SL": 0.7115,
+            "EXP": 0.2686,
+            "TP": 0.7232
+          },
+          "class_proportions": {
+            "SL": 0.4945,
+            "EXP": 0.0148,
+            "TP": 0.4907
+          },
+          "class_recalls": {
+            "SL": 0.7678,
+            "EXP": 0.0,
+            "TP": 0.241
+          },
+          "disparity_ratio": 2.69,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 15684,
+          "class_counts": {
+            "SL": 7719,
+            "EXP": 181,
+            "TP": 7784
+          },
+          "class_retention_ratios": {
+            "SL": 0.607,
+            "EXP": 0.1794,
+            "TP": 0.627
+          },
+          "class_proportions": {
+            "SL": 0.4922,
+            "EXP": 0.0115,
+            "TP": 0.4963
+          },
+          "class_recalls": {
+            "SL": 0.8164,
+            "EXP": 0.0,
+            "TP": 0.1949
+          },
+          "disparity_ratio": 3.5,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 13070,
+          "class_counts": {
+            "SL": 6467,
+            "EXP": 122,
+            "TP": 6481
+          },
+          "class_retention_ratios": {
+            "SL": 0.5086,
+            "EXP": 0.1209,
+            "TP": 0.522
+          },
+          "class_proportions": {
+            "SL": 0.4948,
+            "EXP": 0.0093,
+            "TP": 0.4959
+          },
+          "class_recalls": {
+            "SL": 0.8554,
+            "EXP": 0.0,
+            "TP": 0.1599
+          },
+          "disparity_ratio": 4.32,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 10456,
+          "class_counts": {
+            "SL": 5223,
+            "EXP": 78,
+            "TP": 5155
+          },
+          "class_retention_ratios": {
+            "SL": 0.4107,
+            "EXP": 0.0773,
+            "TP": 0.4152
+          },
+          "class_proportions": {
+            "SL": 0.4995,
+            "EXP": 0.0075,
+            "TP": 0.493
+          },
+          "class_recalls": {
+            "SL": 0.8957,
+            "EXP": 0.0,
+            "TP": 0.124
+          },
+          "disparity_ratio": 5.37,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 7842,
+          "class_counts": {
+            "SL": 3973,
+            "EXP": 56,
+            "TP": 3813
+          },
+          "class_retention_ratios": {
+            "SL": 0.3124,
+            "EXP": 0.0555,
+            "TP": 0.3071
+          },
+          "class_proportions": {
+            "SL": 0.5066,
+            "EXP": 0.0071,
+            "TP": 0.4862
+          },
+          "class_recalls": {
+            "SL": 0.9388,
+            "EXP": 0.0,
+            "TP": 0.0768
+          },
+          "disparity_ratio": 5.63,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 5228,
+          "class_counts": {
+            "SL": 2687,
+            "EXP": 34,
+            "TP": 2507
+          },
+          "class_retention_ratios": {
+            "SL": 0.2113,
+            "EXP": 0.0337,
+            "TP": 0.2019
+          },
+          "class_proportions": {
+            "SL": 0.514,
+            "EXP": 0.0065,
+            "TP": 0.4795
+          },
+          "class_recalls": {
+            "SL": 0.9669,
+            "EXP": 0.0,
+            "TP": 0.0411
+          },
+          "disparity_ratio": 6.27,
+          "bias_detected": true
+        }
+      ]
+    },
+    "ETHUSDT": {
+      "full_population_distribution": {
+        "SL": 12680,
+        "EXP": 1134,
+        "TP": 12334
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 26148,
+          "class_counts": {
+            "SL": 12680,
+            "EXP": 1134,
+            "TP": 12334
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.4849,
+            "EXP": 0.0434,
+            "TP": 0.4717
+          },
+          "class_recalls": {
+            "SL": 0.1294,
+            "EXP": 0.0115,
+            "TP": 0.8758
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 20918,
+          "class_counts": {
+            "SL": 10260,
+            "EXP": 431,
+            "TP": 10227
+          },
+          "class_retention_ratios": {
+            "SL": 0.8091,
+            "EXP": 0.3801,
+            "TP": 0.8292
+          },
+          "class_proportions": {
+            "SL": 0.4905,
+            "EXP": 0.0206,
+            "TP": 0.4889
+          },
+          "class_recalls": {
+            "SL": 0.091,
+            "EXP": 0.0139,
+            "TP": 0.908
+          },
+          "disparity_ratio": 2.18,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 18303,
+          "class_counts": {
+            "SL": 8986,
+            "EXP": 290,
+            "TP": 9027
+          },
+          "class_retention_ratios": {
+            "SL": 0.7087,
+            "EXP": 0.2557,
+            "TP": 0.7319
+          },
+          "class_proportions": {
+            "SL": 0.491,
+            "EXP": 0.0158,
+            "TP": 0.4932
+          },
+          "class_recalls": {
+            "SL": 0.0651,
+            "EXP": 0.0207,
+            "TP": 0.932
+          },
+          "disparity_ratio": 2.86,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 15688,
+          "class_counts": {
+            "SL": 7694,
+            "EXP": 212,
+            "TP": 7782
+          },
+          "class_retention_ratios": {
+            "SL": 0.6068,
+            "EXP": 0.1869,
+            "TP": 0.6309
+          },
+          "class_proportions": {
+            "SL": 0.4904,
+            "EXP": 0.0135,
+            "TP": 0.496
+          },
+          "class_recalls": {
+            "SL": 0.0455,
+            "EXP": 0.0283,
+            "TP": 0.9572
+          },
+          "disparity_ratio": 3.37,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 13074,
+          "class_counts": {
+            "SL": 6393,
+            "EXP": 162,
+            "TP": 6519
+          },
+          "class_retention_ratios": {
+            "SL": 0.5042,
+            "EXP": 0.1429,
+            "TP": 0.5285
+          },
+          "class_proportions": {
+            "SL": 0.489,
+            "EXP": 0.0124,
+            "TP": 0.4986
+          },
+          "class_recalls": {
+            "SL": 0.0283,
+            "EXP": 0.037,
+            "TP": 0.9767
+          },
+          "disparity_ratio": 3.7,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 10459,
+          "class_counts": {
+            "SL": 5087,
+            "EXP": 106,
+            "TP": 5266
+          },
+          "class_retention_ratios": {
+            "SL": 0.4012,
+            "EXP": 0.0935,
+            "TP": 0.4269
+          },
+          "class_proportions": {
+            "SL": 0.4864,
+            "EXP": 0.0101,
+            "TP": 0.5035
+          },
+          "class_recalls": {
+            "SL": 0.0165,
+            "EXP": 0.0566,
+            "TP": 0.985
+          },
+          "disparity_ratio": 4.57,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 7844,
+          "class_counts": {
+            "SL": 3788,
+            "EXP": 76,
+            "TP": 3980
+          },
+          "class_retention_ratios": {
+            "SL": 0.2987,
+            "EXP": 0.067,
+            "TP": 0.3227
+          },
+          "class_proportions": {
+            "SL": 0.4829,
+            "EXP": 0.0097,
+            "TP": 0.5074
+          },
+          "class_recalls": {
+            "SL": 0.0095,
+            "EXP": 0.0789,
+            "TP": 0.9897
+          },
+          "disparity_ratio": 4.81,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 5229,
+          "class_counts": {
+            "SL": 2490,
+            "EXP": 52,
+            "TP": 2687
+          },
+          "class_retention_ratios": {
+            "SL": 0.1964,
+            "EXP": 0.0459,
+            "TP": 0.2179
+          },
+          "class_proportions": {
+            "SL": 0.4762,
+            "EXP": 0.0099,
+            "TP": 0.5139
+          },
+          "class_recalls": {
+            "SL": 0.0052,
+            "EXP": 0.0962,
+            "TP": 0.9918
+          },
+          "disparity_ratio": 4.75,
+          "bias_detected": true
+        }
+      ]
+    },
+    "BNBUSDT": {
+      "full_population_distribution": {
+        "SL": 12635,
+        "EXP": 998,
+        "TP": 12538
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 26171,
+          "class_counts": {
+            "SL": 12635,
+            "EXP": 998,
+            "TP": 12538
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.4828,
+            "EXP": 0.0381,
+            "TP": 0.4791
+          },
+          "class_recalls": {
+            "SL": 0.5913,
+            "EXP": 0.014,
+            "TP": 0.4177
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 20936,
+          "class_counts": {
+            "SL": 10218,
+            "EXP": 413,
+            "TP": 10305
+          },
+          "class_retention_ratios": {
+            "SL": 0.8087,
+            "EXP": 0.4138,
+            "TP": 0.8219
+          },
+          "class_proportions": {
+            "SL": 0.4881,
+            "EXP": 0.0197,
+            "TP": 0.4922
+          },
+          "class_recalls": {
+            "SL": 0.634,
+            "EXP": 0.0024,
+            "TP": 0.3814
+          },
+          "disparity_ratio": 1.99,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 18319,
+          "class_counts": {
+            "SL": 8991,
+            "EXP": 312,
+            "TP": 9016
+          },
+          "class_retention_ratios": {
+            "SL": 0.7116,
+            "EXP": 0.3126,
+            "TP": 0.7191
+          },
+          "class_proportions": {
+            "SL": 0.4908,
+            "EXP": 0.017,
+            "TP": 0.4922
+          },
+          "class_recalls": {
+            "SL": 0.6504,
+            "EXP": 0.0032,
+            "TP": 0.367
+          },
+          "disparity_ratio": 2.3,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 15702,
+          "class_counts": {
+            "SL": 7730,
+            "EXP": 243,
+            "TP": 7729
+          },
+          "class_retention_ratios": {
+            "SL": 0.6118,
+            "EXP": 0.2435,
+            "TP": 0.6164
+          },
+          "class_proportions": {
+            "SL": 0.4923,
+            "EXP": 0.0155,
+            "TP": 0.4922
+          },
+          "class_recalls": {
+            "SL": 0.679,
+            "EXP": 0.0,
+            "TP": 0.3479
+          },
+          "disparity_ratio": 2.53,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 13085,
+          "class_counts": {
+            "SL": 6468,
+            "EXP": 196,
+            "TP": 6421
+          },
+          "class_retention_ratios": {
+            "SL": 0.5119,
+            "EXP": 0.1964,
+            "TP": 0.5121
+          },
+          "class_proportions": {
+            "SL": 0.4943,
+            "EXP": 0.015,
+            "TP": 0.4907
+          },
+          "class_recalls": {
+            "SL": 0.7154,
+            "EXP": 0.0,
+            "TP": 0.3105
+          },
+          "disparity_ratio": 2.61,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 10468,
+          "class_counts": {
+            "SL": 5207,
+            "EXP": 145,
+            "TP": 5116
+          },
+          "class_retention_ratios": {
+            "SL": 0.4121,
+            "EXP": 0.1453,
+            "TP": 0.408
+          },
+          "class_proportions": {
+            "SL": 0.4974,
+            "EXP": 0.0139,
+            "TP": 0.4887
+          },
+          "class_recalls": {
+            "SL": 0.7544,
+            "EXP": 0.0,
+            "TP": 0.2678
+          },
+          "disparity_ratio": 2.84,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 7851,
+          "class_counts": {
+            "SL": 3933,
+            "EXP": 105,
+            "TP": 3813
+          },
+          "class_retention_ratios": {
+            "SL": 0.3113,
+            "EXP": 0.1052,
+            "TP": 0.3041
+          },
+          "class_proportions": {
+            "SL": 0.501,
+            "EXP": 0.0134,
+            "TP": 0.4857
+          },
+          "class_recalls": {
+            "SL": 0.791,
+            "EXP": 0.0,
+            "TP": 0.23
+          },
+          "disparity_ratio": 2.96,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 5234,
+          "class_counts": {
+            "SL": 2664,
+            "EXP": 67,
+            "TP": 2503
+          },
+          "class_retention_ratios": {
+            "SL": 0.2108,
+            "EXP": 0.0671,
+            "TP": 0.1996
+          },
+          "class_proportions": {
+            "SL": 0.509,
+            "EXP": 0.0128,
+            "TP": 0.4782
+          },
+          "class_recalls": {
+            "SL": 0.8397,
+            "EXP": 0.0,
+            "TP": 0.173
+          },
+          "disparity_ratio": 3.14,
+          "bias_detected": true
+        }
+      ]
+    },
+    "XRPUSDT": {
+      "full_population_distribution": {
+        "SL": 13057,
+        "EXP": 728,
+        "TP": 12335
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 26120,
+          "class_counts": {
+            "SL": 13057,
+            "EXP": 728,
+            "TP": 12335
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.4999,
+            "EXP": 0.0279,
+            "TP": 0.4722
+          },
+          "class_recalls": {
+            "SL": 0.2565,
+            "EXP": 0.0082,
+            "TP": 0.7594
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 20896,
+          "class_counts": {
+            "SL": 10549,
+            "EXP": 300,
+            "TP": 10047
+          },
+          "class_retention_ratios": {
+            "SL": 0.8079,
+            "EXP": 0.4121,
+            "TP": 0.8145
+          },
+          "class_proportions": {
+            "SL": 0.5048,
+            "EXP": 0.0144,
+            "TP": 0.4808
+          },
+          "class_recalls": {
+            "SL": 0.1709,
+            "EXP": 0.0,
+            "TP": 0.8438
+          },
+          "disparity_ratio": 1.98,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 18284,
+          "class_counts": {
+            "SL": 9263,
+            "EXP": 238,
+            "TP": 8783
+          },
+          "class_retention_ratios": {
+            "SL": 0.7094,
+            "EXP": 0.3269,
+            "TP": 0.712
+          },
+          "class_proportions": {
+            "SL": 0.5066,
+            "EXP": 0.013,
+            "TP": 0.4804
+          },
+          "class_recalls": {
+            "SL": 0.1229,
+            "EXP": 0.0,
+            "TP": 0.8929
+          },
+          "disparity_ratio": 2.18,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 15672,
+          "class_counts": {
+            "SL": 7944,
+            "EXP": 201,
+            "TP": 7527
+          },
+          "class_retention_ratios": {
+            "SL": 0.6084,
+            "EXP": 0.2761,
+            "TP": 0.6102
+          },
+          "class_proportions": {
+            "SL": 0.5069,
+            "EXP": 0.0128,
+            "TP": 0.4803
+          },
+          "class_recalls": {
+            "SL": 0.0784,
+            "EXP": 0.0,
+            "TP": 0.9326
+          },
+          "disparity_ratio": 2.21,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 13060,
+          "class_counts": {
+            "SL": 6591,
+            "EXP": 161,
+            "TP": 6308
+          },
+          "class_retention_ratios": {
+            "SL": 0.5048,
+            "EXP": 0.2212,
+            "TP": 0.5114
+          },
+          "class_proportions": {
+            "SL": 0.5047,
+            "EXP": 0.0123,
+            "TP": 0.483
+          },
+          "class_recalls": {
+            "SL": 0.0458,
+            "EXP": 0.0,
+            "TP": 0.9599
+          },
+          "disparity_ratio": 2.31,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 10448,
+          "class_counts": {
+            "SL": 5224,
+            "EXP": 129,
+            "TP": 5095
+          },
+          "class_retention_ratios": {
+            "SL": 0.4001,
+            "EXP": 0.1772,
+            "TP": 0.4131
+          },
+          "class_proportions": {
+            "SL": 0.5,
+            "EXP": 0.0123,
+            "TP": 0.4877
+          },
+          "class_recalls": {
+            "SL": 0.0237,
+            "EXP": 0.0,
+            "TP": 0.9745
+          },
+          "disparity_ratio": 2.33,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 7836,
+          "class_counts": {
+            "SL": 3937,
+            "EXP": 91,
+            "TP": 3808
+          },
+          "class_retention_ratios": {
+            "SL": 0.3015,
+            "EXP": 0.125,
+            "TP": 0.3087
+          },
+          "class_proportions": {
+            "SL": 0.5024,
+            "EXP": 0.0116,
+            "TP": 0.486
+          },
+          "class_recalls": {
+            "SL": 0.0155,
+            "EXP": 0.0,
+            "TP": 0.9835
+          },
+          "disparity_ratio": 2.47,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 5224,
+          "class_counts": {
+            "SL": 2639,
+            "EXP": 61,
+            "TP": 2524
+          },
+          "class_retention_ratios": {
+            "SL": 0.2021,
+            "EXP": 0.0838,
+            "TP": 0.2046
+          },
+          "class_proportions": {
+            "SL": 0.5052,
+            "EXP": 0.0117,
+            "TP": 0.4832
+          },
+          "class_recalls": {
+            "SL": 0.0117,
+            "EXP": 0.0,
+            "TP": 0.9889
+          },
+          "disparity_ratio": 2.44,
+          "bias_detected": true
+        }
+      ]
+    },
+    "ADAUSDT": {
+      "full_population_distribution": {
+        "SL": 12215,
+        "EXP": 2744,
+        "TP": 11140
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 26099,
+          "class_counts": {
+            "SL": 12215,
+            "EXP": 2744,
+            "TP": 11140
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.468,
+            "EXP": 0.1051,
+            "TP": 0.4268
+          },
+          "class_recalls": {
+            "SL": 0.5271,
+            "EXP": 0.0324,
+            "TP": 0.5387
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 20879,
+          "class_counts": {
+            "SL": 10024,
+            "EXP": 1733,
+            "TP": 9122
+          },
+          "class_retention_ratios": {
+            "SL": 0.8206,
+            "EXP": 0.6316,
+            "TP": 0.8189
+          },
+          "class_proportions": {
+            "SL": 0.4801,
+            "EXP": 0.083,
+            "TP": 0.4369
+          },
+          "class_recalls": {
+            "SL": 0.5196,
+            "EXP": 0.0156,
+            "TP": 0.5479
+          },
+          "disparity_ratio": 1.3,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 18269,
+          "class_counts": {
+            "SL": 8812,
+            "EXP": 1389,
+            "TP": 8068
+          },
+          "class_retention_ratios": {
+            "SL": 0.7214,
+            "EXP": 0.5062,
+            "TP": 0.7242
+          },
+          "class_proportions": {
+            "SL": 0.4823,
+            "EXP": 0.076,
+            "TP": 0.4416
+          },
+          "class_recalls": {
+            "SL": 0.5175,
+            "EXP": 0.0151,
+            "TP": 0.5503
+          },
+          "disparity_ratio": 1.43,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 15659,
+          "class_counts": {
+            "SL": 7523,
+            "EXP": 1105,
+            "TP": 7031
+          },
+          "class_retention_ratios": {
+            "SL": 0.6159,
+            "EXP": 0.4027,
+            "TP": 0.6311
+          },
+          "class_proportions": {
+            "SL": 0.4804,
+            "EXP": 0.0706,
+            "TP": 0.449
+          },
+          "class_recalls": {
+            "SL": 0.5181,
+            "EXP": 0.0154,
+            "TP": 0.5491
+          },
+          "disparity_ratio": 1.57,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 13049,
+          "class_counts": {
+            "SL": 6284,
+            "EXP": 845,
+            "TP": 5920
+          },
+          "class_retention_ratios": {
+            "SL": 0.5144,
+            "EXP": 0.3079,
+            "TP": 0.5314
+          },
+          "class_proportions": {
+            "SL": 0.4816,
+            "EXP": 0.0648,
+            "TP": 0.4537
+          },
+          "class_recalls": {
+            "SL": 0.5229,
+            "EXP": 0.0166,
+            "TP": 0.549
+          },
+          "disparity_ratio": 1.73,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 10439,
+          "class_counts": {
+            "SL": 5059,
+            "EXP": 645,
+            "TP": 4735
+          },
+          "class_retention_ratios": {
+            "SL": 0.4142,
+            "EXP": 0.2351,
+            "TP": 0.425
+          },
+          "class_proportions": {
+            "SL": 0.4846,
+            "EXP": 0.0618,
+            "TP": 0.4536
+          },
+          "class_recalls": {
+            "SL": 0.5266,
+            "EXP": 0.0202,
+            "TP": 0.5461
+          },
+          "disparity_ratio": 1.81,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 7829,
+          "class_counts": {
+            "SL": 3809,
+            "EXP": 452,
+            "TP": 3568
+          },
+          "class_retention_ratios": {
+            "SL": 0.3118,
+            "EXP": 0.1647,
+            "TP": 0.3203
+          },
+          "class_proportions": {
+            "SL": 0.4865,
+            "EXP": 0.0577,
+            "TP": 0.4557
+          },
+          "class_recalls": {
+            "SL": 0.5327,
+            "EXP": 0.0243,
+            "TP": 0.5502
+          },
+          "disparity_ratio": 1.94,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 5219,
+          "class_counts": {
+            "SL": 2596,
+            "EXP": 265,
+            "TP": 2358
+          },
+          "class_retention_ratios": {
+            "SL": 0.2125,
+            "EXP": 0.0966,
+            "TP": 0.2117
+          },
+          "class_proportions": {
+            "SL": 0.4974,
+            "EXP": 0.0508,
+            "TP": 0.4518
+          },
+          "class_recalls": {
+            "SL": 0.5508,
+            "EXP": 0.0377,
+            "TP": 0.553
+          },
+          "disparity_ratio": 2.2,
+          "bias_detected": true
+        }
+      ]
+    },
+    "SOLUSDT": {
+      "full_population_distribution": {
+        "SL": 12756,
+        "EXP": 884,
+        "TP": 12524
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 26164,
+          "class_counts": {
+            "SL": 12756,
+            "EXP": 884,
+            "TP": 12524
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.4875,
+            "EXP": 0.0338,
+            "TP": 0.4787
+          },
+          "class_recalls": {
+            "SL": 0.5672,
+            "EXP": 0.0011,
+            "TP": 0.4517
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 20931,
+          "class_counts": {
+            "SL": 10317,
+            "EXP": 325,
+            "TP": 10289
+          },
+          "class_retention_ratios": {
+            "SL": 0.8088,
+            "EXP": 0.3676,
+            "TP": 0.8215
+          },
+          "class_proportions": {
+            "SL": 0.4929,
+            "EXP": 0.0155,
+            "TP": 0.4916
+          },
+          "class_recalls": {
+            "SL": 0.5301,
+            "EXP": 0.0,
+            "TP": 0.4949
+          },
+          "disparity_ratio": 2.23,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 18314,
+          "class_counts": {
+            "SL": 9089,
+            "EXP": 233,
+            "TP": 8992
+          },
+          "class_retention_ratios": {
+            "SL": 0.7125,
+            "EXP": 0.2636,
+            "TP": 0.718
+          },
+          "class_proportions": {
+            "SL": 0.4963,
+            "EXP": 0.0127,
+            "TP": 0.491
+          },
+          "class_recalls": {
+            "SL": 0.4981,
+            "EXP": 0.0,
+            "TP": 0.5323
+          },
+          "disparity_ratio": 2.72,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 15698,
+          "class_counts": {
+            "SL": 7818,
+            "EXP": 171,
+            "TP": 7709
+          },
+          "class_retention_ratios": {
+            "SL": 0.6129,
+            "EXP": 0.1934,
+            "TP": 0.6155
+          },
+          "class_proportions": {
+            "SL": 0.498,
+            "EXP": 0.0109,
+            "TP": 0.4911
+          },
+          "class_recalls": {
+            "SL": 0.4606,
+            "EXP": 0.0,
+            "TP": 0.57
+          },
+          "disparity_ratio": 3.18,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 13082,
+          "class_counts": {
+            "SL": 6544,
+            "EXP": 127,
+            "TP": 6411
+          },
+          "class_retention_ratios": {
+            "SL": 0.513,
+            "EXP": 0.1437,
+            "TP": 0.5119
+          },
+          "class_proportions": {
+            "SL": 0.5002,
+            "EXP": 0.0097,
+            "TP": 0.4901
+          },
+          "class_recalls": {
+            "SL": 0.4208,
+            "EXP": 0.0,
+            "TP": 0.6058
+          },
+          "disparity_ratio": 3.57,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 10465,
+          "class_counts": {
+            "SL": 5238,
+            "EXP": 95,
+            "TP": 5132
+          },
+          "class_retention_ratios": {
+            "SL": 0.4106,
+            "EXP": 0.1075,
+            "TP": 0.4098
+          },
+          "class_proportions": {
+            "SL": 0.5005,
+            "EXP": 0.0091,
+            "TP": 0.4904
+          },
+          "class_recalls": {
+            "SL": 0.379,
+            "EXP": 0.0,
+            "TP": 0.6463
+          },
+          "disparity_ratio": 3.82,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 7849,
+          "class_counts": {
+            "SL": 3944,
+            "EXP": 66,
+            "TP": 3839
+          },
+          "class_retention_ratios": {
+            "SL": 0.3092,
+            "EXP": 0.0747,
+            "TP": 0.3065
+          },
+          "class_proportions": {
+            "SL": 0.5025,
+            "EXP": 0.0084,
+            "TP": 0.4891
+          },
+          "class_recalls": {
+            "SL": 0.3415,
+            "EXP": 0.0,
+            "TP": 0.6788
+          },
+          "disparity_ratio": 4.14,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 5232,
+          "class_counts": {
+            "SL": 2636,
+            "EXP": 34,
+            "TP": 2562
+          },
+          "class_retention_ratios": {
+            "SL": 0.2066,
+            "EXP": 0.0385,
+            "TP": 0.2046
+          },
+          "class_proportions": {
+            "SL": 0.5038,
+            "EXP": 0.0065,
+            "TP": 0.4897
+          },
+          "class_recalls": {
+            "SL": 0.2993,
+            "EXP": 0.0,
+            "TP": 0.7155
+          },
+          "disparity_ratio": 5.37,
+          "bias_detected": true
+        }
+      ]
+    },
+    "AVAXUSDT": {
+      "full_population_distribution": {
+        "SL": 11394,
+        "EXP": 4033,
+        "TP": 10739
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 26166,
+          "class_counts": {
+            "SL": 11394,
+            "EXP": 4033,
+            "TP": 10739
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.4355,
+            "EXP": 0.1541,
+            "TP": 0.4104
+          },
+          "class_recalls": {
+            "SL": 0.6666,
+            "EXP": 0.095,
+            "TP": 0.3345
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 20932,
+          "class_counts": {
+            "SL": 9373,
+            "EXP": 2748,
+            "TP": 8811
+          },
+          "class_retention_ratios": {
+            "SL": 0.8226,
+            "EXP": 0.6814,
+            "TP": 0.8205
+          },
+          "class_proportions": {
+            "SL": 0.4478,
+            "EXP": 0.1313,
+            "TP": 0.4209
+          },
+          "class_recalls": {
+            "SL": 0.705,
+            "EXP": 0.0568,
+            "TP": 0.3131
+          },
+          "disparity_ratio": 1.21,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 18316,
+          "class_counts": {
+            "SL": 8318,
+            "EXP": 2196,
+            "TP": 7802
+          },
+          "class_retention_ratios": {
+            "SL": 0.73,
+            "EXP": 0.5445,
+            "TP": 0.7265
+          },
+          "class_proportions": {
+            "SL": 0.4541,
+            "EXP": 0.1199,
+            "TP": 0.426
+          },
+          "class_recalls": {
+            "SL": 0.718,
+            "EXP": 0.0546,
+            "TP": 0.3016
+          },
+          "disparity_ratio": 1.34,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 15699,
+          "class_counts": {
+            "SL": 7272,
+            "EXP": 1722,
+            "TP": 6705
+          },
+          "class_retention_ratios": {
+            "SL": 0.6382,
+            "EXP": 0.427,
+            "TP": 0.6244
+          },
+          "class_proportions": {
+            "SL": 0.4632,
+            "EXP": 0.1097,
+            "TP": 0.4271
+          },
+          "class_recalls": {
+            "SL": 0.7332,
+            "EXP": 0.0494,
+            "TP": 0.2862
+          },
+          "disparity_ratio": 1.49,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 13083,
+          "class_counts": {
+            "SL": 6122,
+            "EXP": 1310,
+            "TP": 5651
+          },
+          "class_retention_ratios": {
+            "SL": 0.5373,
+            "EXP": 0.3248,
+            "TP": 0.5262
+          },
+          "class_proportions": {
+            "SL": 0.4679,
+            "EXP": 0.1001,
+            "TP": 0.4319
+          },
+          "class_recalls": {
+            "SL": 0.7542,
+            "EXP": 0.0458,
+            "TP": 0.2635
+          },
+          "disparity_ratio": 1.65,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 10466,
+          "class_counts": {
+            "SL": 4961,
+            "EXP": 956,
+            "TP": 4549
+          },
+          "class_retention_ratios": {
+            "SL": 0.4354,
+            "EXP": 0.237,
+            "TP": 0.4236
+          },
+          "class_proportions": {
+            "SL": 0.474,
+            "EXP": 0.0913,
+            "TP": 0.4346
+          },
+          "class_recalls": {
+            "SL": 0.7769,
+            "EXP": 0.0471,
+            "TP": 0.2361
+          },
+          "disparity_ratio": 1.84,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 7849,
+          "class_counts": {
+            "SL": 3758,
+            "EXP": 647,
+            "TP": 3444
+          },
+          "class_retention_ratios": {
+            "SL": 0.3298,
+            "EXP": 0.1604,
+            "TP": 0.3207
+          },
+          "class_proportions": {
+            "SL": 0.4788,
+            "EXP": 0.0824,
+            "TP": 0.4388
+          },
+          "class_recalls": {
+            "SL": 0.8034,
+            "EXP": 0.0618,
+            "TP": 0.1995
+          },
+          "disparity_ratio": 2.06,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 5233,
+          "class_counts": {
+            "SL": 2498,
+            "EXP": 373,
+            "TP": 2362
+          },
+          "class_retention_ratios": {
+            "SL": 0.2192,
+            "EXP": 0.0925,
+            "TP": 0.2199
+          },
+          "class_proportions": {
+            "SL": 0.4774,
+            "EXP": 0.0713,
+            "TP": 0.4514
+          },
+          "class_recalls": {
+            "SL": 0.8507,
+            "EXP": 0.0858,
+            "TP": 0.1465
+          },
+          "disparity_ratio": 2.38,
+          "bias_detected": true
+        }
+      ]
+    },
+    "LINKUSDT": {
+      "full_population_distribution": {
+        "SL": 11631,
+        "EXP": 3374,
+        "TP": 11152
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 26157,
+          "class_counts": {
+            "SL": 11631,
+            "EXP": 3374,
+            "TP": 11152
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.4447,
+            "EXP": 0.129,
+            "TP": 0.4263
+          },
+          "class_recalls": {
+            "SL": 0.2626,
+            "EXP": 0.1206,
+            "TP": 0.7381
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 20925,
+          "class_counts": {
+            "SL": 9474,
+            "EXP": 2329,
+            "TP": 9122
+          },
+          "class_retention_ratios": {
+            "SL": 0.8145,
+            "EXP": 0.6903,
+            "TP": 0.818
+          },
+          "class_proportions": {
+            "SL": 0.4528,
+            "EXP": 0.1113,
+            "TP": 0.4359
+          },
+          "class_recalls": {
+            "SL": 0.2816,
+            "EXP": 0.0824,
+            "TP": 0.7458
+          },
+          "disparity_ratio": 1.18,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 18309,
+          "class_counts": {
+            "SL": 8381,
+            "EXP": 1873,
+            "TP": 8055
+          },
+          "class_retention_ratios": {
+            "SL": 0.7206,
+            "EXP": 0.5551,
+            "TP": 0.7223
+          },
+          "class_proportions": {
+            "SL": 0.4578,
+            "EXP": 0.1023,
+            "TP": 0.4399
+          },
+          "class_recalls": {
+            "SL": 0.2921,
+            "EXP": 0.0801,
+            "TP": 0.7428
+          },
+          "disparity_ratio": 1.3,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 15694,
+          "class_counts": {
+            "SL": 7202,
+            "EXP": 1502,
+            "TP": 6990
+          },
+          "class_retention_ratios": {
+            "SL": 0.6192,
+            "EXP": 0.4452,
+            "TP": 0.6268
+          },
+          "class_proportions": {
+            "SL": 0.4589,
+            "EXP": 0.0957,
+            "TP": 0.4454
+          },
+          "class_recalls": {
+            "SL": 0.2991,
+            "EXP": 0.0866,
+            "TP": 0.7369
+          },
+          "disparity_ratio": 1.41,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 13078,
+          "class_counts": {
+            "SL": 6024,
+            "EXP": 1172,
+            "TP": 5882
+          },
+          "class_retention_ratios": {
+            "SL": 0.5179,
+            "EXP": 0.3474,
+            "TP": 0.5274
+          },
+          "class_proportions": {
+            "SL": 0.4606,
+            "EXP": 0.0896,
+            "TP": 0.4498
+          },
+          "class_recalls": {
+            "SL": 0.3076,
+            "EXP": 0.0947,
+            "TP": 0.7271
+          },
+          "disparity_ratio": 1.52,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 10462,
+          "class_counts": {
+            "SL": 4857,
+            "EXP": 841,
+            "TP": 4764
+          },
+          "class_retention_ratios": {
+            "SL": 0.4176,
+            "EXP": 0.2493,
+            "TP": 0.4272
+          },
+          "class_proportions": {
+            "SL": 0.4643,
+            "EXP": 0.0804,
+            "TP": 0.4554
+          },
+          "class_recalls": {
+            "SL": 0.329,
+            "EXP": 0.1165,
+            "TP": 0.7095
+          },
+          "disparity_ratio": 1.71,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 7847,
+          "class_counts": {
+            "SL": 3653,
+            "EXP": 582,
+            "TP": 3612
+          },
+          "class_retention_ratios": {
+            "SL": 0.3141,
+            "EXP": 0.1725,
+            "TP": 0.3239
+          },
+          "class_proportions": {
+            "SL": 0.4655,
+            "EXP": 0.0742,
+            "TP": 0.4603
+          },
+          "class_recalls": {
+            "SL": 0.3613,
+            "EXP": 0.146,
+            "TP": 0.6791
+          },
+          "disparity_ratio": 1.88,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 5231,
+          "class_counts": {
+            "SL": 2458,
+            "EXP": 321,
+            "TP": 2452
+          },
+          "class_retention_ratios": {
+            "SL": 0.2113,
+            "EXP": 0.0951,
+            "TP": 0.2199
+          },
+          "class_proportions": {
+            "SL": 0.4699,
+            "EXP": 0.0614,
+            "TP": 0.4687
+          },
+          "class_recalls": {
+            "SL": 0.3934,
+            "EXP": 0.2025,
+            "TP": 0.6395
+          },
+          "disparity_ratio": 2.31,
+          "bias_detected": true
+        }
+      ]
+    },
+    "DOGEUSDT": {
+      "full_population_distribution": {
+        "SL": 13032,
+        "EXP": 974,
+        "TP": 12126
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 26132,
+          "class_counts": {
+            "SL": 13032,
+            "EXP": 974,
+            "TP": 12126
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.4987,
+            "EXP": 0.0373,
+            "TP": 0.464
+          },
+          "class_recalls": {
+            "SL": 0.5242,
+            "EXP": 0.0544,
+            "TP": 0.4995
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 20905,
+          "class_counts": {
+            "SL": 10499,
+            "EXP": 390,
+            "TP": 10016
+          },
+          "class_retention_ratios": {
+            "SL": 0.8056,
+            "EXP": 0.4004,
+            "TP": 0.826
+          },
+          "class_proportions": {
+            "SL": 0.5022,
+            "EXP": 0.0187,
+            "TP": 0.4791
+          },
+          "class_recalls": {
+            "SL": 0.5048,
+            "EXP": 0.0385,
+            "TP": 0.5235
+          },
+          "disparity_ratio": 2.06,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 18292,
+          "class_counts": {
+            "SL": 9223,
+            "EXP": 302,
+            "TP": 8767
+          },
+          "class_retention_ratios": {
+            "SL": 0.7077,
+            "EXP": 0.3101,
+            "TP": 0.723
+          },
+          "class_proportions": {
+            "SL": 0.5042,
+            "EXP": 0.0165,
+            "TP": 0.4793
+          },
+          "class_recalls": {
+            "SL": 0.4913,
+            "EXP": 0.0464,
+            "TP": 0.5392
+          },
+          "disparity_ratio": 2.33,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 15679,
+          "class_counts": {
+            "SL": 7896,
+            "EXP": 234,
+            "TP": 7549
+          },
+          "class_retention_ratios": {
+            "SL": 0.6059,
+            "EXP": 0.2402,
+            "TP": 0.6225
+          },
+          "class_proportions": {
+            "SL": 0.5036,
+            "EXP": 0.0149,
+            "TP": 0.4815
+          },
+          "class_recalls": {
+            "SL": 0.4824,
+            "EXP": 0.0513,
+            "TP": 0.5529
+          },
+          "disparity_ratio": 2.59,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 13066,
+          "class_counts": {
+            "SL": 6599,
+            "EXP": 175,
+            "TP": 6292
+          },
+          "class_retention_ratios": {
+            "SL": 0.5064,
+            "EXP": 0.1797,
+            "TP": 0.5189
+          },
+          "class_proportions": {
+            "SL": 0.5051,
+            "EXP": 0.0134,
+            "TP": 0.4816
+          },
+          "class_recalls": {
+            "SL": 0.4676,
+            "EXP": 0.0686,
+            "TP": 0.5645
+          },
+          "disparity_ratio": 2.89,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 10452,
+          "class_counts": {
+            "SL": 5261,
+            "EXP": 141,
+            "TP": 5050
+          },
+          "class_retention_ratios": {
+            "SL": 0.4037,
+            "EXP": 0.1448,
+            "TP": 0.4165
+          },
+          "class_proportions": {
+            "SL": 0.5033,
+            "EXP": 0.0135,
+            "TP": 0.4832
+          },
+          "class_recalls": {
+            "SL": 0.4446,
+            "EXP": 0.0851,
+            "TP": 0.5937
+          },
+          "disparity_ratio": 2.88,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 7839,
+          "class_counts": {
+            "SL": 3906,
+            "EXP": 102,
+            "TP": 3831
+          },
+          "class_retention_ratios": {
+            "SL": 0.2997,
+            "EXP": 0.1047,
+            "TP": 0.3159
+          },
+          "class_proportions": {
+            "SL": 0.4983,
+            "EXP": 0.013,
+            "TP": 0.4887
+          },
+          "class_recalls": {
+            "SL": 0.4086,
+            "EXP": 0.1176,
+            "TP": 0.6387
+          },
+          "disparity_ratio": 3.02,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 5226,
+          "class_counts": {
+            "SL": 2601,
+            "EXP": 69,
+            "TP": 2556
+          },
+          "class_retention_ratios": {
+            "SL": 0.1996,
+            "EXP": 0.0708,
+            "TP": 0.2108
+          },
+          "class_proportions": {
+            "SL": 0.4977,
+            "EXP": 0.0132,
+            "TP": 0.4891
+          },
+          "class_recalls": {
+            "SL": 0.3476,
+            "EXP": 0.1739,
+            "TP": 0.7066
+          },
+          "disparity_ratio": 2.98,
+          "bias_detected": true
+        }
+      ]
+    },
+    "LTCUSDT": {
+      "full_population_distribution": {
+        "SL": 11307,
+        "EXP": 3965,
+        "TP": 10823
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 26095,
+          "class_counts": {
+            "SL": 11307,
+            "EXP": 3965,
+            "TP": 10823
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.4333,
+            "EXP": 0.1519,
+            "TP": 0.4148
+          },
+          "class_recalls": {
+            "SL": 0.2032,
+            "EXP": 0.1453,
+            "TP": 0.7928
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 20876,
+          "class_counts": {
+            "SL": 9165,
+            "EXP": 2787,
+            "TP": 8924
+          },
+          "class_retention_ratios": {
+            "SL": 0.8106,
+            "EXP": 0.7029,
+            "TP": 0.8245
+          },
+          "class_proportions": {
+            "SL": 0.439,
+            "EXP": 0.1335,
+            "TP": 0.4275
+          },
+          "class_recalls": {
+            "SL": 0.2017,
+            "EXP": 0.1209,
+            "TP": 0.8206
+          },
+          "disparity_ratio": 1.17,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 18266,
+          "class_counts": {
+            "SL": 8068,
+            "EXP": 2261,
+            "TP": 7937
+          },
+          "class_retention_ratios": {
+            "SL": 0.7135,
+            "EXP": 0.5702,
+            "TP": 0.7333
+          },
+          "class_proportions": {
+            "SL": 0.4417,
+            "EXP": 0.1238,
+            "TP": 0.4345
+          },
+          "class_recalls": {
+            "SL": 0.1978,
+            "EXP": 0.1168,
+            "TP": 0.8252
+          },
+          "disparity_ratio": 1.29,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 15657,
+          "class_counts": {
+            "SL": 6951,
+            "EXP": 1780,
+            "TP": 6926
+          },
+          "class_retention_ratios": {
+            "SL": 0.6148,
+            "EXP": 0.4489,
+            "TP": 0.6399
+          },
+          "class_proportions": {
+            "SL": 0.444,
+            "EXP": 0.1137,
+            "TP": 0.4424
+          },
+          "class_recalls": {
+            "SL": 0.1899,
+            "EXP": 0.1208,
+            "TP": 0.8332
+          },
+          "disparity_ratio": 1.43,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 13047,
+          "class_counts": {
+            "SL": 5853,
+            "EXP": 1389,
+            "TP": 5805
+          },
+          "class_retention_ratios": {
+            "SL": 0.5176,
+            "EXP": 0.3503,
+            "TP": 0.5364
+          },
+          "class_proportions": {
+            "SL": 0.4486,
+            "EXP": 0.1065,
+            "TP": 0.4449
+          },
+          "class_recalls": {
+            "SL": 0.177,
+            "EXP": 0.1332,
+            "TP": 0.8444
+          },
+          "disparity_ratio": 1.53,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 10438,
+          "class_counts": {
+            "SL": 4745,
+            "EXP": 1002,
+            "TP": 4691
+          },
+          "class_retention_ratios": {
+            "SL": 0.4197,
+            "EXP": 0.2527,
+            "TP": 0.4334
+          },
+          "class_proportions": {
+            "SL": 0.4546,
+            "EXP": 0.096,
+            "TP": 0.4494
+          },
+          "class_recalls": {
+            "SL": 0.1633,
+            "EXP": 0.1437,
+            "TP": 0.8608
+          },
+          "disparity_ratio": 1.72,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 7828,
+          "class_counts": {
+            "SL": 3590,
+            "EXP": 676,
+            "TP": 3562
+          },
+          "class_retention_ratios": {
+            "SL": 0.3175,
+            "EXP": 0.1705,
+            "TP": 0.3291
+          },
+          "class_proportions": {
+            "SL": 0.4586,
+            "EXP": 0.0864,
+            "TP": 0.455
+          },
+          "class_recalls": {
+            "SL": 0.1354,
+            "EXP": 0.176,
+            "TP": 0.8723
+          },
+          "disparity_ratio": 1.93,
+          "bias_detected": true
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 5219,
+          "class_counts": {
+            "SL": 2344,
+            "EXP": 423,
+            "TP": 2452
+          },
+          "class_retention_ratios": {
+            "SL": 0.2073,
+            "EXP": 0.1067,
+            "TP": 0.2266
+          },
+          "class_proportions": {
+            "SL": 0.4491,
+            "EXP": 0.0811,
+            "TP": 0.4698
+          },
+          "class_recalls": {
+            "SL": 0.1024,
+            "EXP": 0.2199,
+            "TP": 0.894
+          },
+          "disparity_ratio": 2.12,
+          "bias_detected": true
+        }
+      ]
+    },
+    "XMRUSDT": {
+      "full_population_distribution": {
+        "SL": 1180,
+        "EXP": 465,
+        "TP": 1407
+      },
+      "coverage_bias_evaluations": [
+        {
+          "coverage": 1.0,
+          "selected_samples": 3052,
+          "class_counts": {
+            "SL": 1180,
+            "EXP": 465,
+            "TP": 1407
+          },
+          "class_retention_ratios": {
+            "SL": 1.0,
+            "EXP": 1.0,
+            "TP": 1.0
+          },
+          "class_proportions": {
+            "SL": 0.3866,
+            "EXP": 0.1524,
+            "TP": 0.461
+          },
+          "class_recalls": {
+            "SL": 0.2322,
+            "EXP": 0.0,
+            "TP": 0.7505
+          },
+          "disparity_ratio": 1.0,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.8,
+          "selected_samples": 2441,
+          "class_counts": {
+            "SL": 899,
+            "EXP": 351,
+            "TP": 1191
+          },
+          "class_retention_ratios": {
+            "SL": 0.7619,
+            "EXP": 0.7548,
+            "TP": 0.8465
+          },
+          "class_proportions": {
+            "SL": 0.3683,
+            "EXP": 0.1438,
+            "TP": 0.4879
+          },
+          "class_recalls": {
+            "SL": 0.2558,
+            "EXP": 0.0,
+            "TP": 0.7406
+          },
+          "disparity_ratio": 1.12,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.7,
+          "selected_samples": 2136,
+          "class_counts": {
+            "SL": 767,
+            "EXP": 293,
+            "TP": 1076
+          },
+          "class_retention_ratios": {
+            "SL": 0.65,
+            "EXP": 0.6301,
+            "TP": 0.7647
+          },
+          "class_proportions": {
+            "SL": 0.3591,
+            "EXP": 0.1372,
+            "TP": 0.5037
+          },
+          "class_recalls": {
+            "SL": 0.2764,
+            "EXP": 0.0,
+            "TP": 0.7361
+          },
+          "disparity_ratio": 1.21,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.6,
+          "selected_samples": 1831,
+          "class_counts": {
+            "SL": 663,
+            "EXP": 243,
+            "TP": 925
+          },
+          "class_retention_ratios": {
+            "SL": 0.5619,
+            "EXP": 0.5226,
+            "TP": 0.6574
+          },
+          "class_proportions": {
+            "SL": 0.3621,
+            "EXP": 0.1327,
+            "TP": 0.5052
+          },
+          "class_recalls": {
+            "SL": 0.2971,
+            "EXP": 0.0,
+            "TP": 0.7254
+          },
+          "disparity_ratio": 1.26,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.5,
+          "selected_samples": 1526,
+          "class_counts": {
+            "SL": 554,
+            "EXP": 188,
+            "TP": 784
+          },
+          "class_retention_ratios": {
+            "SL": 0.4695,
+            "EXP": 0.4043,
+            "TP": 0.5572
+          },
+          "class_proportions": {
+            "SL": 0.363,
+            "EXP": 0.1232,
+            "TP": 0.5138
+          },
+          "class_recalls": {
+            "SL": 0.3267,
+            "EXP": 0.0,
+            "TP": 0.7092
+          },
+          "disparity_ratio": 1.38,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.4,
+          "selected_samples": 1220,
+          "class_counts": {
+            "SL": 450,
+            "EXP": 156,
+            "TP": 614
+          },
+          "class_retention_ratios": {
+            "SL": 0.3814,
+            "EXP": 0.3355,
+            "TP": 0.4364
+          },
+          "class_proportions": {
+            "SL": 0.3689,
+            "EXP": 0.1279,
+            "TP": 0.5033
+          },
+          "class_recalls": {
+            "SL": 0.3689,
+            "EXP": 0.0,
+            "TP": 0.6857
+          },
+          "disparity_ratio": 1.3,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.3,
+          "selected_samples": 915,
+          "class_counts": {
+            "SL": 327,
+            "EXP": 115,
+            "TP": 473
+          },
+          "class_retention_ratios": {
+            "SL": 0.2771,
+            "EXP": 0.2473,
+            "TP": 0.3362
+          },
+          "class_proportions": {
+            "SL": 0.3574,
+            "EXP": 0.1257,
+            "TP": 0.5169
+          },
+          "class_recalls": {
+            "SL": 0.3884,
+            "EXP": 0.0,
+            "TP": 0.6554
+          },
+          "disparity_ratio": 1.36,
+          "bias_detected": false
+        },
+        {
+          "coverage": 0.2,
+          "selected_samples": 610,
+          "class_counts": {
+            "SL": 217,
+            "EXP": 87,
+            "TP": 306
+          },
+          "class_retention_ratios": {
+            "SL": 0.1839,
+            "EXP": 0.1871,
+            "TP": 0.2175
+          },
+          "class_proportions": {
+            "SL": 0.3557,
+            "EXP": 0.1426,
+            "TP": 0.5016
+          },
+          "class_recalls": {
+            "SL": 0.3963,
+            "EXP": 0.0,
+            "TP": 0.6307
+          },
+          "disparity_ratio": 1.18,
+          "bias_detected": false
+        }
+      ]
+    }
+  }
+}

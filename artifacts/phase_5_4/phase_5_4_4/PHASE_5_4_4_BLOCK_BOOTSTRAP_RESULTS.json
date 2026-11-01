@@ -1,0 +1,1796 @@
+{
+  "title": "Workstream A: Time-Series Aware Paired Moving Block Bootstrap Audit",
+  "timestamp_utc": "2026-11-01 19:23:50 UTC",
+  "bootstrap_parameters": {
+    "evaluation_segment": "Segment 3 (Fold 5 retrospective evaluation)",
+    "block_lengths_bars": [
+      12,
+      24,
+      48,
+      96
+    ],
+    "block_lengths_hours": [
+      1.0,
+      2.0,
+      4.0,
+      8.0
+    ],
+    "n_boot_linear_metrics": 10000,
+    "n_boot_ece": 1000,
+    "random_seed": 42,
+    "pairing": "Exact identical timestamps per observation"
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "sample_size": 26140,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.028113,
+            "boot_mean": -0.028141,
+            "boot_se": 0.001523,
+            "ci_95": [
+              -0.03115,
+              -0.025155
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.082358,
+            "boot_mean": -0.082383,
+            "boot_se": 0.002966,
+            "ci_95": [
+              -0.088203,
+              -0.076504
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.029587,
+            "boot_mean": -0.028095,
+            "boot_se": 0.004671,
+            "ci_95": [
+              -0.036922,
+              -0.018662
+            ],
+            "finite_p_value": 0.000999,
+            "significant_reduction": true
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.028113,
+            "boot_mean": -0.0281,
+            "boot_se": 0.001727,
+            "ci_95": [
+              -0.03148,
+              -0.024676
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.082358,
+            "boot_mean": -0.082318,
+            "boot_se": 0.003276,
+            "ci_95": [
+              -0.088758,
+              -0.075834
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.029587,
+            "boot_mean": -0.028016,
+            "boot_se": 0.004976,
+            "ci_95": [
+              -0.036591,
+              -0.017028
+            ],
+            "finite_p_value": 0.001998,
+            "significant_reduction": true
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.028113,
+            "boot_mean": -0.028117,
+            "boot_se": 0.001961,
+            "ci_95": [
+              -0.031981,
+              -0.024273
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.082358,
+            "boot_mean": -0.082354,
+            "boot_se": 0.00364,
+            "ci_95": [
+              -0.089385,
+              -0.07523
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.029587,
+            "boot_mean": -0.027928,
+            "boot_se": 0.004935,
+            "ci_95": [
+              -0.036967,
+              -0.017839
+            ],
+            "finite_p_value": 0.000999,
+            "significant_reduction": true
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.028113,
+            "boot_mean": -0.028185,
+            "boot_se": 0.002241,
+            "ci_95": [
+              -0.032696,
+              -0.024005
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.082358,
+            "boot_mean": -0.082468,
+            "boot_se": 0.004071,
+            "ci_95": [
+              -0.090424,
+              -0.07453
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.029587,
+            "boot_mean": -0.027641,
+            "boot_se": 0.005087,
+            "ci_95": [
+              -0.03709,
+              -0.016831
+            ],
+            "finite_p_value": 0.000999,
+            "significant_reduction": true
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": true,
+        "se_expansion_ratio_b96_to_b12_brier": 1.471,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.373,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    },
+    "ETHUSDT": {
+      "sample_size": 26148,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.016675,
+            "boot_mean": -0.016694,
+            "boot_se": 0.001453,
+            "ci_95": [
+              -0.019566,
+              -0.013818
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.051031,
+            "boot_mean": -0.05106,
+            "boot_se": 0.003173,
+            "ci_95": [
+              -0.057231,
+              -0.044885
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.006931,
+            "boot_mean": -0.006618,
+            "boot_se": 0.007284,
+            "ci_95": [
+              -0.020389,
+              0.007288
+            ],
+            "finite_p_value": 0.187812,
+            "significant_reduction": false
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.016675,
+            "boot_mean": -0.016743,
+            "boot_se": 0.001638,
+            "ci_95": [
+              -0.019993,
+              -0.013596
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.051031,
+            "boot_mean": -0.051175,
+            "boot_se": 0.003464,
+            "ci_95": [
+              -0.057889,
+              -0.0444
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.006931,
+            "boot_mean": -0.006958,
+            "boot_se": 0.007186,
+            "ci_95": [
+              -0.021025,
+              0.007128
+            ],
+            "finite_p_value": 0.165834,
+            "significant_reduction": false
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.016675,
+            "boot_mean": -0.016798,
+            "boot_se": 0.001869,
+            "ci_95": [
+              -0.020529,
+              -0.013208
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.051031,
+            "boot_mean": -0.051287,
+            "boot_se": 0.003853,
+            "ci_95": [
+              -0.058906,
+              -0.043734
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.006931,
+            "boot_mean": -0.006776,
+            "boot_se": 0.007228,
+            "ci_95": [
+              -0.020916,
+              0.007395
+            ],
+            "finite_p_value": 0.17982,
+            "significant_reduction": false
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.016675,
+            "boot_mean": -0.016867,
+            "boot_se": 0.002153,
+            "ci_95": [
+              -0.021227,
+              -0.012803
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.051031,
+            "boot_mean": -0.051487,
+            "boot_se": 0.004293,
+            "ci_95": [
+              -0.059965,
+              -0.043256
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.006931,
+            "boot_mean": -0.006787,
+            "boot_se": 0.007561,
+            "ci_95": [
+              -0.021485,
+              0.008378
+            ],
+            "finite_p_value": 0.18981,
+            "significant_reduction": false
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": false,
+        "se_expansion_ratio_b96_to_b12_brier": 1.482,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.353,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    },
+    "BNBUSDT": {
+      "sample_size": 26171,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.003957,
+            "boot_mean": -0.003962,
+            "boot_se": 0.00058,
+            "ci_95": [
+              -0.005078,
+              -0.002798
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.022185,
+            "boot_mean": -0.022184,
+            "boot_se": 0.001543,
+            "ci_95": [
+              -0.025149,
+              -0.019087
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.01138,
+            "boot_mean": -0.010301,
+            "boot_se": 0.004646,
+            "ci_95": [
+              -0.018515,
+              0.001015
+            ],
+            "finite_p_value": 0.032967,
+            "significant_reduction": false
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.003957,
+            "boot_mean": -0.003952,
+            "boot_se": 0.000628,
+            "ci_95": [
+              -0.00518,
+              -0.002722
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.022185,
+            "boot_mean": -0.022165,
+            "boot_se": 0.001649,
+            "ci_95": [
+              -0.025325,
+              -0.018861
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.01138,
+            "boot_mean": -0.010132,
+            "boot_se": 0.004474,
+            "ci_95": [
+              -0.018083,
+              0.000253
+            ],
+            "finite_p_value": 0.027972,
+            "significant_reduction": false
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.003957,
+            "boot_mean": -0.003952,
+            "boot_se": 0.000659,
+            "ci_95": [
+              -0.005228,
+              -0.00264
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.022185,
+            "boot_mean": -0.022172,
+            "boot_se": 0.001725,
+            "ci_95": [
+              -0.025416,
+              -0.018683
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.01138,
+            "boot_mean": -0.010478,
+            "boot_se": 0.004538,
+            "ci_95": [
+              -0.018855,
+              -0.000438
+            ],
+            "finite_p_value": 0.01998,
+            "significant_reduction": true
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.003957,
+            "boot_mean": -0.003951,
+            "boot_se": 0.000706,
+            "ci_95": [
+              -0.005332,
+              -0.002556
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.022185,
+            "boot_mean": -0.022174,
+            "boot_se": 0.001811,
+            "ci_95": [
+              -0.025689,
+              -0.018542
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.01138,
+            "boot_mean": -0.010522,
+            "boot_se": 0.00435,
+            "ci_95": [
+              -0.018663,
+              -0.001331
+            ],
+            "finite_p_value": 0.014985,
+            "significant_reduction": true
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": false,
+        "se_expansion_ratio_b96_to_b12_brier": 1.217,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.174,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    },
+    "XRPUSDT": {
+      "sample_size": 26120,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.003408,
+            "boot_mean": -0.003416,
+            "boot_se": 0.000664,
+            "ci_95": [
+              -0.0047,
+              -0.002094
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.022455,
+            "boot_mean": -0.022465,
+            "boot_se": 0.001532,
+            "ci_95": [
+              -0.025358,
+              -0.019415
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.005121,
+            "boot_mean": -0.005002,
+            "boot_se": 0.006218,
+            "ci_95": [
+              -0.016868,
+              0.00717
+            ],
+            "finite_p_value": 0.217782,
+            "significant_reduction": false
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.003408,
+            "boot_mean": -0.003411,
+            "boot_se": 0.000729,
+            "ci_95": [
+              -0.004842,
+              -0.001968
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.022455,
+            "boot_mean": -0.022479,
+            "boot_se": 0.001631,
+            "ci_95": [
+              -0.025596,
+              -0.019201
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.005121,
+            "boot_mean": -0.00481,
+            "boot_se": 0.006014,
+            "ci_95": [
+              -0.016649,
+              0.006676
+            ],
+            "finite_p_value": 0.20979,
+            "significant_reduction": false
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.003408,
+            "boot_mean": -0.003418,
+            "boot_se": 0.000793,
+            "ci_95": [
+              -0.004954,
+              -0.00188
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.022455,
+            "boot_mean": -0.022517,
+            "boot_se": 0.001776,
+            "ci_95": [
+              -0.025937,
+              -0.019022
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.005121,
+            "boot_mean": -0.004772,
+            "boot_se": 0.006495,
+            "ci_95": [
+              -0.017617,
+              0.007733
+            ],
+            "finite_p_value": 0.230769,
+            "significant_reduction": false
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.003408,
+            "boot_mean": -0.003418,
+            "boot_se": 0.000884,
+            "ci_95": [
+              -0.00522,
+              -0.001753
+            ],
+            "finite_p_value": 0.0002,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.022455,
+            "boot_mean": -0.022515,
+            "boot_se": 0.001949,
+            "ci_95": [
+              -0.026437,
+              -0.018735
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.005121,
+            "boot_mean": -0.004824,
+            "boot_se": 0.006542,
+            "ci_95": [
+              -0.016928,
+              0.008205
+            ],
+            "finite_p_value": 0.230769,
+            "significant_reduction": false
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": false,
+        "se_expansion_ratio_b96_to_b12_brier": 1.331,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.272,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    },
+    "ADAUSDT": {
+      "sample_size": 26099,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.046343,
+            "boot_mean": -0.046371,
+            "boot_se": 0.002407,
+            "ci_95": [
+              -0.051163,
+              -0.041741
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.087338,
+            "boot_mean": -0.087416,
+            "boot_se": 0.004956,
+            "ci_95": [
+              -0.097164,
+              -0.077741
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.005763,
+            "boot_mean": -0.00686,
+            "boot_se": 0.005638,
+            "ci_95": [
+              -0.018134,
+              0.004005
+            ],
+            "finite_p_value": 0.108891,
+            "significant_reduction": false
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.046343,
+            "boot_mean": -0.046382,
+            "boot_se": 0.002583,
+            "ci_95": [
+              -0.051366,
+              -0.041284
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.087338,
+            "boot_mean": -0.087405,
+            "boot_se": 0.005206,
+            "ci_95": [
+              -0.097403,
+              -0.077149
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.005763,
+            "boot_mean": -0.006696,
+            "boot_se": 0.005442,
+            "ci_95": [
+              -0.01839,
+              0.002837
+            ],
+            "finite_p_value": 0.096903,
+            "significant_reduction": false
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.046343,
+            "boot_mean": -0.046418,
+            "boot_se": 0.002746,
+            "ci_95": [
+              -0.051844,
+              -0.041
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.087338,
+            "boot_mean": -0.087446,
+            "boot_se": 0.005382,
+            "ci_95": [
+              -0.097854,
+              -0.076837
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.005763,
+            "boot_mean": -0.006786,
+            "boot_se": 0.005621,
+            "ci_95": [
+              -0.018292,
+              0.003163
+            ],
+            "finite_p_value": 0.121878,
+            "significant_reduction": false
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.046343,
+            "boot_mean": -0.046464,
+            "boot_se": 0.002989,
+            "ci_95": [
+              -0.052208,
+              -0.04059
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.087338,
+            "boot_mean": -0.08749,
+            "boot_se": 0.00566,
+            "ci_95": [
+              -0.0984,
+              -0.076354
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.005763,
+            "boot_mean": -0.006695,
+            "boot_se": 0.005601,
+            "ci_95": [
+              -0.017965,
+              0.003036
+            ],
+            "finite_p_value": 0.115884,
+            "significant_reduction": false
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": false,
+        "se_expansion_ratio_b96_to_b12_brier": 1.242,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.142,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    },
+    "SOLUSDT": {
+      "sample_size": 26164,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.008501,
+            "boot_mean": -0.008509,
+            "boot_se": 0.000917,
+            "ci_95": [
+              -0.010283,
+              -0.00668
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.036022,
+            "boot_mean": -0.036048,
+            "boot_se": 0.002521,
+            "ci_95": [
+              -0.040984,
+              -0.031021
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.019646,
+            "boot_mean": -0.018432,
+            "boot_se": 0.003938,
+            "ci_95": [
+              -0.025775,
+              -0.010689
+            ],
+            "finite_p_value": 0.001998,
+            "significant_reduction": true
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.008501,
+            "boot_mean": -0.008495,
+            "boot_se": 0.001012,
+            "ci_95": [
+              -0.010439,
+              -0.006462
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.036022,
+            "boot_mean": -0.036031,
+            "boot_se": 0.002744,
+            "ci_95": [
+              -0.041335,
+              -0.030529
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.019646,
+            "boot_mean": -0.018563,
+            "boot_se": 0.00419,
+            "ci_95": [
+              -0.026032,
+              -0.009306
+            ],
+            "finite_p_value": 0.002997,
+            "significant_reduction": true
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.008501,
+            "boot_mean": -0.008489,
+            "boot_se": 0.001102,
+            "ci_95": [
+              -0.010665,
+              -0.006333
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.036022,
+            "boot_mean": -0.035978,
+            "boot_se": 0.002944,
+            "ci_95": [
+              -0.04168,
+              -0.030101
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.019646,
+            "boot_mean": -0.01816,
+            "boot_se": 0.004344,
+            "ci_95": [
+              -0.025759,
+              -0.009265
+            ],
+            "finite_p_value": 0.000999,
+            "significant_reduction": true
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.008501,
+            "boot_mean": -0.008478,
+            "boot_se": 0.001202,
+            "ci_95": [
+              -0.010891,
+              -0.006166
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.036022,
+            "boot_mean": -0.035937,
+            "boot_se": 0.003124,
+            "ci_95": [
+              -0.042132,
+              -0.029851
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.019646,
+            "boot_mean": -0.018317,
+            "boot_se": 0.004359,
+            "ci_95": [
+              -0.025846,
+              -0.008824
+            ],
+            "finite_p_value": 0.001998,
+            "significant_reduction": true
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": true,
+        "se_expansion_ratio_b96_to_b12_brier": 1.311,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.239,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    },
+    "AVAXUSDT": {
+      "sample_size": 26166,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.008566,
+            "boot_mean": -0.008584,
+            "boot_se": 0.00091,
+            "ci_95": [
+              -0.010316,
+              -0.006751
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.01495,
+            "boot_mean": -0.014975,
+            "boot_se": 0.001512,
+            "ci_95": [
+              -0.017907,
+              -0.011926
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.001391,
+            "boot_mean": -0.001095,
+            "boot_se": 0.004177,
+            "ci_95": [
+              -0.00958,
+              0.006992
+            ],
+            "finite_p_value": 0.385614,
+            "significant_reduction": false
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.008566,
+            "boot_mean": -0.008637,
+            "boot_se": 0.000966,
+            "ci_95": [
+              -0.010521,
+              -0.006727
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.01495,
+            "boot_mean": -0.015057,
+            "boot_se": 0.001613,
+            "ci_95": [
+              -0.018191,
+              -0.011858
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.001391,
+            "boot_mean": -0.000844,
+            "boot_se": 0.004409,
+            "ci_95": [
+              -0.008935,
+              0.007678
+            ],
+            "finite_p_value": 0.416583,
+            "significant_reduction": false
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.008566,
+            "boot_mean": -0.008678,
+            "boot_se": 0.000918,
+            "ci_95": [
+              -0.010477,
+              -0.006882
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.01495,
+            "boot_mean": -0.015128,
+            "boot_se": 0.001548,
+            "ci_95": [
+              -0.018183,
+              -0.012093
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.001391,
+            "boot_mean": -0.000835,
+            "boot_se": 0.004636,
+            "ci_95": [
+              -0.009886,
+              0.008984
+            ],
+            "finite_p_value": 0.413586,
+            "significant_reduction": false
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.008566,
+            "boot_mean": -0.008672,
+            "boot_se": 0.000901,
+            "ci_95": [
+              -0.010449,
+              -0.006887
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.01495,
+            "boot_mean": -0.015131,
+            "boot_se": 0.001515,
+            "ci_95": [
+              -0.018034,
+              -0.012113
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.001391,
+            "boot_mean": -0.000819,
+            "boot_se": 0.004847,
+            "ci_95": [
+              -0.009778,
+              0.008426
+            ],
+            "finite_p_value": 0.433566,
+            "significant_reduction": false
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": false,
+        "se_expansion_ratio_b96_to_b12_brier": 0.99,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.002,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    },
+    "LINKUSDT": {
+      "sample_size": 26157,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.002368,
+            "boot_mean": -0.002366,
+            "boot_se": 0.000507,
+            "ci_95": [
+              -0.003355,
+              -0.001379
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.006815,
+            "boot_mean": -0.006805,
+            "boot_se": 0.000876,
+            "ci_95": [
+              -0.008531,
+              -0.00511
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.002498,
+            "boot_mean": -0.003059,
+            "boot_se": 0.004344,
+            "ci_95": [
+              -0.011407,
+              0.005564
+            ],
+            "finite_p_value": 0.232767,
+            "significant_reduction": false
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.002368,
+            "boot_mean": -0.002356,
+            "boot_se": 0.00054,
+            "ci_95": [
+              -0.003397,
+              -0.001282
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.006815,
+            "boot_mean": -0.006785,
+            "boot_se": 0.000937,
+            "ci_95": [
+              -0.008586,
+              -0.004911
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.002498,
+            "boot_mean": -0.002721,
+            "boot_se": 0.004513,
+            "ci_95": [
+              -0.011682,
+              0.006222
+            ],
+            "finite_p_value": 0.271728,
+            "significant_reduction": false
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.002368,
+            "boot_mean": -0.002359,
+            "boot_se": 0.00055,
+            "ci_95": [
+              -0.003426,
+              -0.001273
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.006815,
+            "boot_mean": -0.006787,
+            "boot_se": 0.000949,
+            "ci_95": [
+              -0.00866,
+              -0.004922
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.002498,
+            "boot_mean": -0.002616,
+            "boot_se": 0.004657,
+            "ci_95": [
+              -0.011884,
+              0.006715
+            ],
+            "finite_p_value": 0.280719,
+            "significant_reduction": false
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.002368,
+            "boot_mean": -0.002386,
+            "boot_se": 0.000561,
+            "ci_95": [
+              -0.003483,
+              -0.001298
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.006815,
+            "boot_mean": -0.006829,
+            "boot_se": 0.000977,
+            "ci_95": [
+              -0.008754,
+              -0.004917
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.002498,
+            "boot_mean": -0.002732,
+            "boot_se": 0.004911,
+            "ci_95": [
+              -0.012531,
+              0.006909
+            ],
+            "finite_p_value": 0.295704,
+            "significant_reduction": false
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": false,
+        "se_expansion_ratio_b96_to_b12_brier": 1.107,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.115,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    },
+    "DOGEUSDT": {
+      "sample_size": 26132,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.003275,
+            "boot_mean": -0.003302,
+            "boot_se": 0.00056,
+            "ci_95": [
+              -0.004412,
+              -0.002193
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.021305,
+            "boot_mean": -0.021373,
+            "boot_se": 0.001775,
+            "ci_95": [
+              -0.024809,
+              -0.01782
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.010241,
+            "boot_mean": -0.0087,
+            "boot_se": 0.002999,
+            "ci_95": [
+              -0.014435,
+              -0.002578
+            ],
+            "finite_p_value": 0.008991,
+            "significant_reduction": true
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.003275,
+            "boot_mean": -0.003313,
+            "boot_se": 0.000595,
+            "ci_95": [
+              -0.004492,
+              -0.002149
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.021305,
+            "boot_mean": -0.021385,
+            "boot_se": 0.00187,
+            "ci_95": [
+              -0.024999,
+              -0.017627
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.010241,
+            "boot_mean": -0.008869,
+            "boot_se": 0.003011,
+            "ci_95": [
+              -0.014376,
+              -0.002516
+            ],
+            "finite_p_value": 0.006993,
+            "significant_reduction": true
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.003275,
+            "boot_mean": -0.003325,
+            "boot_se": 0.000632,
+            "ci_95": [
+              -0.004576,
+              -0.002104
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.021305,
+            "boot_mean": -0.02142,
+            "boot_se": 0.001955,
+            "ci_95": [
+              -0.025133,
+              -0.017549
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.010241,
+            "boot_mean": -0.008729,
+            "boot_se": 0.003122,
+            "ci_95": [
+              -0.0145,
+              -0.002359
+            ],
+            "finite_p_value": 0.008991,
+            "significant_reduction": true
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.003275,
+            "boot_mean": -0.00333,
+            "boot_se": 0.000659,
+            "ci_95": [
+              -0.004606,
+              -0.002051
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.021305,
+            "boot_mean": -0.021453,
+            "boot_se": 0.001983,
+            "ci_95": [
+              -0.02522,
+              -0.017529
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.010241,
+            "boot_mean": -0.008514,
+            "boot_se": 0.003251,
+            "ci_95": [
+              -0.01412,
+              -0.001725
+            ],
+            "finite_p_value": 0.010989,
+            "significant_reduction": true
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": true,
+        "se_expansion_ratio_b96_to_b12_brier": 1.177,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.117,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    },
+    "LTCUSDT": {
+      "sample_size": 26095,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.011612,
+            "boot_mean": -0.011619,
+            "boot_se": 0.001117,
+            "ci_95": [
+              -0.013777,
+              -0.009411
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.023804,
+            "boot_mean": -0.02381,
+            "boot_se": 0.002063,
+            "ci_95": [
+              -0.027812,
+              -0.019837
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.007768,
+            "boot_mean": -0.005717,
+            "boot_se": 0.005402,
+            "ci_95": [
+              -0.016113,
+              0.005001
+            ],
+            "finite_p_value": 0.136863,
+            "significant_reduction": false
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.011612,
+            "boot_mean": -0.011608,
+            "boot_se": 0.001172,
+            "ci_95": [
+              -0.013886,
+              -0.009287
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.023804,
+            "boot_mean": -0.023779,
+            "boot_se": 0.002171,
+            "ci_95": [
+              -0.027979,
+              -0.019492
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.007768,
+            "boot_mean": -0.005584,
+            "boot_se": 0.005524,
+            "ci_95": [
+              -0.0168,
+              0.005353
+            ],
+            "finite_p_value": 0.141858,
+            "significant_reduction": false
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.011612,
+            "boot_mean": -0.011634,
+            "boot_se": 0.001167,
+            "ci_95": [
+              -0.013914,
+              -0.009334
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.023804,
+            "boot_mean": -0.0238,
+            "boot_se": 0.002177,
+            "ci_95": [
+              -0.028009,
+              -0.019494
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.007768,
+            "boot_mean": -0.005435,
+            "boot_se": 0.005747,
+            "ci_95": [
+              -0.016867,
+              0.005713
+            ],
+            "finite_p_value": 0.176823,
+            "significant_reduction": false
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.011612,
+            "boot_mean": -0.011682,
+            "boot_se": 0.001157,
+            "ci_95": [
+              -0.013936,
+              -0.009389
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.023804,
+            "boot_mean": -0.023901,
+            "boot_se": 0.002176,
+            "ci_95": [
+              -0.028063,
+              -0.01956
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.007768,
+            "boot_mean": -0.005219,
+            "boot_se": 0.005684,
+            "ci_95": [
+              -0.016224,
+              0.005601
+            ],
+            "finite_p_value": 0.181818,
+            "significant_reduction": false
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": false,
+        "se_expansion_ratio_b96_to_b12_brier": 1.036,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.055,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    },
+    "XMRUSDT": {
+      "sample_size": 3052,
+      "block_evaluations": {
+        "block_12_bars": {
+          "block_bars": 12,
+          "block_hours": 1.0,
+          "delta_brier": {
+            "point_estimate": -0.054006,
+            "boot_mean": -0.05433,
+            "boot_se": 0.010951,
+            "ci_95": [
+              -0.075805,
+              -0.032363
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.079461,
+            "boot_mean": -0.080096,
+            "boot_se": 0.01927,
+            "ci_95": [
+              -0.117822,
+              -0.041466
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.071735,
+            "boot_mean": -0.064824,
+            "boot_se": 0.020663,
+            "ci_95": [
+              -0.102595,
+              -0.024379
+            ],
+            "finite_p_value": 0.003996,
+            "significant_reduction": true
+          }
+        },
+        "block_24_bars": {
+          "block_bars": 24,
+          "block_hours": 2.0,
+          "delta_brier": {
+            "point_estimate": -0.054006,
+            "boot_mean": -0.054545,
+            "boot_se": 0.012038,
+            "ci_95": [
+              -0.077995,
+              -0.030828
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.079461,
+            "boot_mean": -0.080504,
+            "boot_se": 0.020922,
+            "ci_95": [
+              -0.12063,
+              -0.038757
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.071735,
+            "boot_mean": -0.064207,
+            "boot_se": 0.023043,
+            "ci_95": [
+              -0.108677,
+              -0.018858
+            ],
+            "finite_p_value": 0.003996,
+            "significant_reduction": true
+          }
+        },
+        "block_48_bars": {
+          "block_bars": 48,
+          "block_hours": 4.0,
+          "delta_brier": {
+            "point_estimate": -0.054006,
+            "boot_mean": -0.05466,
+            "boot_se": 0.012875,
+            "ci_95": [
+              -0.079039,
+              -0.028511
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.079461,
+            "boot_mean": -0.080537,
+            "boot_se": 0.022154,
+            "ci_95": [
+              -0.12228,
+              -0.034829
+            ],
+            "finite_p_value": 0.0007,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.071735,
+            "boot_mean": -0.06363,
+            "boot_se": 0.025487,
+            "ci_95": [
+              -0.113962,
+              -0.012406
+            ],
+            "finite_p_value": 0.007992,
+            "significant_reduction": true
+          }
+        },
+        "block_96_bars": {
+          "block_bars": 96,
+          "block_hours": 8.0,
+          "delta_brier": {
+            "point_estimate": -0.054006,
+            "boot_mean": -0.054782,
+            "boot_se": 0.012952,
+            "ci_95": [
+              -0.079206,
+              -0.028558
+            ],
+            "finite_p_value": 0.0001,
+            "significant_reduction": true
+          },
+          "delta_log_loss": {
+            "point_estimate": -0.079461,
+            "boot_mean": -0.080094,
+            "boot_se": 0.022327,
+            "ci_95": [
+              -0.121821,
+              -0.034599
+            ],
+            "finite_p_value": 0.0004,
+            "significant_reduction": true
+          },
+          "delta_ece": {
+            "point_estimate": -0.071735,
+            "boot_mean": -0.066991,
+            "boot_se": 0.028205,
+            "ci_95": [
+              -0.119011,
+              -0.013171
+            ],
+            "finite_p_value": 0.011988,
+            "significant_reduction": true
+          }
+        }
+      },
+      "sensitivity_analysis": {
+        "brier_significant_across_all_blocks": true,
+        "log_loss_significant_across_all_blocks": true,
+        "ece_significant_across_all_blocks": true,
+        "se_expansion_ratio_b96_to_b12_brier": 1.183,
+        "se_expansion_ratio_b96_to_b12_log_loss": 1.159,
+        "conclusion": "Significance robust across all block lengths"
+      }
+    }
+  }
+}

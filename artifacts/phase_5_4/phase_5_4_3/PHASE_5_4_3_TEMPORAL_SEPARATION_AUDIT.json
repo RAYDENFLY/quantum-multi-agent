@@ -1,0 +1,576 @@
+{
+  "title": "Workstream C: Temporal Separation & Fold 5 Protection Audit",
+  "timestamp_utc": "2026-11-01 19:10:06 UTC",
+  "partition_architecture": {
+    "segment_1": "Folds 1-2 (Calibration Fitting only)",
+    "segment_2": "Folds 3-4 (Policy Selection only)",
+    "segment_3": "Fold 5 (Final Temporal Evaluation only)",
+    "enforced_purge_gap": "13 bars (3,900,000 ms) strictly exceeds 12-bar labeling horizon",
+    "target_leakage_risk": "Zero target overlap across segment boundaries"
+  },
+  "prospective_holdout_boundary_utc": "2026-11-01 00:00:00 UTC",
+  "instruments": [
+    {
+      "instrument": "BTCUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2025-01-29 11:20:00 UTC",
+        "end_utc": "2025-07-30 19:50:00 UTC",
+        "samples": 52272
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2025-07-30 20:55:00 UTC",
+        "end_utc": "2026-01-29 14:35:00 UTC",
+        "samples": 52272
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-01-29 15:40:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 26140
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 4200000,
+          "gap_bars": 14.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    },
+    {
+      "instrument": "ETHUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2025-01-29 04:40:00 UTC",
+        "end_utc": "2025-07-30 11:10:00 UTC",
+        "samples": 52290
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2025-07-30 12:15:00 UTC",
+        "end_utc": "2026-01-29 07:45:00 UTC",
+        "samples": 52290
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-01-29 08:50:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 26148
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    },
+    {
+      "instrument": "BNBUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2025-01-29 15:45:00 UTC",
+        "end_utc": "2025-07-30 22:40:00 UTC",
+        "samples": 52338
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2025-07-30 23:45:00 UTC",
+        "end_utc": "2026-01-29 11:25:00 UTC",
+        "samples": 52338
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-01-29 12:30:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 26171
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    },
+    {
+      "instrument": "XRPUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2025-01-30 00:40:00 UTC",
+        "end_utc": "2025-07-31 01:30:00 UTC",
+        "samples": 52240
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2025-07-31 02:35:00 UTC",
+        "end_utc": "2026-01-29 09:55:00 UTC",
+        "samples": 52240
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-01-29 11:00:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 26120
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    },
+    {
+      "instrument": "ADAUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2025-01-30 08:20:00 UTC",
+        "end_utc": "2025-08-01 02:20:00 UTC",
+        "samples": 52192
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2025-08-01 03:25:00 UTC",
+        "end_utc": "2026-01-29 20:05:00 UTC",
+        "samples": 52192
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-01-29 21:10:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 26099
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    },
+    {
+      "instrument": "SOLUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2025-01-29 02:55:00 UTC",
+        "end_utc": "2025-07-30 12:40:00 UTC",
+        "samples": 52322
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2025-07-30 13:45:00 UTC",
+        "end_utc": "2026-01-29 08:55:00 UTC",
+        "samples": 52322
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-01-29 10:00:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 26164
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    },
+    {
+      "instrument": "AVAXUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2025-01-29 21:35:00 UTC",
+        "end_utc": "2025-07-31 09:50:00 UTC",
+        "samples": 52326
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2025-07-31 10:55:00 UTC",
+        "end_utc": "2026-01-29 17:55:00 UTC",
+        "samples": 52326
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-01-29 19:00:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 26166
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    },
+    {
+      "instrument": "LINKUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2025-01-30 02:40:00 UTC",
+        "end_utc": "2025-07-31 13:15:00 UTC",
+        "samples": 52310
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2025-07-31 14:20:00 UTC",
+        "end_utc": "2026-01-29 21:30:00 UTC",
+        "samples": 52310
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-01-29 22:35:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 26157
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    },
+    {
+      "instrument": "DOGEUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2025-01-29 14:45:00 UTC",
+        "end_utc": "2025-07-31 00:40:00 UTC",
+        "samples": 52258
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2025-07-31 01:45:00 UTC",
+        "end_utc": "2026-01-29 12:00:00 UTC",
+        "samples": 52258
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-01-29 13:05:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 26132
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    },
+    {
+      "instrument": "LTCUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2025-01-30 08:35:00 UTC",
+        "end_utc": "2025-08-01 01:40:00 UTC",
+        "samples": 52184
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2025-08-01 02:45:00 UTC",
+        "end_utc": "2026-01-29 23:45:00 UTC",
+        "samples": 52184
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-01-30 00:50:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 26095
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    },
+    {
+      "instrument": "XMRUSDT",
+      "segment_1_folds_1_2": {
+        "start_utc": "2026-03-08 15:30:00 UTC",
+        "end_utc": "2026-03-29 21:45:00 UTC",
+        "samples": 6100
+      },
+      "segment_2_folds_3_4": {
+        "start_utc": "2026-03-29 22:50:00 UTC",
+        "end_utc": "2026-04-20 05:45:00 UTC",
+        "samples": 6100
+      },
+      "segment_3_fold_5": {
+        "start_utc": "2026-04-20 06:50:00 UTC",
+        "end_utc": "2026-04-30 21:55:00 UTC",
+        "samples": 3052
+      },
+      "inter_fold_purge_gaps": [
+        {
+          "from_fold": 1,
+          "to_fold": 2,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 2,
+          "to_fold": 3,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 3,
+          "to_fold": 4,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        },
+        {
+          "from_fold": 4,
+          "to_fold": 5,
+          "gap_ms": 3900000,
+          "gap_bars": 13.0,
+          "purge_gap_satisfied": true
+        }
+      ],
+      "max_timestamp_utc": "2026-04-30 21:55:00 UTC",
+      "prospective_holdout_untouched": true,
+      "status": "PASS"
+    }
+  ],
+  "workstream_status": "PASS"
+}

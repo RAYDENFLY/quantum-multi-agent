@@ -1,0 +1,130 @@
+{
+  "title": "Workstream F: Execution Reproducibility & Resource Audit",
+  "timestamp_utc": "2026-11-01 19:31:53 UTC",
+  "environment": {
+    "os": "Windows-10-10.0.19045-SP0",
+    "python_version": "3.13.7",
+    "numpy_version": "2.4.4",
+    "pandas_version": "3.0.3",
+    "sklearn_version": "sklearn.linear_model._logistic"
+  },
+  "hardware_and_resource_conformance": {
+    "thread_limits_enforced": {
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "max_threads_target": 2,
+      "compliant": true
+    },
+    "ram_consumption_mb": {
+      "initial_rss_mb": 144.23,
+      "peak_rss_mb": 266.46,
+      "ram_ceiling_target_mb": 1024.0,
+      "compliant": true
+    },
+    "sequential_execution": true,
+    "execution_duration_seconds": {
+      "workstream_a": 243.28,
+      "workstreams_b_and_c": 199.8,
+      "multiple_testing": 0.0,
+      "workstream_d": 40.45,
+      "total_pipeline_seconds": 483.53
+    }
+  },
+  "governance_and_freeze_adherence": {
+    "zero_model_retraining": true,
+    "frozen_b4_models_unmodified": true,
+    "prospective_holdout_untouched": true,
+    "retrospective_label_fold_5_enforced": true
+  },
+  "fleet_classification_summary": {
+    "BTCUSDT": {
+      "classification": "CONFIDENCE_SELECTION_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": -0.003811,
+      "holm_rejected_coverages_count": 0,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 34,
+      "rationale": "Confidence selection achieves lower overall risk than random baseline (Delta AU-RCC = -0.003811 < 0) with 0 Holm-rejected coverage tiers."
+    },
+    "ETHUSDT": {
+      "classification": "CONFIDENCE_SELECTION_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": -0.007339,
+      "holm_rejected_coverages_count": 4,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 52,
+      "rationale": "Confidence selection achieves lower overall risk than random baseline (Delta AU-RCC = -0.007339 < 0) with 4 Holm-rejected coverage tiers."
+    },
+    "BNBUSDT": {
+      "classification": "RANDOM_BASELINE_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": 0.000483,
+      "holm_rejected_coverages_count": 0,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 67,
+      "rationale": "Delta AU-RCC is positive (0.000483 > 0), confirming random baseline achieves lower risk than unweighted Policy A due to majority-class selection bias."
+    },
+    "XRPUSDT": {
+      "classification": "RANDOM_BASELINE_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": 0.004888,
+      "holm_rejected_coverages_count": 0,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 61,
+      "rationale": "Delta AU-RCC is positive (0.004888 > 0), confirming random baseline achieves lower risk than unweighted Policy A due to majority-class selection bias."
+    },
+    "ADAUSDT": {
+      "classification": "RANDOM_BASELINE_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": 0.001608,
+      "holm_rejected_coverages_count": 0,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 265,
+      "rationale": "Delta AU-RCC is positive (0.001608 > 0), confirming random baseline achieves lower risk than unweighted Policy A due to majority-class selection bias."
+    },
+    "SOLUSDT": {
+      "classification": "CONFIDENCE_SELECTION_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": -0.001593,
+      "holm_rejected_coverages_count": 0,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 34,
+      "rationale": "Confidence selection achieves lower overall risk than random baseline (Delta AU-RCC = -0.001593 < 0) with 0 Holm-rejected coverage tiers."
+    },
+    "AVAXUSDT": {
+      "classification": "RANDOM_BASELINE_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": 0.007825,
+      "holm_rejected_coverages_count": 0,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 373,
+      "rationale": "Delta AU-RCC is positive (0.007825 > 0), confirming random baseline achieves lower risk than unweighted Policy A due to majority-class selection bias."
+    },
+    "LINKUSDT": {
+      "classification": "CONFIDENCE_SELECTION_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": -0.005892,
+      "holm_rejected_coverages_count": 2,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 321,
+      "rationale": "Confidence selection achieves lower overall risk than random baseline (Delta AU-RCC = -0.005892 < 0) with 2 Holm-rejected coverage tiers."
+    },
+    "DOGEUSDT": {
+      "classification": "CONFIDENCE_SELECTION_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": -0.009118,
+      "holm_rejected_coverages_count": 3,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 69,
+      "rationale": "Confidence selection achieves lower overall risk than random baseline (Delta AU-RCC = -0.009118 < 0) with 3 Holm-rejected coverage tiers."
+    },
+    "LTCUSDT": {
+      "classification": "CONFIDENCE_SELECTION_SUPERIOR",
+      "delta_au_rcc_balanced_accuracy": -0.005182,
+      "holm_rejected_coverages_count": 2,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 423,
+      "rationale": "Confidence selection achieves lower overall risk than random baseline (Delta AU-RCC = -0.005182 < 0) with 2 Holm-rejected coverage tiers."
+    },
+    "XMRUSDT": {
+      "classification": "INSUFFICIENT_CLASS_SUPPORT",
+      "delta_au_rcc_balanced_accuracy": -0.012366,
+      "holm_rejected_coverages_count": 1,
+      "total_sub_coverages_tested": 7,
+      "min_support_at_cov_20": 87,
+      "rationale": "Truncated historical population (15,252 total records) results in insufficient observation support at tight coverages."
+    }
+  }
+}

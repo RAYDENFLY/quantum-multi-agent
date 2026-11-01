@@ -1,0 +1,1782 @@
+{
+  "title": "Workstream C: Risk-Coverage Curve Analysis",
+  "timestamp_utc": "2026-11-01 19:23:50 UTC",
+  "risk_definitions": {
+    "Risk_err": "1.0 - Accuracy",
+    "Risk_ba": "1.0 - Balanced Accuracy",
+    "Risk_f1": "1.0 - Macro F1"
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "eval_samples": 26140,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.51974,
+            "rand": 0.51974,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.667072,
+            "rand": 0.667072,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.677421,
+            "rand": 0.677421,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.506025,
+            "rand": 0.519703,
+            "delta": -0.013677
+          },
+          "risk_ba": {
+            "conf": 0.664853,
+            "rand": 0.667064,
+            "delta": -0.002211
+          },
+          "risk_f1": {
+            "conf": 0.683216,
+            "rand": 0.677421,
+            "delta": 0.005795
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.502077,
+            "rand": 0.519785,
+            "delta": -0.017708
+          },
+          "risk_ba": {
+            "conf": 0.663733,
+            "rand": 0.66709,
+            "delta": -0.003357
+          },
+          "risk_f1": {
+            "conf": 0.690352,
+            "rand": 0.677445,
+            "delta": 0.012907
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.501466,
+            "rand": 0.519721,
+            "delta": -0.018255
+          },
+          "risk_ba": {
+            "conf": 0.662895,
+            "rand": 0.667048,
+            "delta": -0.004153
+          },
+          "risk_f1": {
+            "conf": 0.700313,
+            "rand": 0.677406,
+            "delta": 0.022907
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.497475,
+            "rand": 0.519717,
+            "delta": -0.022242
+          },
+          "risk_ba": {
+            "conf": 0.661576,
+            "rand": 0.667069,
+            "delta": -0.005493
+          },
+          "risk_f1": {
+            "conf": 0.70826,
+            "rand": 0.677437,
+            "delta": 0.030823
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.491488,
+            "rand": 0.519827,
+            "delta": -0.028339
+          },
+          "risk_ba": {
+            "conf": 0.66013,
+            "rand": 0.667086,
+            "delta": -0.006957
+          },
+          "risk_f1": {
+            "conf": 0.717587,
+            "rand": 0.67742,
+            "delta": 0.040166
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.486993,
+            "rand": 0.519862,
+            "delta": -0.032869
+          },
+          "risk_ba": {
+            "conf": 0.66144,
+            "rand": 0.667161,
+            "delta": -0.005721
+          },
+          "risk_f1": {
+            "conf": 0.734561,
+            "rand": 0.677572,
+            "delta": 0.056989
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.483359,
+            "rand": 0.519636,
+            "delta": -0.036278
+          },
+          "risk_ba": {
+            "conf": 0.664012,
+            "rand": 0.666997,
+            "delta": -0.002984
+          },
+          "risk_f1": {
+            "conf": 0.750254,
+            "rand": 0.67739,
+            "delta": 0.072864
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": 0.042898,
+          "slope_risk_ba": 0.005847,
+          "slope_risk_f1": -0.091916
+        },
+        "random_baseline": {
+          "slope_risk_err": -2.1e-05,
+          "slope_risk_ba": 3e-06,
+          "slope_risk_f1": -5.4e-05
+        }
+      }
+    },
+    "ETHUSDT": {
+      "eval_samples": 26148,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.523635,
+            "rand": 0.523635,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.66111,
+            "rand": 0.66111,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.719063,
+            "rand": 0.719063,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.511139,
+            "rand": 0.523637,
+            "delta": -0.012498
+          },
+          "risk_ba": {
+            "conf": 0.662352,
+            "rand": 0.66112,
+            "delta": 0.001232
+          },
+          "risk_f1": {
+            "conf": 0.727919,
+            "rand": 0.719067,
+            "delta": 0.008852
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.508059,
+            "rand": 0.52367,
+            "delta": -0.015611
+          },
+          "risk_ba": {
+            "conf": 0.660742,
+            "rand": 0.661079,
+            "delta": -0.000337
+          },
+          "risk_f1": {
+            "conf": 0.733585,
+            "rand": 0.719058,
+            "delta": 0.014527
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.502486,
+            "rand": 0.523566,
+            "delta": -0.02108
+          },
+          "risk_ba": {
+            "conf": 0.656333,
+            "rand": 0.661097,
+            "delta": -0.004764
+          },
+          "risk_f1": {
+            "conf": 0.736045,
+            "rand": 0.719026,
+            "delta": 0.017018
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.4987,
+            "rand": 0.523578,
+            "delta": -0.024878
+          },
+          "risk_ba": {
+            "conf": 0.652656,
+            "rand": 0.661102,
+            "delta": -0.008446
+          },
+          "risk_f1": {
+            "conf": 0.738258,
+            "rand": 0.719045,
+            "delta": 0.019213
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.495458,
+            "rand": 0.523482,
+            "delta": -0.028023
+          },
+          "risk_ba": {
+            "conf": 0.647295,
+            "rand": 0.661083,
+            "delta": -0.013788
+          },
+          "risk_f1": {
+            "conf": 0.732487,
+            "rand": 0.718981,
+            "delta": 0.013506
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.492478,
+            "rand": 0.523599,
+            "delta": -0.03112
+          },
+          "risk_ba": {
+            "conf": 0.640617,
+            "rand": 0.661126,
+            "delta": -0.020509
+          },
+          "risk_f1": {
+            "conf": 0.723524,
+            "rand": 0.719127,
+            "delta": 0.004397
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.4869,
+            "rand": 0.523593,
+            "delta": -0.036693
+          },
+          "risk_ba": {
+            "conf": 0.635604,
+            "rand": 0.661029,
+            "delta": -0.025425
+          },
+          "risk_f1": {
+            "conf": 0.716201,
+            "rand": 0.718924,
+            "delta": -0.002723
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": 0.043568,
+          "slope_risk_ba": 0.035015,
+          "slope_risk_f1": 0.002451
+        },
+        "random_baseline": {
+          "slope_risk_err": 0.000112,
+          "slope_risk_ba": 5.5e-05,
+          "slope_risk_f1": 9.4e-05
+        }
+      }
+    },
+    "BNBUSDT": {
+      "eval_samples": 26171,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.513889,
+            "rand": 0.513889,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.658996,
+            "rand": 0.658996,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.663285,
+            "rand": 0.663285,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.502818,
+            "rand": 0.513915,
+            "delta": -0.011097
+          },
+          "risk_ba": {
+            "conf": 0.660744,
+            "rand": 0.659029,
+            "delta": 0.001714
+          },
+          "risk_f1": {
+            "conf": 0.66875,
+            "rand": 0.663346,
+            "delta": 0.005404
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.500082,
+            "rand": 0.513819,
+            "delta": -0.013737
+          },
+          "risk_ba": {
+            "conf": 0.659784,
+            "rand": 0.658926,
+            "delta": 0.000858
+          },
+          "risk_f1": {
+            "conf": 0.668346,
+            "rand": 0.663208,
+            "delta": 0.005137
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.494459,
+            "rand": 0.513933,
+            "delta": -0.019474
+          },
+          "risk_ba": {
+            "conf": 0.657682,
+            "rand": 0.659001,
+            "delta": -0.001318
+          },
+          "risk_f1": {
+            "conf": 0.669419,
+            "rand": 0.663289,
+            "delta": 0.006129
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.494001,
+            "rand": 0.513989,
+            "delta": -0.019988
+          },
+          "risk_ba": {
+            "conf": 0.65803,
+            "rand": 0.659067,
+            "delta": -0.001038
+          },
+          "risk_f1": {
+            "conf": 0.674135,
+            "rand": 0.663392,
+            "delta": 0.010743
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.493886,
+            "rand": 0.513777,
+            "delta": -0.019891
+          },
+          "risk_ba": {
+            "conf": 0.659281,
+            "rand": 0.658946,
+            "delta": 0.000335
+          },
+          "risk_f1": {
+            "conf": 0.681326,
+            "rand": 0.663259,
+            "delta": 0.018067
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.492039,
+            "rand": 0.513878,
+            "delta": -0.021839
+          },
+          "risk_ba": {
+            "conf": 0.659666,
+            "rand": 0.658941,
+            "delta": 0.000725
+          },
+          "risk_f1": {
+            "conf": 0.688241,
+            "rand": 0.663224,
+            "delta": 0.025017
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.489874,
+            "rand": 0.513871,
+            "delta": -0.023997
+          },
+          "risk_ba": {
+            "conf": 0.662431,
+            "rand": 0.658966,
+            "delta": 0.003465
+          },
+          "risk_f1": {
+            "conf": 0.70221,
+            "rand": 0.663228,
+            "delta": 0.038982
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": 0.027425,
+          "slope_risk_ba": -0.00187,
+          "slope_risk_f1": -0.044205
+        },
+        "random_baseline": {
+          "slope_risk_err": 4e-05,
+          "slope_risk_ba": 5.6e-05,
+          "slope_risk_f1": 7.7e-05
+        }
+      }
+    },
+    "XRPUSDT": {
+      "eval_samples": 26120,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.51294,
+            "rand": 0.51294,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.658628,
+            "rand": 0.658628,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.684879,
+            "rand": 0.684879,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.507992,
+            "rand": 0.512934,
+            "delta": -0.004942
+          },
+          "risk_ba": {
+            "conf": 0.66175,
+            "rand": 0.658611,
+            "delta": 0.003138
+          },
+          "risk_f1": {
+            "conf": 0.708562,
+            "rand": 0.684855,
+            "delta": 0.023706
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.50886,
+            "rand": 0.512878,
+            "delta": -0.004018
+          },
+          "risk_ba": {
+            "conf": 0.661428,
+            "rand": 0.658607,
+            "delta": 0.002821
+          },
+          "risk_f1": {
+            "conf": 0.723806,
+            "rand": 0.684883,
+            "delta": 0.038923
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.512315,
+            "rand": 0.512909,
+            "delta": -0.000594
+          },
+          "risk_ba": {
+            "conf": 0.662978,
+            "rand": 0.658583,
+            "delta": 0.004395
+          },
+          "risk_f1": {
+            "conf": 0.742074,
+            "rand": 0.6848,
+            "delta": 0.057274
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.513247,
+            "rand": 0.512999,
+            "delta": 0.000247
+          },
+          "risk_ba": {
+            "conf": 0.664763,
+            "rand": 0.658686,
+            "delta": 0.006077
+          },
+          "risk_f1": {
+            "conf": 0.757202,
+            "rand": 0.684993,
+            "delta": 0.072209
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.512921,
+            "rand": 0.512794,
+            "delta": 0.000127
+          },
+          "risk_ba": {
+            "conf": 0.66726,
+            "rand": 0.658506,
+            "delta": 0.008753
+          },
+          "risk_f1": {
+            "conf": 0.768357,
+            "rand": 0.684768,
+            "delta": 0.083589
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.514293,
+            "rand": 0.513097,
+            "delta": 0.001196
+          },
+          "risk_ba": {
+            "conf": 0.667017,
+            "rand": 0.658626,
+            "delta": 0.008391
+          },
+          "risk_f1": {
+            "conf": 0.773245,
+            "rand": 0.684924,
+            "delta": 0.088321
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.516271,
+            "rand": 0.512819,
+            "delta": 0.003452
+          },
+          "risk_ba": {
+            "conf": 0.666449,
+            "rand": 0.658529,
+            "delta": 0.00792
+          },
+          "risk_f1": {
+            "conf": 0.775902,
+            "rand": 0.684878,
+            "delta": 0.091023
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": -0.006693,
+          "slope_risk_ba": -0.011095,
+          "slope_risk_f1": -0.122617
+        },
+        "random_baseline": {
+          "slope_risk_err": 2.4e-05,
+          "slope_risk_ba": 8.8e-05,
+          "slope_risk_f1": -1.8e-05
+        }
+      }
+    },
+    "ADAUSDT": {
+      "eval_samples": 26099,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.519982,
+            "rand": 0.519982,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.63394,
+            "rand": 0.63394,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.643219,
+            "rand": 0.643219,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.50989,
+            "rand": 0.51993,
+            "delta": -0.01004
+          },
+          "risk_ba": {
+            "conf": 0.638987,
+            "rand": 0.633897,
+            "delta": 0.00509
+          },
+          "risk_f1": {
+            "conf": 0.64955,
+            "rand": 0.643188,
+            "delta": 0.006362
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.506213,
+            "rand": 0.520002,
+            "delta": -0.013789
+          },
+          "risk_ba": {
+            "conf": 0.639028,
+            "rand": 0.633951,
+            "delta": 0.005077
+          },
+          "risk_f1": {
+            "conf": 0.648454,
+            "rand": 0.643217,
+            "delta": 0.005237
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.503417,
+            "rand": 0.519925,
+            "delta": -0.016508
+          },
+          "risk_ba": {
+            "conf": 0.639111,
+            "rand": 0.633888,
+            "delta": 0.005222
+          },
+          "risk_f1": {
+            "conf": 0.647278,
+            "rand": 0.643141,
+            "delta": 0.004137
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.498046,
+            "rand": 0.519887,
+            "delta": -0.021842
+          },
+          "risk_ba": {
+            "conf": 0.637177,
+            "rand": 0.633849,
+            "delta": 0.003327
+          },
+          "risk_f1": {
+            "conf": 0.643845,
+            "rand": 0.643097,
+            "delta": 0.000748
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.495833,
+            "rand": 0.519943,
+            "delta": -0.02411
+          },
+          "risk_ba": {
+            "conf": 0.635704,
+            "rand": 0.633921,
+            "delta": 0.001784
+          },
+          "risk_f1": {
+            "conf": 0.640664,
+            "rand": 0.64322,
+            "delta": -0.002556
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.488696,
+            "rand": 0.519941,
+            "delta": -0.031245
+          },
+          "risk_ba": {
+            "conf": 0.630937,
+            "rand": 0.633912,
+            "delta": -0.002975
+          },
+          "risk_f1": {
+            "conf": 0.633927,
+            "rand": 0.643194,
+            "delta": -0.009266
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.474229,
+            "rand": 0.519927,
+            "delta": -0.045699
+          },
+          "risk_ba": {
+            "conf": 0.619469,
+            "rand": 0.633888,
+            "delta": -0.01442
+          },
+          "risk_f1": {
+            "conf": 0.617417,
+            "rand": 0.643217,
+            "delta": -0.0258
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": 0.05049,
+          "slope_risk_ba": 0.015313,
+          "slope_risk_f1": 0.029161
+        },
+        "random_baseline": {
+          "slope_risk_err": 6.2e-05,
+          "slope_risk_ba": 4.8e-05,
+          "slope_risk_f1": 8e-06
+        }
+      }
+    },
+    "SOLUSDT": {
+      "eval_samples": 26164,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.507224,
+            "rand": 0.507224,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.659997,
+            "rand": 0.659997,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.666331,
+            "rand": 0.666331,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.495437,
+            "rand": 0.507221,
+            "delta": -0.011783
+          },
+          "risk_ba": {
+            "conf": 0.658336,
+            "rand": 0.659997,
+            "delta": -0.001662
+          },
+          "risk_f1": {
+            "conf": 0.661097,
+            "rand": 0.666337,
+            "delta": -0.00524
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.491482,
+            "rand": 0.507212,
+            "delta": -0.01573
+          },
+          "risk_ba": {
+            "conf": 0.656558,
+            "rand": 0.659994,
+            "delta": -0.003436
+          },
+          "risk_f1": {
+            "conf": 0.658883,
+            "rand": 0.666333,
+            "delta": -0.00745
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.490699,
+            "rand": 0.50722,
+            "delta": -0.016521
+          },
+          "risk_ba": {
+            "conf": 0.656471,
+            "rand": 0.659995,
+            "delta": -0.003524
+          },
+          "risk_f1": {
+            "conf": 0.659449,
+            "rand": 0.666327,
+            "delta": -0.006879
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.492585,
+            "rand": 0.507291,
+            "delta": -0.014706
+          },
+          "risk_ba": {
+            "conf": 0.657774,
+            "rand": 0.660034,
+            "delta": -0.00226
+          },
+          "risk_f1": {
+            "conf": 0.662554,
+            "rand": 0.66636,
+            "delta": -0.003806
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.493359,
+            "rand": 0.507333,
+            "delta": -0.013974
+          },
+          "risk_ba": {
+            "conf": 0.658234,
+            "rand": 0.660053,
+            "delta": -0.001819
+          },
+          "risk_f1": {
+            "conf": 0.66614,
+            "rand": 0.666396,
+            "delta": -0.000256
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.496369,
+            "rand": 0.507233,
+            "delta": -0.010864
+          },
+          "risk_ba": {
+            "conf": 0.659882,
+            "rand": 0.660009,
+            "delta": -0.000127
+          },
+          "risk_f1": {
+            "conf": 0.671605,
+            "rand": 0.666389,
+            "delta": 0.005216
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.498853,
+            "rand": 0.507097,
+            "delta": -0.008244
+          },
+          "risk_ba": {
+            "conf": 0.661742,
+            "rand": 0.659906,
+            "delta": 0.001836
+          },
+          "risk_f1": {
+            "conf": 0.678654,
+            "rand": 0.666298,
+            "delta": 0.012357
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": 0.006954,
+          "slope_risk_ba": -0.002359,
+          "slope_risk_f1": -0.01626
+        },
+        "random_baseline": {
+          "slope_risk_err": 3.8e-05,
+          "slope_risk_ba": 3.7e-05,
+          "slope_risk_f1": -2.8e-05
+        }
+      }
+    },
+    "AVAXUSDT": {
+      "eval_samples": 26166,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.557823,
+            "rand": 0.557823,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.634658,
+            "rand": 0.634658,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.645078,
+            "rand": 0.645078,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.545051,
+            "rand": 0.557852,
+            "delta": -0.012801
+          },
+          "risk_ba": {
+            "conf": 0.641699,
+            "rand": 0.634681,
+            "delta": 0.007018
+          },
+          "risk_f1": {
+            "conf": 0.658862,
+            "rand": 0.645108,
+            "delta": 0.013754
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.538928,
+            "rand": 0.5578,
+            "delta": -0.018873
+          },
+          "risk_ba": {
+            "conf": 0.641935,
+            "rand": 0.634635,
+            "delta": 0.0073
+          },
+          "risk_f1": {
+            "conf": 0.659295,
+            "rand": 0.645081,
+            "delta": 0.014214
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.532709,
+            "rand": 0.557828,
+            "delta": -0.025119
+          },
+          "risk_ba": {
+            "conf": 0.643737,
+            "rand": 0.634684,
+            "delta": 0.009053
+          },
+          "risk_f1": {
+            "conf": 0.6623,
+            "rand": 0.645128,
+            "delta": 0.017172
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.528701,
+            "rand": 0.557769,
+            "delta": -0.029068
+          },
+          "risk_ba": {
+            "conf": 0.645513,
+            "rand": 0.63463,
+            "delta": 0.010884
+          },
+          "risk_f1": {
+            "conf": 0.666877,
+            "rand": 0.645018,
+            "delta": 0.021859
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.524842,
+            "rand": 0.557697,
+            "delta": -0.032854
+          },
+          "risk_ba": {
+            "conf": 0.646658,
+            "rand": 0.634547,
+            "delta": 0.012111
+          },
+          "risk_f1": {
+            "conf": 0.670727,
+            "rand": 0.644953,
+            "delta": 0.025774
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.522742,
+            "rand": 0.557651,
+            "delta": -0.034909
+          },
+          "risk_ba": {
+            "conf": 0.645115,
+            "rand": 0.634552,
+            "delta": 0.010564
+          },
+          "risk_f1": {
+            "conf": 0.671879,
+            "rand": 0.645012,
+            "delta": 0.026867
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.521689,
+            "rand": 0.557875,
+            "delta": -0.036185
+          },
+          "risk_ba": {
+            "conf": 0.639014,
+            "rand": 0.634683,
+            "delta": 0.004332
+          },
+          "risk_f1": {
+            "conf": 0.675814,
+            "rand": 0.645133,
+            "delta": 0.030681
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": 0.045942,
+          "slope_risk_ba": -0.007899,
+          "slope_risk_f1": -0.035756
+        },
+        "random_baseline": {
+          "slope_risk_err": 0.000109,
+          "slope_risk_ba": 8.4e-05,
+          "slope_risk_f1": 6.1e-05
+        }
+      }
+    },
+    "LINKUSDT": {
+      "eval_samples": 26157,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.553007,
+            "rand": 0.553007,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.626241,
+            "rand": 0.626241,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.644857,
+            "rand": 0.644857,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.538208,
+            "rand": 0.552958,
+            "delta": -0.014751
+          },
+          "risk_ba": {
+            "conf": 0.630056,
+            "rand": 0.626221,
+            "delta": 0.003835
+          },
+          "risk_f1": {
+            "conf": 0.648321,
+            "rand": 0.644833,
+            "delta": 0.003488
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.531323,
+            "rand": 0.552923,
+            "delta": -0.0216
+          },
+          "risk_ba": {
+            "conf": 0.628352,
+            "rand": 0.626176,
+            "delta": 0.002176
+          },
+          "risk_f1": {
+            "conf": 0.644266,
+            "rand": 0.644797,
+            "delta": -0.000531
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.526252,
+            "rand": 0.552949,
+            "delta": -0.026697
+          },
+          "risk_ba": {
+            "conf": 0.625818,
+            "rand": 0.626208,
+            "delta": -0.000389
+          },
+          "risk_f1": {
+            "conf": 0.638122,
+            "rand": 0.644834,
+            "delta": -0.006712
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.522786,
+            "rand": 0.553007,
+            "delta": -0.030221
+          },
+          "risk_ba": {
+            "conf": 0.623518,
+            "rand": 0.626239,
+            "delta": -0.002721
+          },
+          "risk_f1": {
+            "conf": 0.632198,
+            "rand": 0.644845,
+            "delta": -0.012648
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.514816,
+            "rand": 0.553076,
+            "delta": -0.03826
+          },
+          "risk_ba": {
+            "conf": 0.614992,
+            "rand": 0.626288,
+            "delta": -0.011297
+          },
+          "risk_f1": {
+            "conf": 0.616728,
+            "rand": 0.644923,
+            "delta": -0.028195
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.508347,
+            "rand": 0.553033,
+            "delta": -0.044686
+          },
+          "risk_ba": {
+            "conf": 0.604493,
+            "rand": 0.62616,
+            "delta": -0.021667
+          },
+          "risk_f1": {
+            "conf": 0.598727,
+            "rand": 0.644805,
+            "delta": -0.046079
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.502963,
+            "rand": 0.552893,
+            "delta": -0.04993
+          },
+          "risk_ba": {
+            "conf": 0.588207,
+            "rand": 0.626184,
+            "delta": -0.037977
+          },
+          "risk_f1": {
+            "conf": 0.575274,
+            "rand": 0.644816,
+            "delta": -0.069542
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": 0.061071,
+          "slope_risk_ba": 0.045464,
+          "slope_risk_f1": 0.086585
+        },
+        "random_baseline": {
+          "slope_risk_err": -4e-06,
+          "slope_risk_ba": 3.9e-05,
+          "slope_risk_f1": 7e-06
+        }
+      }
+    },
+    "DOGEUSDT": {
+      "eval_samples": 26132,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.504745,
+            "rand": 0.504745,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.640611,
+            "rand": 0.640611,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.63183,
+            "rand": 0.63183,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.494953,
+            "rand": 0.504784,
+            "delta": -0.00983
+          },
+          "risk_ba": {
+            "conf": 0.644422,
+            "rand": 0.640617,
+            "delta": 0.003805
+          },
+          "risk_f1": {
+            "conf": 0.636165,
+            "rand": 0.631826,
+            "delta": 0.004339
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.493112,
+            "rand": 0.504721,
+            "delta": -0.01161
+          },
+          "risk_ba": {
+            "conf": 0.641063,
+            "rand": 0.640578,
+            "delta": 0.000485
+          },
+          "risk_f1": {
+            "conf": 0.63056,
+            "rand": 0.631793,
+            "delta": -0.001233
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.490082,
+            "rand": 0.504766,
+            "delta": -0.014684
+          },
+          "risk_ba": {
+            "conf": 0.6378,
+            "rand": 0.640623,
+            "delta": -0.002822
+          },
+          "risk_f1": {
+            "conf": 0.626015,
+            "rand": 0.631861,
+            "delta": -0.005845
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.491045,
+            "rand": 0.504757,
+            "delta": -0.013712
+          },
+          "risk_ba": {
+            "conf": 0.633085,
+            "rand": 0.640642,
+            "delta": -0.007557
+          },
+          "risk_f1": {
+            "conf": 0.61735,
+            "rand": 0.631919,
+            "delta": -0.014569
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.488232,
+            "rand": 0.50469,
+            "delta": -0.016458
+          },
+          "risk_ba": {
+            "conf": 0.625546,
+            "rand": 0.640495,
+            "delta": -0.014949
+          },
+          "risk_f1": {
+            "conf": 0.607364,
+            "rand": 0.631708,
+            "delta": -0.024344
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.482715,
+            "rand": 0.504606,
+            "delta": -0.021891
+          },
+          "risk_ba": {
+            "conf": 0.611671,
+            "rand": 0.640474,
+            "delta": -0.028803
+          },
+          "risk_f1": {
+            "conf": 0.589631,
+            "rand": 0.63171,
+            "delta": -0.042079
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.479143,
+            "rand": 0.504813,
+            "delta": -0.02567
+          },
+          "risk_ba": {
+            "conf": 0.590652,
+            "rand": 0.640656,
+            "delta": -0.050004
+          },
+          "risk_f1": {
+            "conf": 0.567268,
+            "rand": 0.632011,
+            "delta": -0.064743
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": 0.028328,
+          "slope_risk_ba": 0.059122,
+          "slope_risk_f1": 0.080197
+        },
+        "random_baseline": {
+          "slope_risk_err": 5.4e-05,
+          "slope_risk_ba": 6.7e-05,
+          "slope_risk_f1": -5e-05
+        }
+      }
+    },
+    "LTCUSDT": {
+      "eval_samples": 26095,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.561065,
+            "rand": 0.561065,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.619579,
+            "rand": 0.619579,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.650793,
+            "rand": 0.650793,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.544501,
+            "rand": 0.56104,
+            "delta": -0.016539
+          },
+          "risk_ba": {
+            "conf": 0.618913,
+            "rand": 0.61957,
+            "delta": -0.000657
+          },
+          "risk_f1": {
+            "conf": 0.650912,
+            "rand": 0.650782,
+            "delta": 0.00013
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.539582,
+            "rand": 0.561124,
+            "delta": -0.021543
+          },
+          "risk_ba": {
+            "conf": 0.620057,
+            "rand": 0.619631,
+            "delta": 0.000426
+          },
+          "risk_f1": {
+            "conf": 0.651729,
+            "rand": 0.650855,
+            "delta": 0.000874
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.533372,
+            "rand": 0.561033,
+            "delta": -0.027662
+          },
+          "risk_ba": {
+            "conf": 0.618692,
+            "rand": 0.61958,
+            "delta": -0.000888
+          },
+          "risk_f1": {
+            "conf": 0.649696,
+            "rand": 0.650795,
+            "delta": -0.0011
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.530697,
+            "rand": 0.561046,
+            "delta": -0.030349
+          },
+          "risk_ba": {
+            "conf": 0.615121,
+            "rand": 0.619524,
+            "delta": -0.004403
+          },
+          "risk_f1": {
+            "conf": 0.647554,
+            "rand": 0.650758,
+            "delta": -0.003204
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.525101,
+            "rand": 0.561109,
+            "delta": -0.036008
+          },
+          "risk_ba": {
+            "conf": 0.61072,
+            "rand": 0.619637,
+            "delta": -0.008917
+          },
+          "risk_f1": {
+            "conf": 0.645775,
+            "rand": 0.650896,
+            "delta": -0.005121
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.525805,
+            "rand": 0.561142,
+            "delta": -0.035337
+          },
+          "risk_ba": {
+            "conf": 0.605442,
+            "rand": 0.619639,
+            "delta": -0.014197
+          },
+          "risk_f1": {
+            "conf": 0.645447,
+            "rand": 0.650919,
+            "delta": -0.005472
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.516191,
+            "rand": 0.561065,
+            "delta": -0.044874
+          },
+          "risk_ba": {
+            "conf": 0.594596,
+            "rand": 0.61958,
+            "delta": -0.024983
+          },
+          "risk_f1": {
+            "conf": 0.64365,
+            "rand": 0.650847,
+            "delta": -0.007197
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": 0.050804,
+          "slope_risk_ba": 0.028791,
+          "slope_risk_f1": 0.010278
+        },
+        "random_baseline": {
+          "slope_risk_err": -5e-05,
+          "slope_risk_ba": -3.4e-05,
+          "slope_risk_f1": -0.000123
+        }
+      }
+    },
+    "XMRUSDT": {
+      "eval_samples": 3052,
+      "coverage_risks": [
+        {
+          "coverage": 1.0,
+          "risk_err": {
+            "conf": 0.56422,
+            "rand": 0.56422,
+            "delta": 0.0
+          },
+          "risk_ba": {
+            "conf": 0.672421,
+            "rand": 0.672421,
+            "delta": 0.0
+          },
+          "risk_f1": {
+            "conf": 0.715543,
+            "rand": 0.715543,
+            "delta": 0.0
+          }
+        },
+        {
+          "coverage": 0.8,
+          "risk_err": {
+            "conf": 0.544449,
+            "rand": 0.564183,
+            "delta": -0.019734
+          },
+          "risk_ba": {
+            "conf": 0.667869,
+            "rand": 0.672316,
+            "delta": -0.004447
+          },
+          "risk_f1": {
+            "conf": 0.703774,
+            "rand": 0.715483,
+            "delta": -0.011709
+          }
+        },
+        {
+          "coverage": 0.7,
+          "risk_err": {
+            "conf": 0.529963,
+            "rand": 0.564077,
+            "delta": -0.034114
+          },
+          "risk_ba": {
+            "conf": 0.662513,
+            "rand": 0.672388,
+            "delta": -0.009875
+          },
+          "risk_f1": {
+            "conf": 0.694293,
+            "rand": 0.71547,
+            "delta": -0.021177
+          }
+        },
+        {
+          "coverage": 0.6,
+          "risk_err": {
+            "conf": 0.525942,
+            "rand": 0.564088,
+            "delta": -0.038146
+          },
+          "risk_ba": {
+            "conf": 0.659153,
+            "rand": 0.672345,
+            "delta": -0.013192
+          },
+          "risk_f1": {
+            "conf": 0.688717,
+            "rand": 0.71555,
+            "delta": -0.026833
+          }
+        },
+        {
+          "coverage": 0.5,
+          "risk_err": {
+            "conf": 0.517038,
+            "rand": 0.564237,
+            "delta": -0.047199
+          },
+          "risk_ba": {
+            "conf": 0.654701,
+            "rand": 0.672431,
+            "delta": -0.017731
+          },
+          "risk_f1": {
+            "conf": 0.680403,
+            "rand": 0.715627,
+            "delta": -0.035224
+          }
+        },
+        {
+          "coverage": 0.4,
+          "risk_err": {
+            "conf": 0.518852,
+            "rand": 0.56392,
+            "delta": -0.045068
+          },
+          "risk_ba": {
+            "conf": 0.648481,
+            "rand": 0.672324,
+            "delta": -0.023843
+          },
+          "risk_f1": {
+            "conf": 0.673817,
+            "rand": 0.715545,
+            "delta": -0.041728
+          }
+        },
+        {
+          "coverage": 0.3,
+          "risk_err": {
+            "conf": 0.522404,
+            "rand": 0.564122,
+            "delta": -0.041718
+          },
+          "risk_ba": {
+            "conf": 0.652077,
+            "rand": 0.672326,
+            "delta": -0.02025
+          },
+          "risk_f1": {
+            "conf": 0.675403,
+            "rand": 0.715642,
+            "delta": -0.040239
+          }
+        },
+        {
+          "coverage": 0.2,
+          "risk_err": {
+            "conf": 0.542623,
+            "rand": 0.564113,
+            "delta": -0.02149
+          },
+          "risk_ba": {
+            "conf": 0.657656,
+            "rand": 0.672393,
+            "delta": -0.014737
+          },
+          "risk_f1": {
+            "conf": 0.68369,
+            "rand": 0.715675,
+            "delta": -0.031985
+          }
+        }
+      ],
+      "risk_slopes": {
+        "confidence_selection": {
+          "slope_risk_err": 0.036662,
+          "slope_risk_ba": 0.025563,
+          "slope_risk_f1": 0.048796
+        },
+        "random_baseline": {
+          "slope_risk_err": 0.000158,
+          "slope_risk_ba": 3.6e-05,
+          "slope_risk_f1": -0.000208
+        }
+      }
+    }
+  }
+}

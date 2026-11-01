@@ -1,0 +1,43 @@
+{
+  "title": "Phase 5.4.4 Deliverables SHA-256 Hash Manifest",
+  "timestamp_utc": "2026-11-01 19:33:58 UTC",
+  "total_files": 9,
+  "artifacts": {
+    "PHASE_5_4_4_AURCC_AUDIT.json": {
+      "sha256": "dbbdc1edbe1710e8660f6fa55c9e88d2c6a0df9fe2f102c029cffe220e28a85e",
+      "size_bytes": 6371
+    },
+    "PHASE_5_4_4_BLOCK_BOOTSTRAP_RESULTS.json": {
+      "sha256": "3462115dac380bbfa725be4f22e38d0ef121c2ad9f3e9f0fcf26d4e4d6895f21",
+      "size_bytes": 53597
+    },
+    "PHASE_5_4_4_CLASS_SELECTION_BIAS_RESULTS.json": {
+      "sha256": "2a1d1f05647ea891ec7cc21745499b52b7351029dd2a70fd67ba780b15045415",
+      "size_bytes": 60561
+    },
+    "PHASE_5_4_4_DIRECTIONAL_RANKING_DIAGNOSTICS.json": {
+      "sha256": "40a1198f5037b85f74af7d5d036338ce508892229ab3b82de145db1953b4193d",
+      "size_bytes": 353762
+    },
+    "PHASE_5_4_4_MULTIPLE_TESTING_RESULTS.json": {
+      "sha256": "be9b1989698b375c653a3b3a209f7576e43fc0a5c011ed21197ed671c99c4320",
+      "size_bytes": 32466
+    },
+    "PHASE_5_4_4_RANDOM_ABSTENTION_RESULTS.json": {
+      "sha256": "b5474a134bacddd437c33ede80e59ac935810ba457fe8328335e5eac3c6b6ec3",
+      "size_bytes": 107389
+    },
+    "PHASE_5_4_4_REPRODUCIBILITY_MANIFEST.json": {
+      "sha256": "efc7c5fc5e6312957efb64bbcda75b613cb0615268c0fa0c160428f894892f33",
+      "size_bytes": 5836
+    },
+    "PHASE_5_4_4_RISK_COVERAGE_RESULTS.json": {
+      "sha256": "cc33d1069c58e2eb6af026a378b054b2cd5827d0ba456f809c9ae6f3d7407590",
+      "size_bytes": 44074
+    },
+    "PHASE_5_4_4_STATISTICAL_CORRECTION_REPORT.md": {
+      "sha256": "30ca6775be764779380e20dc45eaa3f16eefc6591cdeed1e8ed54e9a08affc9d",
+      "size_bytes": 19072
+    }
+  }
+}

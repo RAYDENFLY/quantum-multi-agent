@@ -1,0 +1,108 @@
+{
+  "title": "Workstream D: Risk-Coverage Curve & AU-RCC Integration Audit",
+  "timestamp_utc": "2026-11-01 19:10:06 UTC",
+  "risk_definition": "Risk(kappa) = 1.0 - BalancedAccuracy(kappa)",
+  "integration_method": "Trapezoidal integration over coverage [0.2, 1.0] normalized by coverage span 0.8.",
+  "instruments": {
+    "BTCUSDT": {
+      "au_rcc_confidence": 0.663266,
+      "au_rcc_random_baseline": 0.667124,
+      "delta_au_rcc": -0.003857,
+      "risk_reduction_percentage": -0.58,
+      "beta_rc_confidence": 0.005847,
+      "beta_rc_random_baseline": -0.000368,
+      "monotonic_risk_reduction": true
+    },
+    "ETHUSDT": {
+      "au_rcc_confidence": 0.65376,
+      "au_rcc_random_baseline": 0.661162,
+      "delta_au_rcc": -0.007402,
+      "risk_reduction_percentage": -1.12,
+      "beta_rc_confidence": 0.035015,
+      "beta_rc_random_baseline": -0.000125,
+      "monotonic_risk_reduction": true
+    },
+    "BNBUSDT": {
+      "au_rcc_confidence": 0.659471,
+      "au_rcc_random_baseline": 0.658986,
+      "delta_au_rcc": 0.000485,
+      "risk_reduction_percentage": 0.07,
+      "beta_rc_confidence": -0.00187,
+      "beta_rc_random_baseline": 0.000159,
+      "monotonic_risk_reduction": false
+    },
+    "XRPUSDT": {
+      "au_rcc_confidence": 0.66349,
+      "au_rcc_random_baseline": 0.658666,
+      "delta_au_rcc": 0.004824,
+      "risk_reduction_percentage": 0.73,
+      "beta_rc_confidence": -0.011095,
+      "beta_rc_random_baseline": -8.4e-05,
+      "monotonic_risk_reduction": false
+    },
+    "ADAUSDT": {
+      "au_rcc_confidence": 0.635514,
+      "au_rcc_random_baseline": 0.633962,
+      "delta_au_rcc": 0.001552,
+      "risk_reduction_percentage": 0.24,
+      "beta_rc_confidence": 0.015313,
+      "beta_rc_random_baseline": 0.000135,
+      "monotonic_risk_reduction": true
+    },
+    "SOLUSDT": {
+      "au_rcc_confidence": 0.658411,
+      "au_rcc_random_baseline": 0.659994,
+      "delta_au_rcc": -0.001582,
+      "risk_reduction_percentage": -0.24,
+      "beta_rc_confidence": -0.002359,
+      "beta_rc_random_baseline": -5.7e-05,
+      "monotonic_risk_reduction": false
+    },
+    "AVAXUSDT": {
+      "au_rcc_confidence": 0.642459,
+      "au_rcc_random_baseline": 0.634693,
+      "delta_au_rcc": 0.007766,
+      "risk_reduction_percentage": 1.22,
+      "beta_rc_confidence": -0.007899,
+      "beta_rc_random_baseline": -0.000205,
+      "monotonic_risk_reduction": false
+    },
+    "LINKUSDT": {
+      "au_rcc_confidence": 0.620325,
+      "au_rcc_random_baseline": 0.626237,
+      "delta_au_rcc": -0.005912,
+      "risk_reduction_percentage": -0.94,
+      "beta_rc_confidence": 0.045464,
+      "beta_rc_random_baseline": -4.3e-05,
+      "monotonic_risk_reduction": true
+    },
+    "DOGEUSDT": {
+      "au_rcc_confidence": 0.631467,
+      "au_rcc_random_baseline": 0.640587,
+      "delta_au_rcc": -0.00912,
+      "risk_reduction_percentage": -1.42,
+      "beta_rc_confidence": 0.059122,
+      "beta_rc_random_baseline": 1.4e-05,
+      "monotonic_risk_reduction": true
+    },
+    "LTCUSDT": {
+      "au_rcc_confidence": 0.61441,
+      "au_rcc_random_baseline": 0.619625,
+      "delta_au_rcc": -0.005215,
+      "risk_reduction_percentage": -0.84,
+      "beta_rc_confidence": 0.028791,
+      "beta_rc_random_baseline": -0.000233,
+      "monotonic_risk_reduction": true
+    },
+    "XMRUSDT": {
+      "au_rcc_confidence": 0.659997,
+      "au_rcc_random_baseline": 0.672422,
+      "delta_au_rcc": -0.012425,
+      "risk_reduction_percentage": -1.85,
+      "beta_rc_confidence": 0.025563,
+      "beta_rc_random_baseline": 4e-05,
+      "monotonic_risk_reduction": true
+    }
+  },
+  "workstream_status": "PASS"
+}

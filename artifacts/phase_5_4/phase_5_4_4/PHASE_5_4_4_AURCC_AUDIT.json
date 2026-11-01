@@ -1,0 +1,236 @@
+{
+  "title": "Workstream C: AU-RCC Numerical Integration Audit",
+  "timestamp_utc": "2026-11-01 19:23:50 UTC",
+  "integration_parameters": {
+    "method": "Trapezoidal rule (np.trapezoid)",
+    "coverage_span": [
+      0.2,
+      1.0
+    ],
+    "span_width": 0.8,
+    "normalization_formula": "AU-RCC = (1 / 0.8) * integral_{0.2}^{1.0} Risk(kappa) d_kappa",
+    "delta_definition": "Delta AU-RCC = AU-RCC_conf - AU-RCC_rand (Negative indicates confidence selection superiority)"
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "au_rcc_error": {
+        "conf": 0.499995,
+        "rand": 0.519753,
+        "delta": -0.019758
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.663266,
+        "rand": 0.667078,
+        "delta": -0.003811
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.703555,
+        "rand": 0.677441,
+        "delta": 0.026115
+      },
+      "selective_advantage_balanced_accuracy": true,
+      "selective_advantage_macro_f1": false,
+      "selective_advantage_error": true
+    },
+    "ETHUSDT": {
+      "au_rcc_error": {
+        "conf": 0.503872,
+        "rand": 0.523598,
+        "delta": -0.019726
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.65376,
+        "rand": 0.661099,
+        "delta": -0.007339
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.729118,
+        "rand": 0.719046,
+        "delta": 0.010072
+      },
+      "selective_advantage_balanced_accuracy": true,
+      "selective_advantage_macro_f1": false,
+      "selective_advantage_error": true
+    },
+    "BNBUSDT": {
+      "au_rcc_error": {
+        "conf": 0.49844,
+        "rand": 0.513887,
+        "delta": -0.015447
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.659471,
+        "rand": 0.658988,
+        "delta": 0.000483
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.674873,
+        "rand": 0.663286,
+        "delta": 0.011586
+      },
+      "selective_advantage_balanced_accuracy": false,
+      "selective_advantage_macro_f1": false,
+      "selective_advantage_error": true
+    },
+    "XRPUSDT": {
+      "au_rcc_error": {
+        "conf": 0.511837,
+        "rand": 0.512929,
+        "delta": -0.001091
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.66349,
+        "rand": 0.658602,
+        "delta": 0.004888
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.737544,
+        "rand": 0.684871,
+        "delta": 0.052673
+      },
+      "selective_advantage_balanced_accuracy": false,
+      "selective_advantage_macro_f1": false,
+      "selective_advantage_error": true
+    },
+    "ADAUSDT": {
+      "au_rcc_error": {
+        "conf": 0.501767,
+        "rand": 0.519942,
+        "delta": -0.018175
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.635514,
+        "rand": 0.633906,
+        "delta": 0.001608
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.642553,
+        "rand": 0.643185,
+        "delta": -0.000632
+      },
+      "selective_advantage_balanced_accuracy": false,
+      "selective_advantage_macro_f1": true,
+      "selective_advantage_error": true
+    },
+    "SOLUSDT": {
+      "au_rcc_error": {
+        "conf": 0.495538,
+        "rand": 0.507237,
+        "delta": -0.011699
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.658411,
+        "rand": 0.660004,
+        "delta": -0.001593
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.664492,
+        "rand": 0.666349,
+        "delta": -0.001857
+      },
+      "selective_advantage_balanced_accuracy": true,
+      "selective_advantage_macro_f1": true,
+      "selective_advantage_error": true
+    },
+    "AVAXUSDT": {
+      "au_rcc_error": {
+        "conf": 0.535521,
+        "rand": 0.557785,
+        "delta": -0.022265
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.642459,
+        "rand": 0.634633,
+        "delta": 0.007825
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.662795,
+        "rand": 0.645062,
+        "delta": 0.017732
+      },
+      "selective_advantage_balanced_accuracy": false,
+      "selective_advantage_macro_f1": false,
+      "selective_advantage_error": true
+    },
+    "LINKUSDT": {
+      "au_rcc_error": {
+        "conf": 0.526916,
+        "rand": 0.552985,
+        "delta": -0.026069
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.620325,
+        "rand": 0.626217,
+        "delta": -0.005892
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.629377,
+        "rand": 0.64484,
+        "delta": -0.015463
+      },
+      "selective_advantage_balanced_accuracy": true,
+      "selective_advantage_macro_f1": true,
+      "selective_advantage_error": true
+    },
+    "DOGEUSDT": {
+      "au_rcc_error": {
+        "conf": 0.491492,
+        "rand": 0.504733,
+        "delta": -0.013242
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.631467,
+        "rand": 0.640584,
+        "delta": -0.009118
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.617579,
+        "rand": 0.631821,
+        "delta": -0.014242
+      },
+      "selective_advantage_balanced_accuracy": true,
+      "selective_advantage_macro_f1": true,
+      "selective_advantage_error": true
+    },
+    "LTCUSDT": {
+      "au_rcc_error": {
+        "conf": 0.536308,
+        "rand": 0.561076,
+        "delta": -0.024768
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.61441,
+        "rand": 0.619592,
+        "delta": -0.005182
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.648648,
+        "rand": 0.650827,
+        "delta": -0.002178
+      },
+      "selective_advantage_balanced_accuracy": true,
+      "selective_advantage_macro_f1": true,
+      "selective_advantage_error": true
+    },
+    "XMRUSDT": {
+      "au_rcc_error": {
+        "conf": 0.533301,
+        "rand": 0.564124,
+        "delta": -0.030824
+      },
+      "au_rcc_balanced_accuracy": {
+        "conf": 0.659997,
+        "rand": 0.672363,
+        "delta": -0.012366
+      },
+      "au_rcc_macro_f1": {
+        "conf": 0.69071,
+        "rand": 0.715555,
+        "delta": -0.024845
+      },
+      "selective_advantage_balanced_accuracy": true,
+      "selective_advantage_macro_f1": true,
+      "selective_advantage_error": true
+    }
+  }
+}

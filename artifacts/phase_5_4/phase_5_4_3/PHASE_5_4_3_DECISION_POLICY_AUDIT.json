@@ -1,0 +1,466 @@
+{
+  "title": "Workstream E: Decision Policy & Realized Return Diagnostic Audit",
+  "timestamp_utc": "2026-11-01 19:11:35 UTC",
+  "causal_execution_rules": {
+    "decision_timestamp": "Candle i close (open_time_ms + 300,000 ms)",
+    "reference_price": "P_ref = close[i]",
+    "earliest_executable_entry": "P_entry = open[i+1] (Zero lookahead, market entry at next candle open)",
+    "entry_timestamp": "open_time_ms of candle i+1",
+    "barrier_formulas": {
+      "upper_barrier": "U_i = close[i] * (1.0 + 1.5 * sigma_t)",
+      "lower_barrier": "L_i = close[i] * (1.0 - 1.5 * sigma_t)"
+    },
+    "horizon_window": "12 bars (60 minutes)",
+    "gap_handling": "Open gap beyond barrier exits immediately at open[j]",
+    "ambiguous_intrabar_collision": "Candles touching both U_i and L_i are reported separately; conservative adverse assumption forces exit at stop loss",
+    "expiration_exit": "close[i+12] with directional return (close[i+12] - P_entry)/P_entry for LONG, (P_entry - close[i+12])/P_entry for SHORT"
+  },
+  "directional_mapping_verified": {
+    "LONG": "q(TP) > theta and q(TP) > q(SL)",
+    "SHORT": "q(SL) > theta and q(SL) > q(TP)",
+    "NO_TRADE": "All other cases"
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.4,
+      "decision_distribution": {
+        "LONG": 0.3774,
+        "SHORT": 0.6103,
+        "NO_TRADE": 0.0123
+      },
+      "trade_counts": {
+        "total": 25818,
+        "long": 9864,
+        "short": 15954
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 36,
+        "fraction": 0.001394,
+        "percentage": 0.14
+      },
+      "return_distribution": {
+        "mean_gross_return": -1.2e-05,
+        "long_mean_gross_return": -4.8e-05,
+        "short_mean_gross_return": 9e-06,
+        "7_bps_net_return": -0.000712,
+        "7_bps_profit_factor": 0.4839,
+        "15_bps_net_return": -0.001512,
+        "15_bps_profit_factor": 0.1887,
+        "20_bps_net_return": -0.002012,
+        "20_bps_profit_factor": 0.1021,
+        "30_bps_net_return": -0.003012,
+        "30_bps_profit_factor": 0.0319
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    },
+    "ETHUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.35,
+      "decision_distribution": {
+        "LONG": 0.8647,
+        "SHORT": 0.1299,
+        "NO_TRADE": 0.0054
+      },
+      "trade_counts": {
+        "total": 26008,
+        "long": 22611,
+        "short": 3397
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 42,
+        "fraction": 0.001615,
+        "percentage": 0.16
+      },
+      "return_distribution": {
+        "mean_gross_return": -4e-06,
+        "long_mean_gross_return": -3.3e-05,
+        "short_mean_gross_return": 0.000192,
+        "7_bps_net_return": -0.000704,
+        "7_bps_profit_factor": 0.5822,
+        "15_bps_net_return": -0.001504,
+        "15_bps_profit_factor": 0.2962,
+        "20_bps_net_return": -0.002004,
+        "20_bps_profit_factor": 0.1886,
+        "30_bps_net_return": -0.003004,
+        "30_bps_profit_factor": 0.0776
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    },
+    "BNBUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "decision_distribution": {
+        "LONG": 0.4195,
+        "SHORT": 0.5791,
+        "NO_TRADE": 0.0014
+      },
+      "trade_counts": {
+        "total": 26135,
+        "long": 10979,
+        "short": 15156
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 149,
+        "fraction": 0.005701,
+        "percentage": 0.57
+      },
+      "return_distribution": {
+        "mean_gross_return": -0.0,
+        "long_mean_gross_return": -2.8e-05,
+        "short_mean_gross_return": 2e-05,
+        "7_bps_net_return": -0.0007,
+        "7_bps_profit_factor": 0.4634,
+        "15_bps_net_return": -0.0015,
+        "15_bps_profit_factor": 0.169,
+        "20_bps_net_return": -0.002,
+        "20_bps_profit_factor": 0.0905,
+        "30_bps_net_return": -0.003,
+        "30_bps_profit_factor": 0.0295
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    },
+    "XRPUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "decision_distribution": {
+        "LONG": 0.7435,
+        "SHORT": 0.2558,
+        "NO_TRADE": 0.0007
+      },
+      "trade_counts": {
+        "total": 26103,
+        "long": 19421,
+        "short": 6682
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 200,
+        "fraction": 0.007662,
+        "percentage": 0.77
+      },
+      "return_distribution": {
+        "mean_gross_return": 2.6e-05,
+        "long_mean_gross_return": -3.2e-05,
+        "short_mean_gross_return": 0.000193,
+        "7_bps_net_return": -0.000674,
+        "7_bps_profit_factor": 0.5889,
+        "15_bps_net_return": -0.001474,
+        "15_bps_profit_factor": 0.294,
+        "20_bps_net_return": -0.001974,
+        "20_bps_profit_factor": 0.1855,
+        "30_bps_net_return": -0.002974,
+        "30_bps_profit_factor": 0.0771
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    },
+    "ADAUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.36,
+      "decision_distribution": {
+        "LONG": 0.4951,
+        "SHORT": 0.4894,
+        "NO_TRADE": 0.0155
+      },
+      "trade_counts": {
+        "total": 25695,
+        "long": 12921,
+        "short": 12774
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 13111,
+        "fraction": 0.510255,
+        "percentage": 51.03
+      },
+      "return_distribution": {
+        "mean_gross_return": 0.000256,
+        "long_mean_gross_return": 0.000115,
+        "short_mean_gross_return": 0.000399,
+        "7_bps_net_return": -0.000444,
+        "7_bps_profit_factor": 0.7501,
+        "15_bps_net_return": -0.001244,
+        "15_bps_profit_factor": 0.4439,
+        "20_bps_net_return": -0.001744,
+        "20_bps_profit_factor": 0.3166,
+        "30_bps_net_return": -0.002744,
+        "30_bps_profit_factor": 0.158
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    },
+    "SOLUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.42,
+      "decision_distribution": {
+        "LONG": 0.431,
+        "SHORT": 0.5551,
+        "NO_TRADE": 0.0139
+      },
+      "trade_counts": {
+        "total": 25801,
+        "long": 11277,
+        "short": 14524
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 95,
+        "fraction": 0.003682,
+        "percentage": 0.37
+      },
+      "return_distribution": {
+        "mean_gross_return": 3.6e-05,
+        "long_mean_gross_return": -1.2e-05,
+        "short_mean_gross_return": 7.3e-05,
+        "7_bps_net_return": -0.000664,
+        "7_bps_profit_factor": 0.6202,
+        "15_bps_net_return": -0.001464,
+        "15_bps_profit_factor": 0.3269,
+        "20_bps_net_return": -0.001964,
+        "20_bps_profit_factor": 0.2111,
+        "30_bps_net_return": -0.002964,
+        "30_bps_profit_factor": 0.0868
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    },
+    "AVAXUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "decision_distribution": {
+        "LONG": 0.3124,
+        "SHORT": 0.6414,
+        "NO_TRADE": 0.0462
+      },
+      "trade_counts": {
+        "total": 24956,
+        "long": 8173,
+        "short": 16783
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 13953,
+        "fraction": 0.559104,
+        "percentage": 55.91
+      },
+      "return_distribution": {
+        "mean_gross_return": 0.000186,
+        "long_mean_gross_return": 0.000183,
+        "short_mean_gross_return": 0.000187,
+        "7_bps_net_return": -0.000514,
+        "7_bps_profit_factor": 0.7229,
+        "15_bps_net_return": -0.001314,
+        "15_bps_profit_factor": 0.4356,
+        "20_bps_net_return": -0.001814,
+        "20_bps_profit_factor": 0.3139,
+        "30_bps_net_return": -0.002814,
+        "30_bps_profit_factor": 0.1597
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    },
+    "LINKUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "decision_distribution": {
+        "LONG": 0.7095,
+        "SHORT": 0.2266,
+        "NO_TRADE": 0.0639
+      },
+      "trade_counts": {
+        "total": 24486,
+        "long": 18558,
+        "short": 5928
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 13397,
+        "fraction": 0.547129,
+        "percentage": 54.71
+      },
+      "return_distribution": {
+        "mean_gross_return": 0.000146,
+        "long_mean_gross_return": 5.7e-05,
+        "short_mean_gross_return": 0.000425,
+        "7_bps_net_return": -0.000554,
+        "7_bps_profit_factor": 0.6886,
+        "15_bps_net_return": -0.001354,
+        "15_bps_profit_factor": 0.3986,
+        "20_bps_net_return": -0.001854,
+        "20_bps_profit_factor": 0.2793,
+        "30_bps_net_return": -0.002854,
+        "30_bps_profit_factor": 0.1337
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    },
+    "DOGEUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "decision_distribution": {
+        "LONG": 0.4836,
+        "SHORT": 0.5122,
+        "NO_TRADE": 0.0041
+      },
+      "trade_counts": {
+        "total": 26024,
+        "long": 12638,
+        "short": 13386
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 224,
+        "fraction": 0.008607,
+        "percentage": 0.86
+      },
+      "return_distribution": {
+        "mean_gross_return": 7.9e-05,
+        "long_mean_gross_return": -4.7e-05,
+        "short_mean_gross_return": 0.000198,
+        "7_bps_net_return": -0.000621,
+        "7_bps_profit_factor": 0.6378,
+        "15_bps_net_return": -0.001421,
+        "15_bps_profit_factor": 0.335,
+        "20_bps_net_return": -0.001921,
+        "20_bps_profit_factor": 0.2157,
+        "30_bps_net_return": -0.002921,
+        "30_bps_profit_factor": 0.09
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    },
+    "LTCUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "decision_distribution": {
+        "LONG": 0.7531,
+        "SHORT": 0.1724,
+        "NO_TRADE": 0.0745
+      },
+      "trade_counts": {
+        "total": 24151,
+        "long": 19652,
+        "short": 4499
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 13585,
+        "fraction": 0.562503,
+        "percentage": 56.25
+      },
+      "return_distribution": {
+        "mean_gross_return": 0.000189,
+        "long_mean_gross_return": 0.000105,
+        "short_mean_gross_return": 0.000552,
+        "7_bps_net_return": -0.000511,
+        "7_bps_profit_factor": 0.6624,
+        "15_bps_net_return": -0.001311,
+        "15_bps_profit_factor": 0.3451,
+        "20_bps_net_return": -0.001811,
+        "20_bps_profit_factor": 0.2255,
+        "30_bps_net_return": -0.002811,
+        "30_bps_profit_factor": 0.0927
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    },
+    "XMRUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.45,
+      "decision_distribution": {
+        "LONG": 0.5154,
+        "SHORT": 0.1779,
+        "NO_TRADE": 0.3067
+      },
+      "trade_counts": {
+        "total": 2116,
+        "long": 1573,
+        "short": 543
+      },
+      "ambiguous_collision_diagnostics": {
+        "count": 0,
+        "fraction": 0.0,
+        "percentage": 0.0,
+        "handling": "Conservative adverse assumption (SL triggered first)"
+      },
+      "gap_diagnostics": {
+        "count": 1403,
+        "fraction": 0.663043,
+        "percentage": 66.3
+      },
+      "return_distribution": {
+        "mean_gross_return": 0.000266,
+        "long_mean_gross_return": 0.000539,
+        "short_mean_gross_return": -0.000525,
+        "7_bps_net_return": -0.000434,
+        "7_bps_profit_factor": 0.7521,
+        "15_bps_net_return": -0.001234,
+        "15_bps_profit_factor": 0.445,
+        "20_bps_net_return": -0.001734,
+        "20_bps_profit_factor": 0.3166,
+        "30_bps_net_return": -0.002734,
+        "30_bps_profit_factor": 0.1505
+      },
+      "economic_alpha_claimed": false,
+      "status": "PASS"
+    }
+  },
+  "workstream_status": "PASS"
+}

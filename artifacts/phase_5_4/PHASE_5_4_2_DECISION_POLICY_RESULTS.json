@@ -1,0 +1,1800 @@
+{
+  "title": "Phase 5.4.2 Decision Policy Evaluation",
+  "timestamp_utc": "2026-11-01 18:55:19 UTC",
+  "description": "Probability threshold optimization on Segment 2 and untouched evaluation on Segment 3 (Fold 5).",
+  "instruments": {
+    "BTCUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.4,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 52260,
+          "long_trades": 21758,
+          "short_trades": 30502,
+          "mean_net_return_15bps": -0.001482,
+          "win_rate_15bps": 0.192269,
+          "profit_factor_15bps": 0.1062
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 52251,
+          "long_trades": 21754,
+          "short_trades": 30497,
+          "mean_net_return_15bps": -0.001481,
+          "win_rate_15bps": 0.192264,
+          "profit_factor_15bps": 0.106
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 52234,
+          "long_trades": 21747,
+          "short_trades": 30487,
+          "mean_net_return_15bps": -0.001481,
+          "win_rate_15bps": 0.192193,
+          "profit_factor_15bps": 0.1057
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 52210,
+          "long_trades": 21744,
+          "short_trades": 30466,
+          "mean_net_return_15bps": -0.00148,
+          "win_rate_15bps": 0.192224,
+          "profit_factor_15bps": 0.1057
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 52176,
+          "long_trades": 21737,
+          "short_trades": 30439,
+          "mean_net_return_15bps": -0.00148,
+          "win_rate_15bps": 0.1921,
+          "profit_factor_15bps": 0.1052
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 52034,
+          "long_trades": 21663,
+          "short_trades": 30371,
+          "mean_net_return_15bps": -0.001477,
+          "win_rate_15bps": 0.191682,
+          "profit_factor_15bps": 0.1042
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 51657,
+          "long_trades": 21441,
+          "short_trades": 30216,
+          "mean_net_return_15bps": -0.001477,
+          "win_rate_15bps": 0.190294,
+          "profit_factor_15bps": 0.1017
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 49359,
+          "long_trades": 19821,
+          "short_trades": 29538,
+          "mean_net_return_15bps": -0.001484,
+          "win_rate_15bps": 0.180636,
+          "profit_factor_15bps": 0.0884
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 26140,
+        "long_candidates": 9864,
+        "short_candidates": 15954,
+        "no_trade_candidates": 322,
+        "decision_distribution": {
+          "LONG": 0.3774,
+          "SHORT": 0.6103,
+          "NO_TRADE": 0.0123
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 25818,
+          "long_trade_count": 9864,
+          "short_trade_count": 15954,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 36,
+          "gap_fraction": 0.001394,
+          "mean_gross_return": -1.2e-05,
+          "long_mean_gross_return": -4.8e-05,
+          "short_mean_gross_return": 9e-06,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.000712,
+                "win_rate": 0.468665,
+                "profit_factor": 0.4839
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25818,
+                "mean_net_return": -0.000712,
+                "win_rate": 0.468665,
+                "profit_factor": 0.4839
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.001512,
+                "win_rate": 0.3044,
+                "profit_factor": 0.1887
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25818,
+                "mean_net_return": -0.001512,
+                "win_rate": 0.3044,
+                "profit_factor": 0.1887
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.002012,
+                "win_rate": 0.193547,
+                "profit_factor": 0.1021
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25818,
+                "mean_net_return": -0.002012,
+                "win_rate": 0.193547,
+                "profit_factor": 0.1021
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.003012,
+                "win_rate": 0.08374,
+                "profit_factor": 0.0319
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25818,
+                "mean_net_return": -0.003012,
+                "win_rate": 0.08374,
+                "profit_factor": 0.0319
+              }
+            }
+          }
+        }
+      }
+    },
+    "ETHUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.35,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 52221,
+          "long_trades": 46316,
+          "short_trades": 5905,
+          "mean_net_return_15bps": -0.001486,
+          "win_rate_15bps": 0.35097,
+          "profit_factor_15bps": 0.2619
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 52170,
+          "long_trades": 46295,
+          "short_trades": 5875,
+          "mean_net_return_15bps": -0.001485,
+          "win_rate_15bps": 0.351025,
+          "profit_factor_15bps": 0.2613
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 52135,
+          "long_trades": 46282,
+          "short_trades": 5853,
+          "mean_net_return_15bps": -0.001486,
+          "win_rate_15bps": 0.350916,
+          "profit_factor_15bps": 0.2605
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 52078,
+          "long_trades": 46259,
+          "short_trades": 5819,
+          "mean_net_return_15bps": -0.001485,
+          "win_rate_15bps": 0.350839,
+          "profit_factor_15bps": 0.2599
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 52006,
+          "long_trades": 46221,
+          "short_trades": 5785,
+          "mean_net_return_15bps": -0.001486,
+          "win_rate_15bps": 0.350633,
+          "profit_factor_15bps": 0.2588
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 51762,
+          "long_trades": 46100,
+          "short_trades": 5662,
+          "mean_net_return_15bps": -0.001485,
+          "win_rate_15bps": 0.350276,
+          "profit_factor_15bps": 0.2565
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 51302,
+          "long_trades": 45816,
+          "short_trades": 5486,
+          "mean_net_return_15bps": -0.001485,
+          "win_rate_15bps": 0.349402,
+          "profit_factor_15bps": 0.2525
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 49426,
+          "long_trades": 44542,
+          "short_trades": 4884,
+          "mean_net_return_15bps": -0.001492,
+          "win_rate_15bps": 0.344778,
+          "profit_factor_15bps": 0.2372
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 26148,
+        "long_candidates": 22611,
+        "short_candidates": 3397,
+        "no_trade_candidates": 140,
+        "decision_distribution": {
+          "LONG": 0.8647,
+          "SHORT": 0.1299,
+          "NO_TRADE": 0.0054
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 26008,
+          "long_trade_count": 22611,
+          "short_trade_count": 3397,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 42,
+          "gap_fraction": 0.001615,
+          "mean_gross_return": -4e-06,
+          "long_mean_gross_return": -3.3e-05,
+          "short_mean_gross_return": 0.000192,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.000704,
+                "win_rate": 0.47793,
+                "profit_factor": 0.5822
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26008,
+                "mean_net_return": -0.000704,
+                "win_rate": 0.47793,
+                "profit_factor": 0.5822
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.001504,
+                "win_rate": 0.378384,
+                "profit_factor": 0.2962
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26008,
+                "mean_net_return": -0.001504,
+                "win_rate": 0.378384,
+                "profit_factor": 0.2962
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.002004,
+                "win_rate": 0.288988,
+                "profit_factor": 0.1886
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26008,
+                "mean_net_return": -0.002004,
+                "win_rate": 0.288988,
+                "profit_factor": 0.1886
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.003004,
+                "win_rate": 0.151799,
+                "profit_factor": 0.0776
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26008,
+                "mean_net_return": -0.003004,
+                "win_rate": 0.151799,
+                "profit_factor": 0.0776
+              }
+            }
+          }
+        }
+      }
+    },
+    "BNBUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 52304,
+          "long_trades": 19959,
+          "short_trades": 32345,
+          "mean_net_return_15bps": -0.001485,
+          "win_rate_15bps": 0.296077,
+          "profit_factor_15bps": 0.2072
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 52277,
+          "long_trades": 19950,
+          "short_trades": 32327,
+          "mean_net_return_15bps": -0.001485,
+          "win_rate_15bps": 0.295981,
+          "profit_factor_15bps": 0.2059
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 52236,
+          "long_trades": 19934,
+          "short_trades": 32302,
+          "mean_net_return_15bps": -0.001488,
+          "win_rate_15bps": 0.295792,
+          "profit_factor_15bps": 0.204
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 52201,
+          "long_trades": 19919,
+          "short_trades": 32282,
+          "mean_net_return_15bps": -0.001489,
+          "win_rate_15bps": 0.295684,
+          "profit_factor_15bps": 0.2027
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 52148,
+          "long_trades": 19890,
+          "short_trades": 32258,
+          "mean_net_return_15bps": -0.001488,
+          "win_rate_15bps": 0.295543,
+          "profit_factor_15bps": 0.2021
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 51964,
+          "long_trades": 19803,
+          "short_trades": 32161,
+          "mean_net_return_15bps": -0.001486,
+          "win_rate_15bps": 0.29532,
+          "profit_factor_15bps": 0.2004
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 51472,
+          "long_trades": 19573,
+          "short_trades": 31899,
+          "mean_net_return_15bps": -0.001486,
+          "win_rate_15bps": 0.294684,
+          "profit_factor_15bps": 0.1975
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 49219,
+          "long_trades": 18462,
+          "short_trades": 30757,
+          "mean_net_return_15bps": -0.001497,
+          "win_rate_15bps": 0.289847,
+          "profit_factor_15bps": 0.1851
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 26171,
+        "long_candidates": 10979,
+        "short_candidates": 15156,
+        "no_trade_candidates": 36,
+        "decision_distribution": {
+          "LONG": 0.4195,
+          "SHORT": 0.5791,
+          "NO_TRADE": 0.0014
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 26135,
+          "long_trade_count": 10979,
+          "short_trade_count": 15156,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 149,
+          "gap_fraction": 0.005701,
+          "mean_gross_return": -0.0,
+          "long_mean_gross_return": -2.8e-05,
+          "short_mean_gross_return": 2e-05,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.0007,
+                "win_rate": 0.468491,
+                "profit_factor": 0.4634
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26135,
+                "mean_net_return": -0.0007,
+                "win_rate": 0.468491,
+                "profit_factor": 0.4634
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.0015,
+                "win_rate": 0.269868,
+                "profit_factor": 0.169
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26135,
+                "mean_net_return": -0.0015,
+                "win_rate": 0.269868,
+                "profit_factor": 0.169
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.002,
+                "win_rate": 0.163689,
+                "profit_factor": 0.0905
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26135,
+                "mean_net_return": -0.002,
+                "win_rate": 0.163689,
+                "profit_factor": 0.0905
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.003,
+                "win_rate": 0.068682,
+                "profit_factor": 0.0295
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26135,
+                "mean_net_return": -0.003,
+                "win_rate": 0.068682,
+                "profit_factor": 0.0295
+              }
+            }
+          }
+        }
+      }
+    },
+    "XRPUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 52113,
+          "long_trades": 37044,
+          "short_trades": 15069,
+          "mean_net_return_15bps": -0.001516,
+          "win_rate_15bps": 0.365379,
+          "profit_factor_15bps": 0.28
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 52065,
+          "long_trades": 37034,
+          "short_trades": 15031,
+          "mean_net_return_15bps": -0.001516,
+          "win_rate_15bps": 0.365389,
+          "profit_factor_15bps": 0.2796
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 52022,
+          "long_trades": 37022,
+          "short_trades": 15000,
+          "mean_net_return_15bps": -0.001518,
+          "win_rate_15bps": 0.365461,
+          "profit_factor_15bps": 0.2783
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 51953,
+          "long_trades": 36998,
+          "short_trades": 14955,
+          "mean_net_return_15bps": -0.001518,
+          "win_rate_15bps": 0.365465,
+          "profit_factor_15bps": 0.2778
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 51881,
+          "long_trades": 36974,
+          "short_trades": 14907,
+          "mean_net_return_15bps": -0.001518,
+          "win_rate_15bps": 0.365432,
+          "profit_factor_15bps": 0.2776
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 51591,
+          "long_trades": 36878,
+          "short_trades": 14713,
+          "mean_net_return_15bps": -0.001519,
+          "win_rate_15bps": 0.365258,
+          "profit_factor_15bps": 0.2761
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 51086,
+          "long_trades": 36692,
+          "short_trades": 14394,
+          "mean_net_return_15bps": -0.001516,
+          "win_rate_15bps": 0.365149,
+          "profit_factor_15bps": 0.2743
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 49477,
+          "long_trades": 36057,
+          "short_trades": 13420,
+          "mean_net_return_15bps": -0.001522,
+          "win_rate_15bps": 0.365099,
+          "profit_factor_15bps": 0.2648
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 26120,
+        "long_candidates": 19421,
+        "short_candidates": 6682,
+        "no_trade_candidates": 17,
+        "decision_distribution": {
+          "LONG": 0.7435,
+          "SHORT": 0.2558,
+          "NO_TRADE": 0.0007
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 26103,
+          "long_trade_count": 19421,
+          "short_trade_count": 6682,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 200,
+          "gap_fraction": 0.007662,
+          "mean_gross_return": 2.6e-05,
+          "long_mean_gross_return": -3.2e-05,
+          "short_mean_gross_return": 0.000193,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.000674,
+                "win_rate": 0.488488,
+                "profit_factor": 0.5889
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26103,
+                "mean_net_return": -0.000674,
+                "win_rate": 0.488488,
+                "profit_factor": 0.5889
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.001474,
+                "win_rate": 0.378079,
+                "profit_factor": 0.294
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26103,
+                "mean_net_return": -0.001474,
+                "win_rate": 0.378079,
+                "profit_factor": 0.294
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.001974,
+                "win_rate": 0.28127,
+                "profit_factor": 0.1855
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26103,
+                "mean_net_return": -0.001974,
+                "win_rate": 0.28127,
+                "profit_factor": 0.1855
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.002974,
+                "win_rate": 0.137264,
+                "profit_factor": 0.0771
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26103,
+                "mean_net_return": -0.002974,
+                "win_rate": 0.137264,
+                "profit_factor": 0.0771
+              }
+            }
+          }
+        }
+      }
+    },
+    "ADAUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.36,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 50030,
+          "long_trades": 22995,
+          "short_trades": 27035,
+          "mean_net_return_15bps": -0.001244,
+          "win_rate_15bps": 0.397102,
+          "profit_factor_15bps": 0.4721
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 49585,
+          "long_trades": 22829,
+          "short_trades": 26756,
+          "mean_net_return_15bps": -0.001241,
+          "win_rate_15bps": 0.397721,
+          "profit_factor_15bps": 0.4718
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 49053,
+          "long_trades": 22627,
+          "short_trades": 26426,
+          "mean_net_return_15bps": -0.001239,
+          "win_rate_15bps": 0.398814,
+          "profit_factor_15bps": 0.471
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 48399,
+          "long_trades": 22406,
+          "short_trades": 25993,
+          "mean_net_return_15bps": -0.001242,
+          "win_rate_15bps": 0.399533,
+          "profit_factor_15bps": 0.468
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 47663,
+          "long_trades": 22146,
+          "short_trades": 25517,
+          "mean_net_return_15bps": -0.001247,
+          "win_rate_15bps": 0.39987,
+          "profit_factor_15bps": 0.4649
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 45695,
+          "long_trades": 21447,
+          "short_trades": 24248,
+          "mean_net_return_15bps": -0.001263,
+          "win_rate_15bps": 0.400481,
+          "profit_factor_15bps": 0.4561
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 43178,
+          "long_trades": 20383,
+          "short_trades": 22795,
+          "mean_net_return_15bps": -0.001265,
+          "win_rate_15bps": 0.402335,
+          "profit_factor_15bps": 0.4506
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 37329,
+          "long_trades": 17884,
+          "short_trades": 19445,
+          "mean_net_return_15bps": -0.001292,
+          "win_rate_15bps": 0.404324,
+          "profit_factor_15bps": 0.431
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 26099,
+        "long_candidates": 12921,
+        "short_candidates": 12774,
+        "no_trade_candidates": 404,
+        "decision_distribution": {
+          "LONG": 0.4951,
+          "SHORT": 0.4894,
+          "NO_TRADE": 0.0155
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 25695,
+          "long_trade_count": 12921,
+          "short_trade_count": 12774,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 13111,
+          "gap_fraction": 0.510255,
+          "mean_gross_return": 0.000256,
+          "long_mean_gross_return": 0.000115,
+          "short_mean_gross_return": 0.000399,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.000444,
+                "win_rate": 0.452267,
+                "profit_factor": 0.7501
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25695,
+                "mean_net_return": -0.000444,
+                "win_rate": 0.452267,
+                "profit_factor": 0.7501
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.001244,
+                "win_rate": 0.397782,
+                "profit_factor": 0.4439
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25695,
+                "mean_net_return": -0.001244,
+                "win_rate": 0.397782,
+                "profit_factor": 0.4439
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.001744,
+                "win_rate": 0.346137,
+                "profit_factor": 0.3166
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25695,
+                "mean_net_return": -0.001744,
+                "win_rate": 0.346137,
+                "profit_factor": 0.3166
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.002744,
+                "win_rate": 0.243394,
+                "profit_factor": 0.158
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25695,
+                "mean_net_return": -0.002744,
+                "win_rate": 0.243394,
+                "profit_factor": 0.158
+              }
+            }
+          }
+        }
+      }
+    },
+    "SOLUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.42,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 52315,
+          "long_trades": 25775,
+          "short_trades": 26540,
+          "mean_net_return_15bps": -0.00144,
+          "win_rate_15bps": 0.419019,
+          "profit_factor_15bps": 0.3387
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 52309,
+          "long_trades": 25770,
+          "short_trades": 26539,
+          "mean_net_return_15bps": -0.001441,
+          "win_rate_15bps": 0.419029,
+          "profit_factor_15bps": 0.3384
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 52303,
+          "long_trades": 25766,
+          "short_trades": 26537,
+          "mean_net_return_15bps": -0.00144,
+          "win_rate_15bps": 0.419077,
+          "profit_factor_15bps": 0.3386
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 52288,
+          "long_trades": 25760,
+          "short_trades": 26528,
+          "mean_net_return_15bps": -0.00144,
+          "win_rate_15bps": 0.419045,
+          "profit_factor_15bps": 0.3384
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 52256,
+          "long_trades": 25749,
+          "short_trades": 26507,
+          "mean_net_return_15bps": -0.001437,
+          "win_rate_15bps": 0.419148,
+          "profit_factor_15bps": 0.3387
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 52154,
+          "long_trades": 25712,
+          "short_trades": 26442,
+          "mean_net_return_15bps": -0.001436,
+          "win_rate_15bps": 0.419067,
+          "profit_factor_15bps": 0.3372
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 51911,
+          "long_trades": 25629,
+          "short_trades": 26282,
+          "mean_net_return_15bps": -0.001432,
+          "win_rate_15bps": 0.418909,
+          "profit_factor_15bps": 0.336
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 50578,
+          "long_trades": 25219,
+          "short_trades": 25359,
+          "mean_net_return_15bps": -0.001433,
+          "win_rate_15bps": 0.41785,
+          "profit_factor_15bps": 0.3273
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 26164,
+        "long_candidates": 11277,
+        "short_candidates": 14524,
+        "no_trade_candidates": 363,
+        "decision_distribution": {
+          "LONG": 0.431,
+          "SHORT": 0.5551,
+          "NO_TRADE": 0.0139
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 25801,
+          "long_trade_count": 11277,
+          "short_trade_count": 14524,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 95,
+          "gap_fraction": 0.003682,
+          "mean_gross_return": 3.6e-05,
+          "long_mean_gross_return": -1.2e-05,
+          "short_mean_gross_return": 7.3e-05,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.000664,
+                "win_rate": 0.502112,
+                "profit_factor": 0.6202
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25801,
+                "mean_net_return": -0.000664,
+                "win_rate": 0.502112,
+                "profit_factor": 0.6202
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.001464,
+                "win_rate": 0.414441,
+                "profit_factor": 0.3269
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25801,
+                "mean_net_return": -0.001464,
+                "win_rate": 0.414441,
+                "profit_factor": 0.3269
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.001964,
+                "win_rate": 0.326499,
+                "profit_factor": 0.2111
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25801,
+                "mean_net_return": -0.001964,
+                "win_rate": 0.326499,
+                "profit_factor": 0.2111
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.002964,
+                "win_rate": 0.172474,
+                "profit_factor": 0.0868
+              },
+              "excluding_ambiguous": {
+                "trade_count": 25801,
+                "mean_net_return": -0.002964,
+                "win_rate": 0.172474,
+                "profit_factor": 0.0868
+              }
+            }
+          }
+        }
+      }
+    },
+    "AVAXUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 45532,
+          "long_trades": 13013,
+          "short_trades": 32519,
+          "mean_net_return_15bps": -0.001372,
+          "win_rate_15bps": 0.378437,
+          "profit_factor_15bps": 0.4457
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 43880,
+          "long_trades": 12306,
+          "short_trades": 31574,
+          "mean_net_return_15bps": -0.001384,
+          "win_rate_15bps": 0.380902,
+          "profit_factor_15bps": 0.4398
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 42081,
+          "long_trades": 11575,
+          "short_trades": 30506,
+          "mean_net_return_15bps": -0.001385,
+          "win_rate_15bps": 0.384615,
+          "profit_factor_15bps": 0.4373
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 40064,
+          "long_trades": 10822,
+          "short_trades": 29242,
+          "mean_net_return_15bps": -0.001385,
+          "win_rate_15bps": 0.389427,
+          "profit_factor_15bps": 0.4353
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 38191,
+          "long_trades": 10095,
+          "short_trades": 28096,
+          "mean_net_return_15bps": -0.001389,
+          "win_rate_15bps": 0.39326,
+          "profit_factor_15bps": 0.4324
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 34742,
+          "long_trades": 8860,
+          "short_trades": 25882,
+          "mean_net_return_15bps": -0.001392,
+          "win_rate_15bps": 0.400006,
+          "profit_factor_15bps": 0.4276
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 30883,
+          "long_trades": 7673,
+          "short_trades": 23210,
+          "mean_net_return_15bps": -0.001381,
+          "win_rate_15bps": 0.406696,
+          "profit_factor_15bps": 0.4266
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 23692,
+          "long_trades": 5370,
+          "short_trades": 18322,
+          "mean_net_return_15bps": -0.001403,
+          "win_rate_15bps": 0.410687,
+          "profit_factor_15bps": 0.4069
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 26166,
+        "long_candidates": 8173,
+        "short_candidates": 16783,
+        "no_trade_candidates": 1210,
+        "decision_distribution": {
+          "LONG": 0.3124,
+          "SHORT": 0.6414,
+          "NO_TRADE": 0.0462
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 24956,
+          "long_trade_count": 8173,
+          "short_trade_count": 16783,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 13953,
+          "gap_fraction": 0.559104,
+          "mean_gross_return": 0.000186,
+          "long_mean_gross_return": 0.000183,
+          "short_mean_gross_return": 0.000187,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.000514,
+                "win_rate": 0.43765,
+                "profit_factor": 0.7229
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24956,
+                "mean_net_return": -0.000514,
+                "win_rate": 0.43765,
+                "profit_factor": 0.7229
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.001314,
+                "win_rate": 0.378867,
+                "profit_factor": 0.4356
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24956,
+                "mean_net_return": -0.001314,
+                "win_rate": 0.378867,
+                "profit_factor": 0.4356
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.001814,
+                "win_rate": 0.354304,
+                "profit_factor": 0.3139
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24956,
+                "mean_net_return": -0.001814,
+                "win_rate": 0.354304,
+                "profit_factor": 0.3139
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.002814,
+                "win_rate": 0.259937,
+                "profit_factor": 0.1597
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24956,
+                "mean_net_return": -0.002814,
+                "win_rate": 0.259937,
+                "profit_factor": 0.1597
+              }
+            }
+          }
+        }
+      }
+    },
+    "LINKUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 44354,
+          "long_trades": 29246,
+          "short_trades": 15108,
+          "mean_net_return_15bps": -0.00139,
+          "win_rate_15bps": 0.402895,
+          "profit_factor_15bps": 0.4236
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 43595,
+          "long_trades": 28682,
+          "short_trades": 14913,
+          "mean_net_return_15bps": -0.001395,
+          "win_rate_15bps": 0.403624,
+          "profit_factor_15bps": 0.4203
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 42769,
+          "long_trades": 28041,
+          "short_trades": 14728,
+          "mean_net_return_15bps": -0.001398,
+          "win_rate_15bps": 0.404639,
+          "profit_factor_15bps": 0.4176
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 41929,
+          "long_trades": 27359,
+          "short_trades": 14570,
+          "mean_net_return_15bps": -0.001399,
+          "win_rate_15bps": 0.405781,
+          "profit_factor_15bps": 0.4151
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 41003,
+          "long_trades": 26606,
+          "short_trades": 14397,
+          "mean_net_return_15bps": -0.001403,
+          "win_rate_15bps": 0.406336,
+          "profit_factor_15bps": 0.4123
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 38841,
+          "long_trades": 24836,
+          "short_trades": 14005,
+          "mean_net_return_15bps": -0.001404,
+          "win_rate_15bps": 0.409155,
+          "profit_factor_15bps": 0.4072
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 35709,
+          "long_trades": 22324,
+          "short_trades": 13385,
+          "mean_net_return_15bps": -0.001405,
+          "win_rate_15bps": 0.410681,
+          "profit_factor_15bps": 0.4019
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 26641,
+          "long_trades": 15378,
+          "short_trades": 11263,
+          "mean_net_return_15bps": -0.001435,
+          "win_rate_15bps": 0.412747,
+          "profit_factor_15bps": 0.3819
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 26157,
+        "long_candidates": 18558,
+        "short_candidates": 5928,
+        "no_trade_candidates": 1671,
+        "decision_distribution": {
+          "LONG": 0.7095,
+          "SHORT": 0.2266,
+          "NO_TRADE": 0.0639
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 24486,
+          "long_trade_count": 18558,
+          "short_trade_count": 5928,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 13397,
+          "gap_fraction": 0.547129,
+          "mean_gross_return": 0.000146,
+          "long_mean_gross_return": 5.7e-05,
+          "short_mean_gross_return": 0.000425,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.000554,
+                "win_rate": 0.433431,
+                "profit_factor": 0.6886
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24486,
+                "mean_net_return": -0.000554,
+                "win_rate": 0.433431,
+                "profit_factor": 0.6886
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.001354,
+                "win_rate": 0.37936,
+                "profit_factor": 0.3986
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24486,
+                "mean_net_return": -0.001354,
+                "win_rate": 0.37936,
+                "profit_factor": 0.3986
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.001854,
+                "win_rate": 0.333415,
+                "profit_factor": 0.2793
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24486,
+                "mean_net_return": -0.001854,
+                "win_rate": 0.333415,
+                "profit_factor": 0.2793
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.002854,
+                "win_rate": 0.225353,
+                "profit_factor": 0.1337
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24486,
+                "mean_net_return": -0.002854,
+                "win_rate": 0.225353,
+                "profit_factor": 0.1337
+              }
+            }
+          }
+        }
+      }
+    },
+    "DOGEUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 50701,
+          "long_trades": 25417,
+          "short_trades": 25284,
+          "mean_net_return_15bps": -0.001415,
+          "win_rate_15bps": 0.420406,
+          "profit_factor_15bps": 0.3787
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 50484,
+          "long_trades": 25363,
+          "short_trades": 25121,
+          "mean_net_return_15bps": -0.00142,
+          "win_rate_15bps": 0.420232,
+          "profit_factor_15bps": 0.3757
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 50257,
+          "long_trades": 25285,
+          "short_trades": 24972,
+          "mean_net_return_15bps": -0.001426,
+          "win_rate_15bps": 0.420101,
+          "profit_factor_15bps": 0.3725
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 49986,
+          "long_trades": 25196,
+          "short_trades": 24790,
+          "mean_net_return_15bps": -0.001429,
+          "win_rate_15bps": 0.420418,
+          "profit_factor_15bps": 0.3685
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 49656,
+          "long_trades": 25061,
+          "short_trades": 24595,
+          "mean_net_return_15bps": -0.001443,
+          "win_rate_15bps": 0.420352,
+          "profit_factor_15bps": 0.3604
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 49037,
+          "long_trades": 24822,
+          "short_trades": 24215,
+          "mean_net_return_15bps": -0.001444,
+          "win_rate_15bps": 0.420703,
+          "profit_factor_15bps": 0.3559
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 48129,
+          "long_trades": 24447,
+          "short_trades": 23682,
+          "mean_net_return_15bps": -0.001442,
+          "win_rate_15bps": 0.420994,
+          "profit_factor_15bps": 0.3506
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 45685,
+          "long_trades": 23455,
+          "short_trades": 22230,
+          "mean_net_return_15bps": -0.001453,
+          "win_rate_15bps": 0.419985,
+          "profit_factor_15bps": 0.3305
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 26132,
+        "long_candidates": 12638,
+        "short_candidates": 13386,
+        "no_trade_candidates": 108,
+        "decision_distribution": {
+          "LONG": 0.4836,
+          "SHORT": 0.5122,
+          "NO_TRADE": 0.0041
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 26024,
+          "long_trade_count": 12638,
+          "short_trade_count": 13386,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 224,
+          "gap_fraction": 0.008607,
+          "mean_gross_return": 7.9e-05,
+          "long_mean_gross_return": -4.7e-05,
+          "short_mean_gross_return": 0.000198,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.000621,
+                "win_rate": 0.504919,
+                "profit_factor": 0.6378
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26024,
+                "mean_net_return": -0.000621,
+                "win_rate": 0.504919,
+                "profit_factor": 0.6378
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.001421,
+                "win_rate": 0.421227,
+                "profit_factor": 0.335
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26024,
+                "mean_net_return": -0.001421,
+                "win_rate": 0.421227,
+                "profit_factor": 0.335
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.001921,
+                "win_rate": 0.32616,
+                "profit_factor": 0.2157
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26024,
+                "mean_net_return": -0.001921,
+                "win_rate": 0.32616,
+                "profit_factor": 0.2157
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.002921,
+                "win_rate": 0.167768,
+                "profit_factor": 0.09
+              },
+              "excluding_ambiguous": {
+                "trade_count": 26024,
+                "mean_net_return": -0.002921,
+                "win_rate": 0.167768,
+                "profit_factor": 0.09
+              }
+            }
+          }
+        }
+      }
+    },
+    "LTCUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.34,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 41589,
+          "long_trades": 33202,
+          "short_trades": 8387,
+          "mean_net_return_15bps": -0.001404,
+          "win_rate_15bps": 0.365553,
+          "profit_factor_15bps": 0.3961
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 40996,
+          "long_trades": 32829,
+          "short_trades": 8167,
+          "mean_net_return_15bps": -0.001417,
+          "win_rate_15bps": 0.366548,
+          "profit_factor_15bps": 0.3906
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 40375,
+          "long_trades": 32418,
+          "short_trades": 7957,
+          "mean_net_return_15bps": -0.00142,
+          "win_rate_15bps": 0.367455,
+          "profit_factor_15bps": 0.3888
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 39724,
+          "long_trades": 31976,
+          "short_trades": 7748,
+          "mean_net_return_15bps": -0.001425,
+          "win_rate_15bps": 0.368039,
+          "profit_factor_15bps": 0.3861
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 38952,
+          "long_trades": 31410,
+          "short_trades": 7542,
+          "mean_net_return_15bps": -0.00142,
+          "win_rate_15bps": 0.369172,
+          "profit_factor_15bps": 0.3863
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 36888,
+          "long_trades": 29856,
+          "short_trades": 7032,
+          "mean_net_return_15bps": -0.001432,
+          "win_rate_15bps": 0.37069,
+          "profit_factor_15bps": 0.3798
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 33589,
+          "long_trades": 27319,
+          "short_trades": 6270,
+          "mean_net_return_15bps": -0.001433,
+          "win_rate_15bps": 0.371907,
+          "profit_factor_15bps": 0.3771
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 25750,
+          "long_trades": 21288,
+          "short_trades": 4462,
+          "mean_net_return_15bps": -0.001429,
+          "win_rate_15bps": 0.370874,
+          "profit_factor_15bps": 0.3727
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 26095,
+        "long_candidates": 19652,
+        "short_candidates": 4499,
+        "no_trade_candidates": 1944,
+        "decision_distribution": {
+          "LONG": 0.7531,
+          "SHORT": 0.1724,
+          "NO_TRADE": 0.0745
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 24151,
+          "long_trade_count": 19652,
+          "short_trade_count": 4499,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 13585,
+          "gap_fraction": 0.562503,
+          "mean_gross_return": 0.000189,
+          "long_mean_gross_return": 0.000105,
+          "short_mean_gross_return": 0.000552,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.000511,
+                "win_rate": 0.423047,
+                "profit_factor": 0.6624
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24151,
+                "mean_net_return": -0.000511,
+                "win_rate": 0.423047,
+                "profit_factor": 0.6624
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.001311,
+                "win_rate": 0.351166,
+                "profit_factor": 0.3451
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24151,
+                "mean_net_return": -0.001311,
+                "win_rate": 0.351166,
+                "profit_factor": 0.3451
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.001811,
+                "win_rate": 0.299574,
+                "profit_factor": 0.2255
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24151,
+                "mean_net_return": -0.001811,
+                "win_rate": 0.299574,
+                "profit_factor": 0.2255
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.002811,
+                "win_rate": 0.185458,
+                "profit_factor": 0.0927
+              },
+              "excluding_ambiguous": {
+                "trade_count": 24151,
+                "mean_net_return": -0.002811,
+                "win_rate": 0.185458,
+                "profit_factor": 0.0927
+              }
+            }
+          }
+        }
+      }
+    },
+    "XMRUSDT": {
+      "selected_calibrator": "VectorPlattScaling",
+      "optimal_threshold": 0.45,
+      "threshold_selection_grid": [
+        {
+          "threshold": 0.34,
+          "trade_count": 6100,
+          "long_trades": 5035,
+          "short_trades": 1065,
+          "mean_net_return_15bps": -0.001454,
+          "win_rate_15bps": 0.373279,
+          "profit_factor_15bps": 0.3655
+        },
+        {
+          "threshold": 0.35,
+          "trade_count": 6100,
+          "long_trades": 5035,
+          "short_trades": 1065,
+          "mean_net_return_15bps": -0.001454,
+          "win_rate_15bps": 0.373279,
+          "profit_factor_15bps": 0.3655
+        },
+        {
+          "threshold": 0.36,
+          "trade_count": 6100,
+          "long_trades": 5035,
+          "short_trades": 1065,
+          "mean_net_return_15bps": -0.001454,
+          "win_rate_15bps": 0.373279,
+          "profit_factor_15bps": 0.3655
+        },
+        {
+          "threshold": 0.37,
+          "trade_count": 6100,
+          "long_trades": 5035,
+          "short_trades": 1065,
+          "mean_net_return_15bps": -0.001454,
+          "win_rate_15bps": 0.373279,
+          "profit_factor_15bps": 0.3655
+        },
+        {
+          "threshold": 0.38,
+          "trade_count": 6100,
+          "long_trades": 5035,
+          "short_trades": 1065,
+          "mean_net_return_15bps": -0.001454,
+          "win_rate_15bps": 0.373279,
+          "profit_factor_15bps": 0.3655
+        },
+        {
+          "threshold": 0.4,
+          "trade_count": 6096,
+          "long_trades": 5031,
+          "short_trades": 1065,
+          "mean_net_return_15bps": -0.001452,
+          "win_rate_15bps": 0.37336,
+          "profit_factor_15bps": 0.3658
+        },
+        {
+          "threshold": 0.42,
+          "trade_count": 6003,
+          "long_trades": 4958,
+          "short_trades": 1045,
+          "mean_net_return_15bps": -0.00145,
+          "win_rate_15bps": 0.37398,
+          "profit_factor_15bps": 0.3662
+        },
+        {
+          "threshold": 0.45,
+          "trade_count": 5022,
+          "long_trades": 4165,
+          "short_trades": 857,
+          "mean_net_return_15bps": -0.001446,
+          "win_rate_15bps": 0.37495,
+          "profit_factor_15bps": 0.3606
+        }
+      ],
+      "segment_3_final_evaluation": {
+        "total_candles": 3052,
+        "long_candidates": 1573,
+        "short_candidates": 543,
+        "no_trade_candidates": 936,
+        "decision_distribution": {
+          "LONG": 0.5154,
+          "SHORT": 0.1779,
+          "NO_TRADE": 0.3067
+        },
+        "realized_trade_diagnostics": {
+          "trade_count": 2116,
+          "long_trade_count": 1573,
+          "short_trade_count": 543,
+          "ambiguous_count": 0,
+          "ambiguous_fraction": 0.0,
+          "gap_count": 1403,
+          "gap_fraction": 0.663043,
+          "mean_gross_return": 0.000266,
+          "long_mean_gross_return": 0.000539,
+          "short_mean_gross_return": -0.000525,
+          "cost_scenarios": {
+            "7_bps": {
+              "fee_bps": 7,
+              "fee_fraction": 0.0007,
+              "conservative_adverse": {
+                "mean_net_return": -0.000434,
+                "win_rate": 0.431474,
+                "profit_factor": 0.7521
+              },
+              "excluding_ambiguous": {
+                "trade_count": 2116,
+                "mean_net_return": -0.000434,
+                "win_rate": 0.431474,
+                "profit_factor": 0.7521
+              }
+            },
+            "15_bps": {
+              "fee_bps": 15,
+              "fee_fraction": 0.0015,
+              "conservative_adverse": {
+                "mean_net_return": -0.001234,
+                "win_rate": 0.388469,
+                "profit_factor": 0.445
+              },
+              "excluding_ambiguous": {
+                "trade_count": 2116,
+                "mean_net_return": -0.001234,
+                "win_rate": 0.388469,
+                "profit_factor": 0.445
+              }
+            },
+            "20_bps": {
+              "fee_bps": 20,
+              "fee_fraction": 0.002,
+              "conservative_adverse": {
+                "mean_net_return": -0.001734,
+                "win_rate": 0.351607,
+                "profit_factor": 0.3166
+              },
+              "excluding_ambiguous": {
+                "trade_count": 2116,
+                "mean_net_return": -0.001734,
+                "win_rate": 0.351607,
+                "profit_factor": 0.3166
+              }
+            },
+            "30_bps": {
+              "fee_bps": 30,
+              "fee_fraction": 0.003,
+              "conservative_adverse": {
+                "mean_net_return": -0.002734,
+                "win_rate": 0.278828,
+                "profit_factor": 0.1505
+              },
+              "excluding_ambiguous": {
+                "trade_count": 2116,
+                "mean_net_return": -0.002734,
+                "win_rate": 0.278828,
+                "profit_factor": 0.1505
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

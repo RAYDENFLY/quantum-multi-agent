@@ -1,0 +1,843 @@
+{
+  "title": "Workstream B: Calibration Metric Validity & Uncertainty Audit",
+  "timestamp_utc": "2026-11-01 19:09:57 UTC",
+  "metric_specifications": {
+    "multiclass_brier_score": {
+      "formula": "BS = (1/N) * sum_{i=1}^N sum_{k=1}^K (p_{ik} - y_{ik})^2",
+      "normalization_convention": "Standard unnormalized sum across classes (K=3), theoretical range [0, 2]. Not divided by K.",
+      "target_encoding": "One-hot indicator y_ik in {0, 1} for classes [-1, 0, 1]."
+    },
+    "multiclass_log_loss": {
+      "formula": "LL = -(1/N) * sum_{i=1}^N sum_{k=1}^K y_{ik} * ln(clip(p_{ik}, eps, 1-eps))",
+      "clipping_epsilon": 1e-15,
+      "zero_division_safety": "Explicit probability clipping prevents ln(0) or infinite loss."
+    },
+    "expected_calibration_error": {
+      "top_label_ece_formula": "ECE_top = sum_{m=1}^M (|B_m| / N) * |acc(B_m) - conf(B_m)|",
+      "classwise_ece_formula": "ECE_cw = (1/K) * sum_{k=1}^K sum_{m=1}^M (|B_{mk}| / N) * |acc(B_{mk}) - conf(B_{mk})|",
+      "bin_counts": 15,
+      "binning_strategies": [
+        "15 Equal-Width (uniform)",
+        "15 Equal-Frequency (quantile)"
+      ],
+      "empty_bin_handling": "Empty bins (|B_m| = 0) contribute exactly 0.0 to the weighted summation."
+    }
+  },
+  "instruments": {
+    "BTCUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 26140,
+      "uncalibrated": {
+        "brier_score": 0.560452,
+        "log_loss": 0.8901,
+        "top_ece_uniform": 0.035569,
+        "top_ece_quantile": 0.034453
+      },
+      "calibrated": {
+        "brier_score": 0.532339,
+        "log_loss": 0.807742,
+        "top_ece_uniform": 0.005982,
+        "top_ece_quantile": 0.012143
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.028113,
+          "se": 0.000747,
+          "ci_95": [
+            -0.0295,
+            -0.026614
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.082358,
+          "se": 0.001627,
+          "ci_95": [
+            -0.085347,
+            -0.079059
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.029587,
+        "delta_top_ece_quantile": -0.02231,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    },
+    "ETHUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 26148,
+      "uncalibrated": {
+        "brier_score": 0.552956,
+        "log_loss": 0.865217,
+        "top_ece_uniform": 0.021216,
+        "top_ece_quantile": 0.024087
+      },
+      "calibrated": {
+        "brier_score": 0.536281,
+        "log_loss": 0.814186,
+        "top_ece_uniform": 0.014285,
+        "top_ece_quantile": 0.014886
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.016675,
+          "se": 0.000701,
+          "ci_95": [
+            -0.018089,
+            -0.015317
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.051031,
+          "se": 0.001723,
+          "ci_95": [
+            -0.054328,
+            -0.04772
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.006931,
+        "delta_top_ece_quantile": -0.009201,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    },
+    "BNBUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 26171,
+      "uncalibrated": {
+        "brier_score": 0.535734,
+        "log_loss": 0.830349,
+        "top_ece_uniform": 0.016344,
+        "top_ece_quantile": 0.016286
+      },
+      "calibrated": {
+        "brier_score": 0.531778,
+        "log_loss": 0.808164,
+        "top_ece_uniform": 0.004964,
+        "top_ece_quantile": 0.012574
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.003957,
+          "se": 0.000289,
+          "ci_95": [
+            -0.004529,
+            -0.003423
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.022185,
+          "se": 0.000809,
+          "ci_95": [
+            -0.023751,
+            -0.020589
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.01138,
+        "delta_top_ece_quantile": -0.003712,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    },
+    "XRPUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 26120,
+      "uncalibrated": {
+        "brier_score": 0.528215,
+        "log_loss": 0.808362,
+        "top_ece_uniform": 0.015869,
+        "top_ece_quantile": 0.01692
+      },
+      "calibrated": {
+        "brier_score": 0.524807,
+        "log_loss": 0.785907,
+        "top_ece_uniform": 0.010748,
+        "top_ece_quantile": 0.019647
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.003408,
+          "se": 0.000352,
+          "ci_95": [
+            -0.004125,
+            -0.002772
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.022455,
+          "se": 0.000918,
+          "ci_95": [
+            -0.024206,
+            -0.020608
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.005121,
+        "delta_top_ece_quantile": 0.002727,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    },
+    "ADAUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 26099,
+      "uncalibrated": {
+        "brier_score": 0.626053,
+        "log_loss": 1.022845,
+        "top_ece_uniform": 0.018765,
+        "top_ece_quantile": 0.02453
+      },
+      "calibrated": {
+        "brier_score": 0.57971,
+        "log_loss": 0.935507,
+        "top_ece_uniform": 0.013002,
+        "top_ece_quantile": 0.013863
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.046343,
+          "se": 0.001112,
+          "ci_95": [
+            -0.048456,
+            -0.044106
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.087338,
+          "se": 0.002393,
+          "ci_95": [
+            -0.092071,
+            -0.08237
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.005763,
+        "delta_top_ece_quantile": -0.010668,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    },
+    "SOLUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 26164,
+      "uncalibrated": {
+        "brier_score": 0.537116,
+        "log_loss": 0.831272,
+        "top_ece_uniform": 0.025125,
+        "top_ece_quantile": 0.023519
+      },
+      "calibrated": {
+        "brier_score": 0.528614,
+        "log_loss": 0.795249,
+        "top_ece_uniform": 0.005479,
+        "top_ece_quantile": 0.012309
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.008501,
+          "se": 0.000448,
+          "ci_95": [
+            -0.009431,
+            -0.007676
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.036022,
+          "se": 0.001394,
+          "ci_95": [
+            -0.038848,
+            -0.033395
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.019646,
+        "delta_top_ece_quantile": -0.01121,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    },
+    "AVAXUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 26166,
+      "uncalibrated": {
+        "brier_score": 0.621145,
+        "log_loss": 1.014933,
+        "top_ece_uniform": 0.017902,
+        "top_ece_quantile": 0.020778
+      },
+      "calibrated": {
+        "brier_score": 0.612579,
+        "log_loss": 0.999983,
+        "top_ece_uniform": 0.016511,
+        "top_ece_quantile": 0.018771
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.008566,
+          "se": 0.000386,
+          "ci_95": [
+            -0.009284,
+            -0.007782
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.01495,
+          "se": 0.000658,
+          "ci_95": [
+            -0.016142,
+            -0.013639
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.001391,
+        "delta_top_ece_quantile": -0.002008,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    },
+    "LINKUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 26157,
+      "uncalibrated": {
+        "brier_score": 0.604544,
+        "log_loss": 0.986024,
+        "top_ece_uniform": 0.023953,
+        "top_ece_quantile": 0.023579
+      },
+      "calibrated": {
+        "brier_score": 0.602175,
+        "log_loss": 0.979209,
+        "top_ece_uniform": 0.021456,
+        "top_ece_quantile": 0.020841
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.002368,
+          "se": 0.000261,
+          "ci_95": [
+            -0.002893,
+            -0.001854
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.006815,
+          "se": 0.000444,
+          "ci_95": [
+            -0.007713,
+            -0.00599
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.002498,
+        "delta_top_ece_quantile": -0.002738,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    },
+    "DOGEUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 26132,
+      "uncalibrated": {
+        "brier_score": 0.533394,
+        "log_loss": 0.823128,
+        "top_ece_uniform": 0.016916,
+        "top_ece_quantile": 0.017922
+      },
+      "calibrated": {
+        "brier_score": 0.530119,
+        "log_loss": 0.801823,
+        "top_ece_uniform": 0.006676,
+        "top_ece_quantile": 0.009931
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.003275,
+          "se": 0.000311,
+          "ci_95": [
+            -0.003942,
+            -0.002688
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.021305,
+          "se": 0.001017,
+          "ci_95": [
+            -0.023344,
+            -0.01932
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.010241,
+        "delta_top_ece_quantile": -0.007991,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    },
+    "LTCUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 26095,
+      "uncalibrated": {
+        "brier_score": 0.624397,
+        "log_loss": 1.023738,
+        "top_ece_uniform": 0.020813,
+        "top_ece_quantile": 0.021469
+      },
+      "calibrated": {
+        "brier_score": 0.612785,
+        "log_loss": 0.999934,
+        "top_ece_uniform": 0.013045,
+        "top_ece_quantile": 0.012879
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.011612,
+          "se": 0.000516,
+          "ci_95": [
+            -0.012664,
+            -0.010584
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.023804,
+          "se": 0.001015,
+          "ci_95": [
+            -0.02586,
+            -0.021778
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.007768,
+        "delta_top_ece_quantile": -0.00859,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    },
+    "XMRUSDT": {
+      "selected_method": "VectorPlattScaling",
+      "sample_count_eval": 3052,
+      "uncalibrated": {
+        "brier_score": 0.668869,
+        "log_loss": 1.088858,
+        "top_ece_uniform": 0.098922,
+        "top_ece_quantile": 0.099505
+      },
+      "calibrated": {
+        "brier_score": 0.614863,
+        "log_loss": 1.009397,
+        "top_ece_uniform": 0.027187,
+        "top_ece_quantile": 0.048277
+      },
+      "paired_deltas_with_95_ci": {
+        "delta_brier": {
+          "mean": -0.054006,
+          "se": 0.005095,
+          "ci_95": [
+            -0.063914,
+            -0.044009
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_log_loss": {
+          "mean": -0.079461,
+          "se": 0.008729,
+          "ci_95": [
+            -0.096324,
+            -0.061623
+          ],
+          "statistically_significant_reduction": true
+        },
+        "delta_top_ece_uniform": -0.071735,
+        "delta_top_ece_quantile": -0.051228,
+        "ece_improved": true
+      },
+      "bin_support_sample": [
+        {
+          "bin_index": 1,
+          "range": [
+            0.0,
+            0.06666666666666667
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.06666666666666667,
+            0.13333333333333333
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.13333333333333333,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "gap": 0.0
+        }
+      ]
+    }
+  },
+  "workstream_status": "PASS"
+}
