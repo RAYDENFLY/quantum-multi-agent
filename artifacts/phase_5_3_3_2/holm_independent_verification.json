@@ -1,0 +1,531 @@
+{
+  "family_metadata": {
+    "family_name": "Primary Confirmatory ML Baselines vs B0 Chance",
+    "family_size": 33,
+    "family_completeness_verified": true,
+    "alpha_fwer": 0.05,
+    "correction_procedure": "Holm-Bonferroni step-down sequential rejection"
+  },
+  "audit_summary": {
+    "total_comparisons": 33,
+    "significant_at_fwer_0_05": 33,
+    "max_adjusted_p_value": 0.032967,
+    "reproducibility_status": "BIT_EXACT_REPRODUCIBILITY_CONFIRMED",
+    "implementation_classification": "VERIFIED_WITH_LIMITATIONS"
+  },
+  "bnb_b2_investigation": {
+    "symbol": "BNBUSDT",
+    "model": "B2_LogisticRegression",
+    "observed_lift": 0.0228,
+    "raw_p_value": 0.001998,
+    "derived_rank": 31,
+    "step_down_multiplier": 3,
+    "step_down_alpha_threshold": 0.016667,
+    "adjusted_p_value": 0.032967,
+    "tied_comparisons_count": 5,
+    "tied_ranks_span": [
+      27,
+      31
+    ],
+    "conservative_threshold_at_rank_27": 0.007143,
+    "survives_under_all_tie_breaking_orders": true,
+    "prng_sequence_coupling_discovery": "The raw p-value of 0.001998 for BNB B2 is coupled to the PRNG execution order where all 4 block lengths [12, 24, 48, 96] were sampled per model in Task C. Under this sequence, BNB B2 draws exactly 1 non-positive sample out of 1000 (raw p = 2/1001 = 0.001998). If evaluated in isolation with only b=12, BNB B2 draws 0 non-positive samples (raw p = 1/1001 = 0.000999). In either PRNG state, p <= 0.001998, which is strictly less than the critical threshold 0.016667 (and 0.007143 at rank 27)."
+  },
+  "audit_table": [
+    {
+      "rank": 1,
+      "symbol": "ADAUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.1157,
+      "ci_95": [
+        0.082,
+        0.1503
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 33,
+      "step_down_alpha": 0.001515,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 2,
+      "symbol": "LTCUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.1068,
+      "ci_95": [
+        0.0471,
+        0.1683
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 32,
+      "step_down_alpha": 0.001563,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 3,
+      "symbol": "LTCUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.1022,
+      "ci_95": [
+        0.0589,
+        0.1459
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 31,
+      "step_down_alpha": 0.001613,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 4,
+      "symbol": "ADAUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.0945,
+      "ci_95": [
+        0.0521,
+        0.1339
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 30,
+      "step_down_alpha": 0.001667,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 5,
+      "symbol": "ADAUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0901,
+      "ci_95": [
+        0.0652,
+        0.1129
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 29,
+      "step_down_alpha": 0.001724,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 6,
+      "symbol": "LTCUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0875,
+      "ci_95": [
+        0.0445,
+        0.1303
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 28,
+      "step_down_alpha": 0.001786,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 7,
+      "symbol": "ETHUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.0862,
+      "ci_95": [
+        0.0712,
+        0.1003
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 27,
+      "step_down_alpha": 0.001852,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 8,
+      "symbol": "XMRUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0844,
+      "ci_95": [
+        0.0682,
+        0.1005
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 26,
+      "step_down_alpha": 0.001923,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 9,
+      "symbol": "ETHUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.0844,
+      "ci_95": [
+        0.0746,
+        0.0941
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 25,
+      "step_down_alpha": 0.002,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 10,
+      "symbol": "AVAXUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.0812,
+      "ci_95": [
+        0.0465,
+        0.1214
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 24,
+      "step_down_alpha": 0.002083,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 11,
+      "symbol": "BTCUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.0793,
+      "ci_95": [
+        0.0558,
+        0.0987
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 23,
+      "step_down_alpha": 0.002174,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 12,
+      "symbol": "AVAXUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.0771,
+      "ci_95": [
+        0.0337,
+        0.1166
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 22,
+      "step_down_alpha": 0.002273,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 13,
+      "symbol": "BTCUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.0766,
+      "ci_95": [
+        0.0527,
+        0.1013
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 21,
+      "step_down_alpha": 0.002381,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 14,
+      "symbol": "AVAXUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0751,
+      "ci_95": [
+        0.0332,
+        0.1164
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 20,
+      "step_down_alpha": 0.0025,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 15,
+      "symbol": "LINKUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.0735,
+      "ci_95": [
+        0.0353,
+        0.1127
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 19,
+      "step_down_alpha": 0.002632,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 16,
+      "symbol": "LINKUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0651,
+      "ci_95": [
+        0.0258,
+        0.1031
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 18,
+      "step_down_alpha": 0.002778,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 17,
+      "symbol": "DOGEUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.0627,
+      "ci_95": [
+        0.0329,
+        0.0934
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 17,
+      "step_down_alpha": 0.002941,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 18,
+      "symbol": "BTCUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0586,
+      "ci_95": [
+        0.0403,
+        0.0776
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 16,
+      "step_down_alpha": 0.003125,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 19,
+      "symbol": "XMRUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.0569,
+      "ci_95": [
+        0.0348,
+        0.0808
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 15,
+      "step_down_alpha": 0.003333,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 20,
+      "symbol": "SOLUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.0545,
+      "ci_95": [
+        0.0239,
+        0.0834
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 14,
+      "step_down_alpha": 0.003571,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 21,
+      "symbol": "ETHUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0542,
+      "ci_95": [
+        0.0382,
+        0.0723
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 13,
+      "step_down_alpha": 0.003846,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 22,
+      "symbol": "DOGEUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.0537,
+      "ci_95": [
+        0.0303,
+        0.0784
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 12,
+      "step_down_alpha": 0.004167,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 23,
+      "symbol": "XMRUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.0483,
+      "ci_95": [
+        0.0307,
+        0.0643
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 11,
+      "step_down_alpha": 0.004545,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 24,
+      "symbol": "XRPUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.0415,
+      "ci_95": [
+        0.0174,
+        0.0644
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 10,
+      "step_down_alpha": 0.005,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 25,
+      "symbol": "XRPUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0376,
+      "ci_95": [
+        0.0155,
+        0.0606
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 9,
+      "step_down_alpha": 0.005556,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 26,
+      "symbol": "XRPUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.0326,
+      "ci_95": [
+        0.0131,
+        0.052
+      ],
+      "raw_p_value": 0.000999,
+      "step_down_multiplier": 8,
+      "step_down_alpha": 0.00625,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 27,
+      "symbol": "LINKUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.0689,
+      "ci_95": [
+        0.0303,
+        0.1093
+      ],
+      "raw_p_value": 0.001998,
+      "step_down_multiplier": 7,
+      "step_down_alpha": 0.007143,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 28,
+      "symbol": "SOLUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.0475,
+      "ci_95": [
+        0.021,
+        0.0779
+      ],
+      "raw_p_value": 0.001998,
+      "step_down_multiplier": 6,
+      "step_down_alpha": 0.008333,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 29,
+      "symbol": "SOLUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0402,
+      "ci_95": [
+        0.0136,
+        0.0693
+      ],
+      "raw_p_value": 0.001998,
+      "step_down_multiplier": 5,
+      "step_down_alpha": 0.01,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 30,
+      "symbol": "BNBUSDT",
+      "model": "B4_LightGBM",
+      "observed_lift": 0.0366,
+      "ci_95": [
+        0.0138,
+        0.0586
+      ],
+      "raw_p_value": 0.001998,
+      "step_down_multiplier": 4,
+      "step_down_alpha": 0.0125,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 31,
+      "symbol": "BNBUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0228,
+      "ci_95": [
+        0.0077,
+        0.0391
+      ],
+      "raw_p_value": 0.001998,
+      "step_down_multiplier": 3,
+      "step_down_alpha": 0.016667,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 32,
+      "symbol": "DOGEUSDT",
+      "model": "B2_LogisticRegression",
+      "observed_lift": 0.0505,
+      "ci_95": [
+        0.0172,
+        0.0871
+      ],
+      "raw_p_value": 0.003996,
+      "step_down_multiplier": 2,
+      "step_down_alpha": 0.025,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    },
+    {
+      "rank": 33,
+      "symbol": "BNBUSDT",
+      "model": "B3_RandomForest",
+      "observed_lift": 0.0309,
+      "ci_95": [
+        0.0095,
+        0.0516
+      ],
+      "raw_p_value": 0.005994,
+      "step_down_multiplier": 1,
+      "step_down_alpha": 0.05,
+      "adjusted_p_value": 0.032967,
+      "decision": "SIGNIFICANT"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "bootstrap_independent_verification.json": "0c0aa3afb03e647f19b20b23d81ac8aa3f5d1fbf42732728f79f732a2f2ed211",
+  "hash_verification.json": "c3f90dbcc42fdfb42119abc1995d4c168ae0807252e70e623caa0eec83f09c72",
+  "holm_independent_verification.json": "932177b643acec1e4976a01ff796b489ce3079d75d957c311e9dbc97da7a59b7",
+  "temporal_leakage_verification.json": "fd2541e0c58793f2433d2936f2762bcbe53e7eac17eab129d179e47b7cc57dc4",
+  "xmr_fold_independent_verification.json": "5ca73d2dc8122aa66f9edab0432572fe7407a431be5a57c31e9cb89fd994489e"
+}

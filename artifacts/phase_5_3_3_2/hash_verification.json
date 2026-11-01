@@ -1,0 +1,61 @@
+{
+  "manifest_path": "artifacts\\phase_5_3_3_1\\final_manifest_hashes.json",
+  "manifest_files_count": 7,
+  "files_on_disk_count": 8,
+  "missing_files": [],
+  "unexpected_files": [],
+  "all_hashes_matched": true,
+  "hash_audit_details": [
+    {
+      "file": "bootstrap_sensitivity.json",
+      "recorded_sha256": "f095c159726cee1a545b349207a5526419c9abd043e8b70fb4777cf15e6bc40b",
+      "recalculated_sha256": "f095c159726cee1a545b349207a5526419c9abd043e8b70fb4777cf15e6bc40b",
+      "matched": true
+    },
+    {
+      "file": "brier_reconciliation.json",
+      "recorded_sha256": "0388784727d3e3197c154f4cb9a88b09ae1416d5811ff3e96cd399d99f54ea6c",
+      "recalculated_sha256": "0388784727d3e3197c154f4cb9a88b09ae1416d5811ff3e96cd399d99f54ea6c",
+      "matched": true
+    },
+    {
+      "file": "embargo_governance_decision.json",
+      "recorded_sha256": "725157494be6677f102acb1ca9eca52c1e3d01d7b0bd3b461c272e52ff3e55d6",
+      "recalculated_sha256": "725157494be6677f102acb1ca9eca52c1e3d01d7b0bd3b461c272e52ff3e55d6",
+      "matched": true
+    },
+    {
+      "file": "final_benchmark_catalog.json",
+      "recorded_sha256": "94ca6ce51eb3035330095cdd78f645d0ed14c9f614b14fb664abcda084a19b64",
+      "recalculated_sha256": "94ca6ce51eb3035330095cdd78f645d0ed14c9f614b14fb664abcda084a19b64",
+      "matched": true
+    },
+    {
+      "file": "final_winner_catalog.json",
+      "recorded_sha256": "cb58c586584c19dffdbe97bee9752831b7b684d716a8888c2f6b5e3010c4959c",
+      "recalculated_sha256": "cb58c586584c19dffdbe97bee9752831b7b684d716a8888c2f6b5e3010c4959c",
+      "matched": true
+    },
+    {
+      "file": "holm_adjusted_pvalues.json",
+      "recorded_sha256": "88026656cd059907bdd58fed4a575f6944ab8e891b6c97490033c40ebfce50de",
+      "recalculated_sha256": "88026656cd059907bdd58fed4a575f6944ab8e891b6c97490033c40ebfce50de",
+      "matched": true
+    },
+    {
+      "file": "xmr_fold_reconciliation.json",
+      "recorded_sha256": "f9a8e8fc4ab0162ac9c54a17fd8de215d105ce3e60f2102953f8e00d6a0dddce",
+      "recalculated_sha256": "f9a8e8fc4ab0162ac9c54a17fd8de215d105ce3e60f2102953f8e00d6a0dddce",
+      "matched": true
+    }
+  ],
+  "historical_artifacts_preserved": {
+    "phase_5_3_1_intact": true,
+    "phase_5_3_1_file_count": 43,
+    "phase_5_3_2_intact": true,
+    "phase_5_3_2_file_count": 283,
+    "phase_5_3_3_intact": true,
+    "phase_5_3_3_file_count": 8
+  },
+  "task_classification": "VERIFIED"
+}

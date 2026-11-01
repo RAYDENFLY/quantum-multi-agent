@@ -1,0 +1,206 @@
+{
+  "physical_provenance": {
+    "physical_fold_directories": [
+      "fold_1",
+      "fold_2",
+      "fold_3",
+      "fold_4",
+      "fold_5"
+    ],
+    "fold_count": 5,
+    "all_directories_populated": true,
+    "unique_fold_identities_verified": true
+  },
+  "sample_counts_and_boundaries": {
+    "fold_details": [
+      {
+        "fold_name": "fold_1",
+        "files": [
+          "lgbm_model.joblib",
+          "metrics.json",
+          "preprocessor.joblib"
+        ],
+        "has_lgbm_model": true,
+        "has_preprocessor": true,
+        "has_metrics": true,
+        "train_samples": 15299,
+        "test_samples": 3050,
+        "b2_bal_acc": 0.4407,
+        "b3_bal_acc": 0.4295,
+        "b4_bal_acc": 0.4121
+      },
+      {
+        "fold_name": "fold_2",
+        "files": [
+          "lgbm_model.joblib",
+          "metrics.json",
+          "preprocessor.joblib"
+        ],
+        "has_lgbm_model": true,
+        "has_preprocessor": true,
+        "has_metrics": true,
+        "train_samples": 18361,
+        "test_samples": 3050,
+        "b2_bal_acc": 0.3873,
+        "b3_bal_acc": 0.3443,
+        "b4_bal_acc": 0.3547
+      },
+      {
+        "fold_name": "fold_3",
+        "files": [
+          "lgbm_model.joblib",
+          "metrics.json",
+          "preprocessor.joblib"
+        ],
+        "has_lgbm_model": true,
+        "has_preprocessor": true,
+        "has_metrics": true,
+        "train_samples": 21423,
+        "test_samples": 3050,
+        "b2_bal_acc": 0.4188,
+        "b3_bal_acc": 0.3923,
+        "b4_bal_acc": 0.3822
+      },
+      {
+        "fold_name": "fold_4",
+        "files": [
+          "lgbm_model.joblib",
+          "metrics.json",
+          "preprocessor.joblib"
+        ],
+        "has_lgbm_model": true,
+        "has_preprocessor": true,
+        "has_metrics": true,
+        "train_samples": 24485,
+        "test_samples": 3050,
+        "b2_bal_acc": 0.4091,
+        "b3_bal_acc": 0.3985,
+        "b4_bal_acc": 0.3872
+      },
+      {
+        "fold_name": "fold_5",
+        "files": [
+          "lgbm_model.joblib",
+          "metrics.json",
+          "preprocessor.joblib"
+        ],
+        "has_lgbm_model": true,
+        "has_preprocessor": true,
+        "has_metrics": true,
+        "train_samples": 27547,
+        "test_samples": 3052,
+        "b2_bal_acc": 0.4326,
+        "b3_bal_acc": 0.3865,
+        "b4_bal_acc": 0.3716
+      }
+    ],
+    "fold_metadata_from_pilot_summary": [
+      {
+        "fold": 1,
+        "train_samples": 15299,
+        "test_samples": 3050,
+        "purged_samples": 12,
+        "test_purged_samples": 12,
+        "embargo_samples": 24,
+        "train_start_ms": 1768382700000,
+        "train_end_ms": 1772979900000,
+        "test_start_ms": 1772983800000,
+        "test_end_ms": 1773899700000
+      },
+      {
+        "fold": 2,
+        "train_samples": 18361,
+        "test_samples": 3050,
+        "purged_samples": 12,
+        "test_purged_samples": 12,
+        "embargo_samples": 24,
+        "train_start_ms": 1768382700000,
+        "train_end_ms": 1773899700000,
+        "test_start_ms": 1773903600000,
+        "test_end_ms": 1774820700000
+      },
+      {
+        "fold": 3,
+        "train_samples": 21423,
+        "test_samples": 3050,
+        "purged_samples": 12,
+        "test_purged_samples": 12,
+        "embargo_samples": 24,
+        "train_start_ms": 1768382700000,
+        "train_end_ms": 1774820700000,
+        "test_start_ms": 1774824600000,
+        "test_end_ms": 1775739600000
+      },
+      {
+        "fold": 4,
+        "train_samples": 24485,
+        "test_samples": 3050,
+        "purged_samples": 12,
+        "test_purged_samples": 12,
+        "embargo_samples": 24,
+        "train_start_ms": 1768382700000,
+        "train_end_ms": 1775739600000,
+        "test_start_ms": 1775743500000,
+        "test_end_ms": 1776663900000
+      },
+      {
+        "fold": 5,
+        "train_samples": 27547,
+        "test_samples": 3052,
+        "purged_samples": 12,
+        "test_purged_samples": 12,
+        "embargo_samples": 24,
+        "train_start_ms": 1768382700000,
+        "train_end_ms": 1776663900000,
+        "test_start_ms": 1776667800000,
+        "test_end_ms": 1777586100000
+      }
+    ]
+  },
+  "full_precision_arithmetic_recalculation": {
+    "B2_LogisticRegression": {
+      "fold_values": [
+        0.4407,
+        0.3873,
+        0.4188,
+        0.4091,
+        0.4326
+      ],
+      "recalculated_mean": 0.41769999999999996,
+      "recalculated_std": 0.018710104222050713,
+      "reported_mean": 0.4177,
+      "matches": true
+    },
+    "B3_RandomForest": {
+      "fold_values": [
+        0.4295,
+        0.3443,
+        0.3923,
+        0.3985,
+        0.3865
+      ],
+      "recalculated_mean": 0.39022000000000007,
+      "recalculated_std": 0.02734332825389038,
+      "reported_mean": 0.3902,
+      "matches": true
+    },
+    "B4_LightGBM": {
+      "fold_values": [
+        0.4121,
+        0.3547,
+        0.3822,
+        0.3872,
+        0.3716
+      ],
+      "recalculated_mean": 0.38156,
+      "recalculated_std": 0.018897470730232662,
+      "reported_mean": 0.3816,
+      "matches": true
+    }
+  },
+  "reconciliation_of_historical_descriptions": {
+    "definitive_fold_count": 5,
+    "historical_three_fold_mention_explanation": "The 3-fold description in Phase 5.3.2 documentation was an unexecuted text artifact carried over from early Phase 5.3.0 drafting notes regarding short-history data. Physical disk evidence proves 5 folds were generated, trained, and evaluated in Phase 5.3.1, and the published metrics are bit-exact matches to the 5-fold mean."
+  },
+  "task_classification": "VERIFIED"
+}
