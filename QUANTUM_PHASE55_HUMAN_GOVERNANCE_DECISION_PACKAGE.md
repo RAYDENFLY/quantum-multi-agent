@@ -18,6 +18,8 @@
 - **Governance Exception EXC-PHASE55-01:** `PENDING_HUMAN_RATIFICATION`
 - **Layer 2 Technical Design Approval:** `NOT_APPROVED`
 - **Prospective Holdout Dataset:** `STRICTLY_SEALED`
+- **OOF Artifact Timestamp Boundary Check:** `TEST_VERIFIED` (all 11 OOF Parquets terminate at `1777586100000`, strictly `< 1793491200000`)
+- **Prospective Holdout Access History:** `NOT_VERIFIED via logs` (filesystem read logs absent; non-access enforced via policy and unsealing prohibitions)
 - **Historical Economic Backtesting:** `NOT_AUTHORIZED`
 - **Targeted Backtest Test Suite:** `VERIFIED` (44/44 tests passed with exit code 0)
 - **Full Repository Test Suite:** `PARTIALLY_VERIFIED` (607 collected, stdout 607 passed, harness cancellation recorded)
@@ -50,15 +52,20 @@ Phase 5.5 is designed to evaluate whether the frozen Phase 5.3 machine learning 
 
 ### 2. Technical Infrastructure Implemented
 An executable backtesting package was developed in [`src/quantum/backtesting/`](file:///d:/quantum-multi-agent/src/quantum/backtesting/):
-- **OOF Probability Adapter ([`adapters.py`](file:///d:/quantum-multi-agent/src/quantum/backtesting/adapters.py)):** Audits and ingests pre-computed out-of-fold probability artifacts across all 11 assets without retraining or recalibrating models. Enforces simplex constraints, timestamp monotonicity, prospective holdout isolation (`< 1777586400000`), and explicit tagging of Fold 5 (`FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED`).
+- **OOF Probability Adapter ([`adapters.py`](file:///d:/quantum-multi-agent/src/quantum/backtesting/adapters.py)):** Audits and ingests pre-computed out-of-fold probability artifacts across all 11 assets without retraining or recalibrating models. Enforces simplex constraints, timestamp monotonicity, prospective holdout isolation (`< 1793491200000`), and explicit tagging of Fold 5 (`FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED`).
 - **Track 1 Predictive Evaluator ([`track1.py`](file:///d:/quantum-multi-agent/src/quantum/backtesting/track1.py)):** Computes Balanced Accuracy, Multiclass Brier Score, ROC-AUC One-vs-Rest, Expected Calibration Error (uniform, quantile, and classwise), and AURCC over `VERIFIED_OOF` folds (1 to 4) and Fold 5 separately.
 - **Track 2 Discrete-Event Runner ([`engine.py`](file:///d:/quantum-multi-agent/src/quantum/backtesting/engine.py)):** Implements a candle-by-candle simulation loop executing fills at `open[s+1]` ($t_{s+1}$) with half-spread slippage, opening-gap breach detection, conservative intrabar double-touch collision handling, exact 12-bar holding horizon monitoring, and three explicit Risk Evaluation Modes.
 - **Reference-Price Accounting Engine ([`accounting.py`](file:///d:/quantum-multi-agent/src/quantum/backtesting/accounting.py)):** Decomposes realized trade loss into reference price displacement, two-legged execution deviation, asymmetric taker fees, signed discrete funding cash flows, and multi-step position lifecycle reconciliations.
 - **Hardware Resource Controller ([`resources.py`](file:///d:/quantum-multi-agent/src/quantum/backtesting/resources.py)):** Enforces a maximum of two computational threads (`BACKTEST_MAX_THREADS = 2`) across PyArrow CPU/IO thread pools and OpenBLAS/OpenMP numerical runtimes at all package entry points.
 
 ### 3. What Technical Verification Has Established
-- **Targeted Backtest Test Suite:** All 44 unit and integration tests across five dedicated test suites ([`test_simulated_clock.py`](file:///d:/quantum-multi-agent/tests/unit/test_simulated_clock.py), [`test_backtest_accounting.py`](file:///d:/quantum-multi-agent/tests/unit/test_backtest_accounting.py), [`test_backtest_adapters.py`](file:///d:/quantum-multi-agent/tests/unit/test_backtest_adapters.py), [`test_backtest_track1.py`](file:///d:/quantum-multi-agent/tests/unit/test_backtest_track1.py), [`test_backtest_engine.py`](file:///d:/quantum-multi-agent/tests/unit/test_backtest_engine.py)) passed with exit code 0 (`TARGETED_BACKTEST_TEST_SUITE = VERIFIED`).
-- **Full Repository Test Suite:** 607 unit tests collected across the repository (563 legacy + 44 backtest tests). While historical stdout logs record `607 passed, 3 warnings in 22.14s`, the harness process execution recorded cancellation rather than clean process exit code 0 (`task-9111`). Consequently, the authoritative verification status is strictly classified as `FULL_REPOSITORY_TEST_SUITE = PARTIALLY_VERIFIED` (`TEST_EVIDENCE_INCONSISTENT`); claiming fully verified status for the repository suite is prohibited.
+To maintain absolute forensic clarity, the test verification evidence distinguishes four separate verification dimensions:
+- **Pytest Test Collection (Static Discovery):** Pytest collected exactly 44 unit and integration test functions for the targeted backtest suite across five dedicated test files, and 607 unit tests for the full repository test suite across 26 test modules (563 legacy tests + 44 backtest tests).
+- **Pytest Execution (Runtime Invocation):** Both the 44 targeted tests and the 607 repository-wide tests were executed to completion by the pytest runner without test assertion failures.
+- **Historical Stdout Evidence (Log Captures):** Historical stdout capture recorded `44 passed, 2 warnings in 2.22s` for the targeted suite (`task-9146`), and `607 passed, 3 warnings in 22.14s` for the full repository suite (`task-9111`).
+- **Harness Process Exit Code & Completion Status (OS-Level Return):**
+  - *Targeted Backtest Test Suite:* Successfully returned clean OS process exit code 0 (`TARGETED_BACKTEST_TEST_SUITE = VERIFIED`).
+  - *Full Repository Test Suite:* An agent harness task termination occurred during background task management (`Action='kill'`), resulting in `Tool execution was canceled` rather than clean process exit code 0 in the harness record. Under strict governance verification criteria, the repository suite is authoritatively classified as `FULL_REPOSITORY_TEST_SUITE = PARTIALLY_VERIFIED` (`TEST_EVIDENCE_INCONSISTENT`); claiming fully verified status for the repository suite is strictly prohibited.
 - **Simulated Clock Injection:** Wall-clock dependencies were eliminated from `RiskAgent` and `BankerAgent` using deterministic `eval_timestamp_ms`.
 - **Deterministic Replay:** Simulation replays produce 100% byte-identical trade ledgers.
 - **Bounded Resource Consumption:** Peak memory remains below 100 MB (budget `<= 1 GB`); computational threads remain capped at 2 (`BACKTEST_MAX_THREADS = 2`).
@@ -84,41 +91,37 @@ Technical qualification establishes only that code executes correctly according 
 To eliminate conflation, the following six separate governance events are strictly distinguished:
 
 ```text
-+-----------------------------------------------------------------------------------+
-|                      SIX SEPARATE GOVERNANCE EVENTS                               |
-+-----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+|                                    SIX SEPARATE GOVERNANCE EVENTS                                       |
++---------------------------------------------------------------------------------------------------------+
   [Event 1] Technical Verification: Automated unit and integration testing.
             Status: PARTIALLY_VERIFIED (44/44 targeted tests VERIFIED exit code 0;
                     607 full suite PARTIALLY_VERIFIED due to harness cancellation).
        |
-       +------------------------------------+
-       |                                    |
-       v                                    v
-  [Event 2] Exception Ratification     [Event 3] Layer 2 Technical Design Approval
-            (EXC-PHASE55-01):                    Human sign-off on architecture,
-            Human acceptance of code.            accounting, and engine specifications.
-            Status: PENDING_HUMAN_RATIFICATION   Status: NOT_APPROVED / PENDING_REVIEW
-       |                                    |
-       +------------------+-----------------+
-                          |
-                          v
-  [Event 4] Layer 1 Decision Gate Resolutions (DEC_01 to DEC_06)
-            Methodology direction, scope, cost hurdles, and portfolio policy.
-            Status: PENDING_HUMAN_DECISION
-            (Note: Layer 1 and Layer 2 are co-requisite peer gates;
-                   the governance framework does not assert an invented linear order).
-                          |
-                          v
+       +------------------------------------+---------------------------------------+
+       |                                    |                                       |
+       v                                    v                                       v
+  [Event 2] EXC-PHASE55-01             [Event 3] Layer 2 Technical          [Event 4] Layer 1 Decision
+  Exception Ratification:              Design Approval:                     Gate Resolutions (DEC_01-06):
+  Human acceptance of code changes     Human sign-off on backtest engine    Human policy choices on tracks,
+  across commits 222d0c3 & a3f5158.    specs, accounting, & resources.      direction, costs, and risk.
+  Status: PENDING_RATIFICATION         Status: NOT_APPROVED / PENDING       Status: PENDING_HUMAN_DECISION
+       |                                    |                                       |
+       +------------------------------------+---------------------------------------+
+                                            |
+                         [ALL THREE CO-REQUISITES SATISFIED]
+                                            |
+                                            v
   [Event 5] Phase 5.5 Research Execution Authorization
             Permission to execute historical backtest on Folds 1 to 4 (confirmatory)
-            and Fold 5 (exploratory only, OOS_ELIGIBILITY_NOT_VERIFIED).
+            and Fold 5 (exploratory only, FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED).
             Status: NOT_AUTHORIZED
-                          |
-                          v
+                                            |
+                                            v
   [Event 6] Prospective Holdout Access Authorization (Nov 1, 2026 - Apr 30, 2027)
-            Permission to unseal prospective holdout dataset post Phase 5.5.
+            Permission to unseal prospective holdout dataset (>= 1793491200000 ms) post Phase 5.5.
             Status: STRICTLY_SEALED / FORBIDDEN (Distinct, uncompromised gate).
-+-----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
 ```
 
 Under the QUANTUM Two-Layer Governance Framework, Layer 1 (Methodology Direction) and Layer 2 (Technical Design Approval) are co-requisite peer approval gates. The governance framework does not mandate an invented strict serial order between Layer 1 and Layer 2 (e.g. whether Layer 1 must precede Layer 2 or Layer 2 must precede Layer 1); their review order is an unresolved dependency left to supervisor discretion. However, research execution (Event 5 / Layer 3) strictly requires that Exception Ratification (Event 2), Layer 2 Approval (Event 3), and Layer 1 Resolutions (Event 4) all be affirmatively completed before historical backtesting can begin. Furthermore, Prospective Holdout Access (Event 6) is strictly forbidden and isolated from Phase 5.5 historical backtesting, requiring separate uncompromised authorization post Phase 5.5.
@@ -181,10 +184,18 @@ Git forensic inspection reveals that the unapproved backtesting implementation s
   - Author: `Azis Maulana Suhada <raydenfly84@gmail.com>`, Mon Nov 2 18:03:52 2026 +07:00
   - Files added (1 file): [`docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE55_INDEPENDENT_READ_ONLY_EVIDENCE_AUDIT.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE55_INDEPENDENT_READ_ONLY_EVIDENCE_AUDIT.md)
 
-- **Working Tree State:**
-  - Tracked Files: Clean (zero uncommitted changes across tracked files).
-  - Untracked Files: [`QUANTUM_PHASE55_HUMAN_GOVERNANCE_DECISION_PACKAGE.md`](file:///d:/quantum-multi-agent/QUANTUM_PHASE55_HUMAN_GOVERNANCE_DECISION_PACKAGE.md) (this governance decision package draft).
-  - Scope of Exception EXC-PHASE55-01: Covers all unapproved backtesting implementation changes across both commits `222d0c3` and `a3f5158` that were executed without prior formal Layer 1 decision gate approval.
+- **Decision Package Baseline Commit (`b695973`):**
+  - Commit Hash: `b6959735b735f29d7dfbcf768152da754049c45f`
+  - Commit Message: `docs(governance): add Phase 5.5 human governance decision package`
+  - Author: `Azis Maulana Suhada <raydenfly84@gmail.com>`, Mon Nov 2 18:23:36 2026 +07:00
+  - Files added (1 file): [`QUANTUM_PHASE55_HUMAN_GOVERNANCE_DECISION_PACKAGE.md`](file:///d:/quantum-multi-agent/QUANTUM_PHASE55_HUMAN_GOVERNANCE_DECISION_PACKAGE.md)
+
+- **Current Working Tree State:**
+  - `git status --short`: ` M QUANTUM_PHASE55_HUMAN_GOVERNANCE_DECISION_PACKAGE.md` (single modified tracked file in working directory).
+  - Tracked Files: Only [`QUANTUM_PHASE55_HUMAN_GOVERNANCE_DECISION_PACKAGE.md`](file:///d:/quantum-multi-agent/QUANTUM_PHASE55_HUMAN_GOVERNANCE_DECISION_PACKAGE.md) contains unstaged in-place errata and reconciliation edits. Zero other tracked files are modified.
+  - Staged Changes: Zero (index is clean).
+  - Untracked Files: Zero.
+  - Scope of Exception EXC-PHASE55-01: Governs all unapproved backtesting implementation changes across both commits `222d0c3` and `a3f5158` that were executed without prior formal Layer 1 decision gate approval.
 
 ### 3. Engineering Changes & Evidence
 - Injected simulated clock, eliminating wall-clock coupling.
@@ -200,7 +211,7 @@ Git forensic inspection reveals that the unapproved backtesting implementation s
 ### 4. Integrity of Frozen Artifacts & Holdouts
 - Phase 5.3 model weights: 100% untouched and immutable.
 - Phase 5.4 preprocessors: 100% untouched and immutable.
-- Prospective holdout dataset (`>= 2026-11-01`): 100% sealed and unaccessed.
+- Prospective holdout dataset (`open_time_ms >= 1793491200000` / `2026-11-01 00:00:00 UTC`): Strictly sealed under governance mandate (`STRICTLY_SEALED`). OOF artifact timestamp boundary check is `TEST_VERIFIED` (all 11 OOF Parquets terminate at `1777586100000`, strictly `< 1793491200000`). Prospective holdout access history is `NOT_VERIFIED via logs` (filesystem read logs absent; non-access enforced via policy and unsealing prohibitions).
 - Historical economic backtests: Strictly `NOT_STARTED` / `NOT_AUTHORIZED`.
 
 ### 5. Decision Alternatives for the Human Supervisor
@@ -219,9 +230,13 @@ Git forensic inspection reveals that the unapproved backtesting implementation s
 
   [OPTION B: REJECT OR DEFER EXCEPTION]
   - Decline ratification of the unapproved code changes.
-  - Direct engineering to revert commits a3f5158 and 222d0c3 or isolate the backtesting
-    package in an unmerged branch until formal Layer 1 decision gates are completed.
-  - Specify required governance remediation procedure.
+  - Direct selective reversal or quarantine isolation strictly of implementation files
+    (e.g., modules in src/quantum/backtesting/ and agent simulated-clock hooks).
+  - Explicitly preserve all governance dossiers, technical audit reports, changelogs,
+    and exception records in docs/research/phase_5_5_governance_dossier/ to maintain the
+    complete immutable governance audit trail.
+  - Require explicit written Human Governance Supervisor direction and approval before
+    executing any Git operation (revert, branch, or reset).
 +-----------------------------------------------------------------------------------+
 ```
 
@@ -232,7 +247,26 @@ Git forensic inspection reveals that the unapproved backtesting implementation s
 ### 1. Architecture Evaluation
 The technical design of the Phase 5.5 backtesting engine was evaluated across 10 functional dimensions:
 
-1. **OOF Adapter Architecture:** Loads pre-computed Parquet predictions. Segregates 10 primary assets from `XMRUSDT` (`DEC_06`). Validates probability simplex (`max error <= 1e-4`). Ensures prospective holdout timestamps are excluded (`< 1777586400000`).
+1. **OOF Adapter Architecture & Materialized Artifact Audit:** Loads pre-computed Parquet predictions. Segregates 10 primary assets from `XMRUSDT` (`DEC_06`). Validates probability simplex (`max error <= 1e-4`, observed machine-precision maximum `2.22e-16`). Enforces that prospective holdout timestamps are strictly excluded (`< 1793491200000`).
+
+   **Materialized OOF Artifact Evidence Table (Inspected Read-Only from `artifacts/phase_5_4/materialized_oof/`):**
+
+   | Asset Symbol | Total Rows | Min Timestamp (UTC) | Max Timestamp (UTC) | Fold 5 Rows | Fold 5 Eligibility Status | OOF Artifact Timestamp Boundary Check |
+   |---|---|---|---|---|---|---|
+   | `ADAUSDT` | 130,483 | 1738225200000 (2025-01-30 08:20) | 1777586100000 (2026-04-30 21:55) | 26,099 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | `AVAXUSDT` | 130,818 | 1738186500000 (2025-01-29 21:35) | 1777586100000 (2026-04-30 21:55) | 26,166 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | `BNBUSDT` | 130,847 | 1738165500000 (2025-01-29 15:45) | 1777586100000 (2026-04-30 21:55) | 26,171 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | `BTCUSDT` | 130,684 | 1738149600000 (2025-01-29 11:20) | 1777586100000 (2026-04-30 21:55) | 26,140 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | `DOGEUSDT` | 130,648 | 1738161900000 (2025-01-29 14:45) | 1777586100000 (2026-04-30 21:55) | 26,132 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | `ETHUSDT` | 130,728 | 1738125600000 (2025-01-29 04:40) | 1777586100000 (2026-04-30 21:55) | 26,148 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | `LINKUSDT` | 130,777 | 1738204800000 (2025-01-30 02:40) | 1777586100000 (2026-04-30 21:55) | 26,157 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | `LTCUSDT` | 130,463 | 1738226100000 (2025-01-30 08:35) | 1777586100000 (2026-04-30 21:55) | 26,095 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | `SOLUSDT` | 130,808 | 1738119300000 (2025-01-29 02:55) | 1777586100000 (2026-04-30 21:55) | 26,164 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | `XRPUSDT` | 130,600 | 1738197600000 (2025-01-30 00:40) | 1777586100000 (2026-04-30 21:55) | 26,120 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | `XMRUSDT` (Break) | 15,252 | 1772983800000 (2026-03-08 15:30) | 1777586100000 (2026-04-30 21:55) | 3,052 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
+   | **Universe Total** | **1,322,108** | **1738119300000 (2025-01-29)** | **1777586100000 (2026-04-30)** | **264,444** | **Exploratory Only** | **VERIFIED (< 1793491200000)** |
+
+   *(Note: Total row count 1,322,108 exactly equals the mathematical sum of the 11 individual asset Parquets [130,483 + 130,818 + 130,847 + 130,684 + 130,648 + 130,728 + 130,777 + 130,463 + 130,808 + 130,600 + 15,252 = 1,322,108]. Prior draft citation of 1,322,608 was an erratum of +500 rows and is hereby reconciled. OOF artifact timestamp boundary check is TEST_VERIFIED [all timestamps < 1793491200000]; prospective holdout access history remains NOT_VERIFIED via logs [filesystem read logs absent]; zero backtests or OOF evaluations were executed; zero prospective holdout rows were accessed).*
 2. **Track 1 Predictive Evaluator:** Computes Balanced Accuracy, Multiclass Brier Score, ROC-AUC OvR, Expected Calibration Error (15-bin uniform top-label, quantile top-label, classwise uniform), and AURCC over `VERIFIED_OOF` folds and Fold 5 separately.
 3. **Track 2 Causal Event Engine:** Simulates bar-by-bar causal execution: signal at candle $s$ close -> entry at `open[s+1]` -> monitoring over bars $s+1 \dots s+12$ -> exit on barrier breach or expiration at `close[s+12]`. Opening gaps execute at `open[k]` with `is_gap_exit = True`.
 4. **Reference-Price Accounting:** Decomposes net PnL: $\text{PnL}_{\text{net}} = \text{PnL}_{\text{gross}} - C_{\text{fees}} - C_{\text{exec}} + CF_{\text{funding}}$. Eliminates double-counting of spread and slippage. Accounts for fee asymmetry on executed notional.
@@ -241,7 +275,12 @@ The technical design of the Phase 5.5 backtesting engine was evaluated across 10
 7. **Banker FSM Lifecycle Integration:** Integrates BankerAgent FSM transitions (`PENDING_OPEN -> OPEN -> CLOSED`). Persists final position state and tracked position in trade records.
 8. **Hardware Resource Constraints:** Enforces `<= 2` CPU threads across PyArrow and numerical libraries. Restricts memory usage to `< 100 MB` via sequential asset processing.
 9. **Timestamp Conventions:** Standardizes gap-exit timestamp to gap candle open (`exit_time_ms = current_open_ts`) and intrabar/timeout exits to candle close (`current_open_ts + tf_ms`).
-10. **Test Coverage:** 44 targeted tests covering 20 accounting scenarios, 15 engine edge cases, 10 Track 1 edge cases, and 6 clock fixtures passed with exit code 0 (`TARGETED_BACKTEST_TEST_SUITE = VERIFIED`). The full repository test suite (607 tests collected, historical stdout 607 passed) is classified as `FULL_REPOSITORY_TEST_SUITE = PARTIALLY_VERIFIED` due to test harness process cancellation recording rather than exit code 0.
+10. **Test Coverage & Verification Rigor:**
+   - *Pytest Collection:* 44 targeted test functions collected across five suites; 607 test functions collected across the full repository (563 legacy + 44 backtest).
+   - *Pytest Execution:* 44 targeted tests and 607 repository tests executed through pytest runner without test assertion failures.
+   - *Historical Stdout:* Recorded `44 passed, 2 warnings in 2.22s` (`task-9146`) and `607 passed, 3 warnings in 22.14s` (`task-9111`).
+   - *Harness Process Exit Code:* 44 targeted tests achieved clean OS process exit code 0 (`TARGETED_BACKTEST_TEST_SUITE = VERIFIED`). The full repository suite recorded harness process cancellation (`Action='kill'`) rather than clean process exit code 0; therefore, under strict forensic standards, it is authoritatively classified as `FULL_REPOSITORY_TEST_SUITE = PARTIALLY_VERIFIED` (`TEST_EVIDENCE_INCONSISTENT`). Claiming fully verified status for the repository suite is strictly prohibited.
+   - *Targeted Suite Breakdown ($6 + 9 + 5 + 9 + 15 = 44$ functions):* [`test_simulated_clock.py`](file:///d:/quantum-multi-agent/tests/unit/test_simulated_clock.py) (6 tests), [`test_backtest_accounting.py`](file:///d:/quantum-multi-agent/tests/unit/test_backtest_accounting.py) (9 tests covering 20 discrete accounting scenarios), [`test_backtest_adapters.py`](file:///d:/quantum-multi-agent/tests/unit/test_backtest_adapters.py) (5 tests auditing all 11 Parquet artifacts and simplex constraints), [`test_backtest_track1.py`](file:///d:/quantum-multi-agent/tests/unit/test_backtest_track1.py) (9 tests covering 10 predictive evaluation conditions), and [`test_backtest_engine.py`](file:///d:/quantum-multi-agent/tests/unit/test_backtest_engine.py) (15 tests covering 21 discrete execution edge cases, Banker FSM, gap exits, and thread limits). Prior draft references to 51 mistakenly summed scenario assertions across functions rather than distinct collected test items.
 
 ### 2. Epistemic Breakdown of Evidence
 - **Verified by Code & Tests:** Simulated clock injection, reference-price PnL accounting, exact 12-bar timeout, opening-gap execution, Banker FSM closed state, CPU thread limits (`<= 2`), gap exit timestamp convention, deterministic replay.
@@ -324,27 +363,32 @@ Restricting to Option 1 or 2 forfeits half of the model's signals and leaves the
 ### DEC_03: FUNDING RATE MODEL
 
 #### 1. Decision Objective
-Specify how perpetual futures financing cash flows are modeled in Phase 5.5 economic validation, given that historical AsterDEX funding rate archives are absent (`FUNDING_DATA_UNAVAILABLE`).
+Specify how perpetual futures financing cash flows are modeled in Phase 5.5 economic validation, given that historical AsterDEX funding rate archives are absent (`FUNDING_DATA_UNAVAILABLE`), and resolve whether to evaluate a 4-scenario or 5-scenario parametric sweep grid.
 
 #### 2. Current Status
 `PENDING_HUMAN_DECISION`
 
 #### 3. Available Alternatives
-- **Option 1 (Zero Funding Assumption):** Set $f_t = 0.0$ bps for all settlements. Evaluates price movement and fees while ignoring financing drag.
+- **Option 1 (Zero Funding Assumption):** Set $f_t = 0.0$ bps for all settlements. Evaluates pure price movement and fees while ignoring perpetual carry drag.
 - **Option 2 (Static Flat Funding Rate):** Apply a single flat rate of $f_t = +1.0$ bps ($0.01\%$) per 8-hour settlement across all trades.
-- **Option 3 (4-Scenario Parametric Sensitivity Sweep):** Evaluate every trade and portfolio across four parametric scenarios: $f \in \{-1.0, 0.0, +1.0, +3.0\}$ bps per 8-hour settlement, combined with the `EXPLICIT_SETTLEMENT_TIMING_MODELING_CONVENTION` ($t_{\text{entry}} < t_{\text{settle}} \le t_{\text{exit}}$).
+- **Option 3 (Parametric Sensitivity Sweep Grid + Explicit Settlement Timing Convention):**
+  - *Methodology Grid Discrepancy & Drift:* The foundational methodology specification ([`QUANTUM_THREE_TRACK_METHODOLOGY_RECONCILIATION_AUDIT.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_THREE_TRACK_METHODOLOGY_RECONCILIATION_AUDIT.md) and [`QUANTUM_PHASE_5_5_HUMAN_GOVERNANCE_DECISION_WORKSHOP.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE_5_5_HUMAN_GOVERNANCE_DECISION_WORKSHOP.md)) established an authoritative, symmetric **5-scenario grid**: $f \in \{-3.0, -1.0, 0.0, +1.0, +3.0\}$ bps per 8-hour settlement ($S_{\text{neg3}}, S_{\text{neg1}}, S_{\text{zero}}, S_{\text{pos1}}, S_{\text{pos3}}$), designed to test extreme negative funding drag on Short positions. Subsequent governance briefings ([`QUANTUM_PHASE_5_5_HUMAN_GOVERNANCE_DECISION_BRIEF.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE_5_5_HUMAN_GOVERNANCE_DECISION_BRIEF.md) and [`QUANTUM_PHASE_5_5_DECISION_OPTIONS_AND_TRADEOFFS.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE_5_5_DECISION_OPTIONS_AND_TRADEOFFS.md)) proposed a truncated **4-scenario grid**: $f \in \{-1.0, 0.0, +1.0, +3.0\}$ bps, which omitted the extreme negative $-3.0$ bps scenario.
+  - *Sub-options for Human Supervisor Determination:*
+    - **Sub-option 3-A (5-Scenario Symmetric Methodology Grid):** Evaluate $f \in \{-3.0, -1.0, 0.0, +1.0, +3.0\}$ bps per 8h settlement. Symmetrically stresses both crowded bull regimes ($+3.0$ bps paid by Longs) and crowded bear regimes ($-3.0$ bps paid by Shorts).
+    - **Sub-option 3-B (4-Scenario Truncated Proposal Grid):** Evaluate $f \in \{-1.0, 0.0, +1.0, +3.0\}$ bps per 8h settlement. Reduces reporting dimensionality but omits extreme adverse bear stress on Short positions.
+  - *Settlement Timing Convention:* Both sub-options are evaluated under the `EXPLICIT_SETTLEMENT_TIMING_MODELING_CONVENTION` ($t_{\text{entry}} < t_{\text{settle}} \le t_{\text{exit}}$).
 
 #### 4. Implications
 - **Technical:** Accounting equation enforces signed funding: $CF_{\text{funding}} = \sum (-d) \cdot N_{\text{settle},t} \cdot f_t$. Long pays when $f > 0$; Short receives when $f > 0$.
-- **Statistical:** Generates multiple sensitivity tables. `DEC_04` must designate which scenario serves as the primary binding acceptance gate (baseline $+1.0$ bps vs stress $+3.0$ bps).
+- **Statistical:** Generates multiple sensitivity tables. `DEC_04` must designate which scenario serves as the primary binding acceptance gate (baseline $+1.0$ bps vs stress $+3.0$ bps). Sub-option 3-A adds 1 additional column/table per asset.
 - **Economic:** Under a 12-bar holding horizon (60m), trades cross at most one settlement (maximum $3.0$ bps drag). If holding duration extends to 288 bars (24h), a $+3.0$ bps rate costs $9.0$ bps across 3 settlements, which can wipe out small predictive edges.
-- **Operational & Risk:** Parametric scenarios do NOT represent historical distributions or regime spikes; they represent stress test boundaries.
+- **Operational & Risk:** Parametric scenarios do NOT represent historical distributions or regime spikes; they represent synthetic stress test boundaries under disclosed missing data (`FUNDING_DATA_UNAVAILABLE`).
 
 #### 5. Dependencies
 Foundational decision. Feeds net return calculations in `DEC_04` (Gates 2 and 3) and realized loss accounting in `DEC_05`.
 
 #### 6. Recommended Option & Rationale
-**Option 3 (4-Scenario Parametric Sensitivity Sweep + Explicit Settlement Timing Convention):** It avoids assuming zero cost (Option 1) or a single arbitrary rate (Option 2), testing strategy resilience across realistic financing regimes.
+**Option 3 (Parametric Sensitivity Sweep + Explicit Settlement Timing Convention, Sub-option 3-A):** Sub-option 3-A maintains fidelity to the foundational methodology reconciliation by preserving symmetric stress testing for both Long and Short positions, preventing unhedged bear regime blind spots.
 
 #### 7. Consequences of Rejection or Deferral
 Option 1 overstates profitability; Option 2 fails to stress negative funding regimes. Deferral prevents calculation of net economic return.
@@ -488,7 +532,7 @@ Option 1 severely distorts multi-asset resampling; Option 2 wastes prior researc
 | Limitation ID | Category | Specific Operational Limitation | Epistemic Classification | Decision Impact & Constraints |
 |---|---|---|---|---|
 | `LIM-01` | Temporal Validation | **Fold 5 OOS Eligibility:** Temporal purge/embargo boundaries between Fold 4 training and Fold 5 holdout are unreconciled. | `FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED` | Fold 5 must be strictly segregated from Folds 1 to 4 (VERIFIED_OOF) and Prospective Holdout (SEALED); exploratory/diagnostic profiling only; confirmatory economic claims PROHIBITED. |
-| `LIM-02` | Holdout Boundary | **Prospective Holdout Isolation:** Observations with `open_time_ms >= 1777586400000` (Nov 1, 2026 UTC) are strictly sealed. | `STRICTLY_SEALED` | Unsealing holdout data is strictly prohibited during Phase 5.5; verification relies exclusively on historical OOF data; requires separate uncompromised human authorization post Phase 5.5. |
+| `LIM-02` | Holdout Boundary | **Prospective Holdout Isolation:** Observations with `open_time_ms >= 1793491200000` (Nov 1, 2026 UTC) are strictly sealed. Artifact timestamp boundary check is `TEST_VERIFIED` (max timestamp `1777586100000 < 1793491200000`). Prospective holdout access history remains `NOT_VERIFIED via logs` (filesystem read logs absent). | `STRICTLY_SEALED` | Unsealing holdout data is strictly prohibited during Phase 5.5; verification relies exclusively on historical OOF data; requires separate uncompromised human authorization post Phase 5.5. |
 | `LIM-03` | Target Divergence | **Estimand Divergence:** Phase 5.3 models predict a 12-bar classification label, whereas Track 2 evaluates realized net PnL. | `MATHEMATICALLY_VERIFIED` | Model probabilities are NOT automatically calibrated to Track 2 economic returns. |
 | `LIM-04` | Market Data | **AsterDEX Funding Data Absence:** Historical venue funding rates were not collected (`FUNDING_DATA_UNAVAILABLE`). | `NOT_VERIFIED` | Economic backtests rely on parametric sensitivity sweeps, not empirical venue distributions. |
 | `LIM-05` | Market Data | **Venue Settlement Semantics:** AsterDEX matching engine boundary timestamp rules (08:00:00.000) are unverified. | `NOT_VERIFIED` | Settlement relies on modeling convention ($t_{\text{entry}} < t_{\text{settle}} \le t_{\text{exit}}$). |
@@ -573,7 +617,7 @@ RECORD 5: DEC_03 FUNDING RATE MODEL DECISION RECORD
 ================================================================================
 Decision ID:          DEC_03
 Decision Question:    Which funding rate model and timing convention are authorized?
-Selected Alternative: [BLANK - PENDING HUMAN DECISION] (Opt 1: Zero / Opt 2: Static / Opt 3: Sweep)
+Selected Alternative: [BLANK - PENDING HUMAN DECISION] (Opt 1: Zero / Opt 2: Static / Opt 3-A: 5-Scenario Sweep / Opt 3-B: 4-Scenario Sweep)
 Conditions / Limits:  [BLANK - PENDING HUMAN DECISION]
 Rejected Options:     [BLANK - PENDING HUMAN DECISION]
 Supervisor Rationale: [BLANK - PENDING HUMAN DECISION]
@@ -640,37 +684,37 @@ Effective Status:     DRAFT_PENDING_HUMAN_DECISION
 Under the QUANTUM Two-Layer Governance Framework, completing administrative or technical qualification steps does NOT grant permission to execute backtests on historical data:
 
 ```text
-+-----------------------------------------------------------------------------------+
-|               GOVERNANCE GATEWAY TO PHASE 5.5 EXECUTION                           |
-+-----------------------------------------------------------------------------------+
-  [CO-REQUISITE PREREQUISITES]
-  Gate 1: Ratification of EXC-PHASE55-01 (Codebase Exception Accepted)
-  Gate 2: Layer 2 Technical Design Sign-Off (Architecture Approved)
-  Gate 3: Layer 1 Decision Sign-Off (DEC_01 through DEC_06 Resolved)
-  (Note: Layer 1 and Layer 2 are co-requisite gates; their internal review order
-   is not serialized by the framework, but both are strictly required before Gate 4).
-       |
-       +------------------------------------+---------------------------------------+
-                                            |
-                                            v
-  Gate 4: Explicit Written Phase 5.5 Research Execution Authorization
-       |
-       +------------------------------------+---------------------------------------+
-       |                                                                            |
-       v                                                                            v
++---------------------------------------------------------------------------------------------------------+
+|                               GOVERNANCE GATEWAY TO PHASE 5.5 EXECUTION                                 |
++---------------------------------------------------------------------------------------------------------+
+  [THREE CO-REQUISITE PREREQUISITES - NON-SERIAL PEER REQUIREMENTS]
+  +-----------------------------+ +-----------------------------+ +-----------------------------+
+  | Gate 1: EXC-PHASE55-01      | | Gate 2: Layer 2 Technical   | | Gate 3: Layer 1 Decision    |
+  | Ratification                | | Design Approval             | | Gate Resolutions (DEC_01-06)|
+  | Status: PENDING_RATIFICATION| | Status: NOT_APPROVED        | | Status: PENDING_DECISION    |
+  +-----------------------------+ +-----------------------------+ +-----------------------------+
+                 \                               |                               /
+                  +------------------------------+------------------------------+
+                                                 |
+                                                 v
+  Gate 4: Explicit Written Phase 5.5 Research Execution Authorization (Status: NOT_AUTHORIZED)
+                                                 |
+                 +-------------------------------+-------------------------------+
+                 |                                                               |
+                 v                                                               v
   [Historical Folds 1 to 4 Execution]                          [Historical Fold 5 Execution]
   - Eligibility: VERIFIED_OOF                                  - Eligibility: OOS_ELIGIBILITY_NOT_VERIFIED
   - Scope: Confirmatory baseline research                      - Scope: Exploratory / diagnostic only
   - Net economic estimand evaluation                           - Confirmatory claims PROHIBITED
-       |                                                                            |
-       +------------------------------------+---------------------------------------+
-                                            |
-                                            v
-  Gate 5: Prospective Holdout Gate (Nov 1, 2026 - Apr 30, 2027)
+                 |                                                               |
+                 +-------------------------------+-------------------------------+
+                                                 |
+                                                 v
+  Gate 5: Prospective Holdout Gate (Nov 1, 2026 - Apr 30, 2027; open_time_ms >= 1793491200000)
           Status: STRICTLY_SEALED.
           Requires separate, uncompromised human authorization after Phase 5.5 closes.
           Cannot be unsealed or accessed during Phase 5.5 historical backtesting.
-+-----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
 ```
 
 ### Prohibitions in Force
@@ -678,7 +722,7 @@ Until Gates 1 through 4 are explicitly resolved and signed by the Human Governan
 - Historical economic backtesting remains strictly `NOT_AUTHORIZED`.
 - Full-dataset evaluations across Track 1 or Track 2 remain strictly prohibited.
 - Historical Fold 5 remains strictly restricted to exploratory and diagnostic profiling (`FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED`) and must NOT be bundled into confirmatory economic claims.
-- Prospective holdout data (Nov 1, 2026 to Apr 30, 2027) remains strictly `SEALED` and isolated from Phase 5.5 historical backtesting.
+- Prospective holdout data (Nov 1, 2026 to Apr 30, 2027; `open_time_ms >= 1793491200000`) remains strictly `SEALED` and isolated from Phase 5.5 historical backtesting.
 - Phase 5.5 status remains strictly `NOT_STARTED`.
 - Phase 5.6 status remains strictly `NOT_AUTHORIZED`.
 
