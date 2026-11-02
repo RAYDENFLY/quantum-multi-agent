@@ -36,6 +36,14 @@ from quantum.backtesting.engine import (
     OpenPositionSnapshot,
     RiskEvaluationMode,
 )
+from quantum.backtesting.resources import (
+    BACKTEST_MAX_THREADS,
+    check_thread_limits,
+    enforce_backtest_thread_limits,
+    get_active_thread_limits,
+    limit_computational_threads,
+    verify_thread_limits,
+)
 from quantum.backtesting.track1 import (
     CANONICAL_CLASSES,
     Track1EvaluationReport,
@@ -48,6 +56,7 @@ from quantum.backtesting.track1 import (
 )
 
 __all__ = [
+    "BACKTEST_MAX_THREADS",
     "CANONICAL_CLASSES",
     "COST_BASIS_SCOPE_NOTE",
     "FULL_ARTIFACT_UNIVERSE",
@@ -78,6 +87,7 @@ __all__ = [
     "Track1PredictiveEvaluator",
     "TradeAccountingResult",
     "calculate_funding_cash_flow",
+    "check_thread_limits",
     "compute_aurcc_metrics",
     "compute_classwise_ece_uniform",
     "compute_open_position_accounting",
@@ -85,5 +95,13 @@ __all__ = [
     "compute_top_label_ece_quantile",
     "compute_top_label_ece_uniform",
     "compute_two_legged_pnl",
+    "enforce_backtest_thread_limits",
+    "get_active_thread_limits",
+    "limit_computational_threads",
     "reconcile_position_lifecycle",
+    "verify_thread_limits",
 ]
+
+# Enforce hardware computational thread limit across PyArrow and BLAS on package import
+enforce_backtest_thread_limits(BACKTEST_MAX_THREADS)
+

@@ -27,6 +27,7 @@ from sklearn.metrics import (
 )
 
 from quantum.backtesting.adapters import OOFSignal
+from quantum.backtesting.resources import BACKTEST_MAX_THREADS, enforce_backtest_thread_limits
 
 
 CANONICAL_CLASSES: Tuple[int, int, int] = (-1, 0, 1)
@@ -230,6 +231,7 @@ class Track1PredictiveEvaluator:
         self.normalize_probabilities = normalize_probabilities
         self.simplex_tolerance = simplex_tolerance
         self.ece_bins = ece_bins
+        enforce_backtest_thread_limits(BACKTEST_MAX_THREADS)
 
     def validate_and_prepare_inputs(
         self,
@@ -295,6 +297,7 @@ class Track1PredictiveEvaluator:
         y_proba: Sequence[Sequence[float]] | np.ndarray,
     ) -> Track1MetricBundle:
         """Compute all 5 mandatory Track 1 predictive metrics on validated arrays."""
+        enforce_backtest_thread_limits(BACKTEST_MAX_THREADS)
         yt, yp, prob = self.validate_and_inputs(y_true, y_pred, y_proba) if hasattr(self, "validate_and_inputs") else self.validate_and_prepare_inputs(y_true, y_pred, y_proba)
         n = len(yt)
         warnings_list: List[str] = []

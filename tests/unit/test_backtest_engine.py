@@ -23,15 +23,25 @@ Verifies all 15 critical Track 2 edge cases plus Risk Modes, Banker FSM, and Res
 
 import tracemalloc
 import pandas as pd
+import pyarrow as pa
 import pytest
+import threadpoolctl
 
 from quantum.backtesting.adapters import OOFSignal
 from quantum.backtesting.engine import (
     TRACK_2_GOVERNANCE_CLASSIFICATION,
+    TRACK_2_ORDER_LIFECYCLE_SCOPE,
     BacktestConfig,
     DiscreteEventBacktestEngine,
     GovernancePendingError,
     RiskEvaluationMode,
+)
+from quantum.backtesting.resources import (
+    BACKTEST_MAX_THREADS,
+    check_thread_limits,
+    enforce_backtest_thread_limits,
+    get_active_thread_limits,
+    verify_thread_limits,
 )
 from quantum.domain.enums import PositionLifecycleState, TradeSide
 
@@ -203,6 +213,7 @@ async def test_05_06_opening_gap_beyond_tp_and_sl():
     assert t_tp.is_gap_exit is True
     assert t_tp.exit_price == pytest.approx(102.5)
     assert t_tp.exit_price > t_tp.upper_barrier
+    assert t_tp.exit_time_ms == int(candles_gap_tp.iloc[22]["open_time_ms"])
 
     # Edge Case 6: Long opening gap below SL on bar 22 (worse fill than stop barrier!)
     candles_gap_sl = create_synthetic_candles(35, start_price=100.0)
@@ -222,6 +233,7 @@ async def test_05_06_opening_gap_beyond_tp_and_sl():
     assert t_sl.is_gap_exit is True
     assert t_sl.exit_price == pytest.approx(97.0)
     assert t_sl.exit_price < t_sl.lower_barrier
+    assert t_sl.exit_time_ms == int(candles_gap_sl.iloc[22]["open_time_ms"])
 
 
 @pytest.mark.asyncio
@@ -474,3 +486,103 @@ async def test_18_deterministic_replay_and_resource_bounds():
     assert sum1.net_expectancy_bps == sum2.net_expectancy_bps
     assert len(sum1.trades) == len(sum2.trades)
     assert peak_bytes < 100 * 1024 * 1024  # Peak allocation well under 100 MB (budget <= 1 GB)
+
+
+def test_19_cpu_thread_limits_enforced():
+    """FND-08: Verify computational thread limit <= 2 across PyArrow and BLAS."""
+    limits = enforce_backtest_thread_limits(2)
+    assert limits["pyarrow_cpu"] <= 2
+    assert limits["pyarrow_io"] <= 2
+    assert pa.cpu_count() <= 2
+    assert pa.io_thread_count() <= 2
+    assert verify_thread_limits(2) is True
+    check_thread_limits(2)
+
+    for controller in limits["threadpool_controllers"]:
+        nt = controller.get("num_threads")
+        if nt is not None:
+            assert nt <= 2
+
+    # Verification of error on invalid thread count
+    with pytest.raises(ValueError, match="Backtest thread limit must be between 1 and 2"):
+        enforce_backtest_thread_limits(4)
+
+
+@pytest.mark.asyncio
+async def test_20_opening_gap_exit_timestamp_and_funding_boundary():
+    """FND-09: Verify gap-exit timestamp equals gap candle open, preventing post-exit funding accrual."""
+    # 08:00 UTC = 1704096000000 (8h boundary: 1704096000000 % 28_800_000 == 0)
+    boundary_8h_ts = 1704096000000
+    # Create 35 candles ending after 08:00 UTC
+    # Let bar 26 be 08:00 UTC (1704096000000)
+    # Then bar 0 open_ts = 1704096000000 - (26 * 300_000) = 1704088200000 (05:50 UTC)
+    start_ts = boundary_8h_ts - (26 * 300_000)
+
+    # Sub-case A: Gap exit occurs AT exact 08:00 UTC open (bar 26)
+    data_a = []
+    curr_px = 100.0
+    for i in range(35):
+        o_ts = start_ts + (i * 300_000)
+        data_a.append({
+            "open_time_ms": o_ts,
+            "open": curr_px,
+            "high": curr_px + 0.1,
+            "low": curr_px - 0.1,
+            "close": curr_px + (0.05 if i % 2 == 0 else -0.05),
+            "volume": 10.0,
+        })
+    candles_a = pd.DataFrame(data_a)
+
+    # Signal at bar 20 close (07:30 UTC), enters at bar 21 open (07:35 UTC = 1704094500000)
+    sig_ts_a = int(candles_a.iloc[20]["open_time_ms"])
+    sig_a = make_signal(sig_ts_a, predicted_class=1)
+
+    # Bar 26 opens at exact 08:00 UTC (1704096000000) with severe gap down to 95.0
+    candles_a.loc[26, "open"] = 95.0
+    candles_a.loc[26, "high"] = 95.5
+    candles_a.loc[26, "low"] = 94.5
+    candles_a.loc[26, "close"] = 95.0
+
+    engine = DiscreteEventBacktestEngine(BacktestConfig(
+        symbol="BTCUSDT",
+        directional_mode="LONG_ONLY",
+        funding_rate_bps_per_settlement=1.0,
+    ))
+    res_a = await engine.run(candles_a, [sig_a])
+    assert len(res_a.trades) == 1
+    t_a = res_a.trades[0]
+    assert t_a.is_gap_exit is True
+    assert t_a.exit_reason == "STOP_LOSS"
+    # Gap exit timestamp must equal opening timestamp of the gap candle (08:00 UTC), not +300s
+    assert t_a.exit_time_ms == boundary_8h_ts
+    assert t_a.exit_price == 95.0
+    # Position was held up to 08:00 UTC, so exactly 1 settlement at 08:00 UTC is accrued
+    assert len(t_a.accounting.funding_settlements) == 1
+    assert t_a.accounting.funding_settlements[0].timestamp_ms == boundary_8h_ts
+    # Crucially, no settlements beyond 08:00 UTC exist
+    assert t_a.accounting.funding_settlements[0].timestamp_ms <= t_a.exit_time_ms
+
+    # Sub-case B: Gap exit occurs AT 07:55 UTC open (bar 25, 5m BEFORE 08:00 UTC boundary)
+    candles_b = pd.DataFrame(data_a)
+    candles_b.loc[25, "open"] = 95.0
+    candles_b.loc[25, "high"] = 95.5
+    candles_b.loc[25, "low"] = 94.5
+    candles_b.loc[25, "close"] = 95.0
+
+    res_b = await engine.run(candles_b, [sig_a])
+    assert len(res_b.trades) == 1
+    t_b = res_b.trades[0]
+    assert t_b.is_gap_exit is True
+    # Gap exit timestamp must equal 07:55 UTC (boundary_8h_ts - 300_000)
+    assert t_b.exit_time_ms == boundary_8h_ts - 300_000
+    # Proves no funding is accrued after exit: 08:00 settlement was NOT reached before exit
+    assert len(t_b.accounting.funding_settlements) == 0
+    assert t_b.accounting.funding_cash_flow_usdt == 0.0
+
+
+def test_21_track_2_single_stage_full_exit_scope():
+    """FND-10: Verify Track 2 lifecycle scope documentation and single-stage invariant."""
+    assert "TRACK_2_SINGLE_STAGE_FULL_EXIT_BENCHMARK" in TRACK_2_ORDER_LIFECYCLE_SCOPE
+    assert "PENDING_OPEN -> OPEN -> CLOSED" in TRACK_2_ORDER_LIFECYCLE_SCOPE
+    assert "Track 3" in TRACK_2_ORDER_LIFECYCLE_SCOPE
+

@@ -13,6 +13,8 @@ import pandas as pd
 import pyarrow.parquet as pq
 from pydantic import BaseModel, ConfigDict, Field
 
+from quantum.backtesting.resources import BACKTEST_MAX_THREADS, enforce_backtest_thread_limits
+
 
 FULL_ARTIFACT_UNIVERSE: Tuple[str, ...] = (
     "BTCUSDT",
@@ -118,6 +120,7 @@ class OOFProbabilityAdapter:
         self.cache_enabled = cache_enabled
         self.simplex_tolerance = simplex_tolerance
         self._cache: Dict[str, pd.DataFrame] = {}
+        enforce_backtest_thread_limits(BACKTEST_MAX_THREADS)
 
     @staticmethod
     def get_universe_tier(symbol: str) -> str:
@@ -166,6 +169,8 @@ class OOFProbabilityAdapter:
         cache_key = f"{symbol}_fold_{fold}" if fold else symbol
         if self.cache_enabled and cache_key in self._cache:
             return self._cache[cache_key].copy()
+
+        enforce_backtest_thread_limits(BACKTEST_MAX_THREADS)
 
         fpath = self.oof_dir / f"{symbol}_oof.parquet"
         if not fpath.exists():

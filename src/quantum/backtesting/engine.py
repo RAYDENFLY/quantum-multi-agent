@@ -4,7 +4,8 @@ Implements causal event loop stepping candle-by-candle:
 1. Signal evaluation at candle i-1 close (t_i) based on frozen OOF predictions and causal volatility.
 2. Explicit Risk Evaluation Mode separation (Mode 1 Mechanical Benchmark, Mode 2 Risk-Filtered, Mode 3 Portfolio Ledger).
 3. Execution fill simulation at candle i open (P_entry,ref = open[i], effective fill includes half-spread slippage).
-4. BankerAgent FSM lifecycle integration for position tracking (PENDING_OPEN -> OPEN -> PARTIALLY_CLOSED -> CLOSED).
+4. BankerAgent FSM lifecycle integration: Track 2 enforces strictly single-stage 100% full exit (PENDING_OPEN -> OPEN -> CLOSED).
+   Multi-stage partial exits (TP1 50% / TP2 50%, trailing stop) are strictly reserved for Track 3 strategy research.
 5. Opening gap detection and intrabar barrier breach monitoring over a strictly enforced 12-bar holding horizon (bars i .. i+11).
 6. Deterministic conservative collision handling for intrabar same-bar double touches.
 7. Discrete perpetual funding cash flow settlement, end-of-dataset open-position mark-to-market accounting,
@@ -34,6 +35,11 @@ from quantum.backtesting.accounting import (
     compute_two_legged_pnl,
 )
 from quantum.backtesting.adapters import OOFSignal
+from quantum.backtesting.resources import (
+    BACKTEST_MAX_THREADS,
+    check_thread_limits,
+    enforce_backtest_thread_limits,
+)
 from quantum.config.settings import RiskConfig
 from quantum.domain.enums import (
     AgentAction,
@@ -50,6 +56,12 @@ from quantum.domain.models import MarketContext, ScannerCandidate, TradeProposal
 
 TRACK_2_GOVERNANCE_CLASSIFICATION: str = (
     "ELIGIBLE_FOR_EXPLORATORY_ECONOMIC_EVALUATION_SUBJECT_TO_GOVERNANCE_APPROVAL"
+)
+
+TRACK_2_ORDER_LIFECYCLE_SCOPE: str = (
+    "TRACK_2_SINGLE_STAGE_FULL_EXIT_BENCHMARK: PENDING_OPEN -> OPEN -> CLOSED. "
+    "Multi-stage partial exits (TP1/TP2) and trailing stops are strictly out of scope for Track 2 "
+    "and belong to Track 3 strategy research subject to separate governance decision."
 )
 
 
@@ -105,6 +117,12 @@ class BacktestConfig(BaseModel):
     proposal_estimated_rr_override: Optional[float] = Field(
         default=None,
         description="Optional override for TradeProposal estimated_reward_risk in Mode 2/3 testing",
+    )
+    max_threads: int = Field(
+        default=BACKTEST_MAX_THREADS,
+        ge=1,
+        le=2,
+        description="Maximum computational threads enforced across PyArrow and numerical libraries",
     )
 
     @model_validator(mode="after")
@@ -213,6 +231,7 @@ class DiscreteEventBacktestEngine:
         banker_agent: Optional[BankerAgent] = None,
     ) -> None:
         self.config = config
+        enforce_backtest_thread_limits(config.max_threads)
         self.risk_agent = risk_agent or RiskAgent(RiskConfig())
         self.banker_agent = banker_agent or BankerAgent()
 
@@ -278,6 +297,7 @@ class DiscreteEventBacktestEngine:
         signals: Sequence[OOFSignal],
     ) -> BacktestSummary:
         """Execute discrete-event simulation across candles and signals."""
+        check_thread_limits(self.config.max_threads)
         if (
             self.config.risk_evaluation_mode == RiskEvaluationMode.MODE_3_PORTFOLIO_LEVEL_RISK_SIMULATION
             and not self.config.allow_bounded_mode3_preview
@@ -609,7 +629,7 @@ class DiscreteEventBacktestEngine:
                         exit_triggered = True
 
                 if exit_triggered:
-                    exit_time_ms = current_open_ts + tf_ms
+                    exit_time_ms = current_open_ts if is_gap_exit else (current_open_ts + tf_ms)
                     entry_time_ms = active_trade["entry_fill_time_ms"]
                     entry_price = active_trade["entry_price"]
                     quantity = active_trade["quantity"]
