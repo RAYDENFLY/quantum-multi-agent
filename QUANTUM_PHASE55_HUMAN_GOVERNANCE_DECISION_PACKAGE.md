@@ -12,15 +12,15 @@
 ### Authoritative Governance Baseline (Immutable)
 - **Phase 5.5 (Economic Validation):** `NOT_STARTED`
 - **Phase 5.6 (Production Strategy):** `NOT_AUTHORIZED`
-- **Economic Backtesting:** `NOT_STARTED`
+- **Economic Backtesting:** `NOT_STARTED / NOT_AUTHORIZED`
 - **Decision Gates DEC_01 through DEC_06:** `PENDING_HUMAN_DECISION`
 - **Implementation Authorization Traceability:** `NOT_VERIFIED`
 - **Governance Exception EXC-PHASE55-01:** `PENDING_HUMAN_RATIFICATION`
 - **Layer 2 Technical Design Approval:** `NOT_APPROVED`
-- **Prospective Holdout Dataset:** `STRICTLY_SEALED`
+- **Prospective Holdout Governance Status (`PROSPECTIVE_HOLDOUT_GOVERNANCE_STATUS`):** `STRICTLY_SEALED` (unsealing and access strictly prohibited without separate human authorization post Phase 5.5)
 - **OOF Artifact Timestamp Boundary Check:** `TEST_VERIFIED` (all 11 OOF Parquets terminate at `1777586100000`, strictly `< 1793491200000`)
-- **Prospective Holdout Access History:** `NOT_VERIFIED via logs` (filesystem read logs absent; non-access enforced via policy and unsealing prohibitions)
-- **Historical Economic Backtesting:** `NOT_AUTHORIZED`
+- **Prospective Holdout Access History (`PROSPECTIVE_HOLDOUT_ACCESS_HISTORY`):** `NOT_VERIFIED` (`HISTORICAL_ACCESS_NOT_VERIFIABLE_FROM_AVAILABLE_LOGS` due to absence of filesystem access audit logs; during the current reconciliation task, no prospective holdout files were intentionally opened, read, or evaluated; historical access across earlier tasks remains `NOT_VERIFIED`)
+- **Historical Economic Backtesting:** `NOT_STARTED / NOT_AUTHORIZED`
 - **Targeted Backtest Test Suite:** `VERIFIED` (44/44 tests passed with exit code 0)
 - **Full Repository Test Suite:** `PARTIALLY_VERIFIED` (607 collected, stdout 607 passed, harness cancellation recorded)
 - **Fold 5 OOS Eligibility:** `FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED` (Exploratory Only)
@@ -115,7 +115,7 @@ To eliminate conflation, the following six separate governance events are strict
   [Event 5] Phase 5.5 Research Execution Authorization
             Permission to execute historical backtest on Folds 1 to 4 (confirmatory)
             and Fold 5 (exploratory only, FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED).
-            Status: NOT_AUTHORIZED
+            Status: NOT_STARTED / NOT_AUTHORIZED
                                             |
                                             v
   [Event 6] Prospective Holdout Access Authorization (Nov 1, 2026 - Apr 30, 2027)
@@ -179,7 +179,7 @@ Git forensic inspection reveals that the unapproved backtesting implementation s
       - Technical specification, audit, implementation, and readiness reports in `docs/research/phase_5_5_governance_dossier/`.
 
 - **Subsequent Independent Audit Commit (`b2bda3c`):**
-  - Commit Hash: `b2bda3c3da7ce20d437db7bb143cb80cfc9e2b1d`
+  - Commit Hash: `b2bda3c2cc6223e9d007e4db617e993771d8669d`
   - Commit Message: `docs: add Phase 5.5 independent read-only evidence audit report`
   - Author: `Azis Maulana Suhada <raydenfly84@gmail.com>`, Mon Nov 2 18:03:52 2026 +07:00
   - Files added (1 file): [`docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE55_INDEPENDENT_READ_ONLY_EVIDENCE_AUDIT.md`](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE55_INDEPENDENT_READ_ONLY_EVIDENCE_AUDIT.md)
@@ -211,7 +211,7 @@ Git forensic inspection reveals that the unapproved backtesting implementation s
 ### 4. Integrity of Frozen Artifacts & Holdouts
 - Phase 5.3 model weights: 100% untouched and immutable.
 - Phase 5.4 preprocessors: 100% untouched and immutable.
-- Prospective holdout dataset (`open_time_ms >= 1793491200000` / `2026-11-01 00:00:00 UTC`): Strictly sealed under governance mandate (`STRICTLY_SEALED`). OOF artifact timestamp boundary check is `TEST_VERIFIED` (all 11 OOF Parquets terminate at `1777586100000`, strictly `< 1793491200000`). Prospective holdout access history is `NOT_VERIFIED via logs` (filesystem read logs absent; non-access enforced via policy and unsealing prohibitions).
+- Prospective holdout dataset (`open_time_ms >= 1793491200000` / `2026-11-01 00:00:00 UTC`): Governance status is `PROSPECTIVE_HOLDOUT_GOVERNANCE_STATUS = STRICTLY_SEALED`, with unsealing and access strictly prohibited without separate human authorization post Phase 5.5. The OOF artifact timestamp boundary check is `TEST_VERIFIED` (all 11 OOF Parquets terminate at `1777586100000`, strictly `< 1793491200000`). Prospective holdout access history is `PROSPECTIVE_HOLDOUT_ACCESS_HISTORY = NOT_VERIFIED` (`HISTORICAL_ACCESS_NOT_VERIFIABLE_FROM_AVAILABLE_LOGS` due to absence of filesystem access audit logs). During the current reconciliation task, no prospective holdout files were intentionally opened, read, or evaluated. Historical access across earlier tasks remains `NOT_VERIFIED`.
 - Historical economic backtests: Strictly `NOT_STARTED` / `NOT_AUTHORIZED`.
 
 ### 5. Decision Alternatives for the Human Supervisor
@@ -266,7 +266,7 @@ The technical design of the Phase 5.5 backtesting engine was evaluated across 10
    | `XMRUSDT` (Break) | 15,252 | 1772983800000 (2026-03-08 15:30) | 1777586100000 (2026-04-30 21:55) | 3,052 | `OOS_ELIGIBILITY_NOT_VERIFIED` | `VERIFIED (< 1793491200000)` |
    | **Universe Total** | **1,322,108** | **1738119300000 (2025-01-29)** | **1777586100000 (2026-04-30)** | **264,444** | **Exploratory Only** | **VERIFIED (< 1793491200000)** |
 
-   *(Note: Total row count 1,322,108 exactly equals the mathematical sum of the 11 individual asset Parquets [130,483 + 130,818 + 130,847 + 130,684 + 130,648 + 130,728 + 130,777 + 130,463 + 130,808 + 130,600 + 15,252 = 1,322,108]. Prior draft citation of 1,322,608 was an erratum of +500 rows and is hereby reconciled. OOF artifact timestamp boundary check is TEST_VERIFIED [all timestamps < 1793491200000]; prospective holdout access history remains NOT_VERIFIED via logs [filesystem read logs absent]; zero backtests or OOF evaluations were executed; zero prospective holdout rows were accessed).*
+   *(Note: Total row count 1,322,108 equals the mathematical sum of the 11 individual asset Parquets [130,483 + 130,818 + 130,847 + 130,684 + 130,648 + 130,728 + 130,777 + 130,463 + 130,808 + 130,600 + 15,252 = 1,322,108]. The prior draft citation of 1,322,608 contained an arithmetic discrepancy of +500 rows relative to the individual file sum, which is corrected in the current document. OOF artifact timestamp boundary check is TEST_VERIFIED [all timestamps < 1793491200000]; prospective holdout governance status is PROSPECTIVE_HOLDOUT_GOVERNANCE_STATUS = STRICTLY_SEALED [access and unsealing prohibited without separate human authorization post Phase 5.5]; prospective holdout access history is PROSPECTIVE_HOLDOUT_ACCESS_HISTORY = NOT_VERIFIED [HISTORICAL_ACCESS_NOT_VERIFIABLE_FROM_AVAILABLE_LOGS due to absence of filesystem access audit logs]; during the current reconciliation task, zero backtests or OOF evaluations were executed, and no prospective holdout files were intentionally opened, read, or evaluated; historical access across earlier tasks remains NOT_VERIFIED).*
 2. **Track 1 Predictive Evaluator:** Computes Balanced Accuracy, Multiclass Brier Score, ROC-AUC OvR, Expected Calibration Error (15-bin uniform top-label, quantile top-label, classwise uniform), and AURCC over `VERIFIED_OOF` folds and Fold 5 separately.
 3. **Track 2 Causal Event Engine:** Simulates bar-by-bar causal execution: signal at candle $s$ close -> entry at `open[s+1]` -> monitoring over bars $s+1 \dots s+12$ -> exit on barrier breach or expiration at `close[s+12]`. Opening gaps execute at `open[k]` with `is_gap_exit = True`.
 4. **Reference-Price Accounting:** Decomposes net PnL: $\text{PnL}_{\text{net}} = \text{PnL}_{\text{gross}} - C_{\text{fees}} - C_{\text{exec}} + CF_{\text{funding}}$. Eliminates double-counting of spread and slippage. Accounts for fee asymmetry on executed notional.
@@ -532,7 +532,7 @@ Option 1 severely distorts multi-asset resampling; Option 2 wastes prior researc
 | Limitation ID | Category | Specific Operational Limitation | Epistemic Classification | Decision Impact & Constraints |
 |---|---|---|---|---|
 | `LIM-01` | Temporal Validation | **Fold 5 OOS Eligibility:** Temporal purge/embargo boundaries between Fold 4 training and Fold 5 holdout are unreconciled. | `FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED` | Fold 5 must be strictly segregated from Folds 1 to 4 (VERIFIED_OOF) and Prospective Holdout (SEALED); exploratory/diagnostic profiling only; confirmatory economic claims PROHIBITED. |
-| `LIM-02` | Holdout Boundary | **Prospective Holdout Isolation:** Observations with `open_time_ms >= 1793491200000` (Nov 1, 2026 UTC) are strictly sealed. Artifact timestamp boundary check is `TEST_VERIFIED` (max timestamp `1777586100000 < 1793491200000`). Prospective holdout access history remains `NOT_VERIFIED via logs` (filesystem read logs absent). | `STRICTLY_SEALED` | Unsealing holdout data is strictly prohibited during Phase 5.5; verification relies exclusively on historical OOF data; requires separate uncompromised human authorization post Phase 5.5. |
+| `LIM-02` | Holdout Boundary | **Prospective Holdout Isolation:** Observations with `open_time_ms >= 1793491200000` (Nov 1, 2026 UTC) have governance status `PROSPECTIVE_HOLDOUT_GOVERNANCE_STATUS = STRICTLY_SEALED`. Artifact timestamp boundary check is `TEST_VERIFIED` (max timestamp `1777586100000 < 1793491200000`). Access history is `PROSPECTIVE_HOLDOUT_ACCESS_HISTORY = NOT_VERIFIED` (`HISTORICAL_ACCESS_NOT_VERIFIABLE_FROM_AVAILABLE_LOGS` due to absence of filesystem access audit logs; during the current reconciliation task, no prospective holdout files were intentionally opened, read, or evaluated; historical access across earlier tasks remains `NOT_VERIFIED`). | `STRICTLY_SEALED` | Unsealing holdout data is strictly prohibited during Phase 5.5; verification relies exclusively on historical OOF data; requires separate uncompromised human authorization post Phase 5.5. |
 | `LIM-03` | Target Divergence | **Estimand Divergence:** Phase 5.3 models predict a 12-bar classification label, whereas Track 2 evaluates realized net PnL. | `MATHEMATICALLY_VERIFIED` | Model probabilities are NOT automatically calibrated to Track 2 economic returns. |
 | `LIM-04` | Market Data | **AsterDEX Funding Data Absence:** Historical venue funding rates were not collected (`FUNDING_DATA_UNAVAILABLE`). | `NOT_VERIFIED` | Economic backtests rely on parametric sensitivity sweeps, not empirical venue distributions. |
 | `LIM-05` | Market Data | **Venue Settlement Semantics:** AsterDEX matching engine boundary timestamp rules (08:00:00.000) are unverified. | `NOT_VERIFIED` | Settlement relies on modeling convention ($t_{\text{entry}} < t_{\text{settle}} \le t_{\text{exit}}$). |
@@ -697,7 +697,7 @@ Under the QUANTUM Two-Layer Governance Framework, completing administrative or t
                   +------------------------------+------------------------------+
                                                  |
                                                  v
-  Gate 4: Explicit Written Phase 5.5 Research Execution Authorization (Status: NOT_AUTHORIZED)
+  Gate 4: Explicit Written Phase 5.5 Research Execution Authorization (Status: NOT_STARTED / NOT_AUTHORIZED)
                                                  |
                  +-------------------------------+-------------------------------+
                  |                                                               |
@@ -719,7 +719,7 @@ Under the QUANTUM Two-Layer Governance Framework, completing administrative or t
 
 ### Prohibitions in Force
 Until Gates 1 through 4 are explicitly resolved and signed by the Human Governance Supervisor:
-- Historical economic backtesting remains strictly `NOT_AUTHORIZED`.
+- Historical economic backtesting remains strictly `NOT_STARTED / NOT_AUTHORIZED`.
 - Full-dataset evaluations across Track 1 or Track 2 remain strictly prohibited.
 - Historical Fold 5 remains strictly restricted to exploratory and diagnostic profiling (`FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED`) and must NOT be bundled into confirmatory economic claims.
 - Prospective holdout data (Nov 1, 2026 to Apr 30, 2027; `open_time_ms >= 1793491200000`) remains strictly `SEALED` and isolated from Phase 5.5 historical backtesting.
