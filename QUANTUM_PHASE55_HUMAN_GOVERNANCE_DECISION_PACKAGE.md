@@ -10,7 +10,8 @@
 ---
 
 ### Authoritative Governance Baseline (Immutable)
-- **Phase 5.5 (Economic Validation):** `NOT_STARTED`
+- **Phase 5.5 Research Execution Status (`PHASE55_RESEARCH_EXECUTION_STATUS`):** `NOT_STARTED / NOT_AUTHORIZED`
+- **Phase 5.5 Governance Review Status (`PHASE55_GOVERNANCE_REVIEW_STATUS`):** `READY_FOR_HUMAN_SUPERVISOR_REVIEW`
 - **Phase 5.6 (Production Strategy):** `NOT_AUTHORIZED`
 - **Economic Backtesting:** `NOT_STARTED / NOT_AUTHORIZED`
 - **Decision Gates DEC_01 through DEC_06:** `PENDING_HUMAN_DECISION`
@@ -556,11 +557,11 @@ Decision Question:    Does the Human Governance Supervisor ratify the backtestin
                       a3f5158 (implementing simulated clock, PnL accounting, event
                       runner, adapters, Track 1 evaluator, and thread limits without
                       prior formal Layer 1 authorization)?
-Selected Alternative: [BLANK - PENDING HUMAN DECISION] (OPTION A: RATIFY / OPTION B: REJECT)
+Selected Alternative: [BLANK - PENDING HUMAN DECISION] (RATIFY / RATIFY_WITH_CONDITIONS / REJECT_AND_QUARANTINE / DEFER)
 Conditions / Limits:  [BLANK - PENDING HUMAN DECISION]
 Rejected Options:     [BLANK - PENDING HUMAN DECISION]
 Supervisor Rationale: [BLANK - PENDING HUMAN DECISION]
-Supervisor Identity:  [BLANK]
+Supervisor Identity:  [BLANK - Identity and Role]
 Decision Timestamp:   [BLANK]
 Approval Signature:   [BLANK]
 Effective Status:     DRAFT_PENDING_HUMAN_DECISION
@@ -572,11 +573,11 @@ RECORD 2: LAYER 2 TECHNICAL DESIGN APPROVAL RECORD
 Decision ID:          LAYER_2_TECHNICAL_DESIGN_APPROVAL
 Decision Question:    Does the Human Governance Supervisor approve the technical
                       specification and test qualification of the backtest runner?
-Selected Alternative: [BLANK - PENDING HUMAN DECISION] (APPROVE / REVISE / DEFER)
+Selected Alternative: [BLANK - PENDING HUMAN DECISION] (APPROVE / APPROVE_WITH_CONDITIONS / RETURN_FOR_REVISION / DEFER)
 Conditions / Limits:  [BLANK - PENDING HUMAN DECISION]
 Rejected Options:     [BLANK - PENDING HUMAN DECISION]
 Supervisor Rationale: [BLANK - PENDING HUMAN DECISION]
-Supervisor Identity:  [BLANK]
+Supervisor Identity:  [BLANK - Identity and Role]
 Decision Timestamp:   [BLANK]
 Approval Signature:   [BLANK]
 Effective Status:     DRAFT_PENDING_HUMAN_DECISION
@@ -669,7 +670,29 @@ Selected Alternative: [BLANK - PENDING HUMAN DECISION] (Opt 1: Full / Opt 2: Eli
 Conditions / Limits:  [BLANK - PENDING HUMAN DECISION]
 Rejected Options:     [BLANK - PENDING HUMAN DECISION]
 Supervisor Rationale: [BLANK - PENDING HUMAN DECISION]
-Supervisor Identity:  [BLANK]
+Supervisor Identity:  [BLANK - Identity and Role]
+Decision Timestamp:   [BLANK]
+Approval Signature:   [BLANK]
+Effective Status:     DRAFT_PENDING_HUMAN_DECISION
+================================================================================
+
+================================================================================
+RECORD 9: GATE 4 RESEARCH EXECUTION AUTHORIZATION RECORD
+================================================================================
+Decision ID:          GATE_04_RESEARCH_EXECUTION_AUTHORIZATION
+Decision Question:    Does the Human Governance Supervisor authorize research agents
+                      to execute Phase 5.5 historical economic backtests across
+                      Folds 1 to 4 (confirmatory) and Fold 5 (exploratory only,
+                      FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED), with
+                      prospective holdout data remaining strictly sealed?
+Prerequisites:        Gate 1 (EXC-PHASE55-01), Gate 2 (Layer 2 Design), and
+                      Gate 3 (DEC_01 through DEC_06) must all be formally signed.
+Selected Alternative: [BLANK - PENDING HUMAN DECISION] (AUTHORIZE_WITH_APPROVED_SCOPE / AUTHORIZE_WITH_CONDITIONS / REJECT / DEFER)
+Authorized Scope:     [BLANK - PENDING HUMAN DECISION] (Folds 1-4 Confirmatory / Fold 5 Exploratory Only)
+Conditions / Limits:  [BLANK - PENDING HUMAN DECISION]
+Rejected Options:     [BLANK - PENDING HUMAN DECISION]
+Supervisor Rationale: [BLANK - PENDING HUMAN DECISION]
+Supervisor Identity:  [BLANK - Identity and Role]
 Decision Timestamp:   [BLANK]
 Approval Signature:   [BLANK]
 Effective Status:     DRAFT_PENDING_HUMAN_DECISION
@@ -723,7 +746,8 @@ Until Gates 1 through 4 are explicitly resolved and signed by the Human Governan
 - Full-dataset evaluations across Track 1 or Track 2 remain strictly prohibited.
 - Historical Fold 5 remains strictly restricted to exploratory and diagnostic profiling (`FOLD_5_OOS_ELIGIBILITY = OOS_ELIGIBILITY_NOT_VERIFIED`) and must NOT be bundled into confirmatory economic claims.
 - Prospective holdout data (Nov 1, 2026 to Apr 30, 2027; `open_time_ms >= 1793491200000`) remains strictly `SEALED` and isolated from Phase 5.5 historical backtesting.
-- Phase 5.5 status remains strictly `NOT_STARTED`.
+- Phase 5.5 research execution status remains strictly `PHASE55_RESEARCH_EXECUTION_STATUS = NOT_STARTED / NOT_AUTHORIZED`.
+- Phase 5.5 governance review status remains `PHASE55_GOVERNANCE_REVIEW_STATUS = READY_FOR_HUMAN_SUPERVISOR_REVIEW`.
 - Phase 5.6 status remains strictly `NOT_AUTHORIZED`.
 
 ---
