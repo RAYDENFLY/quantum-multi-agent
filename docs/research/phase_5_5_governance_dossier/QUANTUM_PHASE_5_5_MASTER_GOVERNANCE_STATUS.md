@@ -15,10 +15,10 @@ All six decisions remain strictly `PENDING_HUMAN_DECISION`. Phase 5.5 economic b
 | Decision ID | Decision Title | Scope & Core Problem | Current Status | Recommended Option | Epistemic Classification of Recommendation | Upstream Dependencies | Downstream Decisions Impacted | Open Technical Issues | Blocks Execution? |
 |---|---|---|---|---|---|---|---|---|---|
 | **DEC_01** | Barrier Execution Architecture | Re-anchored barriers (Track 2) vs downstream strategy (Track 3) | `PENDING_HUMAN_DECISION` | Alternative B (Track 2: Re-anchored) | `SOURCE_VERIFIED` (Zero degrees of freedom) | None (Foundational) | DEC_02, DEC_04, DEC_05 | ISS_06 | **YES** |
-| **DEC_02** | Directional Trading Scope | Execution permission (Long, Short, Bidirectional) vs mandatory reporting | `PENDING_HUMAN_DECISION` | Bidirectional execution with mandatory disaggregated reporting | `SOURCE_VERIFIED` (Directional asymmetry confirmed) | DEC_01 | DEC_05 | None | **YES** |
+| **DEC_02** | Directional Trading Scope | Execution permission (Long, Short, Bidirectional) vs mandatory reporting | `PENDING_HUMAN_DECISION` | Structured choice among Options 1, 2, or 3 with mandatory disaggregated reporting | `SOURCE_VERIFIED` (Directional asymmetry confirmed) | DEC_01 | DEC_05 | None | **YES** |
 | **DEC_03** | Funding Rate Model | Parametric sensitivity sweep vs unverified venue fill rules | `PENDING_HUMAN_DECISION` | 4-scenario sensitivity sweep (-1, 0, +1, +3 bps) | `MATHEMATICALLY_VERIFIED` (Accounting identity) | None | DEC_04, DEC_05 | ISS_01, ISS_09 | **YES** |
 | **DEC_04** | Cost Scenarios & Statistical Criteria | Reference-price accounting, candidate block length, and hypothesis family | `PENDING_HUMAN_DECISION` | REFERENCE_PRICE_ACCOUNTING, provisional 288-bar MBB, K based on approved plan | `MATHEMATICALLY_VERIFIED` (Resampling design candidate) | DEC_01, DEC_03, DEC_06 | DEC_05 | ISS_02, ISS_03, ISS_04, ISS_05, ISS_07, ISS_10 | **YES** |
-| **DEC_05** | Portfolio Concurrency & Leverage | Exposure caps, stop loss budgeting, signed slippage, and cross-asset correlation risk | `PENDING_HUMAN_DECISION` | Structured choice among Options 1, 2, or 3 (with Approach B signed execution deviation) | `MATHEMATICALLY_VERIFIED` (Signed cash-flow accounting) | DEC_01, DEC_02, DEC_04 | None (Terminal) | ISS_08 | **YES** |
+| **DEC_05** | Portfolio Concurrency & Leverage | Exposure caps, stop loss budgeting, and cross-asset correlation risk | `PENDING_HUMAN_DECISION` | Structured choice among Options 1, 2, or 3 (Portfolio Risk Policy) | `SOURCE_VERIFIED` (Capital allocation specification) | DEC_01, DEC_02, DEC_04 | None (Terminal) | ISS_08 | **YES** |
 | **DEC_06** | XMR Research & Portfolio Scope | Asset coverage disparity (83,863 vs 316,500 candles) | `PENDING_HUMAN_DECISION` | Three-Tier Policy (Tier 1 preserve, Tier 2 standalone report, Tier 3 exclude from primary portfolio) | `SOURCE_VERIFIED` (Coverage gap confirmed) | None | DEC_04, DEC_05 | None | **YES** |
 
 ---
@@ -47,3 +47,4 @@ The Final Governance Errata provides formal reconciliation for:
 - Decoupling of DEC_05 portfolio risk policy from execution accounting policy.
 - Reconciled technical issue register and remaining execution blockers.
 
+- [QUANTUM_PHASE_5_5_FINAL_CLOSURE_ADDENDUM.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE_5_5_FINAL_CLOSURE_ADDENDUM.md): Documents the final closure audit covering holdout access-history separation, partial-fill cost-basis alternatives, the 12 required backtesting metrics, and test diff transparency.

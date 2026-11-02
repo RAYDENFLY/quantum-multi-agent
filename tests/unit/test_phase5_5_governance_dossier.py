@@ -371,7 +371,7 @@ def test_15_zero_em_dashes_across_all_dossier_files():
 
 
 def test_16_final_governance_errata_deliverable():
-    """Verify final governance errata exists, reconciles tasks A through G, and has zero em dashes."""
+    """Verify final governance errata exists, reconciles tasks A through I, and has zero em dashes."""
     errata_path = DOSSIER_DIR / "QUANTUM_PHASE_5_5_FINAL_GOVERNANCE_ERRATA.md"
     assert errata_path.exists(), "Missing QUANTUM_PHASE_5_5_FINAL_GOVERNANCE_ERRATA.md"
     assert errata_path.stat().st_size > 500, "Errata deliverable is unexpectedly small"
@@ -386,23 +386,62 @@ def test_16_final_governance_errata_deliverable():
     assert "QUANTUM_PHASE_5_5_FINAL_GOVERNANCE_ERRATA.md" in status_content
     assert "SUPPLEMENTARY ERRATA NOTICE" in status_content
 
-    # Task A: Generalized two-legged accounting and 5 cases
+    # Task A: Test audit & execution limitation delineation
+    assert "Dedicated Phase 5.5 Governance Dossier Tests" in content
+    assert "16 passed" in content
+    assert "Filtered Phase 5 Unit Tests" in content
+    assert "372 passed" in content
+    assert "FULL_UNIT_SUITE_NOT_VERIFIED" in content
+    assert "threading._shutdown()" in content
+
+    # Task B & D: Reconciled issue register & blockers
+    for iss_id in EXPECTED_ISSUE_IDS:
+        assert iss_id in content
+    assert "Open Issues (7)" in content
+    assert "Resolved by Specification (3)" in content
+    assert "Informational Issues (1)" in content
+    assert "Direct Execution Blockers (6)" in content
+    assert "Supporting Methodological Limitation (1)" in content
+
+    # Task B: Holdout evidentiary separation
+    assert "Historical Access: `NOT_VERIFIED`" in content
+    assert "Boundaries: `METADATA_VERIFIED`" in content
+    assert "Artifacts: `23_MANIFESTED_ARTIFACTS_VERIFIED`" in content
+    assert "STRICTLY_SEALED" in content
+
+    # Task C: Decoupling risk policy from execution accounting
+    assert "DECOUPLING DEC_05 PORTFOLIO RISK POLICY FROM EXECUTION ACCOUNTING POLICY" in content
+    assert "DEC_05: Pure Portfolio Risk Policy" in content
+    assert "Execution Cost Accounting Policy (Technical Specification)" in content
+
+    # Task G: DEC_02 reporting vs execution decoupling
+    assert "DEC_02 DIRECTIONAL SCOPE: REPORTING VS EXECUTION" in content
+    assert "DEC_02 remains strictly `PENDING_HUMAN_DECISION`" in content
+
+    # Task E: Symmetric two-legged accounting and numerical funding checks
     assert "C_{\\text{exec,total}} = C_{\\text{exec,entry}} + C_{\\text{exec,exit}}" in content
     assert "L_{\\text{realized}} = L_{\\text{price,ref}} + C_{\\text{exec,total}} + C_{\\text{fees}} - CF_{\\text{funding}}" in content
     assert "Case 1: Adverse Entry & Exit" in content
     assert "Case 2: Favorable Execution" in content
     assert "Case 3: Short Adverse Execution" in content
     assert "Case 4: Gap-Through-Stop" in content
-    assert "Case 5: Funding Cash Flow Effect" in content
-    assert "Partial Fill Summation" in content
+    assert "Case 5a: Funding Payment" in content
+    assert "Case 5b: Funding Receipt" in content
+    assert "+24.000" in content
+    assert "+18.000" in content
     assert "double-count" in content
+
+    # Task F: Per-fill partial fill accounting
+    assert "TASK F: PER-FILL PARTIAL-FILL ACCOUNTING SPECIFICATION" in content
+    assert "C_{\\text{entry}} = \\sum_{i=1}^M q_{\\text{entry},i} d (P_{\\text{entry},i,\\text{exec}} - P_{\\text{entry},i,\\text{ref}})" in content
+    assert "C_{\\text{exit}} = \\sum_{j=1}^K q_{\\text{exit},j} (-d) (P_{\\text{exit},j,\\text{exec}} - P_{\\text{exit},j,\\text{ref}})" in content
+    assert "Q_{\\text{closed}} \\le Q_{\\text{open}}" in content
 
     # Task B: Settlement timing convention
     assert "EXPLICIT_SETTLEMENT_TIMING_MODELING_CONVENTION" in content
-    assert "Directional Asymmetry & Conservatism Analysis" in content
 
     # Task C: Conditional K reconciliation table
-    assert "Conditional Hypothesis Family Reconciliation Table" in content
+    assert "Conditional Hypothesis Family $K$ Reconciliation Table" in content
     assert "$K = 10$" in content
     assert "$K = 11$" in content
     assert "$K = 20$" in content
@@ -411,33 +450,67 @@ def test_16_final_governance_errata_deliverable():
     assert "$K = 33$" in content
     assert "$K = 1$" in content
 
-    # Task D: Holdout evidence and partial manifest coverage
-    assert "23_MANIFESTED_ARTIFACTS_VERIFIED" in content
-    assert "16_OF_16_VERIFIED" in content
-    assert "7_OF_7_VERIFIED" in content
-    assert "STRICTLY_SEALED" in content
-
-    # Task E: Decoupling risk policy from execution accounting
-    assert "DECOUPLING DEC_05 PORTFOLIO RISK POLICY FROM EXECUTION ACCOUNTING POLICY" in content
-    assert "DEC_05 Portfolio Risk Policy (Governance Decision)" in content
-    assert "Execution Cost Accounting Policy (Technical Specification)" in content
-
-    # Task F: Technical issue register reconciliation
-    for iss_id in EXPECTED_ISSUE_IDS:
-        assert iss_id in content
-    assert "Open Issues (6)" in content
-    assert "Resolved by Specification (5)" in content
-
-    # Execution blockers
-    assert "REMAINING EXECUTION BLOCKERS BEFORE PHASE 5.5" in content
-
-    # Task G: Test scopes
-    assert "Dedicated Phase 5.5 Governance Dossier Tests" in content
-    assert "Filtered Phase 5 Unit Tests" in content
-    assert "Complete Repository Unit Test Suite" in content
+    # Task H: Aggressive strategy benchmarks
+    assert "TASK H: FUTURE RESEARCH REQUIREMENT: AGGRESSIVE STRATEGY TRADE FREQUENCY & REPORTING BENCHMARKS" in content
+    assert "600 COMPLETED TRADES PER ASSET PER YEAR" in content
+    assert "LOW_ACTIVITY" in content
+    assert "MODERATE_ACTIVITY" in content
+    assert "ACTIVE" in content
+    assert "AGGRESSIVE" in content
+    assert "HIGH_FREQUENCY" in content
 
     # Final verdict
     assert "FINAL_ERRATA_READY_WITH_LIMITATIONS" in content
+    assert "NOT_STARTED" in content
+    assert "NOT_AUTHORIZED" in content
+
+
+def test_17_final_closure_addendum_deliverable():
+    """Verify final closure addendum exists, reconciles tasks A through E, and has zero em dashes."""
+    addendum_path = DOSSIER_DIR / "QUANTUM_PHASE_5_5_FINAL_CLOSURE_ADDENDUM.md"
+    assert addendum_path.exists(), "Missing QUANTUM_PHASE_5_5_FINAL_CLOSURE_ADDENDUM.md"
+    assert addendum_path.stat().st_size > 500, "Closure addendum is unexpectedly small"
+
+    content = addendum_path.read_text(encoding="utf-8")
+
+    # Verify zero em dashes
+    assert chr(0x2014) not in content, "Em dash detected in Closure Addendum!"
+
+    # Verify master status references the addendum
+    status_content = (DOSSIER_DIR / "QUANTUM_PHASE_5_5_MASTER_GOVERNANCE_STATUS.md").read_text(encoding="utf-8")
+    assert "QUANTUM_PHASE_5_5_FINAL_CLOSURE_ADDENDUM.md" in status_content
+
+    # Task A: Holdout access-history 4-tier separation
+    assert "Current Correction-Task Activity" in content
+    assert "Historical Access Before This Task" in content
+    assert "NOT_VERIFIED" in content
+    assert "Dataset Temporal Boundary" in content
+    assert "METADATA_VERIFIED" in content
+    assert "STRICTLY_SEALED" in content
+
+    # Task B: Partial-fill cost-basis alternatives
+    assert "Average Cost Basis vs FIFO" in content
+    assert "PENDING_HUMAN_DECISION" in content
+    assert "REALIZED_PNL" in content
+    assert "UNREALIZED_PNL" in content
+    assert "Q_{\\text{closed}}" in content
+    assert "Q_{\\text{open}}" in content
+
+    # Task C: 12 required metrics and aggressive frequency target
+    assert "12_REQUIRED_BACKTESTING_REPORTING_METRICS" in content
+    assert "600 COMPLETED TRADES PER ASSET PER YEAR" in content
+    assert "LOW_ACTIVITY" in content
+    assert "MODERATE_ACTIVITY" in content
+    assert "ACTIVE" in content
+    assert "AGGRESSIVE" in content
+    assert "HIGH_FREQUENCY" in content
+
+    # Task D: Test diff transparency and suite status
+    assert "FULL_UNIT_SUITE_NOT_VERIFIED" in content
+    assert "Per-Test Git Diff Audit Table" in content
+
+    # Final verdict
+    assert "FINAL_CLOSURE_READY_WITH_LIMITATIONS" in content
     assert "NOT_STARTED" in content
     assert "NOT_AUTHORIZED" in content
 

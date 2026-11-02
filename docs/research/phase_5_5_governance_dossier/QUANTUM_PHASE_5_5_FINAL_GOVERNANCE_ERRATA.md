@@ -2,7 +2,7 @@
 ## HUMAN SIGN-OFF PREPARATION & FINAL CONSISTENCY REVIEW
 
 **Document Status:** `APPROVED_FOR_HUMAN_REVIEW`  
-**Publication Timestamp:** `2026-11-02 12:00:00 UTC`  
+**Publication Timestamp:** `2026-11-02 13:30:00 UTC`  
 **Operational Mode:** `FINAL_ERRATA_AND_HUMAN_REVIEW_PREPARATION`  
 **Target Scope:** Official supplementary errata to Revision 1.2 dossier suite  
 **Final Governance Verdict:** `FINAL_ERRATA_READY_WITH_LIMITATIONS`  
@@ -24,30 +24,131 @@ This is a narrowly scoped reconciliation document designed to resolve the final 
 - [QUANTUM_PHASE_5_5_GOVERNANCE_DOSSIER_REVISION_1_2_REPORT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE_5_5_GOVERNANCE_DOSSIER_REVISION_1_2_REPORT.md)
 
 ### Strict Operational Boundaries
-1. **No Technical Redesign:** This errata does not create Revision 1.3 or Phase 5.5.0.9.
+1. **No Technical Redesign:** This errata does not create Revision 1.3, Phase 5.5.0.9, or Phase 5.6.
 2. **No Execution Authorization:** This errata does not authorize economic backtesting, model inference, paper trading, or live execution.
-3. **No Retraining or Calibration:** All Phase 5.3 models and Phase 5.4 calibrations remain frozen.
+3. **No Retraining or Recalibration:** All Phase 5.3 models and Phase 5.4 calibrations remain frozen.
 4. **Prospective Holdout Isolation:** The holdout window (`2026-11-01 00:00:00 UTC` through `2027-04-30 23:59:59.999 UTC`) remains strictly sealed and uninspected.
 5. **Human Governance Precedence:** All six governance decisions (DEC_01 through DEC_06) remain strictly pending human input; all decision fields in the worksheet remain blank.
 
 ---
 
-## 2. TASK A: ENTRY & EXIT EXECUTION ACCOUNTING SPECIFICATION
+## 2. TASK A: FULL UNIT TEST EVIDENCE AUDIT & TEST INTEGRITY
 
-### 2.1 Generalized Two-Legged Realized Loss Formulation
-In Revision 1.2, execution deviation was formulated primarily around exit price slippage from reference barrier levels. To establish complete accounting symmetry, the realized loss identity is generalized to explicitly capture execution price deviations on both entry and exit legs for full positions.
+### 2.1 Test Execution History & Scope Verification
+A rigorous audit of the test execution history was conducted across three distinct scopes:
 
-Let:
-- $d \in \{+1, -1\}$ denote trade direction ($+1$ for Long, $-1$ for Short).
-- $Q > 0$ denote executed base asset position quantity.
-- $P_{\text{entry,ref}}$ denote the entry reference price (e.g. signal candle close or barrier activation price).
-- $P_{\text{entry,exec}}$ denote the volume-weighted average executed entry fill price.
-- $P_{\text{exit,ref}}$ denote the exit reference price (e.g. barrier stop, take-profit, or horizon boundary).
-- $P_{\text{exit,exec}}$ denote the volume-weighted average executed exit fill price.
-- $C_{\text{fees}} \ge 0$ denote total transaction exchange fees across entry and exit fills.
-- $CF_{\text{funding}}$ denote cumulative net signed funding cash flows received or paid during position hold.
+1. **Dedicated Phase 5.5 Governance Dossier Tests:**
+   - Exact Command: `python -m pytest tests/unit/test_phase5_5_governance_dossier.py -v`
+   - Completion Status: Completed normally without intervention.
+   - Results: **16 passed**, 0 failed, 0 skipped, 0 deselected.
+   - Exit Code: `0`
+   - Execution Duration: `0.11s`
+   - Verification Status: `TEST_VERIFIED`.
 
-The total realized loss $L_{\text{realized}}$ is decomposed into reference price loss, entry execution deviation, exit execution deviation, transaction fees, and funding cash flows:
+2. **Filtered Phase 5 Unit Tests:**
+   - Exact Command: `python -m pytest tests/unit/ -k "phase5" -v`
+   - Completion Status: Completed normally without intervention.
+   - Results: **372 passed**, 0 failed, 0 skipped, 190 deselected.
+   - Exit Code: `0`
+   - Execution Duration: `8.05s`
+   - Verification Status: `TEST_VERIFIED`.
+
+3. **Complete Repository Unit Test Suite:**
+   - Exact Command: `python -m pytest tests/unit/ -v`
+   - Total Collected Tests: 562 tests.
+   - Pytest In-Session Results: All 562 tests passed assertions (`562 passed, 3 warnings in 14.38s`).
+   - Process Exit Status: Upon completing test assertions, the Python 3.13 process hangs during interpreter finalization (`threading._shutdown()` waiting on unclosed background thread or event loop handles from non-Phase-5 integration tests such as `test_freshness_alert_audit.py` or PySide6 application lifecycle in `test_app_lifecycle.py`), preventing the background PowerShell task from naturally exiting without external termination.
+   - Audit Rule Applied: *"Do not interpret a killed, canceled, timed-out, or incomplete process as a passing test run."*
+   - Official Status: **`FULL_UNIT_SUITE_NOT_VERIFIED`**.
+   - Note on Regressions: No test failures or assertion regressions occurred; the limitation is strictly an environment interpreter-shutdown hang in non-Phase-5 legacy integration tests.
+
+### 2.2 Test Integrity & Assertion Verification
+An inspection of the Git diff for [tests/unit/test_phase5_5_governance_dossier.py](file:///d:/quantum-multi-agent/tests/unit/test_phase5_5_governance_dossier.py) confirms:
+- Assertions `test_01` through `test_15` were completely untouched and preserved.
+- `test_16_final_governance_errata_deliverable()` was added purely to verify the presence, structure, and zero-em-dash compliance of this errata deliverable.
+- Zero assertions were weakened, relaxed, or removed.
+
+---
+
+## 3. TASK B & TASK D: RECONCILED TECHNICAL ISSUE REGISTER & EXECUTION BLOCKERS
+
+### 3.1 Reconciled Technical Issue Register (ISS_01 through ISS_11)
+The technical issue register is fully reconciled across all eleven issues with strict evidence-based classifications:
+
+| Issue ID | Related Decision | Severity | Description | Authoritative Source Document | Verification Classification | Corrected Status | Blocks Phase 5.5? | Category | Required Next Action | Decision Authority |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **ISS_01** | DEC_03 | `HIGH` | Funding settlement eligibility for boundary orders filled at 08:00:00.000 UTC is venue-dependent. | [PHASE_5_5_0_8_FUNDING_ELIGIBILITY_AUDIT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_FUNDING_ELIGIBILITY_AUDIT.md) | `NOT_VERIFIED` | `OPEN` | **YES** | Direct Execution Blocker | Confirm AsterDEX boundary matching rule from official venue documentation; until confirmed, apply explicit modeling convention. | Engineering / Supervisor |
+| **ISS_02** | DEC_04 | `MEDIUM` | Ambiguity between full bid-ask spread ($S$) and half-spread per leg ($s_{\text{leg}}$), and PnL denominator definition. | [PHASE_5_5_0_8_TRANSACTION_COST_SPECIFICATION.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_TRANSACTION_COST_SPECIFICATION.md) | `SOURCE_VERIFIED` | `RESOLVED_BY_SPECIFICATION` | No | Methodological Resolution | Enforce entry notional $N_{\text{entry}}$ denominator across all evaluation code. | Quantitative Auditor |
+| **ISS_03** | DEC_04 | `HIGH` | Potential double-counting of spread, slippage, and impact if fill prices are slipped AND transaction costs deducted. | [PHASE_5_5_0_7_TRANSACTION_COST_AUDIT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_7/PHASE_5_5_0_7_TRANSACTION_COST_AUDIT.md) | `MATHEMATICALLY_VERIFIED` | `RESOLVED_BY_SPECIFICATION` | No | Methodological Resolution | Mandate strict `REFERENCE_PRICE_ACCOUNTING` where aggregate deviation $C_{\text{exec,total}}$ absorbs spread and impact. | Quantitative Auditor |
+| **ISS_04** | DEC_04 | `HIGH` | 24-bar MBB has potential limitations for long dependence; 288-bar MBB is candidate, not validated optimal. | [PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md) | `CLAIMED_ONLY` | `OPEN` | **YES** | Direct Execution Blocker / Decision Dependency | Approve candidate Continuous Calendar-Time Portfolio MBB ($b=288$ bars) as provisional research specification in DEC_04. | Supervisor (DEC_04) |
+| **ISS_05** | DEC_04 | `MEDIUM` | Optimal block-length selection lacks empirical sensitivity sweep across candidate values ($b \in \{72, 144, 288, 576\}$ bars). | [PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md) | `NOT_VERIFIED` | `OPEN` | No (Diagnostic) | Supporting Methodological Limitation | Execute diagnostic sensitivity sweep across candidate block lengths during Phase 5.5 execution. | Engineering |
+| **ISS_06** | DEC_01 | `HIGH` | Conflation between ML target predictive validation (Track 1) and downstream strategy (Track 3). Track 2 does not validate label payoff. | [PHASE_5_5_0_6_RESEARCH_TRACK_COMPARISON.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_6/PHASE_5_5_0_6_RESEARCH_TRACK_COMPARISON.md) | `SOURCE_VERIFIED` | `RESOLVED_BY_SPECIFICATION` | No | Methodological Resolution | Decoupled into Three-Track Sequential Architecture; estimand limitations presented for DEC_01. | Quantitative Auditor / Supervisor (DEC_01) |
+| **ISS_07** | DEC_04 | `HIGH` | Hypothesis family size $K$ depends on prespecified primary estimand, directional scope (DEC_02), and asset universe (DEC_06). | [PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md) | `MATHEMATICALLY_VERIFIED` | `OPEN` | **YES** | Direct Execution Blocker / Decision Dependency | Prespecify primary confirmatory hypothesis family structure ($K \in \{1, 10, 11, 20, 22, 30, 33\}$) upon signing DEC_04/06. | Supervisor (DEC_04 / DEC_06) |
+| **ISS_08** | DEC_05 | `HIGH` | Claim that pairwise crypto correlations satisfy $\rho > 0.70$ is unsupported; cross-asset stress risk unquantified. | [PHASE_5_5_0_5_DEC_05_PORTFOLIO_CORRELATION_AUDIT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_5/PHASE_5_5_0_5_DEC_05_PORTFOLIO_CORRELATION_AUDIT.md) | `NOT_VERIFIED` | `OPEN` | **YES** | Direct Execution Blocker / Risk Modeling Limitation | Decouple risk policy from unverified correlation; select among structured DEC_05 exposure options and conduct stress tests. | Supervisor (DEC_05) |
+| **ISS_09** | DEC_03 | `HIGH` | Historical funding rate series are completely absent from canonical datasets (`FUNDING_DATA_UNAVAILABLE`). | [PHASE_5_5_0_8_FUNDING_ELIGIBILITY_AUDIT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_FUNDING_ELIGIBILITY_AUDIT.md) | `SOURCE_VERIFIED` | `OPEN` | **YES** | Direct Execution Blocker / Decision Dependency | Authorize 4-scenario parametric sensitivity sweep (-1, 0, +1, +3 bps) under explicit missing-data disclosure in DEC_03. | Supervisor (DEC_03) |
+| **ISS_10** | DEC_04 | `HIGH` | Runtime accounting implementation has not been code-verified due to backtesting prohibitions. | [PHASE_5_5_0_7_TEST_INTEGRITY_AUDIT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_7/PHASE_5_5_0_7_TEST_INTEGRITY_AUDIT.md) | `NOT_VERIFIED` | `OPEN` | **YES** | Direct Execution Blocker / Code Verification Limitation | Mandate unit-test verification of simulation accounting engine before executing full fleet backtest once permitted. | Engineering |
+| **ISS_11** | Governance | `MEDIUM` | Operating system file read-access history cannot be audited via SHA-256 hashes or Git logs. | [PHASE_5_5_0_8_FULL_FLEET_TEMPORAL_ISOLATION_AUDIT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_FULL_FLEET_TEMPORAL_ISOLATION_AUDIT.md) | Historical Access: `NOT_VERIFIED` \| Boundaries: `METADATA_VERIFIED` \| Artifacts: `23_MANIFESTED_ARTIFACTS_VERIFIED` | `INFORMATIONAL` | No | Informational Governance Issue | Acknowledge physical isolation (canonical partitions terminate `2026-10-31 21:59:59 UTC`); retain access verification limitation. | Informational / Human Governance |
+
+### 3.2 Derived Issue Register Summary
+- **Total Cataloged Issues:** Exactly 11 issues (ISS_01 through ISS_11).
+- **Open Issues (7):** ISS_01, ISS_04, ISS_05, ISS_07, ISS_08, ISS_09, ISS_10.
+- **Resolved by Specification (3):** ISS_02, ISS_03, ISS_06.
+- **Informational Issues (1):** ISS_11 (Status: `INFORMATIONAL`, historical access strictly `NOT_VERIFIED`).
+- **Direct Execution Blockers (6):** ISS_01, ISS_04, ISS_07, ISS_08, ISS_09, ISS_10.
+- **Supporting Methodological Limitation (1):** ISS_05 (Block-length sensitivity sweep; mandatory diagnostic during execution, non-blocking for launch).
+
+### 3.3 Task B: Holdout Evidentiary Boundaries & Separation
+A strict evidentiary separation is enforced regarding prospective holdout data:
+1. **Historical Access History:** Classified strictly as `NOT_VERIFIED`. Unrecorded historical OS-level read access cannot be proven or disproven via repository hashes. ISS_11 must never be described as proof that no historical access occurred.
+2. **Canonical Dataset Boundary:** Classified as `METADATA_VERIFIED`. Parquet file footer metadata confirms that all 33 fleet partitions terminate at `2026-10-31 21:59:59 UTC`.
+3. **Frozen Artifact Hashes:** Precisely `23_MANIFESTED_ARTIFACTS_VERIFIED` (16 in [PHASE_5_4_2_ARTIFACT_HASH_MANIFEST.json](file:///d:/quantum-multi-agent/artifacts/phase_5_4/PHASE_5_4_2_ARTIFACT_HASH_MANIFEST.json) and 7 in [final_manifest_hashes.json](file:///d:/quantum-multi-agent/artifacts/phase_5_3_3_1/final_manifest_hashes.json)). These 23 artifacts do **not** cover the entire frozen model fleet across all assets and horizons.
+4. **Prospective Holdout Status:** The holdout period (`2026-11-01 00:00:00 UTC` through `2027-04-30 23:59:59.999 UTC`) remains `STRICTLY_SEALED`.
+
+---
+
+## 4. TASK C: DECOUPLING DEC_05 PORTFOLIO RISK POLICY FROM EXECUTION ACCOUNTING POLICY
+
+### 4.1 DEC_05: Pure Portfolio Risk Policy
+DEC_05 is strictly a portfolio risk governance decision. It addresses capital allocation and multi-position risk boundaries:
+- Gross portfolio exposure caps ($E_{\text{gross}} \le E_{\text{max}}$).
+- Maximum portfolio leverage and margin utilization bounds.
+- Risk-budget-based position sizing and stop-loss risk allocation.
+- Maximum concurrent positions across the 11 asset specialists.
+- Cross-asset correlation stress limits and portfolio drawdown circuit breakers.
+
+Human governance must select among the three structured alternatives:
+- **Option 1:** Fixed Gross Exposure Cap (e.g. $1.0\times$ or $2.0\times$ capital).
+- **Option 2:** Risk-Budget-Based Sizing (fixed risk percentage per trade, e.g. 0.25% capital at stop).
+- **Option 3:** Combined Exposure Cap and Stop-Risk Budget.
+
+### 4.2 Execution Cost Accounting Policy (Technical Specification)
+Approach A and Approach B belong entirely to the technical execution-cost accounting specification:
+- **Approach A:** Nonnegative adverse slippage floor with separately tracked price improvement.
+- **Approach B:** Signed execution deviation ($C_{\text{exec,total}} = Q d (P_{\text{entry,exec}} - P_{\text{entry,ref}}) + Q (-d) (P_{\text{exit,exec}} - P_{\text{exit,ref}})$).
+
+Approach B is an engineering recommendation because it conserves cash flows and avoids asymmetric bias. However:
+- Approach B is **NOT** an approved production policy.
+- Approach B is **NOT** a DEC_05 sub-option.
+- Approach B is **NOT** an automatic consequence of selecting DEC_05 Option 1, 2, or 3.
+
+DEC_05 remains strictly `PENDING_HUMAN_DECISION`.
+
+---
+
+## 5. TASK G: DEC_02 DIRECTIONAL SCOPE: REPORTING VS EXECUTION
+
+A strict governance distinction is established between research reporting and trading authorization:
+1. **Independent Directional Evaluation:** Long and Short specialists must be evaluated independently to detect performance asymmetries.
+2. **Mandatory Disaggregated Reporting:** Long-Only, Short-Only, and Combined performance metrics must all be reported independently as a scientific transparency standard. This reporting requirement is mandatory regardless of which execution option is selected.
+3. **Execution Permission (DEC_02 Governance Choice):** Authorizing execution is a separate governance decision. Selecting Option 1 (Long-Only Execution) or Option 2 (Short-Only Execution) permits trading in only one direction while retaining disaggregated reporting. Option 3 (Bidirectional Execution) permits trading in both directions.
+4. **No Silent Selection:** Mandatory combined reporting does **not** constitute execution approval. Bidirectional execution is not preselected. DEC_02 remains strictly `PENDING_HUMAN_DECISION`.
+
+---
+
+## 6. TASK E: ENTRY, EXIT & COMPLETE NUMERICAL FUNDING ACCOUNTING
+
+### 6.1 Two-Legged Realized Loss Formulation
+The realized loss identity symmetric across both entry and exit legs is:
 
 $$L_{\text{price,ref}} = -d Q (P_{\text{exit,ref}} - P_{\text{entry,ref}})$$
 
@@ -59,36 +160,41 @@ $$C_{\text{exec,total}} = C_{\text{exec,entry}} + C_{\text{exec,exit}} = Q d (P_
 
 $$L_{\text{realized}} = L_{\text{price,ref}} + C_{\text{exec,total}} + C_{\text{fees}} - CF_{\text{funding}}$$
 
-### 2.2 Proof of Exact Cash-Flow Conservation
-Direct fill realized loss based purely on executed fill prices is:
+Direct fill loss algebraically equates to:
 
-$$L_{\text{realized,exec}} = -d Q (P_{\text{exit,exec}} - P_{\text{entry,exec}}) + C_{\text{fees}} - CF_{\text{funding}}$$
+$$L_{\text{realized,exec}} = -d Q (P_{\text{exit,exec}} - P_{\text{entry,exec}}) + C_{\text{fees}} - CF_{\text{funding}} \equiv L_{\text{price,ref}} + C_{\text{exec,total}} + C_{\text{fees}} - CF_{\text{funding}}$$
 
-Substituting the decomposed terms:
+### 6.2 Complete Numerical Funding Examples
 
-$$L_{\text{price,ref}} + C_{\text{exec,total}} = -d Q (P_{\text{exit,ref}} - P_{\text{entry,ref}}) + Q d (P_{\text{entry,exec}} - P_{\text{entry,ref}}) - Q d (P_{\text{exit,exec}} - P_{\text{exit,ref}})$$
+Funding cash flow is signed: $CF_{\text{funding}} = -d \times N_{\text{settle}} \times f_{t,\text{decimal}}$.
+- **Positive $CF_{\text{funding}}$:** Strategy receives funding (cash inflow, reduces loss).
+- **Negative $CF_{\text{funding}}$:** Strategy pays funding (cash outflow, increases loss).
+- **Positive $L_{\text{realized}}$:** Economic loss.
 
-$$= -d Q P_{\text{exit,ref}} + d Q P_{\text{entry,ref}} + d Q P_{\text{entry,exec}} - d Q P_{\text{entry,ref}} - d Q P_{\text{exit,exec}} + d Q P_{\text{exit,ref}}$$
+#### Baseline Parameters for Funding Cases
+Let $Q = 10.0$ ETH, $P_{\text{entry,ref}} = P_{\text{entry,exec}} = 3,000.00$ USDT, $P_{\text{exit,ref}} = P_{\text{exit,exec}} = 3,000.00$ USDT.
+$L_{\text{price,ref}} = 0.00$ USDT, $C_{\text{exec,total}} = 0.00$ USDT.
+Transaction fees: Entry Maker 0.02% ($6.00$) + Exit Taker 0.05% ($15.00$) $\implies C_{\text{fees}} = 21.00$ USDT.
+Settlement notional: $N_{\text{settle}} = 10.0 \times 3,000 = 30,000$ USDT.
+Settlement funding rate: $f_t = +0.01\% = +0.0001$ (+1 bps).
 
-$$= d Q P_{\text{entry,exec}} - d Q P_{\text{exit,exec}} = -d Q (P_{\text{exit,exec}} - P_{\text{entry,exec}})$$
+#### Case 5a: Funding Payment (Long Position, $d = +1$, Positive Funding Rate $f_t = +0.01\%$)
+- Funding Cash Flow:
+  $$CF_{\text{funding}} = -(+1) \times 30,000 \times (+0.0001) = -3.00 \text{ USDT}$$
+- Realized Loss Substitution:
+  $$L_{\text{realized}} = L_{\text{price,ref}} + C_{\text{exec,total}} + C_{\text{fees}} - CF_{\text{funding}}$$
+  $$= 0.00 + 0.00 + 21.00 - (-3.00) = 21.00 + 3.00 = +24.00 \text{ USDT}$$
+- Economic Verification: The funding payment of 3.00 USDT increases the total economic loss from 21.00 USDT to 24.00 USDT. Cash outflows: 21.00 (fees) + 3.00 (funding) = 24.00 USDT. Exact!
 
-Thus:
+#### Case 5b: Funding Receipt (Short Position, $d = -1$, Positive Funding Rate $f_t = +0.01\%$)
+- Funding Cash Flow:
+  $$CF_{\text{funding}} = -(-1) \times 30,000 \times (+0.0001) = +3.00 \text{ USDT}$$
+- Realized Loss Substitution:
+  $$L_{\text{realized}} = L_{\text{price,ref}} + C_{\text{exec,total}} + C_{\text{fees}} - CF_{\text{funding}}$$
+  $$= 0.00 + 0.00 + 21.00 - (+3.00) = 21.00 - 3.00 = +18.00 \text{ USDT}$$
+- Economic Verification: The funding receipt of 3.00 USDT offsets transaction fees, reducing realized loss from 21.00 USDT to 18.00 USDT. Net cash outflow: 21.00 (fees paid) - 3.00 (funding received) = 18.00 USDT. Exact!
 
-$$L_{\text{price,ref}} + C_{\text{exec,total}} \equiv -d Q (P_{\text{exit,exec}} - P_{\text{entry,exec}})$$
-
-The decomposition is mathematically exact for both Long ($d = +1$) and Short ($d = -1$) positions. Cash flows are strictly conserved with zero residual error.
-
-### 2.3 Partial Fill Summation
-Where an entry or exit order fills across $M$ entry executions and $K$ exit executions, the volume-weighted average fill prices are:
-
-$$P_{\text{entry,exec}} = \frac{\sum_{i=1}^M q_{\text{entry},i} P_{\text{entry},i}}{\sum_{i=1}^M q_{\text{entry},i}}, \quad P_{\text{exit,exec}} = \frac{\sum_{j=1}^K q_{\text{exit},j} P_{\text{exit},j}}{\sum_{j=1}^K q_{\text{exit},j}}$$
-
-where executed position size is $Q = \sum_{i=1}^M q_{\text{entry},i} = \sum_{j=1}^K q_{\text{exit},j}$. If an order is partially filled ($Q < Q_{\text{target}}$), position accounting applies strictly to the executed volume $Q$, with unfilled volume generating zero position PnL.
-
-### 2.4 Aggregate Treatment vs Market Impact Separation
-Execution deviation $C_{\text{exec,total}}$ captures all realized price differences between actual fills and reference prices, including spread crossing, order-book depth traversal, and immediate market impact. A separate post-trade market impact deduction must **NOT** be added on top of observed or simulated execution prices, as doing so would double-count the economic impact.
-
-### 2.5 Verification Across Five Concrete Cases
+### 6.3 Consolidated Numerical Verification Table
 
 | Case | Direction | Ref Entry | Exec Entry | Ref Exit | Exec Exit | Ref Loss ($L_{\text{price,ref}}$) | Exec Dev ($C_{\text{exec,total}}$) | Fees ($C_{\text{fees}}$) | Funding ($CF_{\text{funding}}$) | Total Realized Loss ($L_{\text{realized}}$) | Direct Exec Loss | Match? |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -96,40 +202,58 @@ Execution deviation $C_{\text{exec,total}}$ captures all realized price differen
 | **Case 2: Favorable Execution** | Long ($d=+1$) | 50,000 | 49,980 | 51,000 | 51,030 | -1,000.00 | -50.00 (-20 entry, -30 exit) | 35.353 | 0.00 | -1,014.647 | -1,014.647 | **EXACT** |
 | **Case 3: Short Adverse Execution** | Short ($d=-1$) | 3,000 | 2,990 | 3,060 | 3,070 | +60.00 | +20.00 (+10 entry, +10 exit) | 2.133 | 0.00 | +82.133 | +82.133 | **EXACT** |
 | **Case 4: Gap-Through-Stop** | Long ($d=+1$) | 50,000 | 50,000 | 48,500 | 48,100 | +1,500.00 | +400.00 (0 entry, +400 exit) | 34.050 | 0.00 | +1,934.050 | +1,934.050 | **EXACT** |
-| **Case 5: Funding Cash Flow Effect** | Short ($d=-1$) | 3,000 | 3,000 | 3,000 | 3,000 | 0.00 | 0.00 | 2.100 | +0.300 (received) | +1.800 | +1.800 | **EXACT** |
+| **Case 5a: Funding Payment** | Long ($d=+1$) | 3,000 | 3,000 | 3,000 | 3,000 | 0.00 | 0.00 | 21.000 | -3.000 (paid) | +24.000 | +24.000 | **EXACT** |
+| **Case 5b: Funding Receipt** | Short ($d=-1$) | 3,000 | 3,000 | 3,000 | 3,000 | 0.00 | 0.00 | 21.000 | +3.000 (received) | +18.000 | +18.000 | **EXACT** |
 
-*Note on Case 4:* The gap-through-stop event is fully absorbed by the exit execution deviation term $Q(-d)(P_{\text{exit,exec}} - P_{\text{exit,ref}}) = +400.00$ USDT. No separate "gap penalty" is added.  
-*Note on Runtime Verification:* These mathematical checks verify the accounting specification only. They do not constitute code verification of runtime simulation behavior. ISS_10 remains `NOT_VERIFIED` and `OPEN`.
+*Note on Double Counting:* Aggregate execution deviation $C_{\text{exec,total}}$ absorbs bid-ask spread crossing, order-book depth, and immediate market impact. A separate post-trade market impact deduction must not be added.  
+*Note on Runtime Verification:* These calculations verify the mathematical accounting specification only. Runtime simulation behavior remains unverified; ISS_10 remains `NOT_VERIFIED` and `OPEN`.
 
 ---
 
-## 3. TASK B: ISS_01 SETTLEMENT TIMING CONVENTION
+## 7. TASK F: PER-FILL PARTIAL-FILL ACCOUNTING SPECIFICATION
 
-### 3.1 Terminology Correction: Explicit Modeling Convention
-In prior revisions, excluding an order filled at `08:00:00.000 UTC` from the `08:00:00 UTC` funding settlement was termed a "conservative modeling assumption." This terminology is formally corrected to:
+### 7.1 Per-Fill Execution Formulations
+Where a position is established or liquidated across multiple fills, accounting applies on a per-fill basis:
 
+1. **Multiple Entry Fills:** Position is established across $M$ entry execution slices $i \in \{1, \dots, M\}$:
+   $$Q_{\text{open}} = \sum_{i=1}^M q_{\text{entry},i}$$
+   $$C_{\text{entry}} = \sum_{i=1}^M q_{\text{entry},i} d (P_{\text{entry},i,\text{exec}} - P_{\text{entry},i,\text{ref}})$$
+   $$\bar{P}_{\text{entry,exec}} = \frac{\sum_{i=1}^M q_{\text{entry},i} P_{\text{entry},i,\text{exec}}}{Q_{\text{open}}}, \quad \bar{P}_{\text{entry,ref}} = \frac{\sum_{i=1}^M q_{\text{entry},i} P_{\text{entry},i,\text{ref}}}{Q_{\text{open}}}$$
+
+2. **Multiple Exit Fills & Partial Closures:** Position is closed across $K$ exit execution slices $j \in \{1, \dots, K\}$:
+   $$Q_{\text{closed}} = \sum_{j=1}^K q_{\text{exit},j}$$
+   $$C_{\text{exit}} = \sum_{j=1}^K q_{\text{exit},j} (-d) (P_{\text{exit},j,\text{exec}} - P_{\text{exit},j,\text{ref}})$$
+   $$\bar{P}_{\text{exit,exec}} = \frac{\sum_{j=1}^K q_{\text{exit},j} P_{\text{exit},j,\text{exec}}}{Q_{\text{closed}}}, \quad \bar{P}_{\text{exit,ref}} = \frac{\sum_{j=1}^K q_{\text{exit},j} P_{\text{exit},j,\text{ref}}}{Q_{\text{closed}}}$$
+
+### 7.2 Strict Position Quantity Invariants
+- **Closure Boundary:** At all times, $Q_{\text{closed}} \le Q_{\text{open}}$. A strategy cannot close more contracts than currently open.
+- **Remaining Open Position:** $Q_{\text{remaining}} = Q_{\text{open}} - Q_{\text{closed}} \ge 0$.
+- **Cost Allocation Method (Specification Dependency):** No partial-fill cost-basis allocation method was previously approved in repository specifications. Average Cost Basis (volume-weighted average entry price) and FIFO (first-in, first-out sequence) are competing candidate alternatives; selection remains `PENDING_HUMAN_DECISION` / technical specification dependency.
+- **Separation of Realized vs Unrealized PnL:** Realized PnL (`REALIZED_PNL`) strictly applies only to closed quantity $Q_{\text{closed}}$. Unclosed quantity $Q_{\text{remaining}}$ generates zero realized PnL and tracks mark-to-market unrealized PnL (`UNREALIZED_PNL`).
+  $$L_{\text{price,ref}}(Q_{\text{closed}}) = -d Q_{\text{closed}} (\bar{P}_{\text{exit,ref}} - \bar{P}_{\text{entry,ref}})$$
+  $$C_{\text{exec,entry}}(Q_{\text{closed}}) = \frac{Q_{\text{closed}}}{Q_{\text{open}}} C_{\text{entry}} = Q_{\text{closed}} d (\bar{P}_{\text{entry,exec}} - \bar{P}_{\text{entry,ref}})$$
+  $$C_{\text{exec,exit}}(Q_{\text{closed}}) = C_{\text{exit}} = Q_{\text{closed}} (-d) (\bar{P}_{\text{exit,exec}} - \bar{P}_{\text{exit,ref}})$$
+  $$C_{\text{exec,total}}(Q_{\text{closed}}) = C_{\text{exec,entry}}(Q_{\text{closed}}) + C_{\text{exec,exit}}(Q_{\text{closed}})$$
+  Unclosed quantity $Q_{\text{remaining}}$ generates zero realized PnL and is tracked as unrealized mark-to-market equity.
+
+### 7.3 Fee Calculation from Actual Executed Fill Notionals
+Transaction fees are computed strictly on actual executed notionals across all fills:
+$$C_{\text{fees}} = \sum_{i=1}^M q_{\text{entry},i} P_{\text{entry},i,\text{exec}} r_{\text{fee},i} + \sum_{j=1}^K q_{\text{exit},j} P_{\text{exit},j,\text{exec}} r_{\text{fee},j}$$
+Fees are never calculated from reference prices.
+
+*Status:* Documented as a specification choice for research modeling. Runtime implementation remains unverified; ISS_10 remains `NOT_VERIFIED` and `OPEN`.
+
+---
+
+## 8. SETTLEMENT TIMING CONVENTION & HYPOTHESIS FAMILY K
+
+### 8.1 ISS_01: Explicit Settlement Timing Modeling Convention
+Excluding an order filled at `08:00:00.000 UTC` from the `08:00:00 UTC` funding settlement is designated as an:
 `EXPLICIT_SETTLEMENT_TIMING_MODELING_CONVENTION`
+Because funding cash flows are signed ($CF_t = -d \times N_{\text{settle},t} \times f_{t,\text{decimal}}$), excluding the fill is conservative when the trade would receive funding (Long with $f_t < 0$ or Short with $f_t > 0$), but optimistic when the trade would pay funding (Long with $f_t > 0$ or Short with $f_t < 0$). It is not uniformly conservative. The actual AsterDEX venue matching rule remains `NOT_VERIFIED`; ISS_01 remains `OPEN`.
 
-### 3.2 Directional Asymmetry & Conservatism Analysis
-Because funding cash flow is signed ($CF_t = -d \times N_{\text{settle},t} \times f_{t,\text{decimal}}$), excluding a fill at the settlement boundary is **not uniformly conservative**:
-- **Long Position ($d = +1$), Negative Funding ($f_t < 0$):** Long receives funding ($CF_t > 0$). Excluding the position deprives the strategy of funding income $\implies$ **CONSERVATIVE**.
-- **Long Position ($d = +1$), Positive Funding ($f_t > 0$):** Long pays funding ($CF_t < 0$). Excluding the position shields the strategy from a cash outflow $\implies$ **OPTIMISTIC**.
-- **Short Position ($d = -1$), Positive Funding ($f_t > 0$):** Short receives funding ($CF_t > 0$). Excluding the position deprives the strategy of funding income $\implies$ **CONSERVATIVE**.
-- **Short Position ($d = -1$), Negative Funding ($f_t < 0$):** Short pays funding ($CF_t < 0$). Excluding the position shields the strategy from a cash outflow $\implies$ **OPTIMISTIC**.
-
-Therefore, whether the boundary exclusion convention is conservative or optimistic depends strictly on the joint sign of position direction $d$ and funding rate $f_t$. It must not be labeled a conservative assumption across all trades.
-
-### 3.3 Status of Venue Rule
-The actual AsterDEX venue exchange matching and settlement timestamping rule remains `NOT_VERIFIED`. ISS_01 remains `OPEN` and blocks Phase 5.5 backtesting execution until confirmed against official exchange technical specifications.
-
----
-
-## 4. TASK C: HYPOTHESIS FAMILY K CONSISTENCY
-
-### 4.1 Conditional Hypothesis Family Reconciliation Table
-Under DEC_04, statistical multiplicity correction depends on the integer parameter $K$, defined as the number of prespecified primary confirmatory hypotheses subject to Family-Wise Error Rate (FWER) or False Discovery Rate (FDR) control.
-
-The value of $K$ is not an empirical universal constant; it is conditionally dependent on human governance choices made in DEC_04 (Acceptance Hierarchy Level) and DEC_06 (XMR Portfolio Inclusion):
+### 8.2 Conditional Hypothesis Family $K$ Reconciliation Table
+The parameter $K$ is the number of prespecified primary confirmatory hypotheses subject to FWER/FDR control:
 
 | Hypothesis Family Scope | Condition on DEC_06 (XMR Scope) | Number of Hypotheses $K$ | Confirmatory Estimand Definition | Downstream Correction Formula |
 |---|---|---|---|---|
@@ -141,131 +265,50 @@ The value of $K$ is not an empirical universal constant; it is conditionally dep
 | **Long, Short & Combined Confirmatory** | Tier 1 or Tier 2 (XMR Included in primary acceptance) | $K = 33$ ($11 \times 3$) | Long, Short, and Combined all designated as formal confirmatory tests | Bonferroni: $\alpha / 33$; Holm-Bonferroni step-down |
 | **Single Portfolio-Level Hypothesis** | Invariant to DEC_06 | $K = 1$ | Aggregate system portfolio Sharpe ratio / net return | Single unadjusted confirmatory test ($\alpha = 0.05$) |
 
-### 4.2 Governance Status of DEC_04 and DEC_06
-Both DEC_04 and DEC_06 remain strictly `PENDING_HUMAN_DECISION`. Consequently, ISS_07 remains `OPEN` and `PENDING_HUMAN_DECISION` until the human governance authority selects the confirmatory testing design.
+DEC_04 and DEC_06 remain `PENDING_HUMAN_DECISION`; ISS_07 remains `OPEN`.
 
 ---
 
-## 5. TASK D: HOLDOUT EVIDENCE & PARTIAL MANIFEST COVERAGE
+## 9. TASK H: FUTURE RESEARCH REQUIREMENT: AGGRESSIVE STRATEGY TRADE FREQUENCY & REPORTING BENCHMARKS
 
-### 5.1 Strict Separation of Evidentiary Claims
-To prevent confusion between dataset integrity, access history, and model fleet coverage, three distinct evidentiary classifications are established:
+The future backtesting framework must report the complete suite of:
+`12_REQUIRED_BACKTESTING_REPORTING_METRICS`
 
-```
-+----------------------------------------------------------------------------------------------------+
-|                                    EVIDENTIARY AUDIT TAXONOMY                                      |
-+------------------------------------+--------------------------------+------------------------------+
-| 1. Holdout Access History          | 2. Canonical Dataset Boundary  | 3. Frozen Artifact Hashes    |
-| Status: NOT_VERIFIED               | Status: METADATA_VERIFIED       | Status: SOURCE_VERIFIED      |
-| Historical filesystem / API logs   | Parquet metadata confirms all  | Exactly 23 manifested files  |
-| were not cryptographically         | 33 partitions terminate at     | match registered SHA-256     |
-| audited for read access.           | 2026-10-31 21:59:59 UTC.       | hashes across two manifests. |
-+------------------------------------+--------------------------------+------------------------------+
-```
+### 9.1 Research Trade Frequency Objective
+To evaluate high-activity trading viability under realistic transaction costs, the future Phase 5.5 backtesting engine must incorporate an aggressive trading objective:
+- Initial Research Target: **`600 COMPLETED TRADES PER ASSET PER YEAR`**
+- Granularity: Completed round-trip trade frequency must be reported separately by asset, calendar year, specialist strategy, directional scope (Long vs Short), and market regime.
 
-### 5.2 Exact Manifest Verification Count: Precisely 23 Artifacts
-Verification of artifact hashes is strictly bounded to the existing manifest files in the repository:
-1. `artifacts/phase_5_4/PHASE_5_4_2_ARTIFACT_HASH_MANIFEST.json`: Contains exactly 16 materialized out-of-fold probability files. All 16 hashes match (`16_OF_16_VERIFIED`).
-2. `artifacts/phase_5_3_3_1/final_manifest_hashes.json`: Contains exactly 7 baseline model artifacts. All 7 hashes match (`7_OF_7_VERIFIED`).
+### 9.2 Activity Classification Thresholds
+Activity levels are classified strictly according to completed round-trip trades per asset per year:
+- **Below 100 trades/year:** `LOW_ACTIVITY`
+- **100 to 299 trades/year:** `MODERATE_ACTIVITY`
+- **300 to 599 trades/year:** `ACTIVE`
+- **600 to 1,199 trades/year:** `AGGRESSIVE` (Target research regime)
+- **1,200 or more trades/year:** `HIGH_FREQUENCY`
 
-**Total Verified Artifacts:** Exactly 23 manifested artifacts (`23_MANIFESTED_ARTIFACTS_VERIFIED`).
+*Strict Rule:* These thresholds are descriptive research activity classifications, **NOT** profitability criteria. A strategy generating 600+ trades per year with negative net expectancy after transaction costs fails economic validation.
 
-**Material Limitation:** These 23 verified artifacts do **NOT** cover the entire frozen fleet across all 11 assets and horizons. Describing the entire model fleet as "fully hash-verified" is empirically inaccurate and prohibited.
+### 9.3 Mandatory Backtesting Reporting Suite
+When backtesting is formally authorized, the engine must report:
+1. Monthly trade-count distribution and count of zero-trade months.
+2. Active trading days and average position holding duration.
+3. Net trade expectancy ($\mathbb{E}[\text{PnL}_{\text{net}}]$) per trade.
+4. Net realized PnL after all fees, half-spreads, execution slippage, and funding.
+5. Profit factor, Maximum Drawdown (MDD), and recovery factor.
+6. Risk-adjusted returns (Sharpe ratio, Sortino ratio, Calmar ratio).
+7. Transaction-cost drag (fees + slippage as percentage of gross profit).
+8. PnL concentration (fraction of net profit generated by top 5% of trades).
+9. Annual out-of-sample performance stability across all pre-holdout years.
 
-### 5.3 Prospective Holdout Sealing Status
-The prospective holdout period (`2026-11-01 00:00:00 UTC` through `2027-04-30 23:59:59.999 UTC`) has not been loaded, evaluated, or touched by any script or test in this audit. Its status remains strictly `STRICTLY_SEALED`.
-
----
-
-## 6. TASK E: DECOUPLING DEC_05 PORTFOLIO RISK POLICY FROM EXECUTION ACCOUNTING POLICY
-
-### 6.1 Structural Decoupling of Governance Decisions
-A critical distinction must be maintained between Portfolio Risk Policy and Execution Cost Accounting:
-
-1. **DEC_05 Portfolio Risk Policy (Governance Decision):**
-   - Deals with portfolio-level capital allocation: maximum concurrent positions, gross exposure limits ($E_{\text{gross}} \le E_{\text{max}}$), portfolio leverage bounds, stop-loss risk budgeting, and multi-asset correlation stress limits.
-   - Presents three distinct options for human choice: Option 1 (Fixed Gross Exposure Cap), Option 2 (Risk-Budget-Based Position Sizing), or Option 3 (Combined Exposure Cap and Stop-Risk Budget).
-   - This is a formal human governance policy decision.
-
-2. **Execution Cost Accounting Policy (Technical Specification):**
-   - Deals with how execution price deviation is mathematically modeled and decomposed in simulation: Approach A (nonnegative adverse slippage floor) vs Approach B (signed execution deviation).
-   - Approach B is recommended by research engineering because it conserves cash flows and avoids asymmetric bias.
-   - However, Approach B is a technical recommendation under review, **NOT** an approved production risk policy.
-
-### 6.2 ISS_08 Scope & Status
-ISS_08 specifically concerns the empirical claim that crypto assets satisfy pairwise correlation $\rho > 0.70$ during market drawdowns, and that multi-asset concentration risk is unquantified. Adopting Approach B for execution accounting does **not** resolve ISS_08. ISS_08 remains `NOT_VERIFIED` and `OPEN`.
-
----
-
-## 7. TASK F: RECONCILED TECHNICAL ISSUE REGISTER
-
-The technical issue register is fully reconciled across all eleven issues, strictly aligned with evidentiary audit standards:
-
-| Issue ID | Associated Decision | Severity | Core Technical Problem | Authoritative Source Document | Verification Status | Lifecycle Status | Blocks Execution? |
-|---|---|---|---|---|---|---|---|
-| **ISS_01** | DEC_03 | `HIGH` | Funding settlement eligibility for orders filled at 08:00:00.000 UTC is venue-dependent. | [PHASE_5_5_0_8_FUNDING_ELIGIBILITY_AUDIT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_FUNDING_ELIGIBILITY_AUDIT.md) | `NOT_VERIFIED` | `OPEN` | **YES** |
-| **ISS_02** | DEC_04 | `HIGH` | PnL denominator ambiguity across entry notional vs mark notional. | [PHASE_5_5_0_8_QUANTITATIVE_SPECIFICATION_AUDIT_REPORT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_QUANTITATIVE_SPECIFICATION_AUDIT_REPORT.md) | `RESOLVED_BY_SPECIFICATION` | `RESOLVED` | No |
-| **ISS_03** | DEC_04 | `HIGH` | Double-counting transaction costs in fee and slippage decomposition. | [PHASE_5_5_0_8_TRANSACTION_COST_SPECIFICATION.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_TRANSACTION_COST_SPECIFICATION.md) | `RESOLVED_BY_SPECIFICATION` | `RESOLVED` | No |
-| **ISS_04** | DEC_04 | `HIGH` | 24-bar MBB has potential limitations for long dependence; 288-bar MBB is candidate, not validated optimal. | [PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md) | `CLAIMED_ONLY` | `OPEN` | **YES** |
-| **ISS_05** | DEC_04 | `MEDIUM` | Optimal block-length selection lacks empirical sensitivity sweep across candidate values. | [PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md) | `NOT_VERIFIED` | `OPEN` | No (Diagnostic) |
-| **ISS_06** | DEC_01 | `HIGH` | Track 2 re-anchored barriers do not validate original close-anchored label payoff estimand. | [PHASE_5_5_0_6_EXECUTIVE_SUMMARY.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_6/PHASE_5_5_0_6_EXECUTIVE_SUMMARY.md) | `RESOLVED_BY_SPECIFICATION` | `RESOLVED` | No |
-| **ISS_07** | DEC_04 | `HIGH` | Multiplicity adjustment factor $K$ conditional on human governance scope choice. | [PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_STATISTICAL_INFERENCE_SPECIFICATION.md) | `PENDING_HUMAN_DECISION` | `OPEN` | **YES** |
-| **ISS_08** | DEC_05 | `HIGH` | Claim that pairwise crypto correlations satisfy $\rho > 0.70$ is unsupported; cross-asset stress risk unquantified. | [PHASE_5_5_0_5_DEC_05_PORTFOLIO_CORRELATION_AUDIT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_5/PHASE_5_5_0_5_DEC_05_PORTFOLIO_CORRELATION_AUDIT.md) | `NOT_VERIFIED` | `OPEN` | **YES** |
-| **ISS_09** | DEC_03 | `LOW` | Funding rate annualization factor requires explicit $1095 = 3 \times 365$ documentation. | [PHASE_5_5_0_8_FUNDING_ELIGIBILITY_AUDIT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_8/PHASE_5_5_0_8_FUNDING_ELIGIBILITY_AUDIT.md) | `RESOLVED_BY_SPECIFICATION` | `RESOLVED` | No |
-| **ISS_10** | DEC_04 | `HIGH` | Runtime accounting implementation has not been code-verified due to backtesting prohibitions. | [PHASE_5_5_0_7_TEST_INTEGRITY_AUDIT.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_7/PHASE_5_5_0_7_TEST_INTEGRITY_AUDIT.md) | `NOT_VERIFIED` | `OPEN` | **YES** |
-| **ISS_11** | DEC_05 | `HIGH` | Signed cash-flow accounting identity in DEC_05 required formal mathematical reconciliation. | [QUANTUM_PHASE_5_5_DECISION_OPTIONS_AND_TRADEOFFS.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE_5_5_DECISION_OPTIONS_AND_TRADEOFFS.md) | `RESOLVED_BY_SPECIFICATION` | `RESOLVED` | No |
-
-### Issue Status Summary
-- **Open Issues (6):** ISS_01, ISS_04, ISS_05, ISS_07, ISS_08, ISS_10.
-- **Resolved by Specification (5):** ISS_02, ISS_03, ISS_06, ISS_09, ISS_11.
-- **Direct Execution Blockers (5):** ISS_01, ISS_04, ISS_07, ISS_08, ISS_10.
-
----
-
-## 8. REMAINING EXECUTION BLOCKERS BEFORE PHASE 5.5
-
-Before Phase 5.5 economic backtesting can be authorized and initiated, exactly six mandatory conditions must be resolved:
-
-1. **Human Governance Sign-Off:** Formal recorded decisions on DEC_01 through DEC_06 in [QUANTUM_PHASE_5_5_FINAL_HUMAN_DECISION_WORKSHEET.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE_5_5_FINAL_HUMAN_DECISION_WORKSHEET.md).
-2. **ISS_01 Settlement Rule Confirmation:** Verification of AsterDEX venue exchange matching rules for boundary orders filled at `08:00:00.000 UTC`.
-3. **ISS_04 & ISS_05 Resampling Specification:** Formal selection and documentation of the confirmatory block-length methodology for the Moving Block Bootstrap.
-4. **ISS_07 Confirmatory Hypothesis Family Selection:** Selection of the exact integer $K$ parameter based on asset and directional testing scope.
-5. **ISS_08 Stress Correlation Quantification:** Empirical measurement of pairwise correlation under stress and bounding of joint portfolio drawdown exposure.
-6. **ISS_10 Runtime Accounting Implementation:** Code verification and unit testing of the runtime accounting engine once backtesting prohibitions are lifted.
-
----
-
-## 9. TASK G: TEST & REPOSITORY EVIDENCE
-
-### 9.1 Three Distinct Test Execution Scopes
-The testing landscape is accurately reported across three well-defined scopes:
-
-1. **Dedicated Phase 5.5 Governance Dossier Tests:**
-   - Command: `python -m pytest tests/unit/test_phase5_5_governance_dossier.py -v`
-   - Scope: Structural integrity, decision options, issue statuses, and zero em-dash compliance.
-   - Result: 16 passed, 0 failed.
-
-2. **Filtered Phase 5 Unit Tests:**
-   - Command: `python -m pytest tests/unit/ -k "phase5" -v`
-   - Scope: All Phase 5 unit tests across calibration, auditing, and specification suites.
-   - Result: 371 passed, 190 deselected in 7.71s.
-
-3. **Complete Repository Unit Test Suite:**
-   - Command: `python -m pytest tests/unit/ -v`
-   - Scope: Complete repository unit test suite across all subsystems.
-   - Result: 561 passed, 0 failed, 0 regressions in 14.27s.
-
-### 9.2 Nature of Test Verification
-All unit tests in this phase are static documentation, schema, and metadata verification tests. They do **NOT** execute runtime backtesting, model inference, or historical portfolio simulation.
+*Operational Boundary:* Documenting this research requirement does **NOT** authorize economic backtesting. Lifecycle status remains `NOT_STARTED`.
 
 ---
 
 ## 10. FINAL GOVERNANCE VERDICT & READINESS
 
 ### 10.1 Human Review Readiness
-The QUANTUM Phase 5.5 Governance Dossier Suite, comprising Revision 1.2 and this Final Governance Errata, is fully prepared, internally consistent, mathematically sound, and ready for human executive review.
-
-All human decision fields remain strictly blank:
+The QUANTUM Phase 5.5 Governance Dossier Suite is fully reconciled, mathematically verified, and ready for human executive review. All human decision fields remain strictly blank:
 - DEC_01: `PENDING_HUMAN_DECISION`
 - DEC_02: `PENDING_HUMAN_DECISION`
 - DEC_03: `PENDING_HUMAN_DECISION`
@@ -281,3 +324,6 @@ The official verdict for this phase is:
 - **Phase 5.5 Economic Validation:** `NOT_STARTED`
 - **Phase 5.6 Production Strategy:** `NOT_AUTHORIZED`
 - **Prospective Holdout:** `STRICTLY_SEALED`
+- **Full Unit Test Suite:** `FULL_UNIT_SUITE_NOT_VERIFIED` (Environment interpreter-shutdown hang documented; dedicated and filtered suites verified)
+- **Runtime Simulation Code:** `NOT_VERIFIED` (ISS_10 remains open)
+- **Historical Holdout Access:** `NOT_VERIFIED` (ISS_11 informational limitation retained)
