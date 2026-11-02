@@ -62,23 +62,25 @@ Every technical claim, mathematical identity, and decision tradeoff in this brie
 #### 1. Decision Question
 Should Phase 5.5 evaluate the frozen Phase 5.3/5.4 classifiers under re-anchored symmetric barriers aligned to realistic next-bar execution (`Track 2 / Alternative B`), or authorize independent downstream trading strategy development with new exit parameters (`Track 3 / Alternative C`), while recognizing that the original close-anchored barrier geometry (`Track 1 / Alternative A`) is `NOT AN EXECUTABLE ECONOMIC ENTRY ANCHOR`?
 
+DEC_01 strictly decides **Layer 1: Methodology Direction Approval**. It establishes conceptual track priority and sequencing. Approval of DEC_01 does not authorize backtest engine code development (**Layer 2: Technical Design Approval**) or backtest execution (**Layer 3: Execution Authorization**), which remain contingent on specification approvals and decisions DEC_02 through DEC_06.
+
 #### 2. Available Alternatives
 - **Alternative A (Track 1: Original Close-Anchored Barriers - `NOT AN EXECUTABLE ECONOMIC ENTRY ANCHOR`):**
   - *Specification:* Reference price $P_{\text{ref}} = \text{close}[i]$, with take-profit and stop-loss barriers at $P_{\text{ref}}(1 \pm 1.5\sigma_t)$.
   - *Role:* Statistical predictive validation of the original close-anchored ML target (completed in Phase 5.3 and Phase 5.4). Track 1 is **not** described as universally or categorically "unexecutable" for all research purposes; rather, its exact classification is `NOT AN EXECUTABLE ECONOMIC ENTRY ANCHOR`. Track 1 remains directly relevant to the original close-anchored predictive target (statistical evaluation of the machine-learning classification label itself), but it must not be confused with an executable economic entry price in a causal trading simulation because feature computation and model inference require $\text{close}[i]$, which is only known after candle $i$ closes while actual market orders fill at $\text{open}[i+1]$.
 - **Alternative B (Track 2: Re-Anchored Economic Barriers):**
-  - *Specification:* Execute entry at $P_{\text{entry,ref}} = \text{open}[i+1]$ (plus execution deviation) and re-anchor symmetric triple barriers to $P_{\text{entry,ref}}(1 \pm 1.5\sigma_t)$ over the 288-bar maximum holding horizon.
-  - *Role:* Zero-degree-of-freedom economic evaluation of the frozen classifier's directional signals under executable timing. Track 2's re-anchored economic evaluation is a **separate estimand** and cannot retrospectively prove the original close-anchored predictive label's economic payoff. Furthermore, Track 2 has **not** been empirically validated (`Phase 5.5 = NOT_STARTED`).
+  - *Specification:* Execute entry at $P_{\text{entry,ref}} = \text{open}[i+1]$ (plus execution deviation) and re-anchor symmetric triple barriers to $P_{\text{entry,ref}}(1 \pm 1.5\sigma_t)$ over the 12-bar holding horizon (matching the frozen Phase 5.3 target horizon of 60 minutes).
+  - *Role:* Economic evaluation of the frozen classifier's directional signals under executable timing with zero additional strategy-tuning hyperparameters beyond the fixed entry rule and symmetric barrier geometry. Track 2's re-anchored economic evaluation is classified as `SIGNAL_COMPATIBLE_WITH_SEPARATE_ECONOMIC_ESTIMAND` and `ELIGIBLE_FOR_EXPLORATORY_ECONOMIC_EVALUATION_SUBJECT_TO_GOVERNANCE_APPROVAL`. It cannot retrospectively prove the original close-anchored predictive label's economic payoff, and confirmatory claims are prohibited without pre-registered protocols, approved hypothesis family $K$, validated costs/funding, and uncompromised data. Furthermore, Track 2 has **not** been empirically validated (`Phase 5.5 = NOT_STARTED`).
 - **Alternative C (Track 3: Independent Downstream Strategy Development):**
   - *Specification:* Decouple trade exits from the static $1.5\sigma_t$ triple-barrier structure by introducing trailing stops, asymmetric reward-to-risk ratios, dynamic ATR bands, or partial take-profit ladders.
-  - *Role:* Full algorithmic trading strategy design requiring new hyperparameter tuning on Folds 1 to 4 with Fold 5 reserved for out-of-sample evaluation.
+  - *Role:* Full algorithmic trading strategy design requiring new hyperparameter tuning on Folds 1 to 4 with Fold 5 designated as `OOS_ELIGIBILITY_NOT_VERIFIED` (prohibited for confirmatory claims, permitted for exploratory profiling only).
 
 #### 3. Evidence Supporting Each Alternative
 - **Source Documents:** [QUANTUM_PHASE_5_5_DECISION_OPTIONS_AND_TRADEOFFS.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE_5_5_DECISION_OPTIONS_AND_TRADEOFFS.md) (Section 1), [PHASE_5_5_0_6_RESEARCH_TRACK_COMPARISON.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_0_6/PHASE_5_5_0_6_RESEARCH_TRACK_COMPARISON.md).
 - **Verified Facts (`SOURCE_VERIFIED`):**
   - Phase 5.3 labels were constructed anchored to $\text{close}[i]$.
   - Using $\text{close}[i]$ as a simulated trade entry price violates causal execution timing when signals depend on $\text{close}[i]$ (`NOT AN EXECUTABLE ECONOMIC ENTRY ANCHOR`).
-  - Alternative B introduces zero tunable strategy parameters (`0` degrees of freedom), preventing post-hoc strategy overfitting on validation folds while evaluating a separate open-anchored economic estimand.
+  - Alternative B introduces zero additional strategy-tuning hyperparameters beyond the fixed entry rule and symmetric barrier geometry, preventing post-hoc strategy overfitting on validation folds while evaluating a separate open-anchored economic estimand. (Note: zero additional strategy hyperparameters does not eliminate statistical estimation uncertainty, sampling variance, model selection bias, or multiple-testing risks across broader governance choices.)
   - Alternative C introduces multiple free parameters that require walk-forward cross-validation.
 
 #### 4. Evidence Limitations & Missing Evidence
@@ -89,12 +91,12 @@ Should Phase 5.5 evaluate the frozen Phase 5.3/5.4 classifiers under re-anchored
 | Research Track | What It Measures | What It Cannot Prove | Role in Research Validity |
 |---|---|---|---|
 | **Track 1 (Alt A: Close-Anchored)** | Out-of-fold statistical predictive skill (ROC-AUC, Brier score, log-loss, selective precision) on the exact close-anchored predictive target. | Cannot serve as an executable economic entry price (`NOT AN EXECUTABLE ECONOMIC ENTRY ANCHOR`) because $\text{close}[i]$ is only known after bar $i$ closes. | Valid and relevant for **statistical predictive evaluation** of the ML label (already frozen in Phase 5.4). |
-| **Track 2 (Alt B: Re-Anchored)** | Separate economic estimand: whether frozen model directional signals generate positive net economic expectancy under causal $\text{open}[i+1]$ entry and symmetric $1.5\sigma_t$ barriers with zero added tuning parameters. | **Cannot retrospectively prove the original predictive label's economic payoff**, because barrier levels are shifted by $(\text{open}[i+1] - \text{close}[i])$. Not yet empirically validated. | Candidate specification for **unconfounded economic evaluation** of the frozen signals. |
+| **Track 2 (Alt B: Re-Anchored)** | Separate economic estimand: whether frozen model directional signals generate positive net economic expectancy under causal $\text{open}[i+1]$ entry and symmetric $1.5\sigma_t$ barriers with zero additional strategy-tuning hyperparameters. | **Cannot retrospectively prove the original predictive label's economic payoff**, because barrier levels are shifted by $(\text{open}[i+1] - \text{close}[i])$. Not yet empirically validated. | Candidate specification for **exploratory economic evaluation** (`ELIGIBLE_FOR_EXPLORATORY_ECONOMIC_EVALUATION_SUBJECT_TO_GOVERNANCE_APPROVAL`) of the frozen signals. |
 | **Track 3 (Alt C: Downstream Strategy)** | Combined economic performance of the ML signal paired with newly engineered trade-management heuristics. | Cannot isolate whether economic gains or losses originate from ML signal quality or from downstream stop/target engineering. | Optional subsequent stage if Track 2 shows signal utility but suboptimal static exits. |
 
 #### 6. Technical, Statistical, and Economic Consequences
 - **Technical Consequences:** Selecting Alternative B allows direct simulation using the existing frozen out-of-fold probability artifacts without building a hyperparameter optimization loop. Selecting Alternative C requires building a strategy parameter tuning pipeline over Folds 1 to 4.
-- **Statistical Consequences:** Alternative B preserves full out-of-fold sample size across all validation folds with zero optimization bias, while evaluating a separate open-anchored economic estimand. Alternative C consumes Folds 1 to 4 for parameter fitting, leaving only Fold 5 as an uncontaminated validation fold before the sealed holdout, which sharply reduces statistical power and increases multiple-testing burden.
+- **Statistical Consequences:** Alternative B preserves full out-of-fold sample size across all validation folds with zero optimization bias, while evaluating a separate open-anchored economic estimand (`SIGNAL_COMPATIBLE_WITH_SEPARATE_ECONOMIC_ESTIMAND`). Alternative C consumes Folds 1 to 4 for parameter fitting, while Fold 5 is classified as `OOS_ELIGIBILITY_NOT_VERIFIED` due to prior model evaluation and unverified researcher exposure (prohibiting confirmatory claims on Fold 5 and restricting it to exploratory profiling), which sharply reduces statistical power and increases multiple-testing burden.
 - **Economic Consequences:** Confusing predictive evaluation of the close-anchored target (Track 1) with an executable economic entry price is a severe methodological error: a classifier with >53% directional accuracy on close-anchored barriers can still lose money under next-open execution due to opening gaps, taker fees, and funding drag.
 
 #### 7. Dependencies
@@ -113,6 +115,7 @@ Should Phase 5.5 evaluate the frozen Phase 5.3/5.4 classifiers under re-anchored
 
 #### 10. Explicit Human Decision Field
 - **Decision Status:** `PENDING_HUMAN_DECISION`
+- **Approval Scope:** Strictly Layer 1 (Methodology Direction Approval). Does not authorize Layer 2 (technical design) or Layer 3 (execution).
 - **Selected Alternative (`Alternative A` / `Alternative B` / `Alternative C`):** `[BLANK - PENDING HUMAN INPUT]`
 - **Supervisor Rationale:** `[BLANK - PENDING HUMAN INPUT]`
 
@@ -212,7 +215,7 @@ How should perpetual futures financing cash flows be modeled in Phase 5.5 econom
 #### 6. Technical, Statistical, and Economic Consequences
 - **Technical Consequences:** Option 3 requires computing net return trajectories under 4 funding vectors and adopting the `EXPLICIT_SETTLEMENT_TIMING_MODELING_CONVENTION` (strict inequality $t_{\text{entry}} < t_{\text{settle}} \le t_{\text{exit}}$) in simulation code.
 - **Statistical Consequences:** Multiplies the number of reported cost/funding sensitivity tables, requiring a clear designation in `DEC_04` of which funding scenario serves as the primary binding gate (typically $+1.0$ bps baseline, with $+3.0$ bps as stress).
-- **Economic Consequences:** Because maximum holding duration is 288 bars (24 hours = 3 settlements), a $+3.0$ bps funding rate costs a Long position up to $9.0$ bps over a full horizon hold, which can erase thin predictive edges.
+- **Economic Consequences:** Under the reconciled 12-bar horizon (60 minutes), a trade crosses at most one 8-hour settlement timestamp, incurring up to $3.0$ bps of funding drag under $+3.0$ bps stress; if an extended holding duration (up to 288 bars / 24 hours) were used, a $+3.0$ bps funding rate would cost a Long position up to $9.0$ bps across 3 settlements, which can erase thin predictive edges.
 
 #### 7. Dependencies
 - **Upstream:** Independent foundational decision (depends on dataset availability status `ISS_09` and convention `ISS_01`).
