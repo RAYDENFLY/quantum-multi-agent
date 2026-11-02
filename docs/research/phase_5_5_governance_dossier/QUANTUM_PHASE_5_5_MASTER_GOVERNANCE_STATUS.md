@@ -31,3 +31,19 @@ All six decisions remain strictly `PENDING_HUMAN_DECISION`. Phase 5.5 economic b
 - **Phase 5.6 Production Strategy:** `NOT_AUTHORIZED`.
 - **Prospective Holdout:** `STRICTLY_SEALED` (`2026-11-01 00:00:00 UTC` through `2027-04-30 23:59:59.999 UTC`).
 - **Human Governance Status:** All 6 decisions are `PENDING_HUMAN_DECISION`.
+
+---
+
+## 3. SUPPLEMENTARY ERRATA NOTICE
+
+This Master Governance Status (Revision 1.2) is officially supplemented by:
+[QUANTUM_PHASE_5_5_FINAL_GOVERNANCE_ERRATA.md](file:///d:/quantum-multi-agent/docs/research/phase_5_5_governance_dossier/QUANTUM_PHASE_5_5_FINAL_GOVERNANCE_ERRATA.md)
+
+The Final Governance Errata provides formal reconciliation for:
+- Generalized entry and exit execution accounting ($C_{\text{exec,total}} = C_{\text{exec,entry}} + C_{\text{exec,exit}}$).
+- ISS_01 settlement timing convention terminology (`EXPLICIT_SETTLEMENT_TIMING_MODELING_CONVENTION`).
+- Conditional hypothesis family $K$ reconciliation table ($K \in \{1, 10, 11, 20, 22, 30, 33\}$).
+- Precise manifest verification reporting (`23_MANIFESTED_ARTIFACTS_VERIFIED`).
+- Decoupling of DEC_05 portfolio risk policy from execution accounting policy.
+- Reconciled technical issue register and remaining execution blockers.
+

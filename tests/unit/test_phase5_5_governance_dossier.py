@@ -368,3 +368,76 @@ def test_15_zero_em_dashes_across_all_dossier_files():
     with open(__file__, "r", encoding="utf-8") as f:
         test_content = f.read()
         assert em_dash not in test_content, "Em dash detected in test file!"
+
+
+def test_16_final_governance_errata_deliverable():
+    """Verify final governance errata exists, reconciles tasks A through G, and has zero em dashes."""
+    errata_path = DOSSIER_DIR / "QUANTUM_PHASE_5_5_FINAL_GOVERNANCE_ERRATA.md"
+    assert errata_path.exists(), "Missing QUANTUM_PHASE_5_5_FINAL_GOVERNANCE_ERRATA.md"
+    assert errata_path.stat().st_size > 500, "Errata deliverable is unexpectedly small"
+
+    content = errata_path.read_text(encoding="utf-8")
+
+    # Verify zero em dashes
+    assert chr(0x2014) not in content, "Em dash detected in Final Governance Errata!"
+
+    # Verify master status references the errata
+    status_content = (DOSSIER_DIR / "QUANTUM_PHASE_5_5_MASTER_GOVERNANCE_STATUS.md").read_text(encoding="utf-8")
+    assert "QUANTUM_PHASE_5_5_FINAL_GOVERNANCE_ERRATA.md" in status_content
+    assert "SUPPLEMENTARY ERRATA NOTICE" in status_content
+
+    # Task A: Generalized two-legged accounting and 5 cases
+    assert "C_{\\text{exec,total}} = C_{\\text{exec,entry}} + C_{\\text{exec,exit}}" in content
+    assert "L_{\\text{realized}} = L_{\\text{price,ref}} + C_{\\text{exec,total}} + C_{\\text{fees}} - CF_{\\text{funding}}" in content
+    assert "Case 1: Adverse Entry & Exit" in content
+    assert "Case 2: Favorable Execution" in content
+    assert "Case 3: Short Adverse Execution" in content
+    assert "Case 4: Gap-Through-Stop" in content
+    assert "Case 5: Funding Cash Flow Effect" in content
+    assert "Partial Fill Summation" in content
+    assert "double-count" in content
+
+    # Task B: Settlement timing convention
+    assert "EXPLICIT_SETTLEMENT_TIMING_MODELING_CONVENTION" in content
+    assert "Directional Asymmetry & Conservatism Analysis" in content
+
+    # Task C: Conditional K reconciliation table
+    assert "Conditional Hypothesis Family Reconciliation Table" in content
+    assert "$K = 10$" in content
+    assert "$K = 11$" in content
+    assert "$K = 20$" in content
+    assert "$K = 22$" in content
+    assert "$K = 30$" in content
+    assert "$K = 33$" in content
+    assert "$K = 1$" in content
+
+    # Task D: Holdout evidence and partial manifest coverage
+    assert "23_MANIFESTED_ARTIFACTS_VERIFIED" in content
+    assert "16_OF_16_VERIFIED" in content
+    assert "7_OF_7_VERIFIED" in content
+    assert "STRICTLY_SEALED" in content
+
+    # Task E: Decoupling risk policy from execution accounting
+    assert "DECOUPLING DEC_05 PORTFOLIO RISK POLICY FROM EXECUTION ACCOUNTING POLICY" in content
+    assert "DEC_05 Portfolio Risk Policy (Governance Decision)" in content
+    assert "Execution Cost Accounting Policy (Technical Specification)" in content
+
+    # Task F: Technical issue register reconciliation
+    for iss_id in EXPECTED_ISSUE_IDS:
+        assert iss_id in content
+    assert "Open Issues (6)" in content
+    assert "Resolved by Specification (5)" in content
+
+    # Execution blockers
+    assert "REMAINING EXECUTION BLOCKERS BEFORE PHASE 5.5" in content
+
+    # Task G: Test scopes
+    assert "Dedicated Phase 5.5 Governance Dossier Tests" in content
+    assert "Filtered Phase 5 Unit Tests" in content
+    assert "Complete Repository Unit Test Suite" in content
+
+    # Final verdict
+    assert "FINAL_ERRATA_READY_WITH_LIMITATIONS" in content
+    assert "NOT_STARTED" in content
+    assert "NOT_AUTHORIZED" in content
+
