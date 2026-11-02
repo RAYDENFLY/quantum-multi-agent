@@ -59,7 +59,7 @@ class BankerAgent:
         self, position: TrackedPosition, event: PositionExecutionEvent
     ) -> Tuple[TrackedPosition, BankerOutput]:
         """Apply a confirmed execution fill event through deterministic state machine."""
-        now_ms = int(time.time() * 1000)
+        now_ms = event.timestamp_ms if event.timestamp_ms > 0 else int(time.time() * 1000)
 
         # 1. Idempotency Check: Drop duplicate event
         if event.event_id in position.processed_event_ids:
@@ -292,7 +292,7 @@ class BankerAgent:
 
         CRITICAL: Never adjusts stops on price touch. Confirmed execution fill required.
         """
-        now_ms = int(time.time() * 1000)
+        now_ms = input_data.eval_timestamp_ms if input_data.eval_timestamp_ms is not None else int(time.time() * 1000)
         mark = input_data.current_mark_price
         entry = input_data.entry_price
         sl = input_data.current_stop_loss
@@ -302,6 +302,14 @@ class BankerAgent:
         # 1. Price Data Staleness Check
         if input_data.price_timestamp_ms is not None:
             price_age_ms = now_ms - input_data.price_timestamp_ms
+            if price_age_ms < 0:
+                logger.warning("Banker received future price timestamp (%d ms > now %d ms)", input_data.price_timestamp_ms, now_ms)
+                return BankerOutput(
+                    action=AgentAction.HOLD,
+                    hazard_prob=0.0,
+                    suggested_stop_loss=sl,
+                    rationale=f"SAFE_MONITORING: market price timestamp is in the future ({price_age_ms}ms); holding",
+                )
             if price_age_ms > 15_000:
                 logger.warning("Banker received stale market price (age %d ms) for %s", price_age_ms, input_data.symbol)
                 return BankerOutput(

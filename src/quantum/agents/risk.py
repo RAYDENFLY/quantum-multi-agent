@@ -91,7 +91,7 @@ class RiskAgent:
 
         checks_passed: List[str] = []
         veto_reasons: List[str] = []
-        now_ms = int(time.time() * 1000)
+        now_ms = input_data.eval_timestamp_ms if input_data.eval_timestamp_ms is not None else int(time.time() * 1000)
 
         # 0. Strict Data Integrity and Missing-Data Gates
         if input_data.current_equity_usdt is None or input_data.current_equity_usdt <= 0.0 or math.isnan(input_data.current_equity_usdt):
@@ -117,7 +117,9 @@ class RiskAgent:
             veto_reasons.append("VETO_MISSING_TIMESTAMP: snapshot_timestamp_ms is non-positive")
         else:
             signal_age_ms = now_ms - context.snapshot_timestamp_ms
-            if signal_age_ms <= 15_000:
+            if signal_age_ms < 0:
+                veto_reasons.append("VETO_FUTURE_TIMESTAMP: snapshot_timestamp_ms is in the future")
+            elif signal_age_ms <= 15_000:
                 checks_passed.append("SIGNAL_FRESHNESS")
             else:
                 veto_reasons.append(f"VETO_STALE_SIGNAL: age {signal_age_ms}ms > 15000ms")

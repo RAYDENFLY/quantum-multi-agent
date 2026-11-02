@@ -103,6 +103,37 @@ class ModelEvaluationContract:
             except Exception:
                 metrics["roc_auc_ovr"] = None
 
+            # Expected Calibration Error (ECE) & AURCC if probabilities are valid
+            try:
+                from quantum.backtesting.track1 import (
+                    compute_aurcc_metrics,
+                    compute_classwise_ece_uniform,
+                    compute_top_label_ece_quantile,
+                    compute_top_label_ece_uniform,
+                )
+
+                confidences = np.max(y_proba, axis=1)
+                argmax_cls = np.array([classes[i] for i in np.argmax(y_proba, axis=1)], dtype=int)
+                metrics["ece_top_uniform"] = round(
+                    compute_top_label_ece_uniform(y_true, argmax_cls, confidences), 4
+                )
+                metrics["ece_top_quantile"] = round(
+                    compute_top_label_ece_quantile(y_true, argmax_cls, confidences), 4
+                )
+                metrics["ece_classwise_uniform"] = round(
+                    compute_classwise_ece_uniform(y_true, y_proba, classes=classes), 4
+                )
+                aurcc_full, aurcc_span, aurcc_rand, delta_aurcc = compute_aurcc_metrics(
+                    y_true, argmax_cls, confidences
+                )
+                metrics["aurcc_error_full"] = round(aurcc_full, 4)
+                metrics["aurcc_error_span_02_10"] = round(aurcc_span, 4)
+                metrics["aurcc_error_random"] = round(aurcc_rand, 4)
+                metrics["delta_aurcc_error"] = round(delta_aurcc, 4)
+            except Exception:
+                metrics["ece_top_uniform"] = None
+                metrics["aurcc_error_span_02_10"] = None
+
         return metrics
 
 

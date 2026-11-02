@@ -135,6 +135,7 @@ class RiskInput(BaseModel):
     consecutive_losses_count: Optional[int] = None
     last_loss_timestamp_ms: Optional[int] = None
     estimated_slippage_bps: Optional[float] = None
+    eval_timestamp_ms: Optional[int] = Field(default=None, description="Simulated evaluation timestamp in ms for historical replay")
     lot_step: Optional[float] = None
     min_notional_usdt: Optional[float] = None
 
@@ -204,6 +205,7 @@ class BankerInput(BaseModel):
     price_timestamp_ms: Optional[int] = None
     state: PositionLifecycleState = PositionLifecycleState.OPEN
     position: Optional[TrackedPosition] = None
+    eval_timestamp_ms: Optional[int] = Field(default=None, description="Simulated evaluation timestamp in ms for historical replay")
 
 
 class BankerOutput(BaseModel):
