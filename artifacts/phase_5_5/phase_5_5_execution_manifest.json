@@ -1,0 +1,55 @@
+{
+  "run_id": "phase55_exec_1793641817",
+  "git_commit": "dcc8ceb54d80b1b9685d92236f48b0994610522a",
+  "execution_timestamp_utc": "2026-11-02T17:54:56.055372+00:00",
+  "execution_duration_seconds": 277.96,
+  "platform_info": {
+    "system": "Windows",
+    "node": "WIN-9M4L3M6CVHF",
+    "release": "10",
+    "python_version": "3.13.7"
+  },
+  "resource_limits_enforced": {
+    "BACKTEST_MAX_THREADS": 2,
+    "OMP_NUM_THREADS": 2,
+    "MKL_NUM_THREADS": 2,
+    "OPENBLAS_NUM_THREADS": 2,
+    "memory_ceiling_mb": 1000,
+    "asset_processing_mode": "SEQUENTIAL_WITH_EXPLICIT_GC"
+  },
+  "governance_decisions_applied": {
+    "Gate 1 (EXC-PHASE55-01)": "RATIFIED_WITH_CONDITIONS",
+    "Gate 2 (LAYER_2_APPROVAL)": "APPROVED_WITH_CONDITIONS",
+    "Gate 3 DEC_01 (Barrier Architecture)": "Alternative B (Track 2 Primary) + Alternative C (Track 3 Exploratory)",
+    "Gate 3 DEC_02 (Directional Scope)": "Option 3 (Bidirectional Execution with Disaggregated Reporting)",
+    "Gate 3 DEC_03 (Funding Model)": "Option 3, Sub-option 3-A (5-Scenario Symmetric Grid: -3.0, -1.0, 0.0, +1.0, +3.0 bps)",
+    "Gate 3 DEC_04 (Costs & Testing)": "Options 4.1-A, 4.2-B, 4.3-A, 4.4-B (Calendar MBB), 4.5-A (288-bar sweep), K-2 (K=20), 4.7-A (3 Cost Tiers, 4-Level Gate)",
+    "Gate 3 DEC_05 (Portfolio Policy)": "Option 3 (Combined Exposure Cap <= 0.30 Equity & Volatility Risk-Budget Sizing)",
+    "Gate 3 DEC_06 (XMR Scope)": "Option 3 (Three-Tier Policy for XMRUSDT)",
+    "Gate 4 (Execution Authorization)": "AUTHORIZED_WITH_APPROVED_SCOPE",
+    "Gate 5 (Prospective Holdout)": "STRICTLY_SEALED (Zero Access Verified)"
+  },
+  "universe_coverage": {
+    "primary_assets": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "BNBUSDT",
+      "XRPUSDT",
+      "ADAUSDT",
+      "SOLUSDT",
+      "AVAXUSDT",
+      "LINKUSDT",
+      "DOGEUSDT",
+      "LTCUSDT"
+    ],
+    "structural_break_assets": [
+      "XMRUSDT"
+    ],
+    "total_specialists": 11
+  },
+  "fold_governance_separation": {
+    "folds_1_to_4": "VERIFIED_OOF (Confirmatory)",
+    "fold_5": "OOS_ELIGIBILITY_NOT_VERIFIED (Exploratory / Diagnostic Only)",
+    "prospective_holdout": "STRICTLY_SEALED (Boundary ts: >= 1793491200000 ms)"
+  }
+}

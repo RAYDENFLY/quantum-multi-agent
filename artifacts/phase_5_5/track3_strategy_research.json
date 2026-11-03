@@ -1,0 +1,222 @@
+{
+  "BTCUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 3.47,
+      "avg_holding_bars_tp": 3.17,
+      "avg_holding_bars_sl": 3.16,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": -2.0,
+      "dyn1_trailing_breakeven_gross_bps": -3.87,
+      "spearman_rank_correlation": 0.0091,
+      "confidence_quintile_returns": {
+        "Q1_low": -0.59,
+        "Q2": 0.29,
+        "Q3": -0.22,
+        "Q4": 0.05,
+        "Q5_high": 0.26
+      }
+    }
+  },
+  "ETHUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 3.4,
+      "avg_holding_bars_tp": 3.14,
+      "avg_holding_bars_sl": 3.11,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": 2.31,
+      "dyn1_trailing_breakeven_gross_bps": -3.71,
+      "spearman_rank_correlation": -0.0038,
+      "confidence_quintile_returns": {
+        "Q1_low": 1.24,
+        "Q2": -0.03,
+        "Q3": -0.34,
+        "Q4": 0.43,
+        "Q5_high": 0.76
+      }
+    }
+  },
+  "BNBUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 3.7,
+      "avg_holding_bars_tp": 3.35,
+      "avg_holding_bars_sl": 3.28,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": -0.36,
+      "dyn1_trailing_breakeven_gross_bps": -2.98,
+      "spearman_rank_correlation": 0.0004,
+      "confidence_quintile_returns": {
+        "Q1_low": -0.17,
+        "Q2": 0.38,
+        "Q3": 0.22,
+        "Q4": -0.16,
+        "Q5_high": 0.06
+      }
+    }
+  },
+  "XRPUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 3.7,
+      "avg_holding_bars_tp": 3.37,
+      "avg_holding_bars_sl": 3.27,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": 0.46,
+      "dyn1_trailing_breakeven_gross_bps": -4.79,
+      "spearman_rank_correlation": 0.0052,
+      "confidence_quintile_returns": {
+        "Q1_low": 1.52,
+        "Q2": 0.13,
+        "Q3": 0.53,
+        "Q4": 0.75,
+        "Q5_high": 1.68
+      }
+    }
+  },
+  "ADAUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 4.56,
+      "avg_holding_bars_tp": 4.03,
+      "avg_holding_bars_sl": 3.85,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": 2.44,
+      "dyn1_trailing_breakeven_gross_bps": -13.68,
+      "spearman_rank_correlation": 0.0076,
+      "confidence_quintile_returns": {
+        "Q1_low": 2.01,
+        "Q2": 2.5,
+        "Q3": 1.38,
+        "Q4": 2.68,
+        "Q5_high": 2.82
+      }
+    }
+  },
+  "SOLUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 3.42,
+      "avg_holding_bars_tp": 3.21,
+      "avg_holding_bars_sl": 3.1,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": 2.1,
+      "dyn1_trailing_breakeven_gross_bps": -2.13,
+      "spearman_rank_correlation": 0.0022,
+      "confidence_quintile_returns": {
+        "Q1_low": 0.19,
+        "Q2": 0.5,
+        "Q3": 0.1,
+        "Q4": 0.52,
+        "Q5_high": 0.5
+      }
+    }
+  },
+  "AVAXUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 5.32,
+      "avg_holding_bars_tp": 4.36,
+      "avg_holding_bars_sl": 4.24,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": 2.93,
+      "dyn1_trailing_breakeven_gross_bps": -5.06,
+      "spearman_rank_correlation": 0.0061,
+      "confidence_quintile_returns": {
+        "Q1_low": 1.27,
+        "Q2": 1.92,
+        "Q3": 2.01,
+        "Q4": 0.82,
+        "Q5_high": 2.67
+      }
+    }
+  },
+  "LINKUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 5.14,
+      "avg_holding_bars_tp": 4.3,
+      "avg_holding_bars_sl": 4.14,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": 8.91,
+      "dyn1_trailing_breakeven_gross_bps": 0.13,
+      "spearman_rank_correlation": 0.0094,
+      "confidence_quintile_returns": {
+        "Q1_low": 2.53,
+        "Q2": 1.9,
+        "Q3": 2.06,
+        "Q4": 1.37,
+        "Q5_high": 3.0
+      }
+    }
+  },
+  "DOGEUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 3.65,
+      "avg_holding_bars_tp": 3.31,
+      "avg_holding_bars_sl": 3.17,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": -2.41,
+      "dyn1_trailing_breakeven_gross_bps": -3.56,
+      "spearman_rank_correlation": 0.0063,
+      "confidence_quintile_returns": {
+        "Q1_low": -0.01,
+        "Q2": 0.04,
+        "Q3": 0.73,
+        "Q4": 1.46,
+        "Q5_high": 0.63
+      }
+    }
+  },
+  "LTCUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 5.25,
+      "avg_holding_bars_tp": 4.3,
+      "avg_holding_bars_sl": 4.18,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": 7.33,
+      "dyn1_trailing_breakeven_gross_bps": -4.81,
+      "spearman_rank_correlation": -0.0112,
+      "confidence_quintile_returns": {
+        "Q1_low": 2.46,
+        "Q2": 3.32,
+        "Q3": 3.84,
+        "Q4": 2.0,
+        "Q5_high": 2.3
+      }
+    }
+  },
+  "XMRUSDT": {
+    "durations": {
+      "avg_holding_bars_overall": 5.45,
+      "avg_holding_bars_tp": 4.69,
+      "avg_holding_bars_sl": 4.64,
+      "avg_holding_bars_exp": 12.0
+    },
+    "dynamic_exits_and_alpha": {
+      "mechanical_benchmark_gross_bps": -0.31,
+      "dyn1_trailing_breakeven_gross_bps": -1.47,
+      "spearman_rank_correlation": 0.0354,
+      "confidence_quintile_returns": {
+        "Q1_low": -2.88,
+        "Q2": 1.08,
+        "Q3": 1.88,
+        "Q4": 0.13,
+        "Q5_high": 1.52
+      }
+    }
+  }
+}

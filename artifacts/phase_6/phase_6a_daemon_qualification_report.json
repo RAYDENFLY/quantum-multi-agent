@@ -1,0 +1,164 @@
+{
+  "phase": "Phase 6A — Autonomous Paper-Trading Daemon & IPC Telemetry Server",
+  "status": "QUALIFIED_AND_OPERATIONAL",
+  "qualification_timestamp_utc": "2026-11-03T01:26:00Z",
+  "governance_compliance": {
+    "gate_1_exc_phase55_01": "RATIFIED",
+    "gate_2_layer_2_design": "APPROVED",
+    "gate_3_dec_01": "Alternative B (Track 2 Primary) + Alternative C (Track 3 Exploratory)",
+    "gate_3_dec_02": "Option 3 (Bidirectional Execution with Disaggregated Reporting)",
+    "gate_3_dec_03": "Option 3, Sub-option 3-A (5-Scenario Symmetric Grid: -3.0, -1.0, 0.0, +1.0, +3.0 bps)",
+    "gate_3_dec_04": "Option 4.1-A, 4.2-B, 4.3-A, 4.4-B (Calendar MBB), 4.5-A (288 bars + sweep), Example K-2 (K=20), Option 4.7-A (3 Cost Tiers, 4-Level Gate)",
+    "gate_3_dec_05": "Option 3 (Combined Exposure Cap <= 0.30 Equity & Volatility Risk-Budget Sizing)",
+    "gate_3_dec_06": "Option 3 (Three-Tier Policy for XMRUSDT)",
+    "prospective_holdout_status": "STRICTLY_SEALED (open_time_ms >= 1793491200000 ms / Nov 1, 2026 UTC)"
+  },
+  "tiered_asset_allocation_matrix": {
+    "tier_1_active_alpha_core": [
+      {
+        "symbol": "LINKUSDT",
+        "vol_threshold_bps": 160.0,
+        "prob_margin": 0.20,
+        "expected_profit_factor": 4.702,
+        "is_enabled": true,
+        "order_routing": "MAKER_PASSIVE_LIMIT"
+      },
+      {
+        "symbol": "AVAXUSDT",
+        "vol_threshold_bps": 160.0,
+        "prob_margin": 0.20,
+        "expected_profit_factor": 1.931,
+        "is_enabled": true,
+        "order_routing": "MAKER_PASSIVE_LIMIT"
+      },
+      {
+        "symbol": "SOLUSDT",
+        "vol_threshold_bps": 120.0,
+        "prob_margin": 0.30,
+        "expected_profit_factor": 1.458,
+        "is_enabled": true,
+        "order_routing": "MAKER_PASSIVE_LIMIT"
+      },
+      {
+        "symbol": "ADAUSDT",
+        "vol_threshold_bps": 120.0,
+        "prob_margin": 0.30,
+        "expected_profit_factor": 1.075,
+        "is_enabled": true,
+        "order_routing": "MAKER_PASSIVE_LIMIT"
+      },
+      {
+        "symbol": "BNBUSDT",
+        "vol_threshold_bps": 160.0,
+        "prob_margin": 0.20,
+        "expected_profit_factor": 1.071,
+        "is_enabled": true,
+        "order_routing": "MAKER_PASSIVE_LIMIT"
+      }
+    ],
+    "tier_2_macro_expansion_core": [
+      {
+        "symbol": "BTCUSDT",
+        "vol_threshold_bps": 80.0,
+        "prob_margin": 0.30,
+        "expected_profit_factor": 1.182,
+        "is_enabled": true,
+        "order_routing": "MAKER_PASSIVE_LIMIT"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "vol_threshold_bps": 120.0,
+        "prob_margin": 0.30,
+        "expected_profit_factor": 1.104,
+        "is_enabled": true,
+        "order_routing": "MAKER_PASSIVE_LIMIT"
+      }
+    ],
+    "tier_3_shadow_monitor_universe": [
+      {
+        "symbol": "XRPUSDT",
+        "vol_threshold_bps": 200.0,
+        "prob_margin": 0.30,
+        "is_enabled": false,
+        "gate_status": "TIER_BLOCKED",
+        "telemetry_stream_active": true
+      },
+      {
+        "symbol": "DOGEUSDT",
+        "vol_threshold_bps": 200.0,
+        "prob_margin": 0.30,
+        "is_enabled": false,
+        "gate_status": "TIER_BLOCKED",
+        "telemetry_stream_active": true
+      },
+      {
+        "symbol": "LTCUSDT",
+        "vol_threshold_bps": 200.0,
+        "prob_margin": 0.30,
+        "is_enabled": false,
+        "gate_status": "TIER_BLOCKED",
+        "telemetry_stream_active": true
+      },
+      {
+        "symbol": "XMRUSDT",
+        "vol_threshold_bps": 200.0,
+        "prob_margin": 0.30,
+        "is_enabled": false,
+        "gate_status": "TIER_BLOCKED",
+        "telemetry_stream_active": true
+      }
+    ]
+  },
+  "risk_envelope_dec05": {
+    "gross_exposure_cap_pct": 30.0,
+    "single_asset_cap_pct": 10.0,
+    "sizing_model": "VOLATILITY_RISK_BUDGET",
+    "target_risk_bps": 50.0,
+    "fee_model": {
+      "maker_fee_bps": 4.0,
+      "taker_fee_bps": 4.0,
+      "round_trip_friction_bps": 8.0,
+      "slippage_bps": 0.0
+    },
+    "emergency_kill_switch": {
+      "supported": true,
+      "latency_target_ms": "< 5ms",
+      "actions": [
+        "CANCEL_ALL_PENDING_ORDERS",
+        "MARKET_CLOSE_ALL_ACTIVE_POSITIONS",
+        "LOCK_ACCOUNT_PREVENT_NEW_ORDERS"
+      ]
+    }
+  },
+  "ipc_telemetry_interface": {
+    "server_framework": "FastAPI + Uvicorn + WebSockets",
+    "supported_clients": ["C# Avalonia Desktop Client", "Python Automation SDK", "Web Dashboards"],
+    "rest_endpoints": [
+      {"path": "GET /api/v1/health", "description": "System health, daemon uptime, and active clock mode"},
+      {"path": "GET /api/v1/research/summary", "description": "Phase 5.5 economic backtesting and Phase 5.6 overlay grid results"},
+      {"path": "GET /api/v1/paper/portfolio", "description": "Account equity, cash, unrealized/realized PnL, gross exposure, and open positions"},
+      {"path": "GET /api/v1/paper/tiers", "description": "Active tier classification, specialist thresholds, and filter status"},
+      {"path": "POST /api/v1/paper/control", "description": "Operator commands (PAUSE, RESUME, UPDATE_TIER_CONFIG, EMERGENCY_KILL_SWITCH, RESET_ACCOUNT)"}
+    ],
+    "websocket_endpoint": {
+      "path": "WS /ws/v1/telemetry",
+      "frequency_hz": 1.0,
+      "payload_schema": "TelemetrySnapshot (timestamp_ms, account, specialists, active_positions, pending_orders, recent_events)"
+    }
+  },
+  "test_qualification_summary": {
+    "daemon_unit_tests": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "errors": 0
+    },
+    "full_repository_regression_tests": {
+      "total": 46,
+      "passed": 46,
+      "failed": 0,
+      "errors": 0,
+      "runtime_seconds": 17.93
+    }
+  }
+}

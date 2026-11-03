@@ -1,0 +1,2785 @@
+{
+  "BTCUSDT": {
+    "symbol": "BTCUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 27093,
+        "win_count": 322,
+        "loss_count": 26771,
+        "win_rate": 1.19,
+        "gross_expectancy_bps": -0.0,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -44.0,
+        "total_gross_pnl": -10.52,
+        "total_fees": 108371.21,
+        "total_slippage": 10837.12,
+        "total_funding": 0.0,
+        "total_net_pnl": -119218.85,
+        "profit_factor": 0.003,
+        "max_drawdown_pct": 1192.45,
+        "sharpe_annualized": -220.316,
+        "sortino_annualized": -232.108
+      },
+      "long": {
+        "trade_count": 14379,
+        "win_count": 188,
+        "loss_count": 14191,
+        "win_rate": 1.31,
+        "gross_expectancy_bps": -0.14,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -44.14,
+        "total_gross_pnl": -202.2,
+        "total_fees": 57515.6,
+        "total_slippage": 5751.56,
+        "total_funding": 0.0,
+        "total_net_pnl": -63469.36,
+        "profit_factor": 0.004,
+        "max_drawdown_pct": 634.89,
+        "sharpe_annualized": -214.547,
+        "sortino_annualized": -226.78
+      },
+      "short": {
+        "trade_count": 12714,
+        "win_count": 134,
+        "loss_count": 12580,
+        "win_rate": 1.05,
+        "gross_expectancy_bps": 0.15,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.85,
+        "total_gross_pnl": 191.68,
+        "total_fees": 50855.62,
+        "total_slippage": 5085.56,
+        "total_funding": 0.0,
+        "total_net_pnl": -55749.5,
+        "profit_factor": 0.003,
+        "max_drawdown_pct": 557.6,
+        "sharpe_annualized": -227.546,
+        "sortino_annualized": -238.72
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 8131,
+        "win_count": 176,
+        "loss_count": 7955,
+        "win_rate": 2.16,
+        "gross_expectancy_bps": -0.17,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -44.17,
+        "total_gross_pnl": -140.83,
+        "total_fees": 32523.96,
+        "total_slippage": 3252.4,
+        "total_funding": 0.0,
+        "total_net_pnl": -35917.19,
+        "profit_factor": 0.005,
+        "max_drawdown_pct": 359.17,
+        "sharpe_annualized": -179.57,
+        "sortino_annualized": -189.838
+      },
+      "long": {
+        "trade_count": 3522,
+        "win_count": 141,
+        "loss_count": 3381,
+        "win_rate": 4.0,
+        "gross_expectancy_bps": -0.23,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -44.23,
+        "total_gross_pnl": -80.76,
+        "total_fees": 14087.84,
+        "total_slippage": 1408.78,
+        "total_funding": 0.0,
+        "total_net_pnl": -15577.38,
+        "profit_factor": 0.008,
+        "max_drawdown_pct": 155.77,
+        "sharpe_annualized": -161.088,
+        "sortino_annualized": -174.859
+      },
+      "short": {
+        "trade_count": 4609,
+        "win_count": 35,
+        "loss_count": 4574,
+        "win_rate": 0.76,
+        "gross_expectancy_bps": -0.13,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -44.13,
+        "total_gross_pnl": -60.07,
+        "total_fees": 18436.12,
+        "total_slippage": 1843.61,
+        "total_funding": 0.0,
+        "total_net_pnl": -20339.8,
+        "profit_factor": 0.002,
+        "max_drawdown_pct": 203.48,
+        "sharpe_annualized": -199.033,
+        "sortino_annualized": -204.185
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 35224,
+      "win_count": 498,
+      "loss_count": 34726,
+      "win_rate": 1.41,
+      "gross_expectancy_bps": -0.04,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -44.04,
+      "total_gross_pnl": -151.35,
+      "total_fees": 140895.17,
+      "total_slippage": 14089.52,
+      "total_funding": 0.0,
+      "total_net_pnl": -155136.04,
+      "profit_factor": 0.003,
+      "max_drawdown_pct": 1551.71,
+      "sharpe_annualized": -208.429,
+      "sortino_annualized": -219.885
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 48.33,
+      "STOP_LOSS_pct": 48.25,
+      "TIME_EXPIRATION_pct": 3.42,
+      "GAP_EXITS_count": 1995,
+      "GAP_EXITS_pct": 5.66
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -34.0,
+          "total_net_pnl": -92105.35,
+          "profit_factor": 0.01,
+          "win_rate": 2.91
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -34.0,
+          "total_net_pnl": -92119.15,
+          "profit_factor": 0.01,
+          "win_rate": 2.91
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -34.0,
+          "total_net_pnl": -92126.05,
+          "profit_factor": 0.01,
+          "win_rate": 2.9
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -34.01,
+          "total_net_pnl": -92132.95,
+          "profit_factor": 0.01,
+          "win_rate": 2.9
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -34.01,
+          "total_net_pnl": -92146.75,
+          "profit_factor": 0.01,
+          "win_rate": 2.91
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -44.0,
+          "total_net_pnl": -119198.15,
+          "profit_factor": 0.003,
+          "win_rate": 1.19
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -44.0,
+          "total_net_pnl": -119211.95,
+          "profit_factor": 0.003,
+          "win_rate": 1.19
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -44.0,
+          "total_net_pnl": -119218.85,
+          "profit_factor": 0.003,
+          "win_rate": 1.19
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -44.01,
+          "total_net_pnl": -119225.75,
+          "profit_factor": 0.003,
+          "win_rate": 1.19
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -44.01,
+          "total_net_pnl": -119239.55,
+          "profit_factor": 0.003,
+          "win_rate": 1.2
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -64.0,
+          "total_net_pnl": -173383.76,
+          "profit_factor": 0.0,
+          "win_rate": 0.22
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -64.0,
+          "total_net_pnl": -173397.56,
+          "profit_factor": 0.0,
+          "win_rate": 0.22
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -64.0,
+          "total_net_pnl": -173404.46,
+          "profit_factor": 0.0,
+          "win_rate": 0.22
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -64.01,
+          "total_net_pnl": -173411.36,
+          "profit_factor": 0.0,
+          "win_rate": 0.22
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -64.01,
+          "total_net_pnl": -173425.16,
+          "profit_factor": 0.0,
+          "win_rate": 0.22
+        }
+      }
+    }
+  },
+  "ETHUSDT": {
+    "symbol": "ETHUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 27472,
+        "win_count": 1588,
+        "loss_count": 25884,
+        "win_rate": 5.78,
+        "gross_expectancy_bps": 0.46,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.54,
+        "total_gross_pnl": 1250.91,
+        "total_fees": 109887.89,
+        "total_slippage": 10988.79,
+        "total_funding": 0.0,
+        "total_net_pnl": -119625.77,
+        "profit_factor": 0.022,
+        "max_drawdown_pct": 1196.43,
+        "sharpe_annualized": -131.817,
+        "sortino_annualized": -148.786
+      },
+      "long": {
+        "trade_count": 13324,
+        "win_count": 952,
+        "loss_count": 12372,
+        "win_rate": 7.15,
+        "gross_expectancy_bps": 0.45,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.55,
+        "total_gross_pnl": 597.35,
+        "total_fees": 53297.19,
+        "total_slippage": 5329.72,
+        "total_funding": 0.0,
+        "total_net_pnl": -58029.56,
+        "profit_factor": 0.027,
+        "max_drawdown_pct": 580.4,
+        "sharpe_annualized": -125.597,
+        "sortino_annualized": -144.786
+      },
+      "short": {
+        "trade_count": 14148,
+        "win_count": 636,
+        "loss_count": 13512,
+        "win_rate": 4.5,
+        "gross_expectancy_bps": 0.46,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.54,
+        "total_gross_pnl": 653.55,
+        "total_fees": 56590.69,
+        "total_slippage": 5659.07,
+        "total_funding": 0.0,
+        "total_net_pnl": -61596.21,
+        "profit_factor": 0.017,
+        "max_drawdown_pct": 616.05,
+        "sharpe_annualized": -138.608,
+        "sortino_annualized": -152.923
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 8053,
+        "win_count": 469,
+        "loss_count": 7584,
+        "win_rate": 5.82,
+        "gross_expectancy_bps": 0.27,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.73,
+        "total_gross_pnl": 218.85,
+        "total_fees": 32211.26,
+        "total_slippage": 3221.13,
+        "total_funding": 0.0,
+        "total_net_pnl": -35213.54,
+        "profit_factor": 0.021,
+        "max_drawdown_pct": 352.34,
+        "sharpe_annualized": -136.549,
+        "sortino_annualized": -154.178
+      },
+      "long": {
+        "trade_count": 3381,
+        "win_count": 203,
+        "loss_count": 3178,
+        "win_rate": 6.0,
+        "gross_expectancy_bps": -0.23,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -44.23,
+        "total_gross_pnl": -76.73,
+        "total_fees": 13523.85,
+        "total_slippage": 1352.38,
+        "total_funding": 0.0,
+        "total_net_pnl": -14952.96,
+        "profit_factor": 0.019,
+        "max_drawdown_pct": 149.53,
+        "sharpe_annualized": -139.246,
+        "sortino_annualized": -157.325
+      },
+      "short": {
+        "trade_count": 4672,
+        "win_count": 266,
+        "loss_count": 4406,
+        "win_rate": 5.69,
+        "gross_expectancy_bps": 0.63,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.37,
+        "total_gross_pnl": 295.58,
+        "total_fees": 18687.41,
+        "total_slippage": 1868.74,
+        "total_funding": 0.0,
+        "total_net_pnl": -20260.57,
+        "profit_factor": 0.022,
+        "max_drawdown_pct": 202.69,
+        "sharpe_annualized": -134.639,
+        "sortino_annualized": -151.966
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 35525,
+      "win_count": 2057,
+      "loss_count": 33468,
+      "win_rate": 5.79,
+      "gross_expectancy_bps": 0.41,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -43.59,
+      "total_gross_pnl": 1469.75,
+      "total_fees": 142099.14,
+      "total_slippage": 14209.91,
+      "total_funding": 0.0,
+      "total_net_pnl": -154839.3,
+      "profit_factor": 0.022,
+      "max_drawdown_pct": 1548.61,
+      "sharpe_annualized": -132.855,
+      "sortino_annualized": -149.967
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 49.08,
+      "STOP_LOSS_pct": 47.86,
+      "TIME_EXPIRATION_pct": 3.06,
+      "GAP_EXITS_count": 2003,
+      "GAP_EXITS_pct": 5.64
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -33.53,
+          "total_net_pnl": -92126.8,
+          "profit_factor": 0.052,
+          "win_rate": 11.6
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -33.54,
+          "total_net_pnl": -92144.8,
+          "profit_factor": 0.052,
+          "win_rate": 11.59
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -33.54,
+          "total_net_pnl": -92153.8,
+          "profit_factor": 0.052,
+          "win_rate": 11.57
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -33.55,
+          "total_net_pnl": -92162.8,
+          "profit_factor": 0.051,
+          "win_rate": 11.59
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -33.55,
+          "total_net_pnl": -92180.8,
+          "profit_factor": 0.051,
+          "win_rate": 11.59
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -43.53,
+          "total_net_pnl": -119598.77,
+          "profit_factor": 0.022,
+          "win_rate": 5.82
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -43.54,
+          "total_net_pnl": -119616.77,
+          "profit_factor": 0.022,
+          "win_rate": 5.79
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -43.54,
+          "total_net_pnl": -119625.77,
+          "profit_factor": 0.022,
+          "win_rate": 5.78
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -43.55,
+          "total_net_pnl": -119634.77,
+          "profit_factor": 0.022,
+          "win_rate": 5.77
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -43.55,
+          "total_net_pnl": -119652.77,
+          "profit_factor": 0.022,
+          "win_rate": 5.76
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -63.53,
+          "total_net_pnl": -174542.71,
+          "profit_factor": 0.005,
+          "win_rate": 1.67
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -63.54,
+          "total_net_pnl": -174560.71,
+          "profit_factor": 0.005,
+          "win_rate": 1.67
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -63.54,
+          "total_net_pnl": -174569.71,
+          "profit_factor": 0.005,
+          "win_rate": 1.67
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -63.55,
+          "total_net_pnl": -174578.71,
+          "profit_factor": 0.005,
+          "win_rate": 1.67
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -63.55,
+          "total_net_pnl": -174596.71,
+          "profit_factor": 0.005,
+          "win_rate": 1.67
+        }
+      }
+    }
+  },
+  "BNBUSDT": {
+    "symbol": "BNBUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 24417,
+        "win_count": 778,
+        "loss_count": 23639,
+        "win_rate": 3.19,
+        "gross_expectancy_bps": 0.07,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.93,
+        "total_gross_pnl": 167.87,
+        "total_fees": 97667.74,
+        "total_slippage": 9766.77,
+        "total_funding": 0.0,
+        "total_net_pnl": -107266.65,
+        "profit_factor": 0.014,
+        "max_drawdown_pct": 1072.76,
+        "sharpe_annualized": -158.948,
+        "sortino_annualized": -179.749
+      },
+      "long": {
+        "trade_count": 9336,
+        "win_count": 478,
+        "loss_count": 8858,
+        "win_rate": 5.12,
+        "gross_expectancy_bps": 0.02,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.98,
+        "total_gross_pnl": 20.08,
+        "total_fees": 37344.04,
+        "total_slippage": 3734.4,
+        "total_funding": 0.0,
+        "total_net_pnl": -41058.37,
+        "profit_factor": 0.026,
+        "max_drawdown_pct": 410.61,
+        "sharpe_annualized": -137.027,
+        "sortino_annualized": -164.68
+      },
+      "short": {
+        "trade_count": 15081,
+        "win_count": 300,
+        "loss_count": 14781,
+        "win_rate": 1.99,
+        "gross_expectancy_bps": 0.1,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.9,
+        "total_gross_pnl": 147.79,
+        "total_fees": 60323.7,
+        "total_slippage": 6032.37,
+        "total_funding": 0.0,
+        "total_net_pnl": -66208.28,
+        "profit_factor": 0.006,
+        "max_drawdown_pct": 662.6,
+        "sharpe_annualized": -179.352,
+        "sortino_annualized": -191.552
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 7925,
+        "win_count": 151,
+        "loss_count": 7774,
+        "win_rate": 1.91,
+        "gross_expectancy_bps": 0.06,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.94,
+        "total_gross_pnl": 46.14,
+        "total_fees": 31699.88,
+        "total_slippage": 3169.99,
+        "total_funding": 0.0,
+        "total_net_pnl": -34823.73,
+        "profit_factor": 0.006,
+        "max_drawdown_pct": 348.26,
+        "sharpe_annualized": -184.069,
+        "sortino_annualized": -196.549
+      },
+      "long": {
+        "trade_count": 3255,
+        "win_count": 83,
+        "loss_count": 3172,
+        "win_rate": 2.55,
+        "gross_expectancy_bps": -0.02,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -44.02,
+        "total_gross_pnl": -6.26,
+        "total_fees": 13019.99,
+        "total_slippage": 1302.0,
+        "total_funding": 0.0,
+        "total_net_pnl": -14328.25,
+        "profit_factor": 0.01,
+        "max_drawdown_pct": 143.29,
+        "sharpe_annualized": -173.432,
+        "sortino_annualized": -190.367
+      },
+      "short": {
+        "trade_count": 4670,
+        "win_count": 68,
+        "loss_count": 4602,
+        "win_rate": 1.46,
+        "gross_expectancy_bps": 0.11,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.89,
+        "total_gross_pnl": 52.4,
+        "total_fees": 18679.9,
+        "total_slippage": 1867.99,
+        "total_funding": 0.0,
+        "total_net_pnl": -20495.49,
+        "profit_factor": 0.003,
+        "max_drawdown_pct": 204.96,
+        "sharpe_annualized": -192.792,
+        "sortino_annualized": -201.271
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 32342,
+      "win_count": 929,
+      "loss_count": 31413,
+      "win_rate": 2.87,
+      "gross_expectancy_bps": 0.07,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -43.93,
+      "total_gross_pnl": 214.01,
+      "total_fees": 129367.63,
+      "total_slippage": 12936.76,
+      "total_funding": 0.0,
+      "total_net_pnl": -142090.38,
+      "profit_factor": 0.012,
+      "max_drawdown_pct": 1421.03,
+      "sharpe_annualized": -164.149,
+      "sortino_annualized": -183.477
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 47.86,
+      "STOP_LOSS_pct": 47.63,
+      "TIME_EXPIRATION_pct": 4.51,
+      "GAP_EXITS_count": 3177,
+      "GAP_EXITS_pct": 9.82
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -33.95,
+          "total_net_pnl": -82906.12,
+          "profit_factor": 0.031,
+          "win_rate": 6.66
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -33.94,
+          "total_net_pnl": -82868.52,
+          "profit_factor": 0.031,
+          "win_rate": 6.66
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -33.93,
+          "total_net_pnl": -82849.72,
+          "profit_factor": 0.031,
+          "win_rate": 6.65
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -33.92,
+          "total_net_pnl": -82830.92,
+          "profit_factor": 0.031,
+          "win_rate": 6.64
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -33.91,
+          "total_net_pnl": -82793.32,
+          "profit_factor": 0.031,
+          "win_rate": 6.64
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -43.95,
+          "total_net_pnl": -107323.05,
+          "profit_factor": 0.014,
+          "win_rate": 3.19
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -43.94,
+          "total_net_pnl": -107285.45,
+          "profit_factor": 0.014,
+          "win_rate": 3.19
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -43.93,
+          "total_net_pnl": -107266.65,
+          "profit_factor": 0.014,
+          "win_rate": 3.19
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -43.92,
+          "total_net_pnl": -107247.85,
+          "profit_factor": 0.014,
+          "win_rate": 3.19
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -43.91,
+          "total_net_pnl": -107210.25,
+          "profit_factor": 0.014,
+          "win_rate": 3.19
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -63.95,
+          "total_net_pnl": -156156.92,
+          "profit_factor": 0.004,
+          "win_rate": 1.08
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -63.94,
+          "total_net_pnl": -156119.32,
+          "profit_factor": 0.004,
+          "win_rate": 1.08
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -63.93,
+          "total_net_pnl": -156100.52,
+          "profit_factor": 0.004,
+          "win_rate": 1.08
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -63.92,
+          "total_net_pnl": -156081.72,
+          "profit_factor": 0.004,
+          "win_rate": 1.07
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -63.91,
+          "total_net_pnl": -156044.12,
+          "profit_factor": 0.004,
+          "win_rate": 1.07
+        }
+      }
+    }
+  },
+  "XRPUSDT": {
+    "symbol": "XRPUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 25709,
+        "win_count": 2539,
+        "loss_count": 23170,
+        "win_rate": 9.88,
+        "gross_expectancy_bps": 1.0,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.0,
+        "total_gross_pnl": 2577.97,
+        "total_fees": 102835.38,
+        "total_slippage": 10283.54,
+        "total_funding": 0.0,
+        "total_net_pnl": -110540.96,
+        "profit_factor": 0.061,
+        "max_drawdown_pct": 1106.23,
+        "sharpe_annualized": -97.414,
+        "sortino_annualized": -122.595
+      },
+      "long": {
+        "trade_count": 10158,
+        "win_count": 1393,
+        "loss_count": 8765,
+        "win_rate": 13.71,
+        "gross_expectancy_bps": 1.12,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -42.89,
+        "total_gross_pnl": 1135.08,
+        "total_fees": 40634.27,
+        "total_slippage": 4063.43,
+        "total_funding": 0.0,
+        "total_net_pnl": -43562.62,
+        "profit_factor": 0.083,
+        "max_drawdown_pct": 435.71,
+        "sharpe_annualized": -83.729,
+        "sortino_annualized": -109.195
+      },
+      "short": {
+        "trade_count": 15551,
+        "win_count": 1146,
+        "loss_count": 14405,
+        "win_rate": 7.37,
+        "gross_expectancy_bps": 0.93,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.07,
+        "total_gross_pnl": 1442.89,
+        "total_fees": 62201.11,
+        "total_slippage": 6220.11,
+        "total_funding": 0.0,
+        "total_net_pnl": -66978.34,
+        "profit_factor": 0.046,
+        "max_drawdown_pct": 670.25,
+        "sharpe_annualized": -110.936,
+        "sortino_annualized": -134.385
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 8360,
+        "win_count": 489,
+        "loss_count": 7871,
+        "win_rate": 5.85,
+        "gross_expectancy_bps": 0.68,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.32,
+        "total_gross_pnl": 564.43,
+        "total_fees": 33439.3,
+        "total_slippage": 3343.93,
+        "total_funding": 0.0,
+        "total_net_pnl": -36218.8,
+        "profit_factor": 0.025,
+        "max_drawdown_pct": 362.11,
+        "sharpe_annualized": -131.947,
+        "sortino_annualized": -151.181
+      },
+      "long": {
+        "trade_count": 2349,
+        "win_count": 274,
+        "loss_count": 2075,
+        "win_rate": 11.66,
+        "gross_expectancy_bps": 0.45,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.55,
+        "total_gross_pnl": 106.23,
+        "total_fees": 9396.21,
+        "total_slippage": 939.62,
+        "total_funding": 0.0,
+        "total_net_pnl": -10229.6,
+        "profit_factor": 0.048,
+        "max_drawdown_pct": 102.3,
+        "sharpe_annualized": -105.202,
+        "sortino_annualized": -126.62
+      },
+      "short": {
+        "trade_count": 6011,
+        "win_count": 215,
+        "loss_count": 5796,
+        "win_rate": 3.58,
+        "gross_expectancy_bps": 0.76,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.24,
+        "total_gross_pnl": 458.19,
+        "total_fees": 24043.08,
+        "total_slippage": 2404.31,
+        "total_funding": 0.0,
+        "total_net_pnl": -25989.2,
+        "profit_factor": 0.016,
+        "max_drawdown_pct": 259.9,
+        "sharpe_annualized": -150.077,
+        "sortino_annualized": -165.776
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 34069,
+      "win_count": 3028,
+      "loss_count": 31041,
+      "win_rate": 8.89,
+      "gross_expectancy_bps": 0.92,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -43.08,
+      "total_gross_pnl": 3142.39,
+      "total_fees": 136274.68,
+      "total_slippage": 13627.47,
+      "total_funding": 0.0,
+      "total_net_pnl": -146759.76,
+      "profit_factor": 0.053,
+      "max_drawdown_pct": 1468.72,
+      "sharpe_annualized": -103.428,
+      "sortino_annualized": -128.193
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 48.24,
+      "STOP_LOSS_pct": 47.43,
+      "TIME_EXPIRATION_pct": 4.34,
+      "GAP_EXITS_count": 4717,
+      "GAP_EXITS_pct": 13.85
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -33.02,
+          "total_net_pnl": -84883.41,
+          "profit_factor": 0.109,
+          "win_rate": 15.76
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -33.0,
+          "total_net_pnl": -84849.21,
+          "profit_factor": 0.109,
+          "win_rate": 15.76
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -33.0,
+          "total_net_pnl": -84832.11,
+          "profit_factor": 0.109,
+          "win_rate": 15.76
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -32.99,
+          "total_net_pnl": -84815.01,
+          "profit_factor": 0.109,
+          "win_rate": 15.75
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -32.98,
+          "total_net_pnl": -84780.81,
+          "profit_factor": 0.109,
+          "win_rate": 15.76
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -43.02,
+          "total_net_pnl": -110592.26,
+          "profit_factor": 0.061,
+          "win_rate": 9.89
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -43.0,
+          "total_net_pnl": -110558.06,
+          "profit_factor": 0.061,
+          "win_rate": 9.88
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -43.0,
+          "total_net_pnl": -110540.96,
+          "profit_factor": 0.061,
+          "win_rate": 9.88
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -42.99,
+          "total_net_pnl": -110523.86,
+          "profit_factor": 0.061,
+          "win_rate": 9.87
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -42.98,
+          "total_net_pnl": -110489.66,
+          "profit_factor": 0.061,
+          "win_rate": 9.86
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -63.02,
+          "total_net_pnl": -162009.95,
+          "profit_factor": 0.023,
+          "win_rate": 4.42
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -63.0,
+          "total_net_pnl": -161975.75,
+          "profit_factor": 0.023,
+          "win_rate": 4.41
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -63.0,
+          "total_net_pnl": -161958.65,
+          "profit_factor": 0.023,
+          "win_rate": 4.42
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -62.99,
+          "total_net_pnl": -161941.55,
+          "profit_factor": 0.023,
+          "win_rate": 4.42
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -62.98,
+          "total_net_pnl": -161907.35,
+          "profit_factor": 0.023,
+          "win_rate": 4.41
+        }
+      }
+    }
+  },
+  "ADAUSDT": {
+    "symbol": "ADAUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 17114,
+        "win_count": 3852,
+        "loss_count": 13262,
+        "win_rate": 22.51,
+        "gross_expectancy_bps": 2.07,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.93,
+        "total_gross_pnl": 3538.81,
+        "total_fees": 68457.12,
+        "total_slippage": 6845.71,
+        "total_funding": 0.0,
+        "total_net_pnl": -71764.02,
+        "profit_factor": 0.135,
+        "max_drawdown_pct": 717.51,
+        "sharpe_annualized": -68.742,
+        "sortino_annualized": -87.829
+      },
+      "long": {
+        "trade_count": 9240,
+        "win_count": 2284,
+        "loss_count": 6956,
+        "win_rate": 24.72,
+        "gross_expectancy_bps": 2.22,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.79,
+        "total_gross_pnl": 2049.05,
+        "total_fees": 36964.1,
+        "total_slippage": 3696.41,
+        "total_funding": 0.0,
+        "total_net_pnl": -38611.46,
+        "profit_factor": 0.148,
+        "max_drawdown_pct": 386.05,
+        "sharpe_annualized": -66.909,
+        "sortino_annualized": -87.433
+      },
+      "short": {
+        "trade_count": 7874,
+        "win_count": 1568,
+        "loss_count": 6306,
+        "win_rate": 19.91,
+        "gross_expectancy_bps": 1.89,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -42.1,
+        "total_gross_pnl": 1489.76,
+        "total_fees": 31493.02,
+        "total_slippage": 3149.3,
+        "total_funding": 0.0,
+        "total_net_pnl": -33152.56,
+        "profit_factor": 0.118,
+        "max_drawdown_pct": 331.56,
+        "sharpe_annualized": -71.057,
+        "sortino_annualized": -88.64
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 4698,
+        "win_count": 731,
+        "loss_count": 3967,
+        "win_rate": 15.56,
+        "gross_expectancy_bps": 3.05,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -40.95,
+        "total_gross_pnl": 1433.97,
+        "total_fees": 18791.3,
+        "total_slippage": 1879.13,
+        "total_funding": 0.0,
+        "total_net_pnl": -19236.46,
+        "profit_factor": 0.068,
+        "max_drawdown_pct": 192.33,
+        "sharpe_annualized": -93.64,
+        "sortino_annualized": -114.264
+      },
+      "long": {
+        "trade_count": 2493,
+        "win_count": 420,
+        "loss_count": 2073,
+        "win_rate": 16.85,
+        "gross_expectancy_bps": 2.17,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.83,
+        "total_gross_pnl": 541.04,
+        "total_fees": 9973.08,
+        "total_slippage": 997.31,
+        "total_funding": 0.0,
+        "total_net_pnl": -10429.35,
+        "profit_factor": 0.078,
+        "max_drawdown_pct": 104.29,
+        "sharpe_annualized": -91.061,
+        "sortino_annualized": -114.475
+      },
+      "short": {
+        "trade_count": 2205,
+        "win_count": 311,
+        "loss_count": 1894,
+        "win_rate": 14.1,
+        "gross_expectancy_bps": 4.05,
+        "fee_drag_bps": 39.99,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -39.94,
+        "total_gross_pnl": 892.93,
+        "total_fees": 8818.21,
+        "total_slippage": 881.82,
+        "total_funding": 0.0,
+        "total_net_pnl": -8807.11,
+        "profit_factor": 0.056,
+        "max_drawdown_pct": 88.07,
+        "sharpe_annualized": -97.266,
+        "sortino_annualized": -114.74
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 21812,
+      "win_count": 4583,
+      "loss_count": 17229,
+      "win_rate": 21.01,
+      "gross_expectancy_bps": 2.28,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -41.72,
+      "total_gross_pnl": 4972.78,
+      "total_fees": 87248.41,
+      "total_slippage": 8724.84,
+      "total_funding": 0.0,
+      "total_net_pnl": -91000.48,
+      "profit_factor": 0.121,
+      "max_drawdown_pct": 909.83,
+      "sharpe_annualized": -72.282,
+      "sortino_annualized": -91.64
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 47.19,
+      "STOP_LOSS_pct": 45.17,
+      "TIME_EXPIRATION_pct": 7.65,
+      "GAP_EXITS_count": 8507,
+      "GAP_EXITS_pct": 39.0
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -31.92,
+          "total_net_pnl": -54635.34,
+          "profit_factor": 0.224,
+          "win_rate": 31.76
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -31.93,
+          "total_net_pnl": -54644.94,
+          "profit_factor": 0.224,
+          "win_rate": 31.76
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -31.93,
+          "total_net_pnl": -54649.74,
+          "profit_factor": 0.224,
+          "win_rate": 31.75
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -31.94,
+          "total_net_pnl": -54654.54,
+          "profit_factor": 0.224,
+          "win_rate": 31.78
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -31.94,
+          "total_net_pnl": -54664.14,
+          "profit_factor": 0.224,
+          "win_rate": 31.75
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -41.92,
+          "total_net_pnl": -71749.62,
+          "profit_factor": 0.135,
+          "win_rate": 22.54
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -41.93,
+          "total_net_pnl": -71759.22,
+          "profit_factor": 0.135,
+          "win_rate": 22.52
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -41.93,
+          "total_net_pnl": -71764.02,
+          "profit_factor": 0.135,
+          "win_rate": 22.51
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -41.94,
+          "total_net_pnl": -71768.82,
+          "profit_factor": 0.135,
+          "win_rate": 22.51
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -41.94,
+          "total_net_pnl": -71778.42,
+          "profit_factor": 0.135,
+          "win_rate": 22.49
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -61.92,
+          "total_net_pnl": -105978.18,
+          "profit_factor": 0.051,
+          "win_rate": 11.0
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -61.93,
+          "total_net_pnl": -105987.78,
+          "profit_factor": 0.051,
+          "win_rate": 10.99
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -61.93,
+          "total_net_pnl": -105992.58,
+          "profit_factor": 0.051,
+          "win_rate": 10.99
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -61.94,
+          "total_net_pnl": -105997.38,
+          "profit_factor": 0.051,
+          "win_rate": 11.0
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -61.94,
+          "total_net_pnl": -106006.98,
+          "profit_factor": 0.05,
+          "win_rate": 11.01
+        }
+      }
+    }
+  },
+  "SOLUSDT": {
+    "symbol": "SOLUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 28140,
+        "win_count": 2284,
+        "loss_count": 25856,
+        "win_rate": 8.12,
+        "gross_expectancy_bps": 0.39,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.61,
+        "total_gross_pnl": 1084.99,
+        "total_fees": 112558.13,
+        "total_slippage": 11255.81,
+        "total_funding": 0.0,
+        "total_net_pnl": -122728.95,
+        "profit_factor": 0.036,
+        "max_drawdown_pct": 1228.2,
+        "sharpe_annualized": -111.283,
+        "sortino_annualized": -129.017
+      },
+      "long": {
+        "trade_count": 17981,
+        "win_count": 1300,
+        "loss_count": 16681,
+        "win_rate": 7.23,
+        "gross_expectancy_bps": 0.04,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.96,
+        "total_gross_pnl": 75.41,
+        "total_fees": 71924.15,
+        "total_slippage": 7192.42,
+        "total_funding": 0.0,
+        "total_net_pnl": -79041.15,
+        "profit_factor": 0.035,
+        "max_drawdown_pct": 791.06,
+        "sharpe_annualized": -113.512,
+        "sortino_annualized": -132.369
+      },
+      "short": {
+        "trade_count": 10159,
+        "win_count": 984,
+        "loss_count": 9175,
+        "win_rate": 9.69,
+        "gross_expectancy_bps": 0.99,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.0,
+        "total_gross_pnl": 1009.58,
+        "total_fees": 40633.98,
+        "total_slippage": 4063.4,
+        "total_funding": 0.0,
+        "total_net_pnl": -43687.8,
+        "profit_factor": 0.038,
+        "max_drawdown_pct": 437.05,
+        "sharpe_annualized": -107.517,
+        "sortino_annualized": -123.353
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 8198,
+        "win_count": 575,
+        "loss_count": 7623,
+        "win_rate": 7.01,
+        "gross_expectancy_bps": 0.28,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.72,
+        "total_gross_pnl": 228.03,
+        "total_fees": 32791.58,
+        "total_slippage": 3279.16,
+        "total_funding": 0.0,
+        "total_net_pnl": -35842.71,
+        "profit_factor": 0.027,
+        "max_drawdown_pct": 358.33,
+        "sharpe_annualized": -124.074,
+        "sortino_annualized": -141.497
+      },
+      "long": {
+        "trade_count": 4456,
+        "win_count": 197,
+        "loss_count": 4259,
+        "win_rate": 4.42,
+        "gross_expectancy_bps": 0.02,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.98,
+        "total_gross_pnl": 10.08,
+        "total_fees": 17824.02,
+        "total_slippage": 1782.4,
+        "total_funding": 0.0,
+        "total_net_pnl": -19596.35,
+        "profit_factor": 0.023,
+        "max_drawdown_pct": 195.93,
+        "sharpe_annualized": -135.297,
+        "sortino_annualized": -153.531
+      },
+      "short": {
+        "trade_count": 3742,
+        "win_count": 378,
+        "loss_count": 3364,
+        "win_rate": 10.1,
+        "gross_expectancy_bps": 0.58,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.42,
+        "total_gross_pnl": 217.96,
+        "total_fees": 14967.56,
+        "total_slippage": 1496.76,
+        "total_funding": 0.0,
+        "total_net_pnl": -16246.36,
+        "profit_factor": 0.032,
+        "max_drawdown_pct": 162.53,
+        "sharpe_annualized": -113.532,
+        "sortino_annualized": -129.724
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 36338,
+      "win_count": 2859,
+      "loss_count": 33479,
+      "win_rate": 7.87,
+      "gross_expectancy_bps": 0.36,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -43.64,
+      "total_gross_pnl": 1313.02,
+      "total_fees": 145349.72,
+      "total_slippage": 14534.97,
+      "total_funding": 0.0,
+      "total_net_pnl": -158571.66,
+      "profit_factor": 0.034,
+      "max_drawdown_pct": 1586.92,
+      "sharpe_annualized": -113.833,
+      "sortino_annualized": -131.568
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 49.07,
+      "STOP_LOSS_pct": 47.95,
+      "TIME_EXPIRATION_pct": 2.98,
+      "GAP_EXITS_count": 2548,
+      "GAP_EXITS_pct": 7.01
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -33.59,
+          "total_net_pnl": -94511.42,
+          "profit_factor": 0.077,
+          "win_rate": 15.8
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -33.6,
+          "total_net_pnl": -94563.42,
+          "profit_factor": 0.077,
+          "win_rate": 15.76
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -33.61,
+          "total_net_pnl": -94589.42,
+          "profit_factor": 0.077,
+          "win_rate": 15.73
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -33.62,
+          "total_net_pnl": -94615.42,
+          "profit_factor": 0.077,
+          "win_rate": 15.72
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -33.64,
+          "total_net_pnl": -94667.42,
+          "profit_factor": 0.077,
+          "win_rate": 15.71
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -43.59,
+          "total_net_pnl": -122650.95,
+          "profit_factor": 0.036,
+          "win_rate": 8.13
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -43.6,
+          "total_net_pnl": -122702.95,
+          "profit_factor": 0.036,
+          "win_rate": 8.12
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -43.61,
+          "total_net_pnl": -122728.95,
+          "profit_factor": 0.036,
+          "win_rate": 8.12
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -43.62,
+          "total_net_pnl": -122754.95,
+          "profit_factor": 0.036,
+          "win_rate": 8.11
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -43.64,
+          "total_net_pnl": -122806.95,
+          "profit_factor": 0.036,
+          "win_rate": 8.11
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -63.59,
+          "total_net_pnl": -178930.02,
+          "profit_factor": 0.011,
+          "win_rate": 2.59
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -63.6,
+          "total_net_pnl": -178982.02,
+          "profit_factor": 0.011,
+          "win_rate": 2.58
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -63.61,
+          "total_net_pnl": -179008.02,
+          "profit_factor": 0.011,
+          "win_rate": 2.58
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -63.62,
+          "total_net_pnl": -179034.02,
+          "profit_factor": 0.011,
+          "win_rate": 2.59
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -63.64,
+          "total_net_pnl": -179086.02,
+          "profit_factor": 0.011,
+          "win_rate": 2.58
+        }
+      }
+    }
+  },
+  "AVAXUSDT": {
+    "symbol": "AVAXUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 14562,
+        "win_count": 3353,
+        "loss_count": 11209,
+        "win_rate": 23.03,
+        "gross_expectancy_bps": 1.61,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -42.39,
+        "total_gross_pnl": 2343.7,
+        "total_fees": 58246.97,
+        "total_slippage": 5824.7,
+        "total_funding": 0.0,
+        "total_net_pnl": -61727.97,
+        "profit_factor": 0.138,
+        "max_drawdown_pct": 616.68,
+        "sharpe_annualized": -69.996,
+        "sortino_annualized": -91.687
+      },
+      "long": {
+        "trade_count": 6998,
+        "win_count": 1787,
+        "loss_count": 5211,
+        "win_rate": 25.54,
+        "gross_expectancy_bps": 1.31,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -42.69,
+        "total_gross_pnl": 915.52,
+        "total_fees": 27993.83,
+        "total_slippage": 2799.38,
+        "total_funding": 0.0,
+        "total_net_pnl": -29877.7,
+        "profit_factor": 0.156,
+        "max_drawdown_pct": 298.7,
+        "sharpe_annualized": -66.1,
+        "sortino_annualized": -88.878
+      },
+      "short": {
+        "trade_count": 7564,
+        "win_count": 1566,
+        "loss_count": 5998,
+        "win_rate": 20.7,
+        "gross_expectancy_bps": 1.89,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -42.11,
+        "total_gross_pnl": 1428.18,
+        "total_fees": 30253.14,
+        "total_slippage": 3025.31,
+        "total_funding": 0.0,
+        "total_net_pnl": -31850.28,
+        "profit_factor": 0.12,
+        "max_drawdown_pct": 318.29,
+        "sharpe_annualized": -74.424,
+        "sortino_annualized": -95.12
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 4374,
+        "win_count": 773,
+        "loss_count": 3601,
+        "win_rate": 17.67,
+        "gross_expectancy_bps": 2.18,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.82,
+        "total_gross_pnl": 953.4,
+        "total_fees": 17495.25,
+        "total_slippage": 1749.53,
+        "total_funding": 0.0,
+        "total_net_pnl": -18291.38,
+        "profit_factor": 0.072,
+        "max_drawdown_pct": 182.89,
+        "sharpe_annualized": -90.959,
+        "sortino_annualized": -111.63
+      },
+      "long": {
+        "trade_count": 1904,
+        "win_count": 391,
+        "loss_count": 1513,
+        "win_rate": 20.54,
+        "gross_expectancy_bps": 1.52,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -42.48,
+        "total_gross_pnl": 289.55,
+        "total_fees": 7616.58,
+        "total_slippage": 761.66,
+        "total_funding": 0.0,
+        "total_net_pnl": -8088.69,
+        "profit_factor": 0.085,
+        "max_drawdown_pct": 80.89,
+        "sharpe_annualized": -86.589,
+        "sortino_annualized": -110.028
+      },
+      "short": {
+        "trade_count": 2470,
+        "win_count": 382,
+        "loss_count": 2088,
+        "win_rate": 15.47,
+        "gross_expectancy_bps": 2.69,
+        "fee_drag_bps": 39.99,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.31,
+        "total_gross_pnl": 663.85,
+        "total_fees": 9878.67,
+        "total_slippage": 987.87,
+        "total_funding": 0.0,
+        "total_net_pnl": -10202.69,
+        "profit_factor": 0.061,
+        "max_drawdown_pct": 102.03,
+        "sharpe_annualized": -95.071,
+        "sortino_annualized": -113.639
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 18936,
+      "win_count": 4126,
+      "loss_count": 14810,
+      "win_rate": 21.79,
+      "gross_expectancy_bps": 1.74,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -42.26,
+      "total_gross_pnl": 3297.1,
+      "total_fees": 75742.23,
+      "total_slippage": 7574.22,
+      "total_funding": 0.0,
+      "total_net_pnl": -80019.35,
+      "profit_factor": 0.123,
+      "max_drawdown_pct": 799.39,
+      "sharpe_annualized": -73.466,
+      "sortino_annualized": -95.055
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 44.44,
+      "STOP_LOSS_pct": 42.33,
+      "TIME_EXPIRATION_pct": 13.22,
+      "GAP_EXITS_count": 8224,
+      "GAP_EXITS_pct": 43.43
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -32.4,
+          "total_net_pnl": -47175.53,
+          "profit_factor": 0.226,
+          "win_rate": 31.35
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -32.39,
+          "total_net_pnl": -47169.33,
+          "profit_factor": 0.226,
+          "win_rate": 31.32
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -32.39,
+          "total_net_pnl": -47166.23,
+          "profit_factor": 0.226,
+          "win_rate": 31.31
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -32.39,
+          "total_net_pnl": -47163.13,
+          "profit_factor": 0.226,
+          "win_rate": 31.33
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -32.38,
+          "total_net_pnl": -47156.93,
+          "profit_factor": 0.226,
+          "win_rate": 31.31
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -42.4,
+          "total_net_pnl": -61737.27,
+          "profit_factor": 0.138,
+          "win_rate": 23.05
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -42.39,
+          "total_net_pnl": -61731.07,
+          "profit_factor": 0.138,
+          "win_rate": 23.05
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -42.39,
+          "total_net_pnl": -61727.97,
+          "profit_factor": 0.138,
+          "win_rate": 23.03
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -42.39,
+          "total_net_pnl": -61724.87,
+          "profit_factor": 0.138,
+          "win_rate": 23.0
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -42.38,
+          "total_net_pnl": -61718.67,
+          "profit_factor": 0.138,
+          "win_rate": 23.03
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -62.4,
+          "total_net_pnl": -90860.76,
+          "profit_factor": 0.05,
+          "win_rate": 12.1
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -62.39,
+          "total_net_pnl": -90854.56,
+          "profit_factor": 0.05,
+          "win_rate": 12.1
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -62.39,
+          "total_net_pnl": -90851.46,
+          "profit_factor": 0.05,
+          "win_rate": 12.09
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -62.39,
+          "total_net_pnl": -90848.36,
+          "profit_factor": 0.05,
+          "win_rate": 12.1
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -62.38,
+          "total_net_pnl": -90842.16,
+          "profit_factor": 0.05,
+          "win_rate": 12.1
+        }
+      }
+    }
+  },
+  "LINKUSDT": {
+    "symbol": "LINKUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 13217,
+        "win_count": 2540,
+        "loss_count": 10677,
+        "win_rate": 19.22,
+        "gross_expectancy_bps": 2.43,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.57,
+        "total_gross_pnl": 3211.75,
+        "total_fees": 52868.98,
+        "total_slippage": 5286.9,
+        "total_funding": 0.0,
+        "total_net_pnl": -54944.13,
+        "profit_factor": 0.139,
+        "max_drawdown_pct": 549.52,
+        "sharpe_annualized": -66.641,
+        "sortino_annualized": -85.523
+      },
+      "long": {
+        "trade_count": 7113,
+        "win_count": 1427,
+        "loss_count": 5686,
+        "win_rate": 20.06,
+        "gross_expectancy_bps": 2.6,
+        "fee_drag_bps": 40.01,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.4,
+        "total_gross_pnl": 1850.5,
+        "total_fees": 28455.7,
+        "total_slippage": 2845.57,
+        "total_funding": 0.0,
+        "total_net_pnl": -29450.77,
+        "profit_factor": 0.154,
+        "max_drawdown_pct": 294.54,
+        "sharpe_annualized": -61.647,
+        "sortino_annualized": -78.051
+      },
+      "short": {
+        "trade_count": 6104,
+        "win_count": 1113,
+        "loss_count": 4991,
+        "win_rate": 18.23,
+        "gross_expectancy_bps": 2.23,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.77,
+        "total_gross_pnl": 1361.24,
+        "total_fees": 24413.28,
+        "total_slippage": 2441.33,
+        "total_funding": 0.0,
+        "total_net_pnl": -25493.36,
+        "profit_factor": 0.122,
+        "max_drawdown_pct": 255.0,
+        "sharpe_annualized": -74.182,
+        "sortino_annualized": -97.273
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 4706,
+        "win_count": 705,
+        "loss_count": 4001,
+        "win_rate": 14.98,
+        "gross_expectancy_bps": 1.45,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -42.55,
+        "total_gross_pnl": 682.06,
+        "total_fees": 18823.4,
+        "total_slippage": 1882.34,
+        "total_funding": 0.0,
+        "total_net_pnl": -20023.68,
+        "profit_factor": 0.061,
+        "max_drawdown_pct": 200.35,
+        "sharpe_annualized": -96.562,
+        "sortino_annualized": -116.416
+      },
+      "long": {
+        "trade_count": 2531,
+        "win_count": 394,
+        "loss_count": 2137,
+        "win_rate": 15.57,
+        "gross_expectancy_bps": 0.75,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.25,
+        "total_gross_pnl": 190.09,
+        "total_fees": 10124.38,
+        "total_slippage": 1012.44,
+        "total_funding": 0.0,
+        "total_net_pnl": -10946.73,
+        "profit_factor": 0.06,
+        "max_drawdown_pct": 109.48,
+        "sharpe_annualized": -97.206,
+        "sortino_annualized": -117.433
+      },
+      "short": {
+        "trade_count": 2175,
+        "win_count": 311,
+        "loss_count": 1864,
+        "win_rate": 14.3,
+        "gross_expectancy_bps": 2.26,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.73,
+        "total_gross_pnl": 491.97,
+        "total_fees": 8699.02,
+        "total_slippage": 869.9,
+        "total_funding": 0.0,
+        "total_net_pnl": -9076.95,
+        "profit_factor": 0.062,
+        "max_drawdown_pct": 90.76,
+        "sharpe_annualized": -95.822,
+        "sortino_annualized": -115.347
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 17923,
+      "win_count": 3245,
+      "loss_count": 14678,
+      "win_rate": 18.11,
+      "gross_expectancy_bps": 2.17,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -41.83,
+      "total_gross_pnl": 3893.8,
+      "total_fees": 71692.37,
+      "total_slippage": 7169.24,
+      "total_funding": 0.0,
+      "total_net_pnl": -74967.81,
+      "profit_factor": 0.12,
+      "max_drawdown_pct": 749.79,
+      "sharpe_annualized": -71.952,
+      "sortino_annualized": -91.444
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 45.22,
+      "STOP_LOSS_pct": 43.0,
+      "TIME_EXPIRATION_pct": 11.79,
+      "GAP_EXITS_count": 6963,
+      "GAP_EXITS_pct": 38.85
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -31.56,
+          "total_net_pnl": -41711.58,
+          "profit_factor": 0.223,
+          "win_rate": 27.92
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -31.57,
+          "total_net_pnl": -41721.78,
+          "profit_factor": 0.223,
+          "win_rate": 27.92
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -31.57,
+          "total_net_pnl": -41726.88,
+          "profit_factor": 0.223,
+          "win_rate": 27.89
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -31.57,
+          "total_net_pnl": -41731.98,
+          "profit_factor": 0.223,
+          "win_rate": 27.88
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -31.58,
+          "total_net_pnl": -41742.18,
+          "profit_factor": 0.223,
+          "win_rate": 27.88
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -41.56,
+          "total_net_pnl": -54928.83,
+          "profit_factor": 0.14,
+          "win_rate": 19.26
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -41.57,
+          "total_net_pnl": -54939.03,
+          "profit_factor": 0.139,
+          "win_rate": 19.23
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -41.57,
+          "total_net_pnl": -54944.13,
+          "profit_factor": 0.139,
+          "win_rate": 19.22
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -41.57,
+          "total_net_pnl": -54949.23,
+          "profit_factor": 0.139,
+          "win_rate": 19.23
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -41.58,
+          "total_net_pnl": -54959.43,
+          "profit_factor": 0.139,
+          "win_rate": 19.19
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -61.56,
+          "total_net_pnl": -81363.32,
+          "profit_factor": 0.061,
+          "win_rate": 9.96
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -61.57,
+          "total_net_pnl": -81373.52,
+          "profit_factor": 0.061,
+          "win_rate": 9.95
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -61.57,
+          "total_net_pnl": -81378.62,
+          "profit_factor": 0.061,
+          "win_rate": 9.95
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -61.58,
+          "total_net_pnl": -81383.72,
+          "profit_factor": 0.061,
+          "win_rate": 9.96
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -61.58,
+          "total_net_pnl": -81393.92,
+          "profit_factor": 0.061,
+          "win_rate": 9.95
+        }
+      }
+    }
+  },
+  "DOGEUSDT": {
+    "symbol": "DOGEUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 23130,
+        "win_count": 2653,
+        "loss_count": 20477,
+        "win_rate": 11.47,
+        "gross_expectancy_bps": 0.36,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.64,
+        "total_gross_pnl": 836.46,
+        "total_fees": 92521.2,
+        "total_slippage": 9252.12,
+        "total_funding": 0.0,
+        "total_net_pnl": -100936.86,
+        "profit_factor": 0.074,
+        "max_drawdown_pct": 1007.27,
+        "sharpe_annualized": -86.832,
+        "sortino_annualized": -109.952
+      },
+      "long": {
+        "trade_count": 10444,
+        "win_count": 1194,
+        "loss_count": 9250,
+        "win_rate": 11.43,
+        "gross_expectancy_bps": 0.69,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.31,
+        "total_gross_pnl": 719.4,
+        "total_fees": 41777.44,
+        "total_slippage": 4177.74,
+        "total_funding": 0.0,
+        "total_net_pnl": -45235.78,
+        "profit_factor": 0.091,
+        "max_drawdown_pct": 452.12,
+        "sharpe_annualized": -78.68,
+        "sortino_annualized": -105.787
+      },
+      "short": {
+        "trade_count": 12686,
+        "win_count": 1459,
+        "loss_count": 11227,
+        "win_rate": 11.5,
+        "gross_expectancy_bps": 0.09,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.91,
+        "total_gross_pnl": 117.06,
+        "total_fees": 50743.77,
+        "total_slippage": 5074.38,
+        "total_funding": 0.0,
+        "total_net_pnl": -55701.08,
+        "profit_factor": 0.059,
+        "max_drawdown_pct": 556.28,
+        "sharpe_annualized": -95.579,
+        "sortino_annualized": -113.694
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 8286,
+        "win_count": 569,
+        "loss_count": 7717,
+        "win_rate": 6.87,
+        "gross_expectancy_bps": 1.16,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -42.84,
+        "total_gross_pnl": 958.83,
+        "total_fees": 33143.23,
+        "total_slippage": 3314.32,
+        "total_funding": 0.0,
+        "total_net_pnl": -35498.73,
+        "profit_factor": 0.029,
+        "max_drawdown_pct": 355.2,
+        "sharpe_annualized": -122.876,
+        "sortino_annualized": -140.629
+      },
+      "long": {
+        "trade_count": 3345,
+        "win_count": 215,
+        "loss_count": 3130,
+        "win_rate": 6.43,
+        "gross_expectancy_bps": 0.86,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.14,
+        "total_gross_pnl": 287.46,
+        "total_fees": 13380.57,
+        "total_slippage": 1338.06,
+        "total_funding": 0.0,
+        "total_net_pnl": -14431.17,
+        "profit_factor": 0.034,
+        "max_drawdown_pct": 144.31,
+        "sharpe_annualized": -123.46,
+        "sortino_annualized": -144.604
+      },
+      "short": {
+        "trade_count": 4941,
+        "win_count": 354,
+        "loss_count": 4587,
+        "win_rate": 7.16,
+        "gross_expectancy_bps": 1.36,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -42.64,
+        "total_gross_pnl": 671.36,
+        "total_fees": 19762.66,
+        "total_slippage": 1976.27,
+        "total_funding": 0.0,
+        "total_net_pnl": -21067.56,
+        "profit_factor": 0.026,
+        "max_drawdown_pct": 210.77,
+        "sharpe_annualized": -122.473,
+        "sortino_annualized": -138.044
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 31416,
+      "win_count": 3222,
+      "loss_count": 28194,
+      "win_rate": 10.26,
+      "gross_expectancy_bps": 0.57,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -43.43,
+      "total_gross_pnl": 1795.29,
+      "total_fees": 125664.44,
+      "total_slippage": 12566.44,
+      "total_funding": 0.0,
+      "total_net_pnl": -136435.59,
+      "profit_factor": 0.062,
+      "max_drawdown_pct": 1361.43,
+      "sharpe_annualized": -93.008,
+      "sortino_annualized": -115.83
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 48.42,
+      "STOP_LOSS_pct": 46.87,
+      "TIME_EXPIRATION_pct": 4.71,
+      "GAP_EXITS_count": 3891,
+      "GAP_EXITS_pct": 12.39
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -33.65,
+          "total_net_pnl": -77827.56,
+          "profit_factor": 0.128,
+          "win_rate": 18.95
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -33.64,
+          "total_net_pnl": -77813.56,
+          "profit_factor": 0.128,
+          "win_rate": 18.98
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -33.64,
+          "total_net_pnl": -77806.56,
+          "profit_factor": 0.128,
+          "win_rate": 18.95
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -33.64,
+          "total_net_pnl": -77799.56,
+          "profit_factor": 0.128,
+          "win_rate": 18.95
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -33.63,
+          "total_net_pnl": -77785.56,
+          "profit_factor": 0.128,
+          "win_rate": 18.95
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -43.65,
+          "total_net_pnl": -100957.86,
+          "profit_factor": 0.074,
+          "win_rate": 11.48
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -43.64,
+          "total_net_pnl": -100943.86,
+          "profit_factor": 0.074,
+          "win_rate": 11.47
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -43.64,
+          "total_net_pnl": -100936.86,
+          "profit_factor": 0.074,
+          "win_rate": 11.47
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -43.64,
+          "total_net_pnl": -100929.86,
+          "profit_factor": 0.074,
+          "win_rate": 11.49
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -43.63,
+          "total_net_pnl": -100915.86,
+          "profit_factor": 0.074,
+          "win_rate": 11.49
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -63.65,
+          "total_net_pnl": -147218.47,
+          "profit_factor": 0.029,
+          "win_rate": 5.14
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -63.64,
+          "total_net_pnl": -147204.47,
+          "profit_factor": 0.029,
+          "win_rate": 5.14
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -63.64,
+          "total_net_pnl": -147197.47,
+          "profit_factor": 0.029,
+          "win_rate": 5.15
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -63.64,
+          "total_net_pnl": -147190.47,
+          "profit_factor": 0.029,
+          "win_rate": 5.16
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -63.63,
+          "total_net_pnl": -147176.47,
+          "profit_factor": 0.029,
+          "win_rate": 5.17
+        }
+      }
+    }
+  },
+  "LTCUSDT": {
+    "symbol": "LTCUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 14786,
+        "win_count": 3106,
+        "loss_count": 11680,
+        "win_rate": 21.01,
+        "gross_expectancy_bps": 2.76,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.25,
+        "total_gross_pnl": 4074.18,
+        "total_fees": 59145.23,
+        "total_slippage": 5914.52,
+        "total_funding": 0.0,
+        "total_net_pnl": -60985.58,
+        "profit_factor": 0.157,
+        "max_drawdown_pct": 610.33,
+        "sharpe_annualized": -64.737,
+        "sortino_annualized": -85.049
+      },
+      "long": {
+        "trade_count": 7383,
+        "win_count": 1637,
+        "loss_count": 5746,
+        "win_rate": 22.17,
+        "gross_expectancy_bps": 3.18,
+        "fee_drag_bps": 40.01,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -40.83,
+        "total_gross_pnl": 2345.1,
+        "total_fees": 29536.69,
+        "total_slippage": 2953.67,
+        "total_funding": 0.0,
+        "total_net_pnl": -30145.26,
+        "profit_factor": 0.169,
+        "max_drawdown_pct": 301.52,
+        "sharpe_annualized": -62.807,
+        "sortino_annualized": -85.244
+      },
+      "short": {
+        "trade_count": 7403,
+        "win_count": 1469,
+        "loss_count": 5934,
+        "win_rate": 19.84,
+        "gross_expectancy_bps": 2.34,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.66,
+        "total_gross_pnl": 1729.08,
+        "total_fees": 29608.54,
+        "total_slippage": 2960.85,
+        "total_funding": 0.0,
+        "total_net_pnl": -30840.31,
+        "profit_factor": 0.145,
+        "max_drawdown_pct": 308.6,
+        "sharpe_annualized": -66.768,
+        "sortino_annualized": -84.951
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 4321,
+        "win_count": 421,
+        "loss_count": 3900,
+        "win_rate": 9.74,
+        "gross_expectancy_bps": 2.89,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.11,
+        "total_gross_pnl": 1248.85,
+        "total_fees": 17283.83,
+        "total_slippage": 1728.38,
+        "total_funding": 0.0,
+        "total_net_pnl": -17763.36,
+        "profit_factor": 0.035,
+        "max_drawdown_pct": 177.59,
+        "sharpe_annualized": -111.922,
+        "sortino_annualized": -129.146
+      },
+      "long": {
+        "trade_count": 2138,
+        "win_count": 214,
+        "loss_count": 1924,
+        "win_rate": 10.01,
+        "gross_expectancy_bps": 2.72,
+        "fee_drag_bps": 40.01,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -41.28,
+        "total_gross_pnl": 582.13,
+        "total_fees": 8553.16,
+        "total_slippage": 855.32,
+        "total_funding": 0.0,
+        "total_net_pnl": -8826.35,
+        "profit_factor": 0.036,
+        "max_drawdown_pct": 88.27,
+        "sharpe_annualized": -111.997,
+        "sortino_annualized": -130.151
+      },
+      "short": {
+        "trade_count": 2183,
+        "win_count": 207,
+        "loss_count": 1976,
+        "win_rate": 9.48,
+        "gross_expectancy_bps": 3.05,
+        "fee_drag_bps": 39.99,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -40.94,
+        "total_gross_pnl": 666.73,
+        "total_fees": 8730.67,
+        "total_slippage": 873.07,
+        "total_funding": 0.0,
+        "total_net_pnl": -8937.01,
+        "profit_factor": 0.035,
+        "max_drawdown_pct": 89.37,
+        "sharpe_annualized": -111.825,
+        "sortino_annualized": -128.162
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 19107,
+      "win_count": 3527,
+      "loss_count": 15580,
+      "win_rate": 18.46,
+      "gross_expectancy_bps": 2.79,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -41.21,
+      "total_gross_pnl": 5323.03,
+      "total_fees": 76429.06,
+      "total_slippage": 7642.91,
+      "total_funding": 0.0,
+      "total_net_pnl": -78748.94,
+      "profit_factor": 0.133,
+      "max_drawdown_pct": 788.13,
+      "sharpe_annualized": -70.206,
+      "sortino_annualized": -90.738
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 44.86,
+      "STOP_LOSS_pct": 42.19,
+      "TIME_EXPIRATION_pct": 12.95,
+      "GAP_EXITS_count": 7942,
+      "GAP_EXITS_pct": 41.57
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -31.24,
+          "total_net_pnl": -46189.07,
+          "profit_factor": 0.246,
+          "win_rate": 28.62
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -31.24,
+          "total_net_pnl": -46195.87,
+          "profit_factor": 0.245,
+          "win_rate": 28.63
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -31.25,
+          "total_net_pnl": -46199.27,
+          "profit_factor": 0.245,
+          "win_rate": 28.61
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -31.25,
+          "total_net_pnl": -46202.67,
+          "profit_factor": 0.245,
+          "win_rate": 28.63
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -31.25,
+          "total_net_pnl": -46209.47,
+          "profit_factor": 0.245,
+          "win_rate": 28.66
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -41.24,
+          "total_net_pnl": -60975.38,
+          "profit_factor": 0.157,
+          "win_rate": 21.03
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -41.24,
+          "total_net_pnl": -60982.18,
+          "profit_factor": 0.157,
+          "win_rate": 21.02
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -41.25,
+          "total_net_pnl": -60985.58,
+          "profit_factor": 0.157,
+          "win_rate": 21.01
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -41.25,
+          "total_net_pnl": -60988.98,
+          "profit_factor": 0.157,
+          "win_rate": 21.01
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -41.25,
+          "total_net_pnl": -60995.78,
+          "profit_factor": 0.157,
+          "win_rate": 21.03
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -61.24,
+          "total_net_pnl": -90547.99,
+          "profit_factor": 0.068,
+          "win_rate": 12.25
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -61.24,
+          "total_net_pnl": -90554.79,
+          "profit_factor": 0.068,
+          "win_rate": 12.25
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -61.25,
+          "total_net_pnl": -90558.19,
+          "profit_factor": 0.068,
+          "win_rate": 12.23
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -61.25,
+          "total_net_pnl": -90561.59,
+          "profit_factor": 0.068,
+          "win_rate": 12.21
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -61.25,
+          "total_net_pnl": -90568.39,
+          "profit_factor": 0.068,
+          "win_rate": 12.23
+        }
+      }
+    }
+  },
+  "XMRUSDT": {
+    "symbol": "XMRUSDT",
+    "baseline_confirmatory_folds_1_4": {
+      "combined": {
+        "trade_count": 2146,
+        "win_count": 263,
+        "loss_count": 1883,
+        "win_rate": 12.26,
+        "gross_expectancy_bps": -0.19,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -44.19,
+        "total_gross_pnl": -40.82,
+        "total_fees": 8584.15,
+        "total_slippage": 858.41,
+        "total_funding": 0.0,
+        "total_net_pnl": -9483.39,
+        "profit_factor": 0.028,
+        "max_drawdown_pct": 94.83,
+        "sharpe_annualized": -108.578,
+        "sortino_annualized": -122.125
+      },
+      "long": {
+        "trade_count": 977,
+        "win_count": 104,
+        "loss_count": 873,
+        "win_rate": 10.64,
+        "gross_expectancy_bps": 0.17,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -43.83,
+        "total_gross_pnl": 16.92,
+        "total_fees": 3908.03,
+        "total_slippage": 390.8,
+        "total_funding": 0.0,
+        "total_net_pnl": -4281.92,
+        "profit_factor": 0.026,
+        "max_drawdown_pct": 42.78,
+        "sharpe_annualized": -108.139,
+        "sortino_annualized": -120.541
+      },
+      "short": {
+        "trade_count": 1169,
+        "win_count": 159,
+        "loss_count": 1010,
+        "win_rate": 13.6,
+        "gross_expectancy_bps": -0.49,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -44.5,
+        "total_gross_pnl": -57.74,
+        "total_fees": 4676.12,
+        "total_slippage": 467.61,
+        "total_funding": 0.0,
+        "total_net_pnl": -5201.47,
+        "profit_factor": 0.029,
+        "max_drawdown_pct": 51.98,
+        "sharpe_annualized": -108.905,
+        "sortino_annualized": -123.6
+      }
+    },
+    "baseline_exploratory_fold_5": {
+      "combined": {
+        "trade_count": 432,
+        "win_count": 85,
+        "loss_count": 347,
+        "win_rate": 19.68,
+        "gross_expectancy_bps": 3.01,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -40.99,
+        "total_gross_pnl": 130.05,
+        "total_fees": 1728.09,
+        "total_slippage": 172.81,
+        "total_funding": 0.0,
+        "total_net_pnl": -1770.84,
+        "profit_factor": 0.057,
+        "max_drawdown_pct": 17.65,
+        "sharpe_annualized": -93.134,
+        "sortino_annualized": -110.817
+      },
+      "long": {
+        "trade_count": 198,
+        "win_count": 38,
+        "loss_count": 160,
+        "win_rate": 19.19,
+        "gross_expectancy_bps": 4.36,
+        "fee_drag_bps": 40.01,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -39.65,
+        "total_gross_pnl": 86.42,
+        "total_fees": 792.17,
+        "total_slippage": 79.22,
+        "total_funding": 0.0,
+        "total_net_pnl": -784.97,
+        "profit_factor": 0.049,
+        "max_drawdown_pct": 7.78,
+        "sharpe_annualized": -93.282,
+        "sortino_annualized": -107.612
+      },
+      "short": {
+        "trade_count": 234,
+        "win_count": 47,
+        "loss_count": 187,
+        "win_rate": 20.09,
+        "gross_expectancy_bps": 1.86,
+        "fee_drag_bps": 40.0,
+        "slippage_drag_bps": 4.0,
+        "funding_drag_bps": 0.0,
+        "net_expectancy_bps": -42.13,
+        "total_gross_pnl": 43.63,
+        "total_fees": 935.91,
+        "total_slippage": 93.59,
+        "total_funding": 0.0,
+        "total_net_pnl": -985.87,
+        "profit_factor": 0.063,
+        "max_drawdown_pct": 9.79,
+        "sharpe_annualized": -92.984,
+        "sortino_annualized": -113.675
+      },
+      "governance_status": "OOS_ELIGIBILITY_NOT_VERIFIED"
+    },
+    "baseline_overall": {
+      "trade_count": 2578,
+      "win_count": 348,
+      "loss_count": 2230,
+      "win_rate": 13.5,
+      "gross_expectancy_bps": 0.35,
+      "fee_drag_bps": 40.0,
+      "slippage_drag_bps": 4.0,
+      "funding_drag_bps": 0.0,
+      "net_expectancy_bps": -43.65,
+      "total_gross_pnl": 89.22,
+      "total_fees": 10312.23,
+      "total_slippage": 1031.22,
+      "total_funding": 0.0,
+      "total_net_pnl": -11254.23,
+      "profit_factor": 0.033,
+      "max_drawdown_pct": 112.55,
+      "sharpe_annualized": -105.741,
+      "sortino_annualized": -120.215
+    },
+    "exit_distribution": {
+      "TAKE_PROFIT_pct": 44.96,
+      "STOP_LOSS_pct": 44.45,
+      "TIME_EXPIRATION_pct": 10.59,
+      "GAP_EXITS_count": 1459,
+      "GAP_EXITS_pct": 56.59
+    },
+    "sensitivity_grid_folds_1_4": {
+      "tier1_optimistic_15bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -34.19,
+          "total_net_pnl": -7337.35,
+          "profit_factor": 0.082,
+          "win_rate": 24.32
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -34.19,
+          "total_net_pnl": -7337.35,
+          "profit_factor": 0.082,
+          "win_rate": 24.32
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -34.19,
+          "total_net_pnl": -7337.35,
+          "profit_factor": 0.081,
+          "win_rate": 24.32
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -34.19,
+          "total_net_pnl": -7337.35,
+          "profit_factor": 0.081,
+          "win_rate": 24.32
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -34.19,
+          "total_net_pnl": -7337.35,
+          "profit_factor": 0.081,
+          "win_rate": 24.28
+        }
+      },
+      "tier2_baseline_20bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -44.19,
+          "total_net_pnl": -9483.39,
+          "profit_factor": 0.028,
+          "win_rate": 12.3
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -44.19,
+          "total_net_pnl": -9483.39,
+          "profit_factor": 0.028,
+          "win_rate": 12.3
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -44.19,
+          "total_net_pnl": -9483.39,
+          "profit_factor": 0.028,
+          "win_rate": 12.26
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -44.19,
+          "total_net_pnl": -9483.39,
+          "profit_factor": 0.028,
+          "win_rate": 12.3
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -44.19,
+          "total_net_pnl": -9483.39,
+          "profit_factor": 0.028,
+          "win_rate": 12.4
+        }
+      },
+      "tier3_stress_30bps": {
+        "funding_-3.0bps": {
+          "net_expectancy_bps": -64.19,
+          "total_net_pnl": -13775.46,
+          "profit_factor": 0.004,
+          "win_rate": 1.68
+        },
+        "funding_-1.0bps": {
+          "net_expectancy_bps": -64.19,
+          "total_net_pnl": -13775.46,
+          "profit_factor": 0.004,
+          "win_rate": 1.63
+        },
+        "funding_+0.0bps": {
+          "net_expectancy_bps": -64.19,
+          "total_net_pnl": -13775.46,
+          "profit_factor": 0.004,
+          "win_rate": 1.63
+        },
+        "funding_+1.0bps": {
+          "net_expectancy_bps": -64.19,
+          "total_net_pnl": -13775.46,
+          "profit_factor": 0.004,
+          "win_rate": 1.63
+        },
+        "funding_+3.0bps": {
+          "net_expectancy_bps": -64.19,
+          "total_net_pnl": -13775.46,
+          "profit_factor": 0.004,
+          "win_rate": 1.63
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,727 @@
+{
+  "hypothesis_family_size_K": 20,
+  "family_specification": "Example K-2: 10 primary assets x 2 directions (Long, Short) on Folds 1-4 confirmatory sample",
+  "family_wise_error_rate_alpha": 0.05,
+  "candidate_block_length_bars": 288,
+  "block_length_sweep_bars": [
+    72,
+    144,
+    288,
+    576
+  ],
+  "bootstrap_replicates": 1000,
+  "null_hypotheses_rejected_count": 0,
+  "null_hypotheses_retained_count": 20,
+  "holm_bonferroni_table": [
+    {
+      "test_id": 1,
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "test_key": "BTCUSDT_LONG",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -44.14,
+      "holm_threshold": 0.0025,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 2,
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "test_key": "BTCUSDT_SHORT",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -43.85,
+      "holm_threshold": 0.002632,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 3,
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "test_key": "ETHUSDT_LONG",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -43.55,
+      "holm_threshold": 0.002778,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 4,
+      "symbol": "ETHUSDT",
+      "direction": "SHORT",
+      "test_key": "ETHUSDT_SHORT",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -43.54,
+      "holm_threshold": 0.002941,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 5,
+      "symbol": "BNBUSDT",
+      "direction": "LONG",
+      "test_key": "BNBUSDT_LONG",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -43.98,
+      "holm_threshold": 0.003125,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 6,
+      "symbol": "BNBUSDT",
+      "direction": "SHORT",
+      "test_key": "BNBUSDT_SHORT",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -43.9,
+      "holm_threshold": 0.003333,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 7,
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "test_key": "XRPUSDT_LONG",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -42.89,
+      "holm_threshold": 0.003571,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 8,
+      "symbol": "XRPUSDT",
+      "direction": "SHORT",
+      "test_key": "XRPUSDT_SHORT",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -43.07,
+      "holm_threshold": 0.003846,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 9,
+      "symbol": "ADAUSDT",
+      "direction": "LONG",
+      "test_key": "ADAUSDT_LONG",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -41.79,
+      "holm_threshold": 0.004167,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 10,
+      "symbol": "ADAUSDT",
+      "direction": "SHORT",
+      "test_key": "ADAUSDT_SHORT",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -42.1,
+      "holm_threshold": 0.004545,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 11,
+      "symbol": "SOLUSDT",
+      "direction": "LONG",
+      "test_key": "SOLUSDT_LONG",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -43.96,
+      "holm_threshold": 0.005,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 12,
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "test_key": "SOLUSDT_SHORT",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -43.0,
+      "holm_threshold": 0.005556,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 13,
+      "symbol": "AVAXUSDT",
+      "direction": "LONG",
+      "test_key": "AVAXUSDT_LONG",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -42.69,
+      "holm_threshold": 0.00625,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 14,
+      "symbol": "AVAXUSDT",
+      "direction": "SHORT",
+      "test_key": "AVAXUSDT_SHORT",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -42.11,
+      "holm_threshold": 0.007143,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 15,
+      "symbol": "LINKUSDT",
+      "direction": "LONG",
+      "test_key": "LINKUSDT_LONG",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -41.4,
+      "holm_threshold": 0.008333,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 16,
+      "symbol": "LINKUSDT",
+      "direction": "SHORT",
+      "test_key": "LINKUSDT_SHORT",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -41.77,
+      "holm_threshold": 0.01,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 17,
+      "symbol": "DOGEUSDT",
+      "direction": "LONG",
+      "test_key": "DOGEUSDT_LONG",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -43.31,
+      "holm_threshold": 0.0125,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 18,
+      "symbol": "DOGEUSDT",
+      "direction": "SHORT",
+      "test_key": "DOGEUSDT_SHORT",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -43.91,
+      "holm_threshold": 0.016667,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 19,
+      "symbol": "LTCUSDT",
+      "direction": "LONG",
+      "test_key": "LTCUSDT_LONG",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -40.83,
+      "holm_threshold": 0.025,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    },
+    {
+      "test_id": 20,
+      "symbol": "LTCUSDT",
+      "direction": "SHORT",
+      "test_key": "LTCUSDT_SHORT",
+      "raw_p_value": 1.0,
+      "sample_expectancy_bps": -41.66,
+      "holm_threshold": 0.05,
+      "holm_adjusted_p": 1.0,
+      "verdict": "FAIL_TO_REJECT_H0"
+    }
+  ],
+  "mbb_sensitivity_by_block_size": {
+    "72": {
+      "BTCUSDT_LONG": {
+        "mean_expectancy_bps": -44.14,
+        "ci_95_low": -44.46,
+        "ci_95_high": -43.8,
+        "p_value_one_sided": 1.0
+      },
+      "BTCUSDT_SHORT": {
+        "mean_expectancy_bps": -43.85,
+        "ci_95_low": -44.16,
+        "ci_95_high": -43.52,
+        "p_value_one_sided": 1.0
+      },
+      "ETHUSDT_LONG": {
+        "mean_expectancy_bps": -43.55,
+        "ci_95_low": -44.08,
+        "ci_95_high": -42.93,
+        "p_value_one_sided": 1.0
+      },
+      "ETHUSDT_SHORT": {
+        "mean_expectancy_bps": -43.54,
+        "ci_95_low": -44.02,
+        "ci_95_high": -43.1,
+        "p_value_one_sided": 1.0
+      },
+      "BNBUSDT_LONG": {
+        "mean_expectancy_bps": -43.98,
+        "ci_95_low": -44.53,
+        "ci_95_high": -43.41,
+        "p_value_one_sided": 1.0
+      },
+      "BNBUSDT_SHORT": {
+        "mean_expectancy_bps": -43.9,
+        "ci_95_low": -44.25,
+        "ci_95_high": -43.56,
+        "p_value_one_sided": 1.0
+      },
+      "XRPUSDT_LONG": {
+        "mean_expectancy_bps": -42.89,
+        "ci_95_low": -43.76,
+        "ci_95_high": -41.91,
+        "p_value_one_sided": 1.0
+      },
+      "XRPUSDT_SHORT": {
+        "mean_expectancy_bps": -43.07,
+        "ci_95_low": -43.59,
+        "ci_95_high": -42.52,
+        "p_value_one_sided": 1.0
+      },
+      "ADAUSDT_LONG": {
+        "mean_expectancy_bps": -41.79,
+        "ci_95_low": -42.87,
+        "ci_95_high": -40.59,
+        "p_value_one_sided": 1.0
+      },
+      "ADAUSDT_SHORT": {
+        "mean_expectancy_bps": -42.1,
+        "ci_95_low": -43.38,
+        "ci_95_high": -40.82,
+        "p_value_one_sided": 1.0
+      },
+      "SOLUSDT_LONG": {
+        "mean_expectancy_bps": -43.96,
+        "ci_95_low": -44.47,
+        "ci_95_high": -43.46,
+        "p_value_one_sided": 1.0
+      },
+      "SOLUSDT_SHORT": {
+        "mean_expectancy_bps": -43.0,
+        "ci_95_low": -43.66,
+        "ci_95_high": -42.26,
+        "p_value_one_sided": 1.0
+      },
+      "AVAXUSDT_LONG": {
+        "mean_expectancy_bps": -42.69,
+        "ci_95_low": -44.12,
+        "ci_95_high": -41.13,
+        "p_value_one_sided": 1.0
+      },
+      "AVAXUSDT_SHORT": {
+        "mean_expectancy_bps": -42.11,
+        "ci_95_low": -43.36,
+        "ci_95_high": -41.05,
+        "p_value_one_sided": 1.0
+      },
+      "LINKUSDT_LONG": {
+        "mean_expectancy_bps": -41.4,
+        "ci_95_low": -42.89,
+        "ci_95_high": -39.73,
+        "p_value_one_sided": 1.0
+      },
+      "LINKUSDT_SHORT": {
+        "mean_expectancy_bps": -41.77,
+        "ci_95_low": -43.05,
+        "ci_95_high": -40.41,
+        "p_value_one_sided": 1.0
+      },
+      "DOGEUSDT_LONG": {
+        "mean_expectancy_bps": -43.31,
+        "ci_95_low": -44.17,
+        "ci_95_high": -42.42,
+        "p_value_one_sided": 1.0
+      },
+      "DOGEUSDT_SHORT": {
+        "mean_expectancy_bps": -43.91,
+        "ci_95_low": -44.63,
+        "ci_95_high": -43.21,
+        "p_value_one_sided": 1.0
+      },
+      "LTCUSDT_LONG": {
+        "mean_expectancy_bps": -40.83,
+        "ci_95_low": -42.15,
+        "ci_95_high": -39.34,
+        "p_value_one_sided": 1.0
+      },
+      "LTCUSDT_SHORT": {
+        "mean_expectancy_bps": -41.66,
+        "ci_95_low": -43.01,
+        "ci_95_high": -40.13,
+        "p_value_one_sided": 1.0
+      }
+    },
+    "144": {
+      "BTCUSDT_LONG": {
+        "mean_expectancy_bps": -44.14,
+        "ci_95_low": -44.45,
+        "ci_95_high": -43.81,
+        "p_value_one_sided": 1.0
+      },
+      "BTCUSDT_SHORT": {
+        "mean_expectancy_bps": -43.85,
+        "ci_95_low": -44.15,
+        "ci_95_high": -43.54,
+        "p_value_one_sided": 1.0
+      },
+      "ETHUSDT_LONG": {
+        "mean_expectancy_bps": -43.55,
+        "ci_95_low": -44.1,
+        "ci_95_high": -42.98,
+        "p_value_one_sided": 1.0
+      },
+      "ETHUSDT_SHORT": {
+        "mean_expectancy_bps": -43.54,
+        "ci_95_low": -44.04,
+        "ci_95_high": -43.09,
+        "p_value_one_sided": 1.0
+      },
+      "BNBUSDT_LONG": {
+        "mean_expectancy_bps": -43.98,
+        "ci_95_low": -44.51,
+        "ci_95_high": -43.43,
+        "p_value_one_sided": 1.0
+      },
+      "BNBUSDT_SHORT": {
+        "mean_expectancy_bps": -43.9,
+        "ci_95_low": -44.3,
+        "ci_95_high": -43.57,
+        "p_value_one_sided": 1.0
+      },
+      "XRPUSDT_LONG": {
+        "mean_expectancy_bps": -42.89,
+        "ci_95_low": -43.82,
+        "ci_95_high": -42.03,
+        "p_value_one_sided": 1.0
+      },
+      "XRPUSDT_SHORT": {
+        "mean_expectancy_bps": -43.07,
+        "ci_95_low": -43.63,
+        "ci_95_high": -42.49,
+        "p_value_one_sided": 1.0
+      },
+      "ADAUSDT_LONG": {
+        "mean_expectancy_bps": -41.79,
+        "ci_95_low": -42.89,
+        "ci_95_high": -40.59,
+        "p_value_one_sided": 1.0
+      },
+      "ADAUSDT_SHORT": {
+        "mean_expectancy_bps": -42.1,
+        "ci_95_low": -43.32,
+        "ci_95_high": -40.83,
+        "p_value_one_sided": 1.0
+      },
+      "SOLUSDT_LONG": {
+        "mean_expectancy_bps": -43.96,
+        "ci_95_low": -44.47,
+        "ci_95_high": -43.44,
+        "p_value_one_sided": 1.0
+      },
+      "SOLUSDT_SHORT": {
+        "mean_expectancy_bps": -43.0,
+        "ci_95_low": -43.74,
+        "ci_95_high": -42.36,
+        "p_value_one_sided": 1.0
+      },
+      "AVAXUSDT_LONG": {
+        "mean_expectancy_bps": -42.69,
+        "ci_95_low": -44.1,
+        "ci_95_high": -41.25,
+        "p_value_one_sided": 1.0
+      },
+      "AVAXUSDT_SHORT": {
+        "mean_expectancy_bps": -42.11,
+        "ci_95_low": -43.23,
+        "ci_95_high": -41.08,
+        "p_value_one_sided": 1.0
+      },
+      "LINKUSDT_LONG": {
+        "mean_expectancy_bps": -41.4,
+        "ci_95_low": -42.85,
+        "ci_95_high": -39.91,
+        "p_value_one_sided": 1.0
+      },
+      "LINKUSDT_SHORT": {
+        "mean_expectancy_bps": -41.77,
+        "ci_95_low": -43.04,
+        "ci_95_high": -40.55,
+        "p_value_one_sided": 1.0
+      },
+      "DOGEUSDT_LONG": {
+        "mean_expectancy_bps": -43.31,
+        "ci_95_low": -44.16,
+        "ci_95_high": -42.42,
+        "p_value_one_sided": 1.0
+      },
+      "DOGEUSDT_SHORT": {
+        "mean_expectancy_bps": -43.91,
+        "ci_95_low": -44.69,
+        "ci_95_high": -43.21,
+        "p_value_one_sided": 1.0
+      },
+      "LTCUSDT_LONG": {
+        "mean_expectancy_bps": -40.83,
+        "ci_95_low": -42.21,
+        "ci_95_high": -39.32,
+        "p_value_one_sided": 1.0
+      },
+      "LTCUSDT_SHORT": {
+        "mean_expectancy_bps": -41.66,
+        "ci_95_low": -43.11,
+        "ci_95_high": -40.25,
+        "p_value_one_sided": 1.0
+      }
+    },
+    "288": {
+      "BTCUSDT_LONG": {
+        "mean_expectancy_bps": -44.14,
+        "ci_95_low": -44.48,
+        "ci_95_high": -43.82,
+        "p_value_one_sided": 1.0
+      },
+      "BTCUSDT_SHORT": {
+        "mean_expectancy_bps": -43.85,
+        "ci_95_low": -44.13,
+        "ci_95_high": -43.56,
+        "p_value_one_sided": 1.0
+      },
+      "ETHUSDT_LONG": {
+        "mean_expectancy_bps": -43.55,
+        "ci_95_low": -44.13,
+        "ci_95_high": -43.01,
+        "p_value_one_sided": 1.0
+      },
+      "ETHUSDT_SHORT": {
+        "mean_expectancy_bps": -43.54,
+        "ci_95_low": -43.98,
+        "ci_95_high": -43.06,
+        "p_value_one_sided": 1.0
+      },
+      "BNBUSDT_LONG": {
+        "mean_expectancy_bps": -43.98,
+        "ci_95_low": -44.48,
+        "ci_95_high": -43.39,
+        "p_value_one_sided": 1.0
+      },
+      "BNBUSDT_SHORT": {
+        "mean_expectancy_bps": -43.9,
+        "ci_95_low": -44.25,
+        "ci_95_high": -43.55,
+        "p_value_one_sided": 1.0
+      },
+      "XRPUSDT_LONG": {
+        "mean_expectancy_bps": -42.89,
+        "ci_95_low": -43.72,
+        "ci_95_high": -41.92,
+        "p_value_one_sided": 1.0
+      },
+      "XRPUSDT_SHORT": {
+        "mean_expectancy_bps": -43.07,
+        "ci_95_low": -43.61,
+        "ci_95_high": -42.53,
+        "p_value_one_sided": 1.0
+      },
+      "ADAUSDT_LONG": {
+        "mean_expectancy_bps": -41.79,
+        "ci_95_low": -42.98,
+        "ci_95_high": -40.69,
+        "p_value_one_sided": 1.0
+      },
+      "ADAUSDT_SHORT": {
+        "mean_expectancy_bps": -42.1,
+        "ci_95_low": -43.28,
+        "ci_95_high": -40.66,
+        "p_value_one_sided": 1.0
+      },
+      "SOLUSDT_LONG": {
+        "mean_expectancy_bps": -43.96,
+        "ci_95_low": -44.45,
+        "ci_95_high": -43.41,
+        "p_value_one_sided": 1.0
+      },
+      "SOLUSDT_SHORT": {
+        "mean_expectancy_bps": -43.0,
+        "ci_95_low": -43.7,
+        "ci_95_high": -42.3,
+        "p_value_one_sided": 1.0
+      },
+      "AVAXUSDT_LONG": {
+        "mean_expectancy_bps": -42.69,
+        "ci_95_low": -44.05,
+        "ci_95_high": -41.2,
+        "p_value_one_sided": 1.0
+      },
+      "AVAXUSDT_SHORT": {
+        "mean_expectancy_bps": -42.11,
+        "ci_95_low": -43.18,
+        "ci_95_high": -41.06,
+        "p_value_one_sided": 1.0
+      },
+      "LINKUSDT_LONG": {
+        "mean_expectancy_bps": -41.4,
+        "ci_95_low": -42.77,
+        "ci_95_high": -39.95,
+        "p_value_one_sided": 1.0
+      },
+      "LINKUSDT_SHORT": {
+        "mean_expectancy_bps": -41.77,
+        "ci_95_low": -43.18,
+        "ci_95_high": -40.39,
+        "p_value_one_sided": 1.0
+      },
+      "DOGEUSDT_LONG": {
+        "mean_expectancy_bps": -43.31,
+        "ci_95_low": -44.25,
+        "ci_95_high": -42.44,
+        "p_value_one_sided": 1.0
+      },
+      "DOGEUSDT_SHORT": {
+        "mean_expectancy_bps": -43.91,
+        "ci_95_low": -44.66,
+        "ci_95_high": -43.27,
+        "p_value_one_sided": 1.0
+      },
+      "LTCUSDT_LONG": {
+        "mean_expectancy_bps": -40.83,
+        "ci_95_low": -42.47,
+        "ci_95_high": -39.08,
+        "p_value_one_sided": 1.0
+      },
+      "LTCUSDT_SHORT": {
+        "mean_expectancy_bps": -41.66,
+        "ci_95_low": -43.23,
+        "ci_95_high": -39.95,
+        "p_value_one_sided": 1.0
+      }
+    },
+    "576": {
+      "BTCUSDT_LONG": {
+        "mean_expectancy_bps": -44.14,
+        "ci_95_low": -44.46,
+        "ci_95_high": -43.84,
+        "p_value_one_sided": 1.0
+      },
+      "BTCUSDT_SHORT": {
+        "mean_expectancy_bps": -43.85,
+        "ci_95_low": -44.15,
+        "ci_95_high": -43.56,
+        "p_value_one_sided": 1.0
+      },
+      "ETHUSDT_LONG": {
+        "mean_expectancy_bps": -43.55,
+        "ci_95_low": -44.15,
+        "ci_95_high": -42.99,
+        "p_value_one_sided": 1.0
+      },
+      "ETHUSDT_SHORT": {
+        "mean_expectancy_bps": -43.54,
+        "ci_95_low": -43.99,
+        "ci_95_high": -43.12,
+        "p_value_one_sided": 1.0
+      },
+      "BNBUSDT_LONG": {
+        "mean_expectancy_bps": -43.98,
+        "ci_95_low": -44.46,
+        "ci_95_high": -43.45,
+        "p_value_one_sided": 1.0
+      },
+      "BNBUSDT_SHORT": {
+        "mean_expectancy_bps": -43.9,
+        "ci_95_low": -44.26,
+        "ci_95_high": -43.55,
+        "p_value_one_sided": 1.0
+      },
+      "XRPUSDT_LONG": {
+        "mean_expectancy_bps": -42.89,
+        "ci_95_low": -43.74,
+        "ci_95_high": -42.03,
+        "p_value_one_sided": 1.0
+      },
+      "XRPUSDT_SHORT": {
+        "mean_expectancy_bps": -43.07,
+        "ci_95_low": -43.64,
+        "ci_95_high": -42.52,
+        "p_value_one_sided": 1.0
+      },
+      "ADAUSDT_LONG": {
+        "mean_expectancy_bps": -41.79,
+        "ci_95_low": -42.87,
+        "ci_95_high": -40.49,
+        "p_value_one_sided": 1.0
+      },
+      "ADAUSDT_SHORT": {
+        "mean_expectancy_bps": -42.1,
+        "ci_95_low": -43.38,
+        "ci_95_high": -40.7,
+        "p_value_one_sided": 1.0
+      },
+      "SOLUSDT_LONG": {
+        "mean_expectancy_bps": -43.96,
+        "ci_95_low": -44.47,
+        "ci_95_high": -43.46,
+        "p_value_one_sided": 1.0
+      },
+      "SOLUSDT_SHORT": {
+        "mean_expectancy_bps": -43.0,
+        "ci_95_low": -43.74,
+        "ci_95_high": -42.37,
+        "p_value_one_sided": 1.0
+      },
+      "AVAXUSDT_LONG": {
+        "mean_expectancy_bps": -42.69,
+        "ci_95_low": -43.99,
+        "ci_95_high": -41.13,
+        "p_value_one_sided": 1.0
+      },
+      "AVAXUSDT_SHORT": {
+        "mean_expectancy_bps": -42.11,
+        "ci_95_low": -43.19,
+        "ci_95_high": -41.04,
+        "p_value_one_sided": 1.0
+      },
+      "LINKUSDT_LONG": {
+        "mean_expectancy_bps": -41.4,
+        "ci_95_low": -42.96,
+        "ci_95_high": -39.76,
+        "p_value_one_sided": 1.0
+      },
+      "LINKUSDT_SHORT": {
+        "mean_expectancy_bps": -41.77,
+        "ci_95_low": -43.2,
+        "ci_95_high": -40.45,
+        "p_value_one_sided": 1.0
+      },
+      "DOGEUSDT_LONG": {
+        "mean_expectancy_bps": -43.31,
+        "ci_95_low": -44.16,
+        "ci_95_high": -42.43,
+        "p_value_one_sided": 1.0
+      },
+      "DOGEUSDT_SHORT": {
+        "mean_expectancy_bps": -43.91,
+        "ci_95_low": -44.64,
+        "ci_95_high": -43.28,
+        "p_value_one_sided": 1.0
+      },
+      "LTCUSDT_LONG": {
+        "mean_expectancy_bps": -40.83,
+        "ci_95_low": -42.55,
+        "ci_95_high": -38.86,
+        "p_value_one_sided": 1.0
+      },
+      "LTCUSDT_SHORT": {
+        "mean_expectancy_bps": -41.66,
+        "ci_95_low": -43.37,
+        "ci_95_high": -39.89,
+        "p_value_one_sided": 1.0
+      }
+    }
+  }
+}

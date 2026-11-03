@@ -1,0 +1,640 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:QuantumDesktop.ViewModels"
+        xmlns:m="using:QuantumDesktop.Models"
+        x:Class="QuantumDesktop.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Title="QUANTUM — Autonomous Trading &amp; Governance Desktop Center (Phase 6B)"
+        Width="1480" Height="920"
+        MinWidth="1150" MinHeight="750"
+        Background="#0B0E14"
+        Foreground="#ECEFF1">
+
+    <Window.Styles>
+        <!-- Card Style -->
+        <Style Selector="Border.card">
+            <Setter Property="Background" Value="#151922"/>
+            <Setter Property="BorderBrush" Value="#1E2330"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="14"/>
+        </Style>
+
+        <!-- KPI Header Card -->
+        <Style Selector="Border.kpiCard">
+            <Setter Property="Background" Value="#151922"/>
+            <Setter Property="BorderBrush" Value="#1E2330"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="Margin" Value="4,0"/>
+        </Style>
+
+        <!-- Button Styles -->
+        <Style Selector="Button.actionBtn">
+            <Setter Property="Background" Value="#1E2330"/>
+            <Setter Property="Foreground" Value="#ECEFF1"/>
+            <Setter Property="BorderBrush" Value="#2979FF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style Selector="Button.actionBtn:pointerover">
+            <Setter Property="Background" Value="#2979FF"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+        </Style>
+
+        <!-- Kill Switch Button -->
+        <Style Selector="Button.killBtn">
+            <Setter Property="Background" Value="#B71C1C"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#FF5252"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Padding" Value="14,6"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style Selector="Button.killBtn:pointerover">
+            <Setter Property="Background" Value="#D50000"/>
+        </Style>
+
+        <!-- Tab Item Customization -->
+        <Style Selector="TabItem">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#90A4AE"/>
+            <Setter Property="Padding" Value="16,8"/>
+        </Style>
+        <Style Selector="TabItem:selected">
+            <Setter Property="Foreground" Value="#00E676"/>
+        </Style>
+
+        <!-- DataGrid Customization -->
+        <Style Selector="DataGrid">
+            <Setter Property="Background" Value="#151922"/>
+            <Setter Property="BorderBrush" Value="#1E2330"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowBackground" Value="#151922"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#1E2330"/>
+        </Style>
+        <Style Selector="DataGridColumnHeader">
+            <Setter Property="Background" Value="#1E2330"/>
+            <Setter Property="Foreground" Value="#90A4AE"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Padding" Value="8,6"/>
+        </Style>
+        <Style Selector="DataGridRow">
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto, Auto, *, 120">
+
+        <!-- ========================================================================= -->
+        <!-- ROW 0: TOP STATUS BAR (Connection, Clock Mode, Operator Controls)         -->
+        <!-- ========================================================================= -->
+        <Border Grid.Row="0" Background="#12161F" BorderBrush="#1E2330" BorderThickness="0,0,0,1" Padding="16,10">
+            <Grid ColumnDefinitions="Auto, *, Auto">
+
+                <!-- Left: Branding & Connection Indicator -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                        <TextBlock Text="QUANTUM" FontSize="18" FontWeight="Black" Foreground="#00E676" VerticalAlignment="Center"/>
+                        <TextBlock Text="DESKTOP" FontSize="18" FontWeight="SemiBold" Foreground="#ECEFF1" VerticalAlignment="Center"/>
+                        <Border Background="#1E2330" CornerRadius="3" Padding="6,2" Margin="6,0,0,0">
+                            <TextBlock Text="PHASE 6B" FontSize="10" FontWeight="Bold" Foreground="#2979FF"/>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Connection Status Badge -->
+                    <Border Background="#151922" BorderBrush="#1E2330" BorderThickness="1" CornerRadius="4" Padding="8,4">
+                        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                            <Ellipse Width="8" Height="8" Fill="{Binding ConnectionColor}"/>
+                            <TextBlock Text="{Binding ConnectionText}" FontSize="11" FontWeight="SemiBold" Foreground="{Binding ConnectionColor}"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Clock Mode Indicator -->
+                    <Border Background="#151922" BorderBrush="#1E2330" BorderThickness="1" CornerRadius="4" Padding="8,4">
+                        <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                            <TextBlock Text="CLOCK:" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                            <TextBlock Text="{Binding ClockMode}" FontSize="11" FontWeight="Bold" Foreground="#2979FF"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <!-- Right: Operator Controls & Emergency Kill-Switch -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                    <Button Classes="actionBtn" Content="REPLAY STREAM" Command="{Binding StartReplayModeCommand}"/>
+                    <Button Classes="actionBtn" Content="LIVE PAPER" Command="{Binding StartLivePaperModeCommand}"/>
+                    <Button Classes="actionBtn" Content="{Binding PauseButtonText}" Command="{Binding TogglePauseCommand}"/>
+                    <Button Classes="actionBtn" Content="RESET LEDGER" Command="{Binding ResetAccountCommand}"/>
+                    <Button Classes="actionBtn" Content="REFRESH" Command="{Binding RefreshAllCommand}"/>
+
+                    <!-- Prominent Emergency Kill-Switch -->
+                    <Button Classes="killBtn" Content="[!] EMERGENCY KILL-SWITCH" Command="{Binding EmergencyKillSwitchCommand}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ========================================================================= -->
+        <!-- ROW 1: RISK ENVELOPE & ACCOUNT TELEMETRY HEADER                          -->
+        <!-- ========================================================================= -->
+        <Border Grid.Row="1" Background="#10141C" BorderBrush="#1E2330" BorderThickness="0,0,0,1" Padding="16,10">
+            <Grid ColumnDefinitions="Auto, Auto, Auto, Auto, *, Auto">
+
+                <!-- Account Equity -->
+                <Border Grid.Column="0" Classes="kpiCard">
+                    <StackPanel Spacing="2">
+                        <TextBlock Text="ACCOUNT EQUITY" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                        <TextBlock Text="{Binding FormattedEquity}" FontSize="16" FontWeight="Black" Foreground="#FFFFFF"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Unrealized PnL -->
+                <Border Grid.Column="1" Classes="kpiCard">
+                    <StackPanel Spacing="2">
+                        <TextBlock Text="UNREALIZED PnL" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                        <TextBlock Text="{Binding FormattedUnrealizedPnl}" FontSize="16" FontWeight="Bold" Foreground="{Binding UnrealizedPnlColor}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Realized PnL -->
+                <Border Grid.Column="2" Classes="kpiCard">
+                    <StackPanel Spacing="2">
+                        <TextBlock Text="REALIZED PnL" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                        <TextBlock Text="{Binding FormattedRealizedPnl}" FontSize="16" FontWeight="Bold" Foreground="{Binding RealizedPnlColor}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Max Drawdown -->
+                <Border Grid.Column="3" Classes="kpiCard">
+                    <StackPanel Spacing="2">
+                        <TextBlock Text="MAX DRAWDOWN" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                        <TextBlock Text="{Binding FormattedMaxDrawdown}" FontSize="16" FontWeight="Bold" Foreground="#FF5252"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- DEC_05 Gross Exposure Progress Bar (30% Max Cap) -->
+                <Border Grid.Column="4" Classes="kpiCard" Margin="10,0">
+                    <Grid RowDefinitions="Auto, Auto">
+                        <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="0,0,0,4">
+                            <TextBlock Grid.Column="0" Text="DEC_05 OPTION 3 GROSS EXPOSURE" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                            <TextBlock Grid.Column="1" Text="{Binding GrossExposureText}" FontSize="11" FontWeight="Bold" Foreground="{Binding GrossExposureColor}"/>
+                        </Grid>
+                        <ProgressBar Grid.Row="1" Height="10" Minimum="0" Maximum="100" Value="{Binding GrossExposureProgress}"
+                                     Foreground="{Binding GrossExposureColor}" Background="#1E2330" CornerRadius="4"/>
+                    </Grid>
+                </Border>
+
+                <!-- Kill-Switch Status Pill -->
+                <Border Grid.Column="5" Classes="kpiCard" Background="#1E1215" BorderBrush="#B71C1C">
+                    <StackPanel Spacing="2">
+                        <TextBlock Text="KILL-SWITCH STATE" FontSize="10" FontWeight="Bold" Foreground="#EF9A9A"/>
+                        <TextBlock Text="{Binding KillSwitchStatusText}"
+                                   FontSize="12" FontWeight="Black"
+                                   Foreground="{Binding KillSwitchStatusColor}"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- ========================================================================= -->
+        <!-- ROW 2: MAIN WORKSPACE (TABBED VIEWS)                                     -->
+        <!-- ========================================================================= -->
+        <TabControl Grid.Row="2" Background="Transparent" Margin="12,8">
+
+            <!-- TAB 1: 24/7 SPECIALIST SCANNER MATRIX (11 SPECIALISTS GRID) -->
+            <TabItem Header="24/7 Specialist Scanner (11 Fleet)">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Spacing="16" Margin="4,8">
+
+                        <!-- SECTION: TIER 1 ACTIVE ALPHA CORE -->
+                        <Border Background="#151922" BorderBrush="#00E676" BorderThickness="1,0,0,0" CornerRadius="0,4,4,0" Padding="12,6">
+                            <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                                <TextBlock Text="TIER 1 — ACTIVE ALPHA CORE" FontSize="13" FontWeight="Black" Foreground="#00E676"/>
+                                <TextBlock Text="(Primary Capital Allocations | Breakeven 28.6% | Asymmetric 2.5:1.0)" FontSize="11" Foreground="#78909C" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+
+                        <ItemsControl ItemsSource="{Binding Tier1Specialists}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="m:SpecialistCardModel">
+                                    <Border Classes="card" Width="275" Margin="4,4,8,8">
+                                        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto">
+
+                                            <!-- Card Header: Symbol, Last Price, Tier Badge -->
+                                            <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="0,0,0,8">
+                                                <StackPanel Grid.Column="0">
+                                                    <TextBlock Text="{Binding Symbol}" FontSize="15" FontWeight="Black" Foreground="#FFFFFF"/>
+                                                    <TextBlock Text="{Binding FormattedPrice}" FontSize="12" Foreground="#90A4AE"/>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Spacing="2">
+                                                    <Border Background="#0D2E1F" BorderBrush="#00E676" BorderThickness="1" CornerRadius="3" Padding="6,2">
+                                                        <TextBlock Text="TIER 1 CORE" FontSize="9" FontWeight="Bold" Foreground="#00E676"/>
+                                                    </Border>
+                                                    <TextBlock Text="{Binding FormattedExpectedPf}" FontSize="10" Foreground="#00E676" FontWeight="SemiBold"/>
+                                                </StackPanel>
+                                            </Grid>
+
+                                            <!-- Gate Status Badge -->
+                                            <Border Grid.Row="1" Background="#1A202C" BorderBrush="{Binding GateBadgeColor}" BorderThickness="1" CornerRadius="4" Padding="6,4" Margin="0,0,0,8">
+                                                <Grid ColumnDefinitions="*, Auto">
+                                                    <TextBlock Grid.Column="0" Text="{Binding GateBadgeText}" FontSize="11" FontWeight="Bold" Foreground="{Binding GateBadgeColor}" VerticalAlignment="Center"/>
+                                                    <Ellipse Grid.Column="1" Width="8" Height="8" Fill="{Binding GateBadgeColor}" VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </Border>
+
+                                            <!-- Probability Bars (P_Long, P_Neutral, P_Short) -->
+                                            <StackPanel Grid.Row="2" Spacing="4" Margin="0,0,0,8">
+                                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                                    <TextBlock Grid.Column="0" Text="LONG" FontSize="10" FontWeight="Bold" Foreground="#00E676"/>
+                                                    <ProgressBar Grid.Column="1" Height="6" Minimum="0" Maximum="100" Value="{Binding ProbLongPct}" Foreground="#00E676" Background="#1E2330" Margin="6,0" CornerRadius="2"/>
+                                                    <TextBlock Grid.Column="2" Text="{Binding ProbLongText}" FontSize="10" Foreground="#00E676"/>
+                                                </Grid>
+                                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                                    <TextBlock Grid.Column="0" Text="NEUT" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                                                    <ProgressBar Grid.Column="1" Height="6" Minimum="0" Maximum="100" Value="{Binding ProbNeutralPct}" Foreground="#546E7A" Background="#1E2330" Margin="6,0" CornerRadius="2"/>
+                                                    <TextBlock Grid.Column="2" Text="{Binding ProbNeutralText}" FontSize="10" Foreground="#78909C"/>
+                                                </Grid>
+                                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                                    <TextBlock Grid.Column="0" Text="SHRT" FontSize="10" FontWeight="Bold" Foreground="#FF5252"/>
+                                                    <ProgressBar Grid.Column="1" Height="6" Minimum="0" Maximum="100" Value="{Binding ProbShortPct}" Foreground="#FF5252" Background="#1E2330" Margin="6,0" CornerRadius="2"/>
+                                                    <TextBlock Grid.Column="2" Text="{Binding ProbShortText}" FontSize="10" Foreground="#FF5252"/>
+                                                </Grid>
+                                            </StackPanel>
+
+                                            <!-- Margin & Volatility Barriers -->
+                                            <StackPanel Grid.Row="3" Spacing="4" Margin="0,0,0,6">
+                                                <Grid ColumnDefinitions="Auto, *">
+                                                    <TextBlock Grid.Column="0" Text="Margin: " FontSize="10" Foreground="#78909C"/>
+                                                    <TextBlock Grid.Column="1" Text="{Binding FormattedMargin}" FontSize="10" FontWeight="SemiBold" Foreground="#ECEFF1" HorizontalAlignment="Right"/>
+                                                </Grid>
+                                                <Grid ColumnDefinitions="Auto, *">
+                                                    <TextBlock Grid.Column="0" Text="Vol Barrier: " FontSize="10" Foreground="#78909C"/>
+                                                    <TextBlock Grid.Column="1" Text="{Binding FormattedVol}" FontSize="10" FontWeight="SemiBold" Foreground="#ECEFF1" HorizontalAlignment="Right"/>
+                                                </Grid>
+                                            </StackPanel>
+
+                                            <!-- Order Routing -->
+                                            <Border Grid.Row="4" Background="#10141C" CornerRadius="3" Padding="6,2">
+                                                <TextBlock Text="ROUTING: MAKER-PASSIVE (4 bps leg)" FontSize="9" Foreground="#90A4AE" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <!-- SECTION: TIER 2 MACRO EXPANSION CORE -->
+                        <Border Background="#151922" BorderBrush="#2979FF" BorderThickness="1,0,0,0" CornerRadius="0,4,4,0" Padding="12,6" Margin="0,8,0,0">
+                            <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                                <TextBlock Text="TIER 2 — MACRO EXPANSION CORE" FontSize="13" FontWeight="Black" Foreground="#2979FF"/>
+                                <TextBlock Text="(Macro Anchor Specialists | High Liquidity Baseline)" FontSize="11" Foreground="#78909C" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+
+                        <ItemsControl ItemsSource="{Binding Tier2Specialists}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="m:SpecialistCardModel">
+                                    <Border Classes="card" Width="275" Margin="4,4,8,8">
+                                        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto">
+                                            <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="0,0,0,8">
+                                                <StackPanel Grid.Column="0">
+                                                    <TextBlock Text="{Binding Symbol}" FontSize="15" FontWeight="Black" Foreground="#FFFFFF"/>
+                                                    <TextBlock Text="{Binding FormattedPrice}" FontSize="12" Foreground="#90A4AE"/>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Spacing="2">
+                                                    <Border Background="#0D1E3A" BorderBrush="#2979FF" BorderThickness="1" CornerRadius="3" Padding="6,2">
+                                                        <TextBlock Text="TIER 2 MACRO" FontSize="9" FontWeight="Bold" Foreground="#2979FF"/>
+                                                    </Border>
+                                                    <TextBlock Text="{Binding FormattedExpectedPf}" FontSize="10" Foreground="#2979FF" FontWeight="SemiBold"/>
+                                                </StackPanel>
+                                            </Grid>
+
+                                            <Border Grid.Row="1" Background="#1A202C" BorderBrush="{Binding GateBadgeColor}" BorderThickness="1" CornerRadius="4" Padding="6,4" Margin="0,0,0,8">
+                                                <Grid ColumnDefinitions="*, Auto">
+                                                    <TextBlock Grid.Column="0" Text="{Binding GateBadgeText}" FontSize="11" FontWeight="Bold" Foreground="{Binding GateBadgeColor}" VerticalAlignment="Center"/>
+                                                    <Ellipse Grid.Column="1" Width="8" Height="8" Fill="{Binding GateBadgeColor}" VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </Border>
+
+                                            <StackPanel Grid.Row="2" Spacing="4" Margin="0,0,0,8">
+                                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                                    <TextBlock Grid.Column="0" Text="LONG" FontSize="10" FontWeight="Bold" Foreground="#00E676"/>
+                                                    <ProgressBar Grid.Column="1" Height="6" Minimum="0" Maximum="100" Value="{Binding ProbLongPct}" Foreground="#00E676" Background="#1E2330" Margin="6,0" CornerRadius="2"/>
+                                                    <TextBlock Grid.Column="2" Text="{Binding ProbLongText}" FontSize="10" Foreground="#00E676"/>
+                                                </Grid>
+                                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                                    <TextBlock Grid.Column="0" Text="NEUT" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                                                    <ProgressBar Grid.Column="1" Height="6" Minimum="0" Maximum="100" Value="{Binding ProbNeutralPct}" Foreground="#546E7A" Background="#1E2330" Margin="6,0" CornerRadius="2"/>
+                                                    <TextBlock Grid.Column="2" Text="{Binding ProbNeutralText}" FontSize="10" Foreground="#78909C"/>
+                                                </Grid>
+                                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                                    <TextBlock Grid.Column="0" Text="SHRT" FontSize="10" FontWeight="Bold" Foreground="#FF5252"/>
+                                                    <ProgressBar Grid.Column="1" Height="6" Minimum="0" Maximum="100" Value="{Binding ProbShortPct}" Foreground="#FF5252" Background="#1E2330" Margin="6,0" CornerRadius="2"/>
+                                                    <TextBlock Grid.Column="2" Text="{Binding ProbShortText}" FontSize="10" Foreground="#FF5252"/>
+                                                </Grid>
+                                            </StackPanel>
+
+                                            <StackPanel Grid.Row="3" Spacing="4" Margin="0,0,0,6">
+                                                <Grid ColumnDefinitions="Auto, *">
+                                                    <TextBlock Grid.Column="0" Text="Margin: " FontSize="10" Foreground="#78909C"/>
+                                                    <TextBlock Grid.Column="1" Text="{Binding FormattedMargin}" FontSize="10" FontWeight="SemiBold" Foreground="#ECEFF1" HorizontalAlignment="Right"/>
+                                                </Grid>
+                                                <Grid ColumnDefinitions="Auto, *">
+                                                    <TextBlock Grid.Column="0" Text="Vol Barrier: " FontSize="10" Foreground="#78909C"/>
+                                                    <TextBlock Grid.Column="1" Text="{Binding FormattedVol}" FontSize="10" FontWeight="SemiBold" Foreground="#ECEFF1" HorizontalAlignment="Right"/>
+                                                </Grid>
+                                            </StackPanel>
+
+                                            <Border Grid.Row="4" Background="#10141C" CornerRadius="3" Padding="6,2">
+                                                <TextBlock Text="ROUTING: MAKER-PASSIVE (4 bps leg)" FontSize="9" Foreground="#90A4AE" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <!-- SECTION: TIER 3 SHADOW / MONITOR-ONLY -->
+                        <Border Background="#151922" BorderBrush="#546E7A" BorderThickness="1,0,0,0" CornerRadius="0,4,4,0" Padding="12,6" Margin="0,8,0,0">
+                            <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                                <TextBlock Text="TIER 3 — SHADOW / MONITOR-ONLY UNIVERSE" FontSize="13" FontWeight="Black" Foreground="#90A4AE"/>
+                                <TextBlock Text="(Telemetry Active | Order Placement Blocked by Governance Policy)" FontSize="11" Foreground="#546E7A" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+
+                        <ItemsControl ItemsSource="{Binding Tier3Specialists}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="m:SpecialistCardModel">
+                                    <Border Classes="card" Width="275" Margin="4,4,8,8" Opacity="0.75">
+                                        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto">
+                                            <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="0,0,0,8">
+                                                <StackPanel Grid.Column="0">
+                                                    <TextBlock Text="{Binding Symbol}" FontSize="15" FontWeight="Black" Foreground="#B0BEC5"/>
+                                                    <TextBlock Text="{Binding FormattedPrice}" FontSize="12" Foreground="#78909C"/>
+                                                </StackPanel>
+                                                <Border Grid.Column="1" Background="#263238" BorderBrush="#546E7A" BorderThickness="1" CornerRadius="3" Padding="6,2">
+                                                    <TextBlock Text="TIER 3 SHADOW" FontSize="9" FontWeight="Bold" Foreground="#90A4AE"/>
+                                                </Border>
+                                            </Grid>
+
+                                            <Border Grid.Row="1" Background="#1A202C" BorderBrush="#546E7A" BorderThickness="1" CornerRadius="4" Padding="6,4" Margin="0,0,0,8">
+                                                <Grid ColumnDefinitions="*, Auto">
+                                                    <TextBlock Grid.Column="0" Text="{Binding GateBadgeText}" FontSize="11" FontWeight="Bold" Foreground="#90A4AE" VerticalAlignment="Center"/>
+                                                    <Ellipse Grid.Column="1" Width="8" Height="8" Fill="#546E7A" VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </Border>
+
+                                            <StackPanel Grid.Row="2" Spacing="4" Margin="0,0,0,8">
+                                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                                    <TextBlock Grid.Column="0" Text="LONG" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                                                    <ProgressBar Grid.Column="1" Height="6" Minimum="0" Maximum="100" Value="{Binding ProbLongPct}" Foreground="#546E7A" Background="#1E2330" Margin="6,0" CornerRadius="2"/>
+                                                    <TextBlock Grid.Column="2" Text="{Binding ProbLongText}" FontSize="10" Foreground="#78909C"/>
+                                                </Grid>
+                                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                                    <TextBlock Grid.Column="0" Text="NEUT" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                                                    <ProgressBar Grid.Column="1" Height="6" Minimum="0" Maximum="100" Value="{Binding ProbNeutralPct}" Foreground="#546E7A" Background="#1E2330" Margin="6,0" CornerRadius="2"/>
+                                                    <TextBlock Grid.Column="2" Text="{Binding ProbNeutralText}" FontSize="10" Foreground="#78909C"/>
+                                                </Grid>
+                                                <Grid ColumnDefinitions="Auto, *, Auto">
+                                                    <TextBlock Grid.Column="0" Text="SHRT" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                                                    <ProgressBar Grid.Column="1" Height="6" Minimum="0" Maximum="100" Value="{Binding ProbShortPct}" Foreground="#546E7A" Background="#1E2330" Margin="6,0" CornerRadius="2"/>
+                                                    <TextBlock Grid.Column="2" Text="{Binding ProbShortText}" FontSize="10" Foreground="#78909C"/>
+                                                </Grid>
+                                            </StackPanel>
+
+                                            <StackPanel Grid.Row="3" Spacing="4" Margin="0,0,0,6">
+                                                <Grid ColumnDefinitions="Auto, *">
+                                                    <TextBlock Grid.Column="0" Text="Margin: " FontSize="10" Foreground="#78909C"/>
+                                                    <TextBlock Grid.Column="1" Text="{Binding FormattedMargin}" FontSize="10" Foreground="#90A4AE" HorizontalAlignment="Right"/>
+                                                </Grid>
+                                                <Grid ColumnDefinitions="Auto, *">
+                                                    <TextBlock Grid.Column="0" Text="Vol Barrier: " FontSize="10" Foreground="#78909C"/>
+                                                    <TextBlock Grid.Column="1" Text="{Binding FormattedVol}" FontSize="10" Foreground="#90A4AE" HorizontalAlignment="Right"/>
+                                                </Grid>
+                                            </StackPanel>
+
+                                            <Border Grid.Row="4" Background="#10141C" CornerRadius="3" Padding="6,2">
+                                                <TextBlock Text="ROUTING: BLOCKED (SHADOW ONLY)" FontSize="9" Foreground="#78909C" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- TAB 2: ACTIVE PAPER POSITIONS & SQLITE TRADE LEDGER -->
+            <TabItem Header="Active Positions &amp; SQLite Ledger">
+                <Grid RowDefinitions="*, Auto, *">
+
+                    <!-- TOP SECTION: ACTIVE OPEN POSITIONS -->
+                    <Border Grid.Row="0" Classes="card" Margin="0,4,0,4">
+                        <Grid RowDefinitions="Auto, *">
+                            <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="0,0,0,8">
+                                <StackPanel Orientation="Horizontal" Spacing="10">
+                                    <TextBlock Text="LIVE ACTIVE POSITIONS" FontSize="14" FontWeight="Black" Foreground="#00E676" VerticalAlignment="Center"/>
+                                    <TextBlock Text="(Asymmetric Barriers: TP +2.5s | SL -1.0s | 24-Bar Timeout)" FontSize="11" Foreground="#78909C" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <TextBlock Grid.Column="1" Text="{Binding ActivePositions.Count, StringFormat='Open: {0}'}" FontSize="12" FontWeight="Bold" Foreground="#2979FF"/>
+                            </Grid>
+
+                            <DataGrid Grid.Row="1" ItemsSource="{Binding ActivePositions}" AutoGenerateColumns="False" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Position ID" Binding="{Binding PositionId}" Width="140"/>
+                                    <DataGridTextColumn Header="Symbol" Binding="{Binding Symbol}" Width="100"/>
+                                    <DataGridTextColumn Header="Side" Binding="{Binding Side}" Width="80"/>
+                                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="90"/>
+                                    <DataGridTextColumn Header="Entry Price" Binding="{Binding FormattedEntryPrice}" Width="100"/>
+                                    <DataGridTextColumn Header="Mark Price" Binding="{Binding FormattedMarkPrice}" Width="100"/>
+                                    <DataGridTextColumn Header="Take Profit (+2.5s)" Binding="{Binding FormattedTp}" Width="120"/>
+                                    <DataGridTextColumn Header="Stop Loss (-1.0s)" Binding="{Binding FormattedSl}" Width="120"/>
+                                    <DataGridTextColumn Header="Horizon" Binding="{Binding HorizonCountdown}" Width="110"/>
+                                    <DataGridTextColumn Header="Notional" Binding="{Binding FormattedNotional}" Width="90"/>
+                                    <DataGridTextColumn Header="Net PnL (8 bps Maker)" Binding="{Binding FormattedNetPnl}" Width="150"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Border>
+
+                    <!-- MIDDLE KPI SUMMARY BAR -->
+                    <Border Grid.Row="1" Background="#12161F" BorderBrush="#1E2330" BorderThickness="1" CornerRadius="6" Padding="12,8" Margin="0,4">
+                        <Grid ColumnDefinitions="*, *, *, *, *">
+                            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                                <TextBlock Text="TOTAL TRADES" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                                <TextBlock Text="{Binding TotalTradesCount}" FontSize="15" FontWeight="Black" Foreground="#FFFFFF"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                                <TextBlock Text="WIN RATE" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                                <TextBlock Text="{Binding FormattedWinRate}" FontSize="15" FontWeight="Black" Foreground="#00E676"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                                <TextBlock Text="PROFIT FACTOR" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                                <TextBlock Text="{Binding FormattedProfitFactor}" FontSize="15" FontWeight="Black" Foreground="#00E676"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="3" HorizontalAlignment="Center">
+                                <TextBlock Text="REALIZED PnL" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                                <TextBlock Text="{Binding FormattedRealizedPnl}" FontSize="15" FontWeight="Black" Foreground="#00E676"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="4" HorizontalAlignment="Center">
+                                <TextBlock Text="AVG EXPECTANCY" FontSize="10" FontWeight="Bold" Foreground="#78909C"/>
+                                <TextBlock Text="{Binding FormattedExpectancy}" FontSize="15" FontWeight="Black" Foreground="#2979FF"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <!-- BOTTOM SECTION: CLOSED TRADES LEDGER -->
+                    <Border Grid.Row="2" Classes="card" Margin="0,4,0,4">
+                        <Grid RowDefinitions="Auto, *">
+                            <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="0,0,0,8">
+                                <TextBlock Text="SQLITE WAL TRADE HISTORY (artifacts/phase_6/quantum_paper_trade.db)" FontSize="14" FontWeight="Black" Foreground="#2979FF"/>
+                                <TextBlock Grid.Column="1" Text="{Binding RecentTrades.Count, StringFormat='Recent: {0}'}" FontSize="12" Foreground="#90A4AE"/>
+                            </Grid>
+
+                            <DataGrid Grid.Row="1" ItemsSource="{Binding RecentTrades}" AutoGenerateColumns="False" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Trade ID" Binding="{Binding TradeId}" Width="130"/>
+                                    <DataGridTextColumn Header="Symbol" Binding="{Binding Symbol}" Width="100"/>
+                                    <DataGridTextColumn Header="Side" Binding="{Binding Side}" Width="80"/>
+                                    <DataGridTextColumn Header="Entry Price" Binding="{Binding FormattedEntryPrice}" Width="100"/>
+                                    <DataGridTextColumn Header="Exit Price" Binding="{Binding FormattedExitPrice}" Width="100"/>
+                                    <DataGridTextColumn Header="Exit Reason" Binding="{Binding ExitReasonBadge}" Width="120"/>
+                                    <DataGridTextColumn Header="Fee ($)" Binding="{Binding Fee}" Width="90"/>
+                                    <DataGridTextColumn Header="Net PnL ($)" Binding="{Binding FormattedNetPnl}" Width="110"/>
+                                    <DataGridTextColumn Header="Net Return" Binding="{Binding FormattedReturnBps}" Width="110"/>
+                                    <DataGridTextColumn Header="Bars Held" Binding="{Binding BarsHeld}" Width="80"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+            </TabItem>
+
+            <!-- TAB 3: PHASE 5.5 VS PHASE 5.6 GOVERNANCE EXPLORER -->
+            <TabItem Header="Phase 5.5 vs 5.6 Governance Explorer">
+                <Grid RowDefinitions="Auto, *">
+
+                    <!-- TOP COMPARISON CARDS -->
+                    <Grid Grid.Row="0" ColumnDefinitions="*, *" Margin="0,0,0,12">
+
+                        <!-- Phase 5.5 Mode 1 Failure Breakdown -->
+                        <Border Grid.Column="0" Classes="card" Margin="0,0,6,0" BorderBrush="#FF5252">
+                            <StackPanel Spacing="8">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <Border Background="#2A1215" BorderBrush="#FF5252" BorderThickness="1" CornerRadius="3" Padding="6,2">
+                                        <TextBlock Text="PHASE 5.5" FontSize="11" FontWeight="Bold" Foreground="#FF5252"/>
+                                    </Border>
+                                    <TextBlock Text="Mode 1 Unconditional Market Orders (Rejected)" FontSize="13" FontWeight="Bold" Foreground="#FF5252" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <TextBlock Text="Verdict: NO_POSITIVE_ECONOMIC_EVIDENCE (-99.4% Max Drawdown)" FontSize="12" FontWeight="SemiBold" Foreground="#FF8A80"/>
+                                <TextBlock Text="Diagnostic Finding: 44.0 bps round-trip taker friction severely exceeds typical barrier width (15.5 bps BTC, 21.5-31.4 bps altcoins) on over 90% of candles. Taker fees overcome predictive gross alpha."
+                                           FontSize="11" Foreground="#90A4AE" TextWrapping="Wrap"/>
+                                <Border Background="#10141C" CornerRadius="4" Padding="8,6">
+                                    <TextBlock Text="Takeaway: Classification skill confirmed (AUC 0.61-0.69), but market orders in low-volatility regimes are economically non-viable." FontSize="10" Foreground="#B0BEC5" TextWrapping="Wrap"/>
+                                </Border>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Phase 5.6 Alpha Specialist Core Solution -->
+                        <Border Grid.Column="1" Classes="card" Margin="6,0,0,0" BorderBrush="#00E676">
+                            <StackPanel Spacing="8">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <Border Background="#0D2E1F" BorderBrush="#00E676" BorderThickness="1" CornerRadius="3" Padding="6,2">
+                                        <TextBlock Text="PHASE 5.6" FontSize="11" FontWeight="Bold" Foreground="#00E676"/>
+                                    </Border>
+                                    <TextBlock Text="Alpha Specialist Execution Overlay (Qualified)" FontSize="13" FontWeight="Bold" Foreground="#00E676" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <TextBlock Text="Verdict: SUSTAINED POSITIVE EXPECTANCY (Profit Factors up to 4.702)" FontSize="12" FontWeight="SemiBold" Foreground="#B9F6CA"/>
+                                <TextBlock Text="Four Structural Fixes: (1) Asymmetric 2.5:1.0 barriers lower breakeven win rate to 28.57%; (2) Maker-Passive 8.0 bps fee reduces friction by 81.8%; (3) Volatility Expansion filter (120-160 bps) avoids noise; (4) Probability Margin gate (>= 0.20-0.30)."
+                                           FontSize="11" Foreground="#90A4AE" TextWrapping="Wrap"/>
+                                <Border Background="#10141C" CornerRadius="4" Padding="8,6">
+                                    <TextBlock Text="Result: Unlocks the Alpha Specialist Core: LINK (PF 4.702), AVAX (PF 1.931), SOL (PF 1.458), BTC (PF 1.182), ETH (PF 1.104)." FontSize="10" Foreground="#00E676" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                                </Border>
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
+
+                    <!-- BOTTOM SPECIALIST BENCHMARKS DATA GRID -->
+                    <Border Grid.Row="1" Classes="card">
+                        <Grid RowDefinitions="Auto, *">
+                            <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="0,0,0,8">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="SPECIALIST EMPIRICAL BENCHMARKS &amp; TIER ALLOCATION MATRIX" FontSize="13" FontWeight="Black" Foreground="#FFFFFF"/>
+                                    <TextBlock Text="(Verified on Folds 1-4 | Prospective Holdout >= 1793491200000 Strictly Sealed)" FontSize="11" Foreground="#78909C" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <TextBlock Grid.Column="1" Text="Source: artifacts/phase_5_6/overlay_validation_report.json" FontSize="11" Foreground="#2979FF"/>
+                            </Grid>
+
+                            <DataGrid Grid.Row="1" ItemsSource="{Binding ResearchSummary.SpecialistBenchmarks}" AutoGenerateColumns="False" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Symbol" Binding="{Binding Symbol}" Width="120"/>
+                                    <DataGridTextColumn Header="Operational Tier" Binding="{Binding TierName}" Width="160"/>
+                                    <DataGridTextColumn Header="Vol Threshold" Binding="{Binding FormattedVolThreshold}" Width="120"/>
+                                    <DataGridTextColumn Header="Margin Gate" Binding="{Binding FormattedProbMargin}" Width="110"/>
+                                    <DataGridTextColumn Header="Profit Factor" Binding="{Binding FormattedProfitFactor}" Width="110"/>
+                                    <DataGridTextColumn Header="Net Expectancy" Binding="{Binding FormattedExpectancy}" Width="130"/>
+                                    <DataGridTextColumn Header="Win Rate" Binding="{Binding FormattedWinRate}" Width="100"/>
+                                    <DataGridTextColumn Header="Governance Status" Binding="{Binding Status}" Width="150"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+        <!-- ========================================================================= -->
+        <!-- ROW 3: REAL-TIME AUDIT & EVENT LOG CONSOLE                                -->
+        <!-- ========================================================================= -->
+        <Border Grid.Row="3" Background="#0C0F16" BorderBrush="#1E2330" BorderThickness="0,1,0,0" Padding="16,8">
+            <Grid RowDefinitions="Auto, *">
+                <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="0,0,0,4">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <TextBlock Text="DAEMON TELEMETRY &amp; AUDIT EVENT FEED" FontSize="11" FontWeight="Bold" Foreground="#78909C"/>
+                        <TextBlock Text="(1Hz SQLite WAL Journal &amp; IPC Broadcasts)" FontSize="10" Foreground="#546E7A" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock Grid.Column="1" Text="{Binding EventLogEntries.Count, StringFormat='{}Events: {0}'}" FontSize="10" Foreground="#78909C"/>
+                </Grid>
+
+                <ListBox Grid.Row="1" ItemsSource="{Binding EventLogEntries}" Background="Transparent" BorderThickness="0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontFamily="Consolas, Cascadia Code, Courier New" FontSize="11" Foreground="#80CBC4"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Border>
+
+    </Grid>
+
+</Window>

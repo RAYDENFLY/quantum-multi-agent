@@ -1,0 +1,23 @@
+experiment_id,name,config_hash,param_overrides,executed_trades_count,mean_daily_return_pct,median_daily_return_pct,daily_std_pct,sharpe_365,max_drawdown_pct,profit_factor,net_expectancy_bps,win_rate_pct,pct_days_gte_3pct,meets_interim_target_2pct,meets_longterm_target_3pct
+EXP_08A1_VOL_EXP_105,Vol Expansion 1.05,8937c1c1f6dc655a,{'vol_expansion_min': 1.05},21277,1.9803,0.5647,5.3794,7.03,14.31,1.479,13.14,50.27,26.21,False,False
+EXP_08A2_VOL_EXP_110,Vol Expansion 1.10 (Baseline),a56afeb244b35061,{'vol_expansion_min': 1.1},20537,1.9303,0.5723,5.3054,6.95,14.12,1.498,13.28,50.33,26.02,False,False
+EXP_08A3_VOL_EXP_115,Vol Expansion 1.15,ac282b5863660fc6,{'vol_expansion_min': 1.15},19645,1.8815,0.4038,5.1783,6.94,14.21,1.528,13.56,50.54,25.2,False,False
+EXP_08A4_VOL_EXP_120,Vol Expansion 1.20,0ffb73e3d2b4fca2,{'vol_expansion_min': 1.2},18492,1.8405,0.3543,5.075,6.93,14.06,1.499,14.15,50.84,25.3,False,False
+EXP_08B1_TP_20_35,"TP1=2.0x, TP2=3.5x",ccc0a2f66f6c3f59,"{'tp1_multiplier': 2.0, 'tp2_multiplier': 3.5}",20926,1.9112,0.5634,5.0174,7.28,12.73,1.515,12.88,51.3,25.93,False,False
+EXP_08B2_TP_25_40,"TP1=2.5x, TP2=4.0x (Baseline)",137ba75ac8e23f07,"{'tp1_multiplier': 2.5, 'tp2_multiplier': 4.0}",20537,1.9303,0.5723,5.3054,6.95,14.12,1.498,13.28,50.33,26.02,False,False
+EXP_08B3_TP_30_50,"TP1=3.0x, TP2=5.0x",16f967bf0dab1908,"{'tp1_multiplier': 3.0, 'tp2_multiplier': 5.0}",20126,1.7985,0.4247,5.1089,6.73,14.46,1.489,12.66,49.0,25.3,False,False
+EXP_08B4_TP_35_60,"TP1=3.5x, TP2=6.0x",8468a339e6d1b005,"{'tp1_multiplier': 3.5, 'tp2_multiplier': 6.0}",19997,1.759,0.3958,5.2417,6.41,23.15,1.487,12.54,48.46,24.93,False,False
+EXP_08C1_NO_TRAILING,No Trailing Stop (Baseline),5cea1595fc05ccc3,"{'enable_breakeven_ratchet': False, 'trailing_stop_sigma': 0.0}",20537,1.9303,0.5723,5.3054,6.95,14.12,1.498,13.28,50.33,26.02,False,False
+EXP_08C2_BE_RATCHET_ONLY,Breakeven Ratchet Only,f4054059acc46543,"{'enable_breakeven_ratchet': True, 'trailing_stop_sigma': 0.0}",20926,1.9959,0.518,5.3933,7.07,14.71,1.521,13.42,48.79,26.39,False,False
+EXP_08C3_BE_AND_TRAIL_20,Breakeven + Trail 2.0 sigma,d9c515b711fdfc5f,"{'enable_breakeven_ratchet': True, 'trailing_stop_sigma': 2.0}",21113,1.9945,0.5304,5.275,7.22,14.83,1.505,13.34,50.36,26.39,False,False
+EXP_08C4_BE_AND_TRAIL_15,Breakeven + Trail 1.5 sigma,be440c725bfabf39,"{'enable_breakeven_ratchet': True, 'trailing_stop_sigma': 1.5}",21234,2.0506,0.5752,5.4228,7.22,14.39,1.501,13.61,51.61,27.12,True,False
+EXP_08D1_HORIZON_4,Max Horizon 4 bars (20m),d78d9dd10356bb7c,{'max_horizon_bars': 4},23532,2.1214,0.633,5.2257,7.76,13.43,1.505,12.71,51.03,27.02,True,False
+EXP_08D2_HORIZON_6,"Max Horizon 6 bars (30m, Baseline)",e1a3737c45d60aab,{'max_horizon_bars': 6},20537,1.9303,0.5723,5.3054,6.95,14.12,1.498,13.28,50.33,26.02,False,False
+EXP_08D3_HORIZON_10,Max Horizon 10 bars (50m),db488382ae99b8da,{'max_horizon_bars': 10},17985,1.7052,0.4258,5.0361,6.47,15.36,1.443,13.44,48.71,25.39,False,False
+EXP_08D4_HORIZON_16,Max Horizon 16 bars (1.3h),7928cf68d409c91f,{'max_horizon_bars': 16},16795,1.6803,0.3177,5.0218,6.39,18.62,1.421,14.21,47.42,26.02,False,False
+EXP_08E1_RISK_10_LEV_2,"Risk 1.0%, Max Lev 2.0x",3bfd21459c5b3804,"{'risk_per_trade_pct': 0.01, 'max_leverage': 2.0}",24219,1.4841,0.4749,3.8106,7.44,11.87,1.5,13.13,50.07,22.02,False,False
+EXP_08E2_RISK_15_LEV_3,"Risk 1.5%, Max Lev 3.0x (Baseline)",d41643e17f55e50c,"{'risk_per_trade_pct': 0.015, 'max_leverage': 3.0}",20537,1.9303,0.5723,5.3054,6.95,14.12,1.498,13.28,50.33,26.02,False,False
+EXP_08E3_RISK_20_LEV_35,"Risk 2.0%, Max Lev 3.5x",e1eab27a81b2069a,"{'risk_per_trade_pct': 0.02, 'max_leverage': 3.5}",18981,2.1131,0.5313,6.1311,6.58,14.53,1.464,13.4,50.42,27.48,True,False
+EXP_08E4_RISK_25_LEV_4,"Risk 2.5%, Max Lev 4.0x",a5b5016c39c30f16,"{'risk_per_trade_pct': 0.025, 'max_leverage': 4.0}",17741,2.2945,0.3594,7.0105,6.25,17.01,1.418,13.56,50.62,29.3,False,False
+EXP_08_COMBINED_CANDIDATE,HYP-01 Tuned Candidate (Target 2.0-2.5%),35edc6cf7f6d161a,"{'vol_expansion_min': 1.08, 'tp1_multiplier': 2.8, 'tp2_multiplier': 4.5, 'enable_breakeven_ratchet': True, 'trailing_stop_sigma': 2.0, 'max_horizon_bars': 8, 'risk_per_trade_pct': 0.018, 'max_leverage': 3.2}",18969,1.9854,0.4386,5.5997,6.77,15.43,1.52,13.9,49.78,26.84,False,False
+EXP_08_OPTIMAL_CANDIDATE,HYP-01 Optimal Tuned Candidate (Interim Target Cleared),1ea47131c0be51cb,"{'vol_expansion_min': 1.08, 'enable_breakeven_ratchet': True, 'trailing_stop_sigma': 1.5, 'max_horizon_bars': 4, 'risk_per_trade_pct': 0.015, 'max_leverage': 3.0}",24480,2.2741,0.6307,5.4446,7.98,14.51,1.495,13.07,51.78,27.39,True,False

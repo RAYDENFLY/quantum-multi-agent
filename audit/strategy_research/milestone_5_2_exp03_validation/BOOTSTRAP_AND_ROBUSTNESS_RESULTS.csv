@@ -1,0 +1,15 @@
+metric,value,ci_95_lower,ci_95_upper,ci_99_lower,ci_99_upper,notes
+Parametric Mean Daily Return (%),1.9303,1.6011,2.2688,1.5263,2.3999,"5-day block bootstrap (2,000 resamples)"
+Parametric Median Daily Return (%),0.5723,,,,,Median calendar daily return
+Parametric Daily Return Std Dev (%),5.303,,,,,Daily return volatility
+10-Day Block Bootstrap Mean (%),1.9286,1.6104,2.2636,1.5227,2.3622,"10-day block bootstrap (2,000 resamples)"
+Symmetric 1% Trimmed Mean (%),1.7213,,,,,Top 1% and bottom 1% truncated
+Symmetric 5% Trimmed Mean (%),1.3329,,,,,Top 5% and bottom 5% truncated
+Excluding Top 1% Best Days Mean (%),1.6382,,,,,Excludes 11 strongest positive days
+Excluding Top 5% Best Days Mean (%),1.0437,,,,,Excludes 55 strongest positive days
+Excluding Top 1% Worst Days Mean (%),2.0014,,,,,Excludes 11 worst loss days
+Ljung-Box Test Lag 1,0.968,rho=0.0296,p=0.325169,,,Serial dependence test on daily returns
+Ljung-Box Test Lag 2,0.9681,rho=-0.0003,p=0.616269,,,Serial dependence test on daily returns
+Ljung-Box Test Lag 3,1.6907,rho=0.0256,p=0.639003,,,Serial dependence test on daily returns
+Ljung-Box Test Lag 5,1.9834,rho=-0.0017,p=0.851442,,,Serial dependence test on daily returns
+Ljung-Box Test Lag 10,10.0635,rho=0.0151,p=0.434936,,,Serial dependence test on daily returns

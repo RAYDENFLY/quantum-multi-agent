@@ -54,9 +54,21 @@ logs/
 
 # Historical data storage and parquet partitions
 data/
+data_backtest/
 *.parquet
 
 # Temporary benchmarks, runs, and scratch scripts
 benchmark_data_*
 scratch/
 benchmarks/
+
+# .NET / C# Build Artifacts
+bin/
+obj/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+

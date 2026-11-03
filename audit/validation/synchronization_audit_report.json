@@ -1,0 +1,9 @@
+{
+  "status": "SYNCHRONIZED_VERIFIED",
+  "expected_experiments": 300,
+  "verified_manifests_count": 300,
+  "unique_config_hashes_count": 300,
+  "mismatches": [],
+  "missing_files": [],
+  "timestamp_utc": "2026-11-02T19:37:21.757222+00:00"
+}

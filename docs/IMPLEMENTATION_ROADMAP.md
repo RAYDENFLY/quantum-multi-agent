@@ -104,7 +104,20 @@ flowchart LR
 
 ---
 
-## Phase 6: Paper Execution Engine & Banker Lifecycle
+## Phase 5 Extended Research & Strategy Evolution
+
+Following the completion of the baseline machine learning specialist models (Phase 5.3) and inference reconciliation (Phase 5.4), Phase 5 research evolved into critical economic evaluation subphases:
+
+- **Phase 5.5 (Economic Backtesting & Validation):** Evaluated frozen specialists on canonical 5m candles and materialized out-of-fold predictions across Folds 1–5. Proved that Mode 1 unconditional market-order execution suffered $-99.4\%$ equity destruction due to friction asymmetry (44 bps taker friction exceeding median barrier widths of 15–31 bps). Concluded: `NO_POSITIVE_ECONOMIC_EVIDENCE` for unconditional execution.
+- **Phase 5.6 (Alpha Overlay Counterfactual):** Evaluated asymmetric barriers ($2.5:1.0$), maker fee tiers, and volatility/probability margin filters across a 12-cell uniform grid. Proved that uniform multi-asset portfolios remained negative across all cells, while isolated asset-level observations showed potential in high-volatility regimes.
+- **Phase 5.6.2 (Aggressive Frequency, High-Return & Drawdown Optimization Mandate):** Active research mandate established by Project Owner Directive. Temporarily suspends Phase 6A/6B to prioritize discovering an aggressive autonomous strategy targeting **+3% net portfolio daily return**, **$\approx 600$ trades/asset/year**, **$<10\%$ average drawdown**, and **$\le 30\%$ maximum portfolio drawdown**.
+  - Authoritative Mandate Document: [QUANTUM_PHASE_5_6_2_RESEARCH_MANDATE.md](file:///d:/quantum-multi-agent/docs/research/phase_5_6_2/QUANTUM_PHASE_5_6_2_RESEARCH_MANDATE.md)
+
+---
+
+## Phase 6: Paper Execution Engine & Banker Lifecycle (Phase 6A/6B Suspended)
+
+* **Status:** Development and deployment temporarily suspended by Project Owner Directive pending completion of Phase 5.6.2 research milestones. Existing prototype implementations in `src/quantum/daemon/` and `desktop/QuantumDesktop/` are preserved intact.
 
 * **Objectives**: Implement `PaperSimulator` (`PAPER_EXECUTION_SPECIFICATION.md`) with L2 order-book depth walk VWAP + slippage, partial limit fills, maker/taker fees, 8h funding rate settlements, intra-bar collision resolution matching `ml/labels.py`, and Agent 5 (`Banker` deterministic position state machine + optional 5m `LightGBM` Exit Hazard Classifier + quantitative post-trade journal).
 * **Modules**: `execution/simulator.py`, `execution/funding.py`, `execution/accounting.py`, `agents/banker.py`, `ui/pages/positions_page.py`.

@@ -1,0 +1,17 @@
+{
+  "initial_equity": 10000.0,
+  "ending_equity": 99.84,
+  "total_net_pnl": -9900.16,
+  "net_return_pct": -99.0,
+  "max_drawdown_pct": 99.0,
+  "sharpe_annualized": -36.536,
+  "sortino_annualized": -37.401,
+  "total_trades_executed": 11124,
+  "concurrency_diagnostics": {
+    "avg_concurrent_positions": 0.32,
+    "max_concurrent_positions": 5,
+    "p95_concurrent_positions": 3.0
+  },
+  "gross_exposure_cap": 0.3,
+  "dec_05_policy": "Option 3: Combined Exposure Cap <= 0.30 Equity & Volatility Risk-Budget Sizing"
+}

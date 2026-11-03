@@ -1,0 +1,4175 @@
+{
+  "metadata": {
+    "mandate": "QUANTUM Phase 5.6.2 Aggressive Frequency, High-Return & Drawdown Optimization",
+    "execution_timestamp_utc": "2026-11-02T19:08:25.530047+00:00",
+    "git_commit": "dcc8ceb54d80b1b9685d92236f48b0994610522a",
+    "runtime_seconds": 233.65,
+    "prospective_holdout_start_ms": 1793491200000,
+    "holdout_status": "SEALED_VERIFIED",
+    "evaluation_folds": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "primary_universe_count": 10
+  },
+  "stage_1_frequency_feasibility": {
+    "asset_calibrations": {
+      "BTCUSDT": {
+        "best_target_match": {
+          "vol_quantile": 0.9,
+          "prob_margin": 0.25,
+          "trade_count": 570,
+          "gross_expectancy_bps": 0.07,
+          "net_expectancy_maker_bps": -7.98,
+          "profit_factor": 0.731,
+          "in_target_band": true
+        },
+        "grid_results": [
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.15,
+            "trade_count": 3621,
+            "gross_win_rate_pct": 30.46,
+            "gross_expectancy_bps": -0.04,
+            "net_expectancy_maker_bps": -8.1,
+            "profit_factor_maker": 0.626
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.2,
+            "trade_count": 3171,
+            "gross_win_rate_pct": 30.5,
+            "gross_expectancy_bps": -0.28,
+            "net_expectancy_maker_bps": -8.34,
+            "profit_factor_maker": 0.614
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.25,
+            "trade_count": 2652,
+            "gross_win_rate_pct": 30.47,
+            "gross_expectancy_bps": -0.46,
+            "net_expectancy_maker_bps": -8.52,
+            "profit_factor_maker": 0.607
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.3,
+            "trade_count": 2092,
+            "gross_win_rate_pct": 30.78,
+            "gross_expectancy_bps": -0.55,
+            "net_expectancy_maker_bps": -8.6,
+            "profit_factor_maker": 0.602
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.15,
+            "trade_count": 1407,
+            "gross_win_rate_pct": 29.92,
+            "gross_expectancy_bps": -0.26,
+            "net_expectancy_maker_bps": -8.33,
+            "profit_factor_maker": 0.688
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.2,
+            "trade_count": 1147,
+            "gross_win_rate_pct": 28.95,
+            "gross_expectancy_bps": -0.95,
+            "net_expectancy_maker_bps": -9.02,
+            "profit_factor_maker": 0.664
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.25,
+            "trade_count": 912,
+            "gross_win_rate_pct": 28.62,
+            "gross_expectancy_bps": -1.58,
+            "net_expectancy_maker_bps": -9.64,
+            "profit_factor_maker": 0.649
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.3,
+            "trade_count": 674,
+            "gross_win_rate_pct": 29.82,
+            "gross_expectancy_bps": -0.98,
+            "net_expectancy_maker_bps": -9.04,
+            "profit_factor_maker": 0.67
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.15,
+            "trade_count": 845,
+            "gross_win_rate_pct": 30.18,
+            "gross_expectancy_bps": -0.08,
+            "net_expectancy_maker_bps": -8.16,
+            "profit_factor_maker": 0.726
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.2,
+            "trade_count": 704,
+            "gross_win_rate_pct": 29.83,
+            "gross_expectancy_bps": 0.09,
+            "net_expectancy_maker_bps": -7.98,
+            "profit_factor_maker": 0.726
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.25,
+            "trade_count": 570,
+            "gross_win_rate_pct": 30.53,
+            "gross_expectancy_bps": 0.07,
+            "net_expectancy_maker_bps": -7.98,
+            "profit_factor_maker": 0.731
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.3,
+            "trade_count": 438,
+            "gross_win_rate_pct": 30.59,
+            "gross_expectancy_bps": -0.14,
+            "net_expectancy_maker_bps": -8.2,
+            "profit_factor_maker": 0.724
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.15,
+            "trade_count": 669,
+            "gross_win_rate_pct": 29.9,
+            "gross_expectancy_bps": -0.21,
+            "net_expectancy_maker_bps": -8.3,
+            "profit_factor_maker": 0.733
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.2,
+            "trade_count": 554,
+            "gross_win_rate_pct": 29.78,
+            "gross_expectancy_bps": -0.03,
+            "net_expectancy_maker_bps": -8.12,
+            "profit_factor_maker": 0.734
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.25,
+            "trade_count": 451,
+            "gross_win_rate_pct": 30.6,
+            "gross_expectancy_bps": 0.2,
+            "net_expectancy_maker_bps": -7.87,
+            "profit_factor_maker": 0.745
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.3,
+            "trade_count": 351,
+            "gross_win_rate_pct": 29.34,
+            "gross_expectancy_bps": -0.98,
+            "net_expectancy_maker_bps": -9.05,
+            "profit_factor_maker": 0.709
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.15,
+            "trade_count": 376,
+            "gross_win_rate_pct": 32.45,
+            "gross_expectancy_bps": 1.84,
+            "net_expectancy_maker_bps": -6.25,
+            "profit_factor_maker": 0.816
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.2,
+            "trade_count": 310,
+            "gross_win_rate_pct": 32.58,
+            "gross_expectancy_bps": 2.49,
+            "net_expectancy_maker_bps": -5.6,
+            "profit_factor_maker": 0.829
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.25,
+            "trade_count": 250,
+            "gross_win_rate_pct": 35.2,
+            "gross_expectancy_bps": 4.05,
+            "net_expectancy_maker_bps": -4.02,
+            "profit_factor_maker": 0.878
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.3,
+            "trade_count": 190,
+            "gross_win_rate_pct": 32.63,
+            "gross_expectancy_bps": 1.41,
+            "net_expectancy_maker_bps": -6.66,
+            "profit_factor_maker": 0.801
+          }
+        ]
+      },
+      "ETHUSDT": {
+        "best_target_match": {
+          "vol_quantile": 0.95,
+          "prob_margin": 0.2,
+          "trade_count": 568,
+          "gross_expectancy_bps": 0.85,
+          "net_expectancy_maker_bps": -7.21,
+          "profit_factor": 0.84,
+          "in_target_band": true
+        },
+        "grid_results": [
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.15,
+            "trade_count": 6130,
+            "gross_win_rate_pct": 32.51,
+            "gross_expectancy_bps": 1.22,
+            "net_expectancy_maker_bps": -6.83,
+            "profit_factor_maker": 0.753
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.2,
+            "trade_count": 5606,
+            "gross_win_rate_pct": 32.54,
+            "gross_expectancy_bps": 0.93,
+            "net_expectancy_maker_bps": -7.12,
+            "profit_factor_maker": 0.741
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.25,
+            "trade_count": 4869,
+            "gross_win_rate_pct": 32.98,
+            "gross_expectancy_bps": 1.32,
+            "net_expectancy_maker_bps": -6.72,
+            "profit_factor_maker": 0.75
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.3,
+            "trade_count": 3929,
+            "gross_win_rate_pct": 32.81,
+            "gross_expectancy_bps": 0.7,
+            "net_expectancy_maker_bps": -7.34,
+            "profit_factor_maker": 0.729
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.15,
+            "trade_count": 2645,
+            "gross_win_rate_pct": 31.95,
+            "gross_expectancy_bps": 1.03,
+            "net_expectancy_maker_bps": -7.02,
+            "profit_factor_maker": 0.791
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.2,
+            "trade_count": 2279,
+            "gross_win_rate_pct": 32.08,
+            "gross_expectancy_bps": 0.83,
+            "net_expectancy_maker_bps": -7.23,
+            "profit_factor_maker": 0.784
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.25,
+            "trade_count": 1832,
+            "gross_win_rate_pct": 32.42,
+            "gross_expectancy_bps": 1.21,
+            "net_expectancy_maker_bps": -6.85,
+            "profit_factor_maker": 0.792
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.3,
+            "trade_count": 1343,
+            "gross_win_rate_pct": 33.43,
+            "gross_expectancy_bps": 1.58,
+            "net_expectancy_maker_bps": -6.47,
+            "profit_factor_maker": 0.805
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.15,
+            "trade_count": 1615,
+            "gross_win_rate_pct": 31.33,
+            "gross_expectancy_bps": 0.54,
+            "net_expectancy_maker_bps": -7.51,
+            "profit_factor_maker": 0.801
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.2,
+            "trade_count": 1314,
+            "gross_win_rate_pct": 30.67,
+            "gross_expectancy_bps": -0.68,
+            "net_expectancy_maker_bps": -8.74,
+            "profit_factor_maker": 0.773
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.25,
+            "trade_count": 992,
+            "gross_win_rate_pct": 31.15,
+            "gross_expectancy_bps": 0.25,
+            "net_expectancy_maker_bps": -7.81,
+            "profit_factor_maker": 0.795
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.3,
+            "trade_count": 720,
+            "gross_win_rate_pct": 32.78,
+            "gross_expectancy_bps": 1.02,
+            "net_expectancy_maker_bps": -7.03,
+            "profit_factor_maker": 0.816
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.15,
+            "trade_count": 1238,
+            "gross_win_rate_pct": 30.61,
+            "gross_expectancy_bps": -0.98,
+            "net_expectancy_maker_bps": -9.04,
+            "profit_factor_maker": 0.778
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.2,
+            "trade_count": 991,
+            "gross_win_rate_pct": 29.47,
+            "gross_expectancy_bps": -2.83,
+            "net_expectancy_maker_bps": -10.89,
+            "profit_factor_maker": 0.74
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.25,
+            "trade_count": 760,
+            "gross_win_rate_pct": 29.74,
+            "gross_expectancy_bps": -1.68,
+            "net_expectancy_maker_bps": -9.73,
+            "profit_factor_maker": 0.763
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.3,
+            "trade_count": 551,
+            "gross_win_rate_pct": 30.31,
+            "gross_expectancy_bps": -2.15,
+            "net_expectancy_maker_bps": -10.21,
+            "profit_factor_maker": 0.756
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.15,
+            "trade_count": 715,
+            "gross_win_rate_pct": 31.75,
+            "gross_expectancy_bps": 1.26,
+            "net_expectancy_maker_bps": -6.81,
+            "profit_factor_maker": 0.847
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.2,
+            "trade_count": 568,
+            "gross_win_rate_pct": 31.69,
+            "gross_expectancy_bps": 0.85,
+            "net_expectancy_maker_bps": -7.21,
+            "profit_factor_maker": 0.84
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.25,
+            "trade_count": 442,
+            "gross_win_rate_pct": 31.22,
+            "gross_expectancy_bps": 1.69,
+            "net_expectancy_maker_bps": -6.37,
+            "profit_factor_maker": 0.856
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.3,
+            "trade_count": 330,
+            "gross_win_rate_pct": 30.61,
+            "gross_expectancy_bps": -0.37,
+            "net_expectancy_maker_bps": -8.43,
+            "profit_factor_maker": 0.812
+          }
+        ]
+      },
+      "BNBUSDT": {
+        "best_target_match": {
+          "vol_quantile": 0.95,
+          "prob_margin": 0.3,
+          "trade_count": 550,
+          "gross_expectancy_bps": -2.37,
+          "net_expectancy_maker_bps": -10.43,
+          "profit_factor": 0.738,
+          "in_target_band": true
+        },
+        "grid_results": [
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.15,
+            "trade_count": 5372,
+            "gross_win_rate_pct": 31.5,
+            "gross_expectancy_bps": 0.46,
+            "net_expectancy_maker_bps": -7.59,
+            "profit_factor_maker": 0.698
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.2,
+            "trade_count": 5168,
+            "gross_win_rate_pct": 31.73,
+            "gross_expectancy_bps": 0.62,
+            "net_expectancy_maker_bps": -7.43,
+            "profit_factor_maker": 0.702
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.25,
+            "trade_count": 4880,
+            "gross_win_rate_pct": 31.37,
+            "gross_expectancy_bps": 0.55,
+            "net_expectancy_maker_bps": -7.5,
+            "profit_factor_maker": 0.695
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.3,
+            "trade_count": 4323,
+            "gross_win_rate_pct": 31.9,
+            "gross_expectancy_bps": 0.79,
+            "net_expectancy_maker_bps": -7.26,
+            "profit_factor_maker": 0.703
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.15,
+            "trade_count": 2520,
+            "gross_win_rate_pct": 31.87,
+            "gross_expectancy_bps": 0.99,
+            "net_expectancy_maker_bps": -7.07,
+            "profit_factor_maker": 0.767
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.2,
+            "trade_count": 2410,
+            "gross_win_rate_pct": 32.24,
+            "gross_expectancy_bps": 1.17,
+            "net_expectancy_maker_bps": -6.89,
+            "profit_factor_maker": 0.771
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.25,
+            "trade_count": 2269,
+            "gross_win_rate_pct": 32.0,
+            "gross_expectancy_bps": 1.41,
+            "net_expectancy_maker_bps": -6.65,
+            "profit_factor_maker": 0.773
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.3,
+            "trade_count": 1959,
+            "gross_win_rate_pct": 32.31,
+            "gross_expectancy_bps": 1.6,
+            "net_expectancy_maker_bps": -6.45,
+            "profit_factor_maker": 0.778
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.15,
+            "trade_count": 1623,
+            "gross_win_rate_pct": 31.92,
+            "gross_expectancy_bps": 0.57,
+            "net_expectancy_maker_bps": -7.5,
+            "profit_factor_maker": 0.781
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.2,
+            "trade_count": 1554,
+            "gross_win_rate_pct": 32.11,
+            "gross_expectancy_bps": 0.48,
+            "net_expectancy_maker_bps": -7.58,
+            "profit_factor_maker": 0.777
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.25,
+            "trade_count": 1449,
+            "gross_win_rate_pct": 31.4,
+            "gross_expectancy_bps": 0.69,
+            "net_expectancy_maker_bps": -7.38,
+            "profit_factor_maker": 0.776
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.3,
+            "trade_count": 1230,
+            "gross_win_rate_pct": 31.87,
+            "gross_expectancy_bps": 1.07,
+            "net_expectancy_maker_bps": -6.99,
+            "profit_factor_maker": 0.786
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.15,
+            "trade_count": 1290,
+            "gross_win_rate_pct": 29.61,
+            "gross_expectancy_bps": -1.94,
+            "net_expectancy_maker_bps": -10.0,
+            "profit_factor_maker": 0.73
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.2,
+            "trade_count": 1232,
+            "gross_win_rate_pct": 29.63,
+            "gross_expectancy_bps": -2.23,
+            "net_expectancy_maker_bps": -10.3,
+            "profit_factor_maker": 0.721
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.25,
+            "trade_count": 1144,
+            "gross_win_rate_pct": 28.58,
+            "gross_expectancy_bps": -2.2,
+            "net_expectancy_maker_bps": -10.26,
+            "profit_factor_maker": 0.712
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.3,
+            "trade_count": 960,
+            "gross_win_rate_pct": 29.27,
+            "gross_expectancy_bps": -1.61,
+            "net_expectancy_maker_bps": -9.66,
+            "profit_factor_maker": 0.728
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.15,
+            "trade_count": 760,
+            "gross_win_rate_pct": 29.47,
+            "gross_expectancy_bps": -2.72,
+            "net_expectancy_maker_bps": -10.78,
+            "profit_factor_maker": 0.745
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.2,
+            "trade_count": 726,
+            "gross_win_rate_pct": 29.75,
+            "gross_expectancy_bps": -2.46,
+            "net_expectancy_maker_bps": -10.53,
+            "profit_factor_maker": 0.747
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.25,
+            "trade_count": 656,
+            "gross_win_rate_pct": 28.66,
+            "gross_expectancy_bps": -1.54,
+            "net_expectancy_maker_bps": -9.61,
+            "profit_factor_maker": 0.756
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.3,
+            "trade_count": 550,
+            "gross_win_rate_pct": 28.18,
+            "gross_expectancy_bps": -2.37,
+            "net_expectancy_maker_bps": -10.43,
+            "profit_factor_maker": 0.738
+          }
+        ]
+      },
+      "XRPUSDT": {
+        "best_target_match": {
+          "vol_quantile": 0.95,
+          "prob_margin": 0.15,
+          "trade_count": 595,
+          "gross_expectancy_bps": 0.17,
+          "net_expectancy_maker_bps": -7.9,
+          "profit_factor": 0.886,
+          "in_target_band": true
+        },
+        "grid_results": [
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.15,
+            "trade_count": 5441,
+            "gross_win_rate_pct": 33.01,
+            "gross_expectancy_bps": 3.44,
+            "net_expectancy_maker_bps": -4.62,
+            "profit_factor_maker": 0.866
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.2,
+            "trade_count": 5218,
+            "gross_win_rate_pct": 33.19,
+            "gross_expectancy_bps": 4.17,
+            "net_expectancy_maker_bps": -3.9,
+            "profit_factor_maker": 0.884
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.25,
+            "trade_count": 4925,
+            "gross_win_rate_pct": 33.34,
+            "gross_expectancy_bps": 3.9,
+            "net_expectancy_maker_bps": -4.16,
+            "profit_factor_maker": 0.875
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.3,
+            "trade_count": 4445,
+            "gross_win_rate_pct": 33.99,
+            "gross_expectancy_bps": 4.99,
+            "net_expectancy_maker_bps": -3.07,
+            "profit_factor_maker": 0.905
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.15,
+            "trade_count": 2447,
+            "gross_win_rate_pct": 32.28,
+            "gross_expectancy_bps": 3.6,
+            "net_expectancy_maker_bps": -4.47,
+            "profit_factor_maker": 0.898
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.2,
+            "trade_count": 2302,
+            "gross_win_rate_pct": 32.93,
+            "gross_expectancy_bps": 5.95,
+            "net_expectancy_maker_bps": -2.11,
+            "profit_factor_maker": 0.95
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.25,
+            "trade_count": 2121,
+            "gross_win_rate_pct": 32.91,
+            "gross_expectancy_bps": 5.45,
+            "net_expectancy_maker_bps": -2.61,
+            "profit_factor_maker": 0.938
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.3,
+            "trade_count": 1794,
+            "gross_win_rate_pct": 34.0,
+            "gross_expectancy_bps": 7.62,
+            "net_expectancy_maker_bps": -0.44,
+            "profit_factor_maker": 0.989
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.15,
+            "trade_count": 1426,
+            "gross_win_rate_pct": 32.68,
+            "gross_expectancy_bps": 3.74,
+            "net_expectancy_maker_bps": -4.33,
+            "profit_factor_maker": 0.916
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.2,
+            "trade_count": 1321,
+            "gross_win_rate_pct": 33.16,
+            "gross_expectancy_bps": 7.12,
+            "net_expectancy_maker_bps": -0.95,
+            "profit_factor_maker": 0.981
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.25,
+            "trade_count": 1191,
+            "gross_win_rate_pct": 33.17,
+            "gross_expectancy_bps": 6.42,
+            "net_expectancy_maker_bps": -1.64,
+            "profit_factor_maker": 0.967
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.3,
+            "trade_count": 980,
+            "gross_win_rate_pct": 35.2,
+            "gross_expectancy_bps": 10.75,
+            "net_expectancy_maker_bps": 2.68,
+            "profit_factor_maker": 1.056
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.15,
+            "trade_count": 1110,
+            "gross_win_rate_pct": 31.44,
+            "gross_expectancy_bps": 2.22,
+            "net_expectancy_maker_bps": -5.85,
+            "profit_factor_maker": 0.895
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.2,
+            "trade_count": 1027,
+            "gross_win_rate_pct": 31.94,
+            "gross_expectancy_bps": 6.72,
+            "net_expectancy_maker_bps": -1.36,
+            "profit_factor_maker": 0.974
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.25,
+            "trade_count": 909,
+            "gross_win_rate_pct": 31.57,
+            "gross_expectancy_bps": 4.92,
+            "net_expectancy_maker_bps": -3.15,
+            "profit_factor_maker": 0.941
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.3,
+            "trade_count": 735,
+            "gross_win_rate_pct": 34.01,
+            "gross_expectancy_bps": 10.02,
+            "net_expectancy_maker_bps": 1.94,
+            "profit_factor_maker": 1.037
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.15,
+            "trade_count": 595,
+            "gross_win_rate_pct": 31.76,
+            "gross_expectancy_bps": 0.17,
+            "net_expectancy_maker_bps": -7.9,
+            "profit_factor_maker": 0.886
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.2,
+            "trade_count": 539,
+            "gross_win_rate_pct": 31.73,
+            "gross_expectancy_bps": 5.75,
+            "net_expectancy_maker_bps": -2.32,
+            "profit_factor_maker": 0.964
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.25,
+            "trade_count": 468,
+            "gross_win_rate_pct": 30.98,
+            "gross_expectancy_bps": 4.31,
+            "net_expectancy_maker_bps": -3.76,
+            "profit_factor_maker": 0.943
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.3,
+            "trade_count": 397,
+            "gross_win_rate_pct": 34.26,
+            "gross_expectancy_bps": 9.86,
+            "net_expectancy_maker_bps": 1.79,
+            "profit_factor_maker": 1.028
+          }
+        ]
+      },
+      "ADAUSDT": {
+        "best_target_match": {
+          "vol_quantile": 0.95,
+          "prob_margin": 0.2,
+          "trade_count": 615,
+          "gross_expectancy_bps": 1.14,
+          "net_expectancy_maker_bps": -6.93,
+          "profit_factor": 0.893,
+          "in_target_band": true
+        },
+        "grid_results": [
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.15,
+            "trade_count": 4115,
+            "gross_win_rate_pct": 31.3,
+            "gross_expectancy_bps": -0.55,
+            "net_expectancy_maker_bps": -8.6,
+            "profit_factor_maker": 0.805
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.2,
+            "trade_count": 3738,
+            "gross_win_rate_pct": 31.46,
+            "gross_expectancy_bps": 0.19,
+            "net_expectancy_maker_bps": -7.87,
+            "profit_factor_maker": 0.818
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.25,
+            "trade_count": 3351,
+            "gross_win_rate_pct": 31.96,
+            "gross_expectancy_bps": 0.97,
+            "net_expectancy_maker_bps": -7.08,
+            "profit_factor_maker": 0.835
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.3,
+            "trade_count": 2866,
+            "gross_win_rate_pct": 31.51,
+            "gross_expectancy_bps": -0.42,
+            "net_expectancy_maker_bps": -8.46,
+            "profit_factor_maker": 0.804
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.15,
+            "trade_count": 2205,
+            "gross_win_rate_pct": 29.89,
+            "gross_expectancy_bps": -2.46,
+            "net_expectancy_maker_bps": -10.52,
+            "profit_factor_maker": 0.8
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.2,
+            "trade_count": 2010,
+            "gross_win_rate_pct": 30.25,
+            "gross_expectancy_bps": -0.87,
+            "net_expectancy_maker_bps": -8.93,
+            "profit_factor_maker": 0.824
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.25,
+            "trade_count": 1803,
+            "gross_win_rate_pct": 30.84,
+            "gross_expectancy_bps": 0.53,
+            "net_expectancy_maker_bps": -7.52,
+            "profit_factor_maker": 0.85
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.3,
+            "trade_count": 1528,
+            "gross_win_rate_pct": 31.61,
+            "gross_expectancy_bps": 0.83,
+            "net_expectancy_maker_bps": -7.22,
+            "profit_factor_maker": 0.854
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.15,
+            "trade_count": 1427,
+            "gross_win_rate_pct": 29.43,
+            "gross_expectancy_bps": -2.39,
+            "net_expectancy_maker_bps": -10.47,
+            "profit_factor_maker": 0.818
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.2,
+            "trade_count": 1267,
+            "gross_win_rate_pct": 29.12,
+            "gross_expectancy_bps": -2.24,
+            "net_expectancy_maker_bps": -10.3,
+            "profit_factor_maker": 0.817
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.25,
+            "trade_count": 1105,
+            "gross_win_rate_pct": 29.95,
+            "gross_expectancy_bps": -0.16,
+            "net_expectancy_maker_bps": -8.22,
+            "profit_factor_maker": 0.852
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.3,
+            "trade_count": 903,
+            "gross_win_rate_pct": 30.34,
+            "gross_expectancy_bps": -0.34,
+            "net_expectancy_maker_bps": -8.4,
+            "profit_factor_maker": 0.847
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.15,
+            "trade_count": 1146,
+            "gross_win_rate_pct": 29.93,
+            "gross_expectancy_bps": -2.01,
+            "net_expectancy_maker_bps": -10.08,
+            "profit_factor_maker": 0.833
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.2,
+            "trade_count": 1019,
+            "gross_win_rate_pct": 29.44,
+            "gross_expectancy_bps": -1.21,
+            "net_expectancy_maker_bps": -9.27,
+            "profit_factor_maker": 0.841
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.25,
+            "trade_count": 887,
+            "gross_win_rate_pct": 31.45,
+            "gross_expectancy_bps": 3.91,
+            "net_expectancy_maker_bps": -4.15,
+            "profit_factor_maker": 0.927
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.3,
+            "trade_count": 703,
+            "gross_win_rate_pct": 31.86,
+            "gross_expectancy_bps": 3.8,
+            "net_expectancy_maker_bps": -4.25,
+            "profit_factor_maker": 0.924
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.15,
+            "trade_count": 717,
+            "gross_win_rate_pct": 30.26,
+            "gross_expectancy_bps": -2.2,
+            "net_expectancy_maker_bps": -10.28,
+            "profit_factor_maker": 0.849
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.2,
+            "trade_count": 615,
+            "gross_win_rate_pct": 30.41,
+            "gross_expectancy_bps": 1.14,
+            "net_expectancy_maker_bps": -6.93,
+            "profit_factor_maker": 0.893
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.25,
+            "trade_count": 524,
+            "gross_win_rate_pct": 32.06,
+            "gross_expectancy_bps": 6.6,
+            "net_expectancy_maker_bps": -1.46,
+            "profit_factor_maker": 0.977
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.3,
+            "trade_count": 399,
+            "gross_win_rate_pct": 32.83,
+            "gross_expectancy_bps": 8.73,
+            "net_expectancy_maker_bps": 0.69,
+            "profit_factor_maker": 1.011
+          }
+        ]
+      },
+      "SOLUSDT": {
+        "best_target_match": {
+          "vol_quantile": 0.92,
+          "prob_margin": 0.25,
+          "trade_count": 558,
+          "gross_expectancy_bps": 1.47,
+          "net_expectancy_maker_bps": -6.6,
+          "profit_factor": 0.87,
+          "in_target_band": true
+        },
+        "grid_results": [
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.15,
+            "trade_count": 4521,
+            "gross_win_rate_pct": 31.63,
+            "gross_expectancy_bps": 1.54,
+            "net_expectancy_maker_bps": -6.52,
+            "profit_factor_maker": 0.807
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.2,
+            "trade_count": 4246,
+            "gross_win_rate_pct": 31.72,
+            "gross_expectancy_bps": 1.69,
+            "net_expectancy_maker_bps": -6.37,
+            "profit_factor_maker": 0.808
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.25,
+            "trade_count": 3826,
+            "gross_win_rate_pct": 31.83,
+            "gross_expectancy_bps": 1.98,
+            "net_expectancy_maker_bps": -6.08,
+            "profit_factor_maker": 0.815
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.3,
+            "trade_count": 3168,
+            "gross_win_rate_pct": 32.61,
+            "gross_expectancy_bps": 2.59,
+            "net_expectancy_maker_bps": -5.47,
+            "profit_factor_maker": 0.832
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.15,
+            "trade_count": 1746,
+            "gross_win_rate_pct": 30.24,
+            "gross_expectancy_bps": 0.37,
+            "net_expectancy_maker_bps": -7.7,
+            "profit_factor_maker": 0.82
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.2,
+            "trade_count": 1594,
+            "gross_win_rate_pct": 29.92,
+            "gross_expectancy_bps": 0.22,
+            "net_expectancy_maker_bps": -7.84,
+            "profit_factor_maker": 0.814
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.25,
+            "trade_count": 1343,
+            "gross_win_rate_pct": 30.16,
+            "gross_expectancy_bps": 0.26,
+            "net_expectancy_maker_bps": -7.8,
+            "profit_factor_maker": 0.816
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.3,
+            "trade_count": 1017,
+            "gross_win_rate_pct": 31.56,
+            "gross_expectancy_bps": 2.51,
+            "net_expectancy_maker_bps": -5.55,
+            "profit_factor_maker": 0.868
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.15,
+            "trade_count": 1034,
+            "gross_win_rate_pct": 30.08,
+            "gross_expectancy_bps": -0.28,
+            "net_expectancy_maker_bps": -8.36,
+            "profit_factor_maker": 0.827
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.2,
+            "trade_count": 921,
+            "gross_win_rate_pct": 29.32,
+            "gross_expectancy_bps": -0.71,
+            "net_expectancy_maker_bps": -8.78,
+            "profit_factor_maker": 0.816
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.25,
+            "trade_count": 755,
+            "gross_win_rate_pct": 29.4,
+            "gross_expectancy_bps": -0.21,
+            "net_expectancy_maker_bps": -8.28,
+            "profit_factor_maker": 0.828
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.3,
+            "trade_count": 546,
+            "gross_win_rate_pct": 31.87,
+            "gross_expectancy_bps": 4.83,
+            "net_expectancy_maker_bps": -3.24,
+            "profit_factor_maker": 0.932
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.15,
+            "trade_count": 771,
+            "gross_win_rate_pct": 30.22,
+            "gross_expectancy_bps": -0.58,
+            "net_expectancy_maker_bps": -8.65,
+            "profit_factor_maker": 0.833
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.2,
+            "trade_count": 675,
+            "gross_win_rate_pct": 29.33,
+            "gross_expectancy_bps": -0.54,
+            "net_expectancy_maker_bps": -8.61,
+            "profit_factor_maker": 0.831
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.25,
+            "trade_count": 558,
+            "gross_win_rate_pct": 30.29,
+            "gross_expectancy_bps": 1.47,
+            "net_expectancy_maker_bps": -6.6,
+            "profit_factor_maker": 0.87
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.3,
+            "trade_count": 399,
+            "gross_win_rate_pct": 32.33,
+            "gross_expectancy_bps": 6.31,
+            "net_expectancy_maker_bps": -1.77,
+            "profit_factor_maker": 0.965
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.15,
+            "trade_count": 405,
+            "gross_win_rate_pct": 28.64,
+            "gross_expectancy_bps": -0.22,
+            "net_expectancy_maker_bps": -8.3,
+            "profit_factor_maker": 0.858
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.2,
+            "trade_count": 345,
+            "gross_win_rate_pct": 29.28,
+            "gross_expectancy_bps": 2.7,
+            "net_expectancy_maker_bps": -5.38,
+            "profit_factor_maker": 0.905
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.25,
+            "trade_count": 268,
+            "gross_win_rate_pct": 30.22,
+            "gross_expectancy_bps": 6.88,
+            "net_expectancy_maker_bps": -1.2,
+            "profit_factor_maker": 0.979
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.3,
+            "trade_count": 190,
+            "gross_win_rate_pct": 32.63,
+            "gross_expectancy_bps": 13.59,
+            "net_expectancy_maker_bps": 5.5,
+            "profit_factor_maker": 1.095
+          }
+        ]
+      },
+      "AVAXUSDT": {
+        "best_target_match": {
+          "vol_quantile": 0.92,
+          "prob_margin": 0.3,
+          "trade_count": 629,
+          "gross_expectancy_bps": 2.89,
+          "net_expectancy_maker_bps": -5.18,
+          "profit_factor": 0.907,
+          "in_target_band": true
+        },
+        "grid_results": [
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.15,
+            "trade_count": 3598,
+            "gross_win_rate_pct": 31.38,
+            "gross_expectancy_bps": 1.2,
+            "net_expectancy_maker_bps": -6.88,
+            "profit_factor_maker": 0.841
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.2,
+            "trade_count": 3339,
+            "gross_win_rate_pct": 31.09,
+            "gross_expectancy_bps": 1.35,
+            "net_expectancy_maker_bps": -6.72,
+            "profit_factor_maker": 0.84
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.25,
+            "trade_count": 3021,
+            "gross_win_rate_pct": 31.41,
+            "gross_expectancy_bps": 2.65,
+            "net_expectancy_maker_bps": -5.43,
+            "profit_factor_maker": 0.869
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.3,
+            "trade_count": 2573,
+            "gross_win_rate_pct": 31.4,
+            "gross_expectancy_bps": 2.1,
+            "net_expectancy_maker_bps": -5.97,
+            "profit_factor_maker": 0.855
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.15,
+            "trade_count": 1835,
+            "gross_win_rate_pct": 30.14,
+            "gross_expectancy_bps": 1.16,
+            "net_expectancy_maker_bps": -6.92,
+            "profit_factor_maker": 0.864
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.2,
+            "trade_count": 1717,
+            "gross_win_rate_pct": 29.76,
+            "gross_expectancy_bps": 1.65,
+            "net_expectancy_maker_bps": -6.43,
+            "profit_factor_maker": 0.867
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.25,
+            "trade_count": 1567,
+            "gross_win_rate_pct": 31.33,
+            "gross_expectancy_bps": 5.32,
+            "net_expectancy_maker_bps": -2.75,
+            "profit_factor_maker": 0.941
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.3,
+            "trade_count": 1337,
+            "gross_win_rate_pct": 31.04,
+            "gross_expectancy_bps": 4.25,
+            "net_expectancy_maker_bps": -3.82,
+            "profit_factor_maker": 0.918
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.15,
+            "trade_count": 1216,
+            "gross_win_rate_pct": 29.85,
+            "gross_expectancy_bps": 0.54,
+            "net_expectancy_maker_bps": -7.54,
+            "profit_factor_maker": 0.867
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.2,
+            "trade_count": 1129,
+            "gross_win_rate_pct": 29.14,
+            "gross_expectancy_bps": 1.11,
+            "net_expectancy_maker_bps": -6.97,
+            "profit_factor_maker": 0.87
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.25,
+            "trade_count": 1025,
+            "gross_win_rate_pct": 30.34,
+            "gross_expectancy_bps": 4.87,
+            "net_expectancy_maker_bps": -3.21,
+            "profit_factor_maker": 0.938
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.3,
+            "trade_count": 849,
+            "gross_win_rate_pct": 29.21,
+            "gross_expectancy_bps": 2.21,
+            "net_expectancy_maker_bps": -5.87,
+            "profit_factor_maker": 0.888
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.15,
+            "trade_count": 923,
+            "gross_win_rate_pct": 30.01,
+            "gross_expectancy_bps": -1.08,
+            "net_expectancy_maker_bps": -9.16,
+            "profit_factor_maker": 0.851
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.2,
+            "trade_count": 855,
+            "gross_win_rate_pct": 29.24,
+            "gross_expectancy_bps": 0.59,
+            "net_expectancy_maker_bps": -7.48,
+            "profit_factor_maker": 0.869
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.25,
+            "trade_count": 770,
+            "gross_win_rate_pct": 30.52,
+            "gross_expectancy_bps": 4.65,
+            "net_expectancy_maker_bps": -3.42,
+            "profit_factor_maker": 0.938
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.3,
+            "trade_count": 629,
+            "gross_win_rate_pct": 29.73,
+            "gross_expectancy_bps": 2.89,
+            "net_expectancy_maker_bps": -5.18,
+            "profit_factor_maker": 0.907
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.15,
+            "trade_count": 537,
+            "gross_win_rate_pct": 30.54,
+            "gross_expectancy_bps": -1.81,
+            "net_expectancy_maker_bps": -9.91,
+            "profit_factor_maker": 0.862
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.2,
+            "trade_count": 489,
+            "gross_win_rate_pct": 29.24,
+            "gross_expectancy_bps": 1.51,
+            "net_expectancy_maker_bps": -6.57,
+            "profit_factor_maker": 0.897
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.25,
+            "trade_count": 439,
+            "gross_win_rate_pct": 30.52,
+            "gross_expectancy_bps": 6.82,
+            "net_expectancy_maker_bps": -1.27,
+            "profit_factor_maker": 0.979
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.3,
+            "trade_count": 347,
+            "gross_win_rate_pct": 29.68,
+            "gross_expectancy_bps": 5.87,
+            "net_expectancy_maker_bps": -2.22,
+            "profit_factor_maker": 0.964
+          }
+        ]
+      },
+      "LINKUSDT": {
+        "best_target_match": {
+          "vol_quantile": 0.92,
+          "prob_margin": 0.25,
+          "trade_count": 644,
+          "gross_expectancy_bps": 5.67,
+          "net_expectancy_maker_bps": -2.43,
+          "profit_factor": 0.957,
+          "in_target_band": true
+        },
+        "grid_results": [
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.15,
+            "trade_count": 3162,
+            "gross_win_rate_pct": 32.29,
+            "gross_expectancy_bps": 5.72,
+            "net_expectancy_maker_bps": -2.36,
+            "profit_factor_maker": 0.941
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.2,
+            "trade_count": 2933,
+            "gross_win_rate_pct": 31.88,
+            "gross_expectancy_bps": 4.44,
+            "net_expectancy_maker_bps": -3.64,
+            "profit_factor_maker": 0.908
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.25,
+            "trade_count": 2670,
+            "gross_win_rate_pct": 32.02,
+            "gross_expectancy_bps": 3.66,
+            "net_expectancy_maker_bps": -4.41,
+            "profit_factor_maker": 0.886
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.3,
+            "trade_count": 2367,
+            "gross_win_rate_pct": 30.88,
+            "gross_expectancy_bps": 1.89,
+            "net_expectancy_maker_bps": -6.17,
+            "profit_factor_maker": 0.838
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.15,
+            "trade_count": 1537,
+            "gross_win_rate_pct": 30.64,
+            "gross_expectancy_bps": 7.43,
+            "net_expectancy_maker_bps": -0.65,
+            "profit_factor_maker": 0.987
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.2,
+            "trade_count": 1406,
+            "gross_win_rate_pct": 29.66,
+            "gross_expectancy_bps": 4.59,
+            "net_expectancy_maker_bps": -3.49,
+            "profit_factor_maker": 0.929
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.25,
+            "trade_count": 1243,
+            "gross_win_rate_pct": 29.93,
+            "gross_expectancy_bps": 3.06,
+            "net_expectancy_maker_bps": -5.02,
+            "profit_factor_maker": 0.896
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.3,
+            "trade_count": 1060,
+            "gross_win_rate_pct": 28.02,
+            "gross_expectancy_bps": -0.08,
+            "net_expectancy_maker_bps": -8.15,
+            "profit_factor_maker": 0.831
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.15,
+            "trade_count": 1027,
+            "gross_win_rate_pct": 31.06,
+            "gross_expectancy_bps": 10.83,
+            "net_expectancy_maker_bps": 2.73,
+            "profit_factor_maker": 1.051
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.2,
+            "trade_count": 937,
+            "gross_win_rate_pct": 30.95,
+            "gross_expectancy_bps": 9.62,
+            "net_expectancy_maker_bps": 1.52,
+            "profit_factor_maker": 1.029
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.25,
+            "trade_count": 818,
+            "gross_win_rate_pct": 31.3,
+            "gross_expectancy_bps": 6.39,
+            "net_expectancy_maker_bps": -1.7,
+            "profit_factor_maker": 0.968
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.3,
+            "trade_count": 691,
+            "gross_win_rate_pct": 29.67,
+            "gross_expectancy_bps": 3.04,
+            "net_expectancy_maker_bps": -5.06,
+            "profit_factor_maker": 0.904
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.15,
+            "trade_count": 816,
+            "gross_win_rate_pct": 30.51,
+            "gross_expectancy_bps": 11.2,
+            "net_expectancy_maker_bps": 3.1,
+            "profit_factor_maker": 1.055
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.2,
+            "trade_count": 739,
+            "gross_win_rate_pct": 30.31,
+            "gross_expectancy_bps": 10.55,
+            "net_expectancy_maker_bps": 2.44,
+            "profit_factor_maker": 1.044
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.25,
+            "trade_count": 644,
+            "gross_win_rate_pct": 30.43,
+            "gross_expectancy_bps": 5.67,
+            "net_expectancy_maker_bps": -2.43,
+            "profit_factor_maker": 0.957
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.3,
+            "trade_count": 545,
+            "gross_win_rate_pct": 28.62,
+            "gross_expectancy_bps": 2.23,
+            "net_expectancy_maker_bps": -5.86,
+            "profit_factor_maker": 0.895
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.15,
+            "trade_count": 522,
+            "gross_win_rate_pct": 28.35,
+            "gross_expectancy_bps": 12.94,
+            "net_expectancy_maker_bps": 4.84,
+            "profit_factor_maker": 1.078
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.2,
+            "trade_count": 469,
+            "gross_win_rate_pct": 27.29,
+            "gross_expectancy_bps": 9.44,
+            "net_expectancy_maker_bps": 1.34,
+            "profit_factor_maker": 1.021
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.25,
+            "trade_count": 395,
+            "gross_win_rate_pct": 28.1,
+            "gross_expectancy_bps": 4.01,
+            "net_expectancy_maker_bps": -4.08,
+            "profit_factor_maker": 0.934
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.3,
+            "trade_count": 313,
+            "gross_win_rate_pct": 26.84,
+            "gross_expectancy_bps": 1.26,
+            "net_expectancy_maker_bps": -6.83,
+            "profit_factor_maker": 0.891
+          }
+        ]
+      },
+      "DOGEUSDT": {
+        "best_target_match": {
+          "vol_quantile": 0.9,
+          "prob_margin": 0.3,
+          "trade_count": 598,
+          "gross_expectancy_bps": 5.46,
+          "net_expectancy_maker_bps": -2.6,
+          "profit_factor": 0.951,
+          "in_target_band": true
+        },
+        "grid_results": [
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.15,
+            "trade_count": 4164,
+            "gross_win_rate_pct": 31.24,
+            "gross_expectancy_bps": -0.18,
+            "net_expectancy_maker_bps": -8.25,
+            "profit_factor_maker": 0.799
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.2,
+            "trade_count": 3953,
+            "gross_win_rate_pct": 31.24,
+            "gross_expectancy_bps": 0.59,
+            "net_expectancy_maker_bps": -7.47,
+            "profit_factor_maker": 0.81
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.25,
+            "trade_count": 3627,
+            "gross_win_rate_pct": 31.21,
+            "gross_expectancy_bps": 0.6,
+            "net_expectancy_maker_bps": -7.46,
+            "profit_factor_maker": 0.807
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.3,
+            "trade_count": 3129,
+            "gross_win_rate_pct": 32.15,
+            "gross_expectancy_bps": 1.96,
+            "net_expectancy_maker_bps": -6.1,
+            "profit_factor_maker": 0.838
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.15,
+            "trade_count": 1791,
+            "gross_win_rate_pct": 28.92,
+            "gross_expectancy_bps": -2.65,
+            "net_expectancy_maker_bps": -10.72,
+            "profit_factor_maker": 0.794
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.2,
+            "trade_count": 1645,
+            "gross_win_rate_pct": 28.81,
+            "gross_expectancy_bps": -0.79,
+            "net_expectancy_maker_bps": -8.86,
+            "profit_factor_maker": 0.82
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.25,
+            "trade_count": 1468,
+            "gross_win_rate_pct": 29.22,
+            "gross_expectancy_bps": -0.18,
+            "net_expectancy_maker_bps": -8.24,
+            "profit_factor_maker": 0.828
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.3,
+            "trade_count": 1166,
+            "gross_win_rate_pct": 30.53,
+            "gross_expectancy_bps": 2.05,
+            "net_expectancy_maker_bps": -6.01,
+            "profit_factor_maker": 0.873
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.15,
+            "trade_count": 1058,
+            "gross_win_rate_pct": 28.07,
+            "gross_expectancy_bps": -5.65,
+            "net_expectancy_maker_bps": -13.72,
+            "profit_factor_maker": 0.773
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.2,
+            "trade_count": 946,
+            "gross_win_rate_pct": 28.65,
+            "gross_expectancy_bps": -0.59,
+            "net_expectancy_maker_bps": -8.66,
+            "profit_factor_maker": 0.845
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.25,
+            "trade_count": 807,
+            "gross_win_rate_pct": 29.12,
+            "gross_expectancy_bps": 0.08,
+            "net_expectancy_maker_bps": -7.99,
+            "profit_factor_maker": 0.853
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.3,
+            "trade_count": 598,
+            "gross_win_rate_pct": 32.11,
+            "gross_expectancy_bps": 5.46,
+            "net_expectancy_maker_bps": -2.6,
+            "profit_factor_maker": 0.951
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.15,
+            "trade_count": 797,
+            "gross_win_rate_pct": 28.86,
+            "gross_expectancy_bps": -3.29,
+            "net_expectancy_maker_bps": -11.37,
+            "profit_factor_maker": 0.821
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.2,
+            "trade_count": 701,
+            "gross_win_rate_pct": 29.53,
+            "gross_expectancy_bps": 3.14,
+            "net_expectancy_maker_bps": -4.93,
+            "profit_factor_maker": 0.915
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.25,
+            "trade_count": 573,
+            "gross_win_rate_pct": 29.84,
+            "gross_expectancy_bps": 3.22,
+            "net_expectancy_maker_bps": -4.85,
+            "profit_factor_maker": 0.915
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.3,
+            "trade_count": 422,
+            "gross_win_rate_pct": 31.52,
+            "gross_expectancy_bps": 5.94,
+            "net_expectancy_maker_bps": -2.12,
+            "profit_factor_maker": 0.962
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.15,
+            "trade_count": 476,
+            "gross_win_rate_pct": 30.88,
+            "gross_expectancy_bps": -2.54,
+            "net_expectancy_maker_bps": -10.63,
+            "profit_factor_maker": 0.853
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.2,
+            "trade_count": 400,
+            "gross_win_rate_pct": 30.5,
+            "gross_expectancy_bps": 6.05,
+            "net_expectancy_maker_bps": -2.03,
+            "profit_factor_maker": 0.968
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.25,
+            "trade_count": 317,
+            "gross_win_rate_pct": 31.55,
+            "gross_expectancy_bps": 8.21,
+            "net_expectancy_maker_bps": 0.14,
+            "profit_factor_maker": 1.002
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.3,
+            "trade_count": 223,
+            "gross_win_rate_pct": 34.98,
+            "gross_expectancy_bps": 16.15,
+            "net_expectancy_maker_bps": 8.08,
+            "profit_factor_maker": 1.133
+          }
+        ]
+      },
+      "LTCUSDT": {
+        "best_target_match": {
+          "vol_quantile": 0.95,
+          "prob_margin": 0.25,
+          "trade_count": 627,
+          "gross_expectancy_bps": -0.61,
+          "net_expectancy_maker_bps": -8.7,
+          "profit_factor": 0.867,
+          "in_target_band": true
+        },
+        "grid_results": [
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.15,
+            "trade_count": 4703,
+            "gross_win_rate_pct": 32.7,
+            "gross_expectancy_bps": 3.14,
+            "net_expectancy_maker_bps": -4.93,
+            "profit_factor_maker": 0.877
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.2,
+            "trade_count": 4305,
+            "gross_win_rate_pct": 32.64,
+            "gross_expectancy_bps": 3.1,
+            "net_expectancy_maker_bps": -4.96,
+            "profit_factor_maker": 0.875
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.25,
+            "trade_count": 3763,
+            "gross_win_rate_pct": 32.61,
+            "gross_expectancy_bps": 2.53,
+            "net_expectancy_maker_bps": -5.53,
+            "profit_factor_maker": 0.862
+          },
+          {
+            "vol_quantile": 0.7,
+            "prob_margin": 0.3,
+            "trade_count": 2994,
+            "gross_win_rate_pct": 33.17,
+            "gross_expectancy_bps": 3.28,
+            "net_expectancy_maker_bps": -4.78,
+            "profit_factor_maker": 0.878
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.15,
+            "trade_count": 2592,
+            "gross_win_rate_pct": 31.52,
+            "gross_expectancy_bps": 2.08,
+            "net_expectancy_maker_bps": -5.99,
+            "profit_factor_maker": 0.878
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.2,
+            "trade_count": 2375,
+            "gross_win_rate_pct": 31.41,
+            "gross_expectancy_bps": 2.29,
+            "net_expectancy_maker_bps": -5.78,
+            "profit_factor_maker": 0.88
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.25,
+            "trade_count": 2078,
+            "gross_win_rate_pct": 31.38,
+            "gross_expectancy_bps": 1.88,
+            "net_expectancy_maker_bps": -6.19,
+            "profit_factor_maker": 0.872
+          },
+          {
+            "vol_quantile": 0.85,
+            "prob_margin": 0.3,
+            "trade_count": 1637,
+            "gross_win_rate_pct": 31.15,
+            "gross_expectancy_bps": 1.23,
+            "net_expectancy_maker_bps": -6.85,
+            "profit_factor_maker": 0.858
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.15,
+            "trade_count": 1779,
+            "gross_win_rate_pct": 30.13,
+            "gross_expectancy_bps": 0.33,
+            "net_expectancy_maker_bps": -7.75,
+            "profit_factor_maker": 0.859
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.2,
+            "trade_count": 1613,
+            "gross_win_rate_pct": 30.56,
+            "gross_expectancy_bps": 1.05,
+            "net_expectancy_maker_bps": -7.02,
+            "profit_factor_maker": 0.87
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.25,
+            "trade_count": 1385,
+            "gross_win_rate_pct": 30.18,
+            "gross_expectancy_bps": -0.32,
+            "net_expectancy_maker_bps": -8.39,
+            "profit_factor_maker": 0.847
+          },
+          {
+            "vol_quantile": 0.9,
+            "prob_margin": 0.3,
+            "trade_count": 1045,
+            "gross_win_rate_pct": 30.24,
+            "gross_expectancy_bps": -0.76,
+            "net_expectancy_maker_bps": -8.83,
+            "profit_factor_maker": 0.839
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.15,
+            "trade_count": 1432,
+            "gross_win_rate_pct": 30.17,
+            "gross_expectancy_bps": 1.04,
+            "net_expectancy_maker_bps": -7.05,
+            "profit_factor_maker": 0.877
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.2,
+            "trade_count": 1282,
+            "gross_win_rate_pct": 30.34,
+            "gross_expectancy_bps": 1.17,
+            "net_expectancy_maker_bps": -6.91,
+            "profit_factor_maker": 0.878
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.25,
+            "trade_count": 1087,
+            "gross_win_rate_pct": 31.0,
+            "gross_expectancy_bps": 1.3,
+            "net_expectancy_maker_bps": -6.78,
+            "profit_factor_maker": 0.882
+          },
+          {
+            "vol_quantile": 0.92,
+            "prob_margin": 0.3,
+            "trade_count": 816,
+            "gross_win_rate_pct": 30.64,
+            "gross_expectancy_bps": 0.42,
+            "net_expectancy_maker_bps": -7.65,
+            "profit_factor_maker": 0.867
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.15,
+            "trade_count": 885,
+            "gross_win_rate_pct": 29.83,
+            "gross_expectancy_bps": 0.26,
+            "net_expectancy_maker_bps": -7.83,
+            "profit_factor_maker": 0.878
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.2,
+            "trade_count": 775,
+            "gross_win_rate_pct": 30.97,
+            "gross_expectancy_bps": 2.44,
+            "net_expectancy_maker_bps": -5.64,
+            "profit_factor_maker": 0.911
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.25,
+            "trade_count": 627,
+            "gross_win_rate_pct": 30.14,
+            "gross_expectancy_bps": -0.61,
+            "net_expectancy_maker_bps": -8.7,
+            "profit_factor_maker": 0.867
+          },
+          {
+            "vol_quantile": 0.95,
+            "prob_margin": 0.3,
+            "trade_count": 441,
+            "gross_win_rate_pct": 31.52,
+            "gross_expectancy_bps": 3.05,
+            "net_expectancy_maker_bps": -5.05,
+            "profit_factor_maker": 0.923
+          }
+        ]
+      }
+    },
+    "calibrated_parameters": {
+      "BTCUSDT": {
+        "vol_quantile": 0.9,
+        "prob_margin": 0.25,
+        "trade_count": 570,
+        "gross_expectancy_bps": 0.07,
+        "net_expectancy_maker_bps": -7.98,
+        "profit_factor": 0.731,
+        "in_target_band": true
+      },
+      "ETHUSDT": {
+        "vol_quantile": 0.95,
+        "prob_margin": 0.2,
+        "trade_count": 568,
+        "gross_expectancy_bps": 0.85,
+        "net_expectancy_maker_bps": -7.21,
+        "profit_factor": 0.84,
+        "in_target_band": true
+      },
+      "BNBUSDT": {
+        "vol_quantile": 0.95,
+        "prob_margin": 0.3,
+        "trade_count": 550,
+        "gross_expectancy_bps": -2.37,
+        "net_expectancy_maker_bps": -10.43,
+        "profit_factor": 0.738,
+        "in_target_band": true
+      },
+      "XRPUSDT": {
+        "vol_quantile": 0.95,
+        "prob_margin": 0.15,
+        "trade_count": 595,
+        "gross_expectancy_bps": 0.17,
+        "net_expectancy_maker_bps": -7.9,
+        "profit_factor": 0.886,
+        "in_target_band": true
+      },
+      "ADAUSDT": {
+        "vol_quantile": 0.95,
+        "prob_margin": 0.2,
+        "trade_count": 615,
+        "gross_expectancy_bps": 1.14,
+        "net_expectancy_maker_bps": -6.93,
+        "profit_factor": 0.893,
+        "in_target_band": true
+      },
+      "SOLUSDT": {
+        "vol_quantile": 0.92,
+        "prob_margin": 0.25,
+        "trade_count": 558,
+        "gross_expectancy_bps": 1.47,
+        "net_expectancy_maker_bps": -6.6,
+        "profit_factor": 0.87,
+        "in_target_band": true
+      },
+      "AVAXUSDT": {
+        "vol_quantile": 0.92,
+        "prob_margin": 0.3,
+        "trade_count": 629,
+        "gross_expectancy_bps": 2.89,
+        "net_expectancy_maker_bps": -5.18,
+        "profit_factor": 0.907,
+        "in_target_band": true
+      },
+      "LINKUSDT": {
+        "vol_quantile": 0.92,
+        "prob_margin": 0.25,
+        "trade_count": 644,
+        "gross_expectancy_bps": 5.67,
+        "net_expectancy_maker_bps": -2.43,
+        "profit_factor": 0.957,
+        "in_target_band": true
+      },
+      "DOGEUSDT": {
+        "vol_quantile": 0.9,
+        "prob_margin": 0.3,
+        "trade_count": 598,
+        "gross_expectancy_bps": 5.46,
+        "net_expectancy_maker_bps": -2.6,
+        "profit_factor": 0.951,
+        "in_target_band": true
+      },
+      "LTCUSDT": {
+        "vol_quantile": 0.95,
+        "prob_margin": 0.25,
+        "trade_count": 627,
+        "gross_expectancy_bps": -0.61,
+        "net_expectancy_maker_bps": -8.7,
+        "profit_factor": 0.867,
+        "in_target_band": true
+      }
+    }
+  },
+  "stage_2_signal_ranking": {
+    "BTCUSDT": {
+      "BOTH": {
+        "trade_count": 570,
+        "gross_win_rate_pct": 30.53,
+        "net_win_rate_pct": 31.58,
+        "tp_count": 174,
+        "sl_count": 387,
+        "exp_count": 9,
+        "gross_expectancy_bps": 0.07,
+        "net_expectancy_bps": -7.98,
+        "profit_factor": 0.731,
+        "sharpe_annualized": -3.466,
+        "sortino_annualized": -10.1
+      },
+      "LONG_ONLY": {
+        "trade_count": 405,
+        "gross_win_rate_pct": 30.86,
+        "net_win_rate_pct": 31.85,
+        "tp_count": 125,
+        "sl_count": 275,
+        "exp_count": 5,
+        "gross_expectancy_bps": -0.23,
+        "net_expectancy_bps": -8.29,
+        "profit_factor": 0.732,
+        "sharpe_annualized": -3.429,
+        "sortino_annualized": -9.318
+      },
+      "SHORT_ONLY": {
+        "trade_count": 280,
+        "gross_win_rate_pct": 32.5,
+        "net_win_rate_pct": 33.57,
+        "tp_count": 91,
+        "sl_count": 183,
+        "exp_count": 6,
+        "gross_expectancy_bps": 2.05,
+        "net_expectancy_bps": -6.0,
+        "profit_factor": 0.776,
+        "sharpe_annualized": -2.909,
+        "sortino_annualized": -11.093
+      }
+    },
+    "ETHUSDT": {
+      "BOTH": {
+        "trade_count": 568,
+        "gross_win_rate_pct": 31.69,
+        "net_win_rate_pct": 33.98,
+        "tp_count": 180,
+        "sl_count": 374,
+        "exp_count": 14,
+        "gross_expectancy_bps": 0.85,
+        "net_expectancy_bps": -7.21,
+        "profit_factor": 0.84,
+        "sharpe_annualized": -1.898,
+        "sortino_annualized": -4.876
+      },
+      "LONG_ONLY": {
+        "trade_count": 409,
+        "gross_win_rate_pct": 29.34,
+        "net_win_rate_pct": 32.03,
+        "tp_count": 120,
+        "sl_count": 278,
+        "exp_count": 11,
+        "gross_expectancy_bps": -1.49,
+        "net_expectancy_bps": -9.56,
+        "profit_factor": 0.792,
+        "sharpe_annualized": -2.531,
+        "sortino_annualized": -6.79
+      },
+      "SHORT_ONLY": {
+        "trade_count": 294,
+        "gross_win_rate_pct": 31.63,
+        "net_win_rate_pct": 33.33,
+        "tp_count": 93,
+        "sl_count": 195,
+        "exp_count": 6,
+        "gross_expectancy_bps": -0.07,
+        "net_expectancy_bps": -8.13,
+        "profit_factor": 0.818,
+        "sharpe_annualized": -2.217,
+        "sortino_annualized": -5.682
+      }
+    },
+    "BNBUSDT": {
+      "BOTH": {
+        "trade_count": 550,
+        "gross_win_rate_pct": 28.18,
+        "net_win_rate_pct": 29.82,
+        "tp_count": 155,
+        "sl_count": 385,
+        "exp_count": 10,
+        "gross_expectancy_bps": -2.37,
+        "net_expectancy_bps": -10.43,
+        "profit_factor": 0.738,
+        "sharpe_annualized": -3.381,
+        "sortino_annualized": -11.977
+      },
+      "LONG_ONLY": {
+        "trade_count": 427,
+        "gross_win_rate_pct": 31.15,
+        "net_win_rate_pct": 32.79,
+        "tp_count": 133,
+        "sl_count": 286,
+        "exp_count": 8,
+        "gross_expectancy_bps": 0.24,
+        "net_expectancy_bps": -7.82,
+        "profit_factor": 0.809,
+        "sharpe_annualized": -2.212,
+        "sortino_annualized": -4.359
+      },
+      "SHORT_ONLY": {
+        "trade_count": 203,
+        "gross_win_rate_pct": 24.63,
+        "net_win_rate_pct": 26.11,
+        "tp_count": 50,
+        "sl_count": 150,
+        "exp_count": 3,
+        "gross_expectancy_bps": -8.24,
+        "net_expectancy_bps": -16.31,
+        "profit_factor": 0.58,
+        "sharpe_annualized": -6.345,
+        "sortino_annualized": -28.722
+      }
+    },
+    "XRPUSDT": {
+      "BOTH": {
+        "trade_count": 595,
+        "gross_win_rate_pct": 31.76,
+        "net_win_rate_pct": 36.64,
+        "tp_count": 189,
+        "sl_count": 370,
+        "exp_count": 36,
+        "gross_expectancy_bps": 0.17,
+        "net_expectancy_bps": -7.9,
+        "profit_factor": 0.886,
+        "sharpe_annualized": -0.994,
+        "sortino_annualized": -1.157
+      },
+      "LONG_ONLY": {
+        "trade_count": 425,
+        "gross_win_rate_pct": 33.65,
+        "net_win_rate_pct": 38.59,
+        "tp_count": 143,
+        "sl_count": 260,
+        "exp_count": 22,
+        "gross_expectancy_bps": 3.76,
+        "net_expectancy_bps": -4.33,
+        "profit_factor": 0.938,
+        "sharpe_annualized": -0.499,
+        "sortino_annualized": -0.544
+      },
+      "SHORT_ONLY": {
+        "trade_count": 367,
+        "gross_win_rate_pct": 30.25,
+        "net_win_rate_pct": 34.88,
+        "tp_count": 111,
+        "sl_count": 231,
+        "exp_count": 25,
+        "gross_expectancy_bps": -0.39,
+        "net_expectancy_bps": -8.47,
+        "profit_factor": 0.866,
+        "sharpe_annualized": -1.52,
+        "sortino_annualized": -3.361
+      }
+    },
+    "ADAUSDT": {
+      "BOTH": {
+        "trade_count": 615,
+        "gross_win_rate_pct": 30.41,
+        "net_win_rate_pct": 34.15,
+        "tp_count": 187,
+        "sl_count": 394,
+        "exp_count": 34,
+        "gross_expectancy_bps": 1.14,
+        "net_expectancy_bps": -6.93,
+        "profit_factor": 0.893,
+        "sharpe_annualized": -1.201,
+        "sortino_annualized": -2.656
+      },
+      "LONG_ONLY": {
+        "trade_count": 488,
+        "gross_win_rate_pct": 30.33,
+        "net_win_rate_pct": 35.04,
+        "tp_count": 148,
+        "sl_count": 309,
+        "exp_count": 31,
+        "gross_expectancy_bps": 4.81,
+        "net_expectancy_bps": -3.25,
+        "profit_factor": 0.948,
+        "sharpe_annualized": -0.565,
+        "sortino_annualized": -1.669
+      },
+      "SHORT_ONLY": {
+        "trade_count": 269,
+        "gross_win_rate_pct": 27.51,
+        "net_win_rate_pct": 29.74,
+        "tp_count": 74,
+        "sl_count": 185,
+        "exp_count": 10,
+        "gross_expectancy_bps": -8.2,
+        "net_expectancy_bps": -16.25,
+        "profit_factor": 0.758,
+        "sharpe_annualized": -2.811,
+        "sortino_annualized": -5.306
+      }
+    },
+    "SOLUSDT": {
+      "BOTH": {
+        "trade_count": 558,
+        "gross_win_rate_pct": 30.29,
+        "net_win_rate_pct": 32.97,
+        "tp_count": 169,
+        "sl_count": 370,
+        "exp_count": 19,
+        "gross_expectancy_bps": 1.47,
+        "net_expectancy_bps": -6.6,
+        "profit_factor": 0.87,
+        "sharpe_annualized": -1.439,
+        "sortino_annualized": -3.533
+      },
+      "LONG_ONLY": {
+        "trade_count": 447,
+        "gross_win_rate_pct": 31.54,
+        "net_win_rate_pct": 34.0,
+        "tp_count": 141,
+        "sl_count": 292,
+        "exp_count": 14,
+        "gross_expectancy_bps": 4.21,
+        "net_expectancy_bps": -3.86,
+        "profit_factor": 0.924,
+        "sharpe_annualized": -0.804,
+        "sortino_annualized": -1.984
+      },
+      "SHORT_ONLY": {
+        "trade_count": 217,
+        "gross_win_rate_pct": 27.19,
+        "net_win_rate_pct": 29.95,
+        "tp_count": 59,
+        "sl_count": 151,
+        "exp_count": 7,
+        "gross_expectancy_bps": -4.64,
+        "net_expectancy_bps": -12.71,
+        "profit_factor": 0.726,
+        "sharpe_annualized": -3.584,
+        "sortino_annualized": -10.71
+      }
+    },
+    "AVAXUSDT": {
+      "BOTH": {
+        "trade_count": 629,
+        "gross_win_rate_pct": 29.73,
+        "net_win_rate_pct": 32.91,
+        "tp_count": 187,
+        "sl_count": 411,
+        "exp_count": 31,
+        "gross_expectancy_bps": 2.89,
+        "net_expectancy_bps": -5.18,
+        "profit_factor": 0.907,
+        "sharpe_annualized": -1.05,
+        "sortino_annualized": -3.259
+      },
+      "LONG_ONLY": {
+        "trade_count": 416,
+        "gross_win_rate_pct": 32.21,
+        "net_win_rate_pct": 36.06,
+        "tp_count": 134,
+        "sl_count": 260,
+        "exp_count": 22,
+        "gross_expectancy_bps": 9.81,
+        "net_expectancy_bps": 1.74,
+        "profit_factor": 1.031,
+        "sharpe_annualized": 0.332,
+        "sortino_annualized": 1.012
+      },
+      "SHORT_ONLY": {
+        "trade_count": 373,
+        "gross_win_rate_pct": 25.47,
+        "net_win_rate_pct": 27.88,
+        "tp_count": 95,
+        "sl_count": 264,
+        "exp_count": 14,
+        "gross_expectancy_bps": -12.22,
+        "net_expectancy_bps": -20.3,
+        "profit_factor": 0.652,
+        "sharpe_annualized": -4.739,
+        "sortino_annualized": -13.751
+      }
+    },
+    "LINKUSDT": {
+      "BOTH": {
+        "trade_count": 644,
+        "gross_win_rate_pct": 30.43,
+        "net_win_rate_pct": 34.94,
+        "tp_count": 196,
+        "sl_count": 412,
+        "exp_count": 36,
+        "gross_expectancy_bps": 5.67,
+        "net_expectancy_bps": -2.43,
+        "profit_factor": 0.957,
+        "sharpe_annualized": -0.476,
+        "sortino_annualized": -1.602
+      },
+      "LONG_ONLY": {
+        "trade_count": 501,
+        "gross_win_rate_pct": 32.14,
+        "net_win_rate_pct": 36.53,
+        "tp_count": 161,
+        "sl_count": 313,
+        "exp_count": 27,
+        "gross_expectancy_bps": 11.63,
+        "net_expectancy_bps": 3.53,
+        "profit_factor": 1.065,
+        "sharpe_annualized": 0.67,
+        "sortino_annualized": 2.353
+      },
+      "SHORT_ONLY": {
+        "trade_count": 326,
+        "gross_win_rate_pct": 28.53,
+        "net_win_rate_pct": 32.82,
+        "tp_count": 93,
+        "sl_count": 214,
+        "exp_count": 19,
+        "gross_expectancy_bps": -1.51,
+        "net_expectancy_bps": -9.62,
+        "profit_factor": 0.819,
+        "sharpe_annualized": -2.252,
+        "sortino_annualized": -7.605
+      }
+    },
+    "DOGEUSDT": {
+      "BOTH": {
+        "trade_count": 598,
+        "gross_win_rate_pct": 32.11,
+        "net_win_rate_pct": 35.28,
+        "tp_count": 192,
+        "sl_count": 382,
+        "exp_count": 24,
+        "gross_expectancy_bps": 5.46,
+        "net_expectancy_bps": -2.6,
+        "profit_factor": 0.951,
+        "sharpe_annualized": -0.526,
+        "sortino_annualized": -1.189
+      },
+      "LONG_ONLY": {
+        "trade_count": 393,
+        "gross_win_rate_pct": 32.57,
+        "net_win_rate_pct": 35.88,
+        "tp_count": 128,
+        "sl_count": 250,
+        "exp_count": 15,
+        "gross_expectancy_bps": 8.39,
+        "net_expectancy_bps": 0.34,
+        "profit_factor": 1.006,
+        "sharpe_annualized": 0.063,
+        "sortino_annualized": 0.132
+      },
+      "SHORT_ONLY": {
+        "trade_count": 311,
+        "gross_win_rate_pct": 28.3,
+        "net_win_rate_pct": 30.23,
+        "tp_count": 88,
+        "sl_count": 214,
+        "exp_count": 9,
+        "gross_expectancy_bps": -4.16,
+        "net_expectancy_bps": -12.21,
+        "profit_factor": 0.76,
+        "sharpe_annualized": -3.095,
+        "sortino_annualized": -11.587
+      }
+    },
+    "LTCUSDT": {
+      "BOTH": {
+        "trade_count": 627,
+        "gross_win_rate_pct": 30.14,
+        "net_win_rate_pct": 35.57,
+        "tp_count": 189,
+        "sl_count": 393,
+        "exp_count": 45,
+        "gross_expectancy_bps": -0.61,
+        "net_expectancy_bps": -8.7,
+        "profit_factor": 0.867,
+        "sharpe_annualized": -1.041,
+        "sortino_annualized": -1.095
+      },
+      "LONG_ONLY": {
+        "trade_count": 427,
+        "gross_win_rate_pct": 27.87,
+        "net_win_rate_pct": 33.26,
+        "tp_count": 119,
+        "sl_count": 275,
+        "exp_count": 33,
+        "gross_expectancy_bps": -7.34,
+        "net_expectancy_bps": -15.44,
+        "profit_factor": 0.78,
+        "sharpe_annualized": -1.657,
+        "sortino_annualized": -1.685
+      },
+      "SHORT_ONLY": {
+        "trade_count": 338,
+        "gross_win_rate_pct": 28.99,
+        "net_win_rate_pct": 33.14,
+        "tp_count": 98,
+        "sl_count": 222,
+        "exp_count": 18,
+        "gross_expectancy_bps": -0.66,
+        "net_expectancy_bps": -8.74,
+        "profit_factor": 0.851,
+        "sharpe_annualized": -1.68,
+        "sortino_annualized": -3.218
+      }
+    }
+  },
+  "stage_3_entry_exit_optimization": {
+    "entry_comparison": {
+      "LINKUSDT": {
+        "delta_0.00": {
+          "trade_count": 644,
+          "gross_win_rate_pct": 30.43,
+          "net_win_rate_pct": 34.94,
+          "tp_count": 196,
+          "sl_count": 412,
+          "exp_count": 36,
+          "gross_expectancy_bps": 5.67,
+          "net_expectancy_bps": -2.43,
+          "profit_factor": 0.957,
+          "sharpe_annualized": -0.476,
+          "sortino_annualized": -1.602
+        },
+        "delta_0.10": {
+          "trade_count": 428,
+          "gross_win_rate_pct": 17.06,
+          "net_win_rate_pct": 21.26,
+          "tp_count": 73,
+          "sl_count": 330,
+          "exp_count": 25,
+          "gross_expectancy_bps": -37.62,
+          "net_expectancy_bps": -45.68,
+          "profit_factor": 0.379,
+          "sharpe_annualized": -11.001,
+          "sortino_annualized": -26.422
+        },
+        "delta_0.25": {
+          "trade_count": 395,
+          "gross_win_rate_pct": 16.2,
+          "net_win_rate_pct": 20.51,
+          "tp_count": 64,
+          "sl_count": 311,
+          "exp_count": 20,
+          "gross_expectancy_bps": -37.51,
+          "net_expectancy_bps": -45.57,
+          "profit_factor": 0.377,
+          "sharpe_annualized": -11.137,
+          "sortino_annualized": -30.081
+        }
+      },
+      "AVAXUSDT": {
+        "delta_0.00": {
+          "trade_count": 629,
+          "gross_win_rate_pct": 29.73,
+          "net_win_rate_pct": 32.91,
+          "tp_count": 187,
+          "sl_count": 411,
+          "exp_count": 31,
+          "gross_expectancy_bps": 2.89,
+          "net_expectancy_bps": -5.18,
+          "profit_factor": 0.907,
+          "sharpe_annualized": -1.05,
+          "sortino_annualized": -3.259
+        },
+        "delta_0.10": {
+          "trade_count": 415,
+          "gross_win_rate_pct": 20.96,
+          "net_win_rate_pct": 22.41,
+          "tp_count": 87,
+          "sl_count": 318,
+          "exp_count": 10,
+          "gross_expectancy_bps": -30.88,
+          "net_expectancy_bps": -38.93,
+          "profit_factor": 0.462,
+          "sharpe_annualized": -8.545,
+          "sortino_annualized": -20.49
+        },
+        "delta_0.25": {
+          "trade_count": 396,
+          "gross_win_rate_pct": 21.46,
+          "net_win_rate_pct": 22.98,
+          "tp_count": 85,
+          "sl_count": 301,
+          "exp_count": 10,
+          "gross_expectancy_bps": -29.01,
+          "net_expectancy_bps": -37.06,
+          "profit_factor": 0.477,
+          "sharpe_annualized": -8.219,
+          "sortino_annualized": -20.164
+        }
+      },
+      "ETHUSDT": {
+        "delta_0.00": {
+          "trade_count": 568,
+          "gross_win_rate_pct": 31.69,
+          "net_win_rate_pct": 33.98,
+          "tp_count": 180,
+          "sl_count": 374,
+          "exp_count": 14,
+          "gross_expectancy_bps": 0.85,
+          "net_expectancy_bps": -7.21,
+          "profit_factor": 0.84,
+          "sharpe_annualized": -1.898,
+          "sortino_annualized": -4.876
+        },
+        "delta_0.10": {
+          "trade_count": 366,
+          "gross_win_rate_pct": 18.58,
+          "net_win_rate_pct": 19.95,
+          "tp_count": 68,
+          "sl_count": 291,
+          "exp_count": 7,
+          "gross_expectancy_bps": -31.51,
+          "net_expectancy_bps": -39.56,
+          "profit_factor": 0.357,
+          "sharpe_annualized": -10.597,
+          "sortino_annualized": -17.655
+        },
+        "delta_0.25": {
+          "trade_count": 353,
+          "gross_win_rate_pct": 20.96,
+          "net_win_rate_pct": 22.38,
+          "tp_count": 74,
+          "sl_count": 273,
+          "exp_count": 6,
+          "gross_expectancy_bps": -27.23,
+          "net_expectancy_bps": -35.29,
+          "profit_factor": 0.404,
+          "sharpe_annualized": -9.582,
+          "sortino_annualized": -17.294
+        }
+      },
+      "BTCUSDT": {
+        "delta_0.00": {
+          "trade_count": 570,
+          "gross_win_rate_pct": 30.53,
+          "net_win_rate_pct": 31.58,
+          "tp_count": 174,
+          "sl_count": 387,
+          "exp_count": 9,
+          "gross_expectancy_bps": 0.07,
+          "net_expectancy_bps": -7.98,
+          "profit_factor": 0.731,
+          "sharpe_annualized": -3.466,
+          "sortino_annualized": -10.1
+        },
+        "delta_0.10": {
+          "trade_count": 389,
+          "gross_win_rate_pct": 23.91,
+          "net_win_rate_pct": 24.68,
+          "tp_count": 93,
+          "sl_count": 293,
+          "exp_count": 3,
+          "gross_expectancy_bps": -14.85,
+          "net_expectancy_bps": -22.91,
+          "profit_factor": 0.421,
+          "sharpe_annualized": -8.068,
+          "sortino_annualized": -10.701
+        },
+        "delta_0.25": {
+          "trade_count": 364,
+          "gross_win_rate_pct": 21.15,
+          "net_win_rate_pct": 21.98,
+          "tp_count": 77,
+          "sl_count": 283,
+          "exp_count": 4,
+          "gross_expectancy_bps": -17.32,
+          "net_expectancy_bps": -25.39,
+          "profit_factor": 0.366,
+          "sharpe_annualized": -9.163,
+          "sortino_annualized": -11.855
+        }
+      }
+    },
+    "exit_grid_benchmarks": [
+      {
+        "tp_multiplier": 2.0,
+        "sl_multiplier": 1.5,
+        "horizon_bars": 12,
+        "trade_count": 668,
+        "gross_win_rate_pct": 35.63,
+        "gross_expectancy_bps": 8.07,
+        "net_expectancy_bps": -0.01,
+        "profit_factor": 1.0
+      },
+      {
+        "tp_multiplier": 4.0,
+        "sl_multiplier": 1.5,
+        "horizon_bars": 12,
+        "trade_count": 548,
+        "gross_win_rate_pct": 11.86,
+        "gross_expectancy_bps": 8.11,
+        "net_expectancy_bps": -0.0,
+        "profit_factor": 1.0
+      },
+      {
+        "tp_multiplier": 4.0,
+        "sl_multiplier": 1.2,
+        "horizon_bars": 24,
+        "trade_count": 503,
+        "gross_win_rate_pct": 17.89,
+        "gross_expectancy_bps": 7.81,
+        "net_expectancy_bps": -0.33,
+        "profit_factor": 0.995
+      },
+      {
+        "tp_multiplier": 4.0,
+        "sl_multiplier": 1.2,
+        "horizon_bars": 36,
+        "trade_count": 484,
+        "gross_win_rate_pct": 21.9,
+        "gross_expectancy_bps": 7.31,
+        "net_expectancy_bps": -0.85,
+        "profit_factor": 0.987
+      },
+      {
+        "tp_multiplier": 2.5,
+        "sl_multiplier": 1.5,
+        "horizon_bars": 36,
+        "trade_count": 541,
+        "gross_win_rate_pct": 38.26,
+        "gross_expectancy_bps": 7.12,
+        "net_expectancy_bps": -1.0,
+        "profit_factor": 0.985
+      },
+      {
+        "tp_multiplier": 2.0,
+        "sl_multiplier": 1.0,
+        "horizon_bars": 24,
+        "trade_count": 731,
+        "gross_win_rate_pct": 37.62,
+        "gross_expectancy_bps": 6.96,
+        "net_expectancy_bps": -1.12,
+        "profit_factor": 0.979
+      },
+      {
+        "tp_multiplier": 3.0,
+        "sl_multiplier": 1.2,
+        "horizon_bars": 36,
+        "trade_count": 547,
+        "gross_win_rate_pct": 30.53,
+        "gross_expectancy_bps": 6.68,
+        "net_expectancy_bps": -1.43,
+        "profit_factor": 0.977
+      },
+      {
+        "tp_multiplier": 4.0,
+        "sl_multiplier": 1.5,
+        "horizon_bars": 24,
+        "trade_count": 460,
+        "gross_win_rate_pct": 18.91,
+        "gross_expectancy_bps": 6.4,
+        "net_expectancy_bps": -1.76,
+        "profit_factor": 0.974
+      },
+      {
+        "tp_multiplier": 2.0,
+        "sl_multiplier": 1.0,
+        "horizon_bars": 36,
+        "trade_count": 729,
+        "gross_win_rate_pct": 38.55,
+        "gross_expectancy_bps": 6.59,
+        "net_expectancy_bps": -1.49,
+        "profit_factor": 0.972
+      },
+      {
+        "tp_multiplier": 4.0,
+        "sl_multiplier": 1.2,
+        "horizon_bars": 12,
+        "trade_count": 581,
+        "gross_win_rate_pct": 11.02,
+        "gross_expectancy_bps": 6.57,
+        "net_expectancy_bps": -1.54,
+        "profit_factor": 0.972
+      }
+    ],
+    "optimal_exit_spec": {
+      "tp_multiplier": 2.0,
+      "sl_multiplier": 1.5,
+      "horizon_bars": 12,
+      "trade_count": 668,
+      "gross_win_rate_pct": 35.63,
+      "gross_expectancy_bps": 8.07,
+      "net_expectancy_bps": -0.01,
+      "profit_factor": 1.0
+    }
+  },
+  "stage_4_cost_sensitivity": {
+    "maker_passive": {
+      "round_trip_friction_bps": 8.0,
+      "aggregate_metrics": {
+        "trade_count": 5781,
+        "gross_win_rate_pct": 37.54,
+        "net_win_rate_pct": 45.23,
+        "tp_count": 2170,
+        "sl_count": 2777,
+        "exp_count": 834,
+        "gross_expectancy_bps": 1.95,
+        "net_expectancy_bps": -6.11,
+        "profit_factor": 0.887,
+        "sharpe_annualized": -1.116,
+        "sortino_annualized": -1.442
+      },
+      "per_asset": {
+        "BTCUSDT": {
+          "trade_count": 531,
+          "gross_win_rate_pct": 40.3,
+          "net_win_rate_pct": 43.69,
+          "tp_count": 214,
+          "sl_count": 284,
+          "exp_count": 33,
+          "gross_expectancy_bps": 0.15,
+          "net_expectancy_bps": -7.9,
+          "profit_factor": 0.748,
+          "sharpe_annualized": -3.272,
+          "sortino_annualized": -8.897
+        },
+        "ETHUSDT": {
+          "trade_count": 551,
+          "gross_win_rate_pct": 39.75,
+          "net_win_rate_pct": 45.37,
+          "tp_count": 219,
+          "sl_count": 284,
+          "exp_count": 48,
+          "gross_expectancy_bps": -0.12,
+          "net_expectancy_bps": -8.18,
+          "profit_factor": 0.825,
+          "sharpe_annualized": -2.17,
+          "sortino_annualized": -5.304
+        },
+        "BNBUSDT": {
+          "trade_count": 505,
+          "gross_win_rate_pct": 37.23,
+          "net_win_rate_pct": 41.78,
+          "tp_count": 188,
+          "sl_count": 269,
+          "exp_count": 48,
+          "gross_expectancy_bps": -1.87,
+          "net_expectancy_bps": -9.93,
+          "profit_factor": 0.76,
+          "sharpe_annualized": -3.118,
+          "sortino_annualized": -8.353
+        },
+        "XRPUSDT": {
+          "trade_count": 591,
+          "gross_win_rate_pct": 36.72,
+          "net_win_rate_pct": 47.04,
+          "tp_count": 217,
+          "sl_count": 258,
+          "exp_count": 116,
+          "gross_expectancy_bps": 0.64,
+          "net_expectancy_bps": -7.43,
+          "profit_factor": 0.89,
+          "sharpe_annualized": -0.952,
+          "sortino_annualized": -0.999
+        },
+        "ADAUSDT": {
+          "trade_count": 603,
+          "gross_win_rate_pct": 39.47,
+          "net_win_rate_pct": 47.43,
+          "tp_count": 238,
+          "sl_count": 264,
+          "exp_count": 101,
+          "gross_expectancy_bps": 7.88,
+          "net_expectancy_bps": -0.19,
+          "profit_factor": 0.997,
+          "sharpe_annualized": -0.031,
+          "sortino_annualized": -0.056
+        },
+        "SOLUSDT": {
+          "trade_count": 537,
+          "gross_win_rate_pct": 37.06,
+          "net_win_rate_pct": 42.83,
+          "tp_count": 199,
+          "sl_count": 284,
+          "exp_count": 54,
+          "gross_expectancy_bps": -1.9,
+          "net_expectancy_bps": -9.96,
+          "profit_factor": 0.818,
+          "sharpe_annualized": -2.138,
+          "sortino_annualized": -4.906
+        },
+        "AVAXUSDT": {
+          "trade_count": 597,
+          "gross_win_rate_pct": 36.01,
+          "net_win_rate_pct": 43.89,
+          "tp_count": 215,
+          "sl_count": 276,
+          "exp_count": 106,
+          "gross_expectancy_bps": 2.1,
+          "net_expectancy_bps": -5.97,
+          "profit_factor": 0.895,
+          "sharpe_annualized": -1.232,
+          "sortino_annualized": -3.079
+        },
+        "LINKUSDT": {
+          "trade_count": 668,
+          "gross_win_rate_pct": 35.63,
+          "net_win_rate_pct": 48.05,
+          "tp_count": 238,
+          "sl_count": 294,
+          "exp_count": 136,
+          "gross_expectancy_bps": 8.07,
+          "net_expectancy_bps": -0.01,
+          "profit_factor": 1.0,
+          "sharpe_annualized": -0.002,
+          "sortino_annualized": -0.006
+        },
+        "DOGEUSDT": {
+          "trade_count": 568,
+          "gross_win_rate_pct": 38.2,
+          "net_win_rate_pct": 46.3,
+          "tp_count": 217,
+          "sl_count": 272,
+          "exp_count": 79,
+          "gross_expectancy_bps": 4.63,
+          "net_expectancy_bps": -3.42,
+          "profit_factor": 0.936,
+          "sharpe_annualized": -0.714,
+          "sortino_annualized": -1.401
+        },
+        "LTCUSDT": {
+          "trade_count": 630,
+          "gross_win_rate_pct": 35.71,
+          "net_win_rate_pct": 44.76,
+          "tp_count": 225,
+          "sl_count": 292,
+          "exp_count": 113,
+          "gross_expectancy_bps": -1.87,
+          "net_expectancy_bps": -9.95,
+          "profit_factor": 0.852,
+          "sharpe_annualized": -1.173,
+          "sortino_annualized": -1.128
+        }
+      }
+    },
+    "hybrid_tier": {
+      "round_trip_friction_bps": 15.0,
+      "aggregate_metrics": {
+        "trade_count": 5781,
+        "gross_win_rate_pct": 37.54,
+        "net_win_rate_pct": 44.56,
+        "tp_count": 2170,
+        "sl_count": 2777,
+        "exp_count": 834,
+        "gross_expectancy_bps": 1.95,
+        "net_expectancy_bps": -13.11,
+        "profit_factor": 0.773,
+        "sharpe_annualized": -2.395,
+        "sortino_annualized": -3.093
+      },
+      "per_asset": {
+        "BTCUSDT": {
+          "trade_count": 531,
+          "gross_win_rate_pct": 40.3,
+          "net_win_rate_pct": 43.13,
+          "tp_count": 214,
+          "sl_count": 284,
+          "exp_count": 33,
+          "gross_expectancy_bps": 0.15,
+          "net_expectancy_bps": -14.9,
+          "profit_factor": 0.578,
+          "sharpe_annualized": -6.172,
+          "sortino_annualized": -16.3
+        },
+        "ETHUSDT": {
+          "trade_count": 551,
+          "gross_win_rate_pct": 39.75,
+          "net_win_rate_pct": 44.46,
+          "tp_count": 219,
+          "sl_count": 284,
+          "exp_count": 48,
+          "gross_expectancy_bps": -0.12,
+          "net_expectancy_bps": -15.18,
+          "profit_factor": 0.699,
+          "sharpe_annualized": -4.027,
+          "sortino_annualized": -9.508
+        },
+        "BNBUSDT": {
+          "trade_count": 505,
+          "gross_win_rate_pct": 37.23,
+          "net_win_rate_pct": 40.59,
+          "tp_count": 188,
+          "sl_count": 269,
+          "exp_count": 48,
+          "gross_expectancy_bps": -1.87,
+          "net_expectancy_bps": -16.93,
+          "profit_factor": 0.627,
+          "sharpe_annualized": -5.317,
+          "sortino_annualized": -13.513
+        },
+        "XRPUSDT": {
+          "trade_count": 591,
+          "gross_win_rate_pct": 36.72,
+          "net_win_rate_pct": 46.53,
+          "tp_count": 217,
+          "sl_count": 258,
+          "exp_count": 116,
+          "gross_expectancy_bps": 0.64,
+          "net_expectancy_bps": -14.43,
+          "profit_factor": 0.797,
+          "sharpe_annualized": -1.849,
+          "sortino_annualized": -1.946
+        },
+        "ADAUSDT": {
+          "trade_count": 603,
+          "gross_win_rate_pct": 39.47,
+          "net_win_rate_pct": 46.6,
+          "tp_count": 238,
+          "sl_count": 264,
+          "exp_count": 101,
+          "gross_expectancy_bps": 7.88,
+          "net_expectancy_bps": -7.19,
+          "profit_factor": 0.891,
+          "sharpe_annualized": -1.203,
+          "sortino_annualized": -2.139
+        },
+        "SOLUSDT": {
+          "trade_count": 537,
+          "gross_win_rate_pct": 37.06,
+          "net_win_rate_pct": 42.46,
+          "tp_count": 199,
+          "sl_count": 284,
+          "exp_count": 54,
+          "gross_expectancy_bps": -1.9,
+          "net_expectancy_bps": -16.96,
+          "profit_factor": 0.712,
+          "sharpe_annualized": -3.64,
+          "sortino_annualized": -8.273
+        },
+        "AVAXUSDT": {
+          "trade_count": 597,
+          "gross_win_rate_pct": 36.01,
+          "net_win_rate_pct": 43.55,
+          "tp_count": 215,
+          "sl_count": 276,
+          "exp_count": 106,
+          "gross_expectancy_bps": 2.1,
+          "net_expectancy_bps": -12.97,
+          "profit_factor": 0.786,
+          "sharpe_annualized": -2.676,
+          "sortino_annualized": -6.617
+        },
+        "LINKUSDT": {
+          "trade_count": 668,
+          "gross_win_rate_pct": 35.63,
+          "net_win_rate_pct": 47.01,
+          "tp_count": 238,
+          "sl_count": 294,
+          "exp_count": 136,
+          "gross_expectancy_bps": 8.07,
+          "net_expectancy_bps": -7.01,
+          "profit_factor": 0.877,
+          "sharpe_annualized": -1.437,
+          "sortino_annualized": -3.655
+        },
+        "DOGEUSDT": {
+          "trade_count": 568,
+          "gross_win_rate_pct": 38.2,
+          "net_win_rate_pct": 45.25,
+          "tp_count": 217,
+          "sl_count": 272,
+          "exp_count": 79,
+          "gross_expectancy_bps": 4.63,
+          "net_expectancy_bps": -10.42,
+          "profit_factor": 0.817,
+          "sharpe_annualized": -2.174,
+          "sortino_annualized": -4.193
+        },
+        "LTCUSDT": {
+          "trade_count": 630,
+          "gross_win_rate_pct": 35.71,
+          "net_win_rate_pct": 44.76,
+          "tp_count": 225,
+          "sl_count": 292,
+          "exp_count": 113,
+          "gross_expectancy_bps": -1.87,
+          "net_expectancy_bps": -16.95,
+          "profit_factor": 0.762,
+          "sharpe_annualized": -1.998,
+          "sortino_annualized": -1.922
+        }
+      }
+    },
+    "baseline_taker": {
+      "round_trip_friction_bps": 44.0,
+      "aggregate_metrics": {
+        "trade_count": 5781,
+        "gross_win_rate_pct": 37.54,
+        "net_win_rate_pct": 41.84,
+        "tp_count": 2170,
+        "sl_count": 2777,
+        "exp_count": 834,
+        "gross_expectancy_bps": 1.95,
+        "net_expectancy_bps": -42.11,
+        "profit_factor": 0.433,
+        "sharpe_annualized": -7.69,
+        "sortino_annualized": -9.877
+      },
+      "per_asset": {
+        "BTCUSDT": {
+          "trade_count": 531,
+          "gross_win_rate_pct": 40.3,
+          "net_win_rate_pct": 40.87,
+          "tp_count": 214,
+          "sl_count": 284,
+          "exp_count": 33,
+          "gross_expectancy_bps": 0.15,
+          "net_expectancy_bps": -43.9,
+          "profit_factor": 0.158,
+          "sharpe_annualized": -18.188,
+          "sortino_annualized": -40.686
+        },
+        "ETHUSDT": {
+          "trade_count": 551,
+          "gross_win_rate_pct": 39.75,
+          "net_win_rate_pct": 42.29,
+          "tp_count": 219,
+          "sl_count": 284,
+          "exp_count": 48,
+          "gross_expectancy_bps": -0.12,
+          "net_expectancy_bps": -44.18,
+          "profit_factor": 0.339,
+          "sharpe_annualized": -11.717,
+          "sortino_annualized": -24.833
+        },
+        "BNBUSDT": {
+          "trade_count": 505,
+          "gross_win_rate_pct": 37.23,
+          "net_win_rate_pct": 38.42,
+          "tp_count": 188,
+          "sl_count": 269,
+          "exp_count": 48,
+          "gross_expectancy_bps": -1.87,
+          "net_expectancy_bps": -45.93,
+          "profit_factor": 0.271,
+          "sharpe_annualized": -14.426,
+          "sortino_annualized": -32.672
+        },
+        "XRPUSDT": {
+          "trade_count": 591,
+          "gross_win_rate_pct": 36.72,
+          "net_win_rate_pct": 42.47,
+          "tp_count": 217,
+          "sl_count": 258,
+          "exp_count": 116,
+          "gross_expectancy_bps": 0.64,
+          "net_expectancy_bps": -43.43,
+          "profit_factor": 0.501,
+          "sharpe_annualized": -5.565,
+          "sortino_annualized": -5.935
+        },
+        "ADAUSDT": {
+          "trade_count": 603,
+          "gross_win_rate_pct": 39.47,
+          "net_win_rate_pct": 43.62,
+          "tp_count": 238,
+          "sl_count": 264,
+          "exp_count": 101,
+          "gross_expectancy_bps": 7.88,
+          "net_expectancy_bps": -36.19,
+          "profit_factor": 0.559,
+          "sharpe_annualized": -6.056,
+          "sortino_annualized": -10.314
+        },
+        "SOLUSDT": {
+          "trade_count": 537,
+          "gross_win_rate_pct": 37.06,
+          "net_win_rate_pct": 40.78,
+          "tp_count": 199,
+          "sl_count": 284,
+          "exp_count": 54,
+          "gross_expectancy_bps": -1.9,
+          "net_expectancy_bps": -45.96,
+          "profit_factor": 0.394,
+          "sharpe_annualized": -9.865,
+          "sortino_annualized": -21.285
+        },
+        "AVAXUSDT": {
+          "trade_count": 597,
+          "gross_win_rate_pct": 36.01,
+          "net_win_rate_pct": 40.7,
+          "tp_count": 215,
+          "sl_count": 276,
+          "exp_count": 106,
+          "gross_expectancy_bps": 2.1,
+          "net_expectancy_bps": -41.97,
+          "profit_factor": 0.458,
+          "sharpe_annualized": -8.659,
+          "sortino_annualized": -19.314
+        },
+        "LINKUSDT": {
+          "trade_count": 668,
+          "gross_win_rate_pct": 35.63,
+          "net_win_rate_pct": 42.96,
+          "tp_count": 238,
+          "sl_count": 294,
+          "exp_count": 136,
+          "gross_expectancy_bps": 8.07,
+          "net_expectancy_bps": -36.01,
+          "profit_factor": 0.507,
+          "sharpe_annualized": -7.379,
+          "sortino_annualized": -16.079
+        },
+        "DOGEUSDT": {
+          "trade_count": 568,
+          "gross_win_rate_pct": 38.2,
+          "net_win_rate_pct": 42.61,
+          "tp_count": 217,
+          "sl_count": 272,
+          "exp_count": 79,
+          "gross_expectancy_bps": 4.63,
+          "net_expectancy_bps": -39.42,
+          "profit_factor": 0.461,
+          "sharpe_annualized": -8.223,
+          "sortino_annualized": -14.963
+        },
+        "LTCUSDT": {
+          "trade_count": 630,
+          "gross_win_rate_pct": 35.71,
+          "net_win_rate_pct": 42.86,
+          "tp_count": 225,
+          "sl_count": 292,
+          "exp_count": 113,
+          "gross_expectancy_bps": -1.87,
+          "net_expectancy_bps": -45.95,
+          "profit_factor": 0.475,
+          "sharpe_annualized": -5.418,
+          "sortino_annualized": -5.261
+        }
+      }
+    }
+  },
+  "stage_5_portfolio_simulation": {
+    "maker_passive": {
+      "fee_tier": "maker_passive",
+      "initial_equity_usdt": 10000.0,
+      "ending_equity_usdt": 6933.82,
+      "total_net_pnl_usdt": -3066.18,
+      "net_return_pct": -30.66,
+      "total_portfolio_trades": 4525,
+      "total_candidate_trades": 5781,
+      "execution_fill_rate_pct": 78.27,
+      "avg_concurrency": 2.09,
+      "days_evaluated": 366,
+      "arithmetic_mean_daily_return_pct": -0.0987,
+      "geometric_mean_daily_return_pct": -0.1,
+      "median_daily_return_pct": 0.0,
+      "mean_rolling_7d_return_pct": -0.68,
+      "worst_rolling_7d_return_pct": -10.22,
+      "mean_rolling_30d_return_pct": -2.77,
+      "mean_rolling_90d_return_pct": -7.84,
+      "worst_single_day_loss_pct": -7.12,
+      "cagr_uncompounded_pct": -36.04,
+      "mean_underwater_drawdown_pct": 14.02,
+      "median_underwater_drawdown_pct": 12.08,
+      "max_drawdown_pct": 30.71,
+      "completed_drawdown_episodes_count": 0,
+      "average_episode_depth_pct": 0.0,
+      "mean_recovery_days": 0.0,
+      "sharpe_annualized": -3.718,
+      "sortino_annualized": -2.843,
+      "equity_curve": [
+        {
+          "timestamp_ms": 1738177500000,
+          "equity_usdt": 10000.0
+        },
+        {
+          "timestamp_ms": 1738627200000,
+          "equity_usdt": 9716.02
+        },
+        {
+          "timestamp_ms": 1739145600000,
+          "equity_usdt": 9560.01
+        },
+        {
+          "timestamp_ms": 1739664000000,
+          "equity_usdt": 9579.06
+        },
+        {
+          "timestamp_ms": 1740182400000,
+          "equity_usdt": 9586.79
+        },
+        {
+          "timestamp_ms": 1740700800000,
+          "equity_usdt": 9524.94
+        },
+        {
+          "timestamp_ms": 1741219200000,
+          "equity_usdt": 9235.97
+        },
+        {
+          "timestamp_ms": 1741737600000,
+          "equity_usdt": 9035.93
+        },
+        {
+          "timestamp_ms": 1742256000000,
+          "equity_usdt": 8913.11
+        },
+        {
+          "timestamp_ms": 1742774400000,
+          "equity_usdt": 8925.24
+        },
+        {
+          "timestamp_ms": 1743292800000,
+          "equity_usdt": 9020.02
+        },
+        {
+          "timestamp_ms": 1743811200000,
+          "equity_usdt": 8991.74
+        },
+        {
+          "timestamp_ms": 1744329600000,
+          "equity_usdt": 8842.1
+        },
+        {
+          "timestamp_ms": 1744848000000,
+          "equity_usdt": 8916.82
+        },
+        {
+          "timestamp_ms": 1745366400000,
+          "equity_usdt": 8902.98
+        },
+        {
+          "timestamp_ms": 1745884800000,
+          "equity_usdt": 8929.82
+        },
+        {
+          "timestamp_ms": 1746403200000,
+          "equity_usdt": 8936.14
+        },
+        {
+          "timestamp_ms": 1746921600000,
+          "equity_usdt": 8817.1
+        },
+        {
+          "timestamp_ms": 1747440000000,
+          "equity_usdt": 8707.95
+        },
+        {
+          "timestamp_ms": 1747958400000,
+          "equity_usdt": 8689.59
+        },
+        {
+          "timestamp_ms": 1748476800000,
+          "equity_usdt": 8673.65
+        },
+        {
+          "timestamp_ms": 1748995200000,
+          "equity_usdt": 8697.88
+        },
+        {
+          "timestamp_ms": 1749513600000,
+          "equity_usdt": 8684.27
+        },
+        {
+          "timestamp_ms": 1750032000000,
+          "equity_usdt": 8636.33
+        },
+        {
+          "timestamp_ms": 1750550400000,
+          "equity_usdt": 8636.27
+        },
+        {
+          "timestamp_ms": 1751068800000,
+          "equity_usdt": 8636.28
+        },
+        {
+          "timestamp_ms": 1751587200000,
+          "equity_usdt": 8664.09
+        },
+        {
+          "timestamp_ms": 1752105600000,
+          "equity_usdt": 8676.81
+        },
+        {
+          "timestamp_ms": 1752624000000,
+          "equity_usdt": 8594.61
+        },
+        {
+          "timestamp_ms": 1753142400000,
+          "equity_usdt": 8601.08
+        },
+        {
+          "timestamp_ms": 1753660800000,
+          "equity_usdt": 8561.82
+        },
+        {
+          "timestamp_ms": 1754179200000,
+          "equity_usdt": 8564.55
+        },
+        {
+          "timestamp_ms": 1754697600000,
+          "equity_usdt": 8591.15
+        },
+        {
+          "timestamp_ms": 1755216000000,
+          "equity_usdt": 8633.1
+        },
+        {
+          "timestamp_ms": 1755734400000,
+          "equity_usdt": 8625.76
+        },
+        {
+          "timestamp_ms": 1756252800000,
+          "equity_usdt": 8593.02
+        },
+        {
+          "timestamp_ms": 1756771200000,
+          "equity_usdt": 8594.46
+        },
+        {
+          "timestamp_ms": 1757289600000,
+          "equity_usdt": 8597.84
+        },
+        {
+          "timestamp_ms": 1757808000000,
+          "equity_usdt": 8590.95
+        },
+        {
+          "timestamp_ms": 1758326400000,
+          "equity_usdt": 8653.49
+        },
+        {
+          "timestamp_ms": 1758844800000,
+          "equity_usdt": 8621.57
+        },
+        {
+          "timestamp_ms": 1759363200000,
+          "equity_usdt": 8601.82
+        },
+        {
+          "timestamp_ms": 1759881600000,
+          "equity_usdt": 8566.47
+        },
+        {
+          "timestamp_ms": 1760400000000,
+          "equity_usdt": 7783.66
+        },
+        {
+          "timestamp_ms": 1760918400000,
+          "equity_usdt": 7486.04
+        },
+        {
+          "timestamp_ms": 1761436800000,
+          "equity_usdt": 7483.53
+        },
+        {
+          "timestamp_ms": 1761955200000,
+          "equity_usdt": 7516.34
+        },
+        {
+          "timestamp_ms": 1762473600000,
+          "equity_usdt": 7340.05
+        },
+        {
+          "timestamp_ms": 1762992000000,
+          "equity_usdt": 7300.99
+        },
+        {
+          "timestamp_ms": 1763510400000,
+          "equity_usdt": 7348.62
+        },
+        {
+          "timestamp_ms": 1764028800000,
+          "equity_usdt": 7195.99
+        },
+        {
+          "timestamp_ms": 1764547200000,
+          "equity_usdt": 7179.19
+        },
+        {
+          "timestamp_ms": 1765065600000,
+          "equity_usdt": 7145.8
+        },
+        {
+          "timestamp_ms": 1765584000000,
+          "equity_usdt": 7108.36
+        },
+        {
+          "timestamp_ms": 1766102400000,
+          "equity_usdt": 7054.7
+        },
+        {
+          "timestamp_ms": 1766620800000,
+          "equity_usdt": 7044.0
+        },
+        {
+          "timestamp_ms": 1767139200000,
+          "equity_usdt": 7044.0
+        },
+        {
+          "timestamp_ms": 1767657600000,
+          "equity_usdt": 7029.08
+        },
+        {
+          "timestamp_ms": 1768176000000,
+          "equity_usdt": 6996.76
+        },
+        {
+          "timestamp_ms": 1768694400000,
+          "equity_usdt": 6988.21
+        },
+        {
+          "timestamp_ms": 1769212800000,
+          "equity_usdt": 6934.71
+        },
+        {
+          "timestamp_ms": 1769718900000,
+          "equity_usdt": 6933.82
+        }
+      ]
+    },
+    "hybrid_tier": {
+      "fee_tier": "hybrid_tier",
+      "initial_equity_usdt": 10000.0,
+      "ending_equity_usdt": 5051.68,
+      "total_net_pnl_usdt": -4948.32,
+      "net_return_pct": -49.48,
+      "total_portfolio_trades": 4525,
+      "total_candidate_trades": 5781,
+      "execution_fill_rate_pct": 78.27,
+      "avg_concurrency": 2.09,
+      "days_evaluated": 366,
+      "arithmetic_mean_daily_return_pct": -0.1847,
+      "geometric_mean_daily_return_pct": -0.1864,
+      "median_daily_return_pct": 0.0,
+      "mean_rolling_7d_return_pct": -1.28,
+      "worst_rolling_7d_return_pct": -12.47,
+      "mean_rolling_30d_return_pct": -5.15,
+      "mean_rolling_90d_return_pct": -13.87,
+      "worst_single_day_loss_pct": -7.41,
+      "cagr_uncompounded_pct": -67.46,
+      "mean_underwater_drawdown_pct": 25.67,
+      "median_underwater_drawdown_pct": 24.92,
+      "max_drawdown_pct": 49.52,
+      "completed_drawdown_episodes_count": 0,
+      "average_episode_depth_pct": 0.0,
+      "mean_recovery_days": 0.0,
+      "sharpe_annualized": -6.134,
+      "sortino_annualized": -4.859,
+      "equity_curve": [
+        {
+          "timestamp_ms": 1738177500000,
+          "equity_usdt": 10000.0
+        },
+        {
+          "timestamp_ms": 1738627200000,
+          "equity_usdt": 9573.55
+        },
+        {
+          "timestamp_ms": 1739145600000,
+          "equity_usdt": 9283.65
+        },
+        {
+          "timestamp_ms": 1739664000000,
+          "equity_usdt": 9206.92
+        },
+        {
+          "timestamp_ms": 1740182400000,
+          "equity_usdt": 9165.46
+        },
+        {
+          "timestamp_ms": 1740700800000,
+          "equity_usdt": 8991.03
+        },
+        {
+          "timestamp_ms": 1741219200000,
+          "equity_usdt": 8522.75
+        },
+        {
+          "timestamp_ms": 1741737600000,
+          "equity_usdt": 8208.41
+        },
+        {
+          "timestamp_ms": 1742256000000,
+          "equity_usdt": 8045.98
+        },
+        {
+          "timestamp_ms": 1742774400000,
+          "equity_usdt": 8036.64
+        },
+        {
+          "timestamp_ms": 1743292800000,
+          "equity_usdt": 8054.07
+        },
+        {
+          "timestamp_ms": 1743811200000,
+          "equity_usdt": 7915.54
+        },
+        {
+          "timestamp_ms": 1744329600000,
+          "equity_usdt": 7638.06
+        },
+        {
+          "timestamp_ms": 1744848000000,
+          "equity_usdt": 7680.0
+        },
+        {
+          "timestamp_ms": 1745366400000,
+          "equity_usdt": 7663.79
+        },
+        {
+          "timestamp_ms": 1745884800000,
+          "equity_usdt": 7675.6
+        },
+        {
+          "timestamp_ms": 1746403200000,
+          "equity_usdt": 7680.5
+        },
+        {
+          "timestamp_ms": 1746921600000,
+          "equity_usdt": 7550.64
+        },
+        {
+          "timestamp_ms": 1747440000000,
+          "equity_usdt": 7405.12
+        },
+        {
+          "timestamp_ms": 1747958400000,
+          "equity_usdt": 7367.81
+        },
+        {
+          "timestamp_ms": 1748476800000,
+          "equity_usdt": 7343.49
+        },
+        {
+          "timestamp_ms": 1748995200000,
+          "equity_usdt": 7348.56
+        },
+        {
+          "timestamp_ms": 1749513600000,
+          "equity_usdt": 7323.22
+        },
+        {
+          "timestamp_ms": 1750032000000,
+          "equity_usdt": 7265.48
+        },
+        {
+          "timestamp_ms": 1750550400000,
+          "equity_usdt": 7253.74
+        },
+        {
+          "timestamp_ms": 1751068800000,
+          "equity_usdt": 7224.86
+        },
+        {
+          "timestamp_ms": 1751587200000,
+          "equity_usdt": 7245.08
+        },
+        {
+          "timestamp_ms": 1752105600000,
+          "equity_usdt": 7253.69
+        },
+        {
+          "timestamp_ms": 1752624000000,
+          "equity_usdt": 7162.36
+        },
+        {
+          "timestamp_ms": 1753142400000,
+          "equity_usdt": 7106.81
+        },
+        {
+          "timestamp_ms": 1753660800000,
+          "equity_usdt": 7025.51
+        },
+        {
+          "timestamp_ms": 1754179200000,
+          "equity_usdt": 7019.39
+        },
+        {
+          "timestamp_ms": 1754697600000,
+          "equity_usdt": 7034.3
+        },
+        {
+          "timestamp_ms": 1755216000000,
+          "equity_usdt": 7041.49
+        },
+        {
+          "timestamp_ms": 1755734400000,
+          "equity_usdt": 7015.83
+        },
+        {
+          "timestamp_ms": 1756252800000,
+          "equity_usdt": 6969.65
+        },
+        {
+          "timestamp_ms": 1756771200000,
+          "equity_usdt": 6965.95
+        },
+        {
+          "timestamp_ms": 1757289600000,
+          "equity_usdt": 6968.2
+        },
+        {
+          "timestamp_ms": 1757808000000,
+          "equity_usdt": 6957.74
+        },
+        {
+          "timestamp_ms": 1758326400000,
+          "equity_usdt": 6996.63
+        },
+        {
+          "timestamp_ms": 1758844800000,
+          "equity_usdt": 6940.15
+        },
+        {
+          "timestamp_ms": 1759363200000,
+          "equity_usdt": 6920.86
+        },
+        {
+          "timestamp_ms": 1759881600000,
+          "equity_usdt": 6864.96
+        },
+        {
+          "timestamp_ms": 1760400000000,
+          "equity_usdt": 6125.27
+        },
+        {
+          "timestamp_ms": 1760918400000,
+          "equity_usdt": 5810.74
+        },
+        {
+          "timestamp_ms": 1761436800000,
+          "equity_usdt": 5788.91
+        },
+        {
+          "timestamp_ms": 1761955200000,
+          "equity_usdt": 5800.88
+        },
+        {
+          "timestamp_ms": 1762473600000,
+          "equity_usdt": 5618.21
+        },
+        {
+          "timestamp_ms": 1762992000000,
+          "equity_usdt": 5550.5
+        },
+        {
+          "timestamp_ms": 1763510400000,
+          "equity_usdt": 5521.01
+        },
+        {
+          "timestamp_ms": 1764028800000,
+          "equity_usdt": 5354.36
+        },
+        {
+          "timestamp_ms": 1764547200000,
+          "equity_usdt": 5338.49
+        },
+        {
+          "timestamp_ms": 1765065600000,
+          "equity_usdt": 5290.27
+        },
+        {
+          "timestamp_ms": 1765584000000,
+          "equity_usdt": 5238.29
+        },
+        {
+          "timestamp_ms": 1766102400000,
+          "equity_usdt": 5170.8
+        },
+        {
+          "timestamp_ms": 1766620800000,
+          "equity_usdt": 5158.62
+        },
+        {
+          "timestamp_ms": 1767139200000,
+          "equity_usdt": 5158.62
+        },
+        {
+          "timestamp_ms": 1767657600000,
+          "equity_usdt": 5145.17
+        },
+        {
+          "timestamp_ms": 1768176000000,
+          "equity_usdt": 5113.99
+        },
+        {
+          "timestamp_ms": 1768694400000,
+          "equity_usdt": 5104.88
+        },
+        {
+          "timestamp_ms": 1769212800000,
+          "equity_usdt": 5054.11
+        },
+        {
+          "timestamp_ms": 1769718900000,
+          "equity_usdt": 5051.68
+        }
+      ]
+    },
+    "baseline_taker": {
+      "fee_tier": "baseline_taker",
+      "initial_equity_usdt": 10000.0,
+      "ending_equity_usdt": 1359.65,
+      "total_net_pnl_usdt": -8640.35,
+      "net_return_pct": -86.4,
+      "total_portfolio_trades": 4524,
+      "total_candidate_trades": 5781,
+      "execution_fill_rate_pct": 78.26,
+      "avg_concurrency": 2.09,
+      "days_evaluated": 366,
+      "arithmetic_mean_daily_return_pct": -0.5385,
+      "geometric_mean_daily_return_pct": -0.5437,
+      "median_daily_return_pct": -0.1159,
+      "mean_rolling_7d_return_pct": -3.66,
+      "worst_rolling_7d_return_pct": -21.24,
+      "mean_rolling_30d_return_pct": -14.12,
+      "mean_rolling_90d_return_pct": -34.37,
+      "worst_single_day_loss_pct": -8.63,
+      "cagr_uncompounded_pct": -196.69,
+      "mean_underwater_drawdown_pct": 55.82,
+      "median_underwater_drawdown_pct": 61.02,
+      "max_drawdown_pct": 86.41,
+      "completed_drawdown_episodes_count": 0,
+      "average_episode_depth_pct": 0.0,
+      "mean_recovery_days": 0.0,
+      "sharpe_annualized": -10.233,
+      "sortino_annualized": -8.9,
+      "equity_curve": [
+        {
+          "timestamp_ms": 1738177500000,
+          "equity_usdt": 10000.0
+        },
+        {
+          "timestamp_ms": 1738627200000,
+          "equity_usdt": 9005.01
+        },
+        {
+          "timestamp_ms": 1739145600000,
+          "equity_usdt": 8220.87
+        },
+        {
+          "timestamp_ms": 1739664000000,
+          "equity_usdt": 7812.51
+        },
+        {
+          "timestamp_ms": 1740182400000,
+          "equity_usdt": 7607.75
+        },
+        {
+          "timestamp_ms": 1740700800000,
+          "equity_usdt": 7079.09
+        },
+        {
+          "timestamp_ms": 1741219200000,
+          "equity_usdt": 6108.55
+        },
+        {
+          "timestamp_ms": 1741737600000,
+          "equity_usdt": 5513.01
+        },
+        {
+          "timestamp_ms": 1742256000000,
+          "equity_usdt": 5264.61
+        },
+        {
+          "timestamp_ms": 1742774400000,
+          "equity_usdt": 5203.86
+        },
+        {
+          "timestamp_ms": 1743292800000,
+          "equity_usdt": 5036.79
+        },
+        {
+          "timestamp_ms": 1743811200000,
+          "equity_usdt": 4667.06
+        },
+        {
+          "timestamp_ms": 1744329600000,
+          "equity_usdt": 4164.07
+        },
+        {
+          "timestamp_ms": 1744848000000,
+          "equity_usdt": 4136.25
+        },
+        {
+          "timestamp_ms": 1745366400000,
+          "equity_usdt": 4117.95
+        },
+        {
+          "timestamp_ms": 1745884800000,
+          "equity_usdt": 4099.25
+        },
+        {
+          "timestamp_ms": 1746403200000,
+          "equity_usdt": 4100.68
+        },
+        {
+          "timestamp_ms": 1746921600000,
+          "equity_usdt": 3970.96
+        },
+        {
+          "timestamp_ms": 1747440000000,
+          "equity_usdt": 3783.02
+        },
+        {
+          "timestamp_ms": 1747958400000,
+          "equity_usdt": 3718.37
+        },
+        {
+          "timestamp_ms": 1748476800000,
+          "equity_usdt": 3683.58
+        },
+        {
+          "timestamp_ms": 1748995200000,
+          "equity_usdt": 3654.18
+        },
+        {
+          "timestamp_ms": 1749513600000,
+          "equity_usdt": 3613.17
+        },
+        {
+          "timestamp_ms": 1750032000000,
+          "equity_usdt": 3549.5
+        },
+        {
+          "timestamp_ms": 1750550400000,
+          "equity_usdt": 3520.2
+        },
+        {
+          "timestamp_ms": 1751068800000,
+          "equity_usdt": 3448.68
+        },
+        {
+          "timestamp_ms": 1751587200000,
+          "equity_usdt": 3452.32
+        },
+        {
+          "timestamp_ms": 1752105600000,
+          "equity_usdt": 3452.41
+        },
+        {
+          "timestamp_ms": 1752624000000,
+          "equity_usdt": 3364.71
+        },
+        {
+          "timestamp_ms": 1753142400000,
+          "equity_usdt": 3222.53
+        },
+        {
+          "timestamp_ms": 1753660800000,
+          "equity_usdt": 3095.47
+        },
+        {
+          "timestamp_ms": 1754179200000,
+          "equity_usdt": 3077.56
+        },
+        {
+          "timestamp_ms": 1754697600000,
+          "equity_usdt": 3071.6
+        },
+        {
+          "timestamp_ms": 1755216000000,
+          "equity_usdt": 3026.08
+        },
+        {
+          "timestamp_ms": 1755734400000,
+          "equity_usdt": 2980.26
+        },
+        {
+          "timestamp_ms": 1756252800000,
+          "equity_usdt": 2926.48
+        },
+        {
+          "timestamp_ms": 1756771200000,
+          "equity_usdt": 2916.45
+        },
+        {
+          "timestamp_ms": 1757289600000,
+          "equity_usdt": 2916.55
+        },
+        {
+          "timestamp_ms": 1757808000000,
+          "equity_usdt": 2903.74
+        },
+        {
+          "timestamp_ms": 1758326400000,
+          "equity_usdt": 2899.71
+        },
+        {
+          "timestamp_ms": 1758844800000,
+          "equity_usdt": 2824.21
+        },
+        {
+          "timestamp_ms": 1759363200000,
+          "equity_usdt": 2810.65
+        },
+        {
+          "timestamp_ms": 1759881600000,
+          "equity_usdt": 2742.23
+        },
+        {
+          "timestamp_ms": 1760400000000,
+          "equity_usdt": 2269.17
+        },
+        {
+          "timestamp_ms": 1760918400000,
+          "equity_usdt": 2033.6
+        },
+        {
+          "timestamp_ms": 1761436800000,
+          "equity_usdt": 1997.37
+        },
+        {
+          "timestamp_ms": 1761955200000,
+          "equity_usdt": 1982.43
+        },
+        {
+          "timestamp_ms": 1762473600000,
+          "equity_usdt": 1855.37
+        },
+        {
+          "timestamp_ms": 1762992000000,
+          "equity_usdt": 1782.15
+        },
+        {
+          "timestamp_ms": 1763510400000,
+          "equity_usdt": 1687.87
+        },
+        {
+          "timestamp_ms": 1764028800000,
+          "equity_usdt": 1572.65
+        },
+        {
+          "timestamp_ms": 1764547200000,
+          "equity_usdt": 1563.9
+        },
+        {
+          "timestamp_ms": 1765065600000,
+          "equity_usdt": 1521.7
+        },
+        {
+          "timestamp_ms": 1765584000000,
+          "equity_usdt": 1478.17
+        },
+        {
+          "timestamp_ms": 1766102400000,
+          "equity_usdt": 1426.88
+        },
+        {
+          "timestamp_ms": 1766620800000,
+          "equity_usdt": 1418.57
+        },
+        {
+          "timestamp_ms": 1767139200000,
+          "equity_usdt": 1418.57
+        },
+        {
+          "timestamp_ms": 1767657600000,
+          "equity_usdt": 1412.0
+        },
+        {
+          "timestamp_ms": 1768176000000,
+          "equity_usdt": 1394.92
+        },
+        {
+          "timestamp_ms": 1768694400000,
+          "equity_usdt": 1389.2
+        },
+        {
+          "timestamp_ms": 1769212800000,
+          "equity_usdt": 1362.27
+        },
+        {
+          "timestamp_ms": 1769718900000,
+          "equity_usdt": 1359.65
+        }
+      ]
+    }
+  },
+  "stage_6_walk_forward_robustness": {
+    "fold_1": {
+      "total_trades": 2163,
+      "net_return_pct": -10.7,
+      "arithmetic_mean_daily_return_pct": -0.1258,
+      "max_drawdown_pct": 11.72,
+      "mean_underwater_drawdown_pct": 7.08,
+      "sharpe": -4.751
+    },
+    "fold_2": {
+      "total_trades": 668,
+      "net_return_pct": -3.87,
+      "arithmetic_mean_daily_return_pct": -0.0435,
+      "max_drawdown_pct": 4.52,
+      "mean_underwater_drawdown_pct": 3.02,
+      "sharpe": -3.045
+    },
+    "fold_3": {
+      "total_trades": 860,
+      "net_return_pct": -12.72,
+      "arithmetic_mean_daily_return_pct": -0.143,
+      "max_drawdown_pct": 14.01,
+      "mean_underwater_drawdown_pct": 6.38,
+      "sharpe": -3.454
+    },
+    "fold_4": {
+      "total_trades": 838,
+      "net_return_pct": -7.33,
+      "arithmetic_mean_daily_return_pct": -0.0823,
+      "max_drawdown_pct": 7.75,
+      "mean_underwater_drawdown_pct": 3.66,
+      "sharpe": -5.803
+    }
+  },
+  "xmr_standalone_appendix": {
+    "xmr_sweep": [
+      {
+        "vol_quantile": 0.7,
+        "prob_margin": 0.15,
+        "trades": 154,
+        "gross_win_rate_pct": 37.01,
+        "gross_expectancy_bps": 6.16,
+        "net_expectancy_bps": -1.9,
+        "profit_factor": 0.94
+      },
+      {
+        "vol_quantile": 0.7,
+        "prob_margin": 0.2,
+        "trades": 128,
+        "gross_win_rate_pct": 38.28,
+        "gross_expectancy_bps": 10.22,
+        "net_expectancy_bps": 2.15,
+        "profit_factor": 1.071
+      },
+      {
+        "vol_quantile": 0.7,
+        "prob_margin": 0.25,
+        "trades": 107,
+        "gross_win_rate_pct": 39.25,
+        "gross_expectancy_bps": 6.44,
+        "net_expectancy_bps": -1.63,
+        "profit_factor": 0.95
+      },
+      {
+        "vol_quantile": 0.85,
+        "prob_margin": 0.15,
+        "trades": 26,
+        "gross_win_rate_pct": 26.92,
+        "gross_expectancy_bps": -14.88,
+        "net_expectancy_bps": -22.96,
+        "profit_factor": 0.56
+      },
+      {
+        "vol_quantile": 0.85,
+        "prob_margin": 0.2,
+        "trades": 21,
+        "gross_win_rate_pct": 23.81,
+        "gross_expectancy_bps": -5.46,
+        "net_expectancy_bps": -13.56,
+        "profit_factor": 0.698
+      },
+      {
+        "vol_quantile": 0.85,
+        "prob_margin": 0.25,
+        "trades": 18,
+        "gross_win_rate_pct": 16.67,
+        "gross_expectancy_bps": -18.48,
+        "net_expectancy_bps": -26.54,
+        "profit_factor": 0.481
+      },
+      {
+        "vol_quantile": 0.9,
+        "prob_margin": 0.15,
+        "trades": 11,
+        "gross_win_rate_pct": 36.36,
+        "gross_expectancy_bps": 44.84,
+        "net_expectancy_bps": 36.75,
+        "profit_factor": 1.721
+      },
+      {
+        "vol_quantile": 0.9,
+        "prob_margin": 0.2,
+        "trades": 11,
+        "gross_win_rate_pct": 36.36,
+        "gross_expectancy_bps": 44.84,
+        "net_expectancy_bps": 36.75,
+        "profit_factor": 1.721
+      },
+      {
+        "vol_quantile": 0.9,
+        "prob_margin": 0.25,
+        "trades": 10,
+        "gross_win_rate_pct": 40.0,
+        "gross_expectancy_bps": 34.03,
+        "net_expectancy_bps": 26.03,
+        "profit_factor": 1.444
+      },
+      {
+        "vol_quantile": 0.95,
+        "prob_margin": 0.15,
+        "trades": 4,
+        "gross_win_rate_pct": 0.0,
+        "gross_expectancy_bps": -125.42,
+        "net_expectancy_bps": -133.67,
+        "profit_factor": 0.092
+      },
+      {
+        "vol_quantile": 0.95,
+        "prob_margin": 0.2,
+        "trades": 3,
+        "gross_win_rate_pct": 0.0,
+        "gross_expectancy_bps": -107.53,
+        "net_expectancy_bps": -115.86,
+        "profit_factor": 0.134
+      },
+      {
+        "vol_quantile": 0.95,
+        "prob_margin": 0.25,
+        "trades": 3,
+        "gross_win_rate_pct": 0.0,
+        "gross_expectancy_bps": -134.51,
+        "net_expectancy_bps": -142.51,
+        "profit_factor": 0.0
+      }
+    ],
+    "best_configuration": {
+      "vol_quantile": 0.9,
+      "prob_margin": 0.15,
+      "trades": 11,
+      "gross_win_rate_pct": 36.36,
+      "gross_expectancy_bps": 44.84,
+      "net_expectancy_bps": 36.75,
+      "profit_factor": 1.721
+    }
+  }
+}

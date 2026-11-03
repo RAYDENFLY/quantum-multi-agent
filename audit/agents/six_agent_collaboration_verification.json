@@ -1,0 +1,13 @@
+{
+  "strategy_id": "STRAT_242",
+  "config_hash": "b02f17c3e006c2c9",
+  "pipeline_run_id": "run_STRAT_242_b02f17c3e006c2c9_1750000000000",
+  "scout_action": "PROCEED",
+  "analyst_action": "PROCEED",
+  "analyst_regime": "MEAN_REVERT_RANGE",
+  "sniper_action": "PROPOSE_TRADE",
+  "risk_decision": "APPROVED",
+  "approved_notional_usdt": 30.0,
+  "banker_state": "OPEN",
+  "banker_action": "HOLD"
+}
