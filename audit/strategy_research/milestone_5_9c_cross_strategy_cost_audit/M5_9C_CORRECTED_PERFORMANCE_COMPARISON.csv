@@ -1,0 +1,11 @@
+milestone,strategy,reported_mean_daily_return_pct,reported_net_expectancy_bps,corrected_daily_return_bybit_vip0_pct,corrected_net_expectancy_bybit_vip0_bps,corrected_daily_return_aster_retail_pct,corrected_net_expectancy_aster_retail_bps,zero_fee_gross_daily_return_pct,zero_fee_gross_expectancy_bps,target_3pct_met,disqualification_verdict
+M3,STRAT_242 (True Historical),0.1216,7.33,0.0025,1.89,-0.073,-10.8,0.0422,15.42,False,DISQUALIFIED: Collapsed from +44.4% to +0.90%/year under VIP0; 1200x below 3% mandate
+M4,300-Fleet Aggregate,-0.051,-7.45,-0.051,-7.45,-0.198,-22.5,0.0164,5.98,False,DISQUALIFIED: Mixed failure; friction consumes 224% of gross edge; 50% choppy trades
+M5.2,EXP-03 (Triple Barrier),0.988,13.28,0.036,13.28,-0.012,-4.2,0.0756,27.6,False,DISQUALIFIED: Unrealistic geometric compounding artifact; at 1.0x unlevered delivers only ~0.04%/day
+M5.4,HYP-01 Baseline (EXP-08),0.55,11.36,0.021,7.8,-0.045,-8.5,0.052,21.3,False,"DISQUALIFIED: Under realistic causal execution, net daily return fails the 3.00% target by 140x"
+M5.5,Portfolio A (Reported),1.864,23.28,-0.1449,-17.99,-0.385,-32.5,-0.0396,-4.92,False,DISQUALIFIED: Reported return was an intra-bar lookahead phantom; true causal return is negative
+M5.6,Portfolio A Forensic Audit,-0.1449,-17.99,-0.1449,-17.99,-0.385,-32.5,-0.0396,-4.92,False,DISQUALIFIED: Max drawdown 80.03%; account ruins within 118 days; negative gross alpha
+M5.7,Portfolio A Active Period (118d),-1.35,-17.99,-1.35,-17.99,-3.58,-32.5,-0.369,-4.92,False,DISQUALIFIED: Active trading lost -1.35%/day simple (-2.01%/day geom); terminal equity $19.96
+M5.8A,Portfolio A Active Trades Ledger,-2.0068,-17.99,-2.0068,-17.99,-4.12,-32.5,-0.55,-4.92,False,DISQUALIFIED: 100% bootstrap ruin probability; $57.29 fees on $100 equity; negative gross alpha
+M5.9,Track C SOLUSDT/LTCUSDT (Backtest),-0.0044,-5.02,-0.0026,-5.02,-0.0112,-21.96,0.001,1.96,False,DISQUALIFIED: Cointegration rejected; fees 3.5x to 12x gross alpha; gross return only +0.37%/year
+M5.9B,Track C SOLUSDT/LTCUSDT (Attribution),-0.0026,-5.02,-0.0026,-5.02,-0.0112,-21.96,0.001,1.96,False,"DISQUALIFIED: Arithmetic identity verified; zero fees yields +0.37% APR, 3000x below 3.00%/day target"

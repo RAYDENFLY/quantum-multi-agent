@@ -1,0 +1,12 @@
+milestone,strategy_id,asset_universe,strategy_family,initial_equity_usd,max_symbol_weight_wmax,max_concurrent_positions,margin_allocated_per_pos_usd,single_leg_notional_usd,aggregate_gross_exposure_cap,max_observed_gross_leverage,min_notional_rule_usd,turnover_multiplier_per_trade,total_trades,gross_turnover_usd,sizing_compliance
+M3,STRAT_242 (Batch 003),11 Major Altcoins,Directional Momentum,100.0,0.25,4,25.0,25.0,1.0,1.0015,5.0,2.0,1580,79000.0,PASSED_WITH_MINOR_TOLERANCE
+M4,Fleet Aggregate (300 Strats),11 Major Altcoins,Fleet Momentum Diagnostics,100.0,0.25,4,25.0,25.0,1.0,1.0,5.0,2.0,551936,27596800.0,PASSED
+M5.2,EXP-03 (Triple Barrier),11 Major Altcoins,Multi-Timeframe Momentum,100.0,1.0,1,Unbounded Compounding,Equity-scaled (Millions),Unconstrained,Unconstrained Compounding,5.0,2.0,20537,Billions (Paper),FAILED (Unrealistic compounding leverage without venue liquidity cap)
+M5.4,HYP-01 Baseline (EXP-08),11 Major Altcoins,Directional Sweep & Reclaim,100.0,0.25,4,25.0,25.0,1.0,0.7508,5.0,2.0,3982,199100.0,PASSED (Strictly unlevered)
+M5.5,Portfolio A (EXP-09/10/11),11 Major Altcoins,Unlevered Ensemble,100.0,0.25,4,25.0,25.0,1.0,0.7508,5.0,2.0,3982,199100.0,PASSED (Strictly unlevered)
+M5.6,Portfolio A Forensic Audit,11 Major Altcoins,Forensic Causal Benchmark,100.0,0.25,4,25.0,25.0,1.0,0.7508,5.0,2.0,3982,199100.0,"PASSED (Strictly unlevered, discovered starvation halt at Eq < $20)"
+M5.7,Portfolio A Active Reconstruction,11 Major Altcoins,Data Provenance Reconstruction,100.0,0.25,4,25.0,25.0,1.0,0.7508,5.0,2.0,3562,178100.0,PASSED (Verified 118-day active period)
+M5.8A,Portfolio A Survival Reconstructed,11 Major Altcoins,Survival Accounting Audit,100.0,0.25,4,25.0,25.0,1.0,0.7508,5.0,2.0,3562,178100.0,PASSED (Full trade-by-trade cash and MTM balance reconciliation)
+M5.8B,Track C Research Design,45 Pair Combinations (10 Assets),Statistical Arbitrage Pairs,100.0,0.5,2,50.0,50.0,1.0,1.0,5.0,4.0,0,0.0,PASSED (Design Phase)
+M5.9,Track C SOLUSDT/LTCUSDT Backtest,SOLUSDT & LTCUSDT,Statistical Arbitrage Pairs,100.0,0.5,2,50.0,50.0,1.0,1.0,5.0,4.0,19,3800.0,PASSED (Strictly unlevered dollar-neutral 50/50)
+M5.9B,Track C Forensic Attribution Ledger,SOLUSDT & LTCUSDT,Statistical Arbitrage Pairs,100.0,0.5,2,50.0,50.0,1.0,1.0,5.0,4.0,19,3800.0,PASSED (Reconciled exact 38 leg executions and asymmetric exit notional)
