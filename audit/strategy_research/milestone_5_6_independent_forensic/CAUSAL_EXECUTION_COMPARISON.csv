@@ -1,0 +1,4 @@
+strategy_mode,execution_timing,maker_scenario,effective_leverage_limit,max_observed_gross_leverage,ending_equity_usd,calendar_days,mean_daily_return_pct,median_daily_return_pct,daily_std_pct,sharpe_365,sortino_365,max_drawdown_pct,pct_days_gte_3pct,pct_negative_days,pct_zero_days,total_trades,win_rate_pct,profit_factor,net_expectancy_bps,gross_expectancy_bps,total_net_pnl_usd,total_fee_usd
+EXP10A_PASSIVE_MAKER,SAME_BAR_OPEN,REALISTIC,1.0,1.0015,81937991197.67,1099,1.9187,1.0787,2.6644,13.76,51.66,3.77,23.66,19.02,0.36,47606,56.86,1.921,17.37,24.62,81937991097.67,43192358314.65
+EXP10A_PASSIVE_MAKER,NEXT_BAR_OPEN,REALISTIC,1.0,0.7507,19.91,1099,-0.1425,0.0,0.9332,-2.92,-2.32,80.09,0.91,30.3,55.05,10733,41.81,0.8,-5.89,1.69,-80.09,82.8
+EXP10A_PASSIVE_MAKER,CONSERVATIVE_DELAYED,REALISTIC,1.0,0.7507,19.91,1099,-0.1425,0.0,0.9332,-2.92,-2.32,80.09,0.91,30.3,55.05,10733,41.81,0.8,-5.89,1.69,-80.09,82.8

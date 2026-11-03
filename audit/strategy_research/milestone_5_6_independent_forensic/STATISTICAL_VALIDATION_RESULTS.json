@@ -1,0 +1,84 @@
+{
+  "PORTFOLIO_A": {
+    "sample_mean": -0.1449,
+    "bootstrap_mean": -0.1455,
+    "ci_90": [
+      -0.2383,
+      -0.0666
+    ],
+    "ci_95": [
+      -0.2556,
+      -0.0549
+    ],
+    "ci_99": [
+      -0.288,
+      -0.0428
+    ],
+    "prob_gte_3pct": 0.0,
+    "prob_positive": 0.0
+  },
+  "MAKER_REALISTIC": {
+    "sample_mean": -0.1425,
+    "bootstrap_mean": -0.1423,
+    "ci_90": [
+      -0.2015,
+      -0.0825
+    ],
+    "ci_95": [
+      -0.2153,
+      -0.0696
+    ],
+    "ci_99": [
+      -0.2326,
+      -0.0605
+    ],
+    "prob_gte_3pct": 0.0,
+    "prob_positive": 0.0
+  },
+  "MAKER_CONSERVATIVE": {
+    "sample_mean": -0.1425,
+    "bootstrap_mean": -0.1432,
+    "ci_90": [
+      -0.2006,
+      -0.0875
+    ],
+    "ci_95": [
+      -0.2126,
+      -0.0779
+    ],
+    "ci_99": [
+      -0.223,
+      -0.0691
+    ],
+    "prob_gte_3pct": 0.0,
+    "prob_positive": 0.0
+  },
+  "EXP08_CAUSAL_TAKER": {
+    "sample_mean": -0.1425,
+    "bootstrap_mean": -0.1423,
+    "ci_90": [
+      -0.208,
+      -0.0813
+    ],
+    "ci_95": [
+      -0.2192,
+      -0.0704
+    ],
+    "ci_99": [
+      -0.233,
+      -0.0598
+    ],
+    "prob_gte_3pct": 0.0,
+    "prob_positive": 0.0
+  },
+  "hansen_spa": {
+    "test_statistic": 0.0021,
+    "p_value": 0.7585,
+    "benchmark": "EXP08_CAUSAL_TAKER",
+    "candidates_evaluated": [
+      "PORTFOLIO_A",
+      "MAKER_REALISTIC",
+      "MAKER_CONSERVATIVE"
+    ]
+  }
+}
