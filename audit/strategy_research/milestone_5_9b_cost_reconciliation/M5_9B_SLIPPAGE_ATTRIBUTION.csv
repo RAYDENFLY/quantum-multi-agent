@@ -1,0 +1,4 @@
+sensitivity_scenario,slippage_bps_per_leg,half_spread_bps_per_leg,total_slippage_drag_usd,fees_usd,net_pnl_usd,terminal_equity_usd,empirical_basis
+SLIP_S1_ZERO_ADDITIONAL,0.0,0.0,0.0,0.7447,-0.3785,99.6215,Diagnostic benchmark only (zero execution drag assumption)
+SLIP_S2_EMPIRICAL_BASELINE,1.5,1.0,0.5585,0.7447,-0.937,99.063,Measured top-of-book spread on SOL/LTC perps (1.5-2.0 bps)
+SLIP_S3_CONSERVATIVE_STRESS,5.0,2.5,1.8618,0.7447,-2.2403,97.7597,Fast-moving divergence liquidation event slippage stress

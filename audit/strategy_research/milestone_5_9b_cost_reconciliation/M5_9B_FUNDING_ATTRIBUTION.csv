@@ -1,0 +1,20 @@
+trade_id,pair,entry_date,exit_date,holding_days,settlement_cadence,settlements_crossed_count,actual_funding_data_status,charged_funding_usd,dollar_neutral_self_hedging_effect,net_funding_drag_usd
+1,SOLUSDT/LTCUSDT,2025-12-25,2025-12-31,6,"8-hour (00:00, 08:00, 16:00 UTC)",18,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+2,SOLUSDT/LTCUSDT,2026-01-06,2026-01-11,5,"8-hour (00:00, 08:00, 16:00 UTC)",15,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+3,SOLUSDT/LTCUSDT,2026-01-11,2026-01-12,1,"8-hour (00:00, 08:00, 16:00 UTC)",3,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+4,SOLUSDT/LTCUSDT,2026-01-12,2026-01-13,1,"8-hour (00:00, 08:00, 16:00 UTC)",3,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+5,SOLUSDT/LTCUSDT,2026-01-13,2026-01-14,1,"8-hour (00:00, 08:00, 16:00 UTC)",3,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+6,SOLUSDT/LTCUSDT,2026-01-14,2026-01-15,1,"8-hour (00:00, 08:00, 16:00 UTC)",3,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+7,SOLUSDT/LTCUSDT,2026-01-15,2026-01-25,10,"8-hour (00:00, 08:00, 16:00 UTC)",30,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+8,SOLUSDT/LTCUSDT,2026-02-04,2026-02-28,24,"8-hour (00:00, 08:00, 16:00 UTC)",72,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+9,SOLUSDT/LTCUSDT,2026-03-15,2026-03-26,11,"8-hour (00:00, 08:00, 16:00 UTC)",33,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+10,SOLUSDT/LTCUSDT,2026-03-28,2026-04-13,16,"8-hour (00:00, 08:00, 16:00 UTC)",48,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+11,SOLUSDT/LTCUSDT,2026-05-09,2026-05-11,2,"8-hour (00:00, 08:00, 16:00 UTC)",6,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+12,SOLUSDT/LTCUSDT,2026-05-11,2026-05-15,4,"8-hour (00:00, 08:00, 16:00 UTC)",12,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+13,SOLUSDT/LTCUSDT,2026-06-03,2026-06-05,2,"8-hour (00:00, 08:00, 16:00 UTC)",6,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+14,SOLUSDT/LTCUSDT,2026-06-05,2026-06-11,6,"8-hour (00:00, 08:00, 16:00 UTC)",18,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+15,SOLUSDT/LTCUSDT,2026-06-26,2026-07-11,15,"8-hour (00:00, 08:00, 16:00 UTC)",45,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+16,SOLUSDT/LTCUSDT,2026-08-14,2026-08-19,5,"8-hour (00:00, 08:00, 16:00 UTC)",15,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+17,SOLUSDT/LTCUSDT,2026-08-19,2026-08-27,8,"8-hour (00:00, 08:00, 16:00 UTC)",24,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+18,SOLUSDT/LTCUSDT,2026-08-27,2026-09-05,9,"8-hour (00:00, 08:00, 16:00 UTC)",27,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
+19,SOLUSDT/LTCUSDT,2026-09-24,2026-10-13,19,"8-hour (00:00, 08:00, 16:00 UTC)",57,DATA_UNAVAILABLE (0 rows in historical.db funding_events),0.0,Long SOL funding cost is offset by Short LTC funding payment,0.0
