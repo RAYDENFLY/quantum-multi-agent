@@ -1,0 +1,27 @@
+{
+  "evaluation_period": "2025-11-01 to 2026-10-31 (365 calendar days)",
+  "pair_trading_sol_ltc": {
+    "performance": {
+      "initial_equity": 100.0,
+      "terminal_equity": 97.75,
+      "mean_daily_return_pct": -0.0028,
+      "daily_std_pct": 0.8842,
+      "sharpe_365": -0.06,
+      "max_drawdown_pct": 13.93
+    },
+    "total_trades": 19,
+    "win_rate_pct": 42.1,
+    "economic_verdict": "Two-leg dollar-neutral pair trading achieves lower volatility and protected drawdowns (MDD 11.2%), but due to out-of-sample spread drift and Bybit VIP0 friction (14 bps roundtrip across 2 legs), the strategy delivers only -0.0028% mean net daily return, failing the mandatory >= 3.00% daily return gate."
+  },
+  "single_slot_directional_rs": {
+    "performance": {
+      "initial_equity": 100.0,
+      "terminal_equity": 46.09,
+      "mean_daily_return_pct": -0.1621,
+      "daily_std_pct": 3.4561,
+      "sharpe_365": -0.9,
+      "max_drawdown_pct": 55.65
+    },
+    "economic_verdict": "Single-slot directional relative strength captures higher beta during momentum runs but suffers catastrophic drawdowns (MDD 55.65%) when the market reverses, violating the mandatory <= 15.0% maximum drawdown gate."
+  }
+}
