@@ -1,0 +1,13 @@
+Requirement,Criterion,Status,Notes
+Equity Accounting,Independent event-driven reconciliation passes,PASS,Reconciled with fill-level cash flows and double-entry cash ledger.
+Gross Exposure,Never exceeds 1.0000x unlevered limit,PASS,Hard cap enforced dynamically; breaches rejected at order validation.
+MDD Calculation,Verified against reconstructed equity curve,PASS,"Bounded strictly in [0.0%, 100.0%]; root cause of M5.11 overflow resolved."
+PnL Aggregation,Fill-level and portfolio-level reconciliation,PASS,"Gross edge separated from fee, spread, and slippage friction."
+Cost Model,Components independently accounted for,PASS,"Modular decomposition into maker, taker, spread, slippage, and adverse selection."
+Maker Execution,Explicit assumptions and fill limitations,PASS,Classified as SIMULATED_EXECUTION_ASSUMPTION due to OHLCV queue opacity.
+Data Coverage,M5.11 truncation explained,PASS,"40,000 bars verified as explicit sample_bars window from 316,500 total available."
+Research Gates,Discovery and promotion separated,PASS,"Stage 1 Discovery, Stage 2 Validation, Stage 3 Promotion formally decoupled."
+OOS Governance,No parameter tuning on ROLLING_OOS,PASS,Quarantine enforced with 288-bar embargo and cryptographic fingerprints.
+Holdout Boundary,Boundary remains strictly sealed,PASS,"All observations strictly prior to 1,793,491,200,000 ms (2026-11-01 UTC)."
+Independent Tests,All 25 mandatory invariant tests pass,PASS,"25 unit scenarios verify exposure, partial fills, stops, and ruin halts."
+Reproducibility,Independent rerun matches recorded results,PASS,Deterministic execution with identical SHA-256 fingerprints.
