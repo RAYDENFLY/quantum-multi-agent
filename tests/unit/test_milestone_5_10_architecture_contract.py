@@ -51,7 +51,7 @@ def test_research_contract_instantiation_and_invariants():
     assert contract.maximum_gross_exposure == 1.0000
     assert contract.initial_equity_usd == 100.0
     assert contract.mandatory_profitability_gate_daily_pct == 3.0000
-    assert contract.maximum_holding_horizon_minutes == 1440
+    assert contract.maximum_holding_horizon_minutes == 240
     assert contract.allow_overnight_holding is False
 
     # Attempting leverage > 1.0 must fail
@@ -109,23 +109,23 @@ def test_category_a_timeframe_restrictions():
 
 
 def test_holding_horizon_boundary_enforcement():
-    """Verify that Category A trades exceeding 1440 minutes raise HoldingHorizonViolationError."""
+    """Verify that Category A trades exceeding 240 minutes raise HoldingHorizonViolationError."""
     contract = ResearchExperimentContract(
         experiment_id="EXP-HORIZON-CHECK",
         experiment_name="Horizon Validation Test",
         experiment_category=ExperimentCategory.HIGH_FREQUENCY_INTRADAY,
         execution_timeframe=ExecutionTimeframe.TF_5M,
-        maximum_holding_horizon_minutes=1440,
+        maximum_holding_horizon_minutes=240,
         allow_overnight_holding=False,
     )
 
-    # Valid intraday durations (e.g. 15m, 60m, 240m)
-    valid_durations = [15.0, 45.0, 120.0, 360.0, 1200.0]
+    # Valid intraday durations (e.g. 15m, 45m, 120m, 240m)
+    valid_durations = [15.0, 45.0, 120.0, 180.0, 240.0]
     passed, msg = validate_trade_durations(contract, valid_durations)
     assert passed is True
 
-    # Multi-day durations without overnight flag must raise error
-    violating_durations = [15.0, 60.0, 2880.0]  # 2880m = 2 days
+    # Durations exceeding 240m without overnight flag must raise error
+    violating_durations = [15.0, 60.0, 300.0]  # 300m = 5 hours
     with pytest.raises(HoldingHorizonViolationError):
         validate_trade_durations(contract, violating_durations)
 

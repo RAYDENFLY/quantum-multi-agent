@@ -1,15 +1,17 @@
 """Centralized Research Experiment Contract & Timeframe Architecture Validator.
 
 Enforces QUANTUM's mandatory research charter:
-- 5m baseline execution timeframe (1m optional if available).
+- 5m baseline execution timeframe (1m optional if reliable data exists).
 - High-frequency intraday trading style (10–100 completed trades/day target).
 - Explicit experiment classification (A: HF Intraday, B: Low-Freq Intraday, C: Swing, D: Invalid).
 - Zero silent timeframe downsampling or substitution.
 - Strict 1.0x unlevered gross exposure cap.
+- Explicit AsterDEX-first exchange cost configuration.
+- Unified 10.0 trades/day minimum frequency and 240m (4h) maximum holding horizon for Category A.
 """
 
 from enum import Enum
-from typing import List, Optional, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
@@ -45,6 +47,104 @@ class ExposureViolationError(ValueError):
     pass
 
 
+class FundingDataUncertaintyError(ValueError):
+    """Raised when missing funding data is improperly represented as verified zero funding."""
+    pass
+
+
+class ExchangeCostConfiguration(BaseModel):
+    """Explicit exchange-specific transaction cost and microstructure schedule."""
+    model_config = ConfigDict(frozen=True, validate_assignment=True)
+
+    exchange: str = Field(description="Target exchange identifier (e.g. 'Aster DEX', 'Bybit')")
+    contract_type: str = Field(default="USDT Perpetual Linear Futures")
+    fee_tier: str = Field(description="Account fee tier (e.g. 'Base_Retail_Tier', 'VIP0_Retail')")
+    maker_fee_bps: float = Field(ge=0.0, description="Maker fee rate in basis points per leg")
+    taker_fee_bps: float = Field(ge=0.0, description="Taker fee rate in basis points per leg")
+    fee_source_and_verification_date: str = Field(
+        min_length=10,
+        description="Authoritative documentation source and verification date (YYYY-MM-DD)"
+    )
+    spread_model: str = Field(default="STATIC_HALF_SPREAD_1_BPS")
+    spread_bps_half: float = Field(default=1.0, ge=0.0, description="Half-spread in bps per leg")
+    slippage_model: str = Field(default="STATIC_LINEAR_SLIPPAGE")
+    slippage_bps_per_leg: float = Field(default=2.0, ge=0.0, description="Execution slippage in bps per leg")
+    funding_data_availability: str = Field(
+        default="DATA_UNAVAILABLE",
+        description="'DATA_AVAILABLE' or 'DATA_UNAVAILABLE'"
+    )
+    funding_uncertainty_status: str = Field(
+        default="PARAMETRIC_BOUNDS_SENSITIVITY_REQUIRED",
+        description="Formal status of funding data uncertainty"
+    )
+    funding_sensitivity_min_bps_8h: float = Field(default=-5.0, description="Sensitivity lower bound in bps/8h")
+    funding_sensitivity_max_bps_8h: float = Field(default=5.0, description="Sensitivity upper bound in bps/8h")
+
+    @model_validator(mode="after")
+    def validate_funding_transparency(self) -> "ExchangeCostConfiguration":
+        """Ensures missing funding data cannot be represented as verified zero funding."""
+        if self.funding_data_availability == "DATA_UNAVAILABLE":
+            if "ZERO" in self.funding_uncertainty_status.upper() and "VERIFIED" in self.funding_uncertainty_status.upper():
+                raise FundingDataUncertaintyError(
+                    "Missing historical funding data cannot be represented as 'VERIFIED_ZERO_FUNDING'. "
+                    "Must be labeled 'PARAMETRIC_BOUNDS_SENSITIVITY_REQUIRED'."
+                )
+        return self
+
+
+# Authoritative Pre-configured Exchange Profiles
+ASTER_DEX_RETAIL_CONFIG = ExchangeCostConfiguration(
+    exchange="Aster DEX",
+    contract_type="USDT Perpetual Linear Futures",
+    fee_tier="Base_Retail_Tier",
+    maker_fee_bps=4.0,
+    taker_fee_bps=10.0,
+    fee_source_and_verification_date="docs/ASTERDEX_MARKET_DATA.md; Verified 2026-11-04",
+    spread_model="STATIC_HALF_SPREAD_1_BPS",
+    spread_bps_half=1.0,
+    slippage_model="STATIC_LINEAR_SLIPPAGE",
+    slippage_bps_per_leg=2.0,
+    funding_data_availability="DATA_UNAVAILABLE",
+    funding_uncertainty_status="PARAMETRIC_BOUNDS_SENSITIVITY_REQUIRED",
+    funding_sensitivity_min_bps_8h=-5.0,
+    funding_sensitivity_max_bps_8h=5.0,
+)
+
+ASTER_DEX_STRESS_CONFIG = ExchangeCostConfiguration(
+    exchange="Aster DEX",
+    contract_type="USDT Perpetual Linear Futures",
+    fee_tier="Stress_Tier_3",
+    maker_fee_bps=4.0,
+    taker_fee_bps=20.0,
+    fee_source_and_verification_date="Phase 5.5 DEC_04.7 Stress Specification; Verified 2026-11-04",
+    spread_model="STATIC_HALF_SPREAD_1_BPS",
+    spread_bps_half=1.0,
+    slippage_model="STATIC_LINEAR_SLIPPAGE",
+    slippage_bps_per_leg=2.0,
+    funding_data_availability="DATA_UNAVAILABLE",
+    funding_uncertainty_status="PARAMETRIC_BOUNDS_SENSITIVITY_REQUIRED",
+    funding_sensitivity_min_bps_8h=-10.0,
+    funding_sensitivity_max_bps_8h=10.0,
+)
+
+BYBIT_VIP0_BENCHMARK_CONFIG = ExchangeCostConfiguration(
+    exchange="Bybit",
+    contract_type="USDT Perpetual Linear Futures",
+    fee_tier="VIP0_Retail",
+    maker_fee_bps=2.0,
+    taker_fee_bps=5.5,
+    fee_source_and_verification_date="https://www.bybit.com/en/help-center/article/Trading-Fee-Structure; Verified 2026-11-04",
+    spread_model="STATIC_HALF_SPREAD_1_BPS",
+    spread_bps_half=1.0,
+    slippage_model="STATIC_LINEAR_SLIPPAGE",
+    slippage_bps_per_leg=1.5,
+    funding_data_availability="DATA_UNAVAILABLE",
+    funding_uncertainty_status="PARAMETRIC_BOUNDS_SENSITIVITY_REQUIRED",
+    funding_sensitivity_min_bps_8h=-5.0,
+    funding_sensitivity_max_bps_8h=5.0,
+)
+
+
 class ResearchExperimentContract(BaseModel):
     """Mandatory contract that must be declared and validated prior to backtest execution."""
     model_config = ConfigDict(frozen=True, validate_assignment=True)
@@ -66,15 +166,15 @@ class ResearchExperimentContract(BaseModel):
         description="Multi-timeframe confirmation and regime context resolutions"
     )
 
-    # Horizon & Frequency Bounds
+    # Horizon & Frequency Bounds (Reconciled: Target 10-100, Min 10.0 for Cat A, Max Holding 240m)
     expected_holding_horizon: str = Field(
         default="15m to 4h",
         description="Expected holding duration range for the alpha mechanism"
     )
     maximum_holding_horizon_minutes: int = Field(
-        default=1440,
+        default=240,
         gt=0,
-        description="Maximum permissible holding duration in minutes (1440 = 24 hours)"
+        description="Maximum permissible holding duration in minutes (default 240m = 4 hours)"
     )
     allow_overnight_holding: bool = Field(
         default=False,
@@ -87,12 +187,12 @@ class ResearchExperimentContract(BaseModel):
 
     target_trade_frequency_daily: Tuple[float, float] = Field(
         default=(10.0, 100.0),
-        description="Target range of completed trade episodes per day (e.g. 10 to 100)"
+        description="Target range of completed trade episodes per day (10 to 100)"
     )
     minimum_trade_frequency_daily: float = Field(
-        default=1.0,
+        default=10.0,
         ge=0.0,
-        description="Minimum acceptable trades/day to qualify as active intraday strategy"
+        description="Authoritative minimum completed trade episodes/day (strictly 10.0 for Category A)"
     )
 
     # Portfolio Sizing & Exposure Hard Caps
@@ -124,27 +224,19 @@ class ResearchExperimentContract(BaseModel):
         description="Non-negotiable mean net daily return target (>= 3.0000%)"
     )
 
-    # Microstructure & Friction Specification
+    # Microstructure & Friction Specification (AsterDEX Primary Target)
     execution_model: str = Field(
         default="CAUSAL_NEXT_BAR_OPEN",
         description="Execution timing model (must be causal, point-in-time)"
     )
-    fee_model: str = Field(
-        default="BYBIT_VIP0_DEFAULT",
-        description="Venue fee profile (Bybit VIP0 baseline: 2 bps maker, 5.5 bps taker)"
-    )
-    slippage_model: str = Field(
-        default="STATIC_HALF_SPREAD_SLIPPAGE",
-        description="Slippage model (half-spread + depth slippage)"
-    )
-    funding_model: str = Field(
-        default="ZERO_UNAVAILABLE",
-        description="Perpetual funding rate treatment"
+    exchange_cost_config: ExchangeCostConfiguration = Field(
+        default=ASTER_DEX_RETAIL_CONFIG,
+        description="Authoritative exchange cost configuration (AsterDEX Retail primary)"
     )
 
     @model_validator(mode="after")
-    def validate_category_and_timeframe_coherence(self) -> "ResearchExperimentContract":
-        """Asserts architectural alignment between experiment category, timeframe, and holding horizon."""
+    def validate_contract_invariants(self) -> "ResearchExperimentContract":
+        """Asserts strict architectural coherence across parameters."""
         # 1. Category A (High-Frequency Intraday) Invariants
         if self.experiment_category == ExperimentCategory.HIGH_FREQUENCY_INTRADAY:
             if self.execution_timeframe not in (ExecutionTimeframe.TF_1M, ExecutionTimeframe.TF_5M):
@@ -152,14 +244,15 @@ class ResearchExperimentContract(BaseModel):
                     f"Category A (High-Frequency Intraday) requires 1m or 5m execution timeframe, "
                     f"got {self.execution_timeframe.value}."
                 )
-            if self.maximum_holding_horizon_minutes > 1440 and not self.allow_overnight_holding:
-                raise HoldingHorizonViolationError(
-                    f"Category A cannot hold positions > 24 hours without explicit overnight justification."
-                )
-            if self.target_trade_frequency_daily[0] < 5.0:
+            if self.minimum_trade_frequency_daily < 10.0:
                 raise ValueError(
-                    f"Category A target frequency lower bound must be >= 5.0 trades/day, "
-                    f"got {self.target_trade_frequency_daily[0]}."
+                    f"Category A minimum trade frequency must be strictly >= 10.0 completed trade episodes/day, "
+                    f"got {self.minimum_trade_frequency_daily}."
+                )
+            if self.maximum_holding_horizon_minutes > 240 and not self.allow_overnight_holding:
+                raise HoldingHorizonViolationError(
+                    f"Category A maximum holding horizon cannot exceed 240 minutes (4 hours) without "
+                    f"explicit overnight authorization. Got {self.maximum_holding_horizon_minutes} minutes."
                 )
 
         # 2. Category C (Swing / Multi-Day) Restrictions
@@ -179,14 +272,19 @@ class ResearchExperimentContract(BaseModel):
                 f"Gross exposure cap cannot exceed 1.0000x (unlevered), got {self.maximum_gross_exposure}."
             )
 
+        # 5. Primary Target Enforcement
+        if not self.exchange_cost_config.exchange:
+            raise ValueError("Exchange cost configuration must specify exchange identifier.")
+
         return self
 
 
+# ==============================================================================
+# PIPELINE INTEGRATION ENFORCEMENT HOOKS
+# ==============================================================================
+
 def validate_input_data_timeframe(contract: ResearchExperimentContract, dataset_timeframe: str) -> None:
-    """Verifies that the ingested dataset strictly matches the contract's declared execution timeframe.
-    
-    Prevents silent downsampling (e.g. substituting 1D daily candles for a 5m contract).
-    """
+    """Verifies that the ingested dataset strictly matches the contract's declared execution timeframe."""
     clean_tf = dataset_timeframe.strip().lower()
     expected_tf = contract.execution_timeframe.value.strip().lower()
 
@@ -229,4 +327,78 @@ def validate_portfolio_gross_leverage(
         raise ExposureViolationError(
             f"Leverage limit breached in '{contract.experiment_id}': Peak observed gross leverage "
             f"{observed_peak_leverage:.4f}x exceeds contract limit of {contract.maximum_gross_exposure:.4f}x."
+        )
+
+
+# Agent & Component Enforcement Hooks
+def enforce_contract_on_scout(contract: ResearchExperimentContract, candidate_timeframe: str) -> None:
+    """Ensures Scout scans only timeframes approved by the contract."""
+    allowed = [contract.execution_timeframe.value] + [tf.value for tf in contract.context_timeframes]
+    if candidate_timeframe not in allowed:
+        raise TimeframeMismatchError(
+            f"SCOUT ENFORCEMENT FAILURE: Scout candidate timeframe '{candidate_timeframe}' "
+            f"not permitted by contract '{contract.experiment_id}'. Permitted: {allowed}."
+        )
+
+
+def enforce_contract_on_analyst(contract: ResearchExperimentContract, forecast_horizon_bars: int) -> None:
+    """Ensures Analyst forecast horizon aligns with expected holding horizon."""
+    max_bars = int(contract.maximum_holding_horizon_minutes / 5)  # for 5m
+    if forecast_horizon_bars > max_bars and not contract.allow_overnight_holding:
+        raise HoldingHorizonViolationError(
+            f"ANALYST ENFORCEMENT FAILURE: Forecast horizon {forecast_horizon_bars} bars exceeds "
+            f"contract max of {max_bars} bars."
+        )
+
+
+def enforce_contract_on_sniper(contract: ResearchExperimentContract, order_execution_model: str) -> None:
+    """Ensures Sniper executes causally at next-bar open."""
+    if order_execution_model != contract.execution_model:
+        raise ValueError(
+            f"SNIPER ENFORCEMENT FAILURE: Order execution model '{order_execution_model}' "
+            f"does not match contract model '{contract.execution_model}'."
+        )
+
+
+def enforce_contract_on_risk(contract: ResearchExperimentContract, aggregate_gross_exposure: float) -> None:
+    """Ensures Risk Agent hard-caps portfolio leverage at <= 1.0x."""
+    validate_portfolio_gross_leverage(contract, aggregate_gross_exposure)
+
+
+def enforce_contract_on_banker(contract: ResearchExperimentContract, trade_duration_minutes: float) -> None:
+    """Ensures Banker audits trade durations against contract max holding horizon."""
+    if trade_duration_minutes > contract.maximum_holding_horizon_minutes and not contract.allow_overnight_holding:
+        raise HoldingHorizonViolationError(
+            f"BANKER ENFORCEMENT FAILURE: Trade duration {trade_duration_minutes:.1f}m exceeds "
+            f"contract limit {contract.maximum_holding_horizon_minutes}m."
+        )
+
+
+def enforce_contract_on_orchestrator(contract: ResearchExperimentContract, pipeline_timeframe: str) -> None:
+    """Ensures Orchestrator validates pipeline execution timeframe before triggering agents."""
+    validate_input_data_timeframe(contract, pipeline_timeframe)
+
+
+def enforce_contract_on_feature_engine(contract: ResearchExperimentContract, base_candle_delta_ms: int) -> None:
+    """Ensures Feature Engine receives un-downsampled 5m base candles."""
+    expected_delta_ms = 300_000 if contract.execution_timeframe == ExecutionTimeframe.TF_5M else 60_000
+    if base_candle_delta_ms != expected_delta_ms:
+        raise TimeframeMismatchError(
+            f"FEATURE ENGINE ENFORCEMENT FAILURE: Base candle delta {base_candle_delta_ms} ms "
+            f"does not match contract expected delta {expected_delta_ms} ms."
+        )
+
+
+def enforce_contract_on_data_adapter(contract: ResearchExperimentContract, dataset_timeframe: str) -> None:
+    """Ensures Data Adapter fails closed on silent downsampling."""
+    validate_input_data_timeframe(contract, dataset_timeframe)
+
+
+def enforce_contract_on_simulator(contract: ResearchExperimentContract, simulator_step_ms: int) -> None:
+    """Ensures Discrete Event Simulator steps at the exact contract execution interval."""
+    expected_step_ms = 300_000 if contract.execution_timeframe == ExecutionTimeframe.TF_5M else 60_000
+    if simulator_step_ms != expected_step_ms:
+        raise TimeframeMismatchError(
+            f"SIMULATOR ENFORCEMENT FAILURE: Simulator step {simulator_step_ms} ms does not "
+            f"match contract expected interval {expected_step_ms} ms."
         )
