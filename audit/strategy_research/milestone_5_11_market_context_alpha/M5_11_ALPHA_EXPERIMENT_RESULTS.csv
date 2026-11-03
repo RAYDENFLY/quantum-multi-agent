@@ -1,0 +1,11 @@
+hypothesis_id,hypothesis_name,completed_episodes,frequency_daily,win_rate_pct,profit_factor,gross_pnl_usd,net_pnl_usd,net_expectancy_bps,mean_net_daily_return_pct,max_drawdown_pct,sharpe_ratio,sortino_ratio,avg_duration_minutes,status
+HYP-01,Liquidity Sweep and Reclaim,1733,12.48,28.16,0.2,21.62,-428.87,-24.75,-3.088,430.06,-42.32,-72.08,28.7,EVALUATED
+HYP-02,Volatility Expansion Breakout,5054,36.39,33.2,0.3,32.59,-1281.45,-25.36,-9.2266,1280.12,-57.42,-104.34,22.5,EVALUATED
+HYP-03,Momentum Continuation,9514,68.5,23.01,0.14,-29.96,-2503.56,-26.31,-18.0261,2516.09,-125.3,-184.89,30.2,EVALUATED
+HYP-04,Failed Breakout Reversal,5865,42.23,28.78,0.2,20.06,-1504.86,-25.66,-10.8353,1511.33,-81.46,-125.32,34.2,EVALUATED
+HYP-05,Range Mean Reversion,10429,75.09,29.72,0.2,159.72,-2551.86,-24.47,-18.3738,2551.15,-105.94,-160.84,31.5,EVALUATED
+HYP-06,Cross-Asset Relative Strength,5878,42.32,38.99,0.4,-51.33,-1579.78,-26.88,-11.3747,1567.05,-49.79,-105.73,26.4,EVALUATED
+BASE-01,Always Flat Baseline,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,BASELINE
+BASE-02,Buy and Hold BTC Baseline,1,0.0072,100.0,1.0,18.3,18.04,1803.86,0.1299,18.4,0.42,0.58,199995.0,BASELINE
+BASE-03,BASE-03,19352,139.34,22.47,0.15,-13.94,-5045.51,-26.07,-36.3286,5066.98,-177.28,-270.81,25.8,EVALUATED
+BASE-04,BASE-04,27522,198.16,27.28,0.2,277.58,-6878.26,-24.99,-49.5247,6880.03,-174.86,-265.29,25.2,EVALUATED

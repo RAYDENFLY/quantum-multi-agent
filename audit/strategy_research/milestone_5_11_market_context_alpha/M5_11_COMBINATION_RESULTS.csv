@@ -1,0 +1,5 @@
+combination_id,combination_name,completed_episodes,frequency_daily,win_rate_pct,profit_factor,net_pnl_usd,net_expectancy_bps,mean_net_daily_return_pct,max_drawdown_pct,sharpe_ratio,avg_duration_minutes
+COMB-01,HYP-01 Range-Conditioned Sweep,1655,11.92,28.7,0.21,-406.67,-24.57,-2.9281,407.78,-40.74,28.5
+COMB-02,HYP-02 Trend-Conditioned Breakout,3653,26.3,33.81,0.3,-931.99,-25.51,-6.7105,931.05,-49.39,20.5
+COMB-03,HYP-03 Trend-Filtered Momentum,3027,21.79,18.07,0.09,-789.11,-26.07,-5.6818,792.71,-86.83,24.4
+COMB-04,Multi-Regime Complementary Portfolio,5308,38.22,32.22,0.27,-1338.66,-25.22,-9.6386,1343.14,-62.7,23.0

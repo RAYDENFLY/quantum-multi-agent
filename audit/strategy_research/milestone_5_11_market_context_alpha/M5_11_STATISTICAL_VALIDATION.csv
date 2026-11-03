@@ -1,0 +1,9 @@
+hypothesis_id,sample_episodes,mean_net_expectancy_bps,bootstrap_ci_95_low_bps,bootstrap_ci_95_high_bps,raw_p_value,holm_bonferroni_p_value,is_statistically_significant,deflated_sharpe_prob,skewness,kurtosis
+HYP-01,1733,-24.75,-26.64,-22.8,1.0,1.0,False,0.0,1.69,11.59
+HYP-02,5054,-25.36,-26.8,-23.95,1.0,1.0,False,0.0,1.01,5.06
+HYP-03,9514,-26.31,-26.95,-25.68,1.0,1.0,False,0.0,0.5,0.84
+HYP-04,5865,-25.66,-26.68,-24.62,1.0,1.0,False,0.0,0.39,0.73
+HYP-05,10429,-24.47,-25.22,-23.74,1.0,1.0,False,0.0,0.39,1.94
+HYP-06,5878,-26.88,-28.59,-25.04,1.0,1.0,False,0.0,0.54,1.62
+BASE-03,19352,-26.07,-26.56,-25.66,1.0,1.0,False,0.0,0.68,5.86
+BASE-04,27522,-24.99,-25.46,-24.54,1.0,1.0,False,0.0,0.59,4.53
