@@ -330,6 +330,84 @@ def validate_portfolio_gross_leverage(
         )
 
 
+def calculate_and_validate_runtime_exposure(
+    contract: ResearchExperimentContract,
+    open_positions_notional: Sequence[float],
+    current_equity: float,
+    event_name: str = "TICK_MARK_TO_MARKET"
+) -> float:
+    """Calculates gross exposure as sum(|notional|) / current_equity and enforces the 1.0x unlevered cap on every event."""
+    if current_equity <= 0.0:
+        raise ExposureViolationError(
+            f"RUIN/HALT EVENT on '{event_name}': Current equity ${current_equity:.4f} is non-positive. "
+            f"Gross exposure is undefined and trading must halt immediately."
+        )
+    total_gross_notional = sum(abs(n) for n in open_positions_notional)
+    gross_exposure = total_gross_notional / current_equity
+    if gross_exposure > contract.maximum_gross_exposure + 1e-4:
+        raise ExposureViolationError(
+            f"EVENT LEVERAGE BREACH on '{event_name}': Gross exposure {gross_exposure:.4f}x "
+            f"(Notional: ${total_gross_notional:.2f}, Equity: ${current_equity:.2f}) "
+            f"exceeds contract hard cap {contract.maximum_gross_exposure:.4f}x."
+        )
+    return gross_exposure
+
+
+class FrequencyReport(BaseModel):
+    """Standardized multi-tier trade frequency audit report."""
+    model_config = ConfigDict(frozen=True)
+
+    symbol_frequencies_daily: Dict[str, float]
+    portfolio_frequency_active_days: float
+    portfolio_frequency_calendar_days: float
+    active_trading_days: int
+    calendar_days: float
+    total_completed_episodes: int
+    assigned_category: ExperimentCategory
+    is_statistically_admissible: bool
+
+
+def calculate_frequency_metrics(
+    episodes_by_symbol: Dict[str, int],
+    active_days: int,
+    total_calendar_days: float,
+    is_statistically_significant: bool = True
+) -> FrequencyReport:
+    """Calculates frequency separately for each symbol, active days, and calendar days, avoiding forced trade rejection."""
+    total_episodes = sum(episodes_by_symbol.values())
+    cal_days = max(1.0, float(total_calendar_days))
+    act_days = max(1, int(active_days))
+
+    # Per-symbol daily frequency across calendar days
+    sym_freq = {sym: round(count / cal_days, 4) for sym, count in episodes_by_symbol.items()}
+
+    # Portfolio frequencies
+    act_freq = round(total_episodes / act_days, 4)
+    cal_freq = round(total_episodes / cal_days, 4)
+
+    # Architectural Classification: Category A >= 10.0, Category B 1.0-10.0, Category C < 1.0
+    if act_freq >= 10.0:
+        cat = ExperimentCategory.HIGH_FREQUENCY_INTRADAY
+    elif act_freq >= 1.0:
+        cat = ExperimentCategory.INTRADAY_LOW_FREQUENCY
+    else:
+        cat = ExperimentCategory.SWING_MULTI_DAY
+
+    # Statistically valid candidates producing < 10 episodes/day are Category B, not rejected
+    admissible = is_statistically_significant
+
+    return FrequencyReport(
+        symbol_frequencies_daily=sym_freq,
+        portfolio_frequency_active_days=act_freq,
+        portfolio_frequency_calendar_days=cal_freq,
+        active_trading_days=act_days,
+        calendar_days=cal_days,
+        total_completed_episodes=total_episodes,
+        assigned_category=cat,
+        is_statistically_admissible=admissible,
+    )
+
+
 # Agent & Component Enforcement Hooks
 def enforce_contract_on_scout(contract: ResearchExperimentContract, candidate_timeframe: str) -> None:
     """Ensures Scout scans only timeframes approved by the contract."""
