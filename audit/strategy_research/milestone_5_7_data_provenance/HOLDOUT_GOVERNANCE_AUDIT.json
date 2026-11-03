@@ -1,0 +1,76 @@
+{
+  "holdout_boundary_ms": 1793491200000,
+  "holdout_boundary_utc": "2026-11-01T00:00:00+00:00",
+  "is_boundary_in_past": true,
+  "raw_market_data_breached": false,
+  "matrices_breached": false,
+  "ledgers_breached": false,
+  "matrix_max_timestamps": {
+    "BTCUSDT": {
+      "max_timestamp_ms": 1793480100000,
+      "max_utc": "2026-10-31T20:55:00+00:00",
+      "breaches_holdout": false
+    },
+    "ETHUSDT": {
+      "max_timestamp_ms": 1793480400000,
+      "max_utc": "2026-10-31T21:00:00+00:00",
+      "breaches_holdout": false
+    },
+    "BNBUSDT": {
+      "max_timestamp_ms": 1793480100000,
+      "max_utc": "2026-10-31T20:55:00+00:00",
+      "breaches_holdout": false
+    },
+    "XRPUSDT": {
+      "max_timestamp_ms": 1793479500000,
+      "max_utc": "2026-10-31T20:45:00+00:00",
+      "breaches_holdout": false
+    },
+    "ADAUSDT": {
+      "max_timestamp_ms": 1793479200000,
+      "max_utc": "2026-10-31T20:40:00+00:00",
+      "breaches_holdout": false
+    },
+    "SOLUSDT": {
+      "max_timestamp_ms": 1793480700000,
+      "max_utc": "2026-10-31T21:05:00+00:00",
+      "breaches_holdout": false
+    },
+    "AVAXUSDT": {
+      "max_timestamp_ms": 1793481000000,
+      "max_utc": "2026-10-31T21:10:00+00:00",
+      "breaches_holdout": false
+    },
+    "LINKUSDT": {
+      "max_timestamp_ms": 1793481300000,
+      "max_utc": "2026-10-31T21:15:00+00:00",
+      "breaches_holdout": false
+    },
+    "DOGEUSDT": {
+      "max_timestamp_ms": 1793481600000,
+      "max_utc": "2026-10-31T21:20:00+00:00",
+      "breaches_holdout": false
+    },
+    "LTCUSDT": {
+      "max_timestamp_ms": 1793481900000,
+      "max_utc": "2026-10-31T21:25:00+00:00",
+      "breaches_holdout": false
+    }
+  },
+  "ledger_audit": {
+    "HYP01_TRADES_LIFECYCLE.csv": {
+      "max_entry_ms": 1793477400000,
+      "max_exit_ms": 1793478600000,
+      "max_exit_utc": "2026-10-31T20:30:00+00:00",
+      "breaches_holdout": false
+    },
+    "PORTFOLIO_A_INDEPENDENT_TRADES.csv": {
+      "max_entry_ms": 1708638600000,
+      "max_exit_ms": 1708639800000,
+      "max_exit_utc": "2024-02-22T22:10:00+00:00",
+      "breaches_holdout": false
+    }
+  },
+  "holdout_status": "VERIFIED_SEALED",
+  "verdict_statement": "No raw market data, feature arrays, or trade ledgers in the backtest repository contain timestamps at or exceeding 1793491200000 ms (2026-11-01 00:00:00 UTC). The raw historical dataset terminates at 2026-10-31 21:25:00 UTC. The prospective holdout remains 100% sealed, uninspected, and virgin."
+}

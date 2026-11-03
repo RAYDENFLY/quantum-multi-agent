@@ -1,0 +1,203 @@
+{
+  "raw_market_data": {
+    "ADAUSDT": {
+      "min_time_ms": 1698529500000,
+      "max_time_ms": 1793479200000,
+      "min_utc": "2023-10-28T21:45:00+00:00",
+      "max_utc": "2026-10-31T20:40:00+00:00",
+      "candle_count": 316500
+    },
+    "AVAXUSDT": {
+      "min_time_ms": 1698531300000,
+      "max_time_ms": 1793481000000,
+      "min_utc": "2023-10-28T22:15:00+00:00",
+      "max_utc": "2026-10-31T21:10:00+00:00",
+      "candle_count": 316500
+    },
+    "BNBUSDT": {
+      "min_time_ms": 1698530400000,
+      "max_time_ms": 1793480100000,
+      "min_utc": "2023-10-28T22:00:00+00:00",
+      "max_utc": "2026-10-31T20:55:00+00:00",
+      "candle_count": 316500
+    },
+    "BTCUSDT": {
+      "min_time_ms": 1698530400000,
+      "max_time_ms": 1793480100000,
+      "min_utc": "2023-10-28T22:00:00+00:00",
+      "max_utc": "2026-10-31T20:55:00+00:00",
+      "candle_count": 316499
+    },
+    "DOGEUSDT": {
+      "min_time_ms": 1698531900000,
+      "max_time_ms": 1793481600000,
+      "min_utc": "2023-10-28T22:25:00+00:00",
+      "max_utc": "2026-10-31T21:20:00+00:00",
+      "candle_count": 316500
+    },
+    "ETHUSDT": {
+      "min_time_ms": 1698530700000,
+      "max_time_ms": 1793480400000,
+      "min_utc": "2023-10-28T22:05:00+00:00",
+      "max_utc": "2026-10-31T21:00:00+00:00",
+      "candle_count": 316500
+    },
+    "LINKUSDT": {
+      "min_time_ms": 1698531600000,
+      "max_time_ms": 1793481300000,
+      "min_utc": "2023-10-28T22:20:00+00:00",
+      "max_utc": "2026-10-31T21:15:00+00:00",
+      "candle_count": 316500
+    },
+    "LTCUSDT": {
+      "min_time_ms": 1698532200000,
+      "max_time_ms": 1793481900000,
+      "min_utc": "2023-10-28T22:30:00+00:00",
+      "max_utc": "2026-10-31T21:25:00+00:00",
+      "candle_count": 316500
+    },
+    "SOLUSDT": {
+      "min_time_ms": 1698531000000,
+      "max_time_ms": 1793480700000,
+      "min_utc": "2023-10-28T22:10:00+00:00",
+      "max_utc": "2026-10-31T21:05:00+00:00",
+      "candle_count": 316500
+    },
+    "XMRUSDT": {
+      "min_time_ms": 1768322700000,
+      "max_time_ms": 1793481300000,
+      "min_utc": "2026-01-13T16:45:00+00:00",
+      "max_utc": "2026-10-31T21:15:00+00:00",
+      "candle_count": 83863
+    },
+    "XRPUSDT": {
+      "min_time_ms": 1698529800000,
+      "max_time_ms": 1793479500000,
+      "min_utc": "2023-10-28T21:50:00+00:00",
+      "max_utc": "2026-10-31T20:45:00+00:00",
+      "candle_count": 316500
+    }
+  },
+  "materialized_oof_data": {
+    "ADAUSDT": {
+      "min_time_ms": 1738225200000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2025-01-30T08:20:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 130483,
+      "sha256": "6038a64115b53c34155cc910aa3d6d45b55735e4be3a58b243b9218cf5311a3f"
+    },
+    "AVAXUSDT": {
+      "min_time_ms": 1738186500000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2025-01-29T21:35:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 130818,
+      "sha256": "cf41b0e73d03456cf9d70cb0a1e3468b665cfa6a82c71a1a961763e88ecff3b0"
+    },
+    "BNBUSDT": {
+      "min_time_ms": 1738165500000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2025-01-29T15:45:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 130847,
+      "sha256": "a6f87b75635367174b243c1336d034e0bc8ab66d522305a20e54a016e6ec6a49"
+    },
+    "BTCUSDT": {
+      "min_time_ms": 1738149600000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2025-01-29T11:20:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 130684,
+      "sha256": "db08ed17d5fe5b1bce8a9812d1f031ca901be486a6e4a2b874ed8a6f718f67a6"
+    },
+    "DOGEUSDT": {
+      "min_time_ms": 1738161900000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2025-01-29T14:45:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 130648,
+      "sha256": "faee6f5de67236bf06374f8076dff2ae909abab59616f430533341d6344e1e67"
+    },
+    "ETHUSDT": {
+      "min_time_ms": 1738125600000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2025-01-29T04:40:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 130728,
+      "sha256": "04cc0e3e6c67e458894833098beb2586078c417b163f19e10555e9799784ca66"
+    },
+    "LINKUSDT": {
+      "min_time_ms": 1738204800000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2025-01-30T02:40:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 130777,
+      "sha256": "0ef874aa69d2cdb643e635b612f2df9df5ee6ca40c48d67b375900e1ed0e74ff"
+    },
+    "LTCUSDT": {
+      "min_time_ms": 1738226100000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2025-01-30T08:35:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 130463,
+      "sha256": "8885494a1cbf83acc1f64004e1cce2293a2408d0298dfeebeee95c07e3d4e317"
+    },
+    "SOLUSDT": {
+      "min_time_ms": 1738119300000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2025-01-29T02:55:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 130808,
+      "sha256": "48eee56668233d019b33446522167de9c489050c2f6dbac05444a27d292611e0"
+    },
+    "XMRUSDT": {
+      "min_time_ms": 1772983800000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2026-03-08T15:30:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 15252,
+      "sha256": "83df25ce704ef664eb235e1706386dc854467aaf2bb59d38ca95fd430bd03a8f"
+    },
+    "XRPUSDT": {
+      "min_time_ms": 1738197600000,
+      "max_time_ms": 1777586100000,
+      "min_utc": "2025-01-30T00:40:00+00:00",
+      "max_utc": "2026-04-30T21:55:00+00:00",
+      "row_count": 130600,
+      "sha256": "634769ed4b90ed8ce3a110cbd37c7a16090c0e4b6e4ba00d6ce7d46cd79c3652"
+    }
+  },
+  "transaction_ledgers": {
+    "HYP01_TRADES_LIFECYCLE": {
+      "total_trades": 28043,
+      "min_entry_ms": 1698540000000,
+      "max_exit_ms": 1793478600000,
+      "min_entry_utc": "2023-10-29T00:40:00+00:00",
+      "max_exit_utc": "2026-10-31T20:30:00+00:00",
+      "sha256": "8dbfed2ec02c7412a4d88653d620c25ae024b8e5d4bd71403fbe22a0cf2ec015"
+    },
+    "PORTFOLIO_A_INDEPENDENT_TRADES": {
+      "total_trades": 3982,
+      "min_entry_ms": 1698540300000,
+      "max_exit_ms": 1708639800000,
+      "min_entry_utc": "2023-10-29T00:45:00+00:00",
+      "max_exit_utc": "2024-02-22T22:10:00+00:00",
+      "sha256": "6920b60bff09f29d2022172217d0f7bf93d55b5e1380a4675f64d2c766383533"
+    }
+  },
+  "daily_equity_curve": {
+    "days_count": 1099,
+    "min_day_ms": 1698451200000,
+    "max_day_ms": 1793318400000,
+    "min_day_utc": "2023-10-28",
+    "max_day_utc": "2026-10-30",
+    "sha256": "964b454cb816d5924faf3d7cd452ac92d44d32cd63d9d5ecd651eeccd3606df6"
+  },
+  "discrepancy_explanation": {
+    "reported_period": "2023-10-28 to 2026-10-31 (1,099 calendar days)",
+    "reported_max_trade_timestamp_ms": 1708639800000,
+    "reported_max_trade_utc": "2024-02-22 22:10:00+00:00",
+    "root_cause": "Under strictly causal next-bar execution, Portfolio A experienced negative net expectancy and dropped from $100.00 to $19.99288 on 2024-02-22 (day 118). Because position sizing enforces notional = min(equity * 0.25, risk_budget) with a minimum trade threshold of $5.00, when equity dropped below $20.00 ($19.99 * 0.25 = $4.998 < $5.00), all subsequent trade attempts were rejected by `if notional < 5.0: continue`. This caused an execution starvation halt where no new trades could be placed. The remaining 981 days (2024-02-23 to 2026-10-30) were padded with zero daily returns, resulting in the apparent discrepancy between a 1,099-day daily calendar and a trade ledger ending on 2024-02-22."
+  }
+}

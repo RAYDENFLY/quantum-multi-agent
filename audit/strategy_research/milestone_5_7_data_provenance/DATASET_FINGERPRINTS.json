@@ -1,0 +1,343 @@
+{
+  "evaluator_script": {
+    "path": "scripts\\independent_forensic_evaluator.py",
+    "sha256": "b6664cabec6ef506892f58c84bbfcd5a8d890382bf0837ed717e6997282d0abb",
+    "size_bytes": 31984
+  },
+  "dataset_canonical_exchange_aster": {
+    "base_dir": "data\\historical\\canonical\\exchange=ASTER",
+    "total_size_bytes": 141424164,
+    "symbols_count": 11,
+    "symbols": {
+      "ADAUSDT": {
+        "total_rows": 316500,
+        "total_size_bytes": 11673126,
+        "partitions_count": 4,
+        "files": [
+          {
+            "file": "2023.parquet",
+            "sha256": "0431a4a6e637ee7aa83952e1dd9c2f38d15af696042020c3d350e23460700226",
+            "size_bytes": 716268,
+            "rows": 18459
+          },
+          {
+            "file": "2024.parquet",
+            "sha256": "eb5c1af964d85bce45eabb9d52b19c7ba489d74438db06f304d31fbbf224c282",
+            "size_bytes": 3763141,
+            "rows": 105408
+          },
+          {
+            "file": "2025.parquet",
+            "sha256": "5dd718657ef3597c05a12adea1f911a609647f9849f23834dfd2ce54c16f1c86",
+            "size_bytes": 3766385,
+            "rows": 105120
+          },
+          {
+            "file": "2026.parquet",
+            "sha256": "93243b7d33cf01ce4d6ad9600d8dcaa4852403be9958d21df20cafa959b1a2bd",
+            "size_bytes": 3427332,
+            "rows": 87513
+          }
+        ]
+      },
+      "AVAXUSDT": {
+        "total_rows": 316500,
+        "total_size_bytes": 9053961,
+        "partitions_count": 4,
+        "files": [
+          {
+            "file": "2023.parquet",
+            "sha256": "75185d43bc91a1f12058067ceb2f9defe9af068a69c64602077e10b79f47f603",
+            "size_bytes": 636229,
+            "rows": 18453
+          },
+          {
+            "file": "2024.parquet",
+            "sha256": "c570b7b960d8b8b017d51ee7e97a4d56511d4de8e83923e4c1b18abc2c16b5d4",
+            "size_bytes": 2706501,
+            "rows": 105408
+          },
+          {
+            "file": "2025.parquet",
+            "sha256": "a2ced4e233eefdccce519f5ae4a712d90c1c0c3855d5d61ddf3fc7ec8cdbbfa5",
+            "size_bytes": 2839096,
+            "rows": 105120
+          },
+          {
+            "file": "2026.parquet",
+            "sha256": "0b9df35938bc2bb494778467e6deb2d13a0f8492e357238d7721c3a5c0891dd0",
+            "size_bytes": 2872135,
+            "rows": 87519
+          }
+        ]
+      },
+      "BNBUSDT": {
+        "total_rows": 316500,
+        "total_size_bytes": 13238820,
+        "partitions_count": 4,
+        "files": [
+          {
+            "file": "2023.parquet",
+            "sha256": "1e1cd54d9542e25acfa95c3164526b4c608507eaf87aff13ef8b3488b3236673",
+            "size_bytes": 687068,
+            "rows": 18456
+          },
+          {
+            "file": "2024.parquet",
+            "sha256": "f9ead3d6ca5f8abe9d81693f4034496ad5f6d580bfff624a8a7569781b8ccb9c",
+            "size_bytes": 3118179,
+            "rows": 105408
+          },
+          {
+            "file": "2025.parquet",
+            "sha256": "f663eb598f20eae1f26af6473294623918772cdfdaf098e04432a2842d33466b",
+            "size_bytes": 4660271,
+            "rows": 105120
+          },
+          {
+            "file": "2026.parquet",
+            "sha256": "74df3c5b3cafed73ec389a487197380218bebcdb4da203f18d454d8a09d262cc",
+            "size_bytes": 4773302,
+            "rows": 87516
+          }
+        ]
+      },
+      "BTCUSDT": {
+        "total_rows": 316499,
+        "total_size_bytes": 18346104,
+        "partitions_count": 4,
+        "files": [
+          {
+            "file": "2023.parquet",
+            "sha256": "6639e46432b8e3c86afa8b833755055f027dd593c315e8c8c702db54af1b5460",
+            "size_bytes": 864685,
+            "rows": 18456
+          },
+          {
+            "file": "2024.parquet",
+            "sha256": "c839d9b58c7092c03df56f91829743a73bc1e8729b4b211f40741f5e41f7be81",
+            "size_bytes": 4799125,
+            "rows": 105408
+          },
+          {
+            "file": "2025.parquet",
+            "sha256": "9953238be2f75666029bb8f2692a043c77ae4c53a771970d441277401105e6d0",
+            "size_bytes": 6587493,
+            "rows": 105119
+          },
+          {
+            "file": "2026.parquet",
+            "sha256": "ba550a5c376c78a78cb80c96ba1e10d8d2a0b6702820b3dc188bf3adac189652",
+            "size_bytes": 6094801,
+            "rows": 87516
+          }
+        ]
+      },
+      "DOGEUSDT": {
+        "total_rows": 316500,
+        "total_size_bytes": 15814487,
+        "partitions_count": 4,
+        "files": [
+          {
+            "file": "2023.parquet",
+            "sha256": "7c8dd76b3c27353ce5773669f6b0c4a86e225ad595c53805665e7f1dea6584ac",
+            "size_bytes": 736662,
+            "rows": 18451
+          },
+          {
+            "file": "2024.parquet",
+            "sha256": "86c416298fcaf0fe19202e815a01b2f184c5f9b143fffbd46ea0e01f4250b590",
+            "size_bytes": 4137868,
+            "rows": 105408
+          },
+          {
+            "file": "2025.parquet",
+            "sha256": "bab76d310273462f46b39f92ab51302cfa481f7fdbf4f141384e22d8a737575b",
+            "size_bytes": 5585253,
+            "rows": 105120
+          },
+          {
+            "file": "2026.parquet",
+            "sha256": "59320248bad4be2aa0dddfee38aba079ee51f199225022b480b1733aa8e990e5",
+            "size_bytes": 5354704,
+            "rows": 87521
+          }
+        ]
+      },
+      "ETHUSDT": {
+        "total_rows": 316500,
+        "total_size_bytes": 16911654,
+        "partitions_count": 4,
+        "files": [
+          {
+            "file": "2023.parquet",
+            "sha256": "1c20485379ae6238c5cc42f1e93cd4214110700ee3ac431b3c42fcf92d4716b5",
+            "size_bytes": 837588,
+            "rows": 18455
+          },
+          {
+            "file": "2024.parquet",
+            "sha256": "84a3605c0c732e0d80294a1913af8ce969aea3f45a121bb285e81e387b72ac6f",
+            "size_bytes": 4191322,
+            "rows": 105408
+          },
+          {
+            "file": "2025.parquet",
+            "sha256": "30f57bb5335b0f52e8a81ad83998de9dc0ac389820a3d2c0783cd369162512c6",
+            "size_bytes": 5847379,
+            "rows": 105120
+          },
+          {
+            "file": "2026.parquet",
+            "sha256": "5b8e13db006dd4f5476240b3534304f876295df0d0388dbc4d1eb1879f8763be",
+            "size_bytes": 6035365,
+            "rows": 87517
+          }
+        ]
+      },
+      "LINKUSDT": {
+        "total_rows": 316500,
+        "total_size_bytes": 11554820,
+        "partitions_count": 4,
+        "files": [
+          {
+            "file": "2023.parquet",
+            "sha256": "62806e0a33f93a48cc0654e700ac18902b9000d246ee8ba1587520fe266d2b6e",
+            "size_bytes": 716893,
+            "rows": 18452
+          },
+          {
+            "file": "2024.parquet",
+            "sha256": "59dcf1a9739cd06f53502d309c8dc3486db340c2a6fb7bed734fea8d5ed91d06",
+            "size_bytes": 3774752,
+            "rows": 105408
+          },
+          {
+            "file": "2025.parquet",
+            "sha256": "7cc7cba9aa2e692d84db7d7037dbf203c579f19acc8b48c40be03eb112930e71",
+            "size_bytes": 3413952,
+            "rows": 105120
+          },
+          {
+            "file": "2026.parquet",
+            "sha256": "befced02318b8fd17620cd1c54b9d844edaed23316ff779b40b9a549b3912ae5",
+            "size_bytes": 3649223,
+            "rows": 87520
+          }
+        ]
+      },
+      "LTCUSDT": {
+        "total_rows": 316500,
+        "total_size_bytes": 10839345,
+        "partitions_count": 4,
+        "files": [
+          {
+            "file": "2023.parquet",
+            "sha256": "a59ada15b0084c0c6baedb984c6fa7a584898a98d379ddc2e9ff8ab1acc349c6",
+            "size_bytes": 585119,
+            "rows": 18450
+          },
+          {
+            "file": "2024.parquet",
+            "sha256": "772353e803ad13a59e851ae9f174e0dd47be62ad2e00c21a0ed162598c9654f6",
+            "size_bytes": 3406176,
+            "rows": 105408
+          },
+          {
+            "file": "2025.parquet",
+            "sha256": "9763b22c5ea42fe3c6d8dae804dd6a13d1f65217f88bae7f011c3558e9ca247e",
+            "size_bytes": 3448211,
+            "rows": 105120
+          },
+          {
+            "file": "2026.parquet",
+            "sha256": "816b0cf24fbf0ed2cb81cdabbcdd7fe78e922aec43807e7a4c3d2008cc4ba4be",
+            "size_bytes": 3399839,
+            "rows": 87522
+          }
+        ]
+      },
+      "SOLUSDT": {
+        "total_rows": 316500,
+        "total_size_bytes": 15486555,
+        "partitions_count": 4,
+        "files": [
+          {
+            "file": "2023.parquet",
+            "sha256": "33b0787110264a79540b40e1e41cad7263f7fafcccd78876c44b615c776dbcc8",
+            "size_bytes": 846447,
+            "rows": 18454
+          },
+          {
+            "file": "2024.parquet",
+            "sha256": "fd728556714d016ebf3565cd60872452b683392c5a207dec7cce9b3ffb0b02fb",
+            "size_bytes": 3897877,
+            "rows": 105408
+          },
+          {
+            "file": "2025.parquet",
+            "sha256": "586d61edeabdc10d2a5b6dada247ab827e0c2080d44a9c7bd9bf46290d9ce1b7",
+            "size_bytes": 5457413,
+            "rows": 105120
+          },
+          {
+            "file": "2026.parquet",
+            "sha256": "50b8d963df0f92b622d6cb7e6d5fc017f0ce374993aafe390fe36edb0588a7ef",
+            "size_bytes": 5284818,
+            "rows": 87518
+          }
+        ]
+      },
+      "XMRUSDT": {
+        "total_rows": 83863,
+        "total_size_bytes": 3734411,
+        "partitions_count": 1,
+        "files": [
+          {
+            "file": "2026.parquet",
+            "sha256": "86c5f0f7ec89cfd4bab5c18dc4a9ddf5a1aa210a36db0c607aeace779f2f57cb",
+            "size_bytes": 3734411,
+            "rows": 83863
+          }
+        ]
+      },
+      "XRPUSDT": {
+        "total_rows": 316500,
+        "total_size_bytes": 14770881,
+        "partitions_count": 4,
+        "files": [
+          {
+            "file": "2023.parquet",
+            "sha256": "53748c765c2f871c5eae30c1a0023ac47c987fdfbe86f0f57252580244009b52",
+            "size_bytes": 646958,
+            "rows": 18458
+          },
+          {
+            "file": "2024.parquet",
+            "sha256": "1c96f762406a8dbf3e4c0d86d0df229c00d7ebb6e5ef3ce22a269f0c4b7b0009",
+            "size_bytes": 3594534,
+            "rows": 105408
+          },
+          {
+            "file": "2025.parquet",
+            "sha256": "86a4bb1027b9dc92e762d79db3c9842d3b931d7ed40ec52d39fcafcaa6c19884",
+            "size_bytes": 5209329,
+            "rows": 105120
+          },
+          {
+            "file": "2026.parquet",
+            "sha256": "93d01240462f651296dd5a5e6b99afcf32a163895a09c049d6b567aa89f36bc4",
+            "size_bytes": 5320060,
+            "rows": 87514
+          }
+        ]
+      }
+    }
+  },
+  "signal_derivation_audit": {
+    "independent_calculation": true,
+    "imports_strategy_evaluator": false,
+    "imports_quantum_strategies": false,
+    "pnl_formulas_source": "pure_python_numpy_formulas"
+  }
+}

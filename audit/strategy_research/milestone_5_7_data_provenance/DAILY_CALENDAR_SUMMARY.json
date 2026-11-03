@@ -1,0 +1,9 @@
+{
+  "total_calendar_days": 1099,
+  "valid_trading_days": 117,
+  "valid_no_trade_days": 1,
+  "ruin_halted_days": 981,
+  "missing_market_data_days": 0,
+  "insufficient_warmup_days": 0,
+  "invalid_data_days": 0
+}

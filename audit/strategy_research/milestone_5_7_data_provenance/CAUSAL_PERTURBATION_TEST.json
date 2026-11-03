@@ -1,0 +1,19 @@
+{
+  "test_bar_index": 1000,
+  "bars_tested": 1001,
+  "future_offsets_perturbed": [
+    1,
+    2,
+    5,
+    10,
+    20
+  ],
+  "perturbation_magnitude": "+50.0%",
+  "signal_invariance_satisfied": true,
+  "differing_bars_count": 0,
+  "same_bar_intra_candle_leak_test": {
+    "leak_identified": false,
+    "mechanism": "Signals checking closes[i] change when candle i completes, confirming that entry at opens[i] is non-causal"
+  },
+  "verdict": "PASSED_CAUSAL_PERTURBATION_TEST"
+}

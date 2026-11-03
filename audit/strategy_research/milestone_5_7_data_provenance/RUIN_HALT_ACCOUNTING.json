@@ -1,0 +1,38 @@
+{
+  "exact_ruin_threshold_usd": 20.0,
+  "hard_circuit_breaker_threshold_usd": 5.0,
+  "equity_immediately_before_halt_usd": 20.43679284267456,
+  "equity_at_halt_usd": 19.992882162634995,
+  "positions_forcibly_liquidated": false,
+  "unrealized_pnl_included_at_halt": true,
+  "ruin_date_utc": "2024-02-22",
+  "active_trading_calendar_days": 118,
+  "post_halt_zero_padded_days": 981,
+  "conventions": {
+    "convention_1_terminal_evaluation": {
+      "description": "Evaluation terminates on ruin halt (active trading period only, 118 days)",
+      "calendar_days": 118,
+      "mean_daily_return_pct": -1.3499,
+      "daily_std_pct": 1.0075,
+      "sharpe_365": -25.6,
+      "max_drawdown_pct": 80.01
+    },
+    "convention_2_post_halt_zero_extension": {
+      "description": "Silently pads zero return for all remaining 981 days (Milestone 5.6 reporting)",
+      "calendar_days": 1099,
+      "mean_daily_return_pct": -0.1449,
+      "daily_std_pct": 0.5319,
+      "sharpe_365": -5.21,
+      "max_drawdown_pct": 80.01,
+      "dilution_factor": 9.31
+    },
+    "convention_3_uncompounded_fixed_capital": {
+      "description": "Total dollar PnL normalized against initial equity across active period",
+      "calendar_days": 118,
+      "total_net_pnl_usd": -80.01,
+      "mean_uncompounded_daily_pct": -0.678,
+      "max_drawdown_pct": 80.01
+    }
+  },
+  "critical_finding": "The reported -0.1449% daily return in Milestone 5.6 was severely diluted by 981 days of zero returns. During its active trading lifespan of 118 days, Portfolio A's true mean net daily return was -1.3495% per day. Padding zeroes after an execution starvation event obscures the true rate of capital loss."
+}
