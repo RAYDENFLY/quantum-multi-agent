@@ -1,0 +1,4 @@
+audit_id,timing_mode,use_bar_filter,calendar_days,trades_count,mean_daily_return_pct,median_daily_return_pct,daily_std_pct,net_expectancy_bps,ending_equity_usd,bootstrap_mean_pct,ci_95_lower_pct,ci_95_upper_pct,prob_mean_gte_3pct,prob_positive_pct
+EXP08_REPORTED_LEAK,SAME_BAR_OPEN,True,1099,46486,1.1949,0.4978,2.3536,11.1,34971138.9,1.1966,1.0067,1.4148,0.0,100.0
+EXP08_CAUSAL_POINT_IN_TIME,NEXT_BAR_OPEN,True,1099,4283,-0.1451,0.0,0.5211,-14.98,19.96,-0.1458,-0.2528,-0.0546,0.0,0.0
+EXP08_NO_BAR_FILTER,NEXT_BAR_OPEN,False,1099,5029,-0.1447,0.0,0.574,-12.75,20.0,-0.1453,-0.282,-0.0413,0.0,0.0

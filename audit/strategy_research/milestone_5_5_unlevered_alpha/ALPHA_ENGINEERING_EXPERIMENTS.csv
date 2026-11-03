@@ -1,0 +1,5 @@
+experiment_id,effective_leverage,calendar_days,total_trades,mean_daily_return_pct,median_daily_return_pct,daily_std_pct,sharpe_365,max_drawdown_pct,profit_factor,win_rate_pct,net_expectancy_bps,gross_expectancy_bps,ending_equity_usd
+EXP_09_REGIME_ADAPTIVE,1.0,1099,67483,1.0383,0.4033,2.5542,7.77,15.52,1.207,47.74,6.61,21.25,6076634.39
+EXP_10_PASSIVE_MAKER,1.0,1099,31767,1.7178,0.9132,2.5199,13.02,2.4,2.157,58.89,23.28,31.77,9785314649.87
+EXP_10_MARKETABLE_TAKER,1.0,1099,43680,1.1411,0.4103,2.3808,9.16,5.4,1.444,50.41,11.26,25.55,19393737.08
+EXP_11_STRUCTURAL_IMPULSE,1.0,1099,93684,3.084,2.0871,3.5333,16.68,5.48,2.637,70.81,14.04,26.81,1.7175580868647472e+16

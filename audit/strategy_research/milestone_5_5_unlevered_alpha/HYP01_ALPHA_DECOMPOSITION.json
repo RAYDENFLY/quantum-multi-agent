@@ -1,0 +1,348 @@
+{
+  "asset_attribution": [
+    {
+      "dimension": "ASSET",
+      "attribute": "BTCUSDT",
+      "trades_count": 1527,
+      "win_rate_pct": 49.9,
+      "net_expectancy_bps": 6.47,
+      "gross_expectancy_bps": 20.9,
+      "profit_factor": 1.415,
+      "net_pnl_usd": 922858180.8,
+      "pnl_contribution_pct": 4.08,
+      "mfe_mean_bps": 56.39,
+      "mae_mean_bps": -17.47
+    },
+    {
+      "dimension": "ASSET",
+      "attribute": "ETHUSDT",
+      "trades_count": 2898,
+      "win_rate_pct": 50.69,
+      "net_expectancy_bps": 8.28,
+      "gross_expectancy_bps": 22.72,
+      "profit_factor": 1.408,
+      "net_pnl_usd": 1968199883.04,
+      "pnl_contribution_pct": 8.71,
+      "mfe_mean_bps": 63.02,
+      "mae_mean_bps": -19.13
+    },
+    {
+      "dimension": "ASSET",
+      "attribute": "BNBUSDT",
+      "trades_count": 1646,
+      "win_rate_pct": 51.82,
+      "net_expectancy_bps": 8.64,
+      "gross_expectancy_bps": 23.08,
+      "profit_factor": 0.925,
+      "net_pnl_usd": -185330873.9,
+      "pnl_contribution_pct": -0.82,
+      "mfe_mean_bps": 59.31,
+      "mae_mean_bps": -18.35
+    },
+    {
+      "dimension": "ASSET",
+      "attribute": "XRPUSDT",
+      "trades_count": 2589,
+      "win_rate_pct": 48.13,
+      "net_expectancy_bps": 7.25,
+      "gross_expectancy_bps": 21.79,
+      "profit_factor": 1.15,
+      "net_pnl_usd": 1127838289.5,
+      "pnl_contribution_pct": 4.99,
+      "mfe_mean_bps": 66.86,
+      "mae_mean_bps": -23.41
+    },
+    {
+      "dimension": "ASSET",
+      "attribute": "ADAUSDT",
+      "trades_count": 3855,
+      "win_rate_pct": 51.65,
+      "net_expectancy_bps": 10.16,
+      "gross_expectancy_bps": 24.73,
+      "profit_factor": 1.611,
+      "net_pnl_usd": 6981008470.65,
+      "pnl_contribution_pct": 30.89,
+      "mfe_mean_bps": 70.6,
+      "mae_mean_bps": -26.21
+    },
+    {
+      "dimension": "ASSET",
+      "attribute": "SOLUSDT",
+      "trades_count": 4172,
+      "win_rate_pct": 51.61,
+      "net_expectancy_bps": 9.48,
+      "gross_expectancy_bps": 23.99,
+      "profit_factor": 1.261,
+      "net_pnl_usd": 1931136004.15,
+      "pnl_contribution_pct": 8.55,
+      "mfe_mean_bps": 66.66,
+      "mae_mean_bps": -22.66
+    },
+    {
+      "dimension": "ASSET",
+      "attribute": "AVAXUSDT",
+      "trades_count": 2780,
+      "win_rate_pct": 52.77,
+      "net_expectancy_bps": 11.51,
+      "gross_expectancy_bps": 26.06,
+      "profit_factor": 1.429,
+      "net_pnl_usd": 4565770310.43,
+      "pnl_contribution_pct": 20.2,
+      "mfe_mean_bps": 68.7,
+      "mae_mean_bps": -23.11
+    },
+    {
+      "dimension": "ASSET",
+      "attribute": "LINKUSDT",
+      "trades_count": 2785,
+      "win_rate_pct": 51.31,
+      "net_expectancy_bps": 9.38,
+      "gross_expectancy_bps": 23.93,
+      "profit_factor": 1.22,
+      "net_pnl_usd": 1963904470.88,
+      "pnl_contribution_pct": 8.69,
+      "mfe_mean_bps": 66.73,
+      "mae_mean_bps": -24.25
+    },
+    {
+      "dimension": "ASSET",
+      "attribute": "DOGEUSDT",
+      "trades_count": 3694,
+      "win_rate_pct": 52.65,
+      "net_expectancy_bps": 12.94,
+      "gross_expectancy_bps": 27.41,
+      "profit_factor": 1.364,
+      "net_pnl_usd": 2771981106.09,
+      "pnl_contribution_pct": 12.27,
+      "mfe_mean_bps": 74.85,
+      "mae_mean_bps": -24.61
+    },
+    {
+      "dimension": "ASSET",
+      "attribute": "LTCUSDT",
+      "trades_count": 2097,
+      "win_rate_pct": 49.59,
+      "net_expectancy_bps": 9.18,
+      "gross_expectancy_bps": 23.76,
+      "profit_factor": 1.092,
+      "net_pnl_usd": 551037003.14,
+      "pnl_contribution_pct": 2.44,
+      "mfe_mean_bps": 65.84,
+      "mae_mean_bps": -23.88
+    }
+  ],
+  "regime_attribution": [
+    {
+      "dimension": "MACRO_REGIME",
+      "attribute": "HIGH_VOL_BEAR",
+      "calendar_days": 277,
+      "mean_daily_return_pct": 3.0945,
+      "daily_std_pct": 6.5674,
+      "trades_count": 8230,
+      "win_rate_pct": 52.92,
+      "net_expectancy_bps": 13.43,
+      "gross_expectancy_bps": 27.88,
+      "profit_factor": 1.473
+    },
+    {
+      "dimension": "MACRO_REGIME",
+      "attribute": "HIGH_VOL_BULL",
+      "calendar_days": 273,
+      "mean_daily_return_pct": 2.2257,
+      "daily_std_pct": 5.7683,
+      "trades_count": 7564,
+      "win_rate_pct": 52.12,
+      "net_expectancy_bps": 10.83,
+      "gross_expectancy_bps": 25.37,
+      "profit_factor": 1.399
+    },
+    {
+      "dimension": "MACRO_REGIME",
+      "attribute": "LOW_VOL_BULL",
+      "calendar_days": 284,
+      "mean_daily_return_pct": 1.2064,
+      "daily_std_pct": 3.4189,
+      "trades_count": 6339,
+      "win_rate_pct": 50.24,
+      "net_expectancy_bps": 7.09,
+      "gross_expectancy_bps": 21.65,
+      "profit_factor": 1.505
+    },
+    {
+      "dimension": "MACRO_REGIME",
+      "attribute": "LOW_VOL_BEAR",
+      "calendar_days": 265,
+      "mean_daily_return_pct": 0.9961,
+      "daily_std_pct": 3.6508,
+      "trades_count": 5904,
+      "win_rate_pct": 48.61,
+      "net_expectancy_bps": 5.66,
+      "gross_expectancy_bps": 20.18,
+      "profit_factor": 1.078
+    }
+  ],
+  "signal_attribution": [
+    {
+      "dimension": "DIRECTION",
+      "attribute": "LONG",
+      "trades_count": 14099,
+      "win_rate_pct": 51.77,
+      "net_expectancy_bps": 10.08,
+      "gross_expectancy_bps": 24.62,
+      "profit_factor": 1.448,
+      "mfe_mean_bps": 64.86,
+      "mae_mean_bps": -22.38
+    },
+    {
+      "dimension": "DIRECTION",
+      "attribute": "SHORT",
+      "trades_count": 13944,
+      "win_rate_pct": 50.6,
+      "net_expectancy_bps": 9.22,
+      "gross_expectancy_bps": 23.71,
+      "profit_factor": 1.211,
+      "mfe_mean_bps": 69.32,
+      "mae_mean_bps": -23.35
+    }
+  ],
+  "lifecycle_attribution": [
+    {
+      "dimension": "EXIT_REASON",
+      "attribute": "TAKE_PROFIT_2",
+      "trades_count": 3894,
+      "pct_of_total_trades": 13.89,
+      "win_rate_pct": 100.0,
+      "net_expectancy_bps": 108.39,
+      "profit_factor": Infinity,
+      "avg_bars_held": 2.13,
+      "mfe_mean_bps": 170.48,
+      "mae_mean_bps": -1.92
+    },
+    {
+      "dimension": "EXIT_REASON",
+      "attribute": "TIME_EXPIRATION",
+      "trades_count": 17683,
+      "pct_of_total_trades": 63.06,
+      "win_rate_pct": 36.26,
+      "net_expectancy_bps": -11.46,
+      "profit_factor": 0.382,
+      "avg_bars_held": 4.0,
+      "mfe_mean_bps": 39.67,
+      "mae_mean_bps": -24.16
+    },
+    {
+      "dimension": "EXIT_REASON",
+      "attribute": "TAKE_PROFIT_1_HORIZON",
+      "trades_count": 2870,
+      "pct_of_total_trades": 10.23,
+      "win_rate_pct": 98.08,
+      "net_expectancy_bps": 63.76,
+      "profit_factor": 288.603,
+      "avg_bars_held": 4.0,
+      "mfe_mean_bps": 103.69,
+      "mae_mean_bps": -3.95
+    },
+    {
+      "dimension": "EXIT_REASON",
+      "attribute": "STOP_LOSS",
+      "trades_count": 3596,
+      "pct_of_total_trades": 12.82,
+      "win_rate_pct": 34.34,
+      "net_expectancy_bps": -36.62,
+      "profit_factor": 0.169,
+      "avg_bars_held": 2.94,
+      "mfe_mean_bps": 60.67,
+      "mae_mean_bps": -54.26
+    },
+    {
+      "dimension": "HOLDING_BARS",
+      "attribute": "1 bars (5m)",
+      "trades_count": 1702,
+      "pct_of_total_trades": 6.07,
+      "win_rate_pct": 89.42,
+      "net_expectancy_bps": 83.63,
+      "profit_factor": 17.496,
+      "avg_bars_held": "1",
+      "mfe_mean_bps": 167.66,
+      "mae_mean_bps": -10.83
+    },
+    {
+      "dimension": "HOLDING_BARS",
+      "attribute": "2 bars (10m)",
+      "trades_count": 2016,
+      "pct_of_total_trades": 7.19,
+      "win_rate_pct": 65.08,
+      "net_expectancy_bps": 33.86,
+      "profit_factor": 2.026,
+      "avg_bars_held": "2",
+      "mfe_mean_bps": 110.09,
+      "mae_mean_bps": -28.1
+    },
+    {
+      "dimension": "HOLDING_BARS",
+      "attribute": "3 bars (15m)",
+      "trades_count": 1932,
+      "pct_of_total_trades": 6.89,
+      "win_rate_pct": 63.77,
+      "net_expectancy_bps": 28.7,
+      "profit_factor": 1.474,
+      "avg_bars_held": "3",
+      "mfe_mean_bps": 104.18,
+      "mae_mean_bps": -29.86
+    },
+    {
+      "dimension": "HOLDING_BARS",
+      "attribute": "4 bars (20m)",
+      "trades_count": 22393,
+      "pct_of_total_trades": 79.85,
+      "win_rate_pct": 45.95,
+      "net_expectancy_bps": 0.21,
+      "profit_factor": 0.859,
+      "avg_bars_held": "4",
+      "mfe_mean_bps": 52.36,
+      "mae_mean_bps": -22.71
+    }
+  ],
+  "concentration_attribution": [
+    {
+      "metric": "Full Sample Mean Daily Return",
+      "value_pct": 1.8848,
+      "interpretation": "Full 1,099 calendar days"
+    },
+    {
+      "metric": "Top 1% Days Cutoff Return",
+      "value_pct": 24.8194,
+      "interpretation": "Threshold for top 10 days"
+    },
+    {
+      "metric": "Mean Return Excluding Top 1% Days",
+      "value_pct": 1.6472,
+      "interpretation": "Impact of removing top 10 outlier days"
+    },
+    {
+      "metric": "Top 5% Days Cutoff Return",
+      "value_pct": 11.7439,
+      "interpretation": "Threshold for top 54 days"
+    },
+    {
+      "metric": "Mean Return Excluding Top 5% Days",
+      "value_pct": 1.0289,
+      "interpretation": "Impact of removing top 54 outlier days"
+    },
+    {
+      "metric": "Bottom 5% Days Cutoff Loss",
+      "value_pct": -3.2439,
+      "interpretation": "Worst 54 loss days threshold"
+    },
+    {
+      "metric": "Mean Return Excluding Bottom 5% Days",
+      "value_pct": 2.179,
+      "interpretation": "Impact of removing worst 54 drawdown days"
+    },
+    {
+      "metric": "5% Symmetrically Trimmed Mean Daily Return",
+      "value_pct": 1.2925,
+      "interpretation": "Trimmed mean excluding both tails (central core alpha)"
+    }
+  ]
+}

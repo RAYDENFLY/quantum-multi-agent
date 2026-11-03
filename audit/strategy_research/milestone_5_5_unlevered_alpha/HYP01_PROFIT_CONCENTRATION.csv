@@ -1,0 +1,9 @@
+metric,value_pct,interpretation
+Full Sample Mean Daily Return,1.8848,"Full 1,099 calendar days"
+Top 1% Days Cutoff Return,24.8194,Threshold for top 10 days
+Mean Return Excluding Top 1% Days,1.6472,Impact of removing top 10 outlier days
+Top 5% Days Cutoff Return,11.7439,Threshold for top 54 days
+Mean Return Excluding Top 5% Days,1.0289,Impact of removing top 54 outlier days
+Bottom 5% Days Cutoff Loss,-3.2439,Worst 54 loss days threshold
+Mean Return Excluding Bottom 5% Days,2.179,Impact of removing worst 54 drawdown days
+5% Symmetrically Trimmed Mean Daily Return,1.2925,Trimmed mean excluding both tails (central core alpha)

@@ -1,0 +1,82 @@
+{
+  "timestamp_utc": "2026-11-03T14:35:36.056652+00:00",
+  "milestone": "5.5",
+  "objective": "Unlevered Alpha Engineering & Structural Edge Optimization",
+  "mandatory_daily_target_pct": 3.0,
+  "max_drawdown_limit_pct": 15.0,
+  "effective_leverage_constraint": 1.0,
+  "bootstrap_parameters": {
+    "resamples": 2000,
+    "expected_block_len": 10,
+    "method": "Politis_Romano_Stationary_Bootstrap"
+  },
+  "hansen_spa_test": {
+    "test_statistic": 18.6672,
+    "p_value_spa": 0.0,
+    "null_rejected_at_5pct": true
+  },
+  "experiments_bootstrap": {
+    "EXP08_REPORTED_LEAK": {
+      "audit_id": "EXP08_REPORTED_LEAK",
+      "timing_mode": "SAME_BAR_OPEN",
+      "use_bar_filter": true,
+      "calendar_days": 1099,
+      "trades_count": 46486,
+      "mean_daily_return_pct": 1.1949,
+      "median_daily_return_pct": 0.4978,
+      "daily_std_pct": 2.3536,
+      "net_expectancy_bps": 11.1,
+      "ending_equity_usd": 34971138.9,
+      "bootstrap_mean_pct": 1.1966,
+      "ci_95_lower_pct": 1.0067,
+      "ci_95_upper_pct": 1.4148,
+      "prob_mean_gte_3pct": 0.0,
+      "prob_positive_pct": 100.0
+    },
+    "EXP08_CAUSAL_POINT_IN_TIME": {
+      "audit_id": "EXP08_CAUSAL_POINT_IN_TIME",
+      "timing_mode": "NEXT_BAR_OPEN",
+      "use_bar_filter": true,
+      "calendar_days": 1099,
+      "trades_count": 4283,
+      "mean_daily_return_pct": -0.1451,
+      "median_daily_return_pct": 0.0,
+      "daily_std_pct": 0.5211,
+      "net_expectancy_bps": -14.98,
+      "ending_equity_usd": 19.96,
+      "bootstrap_mean_pct": -0.1458,
+      "ci_95_lower_pct": -0.2528,
+      "ci_95_upper_pct": -0.0546,
+      "prob_mean_gte_3pct": 0.0,
+      "prob_positive_pct": 0.0
+    },
+    "EXP08_NO_BAR_FILTER": {
+      "audit_id": "EXP08_NO_BAR_FILTER",
+      "timing_mode": "NEXT_BAR_OPEN",
+      "use_bar_filter": false,
+      "calendar_days": 1099,
+      "trades_count": 5029,
+      "mean_daily_return_pct": -0.1447,
+      "median_daily_return_pct": 0.0,
+      "daily_std_pct": 0.574,
+      "net_expectancy_bps": -12.75,
+      "ending_equity_usd": 20.0,
+      "bootstrap_mean_pct": -0.1453,
+      "ci_95_lower_pct": -0.282,
+      "ci_95_upper_pct": -0.0413,
+      "prob_mean_gte_3pct": 0.0,
+      "prob_positive_pct": 0.0
+    }
+  },
+  "forensic_verdict": {
+    "leak_identified": true,
+    "leak_type": "INTRA_BAR_SIGNAL_EXECUTION_TIMING_LOOKAHEAD",
+    "leak_mechanism": "m.closes[i] > m.opens[i] trigger executed at m.opens[i]",
+    "synthetic_alpha_magnitude_bps": 25.38,
+    "causal_expectancy_bps": -14.28,
+    "unlevered_causal_mean_daily_pct": -0.1451,
+    "paper_trading_eligibility": false,
+    "research_status": "REQUIRES_RESEARCH",
+    "paper_trading_authorization": "DENIED_PENDING_3_PERCENT_BACKTEST_VALIDATION"
+  }
+}
