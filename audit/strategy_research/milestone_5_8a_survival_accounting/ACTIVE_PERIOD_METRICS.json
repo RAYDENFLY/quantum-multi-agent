@@ -1,0 +1,17 @@
+{
+  "active_calendar_days": 79,
+  "initial_equity_usd": 100.0,
+  "terminal_equity_usd": 19.965443888462204,
+  "total_net_pnl_usd": -80.0357,
+  "total_costs_and_fees_usd": 57.2907,
+  "mean_daily_return_pct": -2.0068,
+  "median_daily_return_pct": -1.8593,
+  "daily_std_pct": 1.5402,
+  "sharpe_365": -24.89,
+  "sortino_365": -14.73,
+  "max_drawdown_pct": 80.0346,
+  "total_trades_count": 3562,
+  "profit_factor": 0.545,
+  "net_expectancy_bps": -17.99,
+  "gross_expectancy_bps": -4.92
+}

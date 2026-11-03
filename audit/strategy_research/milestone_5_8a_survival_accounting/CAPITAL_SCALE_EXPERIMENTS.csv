@@ -1,0 +1,4 @@
+initial_capital_usd,terminal_equity_usd,total_calendar_days,active_trading_days,starvation_halt_occurred,starvation_day_index,starvation_threshold_usd,total_trades_count,max_drawdown_pct
+100.0,19.9654,1099,79,True,79,20.0,3562,80.0346
+1000.0,19.965,1099,256,True,256,20.0,10263,98.0035
+10000.0,19.9822,1099,428,True,428,20.0,18091,99.8002

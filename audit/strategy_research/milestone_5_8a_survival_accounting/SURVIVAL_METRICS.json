@@ -1,0 +1,67 @@
+{
+  "capital_scale_experiments": [
+    {
+      "initial_capital_usd": 100.0,
+      "terminal_equity_usd": 19.9654,
+      "total_calendar_days": 1099,
+      "active_trading_days": 79,
+      "starvation_halt_occurred": true,
+      "starvation_day_index": 79,
+      "starvation_threshold_usd": 20.0,
+      "total_trades_count": 3562,
+      "max_drawdown_pct": 80.0346
+    },
+    {
+      "initial_capital_usd": 1000.0,
+      "terminal_equity_usd": 19.965,
+      "total_calendar_days": 1099,
+      "active_trading_days": 256,
+      "starvation_halt_occurred": true,
+      "starvation_day_index": 256,
+      "starvation_threshold_usd": 20.0,
+      "total_trades_count": 10263,
+      "max_drawdown_pct": 98.0035
+    },
+    {
+      "initial_capital_usd": 10000.0,
+      "terminal_equity_usd": 19.9822,
+      "total_calendar_days": 1099,
+      "active_trading_days": 428,
+      "starvation_halt_occurred": true,
+      "starvation_day_index": 428,
+      "starvation_threshold_usd": 20.0,
+      "total_trades_count": 18091,
+      "max_drawdown_pct": 99.8002
+    }
+  ],
+  "bootstrap_ruin_simulations": {
+    "initial_capital_100_usd": {
+      "bootstrap_resamples": 2000,
+      "initial_capital_usd": 100.0,
+      "ruin_threshold_usd": 20.0,
+      "empirical_ruin_probability_pct": 100.0,
+      "mean_days_to_operational_halt": 79.8,
+      "median_days_to_operational_halt": 79.0,
+      "min_days_to_halt": 62,
+      "max_days_to_halt": 104
+    },
+    "initial_capital_1000_usd": {
+      "bootstrap_resamples": 2000,
+      "initial_capital_usd": 1000.0,
+      "ruin_threshold_usd": 20.0,
+      "empirical_ruin_probability_pct": 100.0,
+      "mean_days_to_operational_halt": 192.9,
+      "median_days_to_operational_halt": 193.0,
+      "min_days_to_halt": 166,
+      "max_days_to_halt": 225
+    }
+  },
+  "minimum_notional_audit": {
+    "minimum_exchange_order_notional_usd": 5.0,
+    "maximum_position_weight": 0.25,
+    "starvation_equity_threshold_usd": 20.0,
+    "terminal_equity_at_halt_usd": 19.9929,
+    "position_notional_at_halt_usd": 4.9982,
+    "semantic_explanation": "The $4.998 value represents the calculated position notional (equity * 0.25). The Bybit VIP0 perpetual exchange rule enforces a minimum order value of $5.00 notional. Because $4.998 < $5.00, the order sizing engine rejected all subsequent order entries. No liquidation occurred. The account still possessed positive cash equity ($19.99), but was operationally frozen due to risk-enforced position sizing rules."
+  }
+}

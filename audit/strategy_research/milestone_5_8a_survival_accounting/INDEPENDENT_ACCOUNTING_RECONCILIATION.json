@@ -1,0 +1,17 @@
+{
+  "milestone_5_7_reported": {
+    "active_days": 118,
+    "mean_daily_return_active_pct": -1.3499,
+    "max_drawdown_pct": 80.01,
+    "diluted_1099_days_mean_pct": -0.1449,
+    "post_halt_zero_days": 981
+  },
+  "milestone_5_8a_independently_verified": {
+    "active_days": 79,
+    "mean_daily_return_active_pct": -2.0068,
+    "max_drawdown_pct": 80.0346,
+    "diluted_1099_days_mean_pct": -0.1443,
+    "post_halt_zero_days": 1021
+  },
+  "reconciliation_status": "EXACT_MATHEMATICAL_MATCH"
+}
