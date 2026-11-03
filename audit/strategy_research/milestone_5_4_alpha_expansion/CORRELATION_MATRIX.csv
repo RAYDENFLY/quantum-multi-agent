@@ -1,0 +1,4 @@
+strategy_a,strategy_b,pearson_corr,diversification_benefit
+HYP-01 (Trend),HYP-02 (Sweep),0.0096,MODERATE_ORTHOGONAL
+HYP-01 (Trend),HYP-03 (MeanRev),0.0019,EXCELLENT_ORTHOGONAL
+HYP-02 (Sweep),HYP-03 (MeanRev),-0.0047,EXCELLENT_ORTHOGONAL
