@@ -23,6 +23,7 @@ ENV/
 htmlcov/
 .mypy_cache/
 .ruff_cache/
+**/.cache/
 
 # IDEs and editors
 .vscode/
