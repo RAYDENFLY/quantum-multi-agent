@@ -39,19 +39,65 @@ class CostModelProfile:
 
 # Authoritative cost model profiles
 DEFAULT_ASTERDEX_COSTS = CostModelProfile(name="AsterDEX_Base_Retail")
+
+# Phase B Maker Realism Profiles
+MAKER_CONSERVATIVE_PROFILE = CostModelProfile(
+    name="Maker_Conservative_Assumptions",
+    maker_fee_bps=4.0,
+    taker_fee_bps=10.0,
+    spread_bps_half=1.0,
+    slippage_bps_per_leg=2.0,
+    adverse_selection_bps=2.5,
+    fill_probability_threshold=0.70,
+    classification="SIMULATED_EXECUTION_ASSUMPTION",
+)
+MAKER_MODERATE_PROFILE = CostModelProfile(
+    name="Maker_Moderate_Assumptions",
+    maker_fee_bps=4.0,
+    taker_fee_bps=10.0,
+    spread_bps_half=1.0,
+    slippage_bps_per_leg=2.0,
+    adverse_selection_bps=1.5,
+    fill_probability_threshold=0.50,
+    classification="SIMULATED_EXECUTION_ASSUMPTION",
+)
+MAKER_OPTIMISTIC_PROFILE = CostModelProfile(
+    name="Maker_Optimistic_Assumptions",
+    maker_fee_bps=4.0,
+    taker_fee_bps=10.0,
+    spread_bps_half=1.0,
+    slippage_bps_per_leg=2.0,
+    adverse_selection_bps=0.5,
+    fill_probability_threshold=0.30,
+    classification="SIMULATED_OPTIMISTIC_NOT_FOR_PROMOTION",
+)
+
+# Phase B Stress Profiles
+ADVERSE_SELECTION_STRESS_PROFILE = CostModelProfile(
+    name="Stress_Adverse_Selection",
+    maker_fee_bps=4.0,
+    taker_fee_bps=10.0,
+    spread_bps_half=1.0,
+    slippage_bps_per_leg=2.0,
+    adverse_selection_bps=4.0,
+    classification="STRESS_TIER",
+)
 STRESS_SLIPPAGE_COSTS = CostModelProfile(
     name="Stress_Adverse_Slippage",
     slippage_bps_per_leg=7.0,  # +5 bps adverse slippage
     adverse_selection_bps=3.5,
+    classification="STRESS_TIER",
 )
 STRESS_FEE_COSTS = CostModelProfile(
     name="Stress_Fee_Increase",
     taker_fee_bps=20.0,  # +10 bps taker fee
     maker_fee_bps=8.0,
+    classification="STRESS_TIER",
 )
 STRESS_PARTIAL_FILL_COSTS = CostModelProfile(
     name="Stress_50pct_Partial_Fill",
     partial_fill_ratio=0.50,
+    classification="STRESS_TIER",
 )
 ZERO_FRICTION_DIAGNOSTIC = CostModelProfile(
     name="Zero_Friction_Diagnostic",
@@ -98,6 +144,7 @@ class ExecutionEconomicsEngine:
         volume: float,
         atr: float,
         side_is_long: bool,
+        threshold: float = 0.50,
     ) -> Tuple[bool, float]:
         """Models passive queue fill probability and adverse selection based on bar microstructure.
         
@@ -123,7 +170,7 @@ class ExecutionEconomicsEngine:
         vol_factor = min(1.0, bar_range / (atr + 1e-6))
         fill_prob = (0.50 * penetration_ratio) + (0.50 * vol_factor)
 
-        filled = fill_prob >= 0.35
+        filled = fill_prob >= threshold
         return filled, fill_prob
 
     @classmethod
@@ -157,6 +204,7 @@ class ExecutionEconomicsEngine:
                 volume=bar_volume or 1000.0,
                 atr=atr,
                 side_is_long=side_is_long,
+                threshold=profile.fill_probability_threshold,
             )
             if not filled:
                 # Missed maker entry -> 0 PnL, 0 cost

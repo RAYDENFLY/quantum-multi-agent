@@ -1,0 +1,11 @@
+scenario_id,scenario_name,entry_price,stop_trigger_price,executed_exit_price,slippage_bps_applied,gross_realized_pnl_usd,exit_friction_usd,net_realized_pnl_usd,terminal_cash_usd,terminal_equity_usd,terminal_drawdown_pct,ruin_halt_triggered,negative_equity_occurred,loss_beyond_initial_capital,description
+GC-01,Price gaps through stop-loss,100.0,98.0,92.0,2.0,-2.0,0.0299,-2.0299,97.9376,97.9376,2.0624,False,False,False,Gap from $100 to $92 through stop at $98; executes at $92 minus slippage
+GC-02,Market opens beyond stop trigger,100.0,98.0,90.0,2.0,-2.5,0.0293,-2.5293,97.43825,97.43825,2.5618,False,False,False,Market gaps on candle open directly to $90; fills at $90
+GC-03,Extreme slippage during liquidation,100.0,98.0,95.0,15.0,-1.25,0.0617,-1.3117,98.65575,98.65575,1.3443,False,False,False,Liquidation crosses thin orderbook incurring 15 bps slippage
+GC-04,Partial liquidation (50% forced close),100.0,98.0,96.0,2.0,-0.5,0.0156,-0.5156,99.4519,98.9519,1.0481,False,False,False,Liquidates 50% of position quantity to restore margin
+GC-05,Failed close attempt (Exchange Timeout),100.0,98.0,UNEXECUTED,0.0,0.0,0.0,0.0,99.9675,98.4675,1.5325,False,False,False,Exchange timeout/rejection on close; position remains active
+GC-06,Position remains open after close rejection,100.0,98.0,UNEXECUTED,0.0,0.0,0.0,0.0,99.9675,98.4675,1.5325,False,False,False,Market continues falling to $94 while position remains unclosed
+GC-07,Multiple positions hit stops simultaneously,100.0,98.0,96.0,2.0,-3.6,0.12,-3.72,96.809937,96.809937,3.1901,False,False,False,3 simultaneous positions hit stops on widespread market flash crash
+GC-08,Funding charged during adverse move,100.0,95.0,95.0,2.0,-1.25,0.0309,-1.2809,98.674125,98.674125,1.3259,False,False,False,Adverse funding charge (5 bps) deducted while position down 5%
+GC-09,Equity reaches exactly zero ($0.00),100.0,0.0,0.0,2.0,-25.0,0.0,-25.0,0.0,0.0,100.0,True,False,False,Asset drops to zero (total default) exhausting 100% equity
+GC-10,Equity becomes negative (-$5.00) after gap,100.0,95.0,88.0,10.0,-10.0,0.0,-10.0,-0.013,-0.013,100.13,True,True,True,Leverage or gap beyond capital causes terminal negative equity; reported without clipping
