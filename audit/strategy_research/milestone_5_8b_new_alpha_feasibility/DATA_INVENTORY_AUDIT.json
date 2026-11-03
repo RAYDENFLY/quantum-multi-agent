@@ -1,0 +1,104 @@
+{
+  "execution_timestamp_utc": "2026-11-03T17:13:28.530677+00:00",
+  "primary_universe": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "BNBUSDT",
+    "ADAUSDT",
+    "DOGEUSDT",
+    "LINKUSDT",
+    "LTCUSDT",
+    "AVAXUSDT",
+    "XRPUSDT"
+  ],
+  "track_a_funding_basis": {
+    "track_name": "TRACK_A_FUNDING_BASIS",
+    "status": "DATA_ACQUISITION_REQUIRED",
+    "classification": "DATA_UNAVAILABLE",
+    "funding_events_db_count": 0,
+    "parquet_has_funding_columns": false,
+    "spot_data_available": false,
+    "missing_components": [
+      "8-hour historical funding rate settlements (00:00, 08:00, 16:00 UTC)",
+      "Spot order book / Spot kline time series (for perpetual-to-spot basis calculation)",
+      "Cross-exchange funding spreads (Binance vs Bybit vs OKX)",
+      "Borrow / margin lending interest rate time series"
+    ],
+    "required_endpoints": [
+      "/v5/market/funding/history (Bybit)",
+      "/fapi/v1/fundingRate (Binance)",
+      "/api/v5/public/funding-rate-history (OKX)",
+      "/v5/market/kline?category=spot (Bybit Spot OHLCV)"
+    ],
+    "causal_feasibility": "UNTESTABLE_WITHOUT_DATA",
+    "falsifiable_hypothesis": "H_A: Perpetual funding rate deviations from borrow cost exhibit sufficient mean-reverting persistence and basis convergence to deliver >= 3.00% net daily return at 1.0x unlevered exposure."
+  },
+  "track_b_order_flow_microstructure": {
+    "track_name": "TRACK_B_ORDER_FLOW_MICROSTRUCTURE",
+    "status": "DATA_ACQUISITION_REQUIRED",
+    "classification": "DATA_UNAVAILABLE",
+    "l2_snapshots_db_count": 0,
+    "market_tickers_db_count": 0,
+    "has_l2_depth_snapshots": false,
+    "has_tick_trades_tape": false,
+    "has_quote_spread_series": false,
+    "existing_features": [
+      "5-minute bar aggregate volume",
+      "5-minute bar aggregate taker_buy_volume",
+      "5-minute bar trade_count"
+    ],
+    "missing_components": [
+      "Level 2 order book incremental depth updates (delta snapshots)",
+      "Tick-by-tick public trade stream with explicit aggressor flag (buyer/seller maker)",
+      "Top-of-book best bid/ask quotes with sub-second timestamps",
+      "Microprice displacement and queue cancellation event logs"
+    ],
+    "data_acquisition_specification": {
+      "feed_types": [
+        "publicTrade",
+        "orderbook.50",
+        "tickers"
+      ],
+      "websocket_channels": [
+        "wss://stream.bybit.com/v5/public/linear",
+        "wss://fstream.binance.com/ws"
+      ],
+      "storage_estimate_gb_per_symbol_year": 120.0,
+      "clock_synchronization": "PTP / Hardware NTP (< 1ms jitter)"
+    },
+    "causal_feasibility": "UNTESTABLE_WITHOUT_L2_DATA",
+    "falsifiable_hypothesis": "H_B: Sub-second Order Flow Imbalance (OFI) and volume delta contain predictive decay exceeding Bybit VIP0 maker/taker fee drag (+2.0 bps / 5.5 bps) over 1-to-15 minute horizons."
+  },
+  "track_c_relative_value": {
+    "track_name": "TRACK_C_CROSS_SECTIONAL_RELATIVE_VALUE",
+    "status": "READY_FOR_EMPIRICAL_RESEARCH",
+    "classification": "FEASIBLE_DATA_EXISTS_RETURN_CONSTRAINED",
+    "universe_size": 10,
+    "calendar_days_available": 1100,
+    "mean_pairwise_correlation": 0.6626,
+    "total_pairs_tested": 45,
+    "cointegrated_pairs_count": 9,
+    "cointegrated_pairs_pct": 20.0,
+    "cross_sectional_dispersion_daily_std_pct": 1.9929,
+    "cross_sectional_daily_range_pct": 6.4676,
+    "unlevered_return_capacity_analysis": {
+      "gross_leverage_limit": 1.0,
+      "long_allocation_pct": 50.0,
+      "short_allocation_pct": 50.0,
+      "empirical_mean_daily_spread_pct": 3.2338,
+      "bybit_vip0_friction_roundtrip_bps": 15.0,
+      "rebalancing_drag_daily_bps": 7.5,
+      "estimated_net_daily_return_ceiling_pct": 0.35,
+      "gap_to_mandatory_3pct_target_pct": 2.65,
+      "mandatory_target_attainable_at_1x_unlevered": false,
+      "economic_reasoning": "While Track C data is fully available and causal backtesting is immediately possible, a strictly 1.0x unlevered market-neutral relative value portfolio (50% long / 50% short) captures only relative spread dispersion. Across crypto majors, median unlevered cross-sectional spread produces 20 to 40 bps/day gross before fees. Achieving >= 3.00% net daily return without leverage is mathematically inconsistent with empirical cross-sectional crypto volatility."
+    },
+    "falsifiable_hypothesis": "H_C: Cross-sectional momentum, residual mean-reversion, and cointegrated pairs trading produce positive net expectancy and MDD <= 15% under strictly 1.0x unlevered exposure, though the mandatory >= 3.00% daily return gate represents an extreme structural hurdle."
+  },
+  "data_availability_summary": {
+    "TRACK_A_FUNDING_BASIS": "DATA_ACQUISITION_REQUIRED",
+    "TRACK_B_ORDER_FLOW": "DATA_ACQUISITION_REQUIRED",
+    "TRACK_C_RELATIVE_VALUE": "READY_FOR_EMPIRICAL_RESEARCH"
+  }
+}

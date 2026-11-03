@@ -1,0 +1,44 @@
+{
+  "evaluation_criteria": [
+    "Data availability",
+    "Causal feasibility",
+    "Expected friction",
+    "Execution complexity",
+    "Capital efficiency",
+    "Leverage requirement",
+    "Research priority",
+    "Final classification"
+  ],
+  "tracks": {
+    "TRACK_A_FUNDING_BASIS": {
+      "data_availability": "UNAVAILABLE (Requires 8h funding rate & spot klines backfill)",
+      "causal_feasibility": "THEORETICALLY_HIGH (Requires chronological leg execution)",
+      "expected_friction": "LOW_TO_MEDIUM (8h holding, low turnover)",
+      "execution_complexity": "HIGH (Multi-venue spot/perp legging risk)",
+      "capital_efficiency": "LOW (Requires spot margin + perp capital)",
+      "leverage_requirement": "STRICTLY_1.0X (Unlevered cash-and-carry)",
+      "research_priority": "PRIORITY_2 (High structural edge, blocked on data acquisition)",
+      "final_classification": "DATA_ACQUISITION_REQUIRED"
+    },
+    "TRACK_B_ORDER_FLOW": {
+      "data_availability": "UNAVAILABLE (Requires tick-level trades & L2 depth diffs)",
+      "causal_feasibility": "VERY_HIGH (Microsecond causal timestamps)",
+      "expected_friction": "EXTREMELY_HIGH (Sub-minute turnover, Bybit VIP0 drag)",
+      "execution_complexity": "EXTREMELY_HIGH (Queue priority, microsecond latency)",
+      "capital_efficiency": "HIGH (High turnover, minimal inventory risk)",
+      "leverage_requirement": "STRICTLY_1.0X (Unlevered intraday inventory)",
+      "research_priority": "PRIORITY_3 (Severe friction hurdle, heavy data infra needed)",
+      "final_classification": "DATA_ACQUISITION_REQUIRED"
+    },
+    "TRACK_C_RELATIVE_VALUE": {
+      "data_availability": "AVAILABLE (10 assets, 1,099 days 5m/15m/1h synchronized OHLCV)",
+      "causal_feasibility": "VERIFIED (Zero-lookahead cross-sectional rank/rebalancing)",
+      "expected_friction": "MEDIUM (Rebalancing turnover across 10 instruments)",
+      "execution_complexity": "MEDIUM (Simultaneous multi-leg order management)",
+      "capital_efficiency": "MODERATE (50% long / 50% short dollar neutrality)",
+      "leverage_requirement": "STRICTLY_1.0X (Mandatory unlevered portfolio)",
+      "research_priority": "PRIORITY_1 (Immediately testable, existing validated dataset)",
+      "final_classification": "READY_FOR_EMPIRICAL_RESEARCH"
+    }
+  }
+}
