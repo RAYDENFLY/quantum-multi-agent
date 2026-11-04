@@ -1,0 +1,263 @@
+{
+  "git": {
+    "branch": "research/quantum-next-3pct",
+    "head_commit": "273b897eaf982933fd55e8ba2f41fd85564d0b3a",
+    "parent_commit": "71109081bfb19660107690cce76d9a5a59515c68",
+    "status_clean": false
+  },
+  "deliverables": [
+    {
+      "deliverable": "M5_12_2_TC19_ROOT_CAUSE.md",
+      "exists": true,
+      "size_bytes": 7324,
+      "modified_time": "2026-11-04 02:32:28.917774916"
+    },
+    {
+      "deliverable": "M5_12_2_EXPOSURE_INVARIANT_DESIGN.md",
+      "exists": true,
+      "size_bytes": 8026,
+      "modified_time": "2026-11-04 02:33:16.625180960"
+    },
+    {
+      "deliverable": "M5_12_2_TC19_REVALIDATION.csv",
+      "exists": true,
+      "size_bytes": 5614,
+      "modified_time": "2026-11-04 02:18:20.076327562"
+    },
+    {
+      "deliverable": "M5_12_2_PROPERTY_TEST_REPORT.md",
+      "exists": true,
+      "size_bytes": 8193,
+      "modified_time": "2026-11-04 02:33:52.296325684"
+    },
+    {
+      "deliverable": "M5_12_2_PROPERTY_TEST_FAILURES.jsonl",
+      "exists": true,
+      "size_bytes": 0,
+      "modified_time": "2026-11-04 02:31:15.069628"
+    },
+    {
+      "deliverable": "M5_12_2_PROPERTY_TEST_SUMMARY.csv",
+      "exists": true,
+      "size_bytes": 868,
+      "modified_time": "2026-11-04 02:31:15.082971096"
+    },
+    {
+      "deliverable": "M5_12_2_HYP06_ZERO_SIGNAL_AUDIT.md",
+      "exists": true,
+      "size_bytes": 6971,
+      "modified_time": "2026-11-04 02:34:42.510934114"
+    },
+    {
+      "deliverable": "M5_12_2_HYP06_SIGNAL_FUNNEL.csv",
+      "exists": true,
+      "size_bytes": 906,
+      "modified_time": "2026-11-04 02:26:16.006140709"
+    },
+    {
+      "deliverable": "M5_12_2_STATISTICAL_CLAIM_AUDIT.md",
+      "exists": true,
+      "size_bytes": 8199,
+      "modified_time": "2026-11-04 02:35:55.241391897"
+    },
+    {
+      "deliverable": "M5_12_2_EXECUTION_COVERAGE_MATRIX.csv",
+      "exists": true,
+      "size_bytes": 5752,
+      "modified_time": "2026-11-04 02:35:13.063127278"
+    },
+    {
+      "deliverable": "M5_12_2_TEST_REPORT.md",
+      "exists": true,
+      "size_bytes": 5848,
+      "modified_time": "2026-11-04 02:37:01.737088680"
+    },
+    {
+      "deliverable": "M5_12_2_LIMITATIONS_AND_RISKS.md",
+      "exists": true,
+      "size_bytes": 5886,
+      "modified_time": "2026-11-04 02:36:38.747330666"
+    },
+    {
+      "deliverable": "M5_12_2_ACCEPTANCE_MATRIX.csv",
+      "exists": true,
+      "size_bytes": 3518,
+      "modified_time": "2026-11-04 02:37:18.810351610"
+    },
+    {
+      "deliverable": "M5_12_2_EXECUTIVE_SUMMARY.md",
+      "exists": true,
+      "size_bytes": 9370,
+      "modified_time": "2026-11-04 02:37:45.695198298"
+    }
+  ],
+  "dataset": [
+    {
+      "symbol": "BTCUSDT",
+      "raw_bars": 316499,
+      "valid_bars_pre_holdout": 316499,
+      "t_min_ms": 1698530400000,
+      "t_min_utc": "2023-10-28 22:00:00+00:00",
+      "t_max_ms": 1793480100000,
+      "t_max_utc": "2026-10-31 20:55:00+00:00",
+      "dataset_sha256": "07eae9f0c9bed47c73c3c18f010141391203f5b3e0a5836a27f238d5b26ff015"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "raw_bars": 316500,
+      "valid_bars_pre_holdout": 316500,
+      "t_min_ms": 1698530700000,
+      "t_min_utc": "2023-10-28 22:05:00+00:00",
+      "t_max_ms": 1793480400000,
+      "t_max_utc": "2026-10-31 21:00:00+00:00",
+      "dataset_sha256": "9c90b2fbc5f9015864df6ca83f2a04d94c843f0362cc7c7a0b763e2c563bfe2e"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "raw_bars": 316500,
+      "valid_bars_pre_holdout": 316500,
+      "t_min_ms": 1698531000000,
+      "t_min_utc": "2023-10-28 22:10:00+00:00",
+      "t_max_ms": 1793480700000,
+      "t_max_utc": "2026-10-31 21:05:00+00:00",
+      "dataset_sha256": "0c10d51e7ebf5073fb02a0c387b58f61c2fb63cf4d768b112d40078e56eb6c9d"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "raw_bars": 316500,
+      "valid_bars_pre_holdout": 316500,
+      "t_min_ms": 1698530400000,
+      "t_min_utc": "2023-10-28 22:00:00+00:00",
+      "t_max_ms": 1793480100000,
+      "t_max_utc": "2026-10-31 20:55:00+00:00",
+      "dataset_sha256": "6d10445e36aa00d0ec6f4dee3b97d68d017e8b43ec1d41195f298b369f58ac0f"
+    },
+    {
+      "symbol": "XRPUSDT",
+      "raw_bars": 316500,
+      "valid_bars_pre_holdout": 316500,
+      "t_min_ms": 1698529800000,
+      "t_min_utc": "2023-10-28 21:50:00+00:00",
+      "t_max_ms": 1793479500000,
+      "t_max_utc": "2026-10-31 20:45:00+00:00",
+      "dataset_sha256": "7a16563673cb9bc1e43787c848841b81160eb9c25ad3f888eb3b97dfce3c5141"
+    },
+    {
+      "symbol": "ADAUSDT",
+      "raw_bars": 316500,
+      "valid_bars_pre_holdout": 316500,
+      "t_min_ms": 1698529500000,
+      "t_min_utc": "2023-10-28 21:45:00+00:00",
+      "t_max_ms": 1793479200000,
+      "t_max_utc": "2026-10-31 20:40:00+00:00",
+      "dataset_sha256": "214a9da42812d4163db8b72af77d98717ae26b8681474b1bc75f640445e3ea49"
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "raw_bars": 316500,
+      "valid_bars_pre_holdout": 316500,
+      "t_min_ms": 1698531300000,
+      "t_min_utc": "2023-10-28 22:15:00+00:00",
+      "t_max_ms": 1793481000000,
+      "t_max_utc": "2026-10-31 21:10:00+00:00",
+      "dataset_sha256": "54e0a3816ff9cf6a128a2d2a23e184a0a1889b16638ff1cd68a8d874a9068a16"
+    },
+    {
+      "symbol": "LINKUSDT",
+      "raw_bars": 316500,
+      "valid_bars_pre_holdout": 316500,
+      "t_min_ms": 1698531600000,
+      "t_min_utc": "2023-10-28 22:20:00+00:00",
+      "t_max_ms": 1793481300000,
+      "t_max_utc": "2026-10-31 21:15:00+00:00",
+      "dataset_sha256": "0b056b295f828ebdeafd7a0dcb19f26632f5cc2d90d40a2dcaae94f40ec60364"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "raw_bars": 316500,
+      "valid_bars_pre_holdout": 316500,
+      "t_min_ms": 1698531900000,
+      "t_min_utc": "2023-10-28 22:25:00+00:00",
+      "t_max_ms": 1793481600000,
+      "t_max_utc": "2026-10-31 21:20:00+00:00",
+      "dataset_sha256": "00902d22909b05349b313f95e18f5e8246993bb9fafce982bc333cfca3b43348"
+    },
+    {
+      "symbol": "LTCUSDT",
+      "raw_bars": 316500,
+      "valid_bars_pre_holdout": 316500,
+      "t_min_ms": 1698532200000,
+      "t_min_utc": "2023-10-28 22:30:00+00:00",
+      "t_max_ms": 1793481900000,
+      "t_max_utc": "2026-10-31 21:25:00+00:00",
+      "dataset_sha256": "23e2c13136eb59825d09108f7ed11499c4485459ed31eecb8c805f932ee5e183"
+    }
+  ],
+  "fee_schedules": [
+    {
+      "schedule_id": "ASTERDEX_BASE_RETAIL_v1",
+      "exchange": "AsterDEX",
+      "fee_tier": "Base_Retail_Tier",
+      "maker_fee_bps": 4.0,
+      "taker_fee_bps": 10.0,
+      "spread_bps_half": 1.0,
+      "slippage_bps_per_leg": 2.0,
+      "adverse_selection_bps": 1.5,
+      "round_trip_taker_bps": 26.0,
+      "round_trip_maker_bps": 11.0,
+      "fingerprint": "4f0b27f782d2456ad7849b7c67f8fb5516284f6a7f50938fc072842882220bcb"
+    },
+    {
+      "schedule_id": "ASTERDEX_STRESS_CONGESTION_v1",
+      "exchange": "AsterDEX",
+      "fee_tier": "Stress_Tier_3",
+      "maker_fee_bps": 4.0,
+      "taker_fee_bps": 20.0,
+      "spread_bps_half": 2.0,
+      "slippage_bps_per_leg": 5.0,
+      "adverse_selection_bps": 3.0,
+      "round_trip_taker_bps": 54.0,
+      "round_trip_maker_bps": 14.0,
+      "fingerprint": "b74393c3e079cb522a13ae8853658bc9fb0a51f309e5b4ca42b291ab83211b5f"
+    },
+    {
+      "schedule_id": "BYBIT_VIP0_BENCHMARK_v1",
+      "exchange": "Bybit",
+      "fee_tier": "VIP0_Retail",
+      "maker_fee_bps": 2.0,
+      "taker_fee_bps": 5.5,
+      "spread_bps_half": 1.0,
+      "slippage_bps_per_leg": 1.5,
+      "adverse_selection_bps": 1.0,
+      "round_trip_taker_bps": 16.0,
+      "round_trip_maker_bps": 6.0,
+      "fingerprint": "a4bc1dbbf55a4d1eb9a732760dc348117532d970b6b10f69971f223babe5b2b8"
+    },
+    {
+      "schedule_id": "BYBIT_VIP1_BENCHMARK_v1",
+      "exchange": "Bybit",
+      "fee_tier": "VIP1",
+      "maker_fee_bps": 1.8,
+      "taker_fee_bps": 4.0,
+      "spread_bps_half": 1.0,
+      "slippage_bps_per_leg": 1.0,
+      "adverse_selection_bps": 0.8,
+      "round_trip_taker_bps": 12.0,
+      "round_trip_maker_bps": 5.2,
+      "fingerprint": "eb0c52fbbf2e131ab1ca5b23f3b68765fce4b79065957433c7aae2491d5244f6"
+    },
+    {
+      "schedule_id": "ZERO_FRICTION_DIAGNOSTIC_v1",
+      "exchange": "Theoretical",
+      "fee_tier": "Zero_Friction",
+      "maker_fee_bps": 0.0,
+      "taker_fee_bps": 0.0,
+      "spread_bps_half": 0.0,
+      "slippage_bps_per_leg": 0.0,
+      "adverse_selection_bps": 0.0,
+      "round_trip_taker_bps": 0.0,
+      "round_trip_maker_bps": 0.0,
+      "fingerprint": "8f52d99a350c1063b2787858722f8979250eb0526bea46cfd087fdc99ec0fdc2"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+stage_id,pipeline_stage,count,entity_type,exclusion_reason,description
+1,Universe 5m Bars,400000,Market Bars,N/A,"10 assets x 40,000 bars"
+2,Conjoint Raw Signals,16416,Signal Bars,Filter threshold unmet,RelStr >= 0.8% and BTC trend aligned and Breadth >= 45%
+3,Symbol Trade Episodes (Signal Funnel),5878,Single-Asset Trades,In-position signal debounce,Completed trades in isolated single-asset backtests
+4,Portfolio Candidates Submitted,5878,Candidate Orders,None,Merged chronological order stream presented to portfolio
+5,Rejected: Concurrency Cap (Max 4),0,Candidate Orders,CONCURRENCY_LIMIT,4 positions already active in portfolio pool
+6,Rejected: Insufficient Available Margin,3375,Candidate Orders,INSUFFICIENT_AVAILABLE_EQUITY,Equity depleted by taker fees; allocable notional < $5.00 min
+7,Rejected: Symbol Already Open,0,Candidate Orders,SYMBOL_ALREADY_OPEN,Symbol already open in portfolio
+8,TAKER_TAKER Executed Trades (Statistical Sample),2503,Executed Trades,None (Executed),Actual completed trades in shared portfolio under Taker/Taker fees
+9,ZERO_FRICTION Executed Trades,5878,Executed Trades,None (Executed),Actual completed trades in shared portfolio under Zero Friction diagnostic

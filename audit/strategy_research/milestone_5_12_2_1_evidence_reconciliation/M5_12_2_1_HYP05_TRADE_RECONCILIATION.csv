@@ -1,0 +1,11 @@
+metric,zero_friction_diagnostic,taker_taker_retail,unit_of_observation,reconciliation_note
+Universe 5m Bars Evaluated,400000.0,400000.0,Bars,Identical canonical dataset
+Conjoint Raw Signals,13431.0,13431.0,Signals,Identical causal feature triggers
+Completed Trade Episodes,10429.0,2592.0,Trades,"10,429 vs 2,592: 7,837 rejected under Taker due to equity depletion & concurrency"
+Gross Trading PnL ($),48.36,2.01,USD,"+$48.36 across 10,429 trades vs +$2.01 across 2,592 trades"
+Transaction Friction ($),0.0,41.01,USD,$0.00 zero-friction vs -$41.01 in fees/spread/slippage
+Net Trading PnL ($),48.36,-39.0,USD,+$48.36 vs -$39.00 net loss
+Trade Expectancy (bps),1.53,-12.36,bps,+1.85 bps gross vs -6.02 bps net
+Win Rate (%),45.94,44.29,Percent,45.94% vs 44.29%
+Candidate Rejections (Concurrency),0.0,0.0,Orders,Concurrency limit kicks in as positions held
+Candidate Rejections (Margin Depletion),0.0,7837.0,Orders,Taker fees erode equity below $5.00 min order threshold
