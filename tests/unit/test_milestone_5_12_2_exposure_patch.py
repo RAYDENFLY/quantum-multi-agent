@@ -196,7 +196,7 @@ class TestMilestone5122ExposurePatch:
 
     def test_friction_aware_capacity_sizing_formula(self):
         """can_open_position adjusts available notional by (1 + max_exp * friction_rate)."""
-        ledger = EventDrivenPortfolioLedger(100.0, max_gross_exposure=1.0, max_concurrent_positions=1, max_symbol_weight=1.0)
+        ledger = EventDrivenPortfolioLedger(100.0, max_gross_exposure=1.0, max_concurrent_positions=1, max_symbol_weight=1.0, safety_buffer=0.0)
 
         # Attempt to open $100 notional with 20 bps friction (0.0020)
         ok, reason, alloc = ledger.can_open_position("BTCUSDT", 100.0, entry_friction_rate=0.0020)

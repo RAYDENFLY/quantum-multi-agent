@@ -1,0 +1,11 @@
+property_id,property_name,total_sequences_tested,total_passed,total_failed,pass_rate_pct,invariant_status
+Property 1,Admission Protection (Exposure <= 0.995000x),10000,10000,0,100.0,PASS
+Property 2,MTM Detection (Price Update Exposure Revaluation),10000,10000,0,100.0,PASS
+Property 3,State Consistency (RiskState Matches Thresholds),10000,10000,0,100.0,PASS
+Property 4,Reduction Accounting (Reduction <= Filled Quantity),10000,10000,0,100.0,PASS
+Property 5,No Fabricated Liquidity (Illiquid Book Unfilled),10000,10000,0,100.0,PASS
+Property 6,Exposure Reconciliation (Positions + Reservations),10000,10000,0,100.0,PASS
+Property 7,Ruin Protection (Halt on Equity <= $1.00),10000,10000,0,100.0,PASS
+Property 8,Determinism (Bit-Exact Seed Replay),10000,10000,0,100.0,PASS
+Property 9,Cost Accounting (Double-Entry Cash Conservation),10000,10000,0,100.0,PASS
+Property 10,Failure Safety (Failed Deleveraging Maintains Halt),10000,10000,0,100.0,PASS

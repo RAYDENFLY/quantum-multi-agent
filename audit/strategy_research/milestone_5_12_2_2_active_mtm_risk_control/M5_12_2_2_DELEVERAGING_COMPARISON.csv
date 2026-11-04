@@ -1,0 +1,5 @@
+policy,initial_equity_usd,initial_notional_usd,initial_exposure,reduced_symbols,total_reduced_notional_usd,total_closing_friction_usd,final_notional_usd,final_equity_usd,final_exposure,exposure_restored_le_target,execution_status
+LARGEST_NOTIONAL_FIRST,92.93,101.18,1.088854x,SOLUSDT ($12.90),12.9,0.0168,88.28,98.68,0.894605x,True,SUCCESS
+HIGHEST_RISK_FIRST,92.93,101.18,1.088854x,SOLUSDT ($12.90),12.9,0.0168,88.28,98.68,0.894605x,True,SUCCESS
+LOWEST_COST_FIRST,92.93,101.18,1.088854x,ETHUSDT ($12.90),12.9,0.0168,88.28,99.03,0.891448x,True,SUCCESS
+SIMULATED_LIQUIDITY_FAILURE,92.93,101.18,1.088854x,NONE (Illiquid Book),0.0,0.0,101.18,92.93,1.088854x,False,FAILED -> RiskState: HALTED

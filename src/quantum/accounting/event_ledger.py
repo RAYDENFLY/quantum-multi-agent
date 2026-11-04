@@ -102,7 +102,8 @@ class EventDrivenPortfolioLedger:
         max_concurrent_positions: int = 4,
         max_symbol_weight: float = 0.25,
         ruin_equity_threshold: float = 1.0,
-        safety_buffer: float = 0.0020,
+        safety_buffer: float = 0.0050,
+        admission_exposure_cap: Optional[float] = None,
     ) -> None:
         self.initial_equity_usd = float(initial_equity_usd)
         self.max_gross_exposure = float(max_gross_exposure)
@@ -110,6 +111,11 @@ class EventDrivenPortfolioLedger:
         self.max_symbol_weight = float(max_symbol_weight)
         self.ruin_equity_threshold = float(ruin_equity_threshold)
         self.safety_buffer = float(safety_buffer)
+        if admission_exposure_cap is not None:
+            self.admission_exposure_cap = float(admission_exposure_cap)
+            self.safety_buffer = max(0.0, self.max_gross_exposure - self.admission_exposure_cap)
+        else:
+            self.admission_exposure_cap = max(0.0, float(max_gross_exposure - safety_buffer))
 
         self.cash_balance = float(initial_equity_usd)
         self.equity = float(initial_equity_usd)
@@ -215,6 +221,7 @@ class EventDrivenPortfolioLedger:
         symbol: str,
         desired_notional: float,
         entry_friction_rate: float = 0.0013,
+        current_prices: Optional[Dict[str, float]] = None,
     ) -> Tuple[bool, str, float]:
         """Validates whether a new position can be opened within strict portfolio bounds.
         
@@ -237,16 +244,17 @@ class EventDrivenPortfolioLedger:
         if active_count >= self.max_concurrent_positions:
             return False, f"CONCURRENCY_LIMIT: Reached {self.max_concurrent_positions} concurrent positions/orders.", 0.0
 
-        # 4. Compute Permissible Notional bounded post-friction
+        # 4. Compute Permissible Notional bounded post-friction by admission exposure cap
+        target_cap = self.admission_exposure_cap
         max_notional_by_weight = self.equity * self.max_symbol_weight
-        current_committed = self.get_gross_notional()
-        raw_avail = max(0.0, (self.equity * self.max_gross_exposure) - current_committed)
-        denom_exp = 1.0 + (self.max_gross_exposure * entry_friction_rate)
-        fric_cap = max(0.0, ((self.equity * self.max_gross_exposure) - current_committed - 1e-6) / denom_exp)
+        current_committed = self.get_gross_notional(current_prices)
+        raw_avail = max(0.0, (self.equity * target_cap) - current_committed)
+        denom_exp = 1.0 + (target_cap * entry_friction_rate)
+        fric_cap = max(0.0, ((self.equity * target_cap) - current_committed - 1e-6) / denom_exp)
 
         candidate = min(desired_notional, max_notional_by_weight, raw_avail)
         anticipated_post_eq = self.equity - (candidate * entry_friction_rate)
-        if anticipated_post_eq > 1e-6 and ((current_committed + candidate) / anticipated_post_eq) > self.max_gross_exposure:
+        if anticipated_post_eq > 1e-6 and ((current_committed + candidate) / anticipated_post_eq) > target_cap:
             allocated_notional = min(candidate, fric_cap)
         else:
             allocated_notional = candidate
@@ -254,14 +262,14 @@ class EventDrivenPortfolioLedger:
         if allocated_notional < 5.0:  # Minimum viable notional
             return False, f"INSUFFICIENT_AVAILABLE_EQUITY: Allocated notional ${allocated_notional:.2f} < $5.00 min.", 0.0
 
-        # 5. Assert Post-Trade Exposure Invariant (Zero-tolerance check)
+        # 5. Assert Post-Trade Exposure Invariant (Zero-tolerance check against admission exposure cap)
         anticipated_post_equity = self.equity - (allocated_notional * entry_friction_rate)
         if anticipated_post_equity <= 1e-6:
             return False, "CAPITAL_EXHAUSTION: Post-trade equity would be <= 0.", 0.0
 
         anticipated_post_exposure = (current_committed + allocated_notional) / anticipated_post_equity
-        if round(anticipated_post_exposure, 6) > round(self.max_gross_exposure, 6):
-            return False, f"EXPOSURE_BREACH: Anticipated post-trade exposure {anticipated_post_exposure:.6f} > {self.max_gross_exposure:.6f}", 0.0
+        if round(anticipated_post_exposure, 6) > round(target_cap, 6):
+            return False, f"ADMISSION_CAP_BREACH: Anticipated post-trade exposure {anticipated_post_exposure:.6f} > {target_cap:.6f}", 0.0
 
         return True, "APPROVED", allocated_notional
 
@@ -276,10 +284,13 @@ class EventDrivenPortfolioLedger:
         fee_bps: float = 4.0,
         spread_bps_half: float = 0.0,
         slippage_bps: float = 0.0,
+        current_prices: Optional[Dict[str, float]] = None,
     ) -> Tuple[bool, str, float]:
         """Reserves exposure capacity for a pending limit order prior to execution."""
         entry_fric = (fee_bps + spread_bps_half + slippage_bps) / 10_000.0
-        can_open, reason, alloc_notional = self.can_open_position(symbol, requested_notional, entry_friction_rate=entry_fric)
+        can_open, reason, alloc_notional = self.can_open_position(
+            symbol, requested_notional, entry_friction_rate=entry_fric, current_prices=current_prices
+        )
         if not can_open:
             self._record_event(
                 trade_id=order_id,
@@ -381,6 +392,7 @@ class EventDrivenPortfolioLedger:
         market_regime: str = "UNKNOWN",
         is_partial: bool = False,
         pending_order_id: Optional[str] = None,
+        current_prices: Optional[Dict[str, float]] = None,
     ) -> Optional[OpenPosition]:
         """Opens a position with exact cash flow deduction and ledger event generation."""
         entry_friction_rate = (fee_bps + spread_bps_half + slippage_bps) / 10_000.0
@@ -398,7 +410,9 @@ class EventDrivenPortfolioLedger:
                 alloc_notional = p_order.reserved_notional
                 del self.pending_orders[pending_order_id]
         else:
-            can_open, reason, alloc_notional = self.can_open_position(symbol, notional, entry_friction_rate=entry_friction_rate)
+            can_open, reason, alloc_notional = self.can_open_position(
+                symbol, notional, entry_friction_rate=entry_friction_rate, current_prices=current_prices
+            )
             if not can_open:
                 self._record_event(
                     trade_id="REJECTED",
@@ -459,10 +473,11 @@ class EventDrivenPortfolioLedger:
             )
             self.open_positions[symbol] = pos
 
-        # Clamping safeguard: strictly ensure exposure does not breach max_gross_exposure
-        post_exp = self.get_gross_exposure()
-        if round(post_exp, 6) > round(self.max_gross_exposure, 6):
-            excess_notional = self.get_gross_notional() - (self.equity * self.max_gross_exposure)
+        # Clamping safeguard: strictly ensure exposure does not breach admission_exposure_cap
+        post_exp = self.get_gross_exposure(current_prices)
+        target_limit = self.admission_exposure_cap
+        if round(post_exp, 6) > round(target_limit, 6):
+            excess_notional = self.get_gross_notional(current_prices) - (self.equity * target_limit)
             if excess_notional > 0:
                 trim_qty = excess_notional / fill_price
                 pos.quantity = max(0.0, pos.quantity - trim_qty)

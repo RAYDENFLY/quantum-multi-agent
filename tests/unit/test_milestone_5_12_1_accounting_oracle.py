@@ -196,7 +196,7 @@ def test_gap_risk_execution_at_market_open():
 
 def test_gap_risk_negative_terminal_equity_reported():
     """Verify loss beyond initial capital produces negative equity and drawdown > 100%."""
-    oracle = IndependentAccountingOracle(initial_cash_usd=10.0, max_symbol_weight=1.0)
+    oracle = IndependentAccountingOracle(initial_cash_usd=10.0, max_symbol_weight=1.0, safety_buffer=0.0)
     oracle.process_entry("E_N", "T_N", 1000, "TESTUSDT", True, 10.0, 100.0, taker_fee_bps=10.0, spread_bps_half=1.0, slippage_bps=2.0)
     # Price drops to $0.00
     ok, gross, net = oracle.process_exit("X_N", "T_N", 2000, "TESTUSDT", 0.0, slippage_bps=50.0, taker_fee_bps=10.0, spread_bps_half=1.0)

@@ -71,7 +71,8 @@ class IndependentAccountingOracle:
         max_gross_exposure: float = 1.0000,
         ruin_threshold_usd: float = 1.0,
         max_symbol_weight: float = 0.25,
-        safety_buffer: float = 0.0020,
+        safety_buffer: float = 0.0050,
+        admission_exposure_cap: Optional[float] = None,
     ) -> None:
         self.initial_cash = float(initial_cash_usd)
         self.cash = float(initial_cash_usd)
@@ -79,6 +80,11 @@ class IndependentAccountingOracle:
         self.ruin_threshold = float(ruin_threshold_usd)
         self.max_symbol_weight = float(max_symbol_weight)
         self.safety_buffer = float(safety_buffer)
+        if admission_exposure_cap is not None:
+            self.admission_exposure_cap = float(admission_exposure_cap)
+            self.safety_buffer = max(0.0, self.max_exposure - self.admission_exposure_cap)
+        else:
+            self.admission_exposure_cap = max(0.0, float(max_gross_exposure - safety_buffer))
 
         self.positions: Dict[str, OraclePosition] = {}
         self.reserved_orders: Dict[str, float] = {}  # order_id -> reserved_notional
@@ -159,15 +165,16 @@ class IndependentAccountingOracle:
 
         current_eq = self.compute_equity()
         fee_rate = maker_fee_bps / 10_000.0
+        target_cap = self.admission_exposure_cap
         max_notional_per_symbol = current_eq * self.max_symbol_weight
         open_notional = sum(abs(p.quantity * p.avg_entry_price) for p in self.positions.values())
-        raw_avail = max(0.0, (current_eq * self.max_exposure) - (open_notional + self.reserved_notional))
-        fric_cap = max(0.0, ((current_eq * self.max_exposure) - (open_notional + self.reserved_notional) - 1e-6) / (1.0 + self.max_exposure * fee_rate))
+        raw_avail = max(0.0, (current_eq * target_cap) - (open_notional + self.reserved_notional))
+        fric_cap = max(0.0, ((current_eq * target_cap) - (open_notional + self.reserved_notional) - 1e-6) / (1.0 + target_cap * fee_rate))
 
         candidate = min(requested_notional, max_notional_per_symbol, raw_avail)
         if (open_notional + self.reserved_notional) > 0:
             anticipated_post_eq = current_eq - (candidate * fee_rate)
-            if anticipated_post_eq > 1e-6 and ((open_notional + self.reserved_notional + candidate) / anticipated_post_eq) > self.max_exposure:
+            if anticipated_post_eq > 1e-6 and ((open_notional + self.reserved_notional + candidate) / anticipated_post_eq) > target_cap:
                 actual_notional = min(candidate, fric_cap)
             else:
                 actual_notional = candidate
@@ -241,22 +248,23 @@ class IndependentAccountingOracle:
             res_amt = self.reserved_orders.pop(p_id)
             self.reserved_notional = max(0.0, self.reserved_notional - res_amt)
 
-        # Sizing and Exposure clamping with post-friction safety buffer
+        # Sizing and Exposure clamping with post-friction safety buffer (admission cap)
         current_eq = self.compute_equity()
         fee_rate = (maker_fee_bps if is_maker else taker_fee_bps) / 10_000.0
         spread_rate = 0.0 if is_maker else (spread_bps_half / 10_000.0)
         slip_rate = 0.0 if is_maker else (slippage_bps / 10_000.0)
         tot_fric_rate = fee_rate + spread_rate + slip_rate
+        target_cap = self.admission_exposure_cap
 
         max_notional_per_symbol = current_eq * self.max_symbol_weight
         open_notional = sum(abs(p.quantity * p.avg_entry_price) for p in self.positions.values())
-        raw_avail = max(0.0, (current_eq * self.max_exposure) - (open_notional + self.reserved_notional))
-        fric_cap = max(0.0, ((current_eq * self.max_exposure) - (open_notional + self.reserved_notional) - 1e-6) / (1.0 + self.max_exposure * tot_fric_rate))
+        raw_avail = max(0.0, (current_eq * target_cap) - (open_notional + self.reserved_notional))
+        fric_cap = max(0.0, ((current_eq * target_cap) - (open_notional + self.reserved_notional) - 1e-6) / (1.0 + target_cap * tot_fric_rate))
 
         candidate = min(requested_notional, max_notional_per_symbol, raw_avail)
         if (open_notional + self.reserved_notional) > 0:
             anticipated_post_eq = current_eq - (candidate * tot_fric_rate)
-            if anticipated_post_eq > 1e-6 and ((open_notional + self.reserved_notional + candidate) / anticipated_post_eq) > self.max_exposure:
+            if anticipated_post_eq > 1e-6 and ((open_notional + self.reserved_notional + candidate) / anticipated_post_eq) > target_cap:
                 actual_notional = min(candidate, fric_cap)
             else:
                 actual_notional = candidate
@@ -274,13 +282,13 @@ class IndependentAccountingOracle:
         slip_usd = actual_notional * slip_rate
         tot_entry_friction = fee_usd + spread_usd + slip_usd
 
-        # Post-friction exposure check (zero tolerance)
+        # Post-friction exposure check (zero tolerance against admission cap)
         anticipated_post_eq = current_eq - tot_entry_friction
         if anticipated_post_eq <= 1e-6:
             return False, "HALTED_ON_RUIN"
 
         anticipated_exp = (open_notional + self.reserved_notional + actual_notional) / anticipated_post_eq
-        if (open_notional + self.reserved_notional) > 0 and round(anticipated_exp, 6) > round(self.max_exposure, 6):
+        if (open_notional + self.reserved_notional) > 0 and round(anticipated_exp, 6) > round(self.admission_exposure_cap, 6):
             return False, "ORDER_REJECTED_EXPOSURE_LIMIT"
 
         # Cash deduction for entry friction

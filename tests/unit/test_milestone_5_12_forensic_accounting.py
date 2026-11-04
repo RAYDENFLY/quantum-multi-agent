@@ -127,7 +127,7 @@ def test_scenario_02_single_short_position():
 
 def test_scenario_03_multiple_simultaneous_assets():
     """Verify concurrent positions across multiple distinct symbols."""
-    ledger = EventDrivenPortfolioLedger(initial_equity_usd=100.0, max_concurrent_positions=4, max_symbol_weight=0.25)
+    ledger = EventDrivenPortfolioLedger(initial_equity_usd=100.0, max_concurrent_positions=4, max_symbol_weight=0.25, safety_buffer=0.0)
     for sym in ["BTCUSDT", "ETHUSDT", "SOLUSDT"]:
         pos = ledger.open_position(
             symbol=sym,
@@ -149,7 +149,7 @@ def test_scenario_03_multiple_simultaneous_assets():
 
 def test_scenario_04_maximum_exposure_exactly_1x():
     """Verify maximum gross exposure exactly reaches ~1.0000x without material breach."""
-    ledger = EventDrivenPortfolioLedger(initial_equity_usd=100.0, max_concurrent_positions=4, max_symbol_weight=0.25)
+    ledger = EventDrivenPortfolioLedger(initial_equity_usd=100.0, max_concurrent_positions=4, max_symbol_weight=0.25, safety_buffer=0.0)
     for sym in ["BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT"]:
         ledger.open_position(
             symbol=sym,
@@ -172,7 +172,7 @@ def test_scenario_04_maximum_exposure_exactly_1x():
 
 def test_scenario_05_exposure_breach_attempt():
     """Verify 5th simultaneous position is strictly rejected to preserve exposure cap."""
-    ledger = EventDrivenPortfolioLedger(initial_equity_usd=100.0, max_concurrent_positions=4, max_symbol_weight=0.25)
+    ledger = EventDrivenPortfolioLedger(initial_equity_usd=100.0, max_concurrent_positions=4, max_symbol_weight=0.25, safety_buffer=0.0)
     for sym in ["BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT"]:
         ledger.open_position(
             symbol=sym,
