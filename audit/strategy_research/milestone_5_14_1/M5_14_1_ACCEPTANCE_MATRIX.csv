@@ -1,0 +1,16 @@
+Requirement,Reported_Status,Forensic_Finding
+Daily return formula independently verified,FAIL,"Formula divided cumulative compounded return by days, causing 347.41% reporting bug."
+Daily equity reconciles with ledger and terminal equity,PASS,Product of daily returns reconciles to terminal equity with $0.00 delta.
+Active-day return definition and population documented,PASS,"Active days isolated (0.50% - 1.53%), documented distinct population from calendar days."
+DSR independently validated,FAIL,Reported 1.000000 was a numerical saturation artifact; true DSR under multiple trials is documented.
+Multiple testing correctly accounted for,PASS,"Adjusted for trial counts K in [12, 100, 1000, 10000] and cross-asset correlations."
+Maximum drawdown independently reconstructed,FAIL,Mode A (30.48%-37.19%) and Mode B (16.99%-21.14%) fail the <=15% limit. Only Legacy complies.
+Profit recycling: no double counting,PASS,EventDrivenPortfolioLedger verified; cash debited and credited cleanly without double counting.
+Capital velocity reproducible,PASS,Turnover and cycle duration reproduced with exact match.
+Concentrated portfolios compared on identical assumptions,PASS,"Identical signals, orders, fees, and timestamps evaluated."
+Exposure: admission and hard caps separately verified,PASS_WITH_LIMITATIONS,Hard cap 1.0000x preserved; admission cap 0.9950x had 0.000038x short MTM drift.
+Execution: assumptions and costs explicit,PASS,All 4 regimes and sensitivity variations explicitly evaluated.
+Accounting oracle independent and reconciled,PASS,Independent oracle delta is $0.0000000000 across all 12 rows.
+Statistical evidence appropriate for dependent return data,PASS,"Daily calendar returns, block bootstrap, skewness, and kurtosis computed."
+Tests complete and reproducible,PASS,"Unit tests pass, regression suite added for DSR and return formulas."
+Holdout remains sealed,PASS,Strict open_time_ms < 1793491200000 preserved across all queries.

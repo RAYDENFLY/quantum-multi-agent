@@ -1,0 +1,11 @@
+execution_assumption,portfolio_mode,completed_trades,terminal_equity_usd,geometric_mean_daily_pct,max_drawdown_pct,total_fees_usd,sensitivity_assessment
+Base Case (100% Touch-Fill),Legacy 4-Slot Equal 24.5% Cap,4819,14001.986379540269,0.45221265819193057,13.109383773964002,4006.9429122924575,Viable
+Conservative (75% Fill Rate on Touch),Legacy 4-Slot Equal 24.5% Cap,4519,7309.324081772837,0.39261143997253445,10.799876243226333,2138.5425497537544,Viable
+Conservative (50% Fill Rate on Touch),Legacy 4-Slot Equal 24.5% Cap,4169,4647.073119979585,0.3511059289644347,9.307737538315749,1393.3898726894172,Viable
+Adverse Selection (+2.0 bps Adverse Drift),Legacy 4-Slot Equal 24.5% Cap,4819,9184.286747159133,0.41354359884220315,13.681219304180193,2862.8353555598624,Viable
+High Adverse Selection (+4.0 bps Adverse Drift),Legacy 4-Slot Equal 24.5% Cap,4819,6027.0118869686,0.37493180383667557,14.249327235636674,2058.1362549884566,Viable
+Base Case (100% Touch-Fill),Mode A Sniper 1-Slot Concentration,2397,380608.3374395896,0.7555637021688488,30.50648812677494,127937.99388951606,Drawdown Non-Compliant
+Conservative (75% Fill Rate on Touch),Mode A Sniper 1-Slot Concentration,2302,193427.90025669473,0.6933169963311725,34.83009702431117,69670.9813337361,Drawdown Non-Compliant
+Conservative (50% Fill Rate on Touch),Mode A Sniper 1-Slot Concentration,2150,146085.12874135963,0.6675128259934437,34.873685838202455,50356.08829252366,Drawdown Non-Compliant
+Adverse Selection (+2.0 bps Adverse Drift),Mode A Sniper 1-Slot Concentration,2397,162006.4087472972,0.6770211485963795,31.007378000179614,60832.70947886833,Drawdown Non-Compliant
+High Adverse Selection (+4.0 bps Adverse Drift),Mode A Sniper 1-Slot Concentration,2397,68991.95235859517,0.5985847296965607,31.504693251271792,29266.592384180363,Drawdown Non-Compliant
