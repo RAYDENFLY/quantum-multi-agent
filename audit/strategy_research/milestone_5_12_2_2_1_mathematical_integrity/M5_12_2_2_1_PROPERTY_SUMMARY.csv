@@ -1,0 +1,11 @@
+property_id,property_name,total_sequences_tested,total_passed,total_failed,pass_rate_pct,invariant_status
+Property 1,Short MTM Correctness,10000,10000,0,100.0,PASS
+Property 2,Long MTM Correctness,10000,10000,0,100.0,PASS
+Property 3,Exposure Correctness,10000,10000,0,100.0,PASS
+Property 4,Deleveraging Conservation,10000,10000,0,100.0,PASS
+Property 5,Closing Cost Accounting,10000,10000,0,100.0,PASS
+Property 6,Risk State Correctness,10000,10000,0,100.0,PASS
+Property 7,Failure Safety,10000,10000,0,100.0,PASS
+Property 8,Ruin Protection,10000,10000,0,100.0,PASS
+Property 9,Determinism,10000,10000,0,100.0,PASS
+Property 10,Oracle Independence,10000,10000,0,100.0,PASS

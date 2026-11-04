@@ -292,11 +292,26 @@ class DeleveragingEngine:
         current_committed_notional: float,
         current_equity: float,
         target_exposure: Optional[float] = None,
+        estimated_closing_friction_rate: float = 0.0,
     ) -> float:
-        """Calculates excess notional that must be liquidated to restore target exposure."""
+        """Calculates excess notional that must be liquidated to restore target exposure.
+        
+        Accounts for closing friction: when notional is reduced by delta_N, equity is reduced
+        by delta_N * friction_rate. To achieve:
+            (current_notional - delta_N) / (current_equity - delta_N * friction_rate) = target_exposure
+        We solve for delta_N:
+            delta_N = (current_notional - target_exposure * current_equity) / (1 - target_exposure * friction_rate)
+        """
         tgt = target_exposure or self.target_restored_exposure
         target_notional = current_equity * tgt
-        return max(0.0, current_committed_notional - target_notional)
+        pre_cost_excess = max(0.0, current_committed_notional - target_notional)
+        if pre_cost_excess <= 0.0:
+            return 0.0
+            
+        denom = 1.0 - (tgt * float(estimated_closing_friction_rate))
+        if denom <= 1e-6:
+            denom = 1.0
+        return pre_cost_excess / denom
 
     def select_positions_to_reduce(
         self,
@@ -360,7 +375,10 @@ class DeleveragingEngine:
         actions: List[DeleveragingAction] = []
         current_eq = ledger.equity
         cur_notional = ledger.get_gross_notional(current_prices)
-        excess_notional = self.compute_excess_notional(cur_notional, current_eq, target_exposure)
+        friction_rate = (fee_bps + spread_bps_half + slippage_bps) / 10_000.0
+        excess_notional = self.compute_excess_notional(
+            cur_notional, current_eq, target_exposure, estimated_closing_friction_rate=friction_rate
+        )
 
         if excess_notional <= 0.0:
             return actions

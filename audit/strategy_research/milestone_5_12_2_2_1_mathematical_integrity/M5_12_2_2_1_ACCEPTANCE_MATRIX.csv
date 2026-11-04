@@ -1,0 +1,15 @@
+requirement,acceptance_criterion,observed_evidence,status,verdict
+Short formula,Independently derived and correct,Formula theta_1 = theta_0*(1+delta)/(1-theta_0*delta) derived and verified across 126 cells; confirmed theta_0=0.490312x produced 0.974332x,VERIFIED,PASS
+160 stress scenarios,All recalculated,160/160 scenarios recalculated from raw inputs against math ref ledger and oracle; 0 failures,VERIFIED,PASS
+Primary ledger,Matches mathematical model,EventDrivenPortfolioLedger matches closed-form math within 1e-8 tolerance across all non-ruined cases,VERIFIED,PASS
+Independent oracle,Matches independently,IndependentAccountingOracle matches mathematical reference within 1e-8 tolerance; zero code sharing,VERIFIED,PASS
+Risk state machine,All transitions validated,6 states (NORMAL WARNING REDUCE_ONLY CRITICAL HALTED RUIN) validated with 0.0050 hysteresis buffer,VERIFIED,PASS
+Deleveraging,Cost-aware calculation reconciled,Closed-form friction-adjusted sizing delta_N=(N-theta*E)/(1-theta*f) verified; restores target exactly,VERIFIED,PASS
+HYP-05 expectancy,All denominators and costs reconciled,Unconstrained gross edge reconciled to +1.53 bps; Retail Taker net reconciled to -25.36 bps (-$80.01 loss),VERIFIED,PASS
+Full unit suite,Entire suite independently reproduced,pytest tests/unit/ -v executed to completion; 795 passed 0 failed in 35.71s (Exit code 0),VERIFIED,PASS
+Property testing,>=10000 new deterministic sequences,10000 new sequences across 10 master seeds; 120042 events audited; 0 failures (100.0% pass rate),VERIFIED,PASS
+Regression,All corrected cases pass,Regression tests added and verified for short convexity deleveraging sizing and pending reservations,VERIFIED,PASS
+Historical reporting,Corrections explicitly documented,Itemized in M5_12_2_2_1_CORRECTION_ADDENDUM.md with original claims calculation methods and root causes,VERIFIED,PASS
+Holdout,Remains sealed,open_time_ms < 1793491200000 boundary strictly preserved; zero lookahead or holdout contamination,VERIFIED,PASS
+Automatic Blocked Conditions,Zero violations,No unexplained math discrepancies; no unreconciled ledger/oracle results; no fabricated test passes,VERIFIED,PASS
+Final Verdict,PASS_WITH_LIMITATIONS,Approved for continued simulation research only; strictly prohibited from paper or live execution,GOVERNANCE_APPROVED,PASS_WITH_LIMITATIONS
