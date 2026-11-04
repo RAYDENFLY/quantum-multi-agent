@@ -1,0 +1,11 @@
+hypothesis_id,hypothesis_name,family,market_mechanism,expected_holding_horizon,expected_frequency,target_regime
+HYP-07,Multi-Timeframe Trend Continuation,TREND_CONTINUATION,1h trend alignment with 15m pullback into EMA-21 and volume confirmation provides high-margin continuation.,2h - 4h,Category B (1-10 trades/day),"HV_TREND, LV_TREND"
+HYP-08,Volatility Compression & Donchian Breakout,VOLATILITY_BREAKOUT,Prolonged volatility compression followed by Donchian breakout and RVOL > 1.5 generates outsized directional moves.,1h - 3h,Category B (1-10 trades/day),LV_RANGE transitioning to HV_TREND
+HYP-09,Causal Liquidity Sweep & Displacement Reclaim,LIQUIDITY_SWEEP_RECLAIM,Institutional absorption beyond swing extrema triggers rapid displacement back into the prior range.,1h - 2h,Category B (1-10 trades/day),"HV_RANGE, LV_RANGE"
+HYP-10,Regime-Filtered Range Mean Reversion,RANGE_MEAN_REVERSION,"In stable range regimes, extreme RSI deviations revert to equilibrium before incurring excess trend drag.",30m - 1.5h,Category A/B (5-15 trades/day),LV_RANGE
+HYP-11,Cross-Asset Leadership Momentum,CROSS_ASSET_MOMENTUM,Altcoins demonstrating persistent relative strength vs BTC lead broader market intraday directional moves.,2h - 4h,Category B (1-5 trades/day),HV_TREND
+HYP-12,Multi-Factor Confluence (Causal Synthesis),MULTI_FACTOR_CONFLUENCE,Confluence across Trend + Volume + Liquidity Sweeps + Cross-Asset strength eliminates false breakouts.,2h - 4h,Category B (1-5 trades/day),ALL_REGIMES
+BASE-01,Always Flat Baseline,BENCHMARK,"Zero risk, zero return capital preservation benchmark.",N/A,0 trades/day,ALL
+BASE-02,Buy and Hold BTC Baseline,BENCHMARK,Unlevered passive long exposure benchmark.,Full backtest,0.007 trades/day,ALL
+BASE-03,Simple Momentum (EMA 9/21),BENCHMARK,Naive moving average crossover benchmark.,15m - 1h,Category A (50-150 trades/day),TRENDING
+BASE-04,Simple Mean Reversion (Bollinger Bands),BENCHMARK,Naive 2-sigma band counter-trend benchmark.,15m - 45m,Category A (100-200 trades/day),RANGING

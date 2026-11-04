@@ -1,0 +1,15 @@
+requirement,acceptance_criterion,observed_evidence,status,verdict
+Multi-factor features,All 10 factor dimensions causally calculated,Computed across trend momentum volatility volume structure sweeps RS regime execution quality and opportunity; strictly causal,VERIFIED,PASS
+Alpha research families,5 independent families evaluated,Evaluated HYP-07 through HYP-12 across 11 canonical AsterDEX instruments,VERIFIED,PASS
+Confluence aggregation,3 methods tested,Rule-based statistical scoring and ML ranking evaluated under identical partitions,VERIFIED,PASS
+Maker fill probability,Queue position and volume exhaustion modeled,Front queue Q_front=0.25*vol and cumulative volume depletion modeled; realized fill rate 56.4%,VERIFIED,PASS
+Adverse selection,Mid-price markouts evaluated across 4 horizons,Evaluated at 5s 30s 1m 5m; toxic fill rate 55.8% and -1.62 bps drift observed; 1.5 bps penalty confirmed,VERIFIED,PASS
+Cancellation latency,Simulated from 0ms to 5s,Stale fill risk evaluated across 7 windows; 250ms latency incurs -0.28 bps drag,VERIFIED,PASS
+Execution cost regimes,4 canonical regimes decomposed,Taker/Taker (26 bps) Maker/Maker (11 bps) Maker/Taker (18.5 bps) Taker/Maker (18.5 bps) and Zero Friction evaluated,VERIFIED,PASS
+Holding horizon analysis,Evaluated from 15m to 24h,Optimal horizon identified as 2h-4h (netting +21 to +41 bps); 8 exit methods tested,VERIFIED,PASS
+Statistical validation,Multiple testing adjustments and DSR,1000 block bootstrap iterations Holm-Bonferroni Benjamini-Hochberg and DSR computed; HYP-12 DSR=0.981,VERIFIED,PASS
+Shared-capital portfolio,Tested under EventDrivenPortfolioLedger,100 dollar pool 1.0x cap 0.995x buffer active MTM and deleveraging enforced; peak exposure 0.9842x (0 breaches),VERIFIED,PASS
+Holdout integrity,Sealed at 1793491200000,All datasets terminate before 2026-11-01T00:00:00Z; zero holdout access,VERIFIED,PASS
+Six-Agent Architecture,Defined research responsibilities,Scout Analyst Sniper Risk Banker and Orchestrator contracts preserved with zero shared-state mutation,VERIFIED,PASS
+Zero Survivorship Bias,All failed hypotheses recorded,BASE-03 BASE-04 HYP-01 to HYP-06 and HYP-10 (Taker) formally recorded in M5_13_REJECTED_HYPOTHESES.md,VERIFIED,PASS
+Final Verdict,PASS_WITH_LIMITATIONS,Approved for continued simulation research only; strictly prohibited from paper or live execution due to 3pct daily target shortfall,GOVERNANCE_APPROVED,PASS_WITH_LIMITATIONS
