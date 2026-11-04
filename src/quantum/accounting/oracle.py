@@ -71,14 +71,18 @@ class IndependentAccountingOracle:
         max_gross_exposure: float = 1.0000,
         ruin_threshold_usd: float = 1.0,
         max_symbol_weight: float = 0.25,
+        safety_buffer: float = 0.0020,
     ) -> None:
         self.initial_cash = float(initial_cash_usd)
         self.cash = float(initial_cash_usd)
         self.max_exposure = float(max_gross_exposure)
         self.ruin_threshold = float(ruin_threshold_usd)
         self.max_symbol_weight = float(max_symbol_weight)
+        self.safety_buffer = float(safety_buffer)
 
         self.positions: Dict[str, OraclePosition] = {}
+        self.reserved_orders: Dict[str, float] = {}  # order_id -> reserved_notional
+        self.reserved_notional = 0.0
         self.tot_realized_pnl = 0.0
         self.tot_fees = 0.0
         self.tot_spread = 0.0
@@ -108,12 +112,13 @@ class IndependentAccountingOracle:
         return self.cash + self.compute_unrealized_pnl(prices)
 
     def compute_gross_exposure(self, current_prices: Optional[Dict[str, float]] = None) -> float:
-        """Gross exposure = Total Open Notional / Equity."""
+        """Gross exposure = (Total Open Notional + Reserved Pending Notional) / Equity."""
         prices = current_prices or {}
         total_notional = 0.0
         for sym, pos in self.positions.items():
             price = prices.get(sym, pos.avg_entry_price)
             total_notional += abs(pos.quantity * price)
+        total_notional += self.reserved_notional
         eq = self.compute_equity(prices)
         if eq <= 1e-6:
             return 0.0 if total_notional == 0.0 else 1.0
@@ -127,6 +132,76 @@ class IndependentAccountingOracle:
         if self.peak_equity <= 1e-6:
             return 0.0
         return ((self.peak_equity - eq) / self.peak_equity) * 100.0
+
+    def reserve_order(
+        self,
+        event_id: str,
+        order_id: str,
+        timestamp_ms: int,
+        symbol: str,
+        is_long: bool,
+        requested_notional: float,
+        price: float,
+        maker_fee_bps: float = 4.0,
+    ) -> Tuple[bool, str]:
+        """Independently validates and reserves exposure for a pending limit order."""
+        if timestamp_ms < self.last_timestamp_ms:
+            return False, "OUT_OF_ORDER_TIMESTAMP"
+        self.last_timestamp_ms = timestamp_ms
+
+        if event_id in self.seen_event_ids:
+            return False, "DUPLICATE_EVENT_ID"
+        self.seen_event_ids.add(event_id)
+
+        if self.is_ruined or self.compute_equity() <= self.ruin_threshold:
+            self.is_ruined = True
+            return False, "HALTED_ON_RUIN"
+
+        current_eq = self.compute_equity()
+        fee_rate = maker_fee_bps / 10_000.0
+        max_notional_per_symbol = current_eq * self.max_symbol_weight
+        open_notional = sum(abs(p.quantity * p.avg_entry_price) for p in self.positions.values())
+        raw_avail = max(0.0, (current_eq * self.max_exposure) - (open_notional + self.reserved_notional))
+        fric_cap = max(0.0, ((current_eq * self.max_exposure) - (open_notional + self.reserved_notional) - 1e-6) / (1.0 + self.max_exposure * fee_rate))
+
+        candidate = min(requested_notional, max_notional_per_symbol, raw_avail)
+        if (open_notional + self.reserved_notional) > 0:
+            anticipated_post_eq = current_eq - (candidate * fee_rate)
+            if anticipated_post_eq > 1e-6 and ((open_notional + self.reserved_notional + candidate) / anticipated_post_eq) > self.max_exposure:
+                actual_notional = min(candidate, fric_cap)
+            else:
+                actual_notional = candidate
+        else:
+            actual_notional = candidate
+
+        if actual_notional < 5.0:
+            return False, "ORDER_REJECTED_INSUFFICIENT_MARGIN"
+
+        self.reserved_orders[order_id] = actual_notional
+        self.reserved_notional += actual_notional
+        return True, "ORDER_RESERVED"
+
+    def cancel_order(
+        self,
+        event_id: str,
+        order_id: str,
+        timestamp_ms: int,
+    ) -> bool:
+        """Independently cancels a pending order and releases its reserved exposure."""
+        if timestamp_ms < self.last_timestamp_ms:
+            return False
+        self.last_timestamp_ms = timestamp_ms
+
+        if event_id in self.seen_event_ids:
+            return False
+        self.seen_event_ids.add(event_id)
+
+        if order_id not in self.reserved_orders:
+            return False
+
+        amt = self.reserved_orders.pop(order_id)
+        self.reserved_notional = max(0.0, self.reserved_notional - amt)
+        return True
 
     def process_entry(
         self,
@@ -142,6 +217,7 @@ class IndependentAccountingOracle:
         spread_bps_half: float = 1.0,
         slippage_bps: float = 2.0,
         is_maker: bool = False,
+        pending_order_id: Optional[str] = None,
     ) -> Tuple[bool, str]:
         """Processes an entry order through independent risk and accounting rules."""
         # Check chronological ordering
@@ -159,26 +235,56 @@ class IndependentAccountingOracle:
             self.is_ruined = True
             return False, "HALTED_ON_RUIN"
 
-        # Sizing and Exposure clamping
+        # Check if order was previously reserved
+        p_id = pending_order_id or trade_id
+        if p_id in self.reserved_orders:
+            res_amt = self.reserved_orders.pop(p_id)
+            self.reserved_notional = max(0.0, self.reserved_notional - res_amt)
+
+        # Sizing and Exposure clamping with post-friction safety buffer
         current_eq = self.compute_equity()
+        fee_rate = (maker_fee_bps if is_maker else taker_fee_bps) / 10_000.0
+        spread_rate = 0.0 if is_maker else (spread_bps_half / 10_000.0)
+        slip_rate = 0.0 if is_maker else (slippage_bps / 10_000.0)
+        tot_fric_rate = fee_rate + spread_rate + slip_rate
+
         max_notional_per_symbol = current_eq * self.max_symbol_weight
         open_notional = sum(abs(p.quantity * p.avg_entry_price) for p in self.positions.values())
-        available_portfolio_notional = max(0.0, (current_eq * self.max_exposure) - open_notional)
+        raw_avail = max(0.0, (current_eq * self.max_exposure) - (open_notional + self.reserved_notional))
+        fric_cap = max(0.0, ((current_eq * self.max_exposure) - (open_notional + self.reserved_notional) - 1e-6) / (1.0 + self.max_exposure * tot_fric_rate))
 
-        actual_notional = min(requested_notional, max_notional_per_symbol, available_portfolio_notional)
+        candidate = min(requested_notional, max_notional_per_symbol, raw_avail)
+        if (open_notional + self.reserved_notional) > 0:
+            anticipated_post_eq = current_eq - (candidate * tot_fric_rate)
+            if anticipated_post_eq > 1e-6 and ((open_notional + self.reserved_notional + candidate) / anticipated_post_eq) > self.max_exposure:
+                actual_notional = min(candidate, fric_cap)
+            else:
+                actual_notional = candidate
+        else:
+            actual_notional = candidate
+
         if actual_notional < 5.0:  # Minimum viable order size
             return False, "ORDER_REJECTED_INSUFFICIENT_MARGIN"
 
         qty = actual_notional / price
 
         # Friction calculations
-        fee_rate = (maker_fee_bps if is_maker else taker_fee_bps) / 10_000.0
         fee_usd = actual_notional * fee_rate
-        spread_usd = 0.0 if is_maker else actual_notional * (spread_bps_half / 10_000.0)
-        slip_usd = 0.0 if is_maker else actual_notional * (slippage_bps / 10_000.0)
+        spread_usd = actual_notional * spread_rate
+        slip_usd = actual_notional * slip_rate
+        tot_entry_friction = fee_usd + spread_usd + slip_usd
+
+        # Post-friction exposure check (zero tolerance)
+        anticipated_post_eq = current_eq - tot_entry_friction
+        if anticipated_post_eq <= 1e-6:
+            return False, "HALTED_ON_RUIN"
+
+        anticipated_exp = (open_notional + self.reserved_notional + actual_notional) / anticipated_post_eq
+        if (open_notional + self.reserved_notional) > 0 and round(anticipated_exp, 6) > round(self.max_exposure, 6):
+            return False, "ORDER_REJECTED_EXPOSURE_LIMIT"
 
         # Cash deduction for entry friction
-        self.cash -= (fee_usd + spread_usd + slip_usd)
+        self.cash -= tot_entry_friction
         self.tot_fees += fee_usd
         self.tot_spread += spread_usd
         self.tot_slippage += slip_usd
@@ -203,6 +309,14 @@ class IndependentAccountingOracle:
                 accumulated_spread=spread_usd,
                 accumulated_slippage=slip_usd,
             )
+
+        # Clamping safeguard: strictly ensure exposure does not breach max_exposure for multi-asset pools
+        post_exp = self.compute_gross_exposure()
+        if (open_notional + self.reserved_notional) > 0 and round(post_exp, 6) > round(self.max_exposure, 6):
+            excess = sum(abs(p.quantity * p.avg_entry_price) for p in self.positions.values()) + self.reserved_notional - (self.compute_equity() * self.max_exposure)
+            if excess > 0:
+                trim = excess / price
+                self.positions[symbol].quantity = max(0.0, self.positions[symbol].quantity - trim)
 
         self.seen_trade_ids.add(trade_id)
         return True, "FILLED"

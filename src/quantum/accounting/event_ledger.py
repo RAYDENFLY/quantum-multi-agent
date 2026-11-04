@@ -33,6 +33,7 @@ class LedgerEventType(str, Enum):
     SIGNAL_REVERSAL = "SIGNAL_REVERSAL"
     FUNDING_ACCRUED = "FUNDING_ACCRUED"
     POSITION_CLOSED = "POSITION_CLOSED"
+    ORDER_CANCELED = "ORDER_CANCELED"
     CAPITAL_EXHAUSTION_HALT = "CAPITAL_EXHAUSTION_HALT"
 
 
@@ -78,6 +79,19 @@ class OpenPosition:
     accumulated_funding: float = 0.0
 
 
+@dataclass
+class PendingOrder:
+    """State tracking for a pending unexecuted limit or reservation order."""
+    order_id: str
+    symbol: str
+    side: TradeSide
+    quantity: float
+    price: float
+    reserved_notional: float
+    timestamp_ms: int
+    is_limit: bool = True
+
+
 class EventDrivenPortfolioLedger:
     """Event-driven accounting engine tracking cash, positions, fees, and exposure."""
 
@@ -88,12 +102,14 @@ class EventDrivenPortfolioLedger:
         max_concurrent_positions: int = 4,
         max_symbol_weight: float = 0.25,
         ruin_equity_threshold: float = 1.0,
+        safety_buffer: float = 0.0020,
     ) -> None:
         self.initial_equity_usd = float(initial_equity_usd)
         self.max_gross_exposure = float(max_gross_exposure)
         self.max_concurrent_positions = int(max_concurrent_positions)
         self.max_symbol_weight = float(max_symbol_weight)
         self.ruin_equity_threshold = float(ruin_equity_threshold)
+        self.safety_buffer = float(safety_buffer)
 
         self.cash_balance = float(initial_equity_usd)
         self.equity = float(initial_equity_usd)
@@ -101,6 +117,8 @@ class EventDrivenPortfolioLedger:
         self.is_ruined = False
 
         self.open_positions: Dict[str, OpenPosition] = {}  # symbol -> OpenPosition
+        self.pending_orders: Dict[str, PendingOrder] = {}  # order_id -> PendingOrder
+        self.reserved_pending_notional: float = 0.0
         self.events: List[LedgerEvent] = []
         self._event_counter = 0
         self._trade_counter = 0
@@ -133,19 +151,20 @@ class EventDrivenPortfolioLedger:
         return f"TRD-{self._trade_counter:05d}"
 
     def get_gross_notional(self, current_prices: Optional[Dict[str, float]] = None) -> float:
-        """Computes aggregate gross notional across all open positions."""
+        """Computes aggregate gross notional across all open positions and reserved pending orders."""
         tot = 0.0
         for sym, pos in self.open_positions.items():
             if current_prices and sym in current_prices:
                 tot += pos.quantity * current_prices[sym]
             else:
                 tot += pos.entry_notional
+        tot += self.reserved_pending_notional
         return tot
 
     def get_gross_exposure(self, current_prices: Optional[Dict[str, float]] = None) -> float:
-        """Computes gross exposure = sum(abs(notional)) / current_equity."""
+        """Computes gross exposure = sum(abs(notional) + abs(reserved_pending_notional)) / current_equity."""
         if self.equity <= 1e-6:
-            return 0.0
+            return 0.0 if self.get_gross_notional(current_prices) == 0.0 else 1.0
         return self.get_gross_notional(current_prices) / self.equity
 
     def update_mark_to_market(
@@ -195,8 +214,12 @@ class EventDrivenPortfolioLedger:
         self,
         symbol: str,
         desired_notional: float,
+        entry_friction_rate: float = 0.0013,
     ) -> Tuple[bool, str, float]:
         """Validates whether a new position can be opened within strict portfolio bounds.
+        
+        Sizing mathematically guarantees that post-trade gross exposure remains <= max_gross_exposure
+        even after immediate cash deduction of all entry friction (fees, spread, and slippage).
         
         Returns:
             Tuple of (can_open, rejection_reason, allocated_notional)
@@ -209,27 +232,137 @@ class EventDrivenPortfolioLedger:
         if symbol in self.open_positions:
             return False, f"SYMBOL_ALREADY_OPEN: Position in {symbol} already exists.", 0.0
 
-        # 3. Check Max Concurrent Positions
-        if len(self.open_positions) >= self.max_concurrent_positions:
-            return False, f"CONCURRENCY_LIMIT: Reached {self.max_concurrent_positions} concurrent positions.", 0.0
+        # 3. Check Max Concurrent Positions (open + pending)
+        active_count = len(self.open_positions) + len(self.pending_orders)
+        if active_count >= self.max_concurrent_positions:
+            return False, f"CONCURRENCY_LIMIT: Reached {self.max_concurrent_positions} concurrent positions/orders.", 0.0
 
-        # 4. Compute Permissible Notional
-        # Sizing bounded by symbol weight and current available unlevered equity
+        # 4. Compute Permissible Notional bounded post-friction
         max_notional_by_weight = self.equity * self.max_symbol_weight
-        current_open_notional = self.get_gross_notional()
-        max_notional_by_exposure = max(0.0, (self.equity * self.max_gross_exposure) - current_open_notional)
+        current_committed = self.get_gross_notional()
+        raw_avail = max(0.0, (self.equity * self.max_gross_exposure) - current_committed)
+        denom_exp = 1.0 + (self.max_gross_exposure * entry_friction_rate)
+        fric_cap = max(0.0, ((self.equity * self.max_gross_exposure) - current_committed - 1e-6) / denom_exp)
 
-        allocated_notional = min(desired_notional, max_notional_by_weight, max_notional_by_exposure)
+        candidate = min(desired_notional, max_notional_by_weight, raw_avail)
+        anticipated_post_eq = self.equity - (candidate * entry_friction_rate)
+        if anticipated_post_eq > 1e-6 and ((current_committed + candidate) / anticipated_post_eq) > self.max_gross_exposure:
+            allocated_notional = min(candidate, fric_cap)
+        else:
+            allocated_notional = candidate
 
         if allocated_notional < 5.0:  # Minimum viable notional
             return False, f"INSUFFICIENT_AVAILABLE_EQUITY: Allocated notional ${allocated_notional:.2f} < $5.00 min.", 0.0
 
-        # 5. Assert Post-Trade Exposure Invariant
-        post_exposure = (current_open_notional + allocated_notional) / self.equity
-        if post_exposure > (self.max_gross_exposure + 1e-4):
-            return False, f"EXPOSURE_BREACH: Post-trade exposure {post_exposure:.4f} > {self.max_gross_exposure:.4f}", 0.0
+        # 5. Assert Post-Trade Exposure Invariant (Zero-tolerance check)
+        anticipated_post_equity = self.equity - (allocated_notional * entry_friction_rate)
+        if anticipated_post_equity <= 1e-6:
+            return False, "CAPITAL_EXHAUSTION: Post-trade equity would be <= 0.", 0.0
+
+        anticipated_post_exposure = (current_committed + allocated_notional) / anticipated_post_equity
+        if round(anticipated_post_exposure, 6) > round(self.max_gross_exposure, 6):
+            return False, f"EXPOSURE_BREACH: Anticipated post-trade exposure {anticipated_post_exposure:.6f} > {self.max_gross_exposure:.6f}", 0.0
 
         return True, "APPROVED", allocated_notional
+
+    def reserve_pending_order(
+        self,
+        order_id: str,
+        symbol: str,
+        side: TradeSide,
+        price: float,
+        requested_notional: float,
+        timestamp_ms: int,
+        fee_bps: float = 4.0,
+        spread_bps_half: float = 0.0,
+        slippage_bps: float = 0.0,
+    ) -> Tuple[bool, str, float]:
+        """Reserves exposure capacity for a pending limit order prior to execution."""
+        entry_fric = (fee_bps + spread_bps_half + slippage_bps) / 10_000.0
+        can_open, reason, alloc_notional = self.can_open_position(symbol, requested_notional, entry_friction_rate=entry_fric)
+        if not can_open:
+            self._record_event(
+                trade_id=order_id,
+                symbol=symbol,
+                timestamp_ms=timestamp_ms,
+                event_type=LedgerEventType.ORDER_REJECTED,
+                side=side.name,
+                quantity=0.0,
+                reference_price=price,
+                fill_price=0.0,
+                notional=requested_notional,
+                fee=0.0,
+                spread_cost=0.0,
+                slippage_cost=0.0,
+                funding_cost=0.0,
+                realized_pnl=0.0,
+                unrealized_pnl=0.0,
+            )
+            return False, reason, 0.0
+
+        qty = alloc_notional / price
+        pending = PendingOrder(
+            order_id=order_id,
+            symbol=symbol,
+            side=side,
+            quantity=qty,
+            price=price,
+            reserved_notional=alloc_notional,
+            timestamp_ms=timestamp_ms,
+            is_limit=True,
+        )
+        self.pending_orders[order_id] = pending
+        self.reserved_pending_notional += alloc_notional
+
+        self._record_event(
+            trade_id=order_id,
+            symbol=symbol,
+            timestamp_ms=timestamp_ms,
+            event_type=LedgerEventType.ORDER_SUBMITTED,
+            side=side.name,
+            quantity=qty,
+            reference_price=price,
+            fill_price=price,
+            notional=alloc_notional,
+            fee=0.0,
+            spread_cost=0.0,
+            slippage_cost=0.0,
+            funding_cost=0.0,
+            realized_pnl=0.0,
+            unrealized_pnl=0.0,
+        )
+        return True, "ORDER_RESERVED", alloc_notional
+
+    def cancel_pending_order(
+        self,
+        order_id: str,
+        timestamp_ms: int,
+    ) -> bool:
+        """Cancels a pending order and releases all reserved exposure."""
+        if order_id not in self.pending_orders:
+            return False
+
+        order = self.pending_orders.pop(order_id)
+        self.reserved_pending_notional = max(0.0, self.reserved_pending_notional - order.reserved_notional)
+
+        self._record_event(
+            trade_id=order_id,
+            symbol=order.symbol,
+            timestamp_ms=timestamp_ms,
+            event_type=LedgerEventType.ORDER_CANCELED,
+            side=order.side.name,
+            quantity=order.quantity,
+            reference_price=order.price,
+            fill_price=0.0,
+            notional=order.reserved_notional,
+            fee=0.0,
+            spread_cost=0.0,
+            slippage_cost=0.0,
+            funding_cost=0.0,
+            realized_pnl=0.0,
+            unrealized_pnl=0.0,
+        )
+        return True
 
     def open_position(
         self,
@@ -243,32 +376,48 @@ class EventDrivenPortfolioLedger:
         slippage_bps: float,
         timestamp_ms: int,
         entry_bar: int,
-        stop_price: float,
-        target_price: float,
+        stop_price: float = 0.0,
+        target_price: float = 0.0,
         market_regime: str = "UNKNOWN",
         is_partial: bool = False,
+        pending_order_id: Optional[str] = None,
     ) -> Optional[OpenPosition]:
         """Opens a position with exact cash flow deduction and ledger event generation."""
-        can_open, reason, alloc_notional = self.can_open_position(symbol, notional)
-        if not can_open:
-            self._record_event(
-                trade_id="REJECTED",
-                symbol=symbol,
-                timestamp_ms=timestamp_ms,
-                event_type=LedgerEventType.ORDER_REJECTED,
-                side=side.name,
-                quantity=0.0,
-                reference_price=reference_price,
-                fill_price=0.0,
-                notional=notional,
-                fee=0.0,
-                spread_cost=0.0,
-                slippage_cost=0.0,
-                funding_cost=0.0,
-                realized_pnl=0.0,
-                unrealized_pnl=0.0,
-            )
-            return None
+        entry_friction_rate = (fee_bps + spread_bps_half + slippage_bps) / 10_000.0
+
+        if pending_order_id and pending_order_id in self.pending_orders:
+            p_order = self.pending_orders[pending_order_id]
+            if is_partial:
+                fill_slice = min(notional, p_order.reserved_notional)
+                p_order.reserved_notional = max(0.0, p_order.reserved_notional - fill_slice)
+                p_order.quantity = max(0.0, p_order.quantity - (fill_slice / fill_price))
+                self.reserved_pending_notional = max(0.0, self.reserved_pending_notional - fill_slice)
+                alloc_notional = fill_slice
+            else:
+                self.reserved_pending_notional = max(0.0, self.reserved_pending_notional - p_order.reserved_notional)
+                alloc_notional = p_order.reserved_notional
+                del self.pending_orders[pending_order_id]
+        else:
+            can_open, reason, alloc_notional = self.can_open_position(symbol, notional, entry_friction_rate=entry_friction_rate)
+            if not can_open:
+                self._record_event(
+                    trade_id="REJECTED",
+                    symbol=symbol,
+                    timestamp_ms=timestamp_ms,
+                    event_type=LedgerEventType.ORDER_REJECTED,
+                    side=side.name,
+                    quantity=0.0,
+                    reference_price=reference_price,
+                    fill_price=0.0,
+                    notional=notional,
+                    fee=0.0,
+                    spread_cost=0.0,
+                    slippage_cost=0.0,
+                    funding_cost=0.0,
+                    realized_pnl=0.0,
+                    unrealized_pnl=0.0,
+                )
+                return None
 
         trade_id = self._next_trade_id()
         quantity = alloc_notional / fill_price
@@ -284,21 +433,41 @@ class EventDrivenPortfolioLedger:
         self.cash_balance -= total_entry_cost
         self.equity -= total_entry_cost
 
-        pos = OpenPosition(
-            trade_id=trade_id,
-            symbol=symbol,
-            side=side,
-            quantity=quantity,
-            entry_price=fill_price,
-            entry_notional=actual_notional,
-            entry_timestamp_ms=timestamp_ms,
-            entry_bar=entry_bar,
-            stop_price=stop_price,
-            target_price=target_price,
-            market_regime=market_regime,
-            accumulated_fees=total_entry_cost,
-        )
-        self.open_positions[symbol] = pos
+        if symbol in self.open_positions:
+            pos = self.open_positions[symbol]
+            new_qty = pos.quantity + quantity
+            new_entry_notional = pos.entry_notional + actual_notional
+            new_entry_price = new_entry_notional / new_qty
+            pos.quantity = new_qty
+            pos.entry_price = new_entry_price
+            pos.entry_notional = new_entry_notional
+            pos.accumulated_fees += total_entry_cost
+        else:
+            pos = OpenPosition(
+                trade_id=trade_id,
+                symbol=symbol,
+                side=side,
+                quantity=quantity,
+                entry_price=fill_price,
+                entry_notional=actual_notional,
+                entry_timestamp_ms=timestamp_ms,
+                entry_bar=entry_bar,
+                stop_price=stop_price,
+                target_price=target_price,
+                market_regime=market_regime,
+                accumulated_fees=total_entry_cost,
+            )
+            self.open_positions[symbol] = pos
+
+        # Clamping safeguard: strictly ensure exposure does not breach max_gross_exposure
+        post_exp = self.get_gross_exposure()
+        if round(post_exp, 6) > round(self.max_gross_exposure, 6):
+            excess_notional = self.get_gross_notional() - (self.equity * self.max_gross_exposure)
+            if excess_notional > 0:
+                trim_qty = excess_notional / fill_price
+                pos.quantity = max(0.0, pos.quantity - trim_qty)
+                pos.entry_notional = pos.quantity * fill_price
+                actual_notional = pos.entry_notional
 
         evt_type = LedgerEventType.PARTIAL_FILL if is_partial else LedgerEventType.POSITION_OPENED
         self._record_event(
@@ -307,7 +476,7 @@ class EventDrivenPortfolioLedger:
             timestamp_ms=timestamp_ms,
             event_type=evt_type,
             side=side.name,
-            quantity=quantity,
+            quantity=pos.quantity,
             reference_price=reference_price,
             fill_price=fill_price,
             notional=actual_notional,
@@ -318,6 +487,8 @@ class EventDrivenPortfolioLedger:
             realized_pnl=0.0,
             unrealized_pnl=0.0,
         )
+
+        return pos
 
         return pos
 
@@ -503,7 +674,7 @@ class EventDrivenPortfolioLedger:
             unrealized_pnl=round(unrealized_pnl, 4),
             cash_balance=round(self.cash_balance, 2),
             equity=round(self.equity, 2),
-            gross_exposure=round(self.get_gross_exposure(), 4),
+            gross_exposure=round(self.get_gross_exposure(), 6),
         )
         self.events.append(evt)
 

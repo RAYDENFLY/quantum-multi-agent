@@ -1,0 +1,11 @@
+symbol,total_bars_evaluated,defective_has_feature_col,defective_raw_signals,defective_completed_trades,corrected_has_feature_col,stage_1_relative_strength_triggers,stage_2_btc_trend_aligned,stage_3_breadth_aligned,stage_4_conjoint_raw_signals,stage_5_completed_trades,funnel_conversion_rate_pct
+BTCUSDT,40000,False,0,0,True,0,39950,39950,0,0,0.0
+ETHUSDT,40000,False,0,0,True,652,39949,39950,548,171,31.2
+SOLUSDT,40000,False,0,0,True,1565,39948,39950,1187,411,34.63
+BNBUSDT,40000,False,0,0,True,618,39950,39950,291,109,37.46
+XRPUSDT,40000,False,0,0,True,2064,39950,39950,1569,519,33.08
+ADAUSDT,40000,False,0,0,True,5879,39950,39950,4051,1488,36.73
+AVAXUSDT,40000,False,0,0,True,5199,39947,39950,3385,1193,35.24
+LINKUSDT,40000,False,0,0,True,3122,39946,39950,2228,842,37.79
+DOGEUSDT,40000,False,0,0,True,2103,39945,39950,1594,530,33.25
+LTCUSDT,40000,False,0,0,True,2932,39944,39950,1563,615,39.35

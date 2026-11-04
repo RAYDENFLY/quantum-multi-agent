@@ -1,0 +1,11 @@
+property_id,property_name,total_sequences_tested,total_passed,total_failed,pass_rate_pct,invariant_status
+Property 1,Gross Exposure <= 1.000000x,10000,10000,0,100.0,PASS
+Property 2,Cash Reconciliation (Double-Entry),10000,10000,0,100.0,PASS
+Property 3,Position Conservation (Quantity Balance),10000,10000,0,100.0,PASS
+Property 4,Event Idempotency (Duplicate Replay Safety),10000,10000,0,100.0,PASS
+Property 5,Order Reservation (Zero Phantom Exposure),10000,10000,0,100.0,PASS
+Property 6,Equity Consistency (Mark-to-Market),10000,10000,0,100.0,PASS
+Property 7,Ruin Protection (Permanent Halt <= $1.00),10000,10000,0,100.0,PASS
+Property 8,Determinism (Bit-Exact Seed Replay),10000,10000,0,100.0,PASS
+Property 9,No Hidden Leverage (Unlevered Bound),10000,10000,0,100.0,PASS
+Property 10,Partial-Fill Correctness (Quantity Conservation),10000,10000,0,100.0,PASS

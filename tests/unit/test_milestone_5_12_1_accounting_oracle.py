@@ -10,6 +10,7 @@ Validates:
 
 import pytest
 import numpy as np
+from decimal import Decimal
 
 from quantum.accounting import (
     EventDrivenPortfolioLedger,
@@ -174,7 +175,8 @@ def test_oracle_reconciliation_tc19_tc20_exposure_cap():
     # 5th asset should be clamped/rejected
     ok_breach, err_breach = oracle.process_entry("E_OVER", "T_OVER", 1000, "ADAUSDT", True, 25.0, 1.0)
     assert ok_breach is False
-    assert oracle.compute_gross_exposure() <= 1.005
+    assert oracle.compute_gross_exposure() <= 1.000000
+    assert Decimal(str(round(oracle.compute_gross_exposure(), 6))) <= Decimal("1.000000")
 
 
 # ==============================================================================

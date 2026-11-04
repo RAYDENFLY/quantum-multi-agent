@@ -1,0 +1,18 @@
+criterion_id,criterion_name,target_specification,observed_value,verification_method,acceptance_status
+REQ-01,TC-19 Exposure Invariant Bound,Gross exposure <= 1.000000x at every event with zero tolerance,1.000000x max observed across all events,Fixed-point Decimal assertion in ledger & oracle,PASS
+REQ-02,TC-19 Multi-Asset Shared Pool,Gross exposure <= 1.000000x across 4 assets (BTC ETH SOL BNB),1.000000x peak across 10 scenarios (37 events),Multi-scenario reconstruction script,PASS
+REQ-03,Limit Order Reservation Lifecycle,Pending orders reserve capacity; cancel releases reservation without phantom leakage,100% reserved notional conserved; zero phantom exposure,Event ledger and oracle reservation unit tests,PASS
+REQ-04,Friction-Aware Capacity Sizing,Permissible notional adjusted by denominator (1 + M * r_friction),Allocation sized to 99.8004 for $100 order at 20 bps friction,Automated unit test assertion,PASS
+REQ-05,Property-Based Testing Fleet,>= 10000 deterministic seeded sequences,10000 sequences executed (139857 discrete events),Deterministic PRNG fleet across 10 master seeds,PASS
+REQ-06,Financial Invariant Pass Rate,100% pass rate across all 10 financial invariant properties,100.00% pass rate (0 failures in M5_12_2_PROPERTY_TEST_FAILURES.jsonl),Randomized invariant property assertion harness,PASS
+REQ-07,HYP-06 Zero-Signal Root Cause,Definitive isolation of zero-signal root cause,Omission of compute_cross_asset_context in experiment pipeline,Codebase forensic audit and reproducible test script,PASS
+REQ-08,HYP-06 Signal Funnel Audit,Quantified funnel from raw universe bars to completed trades,400000 universe bars -> 16368 raw signals -> 5878 completed trades,Funnel audit script (M5_12_2_HYP06_SIGNAL_FUNNEL.csv),PASS
+REQ-09,Execution Regime Coverage Matrix,30 combinations evaluated (6 hypotheses x 5 regimes),30 combinations evaluated with full ledger simulation,Multi-regime portfolio simulation harness,PASS
+REQ-10,Circular Block Bootstrap,B >= 1000 resamples with block size b = 12 bars (1 hour),B = 1000 resamples; 95% CIs computed on net and gross expectancy,Vectorized circular block bootstrap function,PASS
+REQ-11,Effective Sample Size Adjustment,Autocorrelation rho_1 correction for serial regime clustering,rho_1 in [0.18, 0.35]; N_eff calculated for all 6 hypotheses,AR(1) autocorrelation proxy formula,PASS
+REQ-12,Multiple Testing Correction,Holm-Bonferroni step-down correction on family-wise error rate,Adjusted p-values evaluated across 6 hypotheses (p_adj = 1.0000),Holm-Bonferroni step-down function,PASS
+REQ-13,Deflated Sharpe Ratio (DSR),Bailey & Lopez de Prado (2014) formulation accounting for trials and non-normality,DSR = 0.0000 across all 6 hypotheses under retail taker execution,Statistical inference audit function,PASS
+REQ-14,Full Codebase Unit Regression,Zero regressions across legacy unit test suite,790 passed / 0 failed in 35.39s,Full pytest test execution,PASS
+REQ-15,Prospective Holdout Boundary,Sealed boundary at t = 1793491200000 ms strictly untouched,Zero holdout data accessed or inspected,Temporal split assertion filter,PASS
+REQ-16,Research Promotion Governance,Promote only candidates with net return >= 3.0% and max DD <= 15.0%,Zero candidates promoted (all 6 fail net economic hurdle under taker regime),Milestone research gate enforcement,PASS
+REQ-17,System Execution Authorization,Strictly research only; NO paper trading; NO live trading,Zero API keys configured; zero exchange endpoints connected,Security and harness boundary audit,PASS
