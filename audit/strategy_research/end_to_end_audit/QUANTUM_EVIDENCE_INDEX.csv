@@ -1,0 +1,21 @@
+evidence_id,topic_area,file_path,git_commit_or_reference,key_metric_or_finding,governance_classification
+EVD-01,Code Architecture,src/quantum/agents/contracts.py,0088b65,Pydantic v2 immutability schemas for 6 agents; contracts.py is schema not 7th agent,TERVERIFIKASI
+EVD-02,Risk Controller,src/quantum/accounting/risk_controller.py,7f1e58c / 0088b65,ActiveMTMMonitor RiskStateMachine (6 states) DeleveragingEngine closed-form formula,TERVERIFIKASI
+EVD-03,Accounting Ledger,src/quantum/accounting/event_ledger.py,273b897 / 7f1e58c,EventDrivenPortfolioLedger 19-field telemetry double-entry cash and position accounting,TERVERIFIKASI
+EVD-04,Fee Registry,src/quantum/accounting/fee_schedules.py,7110908,FeeScheduleRegistry AsterDEX Base Retail (4 maker / 10 taker / 1 half-spread / 2 slippage),TERVERIFIKASI
+EVD-05,Independent Oracle,src/quantum/accounting/oracle.py,7110908 / 0088b65,IndependentAccountingOracle dual-ledger verification matching primary ledger to < 10^-8,TERVERIFIKASI
+EVD-06,Causal ML Models,artifacts/phase_5_3_3_1/final_benchmark_catalog.json,e240bc7,11 specialist LightGBM models 1.32M OOF observations ROC-AUC 0.610-0.694,TERVERIFIKASI
+EVD-07,Historical Backtest Ruin,artifacts/phase_5_5/track2_economic_evaluation.json,a4de707,285.270 trades taker baseline -99.4% ruin due to 44 bps taker friction,TERVERIFIKASI
+EVD-08,Phantom Alpha Demolition,audit/strategy_research/final_comprehensive_audit/QUANTUM_COMPREHENSIVE_HISTORICAL_AUDIT.md,dcc8ceb,STRAT_242 +44.4% debunked as phantom alpha due to maker fee on market orders,TERVERIFIKASI
+EVD-09,Data Provenance,audit/strategy_research/milestone_5_7_data_provenance/FINAL_RESEARCH_DECISION.md,7700046,3.16M candles 10 assets perturbation invariant holdout boundary virgin,TERVERIFIKASI
+EVD-10,Survival Accounting,audit/strategy_research/milestone_5_8a_survival_accounting/FINAL_RESEARCH_DECISION.md,da62984,Dilution deception exposed: -1.35%/day active collapse vs -0.145%/day diluted,TERVERIFIKASI
+EVD-11,Track C Revalidation,audit/strategy_research/milestone_5_9_track_c_revalidation/M5_9_TEST_RESULTS.md,382f640,45 pairs cointegration evaluated; 0/45 stable out of sample under Holm-Bonferroni,TERVERIFIKASI
+EVD-12,M5.11 Anomaly Audit,audit/strategy_research/milestone_5_12_forensic_accounting/M5_12_EXECUTIVE_SUMMARY.md,c59ac22,MDD > 100% and unshared capital exposure 10x root causes resolved in M5.12,TERVERIFIKASI
+EVD-13,TC-19 Exposure Breach,audit/strategy_research/milestone_5_12_2_exposure_invariant_patch/M5_12_2_TC19_ROOT_CAUSE.md,273b897,TC-19 exposure 1.000324x fixed by closed-form capacity sizing formula,TERVERIFIKASI
+EVD-14,Property Testing Fleet,audit/strategy_research/milestone_5_12_2_exposure_invariant_patch/M5_12_2_PROPERTY_TEST_SUMMARY.csv,273b897,10 invariants verified across 10.000 sequences (139k events) 100% pass rate,TERVERIFIKASI
+EVD-15,Statistical Downgrade,audit/strategy_research/milestone_5_12_2_1_evidence_reconciliation/M5_12_2_1_STATISTICAL_AUDIT.md,ce9367b,HYP-05 p-adj=0.137 DSR=0.482 downgraded from proven alpha to preliminary gross edge,TERVERIFIKASI
+EVD-16,Short Convexity Asymmetry,audit/strategy_research/milestone_5_12_2_2_1_mathematical_integrity/M5_12_2_2_1_SHORT_CONVEXITY_AUDIT.md,0088b65,Short exposure expansion theta_1 derived from first principles; +200% claim resolved,TERVERIFIKASI
+EVD-17,HYP-05 Expectancy Fix,audit/strategy_research/milestone_5_12_2_2_1_mathematical_integrity/M5_12_2_2_1_HYP05_EXPECTANCY_RECONSTRUCTION.md,0088b65,HYP-05 net expectancy -12.36 bps corrected to -25.36 bps (double-leg friction debit),TERVERIFIKASI
+EVD-18,Unit Test Reproduction,tests/unit/,0088b65 / working tree,795 passed at baseline 0088b65; 800 passed 2 failed in working tree due to untracked M5.13 test,TERVERIFIKASI SEBAGIAN
+EVD-19,Multi-Factor Confluence,audit/strategy_research/milestone_5_13/M5_13_CONFLUENCE_ENGINE_DESIGN.md,untracked,10 factor dimensions 3 aggregation methods rule-based stat scoring ML ranking,BELUM TERVERIFIKASI PENUH
+EVD-20,Maker Queue & Adverse Drag,audit/strategy_research/milestone_5_13/M5_13_MAKER_FILL_MODEL.md,untracked,Queue front 0.25*vol realized fill rate 56.4% adverse selection markout -1.62 bps at 5m,ASUMSI SIMULASI
